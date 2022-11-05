@@ -1,0 +1,10 @@
+th,
+td {
+    border: 1px solid #000;
+}
+body {
+  background-image: url('../assets/images/background/index.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
