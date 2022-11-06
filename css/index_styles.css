@@ -1,10 +1,85 @@
 th,
 td {
-    border: 1px solid #000;
+    border: 1px solid #337ab7;
 }
 body {
-  background-image: url('../assets/images/background/index.webp');
+  /*background-image: url('../assets/images/background/index.webp');*/
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+.name {
+  text-align: center;
+}
+
+.title{
+  text-align: left;
+  border: 1px solid #337ab7;
+}
+
+.title h3 {
+  color: white;
+  background-color: #337ab7;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.education{
+  text-align: left;
+  border: 1px solid #337ab7;
+}
+
+.education h3 {
+  color: white;
+  background-color: #337ab7;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.experience {
+  text-align: left;
+  border: 1px solid #337ab7;
+}
+
+.experience h3 {
+  color: white;
+  background-color: #337ab7;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.publications {
+  text-align: left;
+  border: 1px solid #337ab7;
+}
+
+.publications h3 {
+  color: white;
+  background-color: #337ab7;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.documents {
+  text-align: left;
+  border: 1px solid #337ab7;
+}
+
+.documents h3 {
+  color: white;
+  background-color: #337ab7;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.address {
+  text-align: left;
+  border: 1px solid #337ab7;
+}
+
+.address h3 {
+  color: white;
+  background-color: #337ab7;
+  margin-bottom: 0;
+  margin-top: 0;
 }

@@ -4,3 +4,50 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
 }
+.linux{
+  text-align: left;
+  border: 1px solid #ebccd1;
+}
+
+.linux h3 {
+  color: #a94442;
+  background-color: #f2dede;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.programming{
+  text-align: left;
+  border: 1px solid #ebccd1;
+}
+
+.programming h3 {
+  color: #a94442;
+  background-color: #f2dede;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.dsa{
+  text-align: left;
+  border: 1px solid #ebccd1;
+}
+
+.dsa h3 {
+  color: #a94442;
+  background-color: #f2dede;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.ml{
+  text-align: left;
+  border: 1px solid #ebccd1;
+}
+
+.ml h3 {
+  color: #a94442;
+  background-color: #f2dede;
+  margin-bottom: 0;
+  margin-top: 0;
+}
