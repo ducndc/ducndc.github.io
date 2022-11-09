@@ -8,6 +8,8 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
   font-size:150%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 .name {
   text-align: center;
