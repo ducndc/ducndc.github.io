@@ -67,3 +67,15 @@ body {
   margin-bottom: 0;
   margin-top: 0;
 }
+
+.electronic{
+  text-align: left;
+  border: 1px solid #ebccd1;
+}
+
+.electronic h3 {
+  color: #a94442;
+  background-color: #f2dede;
+  margin-bottom: 0;
+  margin-top: 0;
+}
