@@ -1,0 +1,21 @@
+body {
+  /*background-image: url('../assets/images/background/book_bg.jpg');*/
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  font-size:125%;
+  margin-left: 10%;
+  margin-right: 10%;
+  word-break: break-word;
+}
+.trade{
+  text-align: left;
+  border: 1px solid #1590B2;
+}
+
+.trade h3 {
+  color: #ffffff;
+  background-color: #1590B2;
+  margin-bottom: 0;
+  margin-top: 0;
+}
