@@ -10,12 +10,48 @@ body {
 }
 .trade{
   text-align: left;
-  border: 1px solid #1590B2;
+  border: 1px solid #00F00F;
 }
 
 .trade h3 {
   color: #ffffff;
-  background-color: #1590B2;
+  background-color: #00F00F;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.strategy{
+  text-align: left;
+  border: 1px solid #00F00F;
+}
+
+.strategy h3 {
+  color: #ffffff;
+  background-color: #00F00F;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.stock{
+  text-align: left;
+  border: 1px solid #00F00F;
+}
+
+.stock h3 {
+  color: #ffffff;
+  background-color: #00F00F;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.life{
+  text-align: left;
+  border: 1px solid #00F00F;
+}
+
+.life h3 {
+  color: #ffffff;
+  background-color: #00F00F;
   margin-bottom: 0;
   margin-top: 0;
 }
