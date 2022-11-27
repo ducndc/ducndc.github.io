@@ -3,7 +3,6 @@ td {
     border: 1px solid #337ab7;
 }
 body {
-  /*background-image: url('../assets/images/background/index.webp');*/
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -16,11 +15,14 @@ body {
 .mine {
   height: 20%;
   background-color: #ffffff;
-  border: 1px solid #337ab7;
+  border: 1px solid #ffffff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-top: 1px;
   background-size: cover;
   text-align:center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
