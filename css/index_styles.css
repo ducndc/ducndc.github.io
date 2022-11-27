@@ -8,10 +8,40 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
   font-size:125%;
-  margin-left: 10%;
-  margin-right: 10%;
   word-break: break-word;
+  display: flex;
+  justify-content: flex-start;
 }
+
+.mine {
+  height: 20%;
+  background-color: #ffffff;
+  border: 1px solid #337ab7;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 1px;
+  background-size: cover;
+  text-align:center;
+  position: relative;
+}
+
+.left {
+  width:20%;
+  padding: 2px;
+  background-color: #ffffff;
+}
+
+.right{
+  width:20%;
+  padding: 2px;
+  background-color: #ffffff;
+}
+
+.full{
+  padding: 2px;
+  width:60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .name {
   text-align: center;
 }
