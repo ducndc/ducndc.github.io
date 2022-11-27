@@ -41,7 +41,7 @@ body {
 .full{
   padding: 2px;
   width:60%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 .name {
@@ -50,7 +50,7 @@ body {
 
 .title{
   text-align: left;
-  border: 1px solid #337ab7;
+  border: 1px solid #ffffff;
 }
 
 .title h3 {
@@ -62,7 +62,7 @@ body {
 
 .education{
   text-align: left;
-  border: 1px solid #337ab7;
+  border: 1px solid #ffffff;
 }
 
 .education h3 {
@@ -74,7 +74,7 @@ body {
 
 .experience {
   text-align: left;
-  border: 1px solid #337ab7;
+  border: 1px solid #ffffff;
 }
 
 .experience h3 {
@@ -86,7 +86,7 @@ body {
 
 .publications {
   text-align: left;
-  border: 1px solid #337ab7;
+  border: 1px solid #ffffff;
 }
 
 .publications h3 {
@@ -98,7 +98,7 @@ body {
 
 .documents {
   text-align: left;
-  border: 1px solid #337ab7;
+  border: 1px solid #ffffff;
 }
 
 .documents h3 {
@@ -110,7 +110,7 @@ body {
 
 .contacts {
   text-align: left;
-  border: 1px solid #337ab7;
+  border: 1px solid #ffffff;
 }
 
 .contacts h3 {
