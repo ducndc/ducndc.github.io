@@ -12,6 +12,22 @@ body {
   justify-content: flex-start;
 }
 
+.name {
+  height: 20%;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 1px;
+  background-size: cover;
+  text-align:center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-position: center;
+}
+
 .mine {
   height: 20%;
   background-color: #ffffff;
@@ -24,6 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  background-position: center;
 }
 
 .left {
@@ -40,7 +57,7 @@ body {
 
 .full{
   padding: 2px;
-  width:60%;
+  width:80%;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
