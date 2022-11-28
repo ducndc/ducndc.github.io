@@ -10,6 +10,7 @@ body {
   word-break: break-word;
   display: flex;
   justify-content: flex-start;
+  font-family: Cambria;
 }
 
 .name {
