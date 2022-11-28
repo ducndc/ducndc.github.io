@@ -1,6 +1,6 @@
 th,
 td {
-    border: 1px solid #337ab7;
+    border: 1px solid #000000;
 }
 body {
   background-repeat: no-repeat;
@@ -73,7 +73,7 @@ body {
 
 .title h3 {
   color: white;
-  background-color: #337ab7;
+  background-color: #000000;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -85,7 +85,7 @@ body {
 
 .education h3 {
   color: white;
-  background-color: #337ab7;
+  background-color: #000000;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -97,7 +97,7 @@ body {
 
 .experience h3 {
   color: white;
-  background-color: #337ab7;
+  background-color: #000000;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -109,7 +109,7 @@ body {
 
 .publications h3 {
   color: white;
-  background-color: #337ab7;
+  background-color: #000000;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -121,7 +121,7 @@ body {
 
 .documents h3 {
   color: white;
-  background-color: #337ab7;
+  background-color: #000000;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -133,7 +133,7 @@ body {
 
 .contacts h3 {
   color: white;
-  background-color: #337ab7;
+  background-color: #000000;
   margin-bottom: 0;
   margin-top: 0;
 }
