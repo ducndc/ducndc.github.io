@@ -7,99 +7,111 @@ body {
   margin-left: 20%;
   margin-right: 20%;
   word-break: break-word;
+  color: #000;
 }
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+td,th {
+	padding: 0;
+}
+html {
+	color: #222;
+	font-size: 1em;
+	line-height: 1.4;
+}
+a {
+	background-color: transparent;
+}
+a:active,a:hover {
+	outline: 0;
+}
+
 .linux{
   text-align: left;
-  border: 1px solid #ebccd1;
 }
 
 .linux h3 {
-  color: #a94442;
-  background-color: #f2dede;
+  color: #000;
+  background-color: #ffffff;
   margin-bottom: 0;
   margin-top: 0;
 }
 
 .programming{
   text-align: left;
-  border: 1px solid #ebccd1;
 }
 
 .programming h3 {
-  color: #a94442;
-  background-color: #f2dede;
+  color: #000;
+  background-color: #fff;
   margin-bottom: 0;
   margin-top: 0;
 }
 
 .dsa{
   text-align: left;
-  border: 1px solid #ebccd1;
 }
 
 .dsa h3 {
-  color: #a94442;
-  background-color: #f2dede;
+  color: #000;
+  background-color: #fff;
   margin-bottom: 0;
   margin-top: 0;
 }
 
 .ml{
   text-align: left;
-  border: 1px solid #ebccd1;
 }
 
 .ml h3 {
-  color: #a94442;
-  background-color: #f2dede;
+  color: #000;
+  background-color: #fff;
   margin-bottom: 0;
   margin-top: 0;
 }
 
 .software{
   text-align: left;
-  border: 1px solid #ebccd1;
 }
 
 .software h3 {
-  color: #a94442;
-  background-color: #f2dede;
+  color: #000;
+  background-color: #fff;
   margin-bottom: 0;
   margin-top: 0;
 }
 
 .electronic{
   text-align: left;
-  border: 1px solid #ebccd1;
 }
 
 .electronic h3 {
-  color: #a94442;
-  background-color: #f2dede;
+  color: #000;
+  background-color: #fff;
   margin-bottom: 0;
   margin-top: 0;
 }
 
 .networking{
   text-align: left;
-  border: 1px solid #ebccd1;
 }
 
 .networking h3 {
-  color: #a94442;
-  background-color: #f2dede;
+  color: #000;
+  background-color: #fff;
   margin-bottom: 0;
   margin-top: 0;
 }
 
 .vietnamese{
   text-align: left;
-  border: 1px solid #ebccd1;
 }
 
 .vietnamese h3 {
-  color: #a94442;
-  background-color: #f2dede;
+  color: #000;
+  background-color: #fff;
   margin-bottom: 0;
   margin-top: 0;
 }

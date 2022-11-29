@@ -1,72 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Books</title>
-    <link rel="icon" type="image/png" href="assets/images/icon/head.png">
-    <link rel="stylesheet" href="css/book_styles.css">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>books</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="canonical" href="http://html5-templates.com/" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="style.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
 <body>
-    <div class="full">
-        <div class="Documents">
-            <h2 style="text-align: center;">Books</h2>
-            <div class="linux"> 
-                <h3>Linux</h3>
-                <a href="assets/books/linux/Linux Kernel Development, 3rd Edition.pdf">Linux Kernel Development, 3rd
-                    Edition</a><br>
-                <a href="assets/books/linux/Professional Linux Kernel Architecture.pdf">Professional Linux Kernel
-                    Architecture</a><br>
-                <a href="assets/books/linux/Understanding Linux Kernel.pdf">Understanding Linux Kernel</a><br>
+    <div class="wrapAll clearfix">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="/"><img src='img/logo.png' alt="logo"></a>
             </div>
-           
-            <div class="programming">
-                <h3>Programming</h3>
-                <a href="assets/books/programming/Linux System Programming Talking Directly to the Kernel and C Library.pdf">Linux System Programming Talking Directly to the Kernel and C Library</a><br>
-                <a href="assets/books/programming/The Linux Programming Interface.pdf">The Linux Programming Interface</a><br>
-                <a href="assets/books/programming/The_C__Programming_Language__Stroustrup_.pdf">The C Programming Language Stroustrup</a><br>
+            <div class="navigation">
+                <ul>
+                    <li><a href="index.html">Main page</a></li>
+                    <li><a href="#">Contents</a></li>
+                    <li><a href="books.html">Books</a></li>
+                </ul>
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Software_engineering">Software Engineer</a></li>
+                    <li><a href="https://viettelhightech.vn/en">VHT, Viettel Group</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Hanoi">Hanoi</a></li>
+                </ul>
             </div>
-            
-            <!--  -->
-            <div class="dsa"> 
-                <h3>Data Structures and Algorithms</h3>
-                <a href="assets/books/dsa/Data Structures and Algorithms Made Easy_ Data Structures and Algorithmic Puzzles.pdf">Data Structures and Algorithms Made Easy_ Data Structures and Algorithmic Puzzles</a><br>
-                <a href="assets/books/dsa/Introduction_to_Algorithms_Third_Edition_(2009).pdf">Introduction_to_Algorithms_Third_Edition_(2009)</a><br>
-            </div>
-            
-            <!--  -->
-            <div class="ml">
-                <h3>Machine Learning</h3>
-                <a href="assets/books/machine_learning/book_ML_color.pdf">Basics of Machine Learning</a><br>
-            </div>
-            
-            <!--  -->
-            <div class="software">
-                <h3>Software Design</h3>
-                <a href="https://drive.google.com/file/d/1u_NUlVSFvHzjRQZQpjhSeQeiD1r-NTsQ/view?usp=sharing">Systems Analysis and Design with UML</a><br>
-            </div>
-
-            <!-- -->
-            <div class="electronic">
-                <h3>Electronic Theory</h3>
-                <a href="https://drive.google.com/file/d/1h8TMIIFLCLdCNPa4c41h-N_JQqyajLW9/view?usp=sharing">Electronic Devices and Circuit Theory</a><br>
-                <a href="https://drive.google.com/file/d/1SccvigM-CYFxaSeWaxjw27uDp5Fcgm15/view?usp=sharing">Digital Logic Circuit Analysis and Design</a><br>
-                <a href="https://drive.google.com/file/d/1bsBu4Jh8RCRf871mFFefEtxKiHrf3clH/view?usp=sharing">Electronic Devices</a><br>
-            </div>
-
-            <!--  -->
-            <div class="networking">
-                <h3>Network</h3>
-                <a href="assets/books/networking/Computer Networking  A Top Down Approach.pdf">Computer Networking  A Top Down Approach</a><br>
-                <a href="assets/books/networking/UNIX Network Programming_ Networking APIs_ Sockets and XTI .pdf">UNIX Network Programming_ Networking APIs_ Sockets and XTI </a><br>
-                <a href="assets/books/networking/CCNA-cisco-s1.pdf">CCNA-cisco-s1</a><br>
-            </div>
-
-            <!--  -->
-            <div class="vietnamese">
-                <h3>Vietnamese Books</h3>
-                <a href="vietnamese_books.html">Books</a>
-            </div>
-
         </div>
+        <div class="mainsection">
+            <div class="headerLinks">
+                <!-- <span class="user">Not logged in</span> <a href="#">Talk</a> <a href="#">Contributions</a> <a href="#">Create account</a> <a href="#">Log in</a> -->
+            </div>
+            <div class="tabs clearfix">
+                <div class="tabsLeft">
+                    <ul>
+                        <li><a href="#" class="active">Books</a></li>						
+                    </ul>
+                </div>
+                <div id="simpleSearch">
+                    <input type="text" name="searchInput" id="searchInput" placeholder="Search" size="12" />
+                    <div id="submitSearch"></div>
+                </div>
+                <div class="tabsRight">
+                    <ul>
+                        <li><a href="#" class="active">Read</a></li>
+                        <li><a href="#">View source</a></li>						
+                        <li><a href="version1.html">View history</a></li>						
+                    </ul>
+                </div>
+            
+            </div>
+            <div class="article">
+                <h1>Books</h1>
+                <div class="linux"> 
+                    <h3>Linux</h3>
+                    <a href="assets/books/linux/Linux Kernel Development, 3rd Edition.pdf">Linux Kernel Development, 3rd
+                        Edition</a><br>
+                    <a href="assets/books/linux/Professional Linux Kernel Architecture.pdf">Professional Linux Kernel
+                        Architecture</a><br>
+                    <a href="assets/books/linux/Understanding Linux Kernel.pdf">Understanding Linux Kernel</a><br>
+                </div>
+               
+                <div class="programming">
+                    <h3>Programming</h3>
+                    <a href="assets/books/programming/Linux System Programming Talking Directly to the Kernel and C Library.pdf">Linux System Programming Talking Directly to the Kernel and C Library</a><br>
+                    <a href="assets/books/programming/The Linux Programming Interface.pdf">The Linux Programming Interface</a><br>
+                    <a href="assets/books/programming/The_C__Programming_Language__Stroustrup_.pdf">The C Programming Language Stroustrup</a><br>
+                </div>
+                
+                <!--  -->
+                <div class="dsa"> 
+                    <h3>Data Structures and Algorithms</h3>
+                    <a href="assets/books/dsa/Data Structures and Algorithms Made Easy_ Data Structures and Algorithmic Puzzles.pdf">Data Structures and Algorithms Made Easy_ Data Structures and Algorithmic Puzzles</a><br>
+                    <a href="assets/books/dsa/Introduction_to_Algorithms_Third_Edition_(2009).pdf">Introduction_to_Algorithms_Third_Edition_(2009)</a><br>
+                </div>
+                
+                <!--  -->
+                <div class="ml">
+                    <h3>Machine Learning</h3>
+                    <a href="assets/books/machine_learning/book_ML_color.pdf">Basics of Machine Learning</a><br>
+                </div>
+                
+                <!--  -->
+                <div class="software">
+                    <h3>Software Design</h3>
+                    <a href="https://drive.google.com/file/d/1u_NUlVSFvHzjRQZQpjhSeQeiD1r-NTsQ/view?usp=sharing">Systems Analysis and Design with UML</a><br>
+                </div>
+    
+                <!-- -->
+                <div class="electronic">
+                    <h3>Electronic Theory</h3>
+                    <a href="https://drive.google.com/file/d/1h8TMIIFLCLdCNPa4c41h-N_JQqyajLW9/view?usp=sharing">Electronic Devices and Circuit Theory</a><br>
+                    <a href="https://drive.google.com/file/d/1SccvigM-CYFxaSeWaxjw27uDp5Fcgm15/view?usp=sharing">Digital Logic Circuit Analysis and Design</a><br>
+                    <a href="https://drive.google.com/file/d/1bsBu4Jh8RCRf871mFFefEtxKiHrf3clH/view?usp=sharing">Electronic Devices</a><br>
+                </div>
+    
+                <!--  -->
+                <div class="networking">
+                    <h3>Network</h3>
+                    <a href="assets/books/networking/Computer Networking  A Top Down Approach.pdf">Computer Networking  A Top Down Approach</a><br>
+                    <a href="assets/books/networking/UNIX Network Programming_ Networking APIs_ Sockets and XTI .pdf">UNIX Network Programming_ Networking APIs_ Sockets and XTI </a><br>
+                    <a href="assets/books/networking/CCNA-cisco-s1.pdf">CCNA-cisco-s1</a><br>
+                </div>
+    
+                <!--  -->
+                <div class="vietnamese">
+                    <h3>Vietnamese Books</h3>
+                    <a href="vietnamese_books.html">Books</a>
+                </div>
+    
+            </div>
+            <div class="pagefooter">
+                This page was last edited on 01.12.2022 | Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a> <!-- Please leave this link unchanged -->
+                <div class="footerlinks">
+                    <a href="#">Privacy policy</a> <a href="#">About</a> <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a> <a href="#">Developers</a>
+                </div>
+            </div>
+        
+        
+        </div>		
     </div>
 </body>
 
