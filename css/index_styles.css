@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: flex-start;
   font-family: Cambria;
+  color: #000000;
 }
 
 .name {
