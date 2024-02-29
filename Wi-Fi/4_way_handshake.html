@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>contents</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="canonical" href="http://html5-templates.com/" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="../style.css">
+        <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+<body>
+    <div class="wrapAll clearfix">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="/"><img src='../img/logo.png' alt="logo"></a>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="../index.html">Main page</a></li>
+                    <li><a href="../contents.html">Contents</a></li>
+                    <li><a href="../books.html">Books</a></li>
+                    <li><a href="../poetry.html">Poetry</a></li>
+                    <li><a href="../ebooks.html">Ebooks</a></li>
+                </ul>
+                <h3>Information</h3>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Software_engineering">Embedded Software Engineer</a></li>
+                    <li><a href="https://viettelhightech.vn/en">VHT, Viettel Group</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Hanoi">Hanoi</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mainsection">
+            <div class="headerLinks">
+                
+            </div>
+            <div class="tabs clearfix">
+                <div class="tabsLeft">
+                    <ul>
+                        <li><a href="#" class="active">Contents</a></li>						
+                    </ul>
+                </div>
+
+                <div class="tabsRight">
+  
+                </div>
+            
+            </div>
+            <div class="article">
+                <div class="WPS">
+                    <h2>4 Way Handshake</h2>
+                    <p>The 4-way handshake is the process of exchanging 4 messages between an access point (authenticator) and the client device (supplicant) to generate some encryption keys which can be used to encrypt actual data sent over Wireless medium [1].</p>
+                     <img src="../Wi-Fi/images/4WayHandshake/wpa-4-way-handshake-workflow.png" alt="4-way handshake" style="width:500px;height:600px;"> 
+                    <p><strong>Message1:</strong> access point sends EAPOL message with Anonce (random number) to the device to generate PTK. Don’t forget client device knows Ap&#8217;s MAC because its connected to it. It has PMK, Snonce and its own MAC address. Once it receives Anonce from access point it has all the inputs to create the PTK.</p>
+                    <p style="text-align: center;">PTK = PRF (PMK + Anonce + SNonce + Mac (AA)+ Mac (SA))</p>
+                    <p><strong>Message2:</strong> Once the device has created its PTK it sends out SNonce which is needed by the access point to generate PTK as well. The device sends EAPOL to AP message2 with MIC (message integrity check) to make sure when the access point can verify whether this message corrupted or modified. Once SNonce received by the AP it can generate PTK as well for unicast traffic encryption.</p>
+                    <p>This is the second message going from the client device to AP with Snonce and MIC field set to 1.</p>
+                    <p><strong>Message3: </strong>EAPOL message3 is sent from AP to client device containing GTK. AP creates GTK without the involvement of the client from GMK.</p>
+                    <p><strong>Message4:</strong> Fourth and last EPOL message will be sent from the client to AP just to confirm that Keys have been installed.</p>
+                    <p><strong>4-way handshake Result:</strong></p>
+                    <p><strong>Control port unlocked: </strong>Once the 4-way handshake is completed successfully virtual control port which blocks all the traffic will be open and now encrypted traffic can flow. Now all unicast traffic will be encrypted with PTK and all multicast traffic will be encrypted via GTK which created in the 4-way handshake process.</p>
+                </div>
+                <div class="References">
+                    <h2>References</h2>
+                    <p>[1] https://www.wifi-professionals.com/2019/01/4-way-handshake</p>
+                </div>
+            </div>
+            <div class="pagefooter">
+                This page was last edited on 01.12.2022 | Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a> <!-- Please leave this link unchanged -->
+                <div class="footerlinks">
+                    <a href="#">Privacy policy</a> <a href="#">About</a> <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a> <a href="#">Developers</a>
+                </div>
+            </div>
+        
+        
+        </div>		
+    </div>
+</body>
+
+</html>
