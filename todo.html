@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>contents</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="canonical" href="http://html5-templates.com/" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="./css/todo_styles.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <style>
+            #content { display: none; }
+        </style>
+        <script>
+            async function hashPassword(password) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password);
+                const hash = await crypto.subtle.digest("SHA-256", data);
+                return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+            }
+            async function checkPassword() {
+                var password = document.getElementById("password").value;
+                var hashedPassword = await hashPassword(password);
+                var correctHashedPassword = "7fe074cbed63129d00484b8e93b90118ccca3c1afe17bfb5030da92f5b31af87"; // Mật khẩu "123456" đã được băm
+                if (hashedPassword === correctHashedPassword) {
+                    document.getElementById("login").style.display = "none";
+                    document.getElementById("content").style.display = "block";
+                } else {
+                    alert("Password incorrect!");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrapAll clearfix">
+            <div class="sidebar">
+                <div class="logo">
+                    <a href="/"><img src='./img/logo.png' alt="logo"></a>
+                </div>
+                <div class="navigation">
+                    <ul>
+                        <li><a style="font-size:160%; "  href="index.html"> <b> Main page </b> </a></li>
+                        <li><a style="font-size:160%; "  href="contents.html"> <b> Contents </b></a></li>
+                        <li><a style="font-size:160%; "  href="books.html"> <b> Books </b> </a></li>
+                        <li><a style="font-size:160%; "  href="poetry.html"> <b> Poetry </b> </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="login" id="login">
+                <h2>Enter password to continue</h2>
+                <input type="password" id="password" placeholder="Enter password">
+                <button onclick="checkPassword()">Login</button>
+            </div>
+            <div class="mainsection" id="content">
+                <div class="article">
+                    <h1>📋 Việc Cần Làm Hàng Ngày</h1>
+
+                    <div id="todo-form">
+                      <input type="text" id="todo-input" placeholder="Nhập công việc mới...">
+                      <button id="add-button">Thêm</button>
+                    </div>
+                    
+                    <ul id="todo-list">
+                      <!-- Các công việc sẽ hiện ra ở đây -->
+                    </ul>
+                </div>
+            </div>		
+        </div>
+        <script>
+            const addButton = document.getElementById('add-button');
+            const todoInput = document.getElementById('todo-input');
+            const todoList = document.getElementById('todo-list');
+          
+            // Load dữ liệu từ LocalStorage nếu có
+            document.addEventListener('DOMContentLoaded', () => {
+              const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
+              savedTodos.forEach(todo => addTodoItem(todo.task, todo.date));
+            });
+          
+            // Thêm công việc mới
+            addButton.addEventListener('click', () => {
+              const task = todoInput.value.trim();
+              const date = new Date().toLocaleDateString(); // Lấy ngày hiện tại
+          
+              if (task !== '') {
+                addTodoItem(task, date);
+                saveTodo();
+                sendToGoogleSheet(task, date);
+                todoInput.value = '';
+                todoInput.focus();
+              }
+            });
+          
+            // Hàm thêm item vào danh sách
+            function addTodoItem(task, date) {
+              const li = document.createElement('li');
+              li.innerHTML = `
+                <span><strong>${date}:</strong> ${task}</span>
+                <button class="delete-button">Xóa</button>
+              `;
+              todoList.appendChild(li);
+          
+              // Xử lý nút xóa
+              li.querySelector('.delete-button').addEventListener('click', () => {
+                li.remove();
+                saveTodo();
+              });
+            }
+          
+            // Lưu danh sách vào LocalStorage
+            function saveTodo() {
+              const todos = [];
+              todoList.querySelectorAll('li').forEach(li => {
+                const task = li.querySelector('span').textContent.replace(/^\d{1,2}\/\d{1,2}\/\d{4}:/, '').trim();
+                const date = li.querySelector('span').textContent.match(/^\d{1,2}\/\d{1,2}\/\d{4}/)[0];
+                todos.push({ task, date });
+              });
+              localStorage.setItem('todos', JSON.stringify(todos));
+            }
+          
+            // Hàm gửi dữ liệu lên Google Sheets
+            function sendToGoogleSheet(task, date) {
+              fetch('https://script.google.com/macros/s/AKfycbxn0pkTt5UtOpE_b8_cWhm-0FX-fEZIEyZdoVd6aWj5CiSaIhMvMDOAY4MHDI_jNPjM/exec', {  // thay bằng URL Apps Script của bạn
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ task: task, date: date })
+              })
+              .then(response => {
+                console.log('Gửi thành công tới Google Sheet');
+              })
+              .catch(error => {
+                console.error('Lỗi khi gửi:', error);
+              });
+            }
+          </script>
+    </body>
+
+</html>
