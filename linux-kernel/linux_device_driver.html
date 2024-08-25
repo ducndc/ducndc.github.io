@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>contents</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="http://html5-templates.com/" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Place favicon.ico in the root directory -->
+<link rel="stylesheet" href="../css/contents_style.css">
+<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<div class="wrapAll clearfix">
+<div class="sidebar">
+<div class="logo">
+    <a href="/"><img src='../img/avatar.jpeg' alt="logo"></a>
+</div>
+<div class="navigation">
+<ul>
+<li><a style="font-size:160%; " href="../index.html"><b> Main page </b></a></li>
+<li><a style="font-size:160%; " href="../contents.html"><b>Contents</b></a></li>
+<li><a style="font-size:160%; " href="../books.html"><b>Books</b></a></li>
+</ul>
+</div>
+</div>
+<div class="mainsection">
+<div class="article">
+<div class="device_driver">
+<h2>Linux Kernel Module (LKM)</h2>
+<p style="text-align: justify;">Linux supports dynamic instertion and removal of code from  the kernl while the system is up and running. The code what we add and remove at run time is called a kernel module</p>
+<p style="text-align: justify;">Once the LKM is loaded into the Linux kernel, you can start using new features and fucntionalities exposed by the kernel module without even restarting the device</p>
+<p style="text-align: justify;">LKM dynamically extends the functionality of the kernel by introducing new features to the kernel such as security, device drivers, file system drivers, system call</p>
+<p style="text-align: justify;">Support for LKM allows your embedded Linux systems to have only minimal base kernel image (less runtime storage) and optional device drivers and other features are supplied on demand via module insertion</p>
+<h3>Static(y)</h3>
+<p style="text-align: justify;">When you build a Linux kernel, you can make your module statically linked to the kernel image (module becomes part of the final Linux kenrel image). This method increases the size of the final Linux kernel image. Since the module is 'built-in' into the Linux kernel image, you can not 'unload' the module. It occupies the memory permanently during run time</p>
+<h3>Dynamic(m)</h3>
+<p style="text-align: justify;">When you build a Linux kernel, these modules are NOT build into the final kernel image, and rather there are compiled and linked separately to produce .ko files. You can dynamically load and unload these modules from the kernel using user space programs such as insmod, modprobe, rmmod</p>
+<h3>Kernel header vs user-space header</h3>
+<p style="text-align: justify;">Since you write a kernel module that is going to be executed in kernel space, you should be using kernel headers, never include any user space library headers like C std library header files</p>
+<p style="text-align: justify;">No user space library is linked to the kernel module, most of the relevant kernel headers live in linux_source_bse/inlcude/linux/</p>
+<h3>Module initializtion function</h3>
+<p style="text-align: justify;">Prototype: int fun_name(void);</p>
+<p style="text-align: justify;">Must return a value, 0 for success, nonzero means module initialization failed. So the module will not get loaded in the kernel</p>
+<p style="text-align: justify;">This is an entry point to your module (like main). This function will get called during boot time in the case of static modules</p>
+<p style="text-align: justify;">In the case of dynamic modules, this function will get called during module insertion</p>
+<p style="text-align: justify;">These shold be one module initialization entry point in the module</p>
+</div>
+</div>
+</div>		
+</div>
+</body>
+
+</html>

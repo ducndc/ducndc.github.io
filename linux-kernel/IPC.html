@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>contents</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="http://html5-templates.com/" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Place favicon.ico in the root directory -->
+<link rel="stylesheet" href="../css/contents_style.css">
+<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<div class="wrapAll clearfix">
+<div class="sidebar">
+<div class="logo">
+<a href="/"><img src='../img/avatar.jpeg' alt="logo"></a>
+</div>
+<div class="navigation">
+<ul>
+<li><a style="font-size:160%; " href="../index.html"><b> Main page </b></a></li>
+<li><a style="font-size:160%; " href="../contents.html"><b>Contents</b></a></li>
+<li><a style="font-size:160%; " href="../books.html"><b>Books</b></a></li>
+</ul>
+</div>
+</div>
+<div class="mainsection">
+<div class="article">
+<div class="boot_process">
+<h2>What is IPC and Why we need it?</h2>
+<p style="text-align: justify;"> IPC is a mechanism using which two or more process running on the same machine exchange their personal data with each other</p>
+<p style="text-align: justify;"> Communication between processes running on different machine are not termed as IPC</p>
+<p style="text-align: justify;"> Processes running on same machine, often need to exchange data with oter in order to implement some functionality</p>
+<p style="text-align: justify;"> Linux OS provides serveral mechanisms using which user space processes can carry out communication with each other, each mechanism has its own pros and cons</p>
+<!-- <img src="./img/boot_process.jpeg" alt="Block Ack" style="width:600px; height:400px;"> -->
+<p style="text-align: justify;"> User space <==> Netlink Skts / IOCTLS / Device files / System calls <==> Kernel <==> Device drivers <==> Hardware</p>
+<h2>IPC Techniques</h2>
+<p style="text-align: justify;">1. Unix Domain sockets</p>
+<p style="text-align: justify;">2. Network Sockets</p>
+<p style="text-align: justify;">3. Message Queues</p>
+<p style="text-align: justify;">4. Shared Memory</p>
+<p style="text-align: justify;">5. Pipes (Not used in the industry)</p>
+<p style="text-align: justify;">6. Signals</p>
+<img src="./img/ipc.png" alt="signal" style="width:800px; height:600px;"> 
+<h2>Sockets</h2>
+<p style="text-align: justify;">Unix/Linux like OS provide Socket Interface to carry out communication betwwen various types of entities</p>
+<p style="text-align: justify;">The Socket Interface are a bunch of Socket programming releated API</p>
+<p style="text-align: justify;">Two types:</p> 
+<p style="text-align: justify;">- Unix Domain Sockets: IPC between processes running on the same system</p>
+<p style="text-align: justify;">- Network Sockets: Communication between processes running on different physical machines over the network</p>
+<h3>Sockets Steps and related API</h3>
+<p style="text-align: justify;">1. Remove the socket, if already exits</p> 
+<p style="text-align: justify;">2. Create a Unix socket using socket()</p> 
+<p style="text-align: justify;">3. Specify the socket name</p> 
+<p style="text-align: justify;">4. Bind the socket using bind()</p> 
+<p style="text-align: justify;">5. listen()</p>
+<p style="text-align: justify;">6. accept()</p>
+<p style="text-align: justify;">7. Read the data recvd on socket using recvfrom()</p>
+<p style="text-align: justify;">8. Send back the result using sendto()</p>
+<p style="text-align: justify;">9. Close the data socket</p>
+<p style="text-align: justify;">10. Close the connection socket</p>
+<p style="text-align: justify;">11. Remove the socket</p>
+<p style="text-align: justify;">12. Exit</p>   
+<img src="./img/sockets.png" alt="Socket" style="width:600px; height:800px;">  
+<h3>Sockets Message Types</h3>   
+<p style="text-align: justify;">Messages exchange between the client and the server processes can be categorized into two types:</p> 
+<p style="text-align: justify;">- Connection Initiation Request Messages (CIR) </p>
+<p style="text-align: justify;">- Service Request Messages (SRM) </p>  
+<h3>State Machine of Socket based Client Server Communication</h3> 
+<p style="text-align: justify;">1. When server boots up, it create a connection socket (also called "master socket file descriptor" using socket())</p> 
+<p style="text-align: justify;">M = socket()</p> 
+<p style="text-align: justify;">2. M is the mother of all client handles. M gives birth to all client handles. Client handles are also called "data_sockets"</p>
+<p style="text-align: justify;">3. Once client handles are created for each client. Server carries out communication (actual date exchange) with the client using client handle (and not M)</p> 
+<p style="text-align: justify;">4. Server has to maintain the database of connected client handles or data sockets</p>
+<p style="text-align: justify;">5. M is only used to create new client handles, M is not used for data exchange with already connected client</p> 
+<p style="text-align: justify;">6. accept() is the system call used on server side to create client handles</p>  
+<p style="text-align: justify;">7. In linux terminology, handles are called as "file descriptors" which are just positive interger numbers. Client handles are called "communication file descriptors" or "data sockets" and M is called "Master socket file descriptor" or "Connection socket"</p> 
+<p style="text-align: justify;">When the server receives new connetion initiation request msg from new client, this request goes on Master socket mainteined by server. Master socket is activated</p>
+<p style="text-align: justify;">When server receives connection initial request from client, server invokes the accept() to establish the didirectional communication</p>
+<p style="text-align: justify;">Return value of accept system call is client handle or communication file descriptor</p>
+<p style="text-align: justify;">accept() is used only for connection oriented communication, not for connection less connection</p>  
+<h3>Unix Domain Sockets</h3>
+<p style="text-align: justify;">Using UNIX Domain Sockets, you can setup STREAM of DATAGRAM based communication</p>
+<p style="text-align: justify;">- STREAM : When large files need to be moved or copied from one location to another, eg: copying a movies, continuous flow of bytes</p>
+<p style="text-align: justify;">- DATAGRAM : When small units of data needs to be moved from one process to another within a system</p> 
+<h3>Multiplexing</h3>
+<p style="text-align: justify;">Multiplexing is a machanism through which the server process can monitor multiple clients at the same time</p>
+<p style="text-align: justify;">Without multiplexing, server process can entertain only one client at a time, and can not entertain other client's request until it finishes with the current client</p>
+<p style="text-align: justify;">With multiplexing, server can entertain multiple connected clients simultaneously</p>
+<p style="text-align: justify;">select()</p>
+<p style="text-align: justify;">Server process has to maintain client handles (communication FDs) to carry out communication (data exchange) with connected clients</p>
+<p style="text-align: justify;">In addition, server process has to maintain connection socket or master socket FD as well (M) to process new connection req from new client</p>
+<p style="text-align: justify;">Linux provides an inbuild data structure to maintain the set of sockets file descriptors</p>
+<p style="text-align: justify;">select() system call monitor all socket FDs present in fd_set</p>
+<img src="./img/select.png" alt="Socket" style="width:800px; height:800px;"> 
+<h3>Example</h3>
+<a href="https://github.com/ducndc/linux-system-programming/tree/main/networking">Code example of unix socket and network socket</a>
+<h2>Message Queues</h2>
+<p style="text-align: justify;">Linux/Unix OS provides another mechanism called Message Queue for carrying out IPC</p>
+<p style="text-align: justify;">Processes running on same machine can exchange any data using message queues</p>
+<p style="text-align: justify;">Process can create a new message queue or can use an existing msgQ which was created by another process</p>
+<p style="text-align: justify;">A message queue is identified uniquely by the ID, no two msgQ can have same ID</p>
+<p style="text-align: justify;">Message queue resides and manage by the kernel/OS</p>
+<p style="text-align: justify;">Sending process A can post the data to the message queue, receiving process B reads the data from msg Q</p>
+<p style="text-align: justify;">Process which creates a msgQ is termed as owner or creator of msgQ</p>
+<p style="text-align: justify;">MsgQ as a kernel resource</p>
+<img src="./img/msgQueue.jpeg" alt="MSG QUEUE" style="width:800px; height:300px;"> 
+<h3>Message queue creation</h3>
+<p style="text-align: justify;">A process can create new msgQ or use an existing msgQ using below API</p>
+<p style="text-align: justify;">1. mq_open(const char *name, int oflag);</p>
+<p style="text-align: justify;">2. mq_open(const char *name, int oflag, mode_t mode, struct mq_attr *attr);</p>
+<p style="text-align: justify;">- name - Name of msg Q, eg "/server-msg-q"</p>
+<p style="text-align: justify;">- oflag - Operational flags</p>
+<p style="text-align: justify;">- mode - Permissions set by the owning process on the queue, usually 0660</p>
+<p style="text-align: justify;">- attr - Specify various atrributes of the msgQ being created</p>
+<p style="text-align: justify;">- - Like maximum size the msgQ can grow, should be less than or equal to /proc/sys/fs/mqueue/msg_max</p>
+<p style="text-align: justify;">- - Maximum size of the msg which msgQ can hold, should be less than or equal to /proc/sys/fs/mqueue/msgsize_max</p>
+<p style="text-align: justify;">if mq_open() succeeds, it returns a file (a handle) to msgQ. Using this handle, we perform all msgQ operations on msgQ throughout the program</p>
+<h3>Message queue closing</h3>
+<p style="text-align: justify;">A process can close a msgQ using below API</p>
+<p style="text-align: justify;">1. int mq_close(mqd_t msgQ);</p>
+<p style="text-align: justify;">- After closing the msgQ, the process cannot use the msgQ unless it open it again using mq_open()</p>
+<p style="text-align: justify;">- Operating system removes and destroy the msgQ if all processes using the msgQ have closed it</p>
+<p style="text-align: justify;">- OS maintains information regarding how many process are using same msgQ (invoked mq_open()). This concept is called reference counting</p>
+<p style="text-align: justify;">- msgQ is a kernel reqource which is being used by application process. For kernel resource, kernel keeps track how many user space processes are using that particular resource</p>
+<p style="text-align: justify;">- When a kernel resource (msgQ in our exemple) is created for the first time by application process, reference_count = 1</p>
+<p style="text-align: justify;">- If other process also invoke open() on existing kernel resource (mq_open() in our case), kernel increments reference_count by 1</p>
+<p style="text-align: justify;">- When a processes invoke close() in existing kernel resource (mq_close() in our case), kernel decrements reference_count by 1</p>
+<p style="text-align: justify;">- When reference_count = 0, kernel; cleanups/destroys that kernel resource</p>
+<p style="text-align: justify;">- Remember, kernel resource could be anything, it could be socket FD, msgQ FD etc</p>
+<h3>Enqueue a message</h3>
+<p style="text-align: justify;">A sending process can place a message in a message queue using below API</p>
+<p style="text-align: justify;">1. int mq_send(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);</p>
+<p style="text-align: justify;">- mq_send is for sending a message to the queue referenced by the descriptor msgQ</p>
+<p style="text-align: justify;">- The msg_ptr points to the message buffer, msg_len is the size of the message, which should be less than or equal to the message size for the queue</p>
+<p style="text-align: justify;">- msg_prio is the message priority, which is a non-negative number specifying the priority of the message</p>
+<p style="text-align: justify;">- Message are placed in the queue in the decreasing order of message priority, with the older messages for a priority coming before newer messages</p>
+<p style="text-align: justify;">- If the queue is full, mq_send blocks till there is space on the queue, unless the O_NONBLOCK flag is enabled for the message queue, in which case mq_send returns immediately with errno set to EAGAIN</p>
+<h3>Dequeue a message</h3>
+<p style="text-align: justify;">A receiving process can dequeue a message in a message queue using below API</p>
+<p style="text-align: justify;">1. int mq_receive(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);</p>
+<p style="text-align: justify;">- mq_receive is for retrieving a message from the queue referenced by the descriptor msgQ</p>
+<p style="text-align: justify;">- The msg_ptr points to the empty message buffer, msg_len is the size of the buffer in bytes</p>
+<p style="text-align: justify;">- The oldest msg of the highest priority is deleted from the queue and passed to the process in the buffer pointed by msg_ptr</p>
+<p style="text-align: justify;">- If the pointer msg_prio is not null, the priority of the received message is stored in the interger pointed by it</p>
+<p style="text-align: justify;">- The default behavior of mq_receive is to block if there is no message in the queue. However, if the O_NONBLOCK flag is enabled for the queue, and the queue is empty, mq_receive returns immediately with errno set to EAGAIN</p>
+<p style="text-align: justify;">- On success, mq_receive returns the number of bytes receoved in the buffer pointed by msg_ptr</p>
+<h3>Destroying a message queue</h3>
+<p style="text-align: justify;">A creating process can destroy a message queue using below API</p>
+<p style="text-align: justify;">1. int mq_unlink(const char *msgQ_name);</p>
+<p style="text-align: justify;">- mq_unlink destroys the msgQ (release the kernel resource)</p>
+<p style="text-align: justify;">- Should be called when the process has invoked mq_close() on msgQ</p>
+<p style="text-align: justify;">- Return -1 if it fails, 0 on success</p>
+<p style="text-align: justify;">- Postpone if other processes are using msgQ</p>
+<h3>Using a message queue</h3>
+<p style="text-align: justify;">A message queue IPC mechanism usually supports N:1 communication paradigm, meaning there can be N senders but 1 receiver per message queue</p>
+<p style="text-align: justify;">Multiple senders can open the same msgQ using msgQ name, and enque their msgs in the same queue</p>
+<p style="text-align: justify;">Receiver process can dequeue the messages from the message queue that was placed by different sender processes</p>
+<p style="text-align: justify;">However, receiving process can dequeue message from different message queues at the same time (multiplexing using slect())</p>
+<p style="text-align: justify;">A msg queue can support only one client process</p>
+<p style="text-align: justify;">Client can dequeue msgs from more than one msg queues</p>
+<p style="text-align: justify;">No limitation on server processes</p>
+<h3>Example</h3>
+<a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC">Code example of message queue</a>
+<h2>Shared Memory</h2>
+<h3>Memory mapping</h3>
+<p style="text-align: justify;">Virtual memory, physical memory and secondary memory setup</p>
+<p style="text-align: justify;">1. Not all programs needs secondary storages, but most non-trivial applications do</p>
+<p style="text-align: justify;">2. Memory mapping is used to change the secondary storage of the program to some other source, say some hardware device memory or some particular file on disk</p>
+<p style="text-align: justify;">3. Your application is not even aware of physical memory, let alone secondary storages</p>
+<p style="text-align: justify;">4. So, your same notepad application shall run seamlessly even if we change secondary storage source to printer/camera device memory</p>
+<img src="./img/mem.png" alt="Shared Memory" style="width:800px; height:400px;">
+<h3>Using external data source as shared memory</h3>
+<p style="text-align: justify;">Virtual pages of both the processes maps to same physical pages loaded in RAM</p>
+<p style="text-align: justify;">Physical pages in turn are read/written to extenal memory</p>
+<p style="text-align: justify;">Rule: a process never can access any address outside of its VAS is never violated</p>
+<p style="text-align: justify;">Any modification made by process A in its shared VM, shall be seen by process B</p>
+<h3>Using RAM itself as data source</h3>
+<img src="./img/sharedMemory.png" alt="Shared Memory" style="width:800px; height:500px;">
+<h3>mmap()</h3>
+<p style="text-align: justify;">void *mmap(void addr[.length], size_t length, int prot, int flags, int fd, off_t offset);</p>
+<p style="text-align: justify;"> mmap() creates a new mapping in the virtual address space of the
+    calling process.  The starting address for the new mapping is
+    specified in addr.  The length argument specifies the length of
+    the mapping (which must be greater than 0).</p>
+
+<p style="text-align: justify;">     If addr is NULL, then the kernel chooses the (page-aligned)
+    address at which to create the mapping; this is the most portable
+    method of creating a new mapping.  If addr is not NULL, then the
+    kernel takes it as a hint about where to place the mapping; on
+    Linux, the kernel will pick a nearby page boundary (but always
+    above or equal to the value specified by
+    /proc/sys/vm/mmap_min_addr) and attempt to create the mapping
+    there.  If another mapping already exists there, the kernel picks
+    a new address that may or may not depend on the hint.  The address
+    of the new mapping is returned as the result of the call.</p>
+
+<p style="text-align: justify;">    The contents of a file mapping (as opposed to an anonymous
+    mapping; see MAP_ANONYMOUS below), are initialized using length
+    bytes starting at offset offset in the file (or other object)
+    referred to by the file descriptor fd.  offset must be a multiple
+    of the page size as returned by sysconf(_SC_PAGE_SIZE).</p>
+
+<p style="text-align: justify;">    After the mmap() call has returned, the file descriptor, fd, can
+    be closed immediately without invalidating the mapping.</p>
+<h3>Design constraints for using shared memory as IPC</h3>
+<p style="text-align: justify;">Shared memory approach of IPC is used in a scenario where:</p>
+<p style="text-align: justify;">- Exactly one processes is responsible to update the shared memory (publisher process)</p>
+<p style="text-align: justify;">- Rest of the processes only read the shared memory (subscriber processes)</p>
+<p style="text-align: justify;">- The frequency of updating the shared memory by publisher process should not be very high</p>
+<p style="text-align: justify;">- If multiple processes attempts to update the shared memory at the same time, then it leads to write-wite conflict</p>
+<p style="text-align: justify;">- We need to handle this situation using mutual exclusion based synchronization</p>
+<p style="text-align: justify;">- Synchronization comes at the cost of performance, because we put the threads to sleep (in addition to their natural CPU preemption) in order to prevent concurrent access to critical section</p>
+<p style="text-align: justify;">When publisher process update the shared memory:</p>
+<p style="text-align: justify;">- The subscribers would not know about this update</p>
+<p style="text-align: justify;">- Therefore, after updating the shared memory, publisher needs to send a notification to all publishers which states that "shared memory has been updated"</p>
+<p style="text-align: justify;">- After receiving this notification, subscribers can read the update shared memory and update their internal data structures, if any</p>
+<p style="text-align: justify;">- The notification is just a small message, and can be sent out using other IPC mechanisms, such as Unix domain sockets or msg queues</p>
+<h3>Example</h3>
+<a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC">Code example of shared memory</a>
+<h2>Signals</h2>
+<p style="text-align: justify;">A system message sent from one process to another, not usually used to transfer data but instead used to remotely command the partnered process</p>
+<p style="text-align: justify;">When a process receives a signal. Either of the three things can happen:</p>
+<p style="text-align: justify;">1. Default</p>
+<p style="text-align: justify;">2. Customized</p>
+<p style="text-align: justify;">3. Ignore</p>
+<p style="text-align: justify;">A signal handler routine is a special function which is invoked when the process receives a signal</p>
+<p style="text-align: justify;">We need to register the routine against the type of signal (that is, process needs to invoke the function F when signal S is received)</p>
+<p style="text-align: justify;">Signal handler routine are executed at the highest priority, preemting the normal execution flow of the process</p>
+<img src="./img/signal.png" alt="signal" style="width:800px; height:900px;"> 
+<h3>Well known signals in linux</h3>
+<p style="text-align: justify;">1. SIGINT - interrupt (i.e., Ctrl-c)</p>
+<p style="text-align: justify;">2. SIGUSR1 and SIGUSR2 - user defined signals</p>
+<p style="text-align: justify;">3. SIGKILL - sent to process from kernel when kill -9 is invoked on pid, this signal cannot be caught by the process</p>
+<p style="text-align: justify;">4. SIGABRT - raised by abort() by the process itself, cannot be blocked, the process is terminated</p>
+<p style="text-align: justify;">5. SIGTERM - raised when kill is invoked, can be caught by process to execute user defined action</p>
+<p style="text-align: justify;">6. SIGSEGV - segmentation fault, raised by the kernel to the process when illegal memory is referenced</p>
+<p style="text-align: justify;">7. SIGCHILD - whenever a child terminates, this signal is sent to the parent. Upon receiving this signal, parent should execute wait() system call to read child status. Need to understand fork() to understand this signal</p>
+<h3>Three ways of generating signals in linux</h3>
+<p style="text-align: justify;">1. Raising a signal from OS to a process</p>
+<p style="text-align: justify;">2. Sending a signal from process A to itself (using raise())</p>
+<p style="text-align: justify;">3. Sending signal from process A to process B (using kill())</p>
+<h3>Example</h3>
+<a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/signal">Code example of signal</a>
+</div>
+<div class="References">
+    <h2>References</h2>
+    <p>Linux Inter Process Communication (IPC) from Scratch in C</p>
+</div>
+</div>
+</div>		
+</div>
+</body>
+
+</html>
