@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>contents</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="http://html5-templates.com/" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Place favicon.ico in the root directory -->
+<link rel="stylesheet" href="../css/contents_style.css">
+<script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+<div class="wrapAll clearfix">
+<div class="sidebar">
+<div class="logo">
+    <a href="/"><img src='../img/logo.png' alt="logo"></a>
+</div>
+<div class="navigation">
+<ul>
+<li><a style="font-size:160%; " href="../index.html"><b> Main page </b></a></li>
+<li><a style="font-size:160%; " href="../contents.html"><b>Contents</b></a></li>
+<li><a style="font-size:160%; " href="../books.html"><b>Books</b></a></li>
+</ul>
+</div>
+</div>
+<div class="mainsection">
+<div class="article">
+<div class="device_driver">
+<h2>Linux Kernel Module (LKM)</h2>
+<p style="text-align: justify;">Linux supports dynamic instertion and removal of code from  the kernl while the system is up and running. The code what we add and remove at run time is called a kernel module</p>
+<p style="text-align: justify;">Once the LKM is loaded into the Linux kernel, you can start using new features and fucntionalities exposed by the kernel module without even restarting the device</p>
+<p style="text-align: justify;">LKM dynamically extends the functionality of the kernel by introducing new features to the kernel such as security, device drivers, file system drivers, system call</p>
+<p style="text-align: justify;">Support for LKM allows your embedded Linux systems to have only minimal base kernel image (less runtime storage) and optional device drivers and other features are supplied on demand via module insertion</p>
+<h3>Static(y)</h3>
+<p style="text-align: justify;">When you build a Linux kernel, you can make your module statically linked to the kernel image (module becomes part of the final Linux kenrel image). This method increases the size of the final Linux kernel image. Since the module is 'built-in' into the Linux kernel image, you can not 'unload' the module. It occupies the memory permanently during run time</p>
+<h3>Dynamic(m)</h3>
+<p style="text-align: justify;">When you build a Linux kernel, these modules are NOT build into the final kernel image, and rather there are compiled and linked separately to produce .ko files. You can dynamically load and unload these modules from the kernel using user space programs such as insmod, modprobe, rmmod</p>
+<h3>Kernel header vs user-space header</h3>
+<p style="text-align: justify;">Since you write a kernel module that is going to be executed in kernel space, you should be using kernel headers, never include any user space library headers like C std library header files</p>
+<p style="text-align: justify;">No user space library is linked to the kernel module, most of the relevant kernel headers live in linux_source_bse/inlcude/linux/</p>
+<h3>Module initializtion function</h3>
+<p style="text-align: justify;">Prototype: int fun_name(void);</p>
+<p style="text-align: justify;">Must return a value, 0 for success, nonzero means module initialization failed. So the module will not get loaded in the kernel</p>
+<p style="text-align: justify;">This is an entry point to your module (like main). This function will get called during boot time in the case of static modules</p>
+<p style="text-align: justify;">In the case of dynamic modules, this function will get called during module insertion</p>
+<p style="text-align: justify;">These should be one module initialization entry point in the module</p>
+<h3>Module clean-up function</h3>
+<p style="text-align: justify;">Prototype: int fun_name(void);</p>
+<p style="text-align: justify;">This is an entry point when the module is removed</p>
+<p style="text-align: justify;">Since you can not remove static modules, clean-up function will get called only in the case of dynamic modules when it is removed using user space command such as rmmod</p>
+<p style="text-align: justify;">If you write a module and you are sure that it will always be statically linked with the kernel, then there is no need to implement this function</p>
+<p style="text-align: justify;">Even if your static module has a clean-up function, the kernel build system will remove it during the build if there is an __exit marker</p>
+<p style="text-align: justify;">Typically, you must do exact reserse operation what you had done in the module init function, undoing init function</p>
+<p style="text-align: justify;">Free memory which are requested in init function</p>
+<p style="text-align: justify;">De-init the devices or leave the device in the proper state</p>
+<h3>__init and __exit macros</h3>
+<p style="text-align: justify;">__init and __exit makes sense only for static modules (built-in modules)</p>
+<p style="text-align: justify;">__init is a macro which will be translated into compiler directive, which instructs the compiler to put the code in .init section of the final ELF of linux kernel image</p>
+<p style="text-align: justify;">.init section will be freed from the memory by the kernel during boot time once all the initialization functions get executed</p>
+<p style="text-align: justify;">Since the built-in driver cannot be unloaded, its init function will not be called again until the next reboot, that's why there is no need to keep references to its init function anymore</p>
+<p style="text-align: justify;">so using __init macro is a technique, when used with a function, the kernel will free the code memory of that function after its execution</p>
+<p style="text-align: justify;">Similarly, you can use __initdata with variables that will be dropped after the initialization. __initdata, which works similarly to __init but for init variables rater than functions</p>
+<p style="text-align: justify;">You know that for built-in modules clean-up function is not required</p>
+<p style="text-align: justify;">So, when you use the __exit macro with a clean-up function, the kernel build system will exclude those functions during the build process itself</p>
+<img src="./img/init_exit_kenrel_module.png" alt="signal" style="width:1200px; height:600px;"> 
+<h3>Module entry points registration</h3>
+<p style="text-align: justify;">module_init(my_kernel_module_init);</p>
+<p style="text-align: justify;">module_exit(ny_kernel_module_exit);</p>
+<p style="text-align: justify;">These are the macros used to register your module's init function and clean-up function with the kernel</p>
+<p style="text-align: justify;">Here module_init/module_exit is not a function, but a macro defined in linux/module.h</p>
+<p style="text-align: justify;">For example, module_init() will its parameter to the init entry point database of the kernel</p>
+<p style="text-align: justify;">module_eixt() will add its parameter to exit entry point database of the kernel</p>
+<h3>Module descripton</h3>
+<p style="text-align: justify;">MODULE_LICENSE is macro used by the kernel module to announce its license type</p>
+<p style="text-align: justify;">If you a load module whose license parameter is non-GPL(General Public License), then kernel triggers warning of being tained. Its way of kernel letting the users and developers know its non-free license based module</p>
+<p style="text-align: justify;">The developer community may ignore the bug reports you submit after loading the proprietary licensed module</p>
+<p style="text-align: justify;">The declared module license is also used to decide whether a given module can have access to the small number of "GPL-only" symbols in the kernel</p>
+<p style="text-align: justify;">Go to linux/module.h to find out what are the allowed parameters which can be used with this macro to load the module without tainting the kernel</p>
+<p style="text-align: justify;">MODULE_INFO(name, "string_value);</p>
+<p style="text-align: justify;">You can see the module information by running the below command on the .ko file</p>
+<p style="text-align: justify;">arm-linux-gnueabihf-objdump -d -j .modifo file.ko</p>
+<h3>Building a kernel module</h3>
+<p style="text-align: justify;">Kernel module can be built in 2 ways</p>
+<p style="text-align: justify;">1. Statically linked against the kernel image</p>
+<p style="text-align: justify;">2. Dynamically loadable</p>
+<p style="text-align: justify;">In most of the exercises in this course we will be writing and using dynamically loadable kernel modules</p>
+<img src="./img/build_kernel_module.png" alt="signal" style="width:1200px; height:600px;"> 
+<h3>In-tree and out of tree</h3>
+<p style="text-align: justify;">Basically, out of tree means outside of the Linux kernel source tree</p>
+<p style="text-align: justify;">The module which are already part of the Linux kernel are called in-tree modules. (approved by the kernel developers and maintainers)</p>
+<p style="text-align: justify;">When you write a module separately (which is not approved and many by buggy), build and link it against the running kernel, then its called as out of the tree module.</p>
+<p style="text-align: justify;">Hence when you load an out of tree kernel module, kernel throws a warning message saying it got tainted.</p>
+<p style="text-align: justify;">Modules are built using "kbuild" which is the build system used by the Linux kernel</p>
+<p style="text-align: justify;">Modules must use "kbuild" to stay compatible with changes in the build infrastructure and to pick up the right flags to GCC</p>
+<p style="text-align: justify;">To build external modules, you must have a prebuilt kernel source available that contains the configuration and header files used in the build</p>
+<p style="text-align: justify;">This ensures that as the developer changes the kernel configuration, his custom driver is automatically rebuilt with the correct kernel configuration</p>
+<h3>Important note</h3>
+<p style="text-align: justify;">When you are building out of tree (external) module, you need to have a complete and precompiled kernel source tree on your system</p>
+<p style="text-align: justify;">There reason is, modules are linked against object files found in the kernel source tree</p>
+<p style="text-align: justify;">You can not compile your module against one Linux kernel version and load it into the system, which is running kernel of different version. The module load may not be successful, and even if it is successful, you will encounter run time issues with the symbols</p>
+<p style="text-align: justify;">Thumb rule: "Have a precompiled Linux kernel source tree on your machine and build your module against that</p>
+<p style="text-align: justify;">Thre are two ways to obtain a prebuilt kernel version</p>
+<p style="text-align: justify;">1. Download kernel from your distributor and build it by yourself</p>
+<p style="text-align: justify;">2. Install the Linux-headers of the target Linux kernel</p>
+<h3>Command systax</h3>
+<p style="text-align: justify;">make -C $KDIR M=$PWD [Targets]</p>
+<p style="text-align: justify;">-C $KDIR: The directory where the kernel source is located. "make" will actually change to the specified directory when executing and will change back when finished</p>
+<p style="text-align: justify;">M=$PWD: Informs kbuild that an external module is being built. The value given to "M" is the absolute path of the diretory where the external module (kbuild file) is located</p>
+<p style="text-align: justify;">[Target]
+<p style="text-align: justify;">modules: The default target for external modules. It has the same functionality as if no target was specified</p>
+<p style="text-align: justify;">modules_install: Install the external module(s). The default locataion is /lib/modules/kernel_release/extra/, but a prefix may be added with INSTALL_MOD_PATH</p>
+<p style="text-align: justify;">clean: Remove all generated files in the module directory only</p>
+<p style="text-align: justify;">help: List the available targets for external modules</p>
+<h3>Creating a local Makefile</h3>
+<p style="text-align: justify;">In the local makefile you should define a kbuild variable like below</p>
+<p style="text-align: justify;">obj-X:= module_name.o</p>
+<p style="text-align: justify;">Here obj-X is kbuild variable and "X" takes one of the below values</p>
+<p style="text-align: justify;">X = n, Do not compile the module</p>
+<p style="text-align: justify;">X = y, Compile the module and link with kernel image</p>
+<p style="text-align: justify;">X = m, Compile as dynamically loadable kernel module</p>
+</div>
+</div>
+</div>		
+</div>
+</body>
+
+</html>
