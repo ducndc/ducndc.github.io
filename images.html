@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>images</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="canonical" href="http://html5-templates.com/" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="./css/contents_style.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <style>
+            #content { display: none; }
+        </style>
+        <script>
+            async function hashPassword(password) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(password);
+                const hash = await crypto.subtle.digest("SHA-256", data);
+                return Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+            }
+            async function checkPassword() {
+                var password = document.getElementById("password").value;
+                var hashedPassword = await hashPassword(password);
+                var correctHashedPassword = "7fe074cbed63129d00484b8e93b90118ccca3c1afe17bfb5030da92f5b31af87"; // Mật khẩu "123456" đã được băm
+                if (hashedPassword === correctHashedPassword) {
+                    document.getElementById("login").style.display = "none";
+                    document.getElementById("content").style.display = "block";
+                } else {
+                    alert("Password incorrect!");
+                }
+            }
+        </script>
+        <style>
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+                padding: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .gallery img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                cursor: pointer;
+                border-radius: 10px;
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .gallery img:hover {
+                transform: scale(1.1);
+                box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+            }
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+            .modal img {
+                max-width: 90%;
+                max-height: 80%;
+                border-radius: 10px;
+                box-shadow: 0 5px 20px rgba(255, 255, 255, 0.5);
+            }
+            .close {
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                font-size: 2em;
+                color: #fff;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
+            .close:hover {
+                color: #f00;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapAll clearfix">
+            <div class="sidebar">
+                <div class="logo">
+                    <a href="/"><img src='img/logo.png' alt="logo"></a>
+                </div>
+                <div class="navigation">
+                    <ul>
+                        <li><a style="font-size:160%; "  href="index.html"> <b> Main page </b> </a></li>
+                        <li><a style="font-size:160%; "  href="contents.html"> <b> Contents </b></a></li>
+                        <li><a style="font-size:160%; "  href="books.html"> <b> Books </b> </a></li>
+                        <li><a style="font-size:160%; "  href="poetry.html"> <b> Poetry </b> </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="login" id="login">
+                <h2>Enter password to continue</h2>
+                <input type="password" id="password" placeholder="Enter password">
+                <button onclick="checkPassword()">Login</button>
+            </div>
+            <div class="mainsection" id="content">
+                <div class="gallery">
+                    <img src="assets/images/university/university.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/machine.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/plant.jpg" onclick="openModal(this.src)">
+                    <img src="assets/pictures/img.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/book_bg.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/machine.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/plant.jpg" onclick="openModal(this.src)">
+                    <img src="assets/pictures/img.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/book_bg.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/machine.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/plant.jpg" onclick="openModal(this.src)">
+                    <img src="assets/pictures/img.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/book_bg.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/machine.jpg" onclick="openModal(this.src)">
+                    <img src="assets/images/background/plant.jpg" onclick="openModal(this.src)">
+                    <img src="assets/pictures/img.jpg" onclick="openModal(this.src)">
+                </div>
+                <div class="modal" id="imageModal" onclick="closeModal()">
+                    <img id="modalImage" src="">
+                </div>
+                <script>
+                    function openModal(src) {
+                        document.getElementById("modalImage").src = src;
+                        document.getElementById("imageModal").style.display = "flex";
+                    }
+                    function closeModal() {
+                        document.getElementById("imageModal").style.display = "none";
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
