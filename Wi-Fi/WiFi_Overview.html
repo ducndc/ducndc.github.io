@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>contents</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="canonical" href="http://html5-templates.com/" />
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="../css/contents_style.css">
+        <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+<body>
+    <div class="wrapAll clearfix">
+        <div class="sidebar">
+            <div class="logo">
+                <a href="/"><img src='../img/logo.png' alt="logo"></a>
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li><a style="font-size:160%; " href="../index.html"><b> Main page </b></a></li>
+                    <li><a style="font-size:160%; " href="../contents.html"><b>Contents</b></a></li>
+                    <li><a style="font-size:160%; " href="../books.html"><b>Books</b></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mainsection">
+            <div class="article">
+                <div class="WPS">
+                    <h2>802.11 Frame Types</h2>
+                    <table style="width: 100%;">
+                    <colgroup>
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 30%;">
+                    </colgroup>
+                    <th>Management</th>
+                    <th>Establish and maintain connections</th>
+                    <th>Beacon, Probe, Authentication</th>
+                    </tr>
+                    <th>Control</th>
+                    <th>Channel access control</th>
+                    <th>ACK, RTS, CTS</th>
+                    </tr>
+                    <th>Data</th>
+                    <th>Carry user data</th>
+                    <th>Data, QoS Data, Null Data</th>
+                    </tr>
+                    </table>
+                    <h2>Management Frames</h2>
+                    <table style="width: 100%;">
+                    <colgroup>
+                    <col span="1" style="width: 45%;">
+                    <col span="1" style="width: 45%;">
+                    </colgroup>
+                    <th>Beacon</th>
+                    <th>The AP periodically broadcasts SSID, supported capabilities, and time information.</th>
+                    </tr>
+                    <th>Probe Request/Response</th>
+                    <th>Scan and respond to available SSIDs.</th>
+                    </tr>
+                    <th>Authentication</th>
+                    <th>Start the authentication process (Open System or Shared Key).</th>
+                    </tr>
+                    </tr>
+                    <th>Association Request/Response</th>
+                    <th>Establish a connection between STA and AP after authentication.</th>
+                    </tr>
+                    </tr>
+                    <th>Reassociation</th>
+                    <th>STA requests reconnection when roaming through another AP.</th>
+                    </tr>
+                    </tr>
+                    <th>Disassociation</th>
+                    <th>Disconnect the logic from the AP.</th>
+                    </tr>
+                    </tr>
+                    <th>Deauthentication</th>
+                    <th>Disconnect all connections (logical and security).</th>
+                    </tr>
+                    </tr>
+                    <th>Action</th>
+                    <th>Used for advanced functions such as BSS Transition Management (BTM), Radio Measurement, Block ACK, Fast Transition (FT)…</th>
+                    </tr>
+                    </table>
+                    <h2>Control Frames</h2>
+                    <table style="width: 100%;">
+                    <colgroup>
+                    <col span="1" style="width: 45%;">
+                    <col span="1" style="width: 45%;">
+                    </colgroup>
+                    <th>ACK</th>
+                    <th>Successful response to a received message.</th>
+                    </tr>
+                    <th>RTS (Request to Send)</th>
+                    <th>It is recommended to reserve the line in advance to avoid conflicts.</th>
+                    </tr>
+                    <th>CTS (Clear to Send)</th>
+                    <th>Response to RTS, allowing data to be sent.</th>
+                    </tr>
+                    </tr>
+                    <th>Block ACK Request/Response</th>
+                    <th>Batch QoS packet validation.</th>
+                    </tr>
+                    </tr>
+                    <th>RPS-Poll</th>
+                    <th>The STA tells the AP that it is awake and wants to receive data.</th>
+                    </tr>
+                    </table>
+                    <h2>Data Frames</h2>
+                    <table style="width: 100%;">
+                    <colgroup>
+                    <col span="1" style="width: 45%;">
+                    <col span="1" style="width: 45%;">
+                    </colgroup>
+                    <th>Data</th>
+                    <th>Packet containing user payload (TCP/IP, etc.)</th>
+                    </tr>
+                    <th>QoS Data</th>
+                    <th>Data packet with priority information (WMM - voice/video).</th>
+                    </tr>
+                    <th>Null Data</th>
+                    <th>The packet has no payload, just to indicate the status (sleep/awake).</th>
+                    </tr>
+                    </tr>
+                    <th>QoS Null</th>
+                    <th>Like Null Data, but with QoS support.</th>
+                    </tr>
+                    </table>
+                    <h2>Security related news (WPA/WPA2/WPA3)</h2>
+                    <table style="width: 100%;">
+                    <colgroup>
+                    <col span="1" style="width: 45%;">
+                    <col span="1" style="width: 45%;">
+                    </colgroup>
+                    <th>EAPOL-Key Frames</th>
+                    <th>4 ways to use WPA/WPA2 handshake (msg1–msg4)</th>
+                    </tr>
+                    <th>SAE Commit/Confirm</th>
+                    <th>WPA3-Personal replaces PSK, prevents offline dictionary attack</th>
+                    </tr>
+                    <th>PMF (Protected Management Frames)</th>
+                    <th>Used to encrypt messages such as Deauth/Disassoc</th>
+                    </tr>
+                    </table>
+                    <h2>Wi-Fi connection</h2>
+                    <img src="./images/wifi-message.png" alt="Connection" style="width:800px; height:800px;">
+                    <h2>Common Errors in 4-Way Handshake</h2>
+                    <table style="width: 100%;">
+                    <colgroup>
+                    <col span="1" style="width: 45%;">
+                    <col span="1" style="width: 45%;">
+                    </colgroup>
+                    <th>MIC Different</th>
+                    <th> PMK mismatch (wrong PSK) or Packet modified or corrupted</th>
+                    </tr>
+                    <th>Timeout MSG1</th>
+                    <th>STA not responding → driver error, weak signal, STA does not support standard</th>
+                    </tr>
+                    <th>Replay Counter mismatch </th>
+                    <th>STA/AP using different Replay Counter values → software error or attack</th>
+                    </tr>
+                    </tr>
+                    <th>Handshake Loop (retry MSG1)</th>
+                    <th>STA returns Msg2 with wrong MIC multiple times → AP retry → loop</th>
+                    </tr>
+                    </table>
+                    <h2>WPA2 vs WPA3</h2>
+                    <table style="width: 100%;">
+                    <colgroup>
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 30%;">
+                    <col span="1" style="width: 30%;">
+                    </colgroup>
+                    <th>Characteristic</th>
+                    <th>WPA2</th>
+                    <th>WPA3</th>
+                    </tr>
+                    <th>Source PMK</th>
+                    <th>PSK (Pre-Shared Key) or 802.1X</th>
+                    <th>SAE (Simultaneous Authentication of Equals)</th>
+                    </tr>
+                    <th>Security capabilities</th>
+                    <th>Weak with weak PSK, vulnerable to offline attacks</th>
+                    <th>Cannot brute-force offline</th>
+                    </tr>
+                    <th>Handshake</th>
+                    <th>4-way EAPOL </th>
+                    <th>SAE → 4-way (like WPA2, after authentication)</th>
+                    </tr>
+                    </table>
+                    <h2>Wireshark Message</h2>
+                    <a href="./messages/6ec7dbaf0411.pcapng">802.11 Messages with Wireshark</a>
+                </div>
+            </div>
+        </div>		
+    </div>
+</body>
+
+</html>
