@@ -153,6 +153,10 @@ thead {
     }
 }
 
+.poem p, .poem h3 {
+    font-family: 'Literata', serif;
+}
+
 
 .sidebar {
   float: left;
