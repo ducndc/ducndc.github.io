@@ -114,6 +114,46 @@ thead {
   background-color: #f8f9fa;
 }
 
+.poetry {
+    margin: 2em auto;
+    max-width: 700px;
+    padding: 1.5em;
+    background: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    animation: fadeIn 2s ease-in-out forwards;
+    opacity: 0;
+}
+
+.poem {
+    margin-bottom: 3em;
+    text-align: center;
+}
+
+.poem h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.6em;
+    margin-bottom: 0.8em;
+    border-bottom: 1px solid #ccc;
+    display: inline-block;
+    padding-bottom: 0.2em;
+}
+
+.poem p {
+    font-family: 'Georgia', serif;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    margin: 0.4em 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
 .sidebar {
   float: left;
   width: 15%;
