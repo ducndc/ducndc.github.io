@@ -203,6 +203,37 @@
                     <h2>Modulation and Coding Scheme (MCS)</h2>
                     <p style="text-align: justify;">A Modulation and Coding Scheme (MCS) is a method used in wireless communication to determine how data is transmitted. It combines modulation techniques and coding rates to balance data rate and reliability based on channel conditions. MCS is a crucial metric in Wi-Fi and cellular networks, impacting performance and efficiency.</p>
                     <a href="https://mcsindex.net/">MCS Table (HT/VHT/HE) - MCSINDEX.NET</a>
+                    <h2>Clear Channel Assessment (CCA)</h2>
+                    <p style="text-align: justify;">Clear Channel Assessment (CCA) is a mechanism used in Wi-Fi (IEEE 802.11) to determine whether the wireless channel is idle or busy before a device attempts to transmit data. It is a core part of the Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA) protocol.</p>
+                    <p style="text-align: justify;">CCA operates in two main modes:</p>
+                    <h3>Energy Detection (ED)</h3>
+                    <p style="text-align: justify;">Measures the total energy (signal strength) on the channel.</p>
+                    <p style="text-align: justify;">If the energy level exceeds a defined ED Threshold, the channel is considered busy.</p>
+                    <p style="text-align: justify;">Detects both Wi-Fi and non-Wi-Fi signals (e.g., microwave ovens, Bluetooth).</p>
+                    <h3>Carrier Sense (CS)</h3>
+                    <p style="text-align: justify;">Looks for valid 802.11 preambles or headers.</p>
+                    <p style="text-align: justify;">If a valid Wi-Fi signal is detected, the channel is marked busy.</p>
+                    <h3>Important Parameters</h3>
+                    <table style="width: 100%;">
+                    <colgroup>
+                    <col span="1" style="width: 45%;">
+                    <col span="1" style="width: 45%;">
+                    </colgroup>
+                    <th>ED Threshold (EDCCA)    </th>
+                    <th> The energy level above which the channel is considered busy</th>
+                    </tr>
+                    <th>CCA Busy Fraction / Air Time    </th>
+                    <th>The percentage of time the channel is busy</th>
+                    </tr>
+                    </tr>
+                    <th>Clear Channel Time  </th>
+                    <th>Minimum idle time required before transmitting</th>
+                    </tr>
+                    </table>
+                    <h3>Practical Use Cases</h3>
+                    <p style="text-align: justify;">Wi-Fi Channel Optimization: Choosing channels with lower CCA busy rates improves performance.</p>
+                    <p style="text-align: justify;">RF Calibration: Setting the ED threshold correctly helps avoid false positives or missed transmissions.</p>
+                    <p style="text-align: justify;">Network Performance Monitoring: High CCA busy time often means poor throughput or high interference.</p>
                 </div>
             </div>
         </div>		
