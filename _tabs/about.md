@@ -1,16 +1,10 @@
 ---
-# the default layout is 'page'
-icon: fas fa-info-circle
-order: 4
----
-
----
 layout: page
 title: About
 permalink: /about/
+icon: fas fa-info-circle
+order: 4
 ---
-
-# 👋 About Me
 
 ## 📜 History
 
@@ -27,32 +21,88 @@ My work focuses on **researching and developing firmware** for network devices.
 
 ---
 
-## 🎓 Education
+<style>
+.table-block {
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+}
+.table-block table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+}
+.table-block th, .table-block td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  word-wrap: break-word;
+  text-align: left;
+}
+.table-block caption {
+  caption-side: top;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0.5rem 0;
+  text-align: left;
+}
+</style>
 
-| University                                 | Major                                          | Year       |
-|-------------------------------------------|------------------------------------------------|------------|
-| Hanoi University of Science and Technology | Engineering Degree in Electronics & Telecommunications | 2017–2022  |
+<div class="table-block">
+  <caption>🎓 Education</caption>
+  <table>
+    <thead>
+      <tr><th>University</th><th>Major</th><th>Year</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hanoi University of Science and Technology</td>
+        <td>Electronics and Telecommunications</td>
+        <td>2017–2022</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
----
+<div class="table-block">
+  <caption>💼 Experience</caption>
+  <table>
+    <thead>
+      <tr><th>Institution</th><th>Position</th><th>Period</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Embedded Networking Laboratory (EmNetLab)</td>
+        <td>Research Assistant</td>
+        <td>Jul/2019 – Aug/2022</td>
+      </tr>
+      <tr>
+        <td>Viettel High Technology Industries (VHT)</td>
+        <td>Embedded Software Engineer</td>
+        <td>Oct/2022 – present</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-## 💼 Experience
-
-| Institution                                | Position                    | Period              |
-|--------------------------------------------|-----------------------------|---------------------|
-| Embedded Networking Laboratory (EmNetLab)  | Research Assistant          | Jul/2019 – Aug/2022 |
-| Viettel High Technology Industries (VHT)   | Embedded Software Engineer  | Oct/2022 – present  |
-
----
-
-## 📚 Publications
-
-| Title                                                                                 | Year |
-|---------------------------------------------------------------------------------------|------|
-| Underwater Searching based on AUV - ASV Cooperation                                   | 2022 |
-| Urgency-differentiated Data Acquisition in Large UAV-integrated IoT Systems          | 2022 |
+<div class="table-block">
+  <caption>📚 Publications</caption>
+  <table>
+    <thead>
+      <tr><th>Title</th><th>Year</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Underwater Searching based on AUV - ASV Cooperation</td>
+        <td>2022</td>
+      </tr>
+      <tr>
+        <td>Urgency-differentiated Data Acquisition in Large UAV-integrated IoT Systems</td>
+        <td>2022</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 ---
 
 Thanks for visiting my blog!  
 If you’re interested in embedded systems, IoT, or networking technologies, feel free to connect with me.
- }
