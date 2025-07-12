@@ -5,19 +5,32 @@ permalink: /about/
 icon: fas fa-info-circle
 order: 4
 ---
+<div style="text-align: justify">
+
+My research about IoT systems developed UAV (Unmanned Aerial Vehicle) and developed several projects about embedded systems. In the near future, my aim is to become a software engineer who works on projects about UAVs, IoT, automotive, and embedded systems.
+
+</div>
 
 ## 📜 History
 
+<div style="text-align: justify">
+
 Since September 2017, I have studied computer engineering at Hanoi University of Science and Technology.  
 In June 2019, I joined the Embedded Networking Laboratory (EmNetLab) at C9-411, under the Institute of Electronics and Telecommunications.
+
+</div>
 
 At the Lab, I focused on:
 - Researching IoT systems
 - Developing UAV (Unmanned Aerial Vehicles)
 - Building several embedded systems projects
 
+<div style="text-align: justify">
+
 Since September 2022, I have been working at the Transport Network Technologies Center of Viettel High Technology Industries Corporation (VHT), Viettel Group, as an Embedded Software Engineer.  
 My work focuses on researching and developing firmware for network devices.
+
+</div>
 
 ---
 
