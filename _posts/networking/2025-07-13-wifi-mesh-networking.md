@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mesh System"
-date: 2025-07-12 10:00:00 +0700
+date: 2023-09-12 10:00:00 +0700
 categories: [Networking]
 ---
 
