@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 icon: fas fa-info-circle
-order: 4
+order: 3
 ---
 <div style="text-align: justify">
 
