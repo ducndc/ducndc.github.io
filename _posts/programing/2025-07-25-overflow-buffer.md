@@ -53,7 +53,19 @@ Một minh họa đơn giản giúp bạn thấy cách thức hoạt động c�
 Chúng ta hãy xem xét đoạn mã này:
 </div>
 
-<pre><code>```c int toto(int a, int b, int c) { int i = 4; return (a + i); } int main(int argc, char **argv) { toto(0, 1, 2); return 0; } ```</code></pre>
+```c 
+int toto(int a, int b, int c) 
+{ 
+	int i = 4; 
+	return (a + i); 
+} 
+
+int main(int argc, char **argv) 
+{ 
+	toto(0, 1, 2); 
+	return 0; 
+} 
+```
 
 <div style="text-align: justify; text-indent: 2em;">
 Bây giờ chúng ta sẽ phân tích nhị phân bằng gdb để hiểu rõ hơn về ba bước này. Hai thanh ghi được đề cập ở đây: EBP trỏ đến khung hiện tại (con trỏ khung) và ESP trỏ đến đỉnh ngăn xếp.
