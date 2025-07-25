@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Tràn bộ đệm"
-date: 2025-07-14 10:00:00 +0700
+date: 2025-07-24 10:00:00 +0700
 categories: [Programing]
 ---
 
