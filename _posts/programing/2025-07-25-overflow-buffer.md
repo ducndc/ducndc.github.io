@@ -492,7 +492,7 @@ static char *ptr_to_something;
 Bộ đệm (buf) và con trỏ (ptr_to_something) có thể cùng nằm trong phân đoạn bss (trong ví dụ này), hoặc cả hai đều nằm trong phân đoạn dữ liệu, hoặc cả hai đều nằm trong phân đoạn heap, hoặc bộ đệm có thể nằm trong phân đoạn bss và con trỏ nằm trong phân đoạn dữ liệu. Thứ tự này rất quan trọng vì heap phát triển theo chiều hướng lên trên (ngược lại với stack), do đó nếu chúng ta muốn ghi đè con trỏ, nó phải được đặt sau bộ đệm bị tràn.
 </div>
 
-![H1](/assets/img/programing/poiter_heap.png)
+![H1](/assets/img/programing/pointer_heap.png)
 
 #### Khó khăn
 
