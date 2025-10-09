@@ -142,3 +142,7 @@ Put it in the linux-5.10.54 folder, and run it:
 chmod +x run.sh
 ./run.sh . image/
 ```
+
+<div style="text-align: justify; text-indent: 2em;">
+You can login with username root without password
+</div>
