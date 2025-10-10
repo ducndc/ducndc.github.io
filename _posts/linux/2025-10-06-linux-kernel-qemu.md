@@ -15,7 +15,7 @@ When used as a machine emulator, QEMU can run OSes and programs made for one mac
 
 <div style="text-align: justify; text-indent: 2em;">
 When used as a virtualizer, QEMU achieves near native performance by executing the guest code directly on the host CPU. QEMU supports virtualization when executing under the Xen hypervisor or using the KVM kernel module in Linux. When using KVM, QEMU can virtualize x86, server and embedded PowerPC, 64-bit POWER, S390, 32-bit and 64-bit ARM, and MIPS guests.
-</dev>
+</div>
 
 ### Install QEMU
 
