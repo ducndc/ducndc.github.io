@@ -18,7 +18,7 @@ Its components:
 And the flow of network packets through the Netfilter:
 </div>
 
-![H1](/assets/img/linux/Netfilter-packet-flow.svg)
+![H1](/assets/img/linux/netfilterdataflow.png)
 
 ## Netfilter Hooks in the Linux Kernel
 
