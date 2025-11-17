@@ -1,0 +1,50 @@
+---
+layout: post
+title: "Hacking Course"
+date: 2025-10-23 10:00:00 +0700
+categories: [Networking]
+---
+
+## Elements of Information Security
+### Confidenitality
+<div style="text-align: justify; text-indent: 2em;">
+  Assurance that the information us accessible only to those authorized to have access
+</div>
+
+### Itegrity
+<div style="text-align: justify; text-indent: 2em;">
+  The trustworthiness of data or resources in iterms of preventing improper or unauthorized changes
+</div>
+
+### Availability
+<div style="text-align: justify; text-indent: 2em;">
+  Assurance the the systems responsible for delivering, storing, and processing information are accessible when required by the authorized users
+</div>
+
+### Authenticity
+<div style="text-align: justify; text-indent: 2em;">
+  Refers to the characteristic of a communocation, document, or an data that ensures the quality of being genuine
+</div>
+
+### Non-Repuciation
+<div style="text-align: justify; text-indent: 2em;">
+A guarantee that the sender of a messgae connot later deny having sent the message and that the recipient canot deny having received the message
+</div>
+
+## Tatics, Techniques, and Procedures (TTPs)
+
+attack.mitre.org
+
+Attackers attempt various attack techniques to exploit vulnerabilities in a computer sustem or its security policy and controls in order to fulfil their motives
+
+## Hacker and their Motivations
+1. White Hat Hackers
+2. Black Hat Hackers
+3. Gray Hat Hackers
+4. State-Sponsored Hackers
+
+## Ethical Hacking
+To prevent hackers from gaining access to the organization's information systems
+To analyze and strengthen an organization's security posture, including policies, network protection infrastructure, and end-user practices
+
+![H1](/assets/img/networking/CEH_Ethical.png)
