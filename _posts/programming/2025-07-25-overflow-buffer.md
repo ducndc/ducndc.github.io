@@ -2,7 +2,7 @@
 layout: post
 title: "Tràn bộ đệm"
 date: 2025-07-24 10:00:00 +0700
-categories: [Programing]
+categories: [Programming]
 ---
 
 ## Bộ nhớ tiến trình
@@ -27,7 +27,7 @@ Các phần .bss và .data dành riêng cho các biến toàn cục và được
 Phần bộ nhớ cuối cùng, .text, chứa các hướng dẫn (ví dụ: mã chương trình) và có thể bao gồm dữ liệu chỉ đọc.
 </div>
 
-![H1](/assets/img/programing/process_map.png)
+![H1](/assets/img/programming/process_map.png)
 
 ## Gọi hàm
 
@@ -190,7 +190,7 @@ Bây giờ chúng ta hãy xem xét kỹ hơn cách bộ đệm được tổ ch�
 Sau đây là minh họa về tổ chức bộ nhớ này: ví dụ đầu tiên là lưu trữ bộ đệm wxy, ví dụ thứ hai là lưu trữ hai bộ đệm liên tiếp, wxy và sau đó là abcde.
 </div>
 
-![H1](/assets/img/programing/buffer_memory.png)
+![H1](/assets/img/programming/buffer_memory.png)
 
 <div style="text-align: justify; text-indent: 2em;">
 Lưu ý rằng ở trường hợp bên phải, chúng ta có hai byte chưa sử dụng vì các từ (các phần bốn byte) được sử dụng để lưu trữ dữ liệu. Do đó, một bộ đệm sáu byte cần hai từ, hay còn gọi là hai byte chiều cao.
@@ -222,7 +222,7 @@ Hai bộ đệm được lưu trữ trong ngăn xếp, như minh họa trong hì
 Bản sao này gây ra lỗi tràn bộ đệm và đây là tổ chức bộ nhớ trước và sau khi gọi strcpy:
 </div>
 
-![H1](/assets/img/programing/overflow.png)
+![H1](/assets/img/programming/overflow.png)
 
 ## Tràn ngăn xếp
 
@@ -254,7 +254,7 @@ Việc tìm địa chỉ của shellcode trong bộ nhớ không hề dễ dàng
 Trong chương trước, ví dụ của chúng ta đã chứng minh khả năng truy cập các vùng bộ nhớ cao hơn khi ghi vào biến đệm. Hãy cùng xem lại cách hoạt động của lệnh gọi hàm trong hình bên dưới.
 </div>
 
-![H1](/assets/img/programing/function_call.png)
+![H1](/assets/img/programming/function_call.png)
 
 <div style="text-align: justify; text-indent: 2em;">
 Nếu một hàm cho phép chúng ta ghi vào bộ đệm mà không cần kiểm soát số byte chúng ta sao chép, thì có thể phá vỡ địa chỉ môi trường và thú vị hơn là địa chỉ lệnh tiếp theo.
@@ -504,7 +504,7 @@ static char *ptr_to_something;
 Bộ đệm (buf) và con trỏ (ptr_to_something) có thể cùng nằm trong phân đoạn bss (trong ví dụ này), hoặc cả hai đều nằm trong phân đoạn dữ liệu, hoặc cả hai đều nằm trong phân đoạn heap, hoặc bộ đệm có thể nằm trong phân đoạn bss và con trỏ nằm trong phân đoạn dữ liệu. Thứ tự này rất quan trọng vì heap phát triển theo chiều hướng lên trên (ngược lại với stack), do đó nếu chúng ta muốn ghi đè con trỏ, nó phải được đặt sau bộ đệm bị tràn.
 </div>
 
-![H1](/assets/img/programing/pointer_heap.png)
+![H1](/assets/img/programming/pointer_heap.png)
 
 #### Khó khăn
 
@@ -536,7 +536,7 @@ Trong nguyên mẫu: int (*func) (char * string), func là một con trỏ đế
 
 </div>
 
-![H1](/assets/img/programing/function_poiter.png)
+![H1](/assets/img/programming/function_poiter.png)
 
 <div style="text-align: justify; text-indent: 2em;">
 Giống như trước đây, chúng ta sử dụng cấu trúc bộ nhớ và thực tế là chúng ta có một con trỏ sau một bộ đệm trong heap. Chúng ta tràn bộ đệm và sửa đổi địa chỉ được lưu trong con trỏ. Chúng ta sẽ làm cho con trỏ trỏ đến hàm hoặc shellcode của chúng ta. Rõ ràng, điều quan trọng là chương trình dễ bị tấn công phải chạy dưới dạng root hoặc với bit SUID, nếu chúng ta thực sự muốn khai thác lỗ hổng. Một điều kiện khác là heap phải có thể thực thi. Trên thực tế, xác suất có một heap thực thi cao hơn xác suất có một stack thực thi, trên hầu hết các hệ thống. Do đó, điều kiện này không phải là vấn đề thực sự.
@@ -552,7 +552,7 @@ Bây giờ chúng tôi sẽ trình bày kỹ thuật cuối cùng dựa trên kh
 Dlmalloc được biết đến với tên gọi là thư viện Doug Lea Malloc, theo tên tác giả của nó, và cũng là thư viện malloc được gnu libc sử dụng (xem malloc.h).
 </div>
 
-![H1](/assets/img/programing/dlmalloc.png)
+![H1](/assets/img/programming/dlmalloc.png)
 
 <div style="text-align: justify; text-indent: 2em;">
 Phần bên phải là phần heap có thể được tăng lên trong quá trình thực thi (với lệnh gọi hệ thống sbrk trên Unix, Linux).
@@ -587,7 +587,7 @@ Hình bên dưới giải thích cấu trúc của một khối và sự khác n
 Các cờ này mô tả xem khối trước đó có được sử dụng hay không (ví dụ: không trống) và liệu khối liên quan có được phân bổ thông qua cơ chế ánh xạ bộ nhớ (lệnh gọi hệ thống mmap()) hay không.
 </div>
 
-![H1](/assets/img/programing/chunk.png)
+![H1](/assets/img/programming/chunk.png)
 
 ### Sự tham nhũng của DLMALLOC: nguyên tắc
 
@@ -712,7 +712,7 @@ int main( void )
 }
 ```
 
-![H1](/assets/img/programing/fake_chunk.png)
+![H1](/assets/img/programming/fake_chunk.png)
 
 ## Giải pháp bảo vệ
 
