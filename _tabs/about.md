@@ -11,11 +11,6 @@ My research about IoT systems developed UAV (Unmanned Aerial Vehicle) and develo
 
 </div>
 
-## 🧾 GitHub Stats
-
-![GitHub Chart](https://ghchart.rshah.org/ducndc)
-
-
 ## 📜 History
 
 <div style="text-align: justify">
