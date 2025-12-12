@@ -53,30 +53,15 @@ VD output:
 
 Synflood vào port 80 của máy win7 32bit:
 
-![](media/image1.png){width="4.089538495188101in"
-height="2.483548775153106in"}
-
 Synflood vào port 3389 máy Win7 32 bit
 
-![](media/image2.png){width="4.16123031496063in"
-height="2.2001902887139106in"}
-
 Synflood vào port 3389 máy Win7 64 bit (SP1)
-
-![](media/image3.png){width="4.141059711286089in"
-height="2.5052679352580927in"}
 
 So sánh version windows:
 
 Win7 32b: (bản thấp hơn)
 
-![](media/image4.png){width="2.8331539807524058in"
-height="1.9621500437445318in"}
-
 Win7 64b: =\> SP1
-
-![](media/image5.png){width="2.874192913385827in"
-height="2.100181539807524in"}
 
 \- Có thể mở thêm các terminal khác để tiếp tục sử dụng kỹ thuật DoS này
 để tấn công Victim hoặc sử dụng các máy khác để tấn công Victim
@@ -106,13 +91,7 @@ msf auxiliary(smb_loris) \> **run**
 
 - trong máy Win7, mở Task Manager, chuyển sang tab performance:
 
-![](media/image6.png){width="3.797328302712161in"
-height="3.269329615048119in"}
-
 - Tắt tấn công:
-
-![](media/image7.png){width="3.876679790026247in"
-height="2.5752230971128607in"}
 
 \- Có thể mở thêm các terminal khác để tiếp tục sử dụng kỹ thuật DoS này
 để tấn công Victim hoặc sử dụng các máy khác để tấn công Victim
@@ -124,14 +103,8 @@ Trong Kali, bật msfconsole
 Sử dụng Module sau trong metasploit:
 **auxiliary/dos/windows/rdp/ms12_020_maxchannelids**
 
-![](media/image8.png){width="4.925426509186352in"
-height="1.4917957130358706in"}
-
 Set thông số RHOST, sau đó run máy Windows nếu có lỗ hổng này và RDP bật
 thì sẽ bị crash (BSOD)
-
-![](media/image9.png){width="6.2672101924759405in"
-height="4.458719378827647in"}
 
 # Module HTTP Slowloris của metasploit
 
@@ -140,9 +113,6 @@ Sử dụng Msfconsole module auxiliary/dos/http/slowloris:
 **use auxiliary/dos/http/slowloris**
 
 **show info**
-
-![](media/image10.png){width="5.21711832895888in"
-height="1.3751192038495188in"}
 
 Hoạt động: chiếm dụng hết các connection của server, làm hết concurrent
 connection pool =\> Webserver sẽ deny new connection
@@ -190,20 +160,14 @@ Bandwidth của máy chủ vẫn bình thường.
 1.  Mở Firefox, vào link sau để theo dõi status của apache service trên
     máy Metasploitable2 (máy M2):
 
-<http://10.1.1.49/server-status>
+http://10.1.1.49/server-status
 
 Chú ý phần ...... là các free pool còn lại trong connection pool của
 apache:
 
-![](media/image11.png){width="3.3919608486439197in"
-height="3.3438484251968505in"}
-
 2.  SSH vào máy M2 (hoặc truy cập console), gõ lệnh "**top**" để theo
     dõi performance CPU, Memory của máy M2 (chú ý thông số idle CPU, vd
     98.4 id \~ CPU free 98.4%):
-
-![](media/image12.png){width="4.6909317585301835in"
-height="1.9360115923009624in"}
 
 3.  Trong Win7 hoặc máy thật, mở browser, truy cập vào trang status ở
     máy M2 để xem tình trạng của Apache2. Vào các trang khác của M2 để
@@ -225,22 +189,14 @@ auxiliary/dos/http/slowloris để tấn công DoS
 > khác kiểm tra nếu kết nối đến web của M2 sẽ thấy không truy cập được
 > do connection pool của Apache đã bị đầy
 
-![](media/image13.png){width="3.4712959317585304in"
-height="2.5335531496062993in"}
-
 b.  Trong Kali:
 
 > Vào msfconsole trong kali và sử dụng module
 > auxiliary/dos/http/slowloris, cấu hình như sau rồi gõ lệnh run -j -z
 > để thực hiện tấn công DoS:
->
-> ![](media/image14.png){width="6.5in" height="2.825in"}
 
 6.  Theo dõi trang status (refresh trang status), chú ý phần ..... sẽ bị
     thay bằng RRRRRR do lúc nào connection pool đã bị đầy:
-
-![](media/image15.png){width="3.741991469816273in"
-height="2.130944881889764in"}
 
 # Một số tool DOS khác:
 
@@ -249,9 +205,6 @@ height="2.130944881889764in"}
 Tool tổng hợp một số kỹ thuật tấn công DOS:
 
 <https://github.com/LimerBoy/Impulse/blob/master/README.md>
-
-![](media/image16.png){width="5.451992563429571in"
-height="5.358798118985127in"}
 
 ## Xerxes
 
