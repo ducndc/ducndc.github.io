@@ -11,198 +11,209 @@ Denial of Service (DoS) is an attack on a computer or network that reduces, rest
 
 In a DoS attack, attackers flood the victim system with non-legitimate service requests or traffic to overload its resources
 
-The impact of DoS attacks include loss of goodwill, network outages, financial losses, and operational disruptions
+The impact of DoS attacks includes loss of goodwill, network outages, financial losses, and operational disruptions
 
 ## LAB
 
 # Synflood with metasploit
 
-Thực hiện theo hướng dẫn trong lab guide
+Implement following the Lab guide
 
-Các steps được tóm tắt như sau:
+The procedure includes the following steps:
 
-- Xác định cổng mở với nmap
+- Scan for open ports using Nmap
 
-- Sau đó dùng module **auxiliary/dos/tcp/synflood**
+- Then use the module **auxiliary/dos/tcp/synflood**
 
-- Chu y co the spoofed source ip (random source IP)
+- The device can spoofed source ip (random source IP)
 
-- Truoc khi attack thi bat wireshark/tcpdump de xem goi tin
+- Before attacking, start wireshark/tcpdump to see the packet
 
 # Synflood with hping3
 
-Thực hiện theo hướng dẫn trong lab guide
+Follow the instructions in the lab guide
 
-Câu lệnh hping3:
+hping3 command:
 
-hping3 -S -p 3389 \--rand-source \--flood 192.168.111.112
+hping3 -S -p 3389 --rand-source --flood 192.168.111.112
 
-Giải thích một số options của hping3:
+Explanation of some HPing3 options:
 
--S :syn scan
+-S: sync scan
 
--a: spoof với 1 source adress cố định
+-a: spoof with a fixed source address
 
-\--rand-source: spoof với nhiều random ip addres
+--rand-source: spoof with multiple random IP addresses
 
--p 22 : port 22
+-p 22: port 22
 
-\--flood
+--flood
 
-VD output:
+Example output:
 
-Synflood vào port 80 của máy win7 32bit:
+Syncflood to port 80 of a 32-bit Windows 7 machine:
 
-Synflood vào port 3389 máy Win7 32 bit
+Syncflood to port 3389 of a 32-bit Windows 7 machine
 
-Synflood vào port 3389 máy Win7 64 bit (SP1)
+Syncflood to port 3389 of a 64-bit Windows 7 machine (SP1)
 
-So sánh version windows:
+Compare Windows versions:
 
-Win7 32b: (bản thấp hơn)
+Windows 32-bit: (lower version)
 
-Win7 64b: =\> SP1
+Windows 64-bit: => SP1
 
-\- Có thể mở thêm các terminal khác để tiếp tục sử dụng kỹ thuật DoS này
-để tấn công Victim hoặc sử dụng các máy khác để tấn công Victim
+- You can open other terminals to continue using this DoS technique
 
-# Tấn công DOS dịch vụ SMB - Memory DoS (metasploit)
+to attack the victim or use other machines To attack the Victim
 
-Trong Kali, mở Terminal, gõ lệnh sau để tăng số lượng concurrent opened
-files của terminal đang mở:
+# SMB Service DOS Attack - Memory DoS (metasploit)
 
-root@kali:\~# **ulimit -n 65535**
+In Kali, open Terminal, type the following command to increase the number of concurrent opened files in the open terminal:
 
-hoặc
+root@kali:~# **ulimit -n 65535**
+
+or
 
 **ulimit -n unlimited**
 
-Sau đó mở msfconsole, sử dụng module auxiliary/dos/smb/smb_loris:
+Then open msfconsole, use the module auxiliary/dos/smb/smb_loris:
 
-root@kali:\~# **msfconsole -q**
+root@kali:~# **msfconsole -q**
 
 msf \> **use auxiliary/dos/smb/smb_loris**
 
 msf auxiliary(smb_loris) \> **set RHOST 192.168.111.112**
 
-RHOST =\> **192.168.111.112**
+RHOST => **192.168.111.112**
 
 msf auxiliary(smb_loris) \> **run**
 
-- trong máy Win7, mở Task Manager, chuyển sang tab performance:
+- In Windows 7, open Task Manager, switch to the tab Performance:
 
-- Tắt tấn công:
+- Disabling the attack:
 
-\- Có thể mở thêm các terminal khác để tiếp tục sử dụng kỹ thuật DoS này
-để tấn công Victim hoặc sử dụng các máy khác để tấn công Victim
+- You can open other terminals to continue using this DoS technique
 
-# Tấn công DOS vào dịch vụ RDP của Windows 7
+to attack the victim or use other machines to attack the victim.
 
-Trong Kali, bật msfconsole
+# DoS attack on Windows 7 RDP service
 
-Sử dụng Module sau trong metasploit:
+In Kali, enable msfconsole
+
+Use the following module in metasploit:
+
 **auxiliary/dos/windows/rdp/ms12_020_maxchannelids**
 
-Set thông số RHOST, sau đó run máy Windows nếu có lỗ hổng này và RDP bật
-thì sẽ bị crash (BSOD)
+Set the RHOST parameter, then run the Windows machine if this vulnerability is present and RDP is enabled
 
-# Module HTTP Slowloris của metasploit
+it will crash (BSOD)
 
-Sử dụng Msfconsole module auxiliary/dos/http/slowloris:
+# Metasploit HTTP Slowloris module
+
+Use the Msfconsole module auxiliary/dos/http/slowloris:
 
 **use auxiliary/dos/http/slowloris**
 
 **show info**
 
-Hoạt động: chiếm dụng hết các connection của server, làm hết concurrent
-connection pool =\> Webserver sẽ deny new connection
+Operation: monopolizes all server connections, exhausts the concurrent connection pool => Webserver will deny new connections
 
-So sánh:
+Comparison:
 
-1.  set rhost là Win7 32bit (cài IIS) và chạy module, kiểm tra sau
-    khoảng 15-30s, mở browser kiểm tra xem Webserver còn truy cập được
-    không?
+1. Set rhost to Win7 32-bit (install IIS) and run the module, check after
 
-2.  Tương tự: set rhost là Metasploitable2 (cài Apache) và chạy module,
-    kiểm tra sau khoảng 15-30s, mở browser kiểm tra xem Webserver còn
-    truy cập được không?
+about 15-30 seconds, open your browser and check if the Webserver is still accessible
 
-# Tấn công DOS L7 - Slowloris với OWASP DOS Tool và metasploit
 
-## Mục tiêu:  {#mục-tiêu}
+2. Similarly: set rhost to Metasploitable2 (install Apache) and run the module,
 
-\- Tấn công DOS vào dịch vụ HTTP (tấn công DOS dạng Application) bằng
-cách khai thác lỗ hổng Slowloris.
+check after about 15-30 seconds, open your browser and check if the Webserver is still accessible
 
-\- Hacker khai thác lỗ hổng Slowloris bằng cách gửi các request không
-hoàn chỉnh đến Webserver =\> Webserver phải dành ra nhiều slot trong
-connection pool để đợi =\> Connection Pool của webserver sẽ bị Hacker
-chiếm dụng hết =\> các user khác không truy cập được dịch vụ dù CPU hay
-Bandwidth của máy chủ vẫn bình thường.
 
-\- Link download tool HTTP Dos Tool cho windows:
+
+# DOS Attack L7 - Slowloris with OWASP DOS Tool and metasploit
+
+## Objective: {#objective}
+
+- Launch a DOS attack on the HTTP service (Application-based DOS attack) by
+
+exploiting the Slowloris vulnerability.
+
+- Hackers exploit the Slowloris vulnerability by sending incomplete requests to the web server.
+=> The web server has to reserve many slots in its connection pool to wait.
+=> The web server's connection pool will be completely occupied by the hacker.
+=> Other users cannot access the service even if the server's CPU and bandwidth are normal.
+
+- Download link for HTTP Dos Tool for Windows:
+
 <https://samsclass.info/123/proj14/HttpDosTool4.0.zip>
 
-\- Trong Kali thì sử dụng module auxiliary/dos/http/slowloris
+- In Kali, use the auxiliary/dos/http/slowloris module.
 
-## Yêu cầu:
+## Requirements:
 
-2 Máy ảo:
+2 Virtual Machines:
 
-- Kali: sử dụng module auxiliary/dos/http/slowloris để tấn công DOS
+- Kali: Use the auxiliary/dos/http/slowloris module to perform a DOS attack.
 
-- Win7: để chạy tool Owasp HTTP Dos Tool 4.0 để tấn công DOS
+- Win7: To run the Owasp HTTP Dos Tool 4.0 to perform a DOS attack.
 
-- Metasploitable2: Webserver
+- Metasploitable2: Web server
 
-## Thực hiện:
+## Procedure:
 
-1.  Mở Firefox, vào link sau để theo dõi status của apache service trên
-    máy Metasploitable2 (máy M2):
+1. Open Firefox and go to the following link to monitor the status of the Apache service on the Metasploitable2 machine (M2):
 
 http://10.1.1.49/server-status
 
-Chú ý phần ...... là các free pool còn lại trong connection pool của
-apache:
+Note that the ...... represents the remaining free pools in the Apache connection pool.
 
-2.  SSH vào máy M2 (hoặc truy cập console), gõ lệnh "**top**" để theo
-    dõi performance CPU, Memory của máy M2 (chú ý thông số idle CPU, vd
-    98.4 id \~ CPU free 98.4%):
+2. SSH into the M2 machine (or access the console) and type the command "**top**" to monitor CPU and Memory performance. of machine M2 (note the CPU idle parameter, e.g.,
 
-3.  Trong Win7 hoặc máy thật, mở browser, truy cập vào trang status ở
-    máy M2 để xem tình trạng của Apache2. Vào các trang khác của M2 để
-    test kết nối
+98.4 id ~ CPU free 98.4%):
 
-4.  Trong máy Win7 VM, cài đặt tool Owasp HTTP Dos Tool 4.0 (trong thư
-    mục addional tool)
+3. In Win7 or the physical machine, open a browser, access the status page on
+machine M2 to see the status of Apache2. Go to other M2 pages to
+test the connection.
 
-Hoặc vào msfconsole trong kali và sử dụng module
-auxiliary/dos/http/slowloris để tấn công DoS
+4. In the Win7 VM, install the Owasp HTTP Dos Tool 4.0 (in the
 
-5.  Thực hiện tấn công:
+additional tools folder).
 
-    a.  Trong máy Win7:
+Or go to msfconsole in Kali and use the module
+auxiliary/dos/http/slowloris to launch a DoS attack.
 
-> Chạy HTTP Dos Tool 4.0. Cấu hình các tham số Connection, Connection
-> Rate (có thể tùy biến để tìm ra max connection pool của webserver) -
-> Sau đó bấm Attack để tấn công, đợi khoảng 30s =\> tiếp theo, ở các máy
-> khác kiểm tra nếu kết nối đến web của M2 sẽ thấy không truy cập được
-> do connection pool của Apache đã bị đầy
+5. Perform the attack:
 
-b.  Trong Kali:
+a. In the Win7 machine:
 
-> Vào msfconsole trong kali và sử dụng module
-> auxiliary/dos/http/slowloris, cấu hình như sau rồi gõ lệnh run -j -z
-> để thực hiện tấn công DoS:
+> Run HTTP Dos Tool 4.0. Configure the Connection and Connection parameters.
 
-6.  Theo dõi trang status (refresh trang status), chú ý phần ..... sẽ bị
-    thay bằng RRRRRR do lúc nào connection pool đã bị đầy:
+> Rate (can be customized to find the maximum connection pool of the web server) -
 
-# Một số tool DOS khác:
+> Then click Attack to launch the attack, wait about 30 seconds => next, on other machines, check if the connection is
+
+When accessing the M2 website, you will find it inaccessible:
+> because the Apache connection pool is full.
+
+b. In Kali:
+
+> Go to msfconsole in Kali and use the module
+
+> auxiliary/dos/http/slowloris, configure it as follows, then type the command run -j -z
+
+> to perform a DoS attack:
+
+6. Monitor the status page (refresh the status page), note that the ..... part will be
+
+replaced with RRRRRR because the connection pool is full:
+
+# Some other DOS tools:
 
 ## Impulse:
 
-Tool tổng hợp một số kỹ thuật tấn công DOS:
+A tool that combines several DOS attack techniques:
 
 <https://github.com/LimerBoy/Impulse/blob/master/README.md>
 
@@ -212,8 +223,8 @@ Tool tổng hợp một số kỹ thuật tấn công DOS:
 
 ## hulk
 
-download từ trang:
+Download from this page:
 
 <https://packetstormsecurity.com/files/112856/HULK-Http-Unbearable-Load-King.html>
 
-Cach su dung: python3 hulk.py http://urlsample.com
+How to use: python3 hulk.py http://urlsample.com
