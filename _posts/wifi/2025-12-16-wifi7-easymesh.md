@@ -5,35 +5,60 @@ date: 2025-12-09 10:00:00 +0700
 categories: [WiFi]
 ---
 
-## MLO MultiAP Device
+## Onboarding 
 
-MLD (Multi-Link Device) has a single MAC address, and the sequence numbers are generated uniquely from the same sequence number space, allow packet retransmission on any link regrardless of the link of the initial transmission of the packet
+### WPS
+### DPP
 
-MLD Group 
+## Auto-Configuration
 
-Ex:
+## Auto Role Selection
 
-GROUP 1: rax0, rai0, ra0
-GROUP 2: rax3, rai3, ra3
+## Renew Configuration
 
-STA MLD LINKS
+## Automation Backhaul Switching between Ethernet and Wi-Fi
 
-## MLO Onboarding 
+## DHCP Control
 
-## Spatial Reuse (SR)
+## Tx/Rx Higher Layer Protocol Data
 
-Sharing AP: The AP that wins contention and decides to share its medium
-Shared AP: The AP that reuse airtime from the sharing AP and performs spatial reuse
+## Mesh Spatial Reuse
 
-BHSR
-EasyMesh C-SR 
+## Single Band Operation
 
-## AP/BSTA MLD Reconfiguration
+## MLD Dynamic Regroup
 
-## AKM24 Support
+## WSC Reconfiguration of BHSTA
 
-## QoS Uplink SCS
+## Coordinated Spatial Reuse
 
-## AFC
+## Network Healing
 
-## Static Puncturing 
+## Backhaul Link Steering and Prioritization
+
+## Network Optimization
+
+## ETH Backhaul between Agents 
+
+## Topology Database
+
+## Client Database
+
+## Data Elements
+
+## Steering 
+
+## Channel Planning
+
+## Traffic Separation and Service Prioritization
+
+### Traffic Separation
+### Service Prioritization
+## QoS Management
+
+## Block BSS Autoconfiguration Mechanism 
+
+## Detect Duplicate Controller Mechanism
+
+## AFC 
+
