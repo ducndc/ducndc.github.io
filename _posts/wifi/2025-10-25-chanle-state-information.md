@@ -9,17 +9,17 @@ math: true
 ## Channel State Information (CSI)
 
 <div style="text-align: justify; text-indent: 2em;">
-In wireless communications, channel state information (CSI) is the known channel properties of a communication link. This information describes how a signal propagates from the transmitter to the receiver and represents the combined effect of, for example, scattering, fading, and power decay with distance. The method is called channel estimation. The CSI makes it possible to adapt transmissions to current channel conditions, which is crucial for achieving reliable communication with high data rates in multiantenna systems.
+Trong truyền thông không dây, thông tin trạng thái kênh (CSI) là các thuộc tính kênh đã biết của một liên kết truyền thông. Thông tin này mô tả cách tín hiệu lan truyền từ bộ phát đến bộ thu và thể hiện hiệu ứng tổng hợp của, ví dụ, tán xạ, suy giảm tín hiệu và suy hao công suất theo khoảng cách. Phương pháp này được gọi là ước lượng kênh. CSI cho phép điều chỉnh việc truyền tín hiệu phù hợp với điều kiện kênh hiện tại, điều này rất quan trọng để đạt được khả năng truyền thông đáng tin cậy với tốc độ dữ liệu cao trong các hệ thống đa anten.
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-CSI provides more detailed information about wireless channels, including amplitude, phase, and frequency response. In contrast, RSSI only provides a general measurement of signal strength.
+CSI cung cấp thông tin chi tiết hơn về các kênh không dây, bao gồm biên độ, pha và đáp ứng tần số. Ngược lại, RSSI chỉ cung cấp phép đo tổng quát về cường độ tín hiệu.
 </div>
 
-### Mathematical description
+### Mô tả toán học
 
 <div style="text-align: justify; text-indent: 2em;">
-In a narrowband flat-fading channel with multiple transmit and receive antennas (MIMO), the system is modeled as
+Trong kênh suy hao phẳng băng hẹp với nhiều anten phát và thu (MIMO), hệ thống được mô hình hóa như sau:
 </div>
 
 <div style="text-align: center;">
@@ -31,14 +31,14 @@ where:
 </div>
 
 <ul style="text-align: justify;">
-  <li>\( \mathbf{y} \in \mathbb{C}^{N_r \times 1} \) is the received signal vector.</li>
-  <li>\( \mathbf{x} \in \mathbb{C}^{N_t \times 1} \) is the transmitted signal vector.</li>
-  <li>\( \mathbf{H} \in \mathbb{C}^{N_r \times N_t} \) is the channel matrix, whose element \( h_{i,j} \) represents the complex channel gain from transmit antenna \( j \) to receive antenna \( i \).</li>
-  <li>\( \mathbf{n} \in \mathbb{C}^{N_r \times 1} \) is the additive white Gaussian noise (AWGN) vector, with \( \mathbf{n} \sim \mathcal{CN}(0, N_0 \mathbf{I}) \).</li>
+  <li>\( \mathbf{y} \in \mathbb{C}^{N_r \times 1} \) là vectơ tín hiệu nhận được.</li>
+  <li>\( \mathbf{x} \in \mathbb{C}^{N_t \times 1} \) là vectơ tín hiệu được truyền đi.</li>
+  <li>\( \mathbf{H} \in \mathbb{C}^{N_r \times N_t} \) là ma trận kênh, có phần tử là \( h_{i,j} \) biểu thị độ lợi kênh phức tạp từ anten phát. \( j \) để nhận ăng-ten \( i \).</li>
+  <li>\( \mathbf{n} \in \mathbb{C}^{N_r \times 1} \) là vectơ nhiễu Gauss trắng cộng tính (AWGN), với \( \mathbf{n} \sim \mathcal{CN}(0, N_0 \mathbf{I}) \).</li>
 </ul>
 
 <div style="text-align: justify; text-indent: 2em;">
-Each element \( h_{i,j} \) of the channel matrix contains both the amplitude attenuation and the phase shift experienced by the signal. It can be represented as
+Mỗi yếu tố \( h_{i,j} \) của ma trận kênh chứa cả sự suy giảm biên độ và sự dịch chuyển pha mà tín hiệu trải qua. Nó có thể được biểu diễn như sau:
 </div>
 
 <div style="text-align: center;">
@@ -46,134 +46,121 @@ Each element \( h_{i,j} \) of the channel matrix contains both the amplitude att
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-where \( |h_{i,j}| \) is the channel magnitude and \( \phi_{i,j} \) is the channel phase. The collection of these complex coefficients across all antennas and subcarriers (in OFDM systems) forms the Channel State Information (CSI).
+trong đó \( |h_{i,j}| \) là biên độ kênh và \( \phi_{i,j} \) là pha kênh. Tập hợp các hệ số phức này trên tất cả các anten và sóng mang phụ (trong hệ thống OFDM) tạo thành Thông tin Trạng thái Kênh (CSI).
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-In practical Wi-Fi systems such as IEEE 802.11n/ac/ax, CSI is estimated using pilot (training) symbols inserted into OFDM subcarriers. These CSI values enable advanced techniques such as beamforming, channel equalization, and device-free sensing applications.
+Trong các hệ thống Wi-Fi thực tế như IEEE 802.11n/ac/ax, thông tin trạng thái kênh (CSI) được ước tính bằng cách sử dụng các ký hiệu thí điểm (huấn luyện) được chèn vào các sóng mang phụ OFDM. Các giá trị CSI này cho phép áp dụng các kỹ thuật tiên tiến như tạo chùm tia, cân bằng kênh và các ứng dụng cảm biến không cần thiết bị.
 </div>
 
-## Characteristics of Wireless Channels
+## Đặc điểm của các kênh truyền không dây
 
-The main characteristics of wireless channels include:
+Các đặc điểm chính của kênh truyền không dây bao gồm:
 
 <div style="text-align: justify; text-indent: 2em;">
-Attenuation and Path Loss: Signals attenuate and lose energy during propagation, and are also affected by path loss.
+Suy hao và tổn hao đường truyền: Tín hiệu bị suy giảm và mất năng lượng trong quá trình truyền dẫn, đồng thời cũng bị ảnh hưởng bởi tổn hao đường truyền.</div>
+
+<div style="text-align: justify; text-indent: 2em;">
+Hiệu ứng đa đường truyền: Tín hiệu bị biến đổi về pha và biên độ do nhiều đường truyền, ảnh hưởng đến chất lượng truyền thông.</div>
+
+<div style="text-align: justify; text-indent: 2em;">
+Độ trễ lan truyền: Sự kéo dài thời gian đến của tín hiệu do hiệu ứng đa đường truyền.</div>
+
+<div style="text-align: justify; text-indent: 2em;">
+Nhiễu đa người dùng: Nhiều người dùng cùng chia sẻ một dải tần có thể gây nhiễu lẫn nhau, ảnh hưởng đến độ tin cậy và hiệu quả của quá trình truyền thông.</div>
+
+<div style="text-align: justify; text-indent: 2em;">
+Hiện tượng suy giảm tín hiệu do vật cản: Cường độ tín hiệu bị suy yếu.</div>
+
+## Mối quan hệ giữa CSI và đặc tính kênh truyền không dây
+
+Thông tin trạng thái kênh (CSI) cung cấp thông tin chi tiết về kênh, giúp hiểu và tận dụng các đặc điểm khác nhau của kênh không dây để tối ưu hóa hiệu suất và độ tin cậy của hệ thống truyền thông không dây. Một số ứng dụng quan trọng trong truyền thông không dây, đặc biệt là liên quan đến hiệu ứng đa đường và Thông tin trạng thái kênh (CSI), bao gồm:
+
+### 1.Tạo chùm tia đa đường
+
+Tạo chùm tia đa đường là một kỹ thuật sử dụng hiệu ứng đa đường để tăng cường hoặc triệt tiêu tín hiệu theo các hướng cụ thể. Tạo chùm tia đa đường có thể được áp dụng theo các cách sau:
+
+- **Theo dõi chùm tia:** Sử dụng thông tin CSI để theo dõi sự thay đổi trong các kênh truyền dẫn đa đường nhằm tối ưu hóa hình dạng chùm tia và tối đa hóa cường độ tín hiệu nhận được.
+- **Khử nhiễu:** Đo lường và phân tích chính xác thông tin CSI của các kênh đa đường cho phép khử nhiễu trong không gian, cải thiện tỷ lệ tín hiệu trên nhiễu (SIR) và dung lượng hệ thống.
+
+### 2. Định vị và Theo dõi
+
+Hiệu ứng đa đường truyền rất quan trọng đối với việc định vị chính xác và theo dõi thiết bị di động. Thông tin trạng thái kênh (CSI) có thể được áp dụng trong định vị và theo dõi như sau:
+
+- **Hình ảnh đa đường truyền:** Phân tích dữ liệu CSI để xây dựng hình ảnh đa đường truyền xung quanh các đối tượng, cho phép ước tính vị trí với độ phân giải cao.
+
+- **Ước tính hướng:** Sử dụng hiệu ứng đa đường truyền để ước tính chính xác hướng và hướng của thiết bị di động, cải thiện độ chính xác của hệ thống định vị.
+
+### 3. Hệ thống MIMO đa người dùng
+
+Trong hệ thống MIMO đa người dùng, việc kết hợp CSI với hiệu ứng đa đường truyền có các ứng dụng sau:
+
+- **Đa dạng người dùng:** Sử dụng CSI của sự lan truyền đa đường truyền để nhận luồng dữ liệu của người dùng trên các đường truyền khác nhau, cải thiện hiệu suất phổ và dung lượng của hệ thống.
+
+- **Lập lịch đa người dùng không gian:** Sử dụng thông tin CSI của các kênh đa đường truyền để đạt được lập lịch đa người dùng không gian, tối đa hóa thông lượng và sử dụng tài nguyên của hệ thống.
+
+### 4. Truy cập phổ động và cảm biến phổ
+
+Các hiệu ứng đa đường và thông tin trạng thái kênh (CSI) cũng được áp dụng trong truy cập phổ động (DSA) và cảm biến phổ:
+
+- **Tối ưu hóa sử dụng phổ:** Phân tích CSI của các kênh đa đường để đánh giá chính xác và tối ưu hóa việc sử dụng tài nguyên phổ, bao gồm cả việc đạt được truy cập phổ động trong các vùng phổ trống.
+
+- **Phát hiện nhiễu phổ:** Sử dụng các hiệu ứng đa đường và thông tin CSI để nhanh chóng phát hiện và định vị các nguồn nhiễu phổ, tăng cường khả năng chống nhiễu của hệ thống.
+
+### 5. Truyền thông di động tốc độ cao
+
+Trong môi trường truyền thông di động tốc độ cao, các ứng dụng của hiệu ứng đa đường truyền và thông tin trạng thái kênh (CSI) bao gồm:
+
+- **Mô hình hóa kênh di động:** Phân tích hiệu ứng đa đường truyền và CSI để thiết lập các mô hình kênh di động chính xác, hỗ trợ truyền thông di động tốc độ cao.
+
+- **Theo dõi người dùng di động:** Sử dụng hiệu ứng đa đường truyền và thông tin CSI để theo dõi và định vị nhanh chóng người dùng di động tốc độ cao, cải thiện tính ổn định và độ tin cậy của hệ thống truyền thông.
+
+Bản dịch này nắm bắt các chi tiết thiết yếu và ứng dụng của các nguyên tắc cơ bản về kênh không dây và mối quan hệ của chúng với CSI trong việc tối ưu hóa hệ thống truyền thông không dây.
+
+## Cảm biến CSI
+
+<div style="text-align: justify; text-indent: 2em;">
+Cảm biến CSI là một công nghệ sử dụng thông tin trạng thái kênh (CSI) trong tín hiệu Wi-Fi để phát hiện các hoạt động của con người (như đi bộ và thở) và trạng thái, vị trí và chuyển động của các vật thể trong môi trường.
+
+</div>
+
+## Cảm biến CSI hoạt động như thế nào?
+
+<div style="text-align: justify; text-indent: 2em;">
+Cảm biến CSI hoạt động dựa trên hiệu ứng đa đường truyền của sự lan truyền tín hiệu vô tuyến và sự thay đổi của CSI.
+
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-Multipath Effects: Signals experience phase and amplitude variations due to multiple paths, impacting communication quality.
-</div>
+Do đặc tính lan truyền của tín hiệu vô tuyến, tín hiệu sóng điện từ được phát ra từ anten phát có thể đến anten thu thông qua đường truyền trực tiếp hoặc bằng cách phản xạ từ môi trường xung quanh (như tường, cơ thể người và đồ nội thất). Cuối cùng, tín hiệu sóng điện từ đến anten thu là sự chồng chất của các tín hiệu đường truyền trực tiếp và nhiều tín hiệu đường truyền phản xạ. Hiện tượng này được gọi là hiệu ứng đa đường truyền của sự lan truyền tín hiệu vô tuyến.
 
-<div style="text-align: justify; text-indent: 2em;">
-Delay Spread: Extension of signal arrival times due to multipath effects.
-</div>
-
-<div style="text-align: justify; text-indent: 2em;">
-Multi-User Interference: Multiple users sharing the same spectrum can interfere with each other, affecting communication reliability and efficiency.
-</div>
-
-<div style="text-align: justify; text-indent: 2em;">
-Shadowing: Signal strength weakening due to obstacles.
-</div>
-
-## Relationship Between CSI and Wireless Channel Characteristics
-
-Channel State Information (CSI) provides detailed channel information, aiding in understanding and utilizing various wireless channel characteristics to optimize the performance and reliability of wireless communication systems. Several important applications in wireless communication, especially involving multipath effects and Channel State Information (CSI), include:
-
-### 1. Multipath Beamforming
-
-Multipath beamforming is a technique that utilizes multipath effects to enhance or suppress signals in specific directions. Multipath beamforming can be applied in the following ways:
-
-- **Beam Tracking:** Using CSI information to track changes in multipath propagation channels to optimize beam shapes and maximize received signal strength.
-- **Interference Suppression:** Accurately measuring and analyzing CSI of multipath channels enables spatial suppression of interference sources, improving Signal-to-Interference Ratio (SIR) and system capacity.
-
-### 2. Localization and Tracking
-
-Multipath effects are crucial for precise localization and mobile tracking. CSI can be applied in localization and tracking as follows:
-
-- **Multipath Imaging:** Analyzing CSI data to construct multipath images around objects, enabling high-resolution position estimation.
-- **Attitude Estimation:** Using multipath effects to accurately estimate the direction and attitude of mobile devices, improving navigation system accuracy.
-
-### 3. Multi-User MIMO Systems
-
-In multi-user MIMO systems, combining CSI with multipath effects has the following applications:
-
-- **Multi-User Diversity:** Utilizing CSI of multipath propagation to receive users' data streams on different paths, improving system spectral efficiency and capacity.
-- **Spatial Multi-User Scheduling:** Using CSI information of multipath channels to achieve spatial multi-user scheduling, maximizing system throughput and resource utilization.
-
-### 4. Dynamic Spectrum Access and Spectrum Sensing
-
-Multipath effects and CSI are also applied in dynamic spectrum access (DSA) and spectrum sensing:
-
-- **Optimizing Spectrum Utilization:** Analyzing CSI of multipath channels to accurately evaluate and optimize spectrum resource utilization, including achieving dynamic spectrum access in spectrum blanks.
-- **Spectrum Interference Detection:** Using multipath effects and CSI information for rapid detection and localization of spectrum interference sources, enhancing system interference resistance.
-
-### 5. High-Speed Mobile Communications
-
-In high-speed mobile communication environments, applications of multipath effects and CSI include:
-
-- **Mobile Channel Modeling:** Analyzing multipath effects and CSI to establish accurate mobile channel models, supporting high-speed mobile communications.
-- **Mobile User Tracking:** Using multipath effects and CSI information for rapid tracking and localization of high-speed mobile users, improving communication system stability and reliability.
-This translation captures the essential details and applications of wireless channel fundamentals and their relationship with CSI in optimizing wireless communication systems.
-
-## CSI Sensing
-
-<div style="text-align: justify; text-indent: 2em;">
-CSI sensing is a technology that uses channel state information (CSI) in Wi-Fi signals to detect human activities (such as walking and breathing) and the state, location, and motion of objects in an environment.
-</div>
-
-## How Does CSI Sensing Work?
-
-<div style="text-align: justify; text-indent: 2em;">
-CSI sensing works based on the multipath effect of radio signal propagation and changes to CSI.
-</div>
-
-<div style="text-align: justify; text-indent: 2em;">
-Due to the propagation characteristics of radio signals, the electromagnetic wave signals radiated by a transmit antenna can reach a receive antenna either through a direct path or by reflection off the surrounding environment (such as walls, human bodies, and furniture). Finally, the electromagnetic wave signals reaching the receive antenna are the superposition of direct-path signals and multiple reflection-path signals. This phenomenon is known as the multipath effect of radio signal propagation.
 </div>
 
 ![H1](/assets/img/wifi/CSI1.png)
 
 <div style="text-align: justify; text-indent: 2em;">
-Environmental changes can result in changes in the reflection paths as well as in CSI data. CSI is an important concept in wireless communications. It provides detailed data of the end-to-end signal transmission process. CSI data, including amplitude attenuation and phase offset during propagation, is carried in subcarriers, which are formed by dividing a channel using Wi-Fi OFDM technology. When no object moves in an environment, the paths of multipath signals are relatively stable, and there are only slight changes to CSI data. When a person or object moves in the space, the signal reflection paths change (for example, a path is blocked or a reflection path is added). As a result, the amplitude and phase of multipath signals change after being superimposed, causing fluctuations in CSI data.
+Những thay đổi trong môi trường có thể dẫn đến những thay đổi trong đường phản xạ cũng như dữ liệu CSI. CSI là một khái niệm quan trọng trong truyền thông không dây. Nó cung cấp dữ liệu chi tiết về quá trình truyền tín hiệu từ đầu đến cuối. Dữ liệu CSI, bao gồm suy giảm biên độ và độ lệch pha trong quá trình lan truyền, được mang trong các sóng mang phụ, được hình thành bằng cách chia kênh bằng công nghệ Wi-Fi OFDM. Khi không có vật thể nào di chuyển trong môi trường, đường đi của tín hiệu đa đường tương đối ổn định và chỉ có những thay đổi nhỏ đối với dữ liệu CSI. Khi một người hoặc vật thể di chuyển trong không gian, đường phản xạ tín hiệu sẽ thay đổi (ví dụ: một đường bị chặn hoặc một đường phản xạ được thêm vào). Kết quả là, biên độ và pha của tín hiệu đa đường thay đổi sau khi được chồng chất, gây ra sự dao động trong dữ liệu CSI.
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-By collecting and analyzing the variation pattern of CSI data, CSI sensing technology can detect human presence, identify behaviors, and even measure weak fluctuations due to breathing and heartbeats. For example, when a person is sleeping, the only movements are regular changes in the chest position due to breathing. By extracting the regular changes of CSI, the chest movements can be detected, making it possible to identify whether a person is present.
+Bằng cách thu thập và phân tích mô hình biến đổi của dữ liệu CSI, công nghệ cảm biến CSI có thể phát hiện sự hiện diện của con người, nhận diện hành vi và thậm chí đo lường những dao động nhỏ do nhịp thở và nhịp tim. Ví dụ, khi một người đang ngủ, chuyển động duy nhất là những thay đổi đều đặn ở vị trí ngực do thở. Bằng cách trích xuất những thay đổi đều đặn của CSI, chuyển động của ngực có thể được phát hiện, giúp xác định xem có người hiện diện hay không.
+
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-Depending on the location relationship between the transmitter and receiver, CSI sensing can be classified as bi-static or mono-static sensing.
+Tùy thuộc vào mối quan hệ vị trí giữa bộ phát và bộ thu, cảm biến CSI có thể được phân loại là cảm biến hai chiều hoặc cảm biến một chiều.
+
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-Bi-static sensing: Two devices participate in sensing — one sends Wi-Fi signals and one receives Wi-Fi signals.
+Cảm biến hai chiều: Hai thiết bị tham gia vào quá trình cảm biến — một thiết bị phát tín hiệu Wi-Fi và một thiết bị nhận tín hiệu Wi-Fi.
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-Mono-static sensing: The same device is used to receive and send Wi-Fi signals. For example, the CSI sensing function provided by Huawei APs innovatively uses the antenna-algorithm co-design to minimize non-ideal factors and strong self-interference between the transmitter and receiver. A single AP can sense centimeter-level movements in the environment using the sonar-like capability, without the need of other devices. This greatly reduces deployment and maintenance costs.
+Cảm biến đơn tĩnh: Cùng một thiết bị được sử dụng để nhận và phát tín hiệu Wi-Fi. Ví dụ, chức năng cảm biến CSI do AP của Huawei cung cấp sử dụng thiết kế đồng bộ thuật toán ăng-ten một cách sáng tạo để giảm thiểu các yếu tố không lý tưởng và nhiễu tự thân mạnh giữa bộ phát và bộ thu. Một AP duy nhất có thể cảm nhận chuyển động ở mức centimet trong môi trường bằng khả năng giống như sonar, mà không cần đến các thiết bị khác. Điều này giúp giảm đáng kể chi phí triển khai và bảo trì.
 </div>
 
 ![H1](/assets/img/wifi/CSI2.png)
-
-<div style="text-align: justify; text-indent: 2em;">
-
-</div>
-
-
-<div style="text-align: justify; text-indent: 2em;">
-
-</div>
-
-
-<div style="text-align: justify; text-indent: 2em;">
-
-</div>
-
-<div style="text-align: justify; text-indent: 2em;">
-
-</div>
 
 ## References
 
