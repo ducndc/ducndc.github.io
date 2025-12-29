@@ -49,17 +49,12 @@ Ví dụ: Các bước trong truyền nhận dữ liệu với mã hóa khóa c�
 
 Kịch bản: An cần gửi cho Hoa một bản tin
 
-Bước 1: Hoa tạo ra một cặp khóa công khai và khóa bí mật
-
-Bước 2: Hoa đẩy khóa công khai này lên máy chủ chia sẻ khóa công khai, bất kỳ ai cũng có thể lấy khóa này và báo cho An lấy khóa công khai này
-
-Bước 3: An lấy khóa công khai của Hoa
-
-Bước 4: An lấy dữ liệu muốn gửi cho Hoa và mã hóa nó với khóa công khai của Hoa
-
-Bước 5: An gửi dữ liệu đã được mã hóa cho Hoa
-
-Bước 6: Hoa dùng khóa bí mật để giải mã dữ liệu nhận từ An
+1. Hoa tạo ra một cặp khóa công khai và khóa bí mật
+2. Hoa đẩy khóa công khai này lên máy chủ chia sẻ khóa công khai, bất kỳ ai cũng có thể lấy khóa này và báo cho An lấy khóa công khai này
+3. An lấy khóa công khai của Hoa
+4. An lấy dữ liệu muốn gửi cho Hoa và mã hóa nó với khóa công khai của Hoa
+5. An gửi dữ liệu đã được mã hóa cho Hoa
+6. Hoa dùng khóa bí mật để giải mã dữ liệu nhận từ An
 
 <div style="text-align: justify; text-indent: 2em;">
 Dù khóa bí mật của Hoa có thể khiến không một ai có thể đọc và thay đổi dữ liệu trong quá trình gửi đến cho Hoa nhưng nó không thể xác minh người gửi dữ liệu đến cho Hoa là ai, có thể là An nhưng cũng có thể là bất kỳ ai sử dụng khóa công khai của Hoa. Để chứng minh người gửi là ai, ta cần một công nghệ khác được biết đến với tên gọi chữ ký số.
@@ -101,3 +96,25 @@ Trường hợp bạn để mật khẩu đơn giản, một số ứng dụng g
 
 ## Tấn Công Từ Điển và Tấn Công Vét Cạn 
 
+## Tấn Công Từ Điển
+<div style="text-align: justify; text-indent: 2em;">
+Việc tấn công từ điển là việc sử một danh sách các mật khẩu phổ biến.
+</div>
+
+Bước 1: Từ một từ điển, tạo ra các chuỗi băm tương ứng, với hàng nghìn chuỗi như vậy, và đưa vào bảng để tìm kiếm ngược lại các chuỗi này
+
+Bước 2: So sánh các chuỗi băm trong bảng với chuỗi băm cần tấn công, nếu tìm được chuỗi giống nhau ta lấy được chuỗi mật khẩu 
+
+## Tấn Công Vét Cạn
+
+<div style="text-align: justify; text-indent: 2em;">
+Sử dụng vòng lặp mỗi ký tự được thử tự động, có thể là từ, ký tự, số, hoặc bất cứ thứ gì. Phương pháp này hiệu quả với các mật khẩu ngắn. Trong tương lai, nếu việc tính toán đủ nhanh (lượng tử) thì mọi mật khẩu với cơ chế hiện tại đều dễ dàng bị tấn công bới phương pháp vét cạn này.
+</div>
+
+<div style="text-align: justify; text-indent: 2em;">
+Kẻ tấn công thường sử dụng kết hợp hai phuong pháp này, và để bảo vệ tốt hơn cho mật khẩu của bạn sẽ có 3 điều cần chú ý:
+</div>
+
+1. Mật khẩu mạnh: ít nhất 12 ký tự, trong đó sử dụng cả chữ cái hoa, thường, số, ký tự đặc biệt
+2. Mật khẩu duy nhất: bạn sẽ có nhiều mật khẩu cho mỗi tài khoản khác nhau, mỗi mật khẩu này cần khác biệt với nhau
+3. Mật khẩu luôn đổi: thay đổi mật khẩu ít nhất sau 3 tháng 
