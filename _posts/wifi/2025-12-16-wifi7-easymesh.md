@@ -50,6 +50,13 @@ categories: [WiFi]
 
 ## Channel Planning
 
+### Scan Channel
+
+1. Full Scan : Quét tất cả các kênh được hỗ trợ, sau đó quay về kênh đang hoạt động trước lúc quét 
+2. Partial Scan : Quét một kênh sau đó trở về kênh hoạt động trước lúc quét, sau một thời gian nhất định lặp lại quy trình này ở kênh tiếp theo
+3. Off-channel Scan : Chỉ quét duy nhất 1 kênh sau đó trở về kênh đang hoạt động trước lúc quét 
+4. Overlapping Scan : Quét các kênh trong độ rộng 40M, sau đó trở về kênh đang hoạt động trước lúc quét , lặp lại quy trình này ở dải kênh tiếp theo 
+
 ## Traffic Separation and Service Prioritization
 
 ### Traffic Separation
@@ -62,3 +69,6 @@ categories: [WiFi]
 
 ## AFC 
 
+## MLO 
+
+![H1](/assets/img/wifi/mld_mac.png
