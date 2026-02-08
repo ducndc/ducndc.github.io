@@ -1,120 +1,128 @@
 ---
 layout: post
-title: "Mật Mã Cơ Bản"
+title: "Basic Cryptography"
 date: 2025-11-16 10:00:00 +0700
 categories: [Hacking]
 ---
 
 <div style="text-align: justify; text-indent: 2em;">
-Mật mã là một ứng dụng khoa học kỹ thuật quan trọng trong quá tình trao đổi thông tin trên hạ tầng kĩ thuật số. Trong tài liệu này sẽ phân tích các thành phần trong việc ứng dụng mật mã, giúp làm rõ vai trò, nhiệm vụ và cách thức hoạt động trong hạ tầng thông tin số.
+Cryptography is an important scientific and technical application in the process of information exchange on digital infrastructure. This document will analyze the components in cryptographic applications, helping to clarify the role, tasks, and operating methods in digital information infrastructure.
 </div>
 
-## Mã Hóa Khóa Bí Mật (Private Key Encryption)
+## Private Key Encryption
 
 <div style="text-align: justify; text-indent: 2em;">
-Mã hóa khóa bí mật là khóa được lưu trữ phía gửi và phía nhận, được sử dụng ở phía gửi cho việc mã hóa thông tin và ở phía nhận cho việc giải mã thông tin.k
+Private key encryption is a key stored on both the sender and receiver sides, used on the sender side to encrypt information and on the receiver side to decrypt information.
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-Mã hóa khóa bí mật thường được chia làm 2 phương pháp là mã hóa dòng (Stream Ciphers) và mã hóa khối (Block Ciphers).
+Private key encryption is usually divided into two methods: stream ciphers and block ciphers.
 </div>
 
 ### Stream Ciphers
 
 <div style="text-align: justify; text-indent: 2em;">
-Làm việc trên một bit đơn lẻ tại một thời điểm, một trong những thuật toán được biết đến rộng rãi là RC4 (Rivest Cipher 4)
+Working on a single bit at a time, one of the widely known algorithms is RC4 (Rivest Cipher 4)
 </div>
 
 ### Block Ciphers
 
 <div style="text-align: justify; text-indent: 2em;">
-Làm việc trên những nhóm bit có độ dài cố định, những khối có độ dài như 64, 128, 256 bits. Những thuật toán mã hóa khối được biết đến rộng rãi như DES (Dât Encryption Standard), Triple DES, IDEA (International Dât Encryption Algorithm), RC5 (Rivest Cipher 5), AES (Advanced Encryption Standard), Blowfish, ..
+Working on groups of bits of fixed length, blocks of length such as 64, 128, 256 bits. Block encryption algorithms are widely known as DES (Data Encryption Standard), Triple DES, IDEA (International Data Encryption Algorithm), RC5 (Rivest Cipher 5), AES (Advanced Encryption Standard), Blowfish, etc.One of the biggest problems with secret key encryption is finding a way to obtain the key from the data sharer. Sharing this key poses a significant security risk, and the solution is to use public key encryption.
+</div>
+
+## Public Key Encryption 
+
+<div style="text-align: justify; text-indent: 2em;">
+In public key encryption, two different keys are used for encrypting and decrypting data, and these two keys have a mathematical relationship with each other. These two keys are a pair consisting of a public key and a private key.
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-Một trong những vấn đề  lớn nhất của mã hóa khóa bí mật là phải tìm cách lấy được khóa từ phía chia sẻ dữ liệu, việc chia sẻ khóa này sẽ gây rủi ro lớn cho vấn đề bảo mật và giải pháp đưa ra là sử dụng mã hóa công khai.
+The public key can be shared with anyone, while the private key is held only by the person who created these two keys. Therefore, the sender will use the public key to encrypt the data, and the receiver will use the private key to decrypt the data received from the sender.
 </div>
 
-## Mã Hóa Khóa Công Khai (Public Key Encryption)
+Example: Steps in data transmission with public key encryption
+
+Scenario: An needs to send Hoa a message
+
+1. Hoa creates a public key and a private key pair.
+
+2. Hoa uploads this public key to a public key sharing server; anyone can obtain this key and inform An to get it.
+
+3. An obtains Hoa's public key.
+
+4. An retrieves the data she wants to send to Hoa and encrypts it with Hoa's public key.
+
+5. An sends the encrypted data to Hoa.
+
+6. Hoa uses the private key to decrypt the data received from An.
 
 <div style="text-align: justify; text-indent: 2em;">
-Trong mã khóa khóa công khai, sẽ dùng 2 khóa khác nhau cho việc mã hóa và giải mã dữ liệu và giữa 2 khóa này có mối liên hệ toán học với nhau. Hai khóa này là một cặp gồm khóa công khai và khóa bí mật.
+Although Hoa's private key can prevent anyone from reading and changing the data during transmission, it cannot verify who sent the data to Hoa. It could be An, but it could also be anyone using Hoa's public key. To prove the sender's identity, we need another technology known as a digital signature.
+
+</div>
+
+## One-Way Functions and Trapdoor Functions in Modern Cryptography
+
+### One-Way Functions
+
+<div style="text-align: justify; text-indent: 2em;">
+Let's take an example: mixing four different fruits and blending them into a delicious smoothie is easy to do, but in the reverse direction, taking a smoothie and distinguishing which fruits are in it is much more difficult. In reality, a one-way function is a function where f(x) is easy to calculate but it is very difficult to find x from f(x).
+
+</div>
+
+### Trapdoor Functions
+
+<div style="text-align: justify; text-indent: 2em;">
+A trapdoor function is a special case of a one-way function. Given trapdoor information (t), we can easily find the value of x. Trapdoor functions are widely used in public-key cryptography. Everyone can encrypt with a public key, but only the person holding the private key can decrypt. RSA encryption systems and digital signatures use a trapdoor function.
+
+</div>
+
+## Hash Algorithm
+
+<div style="text-align: justify; text-indent: 2em;">
+Hash algorithms (SHA-256, ....) are primarily used for comparison purposes, not for encryption. Hash algorithms are known for three main characteristics:
+
+</div>
+
+1. Difficult to reverse engineer
+2. Fixed size (128, 256 bits), meaning the output is usually of a fixed size regardless of whether the input has one or many characters
+3. Unique, two different data sets cannot have the same output
+
+<div style="text-align: justify; text-indent: 2em;">
+Widely used for passwords. Remember this: all passwords should be stored as the output of a hashing algorithm, and no password should ever be stored in its raw form in any database. When you log in with your password, it's hashed and compared to the hash stored in the database; that's why it's used for comparison instead of encryption. Oddly enough, why is it still possible to steal your password?
+
+</div>
+
+## Some Ways to Retrieve Hashed Passwords
+
+<div style="text-align: justify; text-indent: 2em;">
+If you use a simple password, some applications will check the character strings and compare them to the hash to determine if the password is hashed. Therefore, make your password more complex, including numbers, uppercase letters, and special characters; this will make it harder to steal your password.
+
+</div>
+
+## Dictionary Attack and Brute Force Attack
+
+## Dictionary Attack
+<div style="text-align: justify; text-indent: 2em;">
+A dictionary attack involves using a list of common passwords.
+
+</div>
+
+Step 1: From a dictionary, generate corresponding hash strings, with thousands of such strings, and put them into a table to search against these strings.
+
+Step 2: Compare the hash strings in the table with the hash string to be attacked. If a match is found, the password string is obtained.
+
+## Brute Force Attack
+
+<div style="text-align: justify; text-indent: 2em;">
+Using a loop, each character is automatically tried, which could be a word, character, number, or anything else. This method is effective for short passwords. In the future, if computing becomes fast enough (quantum), all passwords with current mechanisms will be easily attacked by this brute-force method.
+
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-Khóa công khai có thể chia sẻ cho bất kỳ ai trong khi khóa bí mật chỉ duy nhất người tạo ra hai khóa này nắm giữ. Do đó, việc phía gửi sẽ sử dụng khóa công khai để mã hóa dữ liệu và phía nhận sẽ sử dụng khóa bí mật để giải mã dữ liệu nhận từ phía gửi.
-</div>
+Attackers often use a combination of these two methods, and to better protect your password, there are 3 things to pay attention to:</div>
 
-Ví dụ: Các bước trong truyền nhận dữ liệu với mã hóa khóa công khai 
-
-Kịch bản: An cần gửi cho Hoa một bản tin
-
-1. Hoa tạo ra một cặp khóa công khai và khóa bí mật
-2. Hoa đẩy khóa công khai này lên máy chủ chia sẻ khóa công khai, bất kỳ ai cũng có thể lấy khóa này và báo cho An lấy khóa công khai này
-3. An lấy khóa công khai của Hoa
-4. An lấy dữ liệu muốn gửi cho Hoa và mã hóa nó với khóa công khai của Hoa
-5. An gửi dữ liệu đã được mã hóa cho Hoa
-6. Hoa dùng khóa bí mật để giải mã dữ liệu nhận từ An
-
-<div style="text-align: justify; text-indent: 2em;">
-Dù khóa bí mật của Hoa có thể khiến không một ai có thể đọc và thay đổi dữ liệu trong quá trình gửi đến cho Hoa nhưng nó không thể xác minh người gửi dữ liệu đến cho Hoa là ai, có thể là An nhưng cũng có thể là bất kỳ ai sử dụng khóa công khai của Hoa. Để chứng minh người gửi là ai, ta cần một công nghệ khác được biết đến với tên gọi chữ ký số.
-</div>
-
-## Hàm Một Chiều và Hàm Cửa Sập trong Mật Mã Học Hiện Đại
-
-### Hàm Một Chiều 
-
-<div style="text-align: justify; text-indent: 2em;">
-Ta lấy một ví dụ khi trộn 4 loại quả khác nhau và xay chúng thành một hỗn hợp nước sinh tố thơm ngon, việc này thật dễ dàng để thực hiện nhưng ở chiều ngược lại việc lấy cốc sinh tố  nào đó và phân biệt có những loại quả nào trong đó thì sẽ khó hơn rất nhiều. Vậy thực tế hàm một chiều là hàm với x dễ dàng tính toán được f(x) nhưng rất khó để từ f(x) ta tìm được x.
-</div>
-
-### Hàm Cửa Sập 
-
-<div style="text-align: justify; text-indent: 2em;">
-Hàm cửa sập là một trường hợp đặc biệt của hàm một chiều, với một thông tin cửa sập (t) được cho ta có thể dễ dàng tìm ngược lại giá trij của x. Hàm cửa sập được sử dụng rộng rãi trong mã hóa khóa công khai. Mọi người có thể mã hóa với khóa công khai nhưng chỉ duy nhất một người nắm khóa bí mật có thể giải mã. Hệ thống mã hóa RSA và chữ ký số sử dụng chức năng cửa sập.
-</div>
-
-## Thuật Toán Băm (Hash Algorithm)
-
-<div style="text-align: justify; text-indent: 2em;">
-Thuật toán băm (SHA-256, ....) được sử dụng chủ yếu chi mục đích so sánh chứ không cho mã hóa. Những thuật toán băm được biết tới với 3 đặc điểm chính:
-</div>
-
-1. Khó dịch ngược 
-2. Cố định kích thước (128, 256 bits), nghĩa là đầu ra thường có kích thước cố định dù đầu vào có 1 hay nhiều ký tự 
-3. Duy nhất, hai dữ liệu khác nhau không thể có đầu ra giống nhau
-
-<div style="text-align: justify; text-indent: 2em;">
-Được sử dụng rộng rãi cho mật khẩu. Hãy nhớ lấy điều này, mọi mật khẩu nên lưu trữ dưới dạng đầu ra của một thuật toán băm và mọi mật khẩu không nên bao giờ được lưu dưới dạng gốc trong bất kỳ cơ sở dữ liệu nào. Khi bạn đăng nhập với mật khẩu, nó được băm ra và so sánh với phần băm được lưu trữ trong cơ sở dữ liệu, đó là lý do nó dùng cho mục đích so sánh thay vì mã hóa. Một điều kỳ lạ, vậy tại sao vẫn có thể trộm mật khẩu của bạn?
-</div>
-
-## Một Số Cách Lấy Mật Khẩu Đã Được Băm
-
-<div style="text-align: justify; text-indent: 2em;">
-Trường hợp bạn để mật khẩu đơn giản, một số ứng dụng giúp kiểm tra các chuỗi ký tự và so sánh chúng với chuỗi băm để cho ra kết quả là mật khẩu được băm. Vì vậy, hãy đặt mật khẩu phức tạp hơn, có đầy đủ ký tự chữ số, viết hóa và ký tự đặc biệt, điều này sẽ giúp mật khẩu của bạn khó bị đánh cắp một cách dễ dàng.
-</div>
-
-## Tấn Công Từ Điển và Tấn Công Vét Cạn 
-
-## Tấn Công Từ Điển
-<div style="text-align: justify; text-indent: 2em;">
-Việc tấn công từ điển là việc sử một danh sách các mật khẩu phổ biến.
-</div>
-
-Bước 1: Từ một từ điển, tạo ra các chuỗi băm tương ứng, với hàng nghìn chuỗi như vậy, và đưa vào bảng để tìm kiếm ngược lại các chuỗi này
-
-Bước 2: So sánh các chuỗi băm trong bảng với chuỗi băm cần tấn công, nếu tìm được chuỗi giống nhau ta lấy được chuỗi mật khẩu 
-
-## Tấn Công Vét Cạn
-
-<div style="text-align: justify; text-indent: 2em;">
-Sử dụng vòng lặp mỗi ký tự được thử tự động, có thể là từ, ký tự, số, hoặc bất cứ thứ gì. Phương pháp này hiệu quả với các mật khẩu ngắn. Trong tương lai, nếu việc tính toán đủ nhanh (lượng tử) thì mọi mật khẩu với cơ chế hiện tại đều dễ dàng bị tấn công bới phương pháp vét cạn này.
-</div>
-
-<div style="text-align: justify; text-indent: 2em;">
-Kẻ tấn công thường sử dụng kết hợp hai phuong pháp này, và để bảo vệ tốt hơn cho mật khẩu của bạn sẽ có 3 điều cần chú ý:
-</div>
-
-1. Mật khẩu mạnh: ít nhất 12 ký tự, trong đó sử dụng cả chữ cái hoa, thường, số, ký tự đặc biệt
-2. Mật khẩu duy nhất: bạn sẽ có nhiều mật khẩu cho mỗi tài khoản khác nhau, mỗi mật khẩu này cần khác biệt với nhau
-3. Mật khẩu luôn đổi: thay đổi mật khẩu ít nhất sau 3 tháng 
+1. Strong password: at least 12 characters, including uppercase and lowercase letters, numbers, and special characters.
+2. Unique password: you will have multiple passwords for each different account, and each password needs to be different from the others.
+3. Always change your password: change your password at least every 3 months.
