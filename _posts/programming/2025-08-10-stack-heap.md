@@ -2,7 +2,7 @@
 layout: post
 title: "The Stack and The Heap"
 date: 2025-08-11 10:00:00 +0700
-categories: [Programing]
+categories: [Programming]
 ---
 
 <div style="text-align: justify; text-indent: 2em;">
