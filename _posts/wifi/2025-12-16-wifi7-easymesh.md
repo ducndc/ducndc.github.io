@@ -5,6 +5,8 @@ date: 2025-12-09 10:00:00 +0700
 categories: [WiFi]
 ---
 
+![H1](/assets/img/wifi/Sys.png)
+
 ## Onboarding 
 
 ### WPS
