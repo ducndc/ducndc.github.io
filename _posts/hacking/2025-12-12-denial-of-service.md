@@ -1,97 +1,119 @@
 ---
-layout: post
-title: "Denial of Service (DoS) Lab Guide"
-date: 2025-12-12 10:00:00 +0700
-categories: [Hacking]
----
-
-# Tìm hiểu về Tấn công Denial of Service (DoS)
-
-## 1. Tổng quan về DoS Attack
-Denial of Service (DoS) là hình thức tấn công vào hệ thống máy tính hoặc mạng nhằm làm giảm, hạn chế hoặc ngăn cản người dùng hợp lệ truy cập vào các tài nguyên hệ thống.
-
-* **Cơ chế:** Kẻ tấn công làm tràn ngập hệ thống nạn nhân bằng các yêu cầu dịch vụ không hợp lệ hoặc lưu lượng truy cập ảo để gây quá tải tài nguyên.
-* **Tác động:** Bao gồm mất uy tín, ngừng trệ mạng lưới, tổn thất tài chính và gián đoạn vận hành doanh nghiệp.
-
-
+Layout: post
+Title: "Denial of Service (DoS) Lab Guide"
+Date: 2025-12-12 10:00:00 +0700
+Categories: [Hacking]
 
 ---
+# Understanding Denial of Service (DoS) Attacks
 
-## 2. Thực hành Lab (LAB Procedures)
+## 1. Overview of DoS Attacks
+
+Denial of Service (DoS) is a type of attack on a computer system or network aimed at reducing, restricting, or preventing legitimate users from accessing system resources.
+
+* **Mechanism:** The attacker floods the victim's system with invalid service requests or virtual traffic to overload resources.
+
+* **Impact:** Includes reputational damage, network downtime, financial losses, and business operational disruption.
+
+---
+
+## 2. Lab Procedures
 
 ### A. TCP SYN Flood
-Cuộc tấn công này khai thác quá trình bắt tay 3 bước của TCP để làm cạn kiệt tài nguyên kết nối của mục tiêu.
+This attack exploits the TCP 3-way handshake to exhaust the target's connection resources.
 
+#### Method 1: Using Metasploit
+* **Step 1:** Scan open ports using **Nmap**.
 
+* **Step 2:** Use the `auxiliary/dos/tcp/synflood` module.
 
-#### Cách 1: Sử dụng Metasploit
-* **Bước 1:** Quét các cổng đang mở bằng **Nmap**.
-* **Bước 2:** Sử dụng module `auxiliary/dos/tcp/synflood`.
-* **Đặc điểm:** Hỗ trợ giả mạo IP nguồn (random source IP).
-* **Lưu ý:** Khởi động Wireshark hoặc tcpdump trước khi tấn công để quan sát gói tin.
+* **Features:** Supports random source IP spoofing.
 
-#### Cách 2: Sử dụng hping3
-Cú pháp lệnh thực thi:
+* **Note:** Start Wireshark or tcpdump before the attack to observe packets.
+
+#### Method 2: Using hping3
+Execution command syntax:
 `hping3 -S -p 3389 --rand-source --flood 192.168.111.112`
 
-**Giải thích các tùy chọn (Options):**
-| Tham số | Ý nghĩa |
+**Explanation of Options:**
+
+| Parameters | Meaning |
+
 | :--- | :--- |
-| `-S` | Quét kiểu đồng bộ (SYN scan) |
-| `-a` | Giả mạo với một địa chỉ nguồn cố định |
-| `--rand-source` | Giả mạo bằng nhiều địa chỉ IP nguồn ngẫu nhiên |
-| `-p` | Cổng mục tiêu (Ví dụ: 22 cho SSH, 3389 cho RDP) |
-| `--flood` | Gửi gói tin liên tục với tốc độ cao nhất (flood) |
+
+| `-S` | Synchronous scan (SYN scan) |
+
+| `-a` | Spoofing with a fixed source address |
+
+| `--rand-source` | Spoofing with multiple random source IP addresses |
+
+| `-p` | Target port (Example: 22 for SSH, 3389 for RDP) |
+
+| `--flood` | Sending packets continuously at maximum speed (flood) |
 
 ---
 
 ### B. SMB Service DoS - Memory DoS (Metasploit)
-Tấn công vào dịch vụ chia sẻ file (SMB) để gây cạn kiệt bộ nhớ của hệ thống mục tiêu.
+Attacks the shared file service (SMB) to exhaust the target system's memory.
 
-1. **Tại máy Kali:** Tăng giới hạn số lượng file mở đồng thời:
-   `ulimit -n 65535` hoặc `ulimit -n unlimited`.
-2. **Sử dụng Metasploit:**
-   - `use auxiliary/dos/smb/smb_loris`
-   - `set RHOST 192.168.111.112`
-   - `run`
-3. **Kiểm chứng:** Trên máy Windows 7, mở **Task Manager > Performance** để quan sát tài nguyên.
+1. **On the Kali machine:** Increase the limit on the number of files opened simultaneously:
+
+`ulimit -n 65535` or `ulimit -n unlimited`.
+
+2. **Using Metasploit:**
+
+- `use auxiliary/dos/smb/smb_loris`
+
+- `set RHOST 192.168.111.112`
+
+- `run`
+3. **Verification:** On a Windows 7 machine, open **Task Manager > Performance** to observe resources.
 
 ---
 
-### C. DoS Attack trên dịch vụ RDP (Windows 7)
-Khai thác lỗ hổng MS12-020 để gây lỗi hệ thống (màn hình xanh - BSOD).
+### C. DoS Attack on RDP service (Windows 7)
+Exploits the MS12-020 vulnerability to cause system errors (Blue Screen of Death - BSOD).
 
 * **Module:** `auxiliary/dos/windows/rdp/ms12_020_maxchannelids`.
-* **Yêu cầu:** Máy mục tiêu chưa vá lỗi và đã bật dịch vụ Remote Desktop (RDP).
-* **Kết quả:** Hệ thống sẽ bị crash (BSOD) nếu có lỗ hổng.
+
+* **Requirements:** The target machine is unpatched and Remote Desktop (RDP) is enabled.
+
+* **Result:** The system will crash (BSOD) if the vulnerability is present.
 
 ---
 
-### D. HTTP Slowloris - Tấn công tầng ứng dụng (L7)
-Kỹ thuật này giữ các kết nối HTTP ở trạng thái mở bằng cách gửi các yêu cầu không hoàn chỉnh, làm cạn kiệt connection pool của Web Server.
+### D. HTTP Slowloris - Application Layer Attack (L7)
+This technique keeps HTTP connections open by sending incomplete requests, exhausting the Web Server's connection pool.
 
-
-
-#### Thực hiện qua Metasploit
+#### Execution via Metasploit
 * **Module:** `auxiliary/dos/http/slowloris`.
-* **Cơ chế:** Độc chiếm mọi kết nối khả dụng, khiến Web Server từ chối các kết nối mới.
-* **Kiểm tra:** Thử nghiệm trên **IIS (Win7)** và **Apache (Metasploitable2)**. Kiểm tra khả năng truy cập website sau 15-30 giây.
 
-#### Thực hiện qua OWASP DoS Tool
-1. **Theo dõi:** Truy cập `http://[IP_M2]/server-status` trên máy M2 để xem các slot trống (dấu `.`).
-2. **Giám sát:** Sử dụng lệnh `top` trên máy M2 để theo dõi CPU Idle.
-3. **Thực hiện:** Chạy **HTTP Dos Tool 4.0** trên máy Windows 7.
-4. **Kết quả:** Khi connection pool đầy (hiển thị chữ `R`), website sẽ không thể truy cập.
+* **Mechanism:** Monopolizes all available connections, causing the Web Server to reject new connections.
+
+* **Testing:** Tested on **IIS (Win7)** and **Apache (Metasploitable2)**. Check website accessibility after 15-30 seconds.
+
+#### Performed via OWASP DoS Tool
+1. **Monitoring:** Access `http://[IP_M2]/server-status` on machine M2 to see empty slots (the dot `.`).
+
+2. **Supervising:** Use the `top` command on machine M2 to monitor CPU Idle.
+
+3. **Execution:** Run **HTTP Dos Tool 4.0** on a Windows 7 machine.
+
+4. **Result:** When the connection pool is full (displays the letter `R`), the website will be inaccessible.
 
 ---
 
-## 3. Các công cụ DoS phổ biến khác
+## 3. Other Popular DoS Tools
 
-| Tên công cụ | Đặc điểm | Nguồn tham khảo |
+| Tool Name | Characteristics | References |
+
 | :--- | :--- | :--- |
-| **Impulse** | Kết hợp nhiều kỹ thuật tấn công DoS | [GitHub](https://github.com/LimerBoy/Impulse) |
-| **Xerxes** | Công cụ tấn công HTTP mạnh mẽ | [GitHub](https://github.com/zanyarjamal/xerxes) |
-| **HULK** | Tấn công HTTP Unbearable Load King | [Packet Storm](https://packetstormsecurity.com/files/112856/HULK-Http-Unbearable-Load-King.html) |
+
+| **Impulse** | Combines multiple DoS attack techniques | [GitHub](https://github.com/LimerBoy/Impulse) |
+
+| **Xerxes** | Powerful HTTP Attack Tool | [GitHub](https://github.com/zanyarjamal/xerxes) |
+
+| **HULK** | HTTP Attack on Unbearable Load King | [Packet Storm](https://packetstormsecurity.com/files/112856/HULK-Http-Unbearable-Load-King.html) |
 
 ---
-*Lưu ý: Tài liệu này chỉ phục vụ mục đích học tập và thử nghiệm trong môi trường giả lập an toàn.*
+*Note: This document is for educational and testing purposes only in a safe simulated environment.*

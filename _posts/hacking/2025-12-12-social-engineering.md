@@ -1,69 +1,82 @@
 ---
-layout: post
-title: "Social Engineering Attacks"
-date: 2025-12-12 10:00:00 +0700
-categories: [Hacking]
----
-
-# Tìm hiểu về Tấn công Social Engineering
-
-Social Engineering (Tấn công phi kỹ thuật) là nghệ thuật thao túng tâm lý con người để tiết lộ thông tin bí mật hoặc thực hiện các hành động có lợi cho kẻ tấn công.
+Layout: post
+Title: "Social Engineering Attacks"
+Date: 2025-12-12 10:00:00 +0700
+Categories: [Hacking]
 
 ---
+# Understanding Social Engineering Attacks
 
-## 1. Các loại hình Social Engineering phổ biến
-
-### A. Impersonation (Giả mạo)
-Đây là kỹ thuật Social Engineering dựa trên con người phổ biến nhất.
-* **Cơ chế:** Kẻ tấn công giả vờ là một người hợp lệ hoặc người có thẩm quyền.
-* **Phương thức:** Thực hiện trực tiếp (gặp mặt) hoặc thông qua các phương tiện truyền thông như điện thoại, email, v.v.
-* **Mục tiêu:** Đánh lừa nạn nhân để họ tiết lộ các thông tin nhạy cảm.
-
-### B. Phishing (Tấn công giả mạo)
-Phishing là hành vi gửi email không hợp lệ, giả danh các trang web/tổ chức uy tín nhằm chiếm đoạt thông tin cá nhân hoặc tài khoản của người dùng.
-
-#### Các loại hình Phishing:
-* **Spear Phishing:** Tấn công có mục tiêu cụ thể vào một cá nhân hoặc tổ chức.
-* **Whaling:** Nhắm vào các mục tiêu "lớn" như giám đốc điều hành (CEO) hoặc quản lý cấp cao.
-* **Pharming:** Kẻ tấn công cài đặt chương trình độc hại để điều hướng lưu lượng truy cập web từ trang hợp lệ sang một trang web giả mạo.
-* **Spimming:** Tấn công giả mạo thông qua tin nhắn tức thời (Instant Messaging).
-
-
-
-#### Công cụ hỗ trợ Phishing:
-* **The Social-Engineer Toolkit (SET):** Bộ công cụ mạnh mẽ để giả lập các cuộc tấn công.
-* **ShellPhish:** Công cụ tạo trang giả mạo tự động.
+Social engineering is the art of manipulating people's psychology to reveal confidential information or perform actions that benefit the attacker.
 
 ---
 
-## 2. Các kỹ thuật Social Engineering dựa trên máy tính khác
+## 1. Common Types of Social Engineering
 
-Kẻ tấn công sử dụng phần mềm và giao diện máy tính để đánh lừa người dùng:
-* **Pop-Up Windows:** Cửa sổ bật lên thông báo giả.
-* **Hoax Letters:** Các lá thư lừa đảo (ví dụ: thông báo trúng thưởng giả).
-* **Chain Letters:** Thư chuyển tiếp gây hoang mang hoặc hứa hẹn lợi ích.
-* **Instant Chat Messenger:** Lừa đảo qua tin nhắn trực tuyến.
-* **Spam Email:** Thư rác chứa nội dung độc hại hoặc quảng cáo lừa đảo.
-* **Scareware:** Phần mềm hù dọa (ví dụ: cảnh báo virus giả) để ép người dùng cài đặt mã độc.
+### A. Impersonation
+This is the most common human-based social engineering technique.
+
+* **Mechanism:** The attacker pretends to be a legitimate or authoritative person.
+
+* **Method:** Performed in person (face-to-face) or through media such as phone calls, emails, etc.
+
+* **Objective:** To trick the victim into revealing sensitive information.
+
+### B. Phishing
+Phishing is the act of sending invalid emails impersonating reputable websites/organizations to steal users' personal information or account details.
+
+#### Types of Phishing:
+* **Spear Phishing:** A targeted attack on a specific individual or organization.
+
+* **Whaling:** Targeting "big" targets such as CEOs or senior managers.
+
+* **Pharming:** Attackers install malicious software to redirect web traffic from a legitimate site to a fake website.
+
+* **Spimming:** Phishing attacks via instant messaging.
+
+#### Tools to Support Phishing:
+
+* **The Social-Engineer Toolkit (SET):** A powerful toolset for simulating attacks.
+
+* **ShellPhish:** An automated tool for creating fake pages.
 
 ---
 
-## 3. Thực hành với Social-Engineer Toolkit (setoolkit)
+## 2. Other Computer-Based Social Engineering Techniques
 
-Công cụ SET thường được sử dụng trong các bài Lab để trình diễn khả năng tấn công:
-* **Tạo Web Clone:** Sao chép giao diện của một trang web nổi tiếng (như Facebook, Gmail) để đánh cắp thông tin đăng nhập khi nạn nhân nhập vào trang giả mạo.
+Attackers use software and computer interfaces to deceive users:
+
+* **Pop-Up Windows:** Fake notification pop-ups.
+
+* **Hoax Letters:** Scam emails (e.g., fake prize notifications).
+
+* **Chain Letters:** Misleading or promising forwarded emails.
+
+* **Instant Chat Messenger:** Online messaging scams.
+
+* **Spam Email:** Spam containing malicious content or fraudulent advertisements.
+
+* **Scareware:** Scary software (e.g., fake virus alerts) to force users to install malware.
 
 ---
 
-## 4. Tấn công qua ứng dụng di động
+## 3. Practice with Social-Engineer Toolkit (setoolkit)
 
-Kẻ tấn công lợi dụng sự tin tưởng của người dùng vào các kho ứng dụng:
-* **Publishing Malicious Apps:** Phát hành các ứng dụng chứa mã độc trực tiếp lên cửa hàng.
-* **Repackaging Legitimate Apps:** Lấy các ứng dụng hợp lệ, chèn thêm mã độc vào bên trong, sau đó đóng gói lại và phát tán nhằm đánh cắp dữ liệu người dùng.
+SET tools are often used in lab exercises to demonstrate attack capabilities:
+* **Creating Web Clones:** Copying the interface of a popular website (such as Facebook, Gmail) to steal login information when the victim enters it into the fake page.
+
+---
+
+## 4. Mobile Application Attacks
+
+Attackers exploit users' trust in app stores:
+
+* **Publishing Malicious Apps:** Releasing applications containing malicious code directly to the store.
+
+* **Repackaging Legitimate Apps:** Taking legitimate applications, inserting malicious code inside, then repackaging and distributing them to steal user data.
 
 ## Publishing Malicious Apps and Repackaging Legitimate Apps
 
 ![H1](/assets/img/hacking/publishing_malicious.png)
 
----
-*Lưu ý: Tài liệu này phục vụ mục đích giáo dục và nâng cao nhận thức về bảo mật thông tin.*
+---*Note: This document is for educational purposes and to raise awareness about information security.*

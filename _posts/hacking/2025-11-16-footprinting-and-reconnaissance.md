@@ -1,93 +1,97 @@
 ---
-layout: post
-title: "Footprinting and Reconnaissance Lab Guide"
-date: 2025-11-16 10:00:00 +0700
-categories: [Hacking]
+Layout: post
+Title: "Footprinting and Reconnaissance Lab Guide"
+Date: 2025-11-16 10:00:00 +0700
+Categories: [Hacking]
+
 ---
 
 ## 1. Overview
 
-**Footprinting and Reconnaissance** là giai đoạn đầu tiên trong quá trình pentest, tập trung vào việc **thu thập thông tin công khai (OSINT)** về mục tiêu mà **không hoặc rất ít tương tác trực tiếp** với hệ thống.
+**Footprinting and Reconnaissance** is the first stage in the pentest process, focusing on **collecting publicly available information (OSINT)** about the target that **has little or no direct interaction** with the system.
 
-Mục tiêu là xây dựng **bức tranh tổng thể** về tổ chức / cá nhân / website trước khi bước sang scanning và enumeration.
+The goal is to build a **overall picture** of the organization/individual/website before moving on to scanning and enumeration.
 
 ---
 
 ## 2. Lab Objectives
 
-Sau khi hoàn thành lab này, bạn sẽ có thể:
-- Thu thập thông tin từ các nguồn OSINT phổ biến
-- Xác định domain, IP, công nghệ sử dụng
-- Tìm dấu vết lịch sử của website
-- Liên kết dữ liệu từ nhiều nguồn khác nhau
+After completing this lab, you will be able to:
+- Gather information from common OSINT sources
+- Identify domains, IP addresses, and technologies used
+
+- Trace the history of a website
+
+- Link data from various sources
 
 ---
 
 ## 3. Lab Scope & Rules
 
-⚠️ Chỉ thực hiện trên mục tiêu được phép (lab, máy ảo, website test).  
-⚠️ Không thực hiện brute-force hay tấn công xâm nhập.
+⚠️ Only perform this on authorized targets (lab, virtual machine, test website).
+
+⚠️ Do not perform brute-force or intrusion attacks.
 
 ---
 
 ## 4. Reconnaissance Techniques
 
-### 4.1 Shodan – Internet-wide Search Engine
+### 4.1 Shodan – Internet-Wide Search Engine
 
 ![Shodan](/assets/img/networking/footprinting.png)
 
-Shodan cho phép tìm kiếm:
-- Thiết bị đang public trên Internet
+Shodan allows searching for:
+- Devices publicly accessible on the Internet
 - Open ports, services
-- Banner dịch vụ
+- Service banners
 
-Ví dụ truy vấn:
+Example query:
 ```
 apache country:VN
 port:22 product:OpenSSH
 ```
 
 ---
-
 ### 4.2 Google Dorking & Gemini CLI
 
-Ví dụ Google Dork:
+Example Google Dorking:
 ```
 site:example.com filetype:pdf
 intitle:"index of"
+
 ```
 
-Gemini CLI có thể hỗ trợ tóm tắt và phân tích dữ liệu OSINT.
+Gemini CLI can support summarizing and analyzing OSINT data.
 
 ---
 
 ### 4.3 DNS Enumeration – dnsdumpster
 
-Dnsdumpster giúp liệt kê subdomain, IP và sơ đồ DNS.
+Dnsdumpster helps list subdomains, IPs, and DNS schemes.
 
 ---
 
-### 4.4 Netcraft – Technology Fingerprinting
+### 4.4 Netcraft – Fingerprinting Technology
 
-Netcraft dùng để xác định web server, OS, hosting provider.
+Netcraft is used to identify web servers, operating systems, and hosting providers.
 
 ---
 
 ### 4.5 Wayback Machine – Website History
 
-Wayback Machine giúp xem phiên bản cũ của website, tìm endpoint đã bị xóa.
+Wayback Machine helps view older versions of websites and find deleted endpoints.
 
 ---
 
 ### 4.6 Username Enumeration – PeekYou
 
-PeekYou hỗ trợ tìm dấu vết username và liên kết mạng xã hội.
+PeekYou helps find traces of usernames and social media links.
 
 ---
 
 ### 4.7 Intelligence Search – IntelX
 
-IntelX dùng để tìm dữ liệu bị leak, email, domain, hash.
+IntelX is used to find leaked data, emails, domains, and hashes.
 
 ---
 
@@ -95,25 +99,28 @@ IntelX dùng để tìm dữ liệu bị leak, email, domain, hash.
 
 ![Google Search](/assets/img/hacking/search-google.png)
 
-OSINT Framework là bản đồ tổng hợp các công cụ OSINT.
+OSINT Framework is a comprehensive map of OSINT tools.
 
 ---
 
 ## 5. Information Correlation
 
-Đối chiếu và xác thực thông tin từ nhiều nguồn để giảm dữ liệu nhiễu.
+Compares and verifies information from multiple sources to reduce data noise.
 
 ---
 
 ## 6. Lab Questions
 
-1. Footprinting khác gì Scanning?
-2. OSINT có giới hạn ở đâu?
-3. Công cụ nào phù hợp để tìm subdomain?
-4. Wayback Machine giúp ích gì?
+1. How is Footprinting different from Scanning?
+
+2. What are the limitations of OSINT?
+
+3. What tools are suitable for finding subdomains?
+
+4. How is Wayback Machine useful?
 
 ---
 
 ## 7. Conclusion
 
-Footprinting và Reconnaissance là nền tảng của mọi cuộc tấn công pentest.
+Footprinting and Reconnaissance are the foundation of all pentest attacks.

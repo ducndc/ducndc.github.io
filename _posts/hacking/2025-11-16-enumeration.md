@@ -1,67 +1,70 @@
 ---
-layout: post
-title: "Enumeration Lab Guide"
-date: 2025-11-16 10:00:00 +0700
-categories: [Hacking]
+Layout: post
+Title: "Enumeration Lab Guide"
+Date: 2025-11-16 10:00:00 +0700
+Categories: [Hacking]
 ---
 
 ## 1. Overview
 
-Enumeration là giai đoạn **sau Scanning**, tập trung vào việc **trích xuất thông tin chi tiết** từ các dịch vụ đang chạy trên hệ thống mục tiêu.  
-Mục tiêu của lab này là thực hành enumeration với **SNMP** và **Metasploit**.
+Enumeration is the **post-scanning** phase, focusing on **extracting detailed information** from services running on the target system.
+
+The goal of this lab is to practice enumeration with **SNMP** and **Metasploit**.
 
 ---
 
 ## 2. Lab Objectives
 
-Sau khi hoàn thành lab, bạn sẽ có thể:
-- Xác định dịch vụ SNMP đang hoạt động
-- Thu thập thông tin hệ thống qua SNMP
-- Enumeration process bằng Nmap
-- Sử dụng Metasploit để hỗ trợ enumeration
+After completing this lab, you will be able to:
+- Identify active SNMP services
+- Gather system information via SNMP
+- Enumerate processes using Nmap
+- Use Metasploit to support enumeration
 
 ---
 
 ## 3. Lab Environment
 
-| Thành phần | Mô tả |
-|----------|------|
+| Components | Description |
+
 | Attacker | Kali Linux |
-| Target | Máy ảo Linux / Windows có bật SNMP |
-| Network | NAT / Host-only |
+
+| Target | Linux/Windows Virtual Machine with SNMP Enabled |
+
+| Network | NAT/Host-only |
 
 ---
 
-## 4. Enumeration với SNMP
+## 4. Enumeration with SNMP
 
-### 4.1 Kiểm tra SNMP port
+### 4.1 Checking SNMP Port
 
-SNMP thường chạy trên cổng **UDP 161**.
+SNMP usually runs on **UDP port 161**.
 
 ```bash
 nmap -sU -p 161 <target-ip>
 ```
 
-Nếu port mở, tiếp tục enumeration.
+If the port is open, continue enumeration.
 
 ---
 
-### 4.2 SNMP Enumeration bằng `snmp-check`
+### 4.2 SNMP Enumeration with `snmp-check`
 
 ```bash
 snmp-check <target-ip>
 ```
 
-Thông tin có thể thu được:
+Information that can be obtained:
 - System name & description
-- User account
+- User accounts
 - Network interface
-- Process đang chạy
+- Process is running
 - Routing table
 
 ---
 
-### 4.3 Enumeration process bằng Nmap
+### 4.3 Enumeration process using Nmap
 
 ```bash
 nmap -sV --script snmp-processes <target-ip>
@@ -69,9 +72,9 @@ nmap -sV --script snmp-processes <target-ip>
 
 ---
 
-## 5. Enumeration bằng Metasploit
+## 5. Enumeration using Metasploit
 
-### 5.1 Khởi động Metasploit
+### 5.1 Start Metasploit
 
 ```bash
 msfconsole
@@ -79,7 +82,7 @@ msfconsole
 
 ---
 
-### 5.2 Tìm module SNMP
+### 5.2 Find the SNMP module
 
 ```bash
 search snmp
@@ -87,7 +90,7 @@ search snmp
 
 ---
 
-### 5.3 Chạy module enumeration
+### 5.3 Run the enumeration module
 
 ```bash
 use auxiliary/scanner/snmp/snmp_enum
@@ -96,26 +99,31 @@ run
 ```
 
 ---
-
 ## 6. Post-Enumeration Analysis
 
-Sau khi enumeration, cần:
-- Ghi chú lại service và version
-- Xác định thông tin nhạy cảm
-- Đánh giá khả năng khai thác tiếp theo
+After enumeration, you need to:
+
+- Note the service and version
+
+- Identify sensitive information
+
+- Evaluate the potential for further exploitation
 
 ---
 
 ## 7. Lab Questions
 
-1. SNMP community string mặc định là gì?
-2. Những thông tin nào có thể bị lộ qua SNMP?
-3. Enumeration khác gì scanning?
-4. Kết quả enumeration giúp ích gì cho exploitation?
+1. What is the default SNMP community string?
+
+2. What information can be leaked through SNMP?
+
+3. How is enumeration different from scanning?
+
+4. How do enumeration results help in exploitation?
 
 ---
-
 ## 8. Conclusion
 
-Enumeration là bước **cầu nối quan trọng** giữa scanning và exploitation.  
-SNMP là dịch vụ thường bị bỏ qua nhưng lại mang giá trị thông tin rất cao nếu cấu hình yếu.
+Enumeration is a **crucial bridge** between scanning and exploitation.
+
+SNMP is a service that is often overlooked but carries very high informational value if configured poorly.
