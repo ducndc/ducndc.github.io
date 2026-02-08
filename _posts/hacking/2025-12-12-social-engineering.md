@@ -3,8 +3,8 @@ Layout: post
 Title: "Social Engineering Attacks"
 Date: 2025-12-12 10:00:00 +0700
 Categories: [Hacking]
-
 ---
+
 # Understanding Social Engineering Attacks
 
 Social engineering is the art of manipulating people's psychology to reveal confidential information or perform actions that benefit the attacker.
