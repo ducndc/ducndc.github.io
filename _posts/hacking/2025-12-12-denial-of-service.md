@@ -39,8 +39,6 @@ Execution command syntax:
 
 | Parameters | Meaning |
 
-| :--- | :--- |
-
 | `-S` | Synchronous scan (SYN scan) |
 
 | `-a` | Spoofing with a fixed source address |
