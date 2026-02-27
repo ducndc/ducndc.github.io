@@ -1,112 +1,123 @@
 ---
 layout: post
-title: "Mesh System"
+title: "Wi-Fi Mesh Systems: EasyMesh and IEEE 1905.1"
 date: 2023-09-12 10:00:00 +0700
 categories: [Networking]
+tags: [networking, wifi, mesh, easymesh, ieee-1905, wireless, access-point]
+excerpt: "A technical overview of Wi-Fi Mesh networking — how EasyMesh and IEEE 1905.1 work together to enable multi-AP autoconfiguration, topology discovery, and link metric exchange."
 ---
 
-## Overview
+Traditional Wi-Fi deployments tie coverage to wherever you can run a cable. Moving an access point means moving wiring. Wi-Fi Mesh solves this by turning multiple APs into a self-organizing network that routes traffic through the best available path — no rewiring required.
 
-<div style="text-align: justify; text-indent: 2em;">
-WiFi Mesh network (wireless mesh network), also known as “multi-hop” network, is a new wireless networking solution developed based on WiFi technology. Unlike traditional WiFi network, WiFi Mesh network is a network technology based on multi-hop routing and peer-to-peer network, which is a new network structure. In the traditional wireless network, WiFi technology constitutes the internal network. The terminal joins the network through WiFi. The connection port on the device is Ethernet or optical port. In the network deployment, once the wired distance is determined, the location of the device WiFi will also be fixed. If you want to change the location of WiFi, you need to adjust the corresponding wired network, which is more difficult to operate and consumes a lot of time and wiring costs. Therefore, the traditional WiFi construction method has the shortcomings of high cost, poor flexibility, complex operation, etc. It is not suitable for building online services in scenarios such as high wireless quality and aesthetics, less maintenance investment and weak wired network. Mesh network only needs to install corresponding subnodes, no need to change the wired network, and it is very convenient and fast to set up a network [1].
-</div>
+![Wi-Fi Mesh system diagram](/assets/img/networking/MeshSystem.webp)
 
-![H1](/assets/img/networking/MeshSystem.webp)
+## What is Wi-Fi Mesh?
 
-## Benefits
+A Wi-Fi Mesh network — sometimes called a "multi-hop" network — builds on standard Wi-Fi technology but replaces the fixed, star-topology infrastructure model with a peer-to-peer, multi-hop routing architecture. Nodes discover each other, establish backhaul links wirelessly, and forward traffic through the mesh to reach the upstream gateway.
 
-<div style="text-align: justify; text-indent: 2em;">
-Wi-Fi EasyMesh brings these capabilities to home and small office Wi-Fi networks.
-</div>
+The practical benefit: you place sub-nodes where coverage is needed, not where cable happens to terminate. No additional wiring, no structural changes, and coverage gaps are filled by adding nodes rather than pulling cable.
 
-1. Increased network capacity: Supports more simultaneous services and higher realized throughput when operating in Wi-Fi 6 and Wi-Fi 6E
-2. Flexible design: Allows for best placement of multiple APs providing extended coverage
-3. Easy setup: Delivers seamless, secure device onboarding and configuration using QR codes through Wi-Fi Easy Connect technology
-4. Network intelligence: Advanced diagnostics for Wi-Fi 6 capabilities through Wi-Fi Data Elements facilitate service provider support and responds to network conditions to maximize performance
-5. Effective service prioritization and Quality of Service (QoS) support: Capability to prioritize low latency applications when needed and guides devices to roam to the best connection and avoid interference
-6. Scalability: Enables addition of Wi-Fi EasyMesh APs from multiple vendors
+## Wi-Fi EasyMesh
 
-## Protocol
-### P1905.1 AL MAC Address
+**Wi-Fi EasyMesh** is the Wi-Fi Alliance's interoperability certification for multi-AP home and small office networks. It standardizes the management and control plane across vendors, so EasyMesh-certified APs from different manufacturers can form a single managed network.
 
-- A P1905.1 Abstraction Layer within a P1905.1 Device uses a MAC Address for identification.
-- The P1905.1 AL MAC Address is locally administered.
-- The P1905.1 AL MAC Address may be used as a source and destination address for data and P1905.1 control packets destined for the device.
-- Each P1905.1 AL shall use a MAC Address that is not used by any other P1905.1 AL in the P1905.1 Network to which it connects.
+Key capabilities:
 
-### Protocols for IEEE 802.11 access point autoconfiguration with IEEE Std 1905.1
+- **Increased capacity** — supports more simultaneous services and higher throughput when operating on Wi-Fi 6 / Wi-Fi 6E
+- **Flexible placement** — multiple APs can be positioned for optimal coverage rather than optimal wiring
+- **Easy onboarding** — secure device setup via QR codes using Wi-Fi Easy Connect
+- **Network intelligence** — Wi-Fi Data Elements provide advanced diagnostics for Wi-Fi 6, enabling service provider support and dynamic performance optimization
+- **QoS and service prioritization** — low-latency applications can be prioritized; the system guides clients to roam to the best available AP and steers away from interference
+- **Multi-vendor scalability** — EasyMesh APs from different vendors can be added to the same network
 
-<div style="text-align: justify; text-indent: 2em;">
-AP autoconfiguration process use CMDU to send IEEE 802.11 paramaters from the registration server to the AP registration client to set initial configuration or update the existing configuration of the IEEE 802.11 interface. This operation provides an automated way to setup an extended service set for multiple APs and acts a registration client and uses an authenticated 1905.1 interface to send messages to another 1905.1 device acting as registration server. The 1905.1 network should be configured with a registration server that can be configured using buttons to facilitate the normal operation of 1905.1 devices.
-</div>
+---
 
-<div style="text-align: justify; text-indent: 2em;">
-After successful authentication of the 1905.1 interface, the AP-autoconfiguration process will be triggered. The AP automatic configuration process is divided into the following two stages:
-</div>
+## Protocol Foundation: IEEE 1905.1
 
-1. Registrar discovery phase: to obtain information about registrars available on the 1905.1 network
+The control plane for EasyMesh is built on **IEEE 1905.1**, an abstraction layer that provides a unified interface over heterogeneous link types (Ethernet, Wi-Fi, powerline, MoCA). 1905.1 messages are called **CMDUs** (Control Message Data Units) and are carried directly in 802 frames.
 
-2. IEEE 802.11 parameter configuration phase: Transmits configuration data between the registration server and the registration client (as specified in Wi-Fi simple configuration). The 1905.1 abstraction layer provides a transparent transmission protocol for WSC frames M1 and M2.
+### Addressing
 
-<div style="text-align: justify; text-indent: 2em;">
-After receiving M1, the registration server sends M2, which contains key-encrypted configuration data. This process is defined per interface and applies to every unconfigured IEEE 802.11ap interface.
-</div>
+Each 1905.1 device has a **P1905.1 Abstraction Layer (AL) MAC Address** used to identify it within the mesh network. This address:
 
-### Registrar discovery phase
+- Is locally administered
+- Serves as source and destination for both data and 1905.1 control messages
+- Must be unique within the P1905.1 network — no two AL entities may share the same address
 
-<div style="text-align: justify; text-indent: 2em;">
-If the 1905.1 device contains an unconfigured IEEE 802.11 AP interface, the Registrar discovery phase SHOULD begin after successful authentication of the 1905.1 interface. The registration client sends an AP-autoconfiguration search message to discover the registration server. This multicast search message includes the UnconfiguredFreqBand TLV to discover whether the registration server can support automatic configuration of the requested frequency band. If the registration server supports the requested functionality, it shall return a unicast AP-autoconfiguration response message.
-</div>
+---
 
-![H1](/assets/img/networking/M1M2.png)
+## AP Autoconfiguration
 
-### IEEE 802.11 parameter configuration phase
+When a new AP joins the mesh, it needs to be configured with the correct SSIDs, credentials, and radio parameters. The 1905.1 AP autoconfiguration process automates this using a **Registrar/Enrollee** model:
 
-<div style="text-align: justify; text-indent: 2em;">
-The IEEE 802.11 parameter configuration process should be started after receiving the AP-autoconfiguration response message. The IEEE 802.11 parameter configuration process is completed by exchanging messages: AP-autoconfiguration WSC (M1) and AP-autoconfiguration WSC (M2) (the content and format of m1 and m2 defined in wi-fi simple configuration). IEEE 802.11 configuration data is delivered to registered clients in M2. If The IEEE 802.11 parameter configuration does not complete successfully, the registered client should restart the Registrar discovery process. IEEE 802.11 settings (ConfigData) in M2 frame.
-</div>
+- **Registration server (Registrar)** — a 1905.1 device that holds the authoritative Wi-Fi configuration
+- **Registration client (Enrollee)** — an AP with one or more unconfigured 802.11 interfaces
 
-### Renewing of configuration
+Configuration is delivered via Wi-Fi Simple Configuration (WSC) M1/M2 message exchange, tunneled transparently over 1905.1.
 
-<div style="text-align: justify; text-indent: 2em;">
-The AP-autoconfiguration renew message should be multicast by the registration server to notify AP registration clients that have configured data using the AP-autoconfiguration process to restart the AP-autoconfiguration process to update the data. This data update process is very important for the 1905.1 network to maintain synchronization of configuration parameters during the life cycle (restart, upgrade operations, etc.). All APs previously configured by the registration server should start The IEEE 802.11 parameter configuration after receiving the AP-autoconfiguration renew message. All APs previously configured by the registration server should start The IEEE 802.11 parameter configuration after receiving the AP-autoconfiguration renew message.
-</div>
+The process has two phases:
 
-![H1](/assets/img/networking/renew.png)
+### Phase 1: Registrar Discovery
 
-### Topology Managerment
+The enrollee multicasts an **AP-autoconfiguration search** message containing an `UnconfiguredFreqBand` TLV, indicating which frequency band(s) it needs to configure. If a registrar on the network supports that band, it replies with a unicast **AP-autoconfiguration response**.
 
-- Topology discovery message (neighbor multicast): If the following event occurs, then within 1 s, a 1905.1 management entity shall transmit a topology discovery message
-- Topology query message (unicast): A 1905.1 management entity may send a topology query message to another 1905.1 management entity
-- Topology response message (unicast): If a 1905.1 management entity receives a topology query message, then within 1 s it shall respond. The topology response message shall contain the same MID that was received in the topology query message.
-- Topology notification message (relayed multicast): If a 1905.1 management entity detects that any of the information specified to be sent in a topology response message has changed, then it shall within 1 s
+### Phase 2: 802.11 Parameter Configuration
 
-![H1](/assets/img/networking/topology.png)
+After receiving the response, the enrollee initiates a WSC exchange:
 
-### Link metrics
+1. Enrollee sends **AP-autoconfiguration WSC (M1)** — contains the enrollee's public key and capabilities
+2. Registrar replies with **AP-autoconfiguration WSC (M2)** — contains the configuration data (`ConfigData`) encrypted with a key derived from the M1/M2 exchange
 
-<div style="text-align: justify; text-indent: 2em;">
-The 1905.1 device provides link metric information for each authenticated 1905.1 interface by triggering the 1905.1 ALME primitive, thereby triggering the 1905.1 link metric information dissemination protocol information. 1905.1 Link metric information dissemination protocol includes a link metric query message process and a link metric response message process.
-</div>
+If the M2 exchange fails or times out, the enrollee restarts the discovery phase. This process runs per 802.11 interface — each unconfigured radio goes through it independently.
 
-<div style="text-align: justify; text-indent: 2em;">
-The Link metric information dissemination protocol enables a 1905.1 management entity to obtain link metric information on another 1905.1 device. A 1905.1 device receiving this message provides link metric information related to all of its interfaces to the specific 1905 neighbor device or to all of its other 1905 neighbor devices. 1905.1 Link metric information dissemination protocol includes a link metric query message process and a link metric response message process.
-</div>
+![M1/M2 autoconfiguration exchange](/assets/img/networking/M1M2.png)
 
-<div style="text-align: justify; text-indent: 2em;">
-Link metric query messages can be sent from one 1905.1 management entity to another 1905.1 management entity, and all interfaces between all 1905 devices can send this message to each other. Link metric query messages are transmitted in CMDU unicast. If a 1905.1 managed entity receives a Link metric query message, it shall respond using the Link metric response message
-</div>
+### Configuration Renewal
 
-![H1](/assets/img/networking/link_metric.png)
+When the registrar's configuration changes (e.g., after a password update or firmware upgrade), it multicasts an **AP-autoconfiguration renew** message. All APs previously configured by that registrar restart the parameter configuration phase (Phase 2) to pull the updated settings.
+
+This keeps configuration synchronized across all mesh nodes throughout the network's lifecycle — including across restarts and upgrades.
+
+![Configuration renewal flow](/assets/img/networking/renew.png)
+
+---
+
+## Topology Management
+
+1905.1 devices maintain awareness of the network's physical topology through four message types:
+
+| Message | Type | Trigger / Description |
+|---------|------|-----------------------|
+| **Topology Discovery** | Neighbor multicast | Sent within 1 s of a topology change; announces the device and its interfaces to neighbors |
+| **Topology Query** | Unicast | Sent by any 1905.1 entity to request topology information from a specific peer |
+| **Topology Response** | Unicast | Sent within 1 s of receiving a query; echoes the MID from the query; contains interface and neighbor data |
+| **Topology Notification** | Relayed multicast | Sent within 1 s when a device detects that any information it would include in a topology response has changed |
+
+Together, these messages allow the network controller to maintain a live map of the mesh topology and react to changes as they occur.
+
+![Topology management message flow](/assets/img/networking/topology.png)
+
+---
+
+## Link Metrics
+
+Beyond knowing the topology, the controller needs to know the *quality* of each link to make intelligent routing and steering decisions. The **link metric dissemination protocol** provides this.
+
+A 1905.1 device can query any peer with a unicast **link metric query message**. The peer responds with a **link metric response** containing metrics for all of its interfaces — either toward a specific neighbor or toward all neighbors, depending on the query. The response is triggered via the 1905.1 ALME primitive and reported per authenticated 1905.1 interface.
+
+These metrics feed into steering decisions: which AP a client should associate with, which backhaul link to prefer, and where congestion is building.
+
+![Link metric exchange](/assets/img/networking/link_metric.png)
+
+---
 
 ## Documents
 
-<a href="/assets/documents/networking/IEEESTD.2013.6502164.pdf" target="_blank">IEEE 1905.1</a><br>
-<a href="/assets/documents/networking/Wi-Fi_EasyMesh_Specification_v6.0.pdf" target="_blank">Wi-Fi EasyMesh Specification v6.0</a><br>
-<a href="/assets/documents/networking/802-1-phkl-P1095-Tech-Presentation-1207-v01.pdf" target="_blank">IEEE 1905.1 Presentation</a>
+- [IEEE 1905.1 Standard](/assets/documents/networking/IEEESTD.2013.6502164.pdf)
+- [Wi-Fi EasyMesh Specification v6.0](/assets/documents/networking/Wi-Fi_EasyMesh_Specification_v6.0.pdf)
+- [IEEE 1905.1 Technical Presentation](/assets/documents/networking/802-1-phkl-P1095-Tech-Presentation-1207-v01.pdf)
 
 ## References
 
-[1] https://www.cdatatec.com/wifi-mesh-easymesh-technology-and-products.html
-
-[2] https://www.wi-fi.org/discover-wi-fi/wi-fi-easymesh
+1. [CDATA — Wi-Fi Mesh and EasyMesh Technology](https://www.cdatatec.com/wifi-mesh-easymesh-technology-and-products.html)
+2. [Wi-Fi Alliance — Wi-Fi EasyMesh](https://www.wi-fi.org/discover-wi-fi/wi-fi-easymesh)
