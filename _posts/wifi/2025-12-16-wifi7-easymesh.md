@@ -54,10 +54,10 @@ categories: [WiFi]
 
 ### Scan Channel
 
-1. Full Scan: Scans all supported channels, then returns to the active channel before scanning.
-2. Partial Scan: Scans one channel, then returns to the active channel before scanning. After a certain time, repeat this process for the next channel.
-3. Off-channel Scan: Scans only one channel, then returns to the active channel before scanning.
-4. Overlapping Scan: Scans channels within a 40M width, then returns to the active channel before scanning. Repeat this process for the next channel range.
+1. Full Scan : Quét tất cả các kênh được hỗ trợ, sau đó quay về kênh đang hoạt động trước lúc quét 
+2. Partial Scan : Quét một kênh sau đó trở về kênh hoạt động trước lúc quét, sau một thời gian nhất định lặp lại quy trình này ở kênh tiếp theo
+3. Off-channel Scan : Chỉ quét duy nhất 1 kênh sau đó trở về kênh đang hoạt động trước lúc quét 
+4. Overlapping Scan : Quét các kênh trong độ rộng 40M, sau đó trở về kênh đang hoạt động trước lúc quét , lặp lại quy trình này ở dải kênh tiếp theo 
 
 ## Traffic Separation and Service Prioritization
 
