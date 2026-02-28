@@ -1,184 +1,116 @@
 ---
 layout: post
-title: "Building Embedded Linux Systems: A Practical Guide"
+title: "Embedded Linux Systems"
 date: 2025-06-14 10:00:00 +0700
 categories: [Linux]
-tags: [linux, embedded, kernel, ARM, MIPS, bootloader, toolchain]
-excerpt: "A comprehensive overview of what it takes to bring Linux to embedded hardware — from choosing the right architecture to building a root filesystem and configuring networking."
 ---
-
-Embedded Linux has become the de facto OS for a huge range of devices — industrial controllers, networking equipment, consumer electronics, and more. But running Linux on constrained hardware requires making deliberate decisions at every layer of the stack. This guide walks through the key areas you need to understand.
-
-## Table of Contents
-
-1. [Hardware Support](#hardware-support)
-2. [Development Tools](#development-tools)
-3. [Kernel Considerations](#kernel-considerations)
-4. [Root Filesystem Content](#root-filesystem-content)
-5. [Storage Device Manipulation](#storage-device-manipulation)
-6. [Root Filesystem Setup](#root-filesystem-setup)
-7. [Setting Up the Bootloader](#setting-up-the-bootloader)
-8. [Setting Up Networking Services](#setting-up-networking-services)
-9. [Debugging Tools](#debugging-tools)
-
----
+1. **Hardware Support**
+2. **Development Tools**
+3. **Kernel Considerations**
+4. **Root Filesystem Content**
+5. **Storage Device Manipulation**
+6. **Root Filesystem Setup**
+7. **Setting Up the Bootloader**
+8. **Setting Up Networking Services**
+9. **Debugging Tools**
 
 ## Hardware Support
 
 ### Processor Architectures
 
-Linux runs on a large and ever-growing number of machine architectures, though not all are common in embedded contexts. The official kernel supports 24 architectures at the time of this writing, with additional architectures maintained in separate development trees. Of those, eight are most relevant to embedded Linux work:
-
-- **ARM** — by far the most dominant in modern embedded systems
-- **AVR32** — Atmel's 32-bit architecture, used in compact industrial designs
-- **Intel x86** — common in embedded PCs and industrial computing modules
-- **M32R** — Renesas's RISC architecture for embedded applications
-- **MIPS** — widely used in networking equipment and older consumer devices
-- **Motorola 68000** — a legacy architecture still found in industrial equipment
-- **PowerPC** — used in networking, aerospace, and industrial control systems
-- **SuperH (SH)** — popular in automotive and consumer electronics
+<div style="text-align: justify; text-indent: 2em;">
+Linux runs on a large and ever-growing number of machine architectures, but not all these architectures are actually used in embedded configurations, as already mentioned. A quick look at the arch subdirectory of the Linux kernel sources shows 24 architectures supported in the official kernel at the time of this writing, with others maintained by developers in separate development trees, possibly making it into a future release of the official kernel. Of those 24 architectures, we will cover 8 that are used in embedded Linux systems (in alphabetical order): ARM, AVR32, Intel x86, M32R, MIPS, Motorola 68000, PowerPC, and Super-H.
+</div>
 
 ### Buses and Interfaces
 
-The buses and interfaces of a system connect the CPU to its peripherals. Linux support varies considerably across them, and some are proprietary, legacy, or too niche to use broadly. Here's a rundown of the most relevant ones for embedded work.
+<div style="text-align: justify; text-indent: 2em;">
+The buses and interfaces are the fabric that connects the CPU to the peripherals on the system. Each bus and interface has its own intricacies, and the level of support Linux provides them varies accordingly. A rundown follows of some of the many different buses and interfaces found in typical embedded systems, and the level of support Linux provides them. Some of these other buses are used in older systems, are workstation- or server-centric, or are just a little too quirky to go into here. In addition, some buses are proprietary to a specific system vendor, or are not yet heavily adopted.
+</div>
 
-#### PCI / PCI-X / PCIe
+### PCI/PCI-X/PCIe
 
-The Peripheral Component Interconnect (PCI) bus, governed by the PCI-SIG, is the most widely deployed bus. It comes in several forms:
-
-- **PCI** — traditional parallel slot, using 120 (32-bit) or 184 (64-bit PCI-X) I/O lines
-- **PCIe** — modern packet-switched serial implementation; significantly faster
-- All variants maintain software compatibility because the physical layer is abstracted by the standard
-
-Linux support for PCI is excellent, including a "quirks" mechanism for devices that need special handling.
+<div style="text-align: justify; text-indent: 2em;">
+The Peripheral Component Interconnect (PCI) bus, managed by the PCI Special Interest Group (PCI-SIG), is the most popular bus currently available. Designed as a replacement for the legacy Intel PC ISA bus, PCI is now available in two forms: the traditional parallel slot form factor using 120 (32-bit PCI) or 184 (64-bit PCI-X) I/O lines, and the newer (and also potentially much faster) PCI Express (commonly called PCIe or PCI-E) packet-switched serial implementation as used in most recent designs. Whether conventional PCI, 64-bit PCI-X, or serial PCI-Express, PCI remains software compatible between the different implementations, because the physical interconnect used underneath is generally abstracted by the standard itself. Linux support is very good indeed, but for those times when special support quirks are needed, Linux offers PCI “quirks” too.
+</div>
 
 ### Input and Output
 
-Typical embedded systems require support for a variety of I/O peripherals:
-
-- Serial and parallel ports
-- Modems and data acquisition hardware
-- Keyboards, mice, and displays
-- Sound and printing
+1. **Serial Port**
+2. **Parallel Port**
+3. **Modem**
+4. **Data Acquisition**
+5. **Keyboard**
+6. **Mouse**
+7. **Display**
+8. **Sound**
+9. **Printer**
 
 ### Storage
 
-Embedded systems rely on several storage technologies, each with different Linux support characteristics:
+1. **Memory Technology Devices**
+2. **PATA, SATA, and ATAPI (IDE)**
+3. **Non-MTD Flash-Based devices**
 
-- **Memory Technology Devices (MTDs)** — raw flash memory (NOR and NAND)
-- **PATA, SATA, and ATAPI (IDE)** — traditional block storage interfaces
-- **Non-MTD Flash** — USB flash, SD/eMMC, and other block-oriented flash devices
+### General-Purpose Networking
 
-### Networking
+1. **Ethernet**
+2. **IrDA**
+3. **IEEE 802.11A/B/G/N/AC/AX/BE (Wireless)**
+4. **Bluetooth**
 
-#### General-Purpose
+### Industrial-Grade Networking
 
-- **Ethernet** — wired networking, well-supported across chips
-- **Wi-Fi (IEEE 802.11 a/b/g/n/ac/ax/be)** — strong support for most modern chipsets
-- **Bluetooth** — commonly used in consumer and IoT devices
-- **IrDA** — infrared, still found in legacy equipment
-
-#### Industrial-Grade
-
-- **CAN (Controller Area Network)** — critical for automotive and industrial automation
-- **Modbus** — standard serial protocol for industrial device communication
+1. **CAN**
+2. **Modbus**
 
 ### System Monitoring
 
-Both hardware and software can fail, often unexpectedly. Embedded system designers need to plan for failure and provide recovery paths. Linux supports two primary monitoring facilities:
+<div style="text-align: justify; text-indent: 2em;">
+Both hardware and software are prone to failure, sometimes drastically. Although the occurrence of failures can be reduced through careful design and runtime testing, they are sometimes unavoidable. It is the task of the embedded system designer to plan for such a possibility and to provide means of recovery. Often, failure detection and recovery is done by means of system monitoring hardware and software such as watchdogs.
+</div>
 
-**Watchdog timers** rely on periodic reinitialization to confirm the system is alive. If a system hangs and the timer isn't refreshed, it eventually expires and triggers a reboot. Linux supports both hardware and software watchdog implementations.
-
-**Hardware health monitors** track physical system state — temperature, voltages, fan speeds. This data can drive automatic responses such as throttling, alerting, or graceful shutdown before hardware is damaged.
-
----
+<div style="text-align: justify; text-indent: 2em;">
+Linux supports two types of system monitoring facilities: watchdog timers and hardware health monitoring. There are both hardware and software implementations of watchdog timers, whereas health monitors always require appropriate hardware. Watchdog timers depend on periodic reinitialization so as not to reboot the system. If the system hangs, the timer eventually expires and causes a reboot. Hardware health monitors provide information regarding the system’s physical state. This information can in turn be used to carry out appropriate actions to signal or solve actual physical problems such as overheating or voltage irregularities
+</div>
 
 ## Development Tools
 
-A solid development environment is the foundation of any embedded Linux project.
+1. **A Practical Project Workspace**
 
-### Workspace Organization
+   In the course of developing and customizing software for your target, you need to organize various software packages and project components in a comprehensive and easy-to-use directory structure.
 
-Before writing a single line of code, organize your project directory structure carefully. A well-planned workspace makes it easier to manage kernel sources, toolchains, target rootfs content, build artifacts, and configuration files across different hardware revisions.
+2. **GNU Cross-Platform Development Toolchain**
 
-### Cross-Platform Toolchain
+   A toolchain is a set of software tools needed to build computer software. Traditionally, these include a linker, assembler, archiver, C (and other languages) compiler, and the C library and headers. This last component, the C library and its headers, is a shared code library that acts as a wrapper around the raw Linux kernel API, and it is used by practically any application running in a Linux system.
 
-A toolchain is the set of tools needed to compile software: compiler, linker, assembler, archiver, and the C library with its headers. The C library in particular is critical — it acts as the interface layer between application code and the raw Linux kernel API.
+3. **C Library Alternatives**
 
-For embedded work, you'll typically build or acquire a *cross-compiling* toolchain — one that runs on your host (e.g., x86 Linux) but generates code for your target (e.g., ARM).
+   Given the constraints and limitations of embedded systems, the size of the standard GNU C library makes it an unlikely candidate for use on our target. Instead, we need to look for a C library that will have sufficient functionality while being relatively small.
 
-### C Library Alternatives
+4. **Java**
 
-The standard GNU C Library (glibc) is large, and full-featured. For many embedded systems, this is too much overhead. Common alternatives include:
+5. **Perl**
 
-- **musl libc** — small, clean, standards-compliant; increasingly popular
-- **uClibc-ng** — designed specifically for embedded Linux targets
-- **diet libc** — minimalist, focused on static linking
+6. **Python**
 
-### Scripting Languages
+7. **Other Programming Languages**
 
-Python, Perl, and other interpreted languages are valuable both as development tools and as components on the target. Be mindful of runtime size and startup overhead in constrained environments.
+8. **An Integrated Development Environment**
 
-### IDEs and Terminal Emulators
+9. **Terminal Emulators**
 
-A capable IDE can accelerate embedded development, particularly for navigating large kernel source trees. Terminal emulators are essential for serial console access to targets — nearly every embedded bring-up session starts with a serial console.
-
----
 
 ## Kernel Considerations
 
-*(Detailed coverage coming soon.)*
-
-Key topics include: kernel configuration for embedded targets, trimming unnecessary drivers and subsystems, real-time patches (PREEMPT_RT), device tree authoring, and managing kernel versioning across a product lifecycle.
-
----
-
 ## Root Filesystem Content
-
-*(Detailed coverage coming soon.)*
-
-A minimal embedded root filesystem includes an init system, essential libraries, core utilities (often provided by BusyBox), and application-specific binaries. Filesystem size is a primary concern — every kilobyte matters on flash-constrained targets.
-
----
 
 ## Storage Device Manipulation
 
-*(Detailed coverage coming soon.)*
-
-Topics include: partitioning raw flash, creating UBI volumes, writing images with `dd`, `flash_erase`, and `nandwrite`, and managing wear leveling on NAND flash.
-
----
-
 ## Root Filesystem Setup
-
-*(Detailed coverage coming soon.)*
-
-Covers: building rootfs from scratch, using build systems like Buildroot or Yocto/OpenEmbedded, setting up `/etc`, configuring init (SysVinit, systemd, BusyBox init), and read-only vs. writable filesystem strategies.
-
----
 
 ## Setting Up the Bootloader
 
-*(Detailed coverage coming soon.)*
-
-Common embedded bootloaders include U-Boot, Barebox, and GRUB. Configuration involves setting up boot scripts, environment variables, memory addresses for kernel and DTB loading, and redundant boot strategies for production systems.
-
----
-
 ## Setting Up Networking Services
 
-*(Detailed coverage coming soon.)*
-
-Topics include: configuring network interfaces at boot, DHCP client setup, SSH access, NTP time sync, and securing network services on embedded targets.
-
----
-
 ## Debugging Tools
-
-*(Detailed coverage coming soon.)*
-
-Embedded debugging typically combines: serial console output, `gdbserver` for remote debugging, `strace` and `ltrace` for system call tracing, kernel crash dumps, and hardware debuggers (JTAG/SWD).
-
----
-
-*This post is part of an ongoing series on embedded Linux development. Future installments will fill in the sections marked above with detailed technical content.*

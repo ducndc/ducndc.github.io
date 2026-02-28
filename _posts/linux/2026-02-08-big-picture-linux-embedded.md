@@ -3,42 +3,28 @@ layout: post
 title: "The Big Picture of Embedded Linux Systems"
 date: 2026-02-08 10:00:00 +0700
 categories: [Linux]
-tags: [linux, embedded, hardware, soc, risc, uart, ethernet]
-excerpt: "A high-level look at the hardware architecture of a typical embedded Linux system, from processor and memory to peripherals and the development setup."
 ---
 
-Understanding the hardware landscape is the first step in any embedded Linux project. Before you write a line of code or configure a kernel, you need a clear picture of what components your system contains and how they fit together.
+<div style="text-align: justify; text-indent: 2em;">
+The below figure is a block diagram of a typical embedded system, which is a simple example of high-level hardware architeture of a wireless access point. The system is architected around a 32-bit RISC processor. Flash memory is used for nonvolatile program and data storage. Main memory is synchronous dynamic random-access memory (SDRAM), which might conatin anywhere from a few megabytes to hundreds of megabytes, depending on the application. A real-time clock module, often backed up by battery, keeps the time of day (calendar/wall clock, including date). This system includes an Ethernet and USB interface, as well as a serial port for console access via RS-232. The 802.11 chipset or module implements the wireless modem function.
+</div>
 
-## Typical Embedded System Architecture
+<div style="text-align: justify; text-indent: 2em;">
+Often the processor in an embedded system performs many functions beyond the
+traditional core instruction stream processing. The hypothetical processor shown in
+Figure 2-1 contains an integrated UART for a serial interface and integrated USB and
+Ethernet controllers. Many processors contain integrated peripherals. Sometimes they
+are referred to as system on chip (SOC)
+</div>
 
-The figure below shows a block diagram of a typical embedded system — a simplified wireless access point — that illustrates the common elements you'll encounter across a wide range of embedded designs.
+![H1](/assets/img/linux/EmbeddedSystem.png)
 
-![Embedded system block diagram](/assets/img/linux/EmbeddedSystem.png)
+<div style="text-align: justify; text-indent: 2em;">
 
-The system is built around a **32-bit RISC processor**, which handles the main instruction stream. The key components are:
+</div>
 
-- **Flash memory** — non-volatile storage for the bootloader, kernel image, root filesystem, and persistent configuration data
-- **SDRAM** — the main working memory, ranging from a few megabytes to several hundred depending on the application
-- **Real-time clock (RTC)** — typically battery-backed to maintain the time of day across power cycles
-- **Ethernet controller** — wired network connectivity
-- **USB controller** — host or device-mode USB interface
-- **Serial port (RS-232)** — a console interface, almost universally present in embedded designs for debug and recovery access
-- **802.11 chipset** — the wireless modem for Wi-Fi connectivity
+![H1](/assets/img/linux/DevelopmentSetup.png)
 
-## The Role of the Processor: System on Chip
+<div style="text-align: justify; text-indent: 2em;">
 
-In most modern embedded designs, the processor does far more than execute instructions. The hypothetical processor in the diagram integrates several peripheral controllers directly on-die:
-
-- An **integrated UART** for the serial interface
-- An **integrated USB controller**
-- An **integrated Ethernet controller (MAC)**
-
-This pattern — combining a CPU core with memory interfaces, I/O controllers, and other peripherals on a single piece of silicon — is what defines a **System on Chip (SoC)**. SoCs are the norm in embedded Linux systems because they reduce board complexity, lower cost, and shrink physical footprint. Examples include the Raspberry Pi's Broadcom BCM2711, the BeagleBone's TI AM335x, and the widely-used NXP i.MX series.
-
-## Development Setup
-
-Embedded development typically involves two machines: the **host** (your development workstation) and the **target** (the embedded hardware). Code is compiled on the host using a cross-toolchain and then transferred to the target for testing.
-
-![Development setup](/assets/img/linux/DevelopmentSetup.png)
-
-The serial console connection between host and target is particularly important early in a project — it's usually the first interface available after power-on, and it's the channel through which the bootloader and kernel print their startup messages.
+</div>
