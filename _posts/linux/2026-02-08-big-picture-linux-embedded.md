@@ -3,6 +3,8 @@ layout: post
 title: "The Big Picture of Embedded Linux Systems"
 date: 2026-02-08 10:00:00 +0700
 categories: [Linux]
+tags: [linux, embedded, hardware, soc, risc, uart, ethernet]
+excerpt: "A high-level look at the hardware architecture of a typical embedded Linux system, from processor and memory to peripherals and the development setup."
 ---
 
 Understanding the hardware landscape is the first step in any embedded Linux project. Before you write a line of code or configure a kernel, you need a clear picture of what components your system contains and how they fit together.

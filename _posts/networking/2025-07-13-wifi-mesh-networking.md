@@ -3,6 +3,8 @@ layout: post
 title: "Wi-Fi Mesh Systems: EasyMesh and IEEE 1905.1"
 date: 2023-09-12 10:00:00 +0700
 categories: [Networking]
+tags: [networking, wifi, mesh, easymesh, ieee-1905, wireless, access-point]
+excerpt: "A technical overview of Wi-Fi Mesh networking — how EasyMesh and IEEE 1905.1 work together to enable multi-AP autoconfiguration, topology discovery, and link metric exchange."
 ---
 
 Traditional Wi-Fi deployments tie coverage to wherever you can run a cable. Moving an access point means moving wiring. Wi-Fi Mesh solves this by turning multiple APs into a self-organizing network that routes traffic through the best available path — no rewiring required.

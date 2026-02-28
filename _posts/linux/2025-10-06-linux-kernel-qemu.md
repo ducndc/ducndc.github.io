@@ -3,6 +3,8 @@ layout: post
 title: "Running a Custom Linux Kernel with QEMU"
 date: 2025-07-14 10:00:00 +0700
 categories: [Linux]
+tags: [linux, kernel, qemu, kvm, kasan, debugging, virtualization]
+excerpt: "A step-by-step guide to downloading, configuring, building, and booting a custom Linux kernel inside QEMU — with KVM acceleration and KASAN memory debugging enabled."
 ---
 
 QEMU makes it easy to boot a custom-built Linux kernel without touching your host machine. This is useful for kernel development, bug reproduction, and security research. This guide walks through the full process: installing dependencies, fetching kernel source, configuring and building the kernel, creating a root filesystem, and launching QEMU.
