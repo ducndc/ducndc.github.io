@@ -3,8 +3,6 @@ layout: post
 title: "Building Embedded Linux Systems: A Practical Guide"
 date: 2025-06-14 10:00:00 +0700
 categories: [Linux]
-tags: [linux, embedded, kernel, ARM, MIPS, bootloader, toolchain]
-excerpt: "A comprehensive overview of what it takes to bring Linux to embedded hardware — from choosing the right architecture to building a root filesystem and configuring networking."
 ---
 
 Embedded Linux has become the de facto OS for a huge range of devices — industrial controllers, networking equipment, consumer electronics, and more. But running Linux on constrained hardware requires making deliberate decisions at every layer of the stack. This guide walks through the key areas you need to understand.

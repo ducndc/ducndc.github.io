@@ -3,8 +3,6 @@ layout: post
 title: "Linux Netfilter: Kernel Hooks for Packet Processing"
 date: 2025-10-18 10:00:00 +0700
 categories: [Linux]
-tags: [linux, netfilter, kernel, networking, packet-filtering, iptables, kernel-module]
-excerpt: "A deep dive into the Linux Netfilter framework — how hooks work, how to register them, and how to write a kernel module that inspects live network traffic."
 ---
 
 Netfilter is the packet processing framework built into the Linux kernel. It underpins tools like `iptables`, `nftables`, and `conntrack`, and it's what you interact with whenever you write firewall rules or configure NAT. This post explains how Netfilter works at the kernel level and walks through writing a kernel module that hooks into the packet path.
