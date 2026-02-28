@@ -25,17 +25,17 @@ description: >- # used by seo meta and the atom feed
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 # url: "https://ducndc.github.io"
 
-github:
- username: ducndc # change to your GitHub username
+#github:
+#  username: ducndc # change to your GitHub username
 
 #twitter:
 #  username: ducndc # change to your Twitter username
 
-social:
+#social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: Chung Duc Nguyen Dang
-  email: nguyendangchungduc1999@gmail.com # change to your email address
+  #name: Chung Duc Nguyen Dang
+  #email: nguyendangchungduc1999@gmail.com # change to your email address
   #links:
     # The first element serves as the copyright owner's link
     # https://twitter.com/ducndc # change to your Twitter homepage
@@ -88,7 +88,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: # [light | dark]
+#theme_mode: # [light | dark]
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
