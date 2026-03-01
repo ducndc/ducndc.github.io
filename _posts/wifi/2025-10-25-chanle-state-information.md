@@ -44,22 +44,15 @@ trong đó \( |h_{i,j}| \) là biên độ kênh và \( \phi_{i,j} \) là pha k�
 Trong các hệ thống Wi-Fi thực tế như IEEE 802.11n/ac/ax, thông tin trạng thái kênh (CSI) được ước tính bằng cách sử dụng các ký hiệu thí điểm (huấn luyện) được chèn vào các sóng mang phụ OFDM. Các giá trị CSI này cho phép áp dụng các kỹ thuật tiên tiến như tạo chùm tia, cân bằng kênh và các ứng dụng cảm biến không cần thiết bị.
 
 ## Đặc điểm của các kênh truyền không dây
-{: #c-i-m-c-a-c-c-k-nh-truy-n-kh-ng-d-y}
 
 Các đặc điểm chính của kênh truyền không dây bao gồm:
 
 
-
-
-
-
 ## Mối quan hệ giữa CSI và đặc tính kênh truyền không dây
-{: #m-i-quan-h-gi-a-csi-v-c-t-nh-k-nh-truy-n-kh-ng-d-y}
 
 Thông tin trạng thái kênh (CSI) cung cấp thông tin chi tiết về kênh, giúp hiểu và tận dụng các đặc điểm khác nhau của kênh không dây để tối ưu hóa hiệu suất và độ tin cậy của hệ thống truyền thông không dây. Một số ứng dụng quan trọng trong truyền thông không dây, đặc biệt là liên quan đến hiệu ứng đa đường và Thông tin trạng thái kênh (CSI), bao gồm:
 
 ### 1.Tạo chùm tia đa đường
-{: #1-t-o-ch-m-tia-a-ng}
 
 Tạo chùm tia đa đường là một kỹ thuật sử dụng hiệu ứng đa đường để tăng cường hoặc triệt tiêu tín hiệu theo các hướng cụ thể. Tạo chùm tia đa đường có thể được áp dụng theo các cách sau:
 
@@ -67,7 +60,6 @@ Tạo chùm tia đa đường là một kỹ thuật sử dụng hiệu ứng đ
 - **Khử nhiễu:** Đo lường và phân tích chính xác thông tin CSI của các kênh đa đường cho phép khử nhiễu trong không gian, cải thiện tỷ lệ tín hiệu trên nhiễu (SIR) và dung lượng hệ thống.
 
 ### 2. Định vị và Theo dõi
-{: #2-nh-v-v-theo-d-i}
 
 Hiệu ứng đa đường truyền rất quan trọng đối với việc định vị chính xác và theo dõi thiết bị di động. Thông tin trạng thái kênh (CSI) có thể được áp dụng trong định vị và theo dõi như sau:
 
@@ -76,7 +68,6 @@ Hiệu ứng đa đường truyền rất quan trọng đối với việc đị
 - **Ước tính hướng:** Sử dụng hiệu ứng đa đường truyền để ước tính chính xác hướng và hướng của thiết bị di động, cải thiện độ chính xác của hệ thống định vị.
 
 ### 3. Hệ thống MIMO đa người dùng
-{: #3-h-th-ng-mimo-a-ng-i-d-ng}
 
 Trong hệ thống MIMO đa người dùng, việc kết hợp CSI với hiệu ứng đa đường truyền có các ứng dụng sau:
 
@@ -94,7 +85,6 @@ Các hiệu ứng đa đường và thông tin trạng thái kênh (CSI) cũng �
 - **Phát hiện nhiễu phổ:** Sử dụng các hiệu ứng đa đường và thông tin CSI để nhanh chóng phát hiện và định vị các nguồn nhiễu phổ, tăng cường khả năng chống nhiễu của hệ thống.
 
 ### 5. Truyền thông di động tốc độ cao
-{: #5-truy-n-th-ng-di-ng-t-c-cao}
 
 Trong môi trường truyền thông di động tốc độ cao, các ứng dụng của hiệu ứng đa đường truyền và thông tin trạng thái kênh (CSI) bao gồm:
 
@@ -105,10 +95,8 @@ Trong môi trường truyền thông di động tốc độ cao, các ứng dụ
 Bản dịch này nắm bắt các chi tiết thiết yếu và ứng dụng của các nguyên tắc cơ bản về kênh không dây và mối quan hệ của chúng với CSI trong việc tối ưu hóa hệ thống truyền thông không dây.
 
 ## Cảm biến CSI
-{: #c-m-bi-n-csi}
 
 ## Conclusion
-{: #conclusion}
 
 CSI provides rich per-subcarrier channel information useful for beamforming, localization, and advanced sensing applications in Wi‑Fi systems.
 
@@ -116,7 +104,6 @@ Cảm biến CSI là một công nghệ sử dụng thông tin trạng thái kê
 
 
 ## Cảm biến CSI hoạt động như thế nào?
-{: #c-m-bi-n-csi-ho-t-ng-nh-th-n-o}
 
 Cảm biến CSI hoạt động dựa trên hiệu ứng đa đường truyền của sự lan truyền tín hiệu vô tuyến và sự thay đổi của CSI.
 
