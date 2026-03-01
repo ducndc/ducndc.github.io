@@ -1,12 +1,48 @@
 ---
-Layout: post
-Title: "Footprinting and Reconnaissance Lab Guide"
-Date: 2025-11-16 10:00:00 +0700
-Categories: [Hacking]
-
+layout: post
+title: "Footprinting & Reconnaissance"
+subtitle: "OSINT techniques for information gathering in pentesting"
+date: 2025-11-16 10:00:00 +0700
+categories: [Hacking]
+tags: [osint, reconnaissance, pentest, lab]
+author: Chung Duc Nguyen Dang
+description: >
+  Step-by-step lab guide on footprinting and reconnaissance using OSINT tools such as
+  Shodan, Google Dorking, DNS enumeration, and the Wayback Machine.
+toc: true
+pin: true
 ---
 
 ## 1. Overview
+{: #overview }
+
+**Footprinting and Reconnaissance** is the first stage in the pentesting process, focusing on collecting publicly available information (OSINT) about a target with minimal or no direct interaction.
+
+The goal is to build an overall picture of the organization, individual or website before moving on to active scanning and enumeration.
+
+---
+
+## 2. Lab Objectives
+{: #labs-objectives }
+
+After completing this lab you will be able to:
+
+- Gather information from common OSINT sources
+- Identify domains, IP addresses, and underlying technologies
+- Trace the historical versions of a website
+- Correlate data from multiple intelligence sources
+
+---
+
+## 3. Lab Scope & Rules
+{: #lab-scope-rules }
+
+> ⚠️ Only perform these techniques on authorized targets (lab machines, virtual networks, or consenting owners).
+> Do **not** perform brute-force, exploitation, or intrusive scans during this phase.
+
+---
+
+## 4. Reconnaissance Techniques
 
 **Footprinting and Reconnaissance** is the first stage in the pentest process, focusing on **collecting publicly available information (OSINT)** about the target that **has little or no direct interaction** with the system.
 
@@ -14,29 +50,23 @@ The goal is to build a **overall picture** of the organization/individual/websit
 
 ---
 
-## 2. Lab Objectives
 
-After completing this lab, you will be able to:
-- Gather information from common OSINT sources
-- Identify domains, IP addresses, and technologies used
-
-- Trace the history of a website
-
-- Link data from various sources
-
----
-
-## 3. Lab Scope & Rules
-
-⚠️ Only perform this on authorized targets (lab, virtual machine, test website).
-
-⚠️ Do not perform brute-force or intrusion attacks.
-
----
 
 ## 4. Reconnaissance Techniques
+{: #recon-techniques }
 
-### 4.1 Shodan – Internet-Wide Search Engine
+| Tool | Purpose | Example |
+|------|---------|---------|
+| Shodan | Internet-wide device search | `apache country:VN` |
+| Google Dorking | Web index search queries | `site:example.com filetype:pdf` |
+| dnsdumpster | DNS mapping & subdomains | -- |
+| Netcraft | Server/OS fingerprinting | -- |
+| Wayback Machine | Archived website snapshots | -- |
+| PeekYou | Username search | -- |
+| IntelX | Data leaks & domain intelligence | -- |
+| OSINT Framework | Tool index and workflow map | -- |
+
+### Shodan – Internet-Wide Search Engine
 
 ![Shodan](/assets/img/networking/footprinting.png)
 

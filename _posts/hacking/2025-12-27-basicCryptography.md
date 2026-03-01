@@ -11,6 +11,7 @@ description: >
   hash algorithms, digital signatures, and practical attack methods like dictionary and brute-force attacks.
 toc: true
 math: true
+pin: true
 ---
 
 ## Overview

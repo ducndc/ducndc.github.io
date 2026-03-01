@@ -1,11 +1,16 @@
 ---
-Layout: post
-Title: "Social Engineering Attacks"
-Date: 2025-12-12 10:00:00 +0700
-Categories: [Hacking]
+layout: post
+title: "Social Engineering Attacks"
+date: 2025-12-12 10:00:00 +0700
+categories: [Hacking]
+tags: [social-engineering, phishing, psychology, awareness]
+toc: true
+pin: true
+excerpt: "Overview of human‑centric attacks and tools such as SET that simulate them."
 ---
 
 # Understanding Social Engineering Attacks
+{: #overview}
 
 Social engineering is the art of manipulating people's psychology to reveal confidential information or perform actions that benefit the attacker.
 
@@ -14,69 +19,85 @@ Social engineering is the art of manipulating people's psychology to reveal conf
 ## 1. Common Types of Social Engineering
 
 ### A. Impersonation
-This is the most common human-based social engineering technique.
+Attackers take on a false identity (e.g. IT helpdesk, delivery driver) to gain trust.
 
-* **Mechanism:** The attacker pretends to be a legitimate or authoritative person.
+- **Channels:** In person, telephone, or online chat.
+- **Goal:** Obtain credentials, access badges, or confidential documents.
 
-* **Method:** Performed in person (face-to-face) or through media such as phone calls, emails, etc.
-
-* **Objective:** To trick the victim into revealing sensitive information.
+Typical examples include calling an employee and asking them to reset their password.
 
 ### B. Phishing
-Phishing is the act of sending invalid emails impersonating reputable websites/organizations to steal users' personal information or account details.
+Using fraudulent emails or websites to trick victims into revealing credentials or clicking malware links.
 
-#### Types of Phishing:
-* **Spear Phishing:** A targeted attack on a specific individual or organization.
+#### Common varieties
+- **Spear phishing:** Customized messages targeting specific individuals.
+- **Whaling:** Attacks aimed at high‑value targets such as executives.
+- **Pharming:** DNS/system compromise redirects traffic to fake sites.
+- **Smishing/Spim:** SMS or instant‑message based phishing.
 
-* **Whaling:** Targeting "big" targets such as CEOs or senior managers.
+#### Supporting tools
+- **Social-Engineer Toolkit (SET):** Generates email templates, site clones, and payloads.
+- **ShellPhish:** Automates creation of phishing web pages.
 
-* **Pharming:** Attackers install malicious software to redirect web traffic from a legitimate site to a fake website.
-
-* **Spimming:** Phishing attacks via instant messaging.
-
-#### Tools to Support Phishing:
-
-* **The Social-Engineer Toolkit (SET):** A powerful toolset for simulating attacks.
-
-* **ShellPhish:** An automated tool for creating fake pages.
-
----
-
-## 2. Other Computer-Based Social Engineering Techniques
-
-Attackers use software and computer interfaces to deceive users:
-
-* **Pop-Up Windows:** Fake notification pop-ups.
-
-* **Hoax Letters:** Scam emails (e.g., fake prize notifications).
-
-* **Chain Letters:** Misleading or promising forwarded emails.
-
-* **Instant Chat Messenger:** Online messaging scams.
-
-* **Spam Email:** Spam containing malicious content or fraudulent advertisements.
-
-* **Scareware:** Scary software (e.g., fake virus alerts) to force users to install malware.
+```bash
+# example SET command to clone a site
+setoolkit
+# choose Social‑Engineering Attacks → Website Attack Vectors → Credential Harvester
+```
 
 ---
 
-## 3. Practice with Social-Engineer Toolkit (setoolkit)
+## 2. Computer‑Based Variations
+These methods leverage technical interfaces to manipulate victims:
 
-SET tools are often used in lab exercises to demonstrate attack capabilities:
-* **Creating Web Clones:** Copying the interface of a popular website (such as Facebook, Gmail) to steal login information when the victim enters it into the fake page.
+- **Fake pop‑ups** claiming viruses or required updates.
+- **Hoax/chain emails** with sensational content or false promises.
+- **Malicious instant messages** with click‑bait links.
+- **Spam** containing attachments or links to malware.
+- **Scareware:** alarming alerts that coerce installation of rogue software.
+
+The goal is the same: bypass rational analysis by exploiting emotion or urgency.
+
+---
+
+## 3. Hands‑On with the Social‑Engineer Toolkit (SET)
+SET (included in Kali) can simulate a variety of social engineering attacks.
+
+- **Web clone (credential harvester):** copies a legitimate login page and logs submitted credentials.
+- **Mass mailer:** sends phishing emails using a template.
+- **SMS spoofing (smishing).**
+
+Example flow:
+```bash
+sudo setoolkit
+# [1] Social‑Engineering Attacks → [2] Website Attack Vectors
+# [3] Credential Harvester → [4] HTTP Server
+```
+
+Be careful: the cloned site will prompt for login details and store them in `/var/www/html/`.
 
 ---
 
 ## 4. Mobile Application Attacks
+Users often trust official app stores; attackers can abuse this trust by:
 
-Attackers exploit users' trust in app stores:
+- **Publishing malicious apps** that request excessive permissions or contain spyware.
+- **Repackaging legitimate apps** with hidden backdoors and redistributing them via third‑party markets.
 
-* **Publishing Malicious Apps:** Releasing applications containing malicious code directly to the store.
+![Malicious App](/assets/img/hacking/publishing_malicious.png)
 
-* **Repackaging Legitimate Apps:** Taking legitimate applications, inserting malicious code inside, then repackaging and distributing them to steal user data.
+> Always verify app signatures and use official stores when possible.
 
-## Publishing Malicious Apps and Repackaging Legitimate Apps
+---
 
-![H1](/assets/img/hacking/publishing_malicious.png)
+## 5. Lab Questions
+
+1. How does spear phishing differ from generic phishing?
+2. What psychological principles are often exploited in social engineering?
+3. Why is SET useful for defenders as well as attackers?
+
+---
+
+> **Disclaimer:** Use this information to recognise and defend against attacks. Unauthorized social engineering is illegal and unethical.
 
 ---*Note: This document is for educational purposes and to raise awareness about information security.*

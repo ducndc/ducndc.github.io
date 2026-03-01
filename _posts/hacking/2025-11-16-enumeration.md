@@ -1,39 +1,50 @@
 ---
-Layout: post
-Title: "Enumeration Lab Guide"
-Date: 2025-11-16 10:00:00 +0700
-Categories: [Hacking]
+layout: post
+title: "Service Enumeration Techniques"
+subtitle: "Using SNMP and Metasploit to extract detailed service information"
+date: 2025-11-16 10:00:00 +0700
+categories: [Hacking]
+tags: [enumeration, snmp, metasploit, pentest]
+author: Chung Duc Nguyen Dang
+description: >
+  Detailed lab guide on enumeration using SNMP tools and Metasploit modules to gather sensitive
+  information from services after scanning.
+toc: true
+pin: true
 ---
 
 ## 1. Overview
+{: #overview }
 
-Enumeration is the **post-scanning** phase, focusing on **extracting detailed information** from services running on the target system.
-
-The goal of this lab is to practice enumeration with **SNMP** and **Metasploit**.
+Enumeration is the post-scanning phase, focusing on extracting detailed information from services
+running on a target system. This lab emphasizes SNMP enumeration and basic Metasploit usage.
 
 ---
 
 ## 2. Lab Objectives
+{: #lab-objectives }
 
-After completing this lab, you will be able to:
-- Identify active SNMP services
-- Gather system information via SNMP
-- Enumerate processes using Nmap
-- Use Metasploit to support enumeration
+After completing this lab you will be able to:
+
+- Identify active SNMP services and community strings
+- Retrieve system information via SNMP
+- Enumerate processes and configuration using NSE
+- Use Metasploit auxiliary modules for enumeration
 
 ---
 
 ## 3. Lab Environment
+{: #lab-environment }
 
-| Components | Description |
-
-| Attacker | Kali Linux |
-
-| Target | Linux/Windows Virtual Machine with SNMP Enabled |
-
-| Network | NAT/Host-only |
+| Component | Description |
+|-----------|-------------|
+| Attacker  | Kali Linux |
+| Target    | Linux/Windows VM with SNMP enabled |
+| Network   | NAT/Host-only virtual network |
 
 ---
+
+
 
 ## 4. Enumeration with SNMP
 
