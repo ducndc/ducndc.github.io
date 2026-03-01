@@ -3,6 +3,10 @@ layout: post
 title: "EasyMesh WiFi 7"
 date: 2025-12-09 10:00:00 +0700
 categories: [WiFi]
+tags: [easymesh, wifi7, mesh, mlo]
+description: "Notes on EasyMesh features and Wi‑Fi 7 related mesh mechanisms."
+toc: true
+pin: true
 ---
 
 ![H1](/assets/img/wifi/Sys.png)
@@ -74,3 +78,7 @@ categories: [WiFi]
 ## MLO 
 
 ![H1](/assets/img/wifi/mld_mac.png)
+
+## Conclusion
+
+EasyMesh and Wi‑Fi 7 features (MLO, backhaul steering, mesh optimization) help scale dense home and enterprise networks when configured carefully.

@@ -3,6 +3,10 @@ layout: post
 title: "WiFi Overview"
 date: 2025-05-12 10:00:00 +0700
 categories: [WiFi]
+tags: [wifi, 802.11, mcs, dfs, cca]
+description: "High-level overview of 802.11 frame types, security, DFS, MCS and CCA."
+toc: true
+pin: true
 ---
 
 ## 802.11 Frame Types
@@ -139,3 +143,7 @@ CCA operates in two main modes:
 - Wi-Fi Channel Optimization: Choosing channels with lower CCA busy rates improves performance.
 - RF Calibration: Setting the ED threshold correctly helps avoid false positives or missed transmissions.
 - Network Performance Monitoring: High CCA busy time often means poor throughput or high interference.
+
+## Conclusion
+
+Wi‑Fi behavior depends on many interacting layers — frame types, security, DFS, MCS and CCA — and understanding these helps design and troubleshoot robust wireless networks.

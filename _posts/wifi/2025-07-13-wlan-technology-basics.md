@@ -3,6 +3,10 @@ layout: post
 title: "WLAN Technology Basics"
 date: 2025-04-12 10:00:00 +0700
 categories: [WiFi]
+tags: [wifi, wlan, basics, 802.11]
+description: "Fundamentals of WLAN technology, PHY/MAC basics and parameters."
+toc: true
+pin: true
 ---
 
 ## Radio Waves
@@ -57,6 +61,10 @@ Before we explore how information is transmitted through radio waves, let’s ta
 </div>
 
 ![H4](/assets/img/wifi/wirelessSystem.png)
+
+## Conclusion
+
+Understanding WLAN basics (PHY/MAC, channel selection, and CCA) is essential for practical Wi‑Fi design and troubleshooting.
 
 <div style="text-align: justify; text-indent: 2em;">
 

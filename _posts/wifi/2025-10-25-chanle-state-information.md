@@ -4,6 +4,10 @@ title: "CSI Sensing"
 date: 2025-10-24 10:00:00 +0700
 categories: [WiFi]
 math: true
+tags: [csi, mimo, sensing, wifi]
+description: "Channel State Information (CSI) concepts, math and applications."
+toc: true
+pin: true
 ---
 
 ## Channel State Information (CSI)
@@ -118,6 +122,10 @@ Trong môi trường truyền thông di động tốc độ cao, các ứng dụ
 Bản dịch này nắm bắt các chi tiết thiết yếu và ứng dụng của các nguyên tắc cơ bản về kênh không dây và mối quan hệ của chúng với CSI trong việc tối ưu hóa hệ thống truyền thông không dây.
 
 ## Cảm biến CSI
+
+## Conclusion
+
+CSI provides rich per-subcarrier channel information useful for beamforming, localization, and advanced sensing applications in Wi‑Fi systems.
 
 <div style="text-align: justify; text-indent: 2em;">
 Cảm biến CSI là một công nghệ sử dụng thông tin trạng thái kênh (CSI) trong tín hiệu Wi-Fi để phát hiện các hoạt động của con người (như đi bộ và thở) và trạng thái, vị trí và chuyển động của các vật thể trong môi trường.
