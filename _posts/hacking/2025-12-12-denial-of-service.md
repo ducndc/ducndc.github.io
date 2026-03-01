@@ -25,8 +25,8 @@ Denial of Service (DoS) is any attempt to make a machine or network resource una
 
 ## 2. Lab Procedures
 
-<a id="tcp-syn-flood"></a>
 ### A. TCP SYN Flood
+{: #tcp-syn-flood}
 This classic network‑layer attack forces the victim to allocate state for half‑open TCP connections until resources are exhausted.
 
 #### Method 1: Metasploit

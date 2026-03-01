@@ -3,28 +3,32 @@ layout: post
 title: "The Big Picture of Embedded Linux Systems"
 date: 2026-02-08 10:00:00 +0700
 categories: [Linux]
+tags: [embedded, architecture, linux]
+description: "Block diagrams and high-level overview of hardware components in embedded Linux devices."
+toc: true
+pin: true
 ---
 
-<div style="text-align: justify; text-indent: 2em;">
-The below figure is a block diagram of a typical embedded system, which is a simple example of high-level hardware architeture of a wireless access point. The system is architected around a 32-bit RISC processor. Flash memory is used for nonvolatile program and data storage. Main memory is synchronous dynamic random-access memory (SDRAM), which might conatin anywhere from a few megabytes to hundreds of megabytes, depending on the application. A real-time clock module, often backed up by battery, keeps the time of day (calendar/wall clock, including date). This system includes an Ethernet and USB interface, as well as a serial port for console access via RS-232. The 802.11 chipset or module implements the wireless modem function.
-</div>
+# Overview
 
-<div style="text-align: justify; text-indent: 2em;">
+A high-level diagram and explanation of the typical hardware components
+found in an embedded Linux device, using a wireless access point as an
+example.
+
+
+The figure below shows a block diagram of a typical embedded system (a
+wireless access point). It centres on a 32‑bit RISC processor with flash
+for firmware and SDRAM for runtime memory. A real‑time clock maintains
+the calendar, and standard peripherals such as Ethernet, USB and a serial
+console are exposed. The 802.11 chipset provides the wireless link.
+
 Often the processor in an embedded system performs many functions beyond the
-traditional core instruction stream processing. The hypothetical processor shown in
-Figure 2-1 contains an integrated UART for a serial interface and integrated USB and
-Ethernet controllers. Many processors contain integrated peripherals. Sometimes they
-are referred to as system on chip (SOC)
-</div>
+traditional core instruction stream. The hypothetical processor shown in
+Figure 2‑1 contains an integrated UART for serial, plus USB and Ethernet
+controllers; such chips are commonly called system‑on‑chip (SoC).
 
-![H1](/assets/img/linux/EmbeddedSystem.png)
 
-<div style="text-align: justify; text-indent: 2em;">
+![Embedded system block diagram](/assets/img/linux/EmbeddedSystem.png)
 
-</div>
 
-![H1](/assets/img/linux/DevelopmentSetup.png)
-
-<div style="text-align: justify; text-indent: 2em;">
-
-</div>
+![Development environment layout](/assets/img/linux/DevelopmentSetup.png)

@@ -1,22 +1,36 @@
 ---
 layout: post
 title: "Linux Netfilter and Traffic Control"
+subtitle: "Kernel hooks, filtering, and QoS mechanisms"
 date: 2025-10-18 10:00:00 +0700
 categories: [Linux]
+tags: [netfilter, iptables, tc, kernel]
+description: "An overview of Netfilter hooks in the Linux kernel and how packet filtering and traffic control can be implemented."
+toc: true
+pin: true
 ---
+
+# Overview
+
+Netfilter is the packet‑processing framework built into the Linux kernel
+that underpins iptables, nftables and related tooling. This post examines
+the hook API, verdicts, and examples.
+
 
 ## Overview
 
-<div style="text-align: justify; text-indent: 2em;">
-Netfilter is a framework inside the Linux kernel which offers flexibility for various networking-related operations to be implemented in form of customized handlers. Netfilter offers various options for packet filtering, network address translation, and port translation.
+Netfilter is a framework inside the Linux kernel offering a flexible API
+for packet filtering, network address translation, and other networking
+operations. Its core pieces are organized as a series of hooks through
+which packets flow.
+
 Its components:
-</div>
+
 
 ![H1](/assets/img/linux/Netfilter-components.svg)
 
-<div style="text-align: justify; text-indent: 2em;">
-And the flow of network packets through the Netfilter:
-</div>
+The following diagram shows the flow of packets through Netfilter:
+
 
 ![H1](/assets/img/linux/Netfilter-packet-flow.svg)
 
@@ -24,9 +38,7 @@ And the flow of network packets through the Netfilter:
 
 ### Netfilter places
 
-<div style="text-align: justify; text-indent: 2em;">
 As can be seen from the network packet sending and receiving flow diagram above, the hook function of Nefilter can be registered in many different places. It is defined as follows:
-</div>
 
 ```c
 enum nf_inet_hooks {
@@ -46,9 +58,7 @@ enum nf_inet_hooks {
 
 ### Register the hooks
 
-<div style="text-align: justify; text-indent: 2em;">
 The kernel provides the following functions to register and unregister functions.
-</div>
 
 ```c
 int nf_register_hook(struct nf_hook_ops *reg);
@@ -57,9 +67,7 @@ int nf_register_hooks(struct nf_hook_ops *reg, unsigned int n);
 void nf_unregister_hooks(struct nf_hook_ops *reg, unsigned int n);
 ```
 
-<div style="text-align: justify; text-indent: 2em;">
 Among them, nf_hook_ops is structured as follows:
-</div>
 
 ```c
 struct nf_hook_ops
@@ -77,9 +85,7 @@ struct nf_hook_ops
 ```
 ### hook functions
 
-<div style="text-align: justify; text-indent: 2em;">
 The hook function is specified by nf_hookfn *hook and its function declaration is as follows:
-</div>
 
 ```c
 typedef unsigned int nf_hookfn(unsigned int hooknum,
@@ -89,9 +95,7 @@ typedef unsigned int nf_hookfn(unsigned int hooknum,
                                int (*okfn)(struct sk_buff *));
 ```
 
-<div style="text-align: justify; text-indent: 2em;">
 It returns one of the following results:
-</div>
 
 ```c
 // <linux/netfilter.h>
@@ -105,9 +109,7 @@ It returns one of the following results:
 ```
 ## pf
 
-<div style="text-align: justify; text-indent: 2em;">
 pf (protocol family) is the identifier of the protocol family.
-</div>
 
 ```c
 enum {
@@ -122,9 +124,7 @@ enum {
 ```
 ## hooknum
 
-<div style="text-align: justify; text-indent: 2em;">
 This is the hook identifier. All valid identifiers for each protocol family are defined in a header file, for example <linux/netfilter_ipv4.h>:
-</div>
 
 ```c
 /* IP Hooks */
@@ -143,9 +143,7 @@ This is the hook identifier. All valid identifiers for each protocol family are 
 
 ### priority
 
-<div style="text-align: justify; text-indent: 2em;">
 This is the priority of the hook. All valid identifiers for each protocol family are defined in a header file, for example <linux/netfilter_ipv4.h>
-</div>
 
 ```c
 enum nf_ip_hook_priorities {
@@ -178,9 +176,7 @@ enum {
 
 ## Netfilter hooks example
 
-<div style="text-align: justify; text-indent: 2em;">
 Register a hook function at NF_INET_LOCAL_IN to print the source MAC address, destination and IP address of the packet. Download the source packet.
-</div>
 
 ```c
 #include <linux/module.h>
