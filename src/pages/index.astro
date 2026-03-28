@@ -13,37 +13,68 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
+			<h1>Chung Duc Nguyen Dang</h1>
+			<p class="subtitle">
+			I am a Computer Engineer, 
+			an enthusiast of the Canon 60D, and a writer of poetry.
 			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<div class="cta-buttons">
+			<a href="/about" class="btn primary">About Me</a>
+			<a href="/blog" class="btn secondary">Read My Blog</a>
+			</div>
+		</section>
+
+		<section class="grid-sections">
+			<div class="card">
+			<h3>💻 Engineering</h3>
+			<p>Specializing in Wi-Fi drivers, firmware, and next-gen transport networking.</p>
+			</div>
+			<div class="card">
+			<h3>📷 Photography</h3>
+			<p>Capturing the world through the glass of my Canon 60D.</p>
+			</div>
+			<div class="card">
+			<h3>✍️ Poetry</h3>
+			<p>Finding the rhythm in the code and the melody in the everyday.</p>
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+  .hero {
+    padding: 4rem 0;
+    text-align: center;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    margin-bottom: 3rem;
+  }
+  h1 { font-size: 2.5rem; color: #333; }
+  .subtitle { font-size: 1.25rem; color: #666; max-width: 600px; margin: 1rem auto; }
+  
+  .grid-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  .card:hover { transform: translateY(-5px); border-color: #007acc; }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0.5rem;
+    display: inline-block;
+  }
+  .primary { background: #007acc; color: white; }
+  .secondary { border: 1px solid #007acc; color: #007acc; }
+</style>
