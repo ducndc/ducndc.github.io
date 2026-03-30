@@ -56,6 +56,8 @@ After receiving M1, the registration server sends M2, which contains key-encrypt
 If the 1905.1 device contains an unconfigured IEEE 802.11 AP interface, the Registrar discovery phase SHOULD begin after successful authentication of the 1905.1 interface. The registration client sends an AP-autoconfiguration search message to discover the registration server. This multicast search message includes the UnconfiguredFreqBand TLV to discover whether the registration server can support automatic configuration of the requested frequency band. If the registration server supports the requested functionality, it shall return a unicast AP-autoconfiguration response message.
 </div>
 
+![Alt text](../../assets/technology/easymesh/discovery-phase.png)
+
 ### IEEE 802.11 parameter configuration phase
 
 <div style="text-align: justify; text-indent: 2em;">
@@ -91,11 +93,11 @@ Link metric query messages can be sent from one 1905.1 management entity to anot
 
 ## Documents
 
-<a href="/assets/documents/networking/IEEESTD.2013.6502164.pdf" target="_blank">IEEE 1905.1</a><br>
-<a href="/assets/documents/networking/Wi-Fi_EasyMesh_Specification_v6.0.pdf" target="_blank">Wi-Fi EasyMesh Specification v6.0</a><br>
-<a href="/assets/documents/networking/802-1-phkl-P1095-Tech-Presentation-1207-v01.pdf" target="_blank">IEEE 1905.1 Presentation</a>
+<a href="https://drive.google.com/file/d/1SzujbgECt6dTly01quXK-KZKYT5CKy5f/view?usp=drive_link" target="_blank">IEEE 1905.1</a><br>
+<a href="https://drive.google.com/file/d/1UXO2X4WSJrsJYC_kCy4bWiUoYXrfzvBA/view?usp=drive_link" target="_blank">Wi-Fi EasyMesh Specification v6.0</a><br>
+<a href="https://drive.google.com/file/d/1ZpApjcITXl4s2GjMRIrW2VB2OAmpy3Iz/view?usp=drive_link" target="_blank">IEEE 1905.1 Presentation</a>
 
 ## References
 
-[1] https://www.cdatatec.com/wifi-mesh-easymesh-technology-and-products.html
+[1] https://www.cdatatec.com/wifi-mesh-easymesh-technology-and-products.html \
 [2] https://www.wi-fi.org/discover-wi-fi/wi-fi-easymesh
