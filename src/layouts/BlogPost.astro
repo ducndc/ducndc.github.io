@@ -14,54 +14,151 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
+			/* ===== Layout ===== */
+			.layout {
+			display: grid;
+			grid-template-columns: 260px 1fr;
+			gap: 2rem;
+			width: 100%;
+			padding: 1rem 2rem;
 			}
-			.hero-image {
-				width: 100%;
+
+
+			/* ===== TOC Sidebar ===== */
+			.toc {
+				position: sticky;
+				top: 100px;
+				height: fit-content;
+				font-size: 14px;
+				color: rgb(var(--gray));
+				background: rgba(0,0,0,0.02);
+				padding: 1rem;
+				border-radius: 12px;
+				backdrop-filter: blur(6px);
 			}
+
+			.toc-title {
+				font-weight: bold;
+				margin-bottom: 0.5rem;
+				font-size: 13px;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+			}
+
+			.toc a {
+				display: block;
+				padding: 0.35rem 0.4rem;
+				text-decoration: none;
+				color: inherit;
+				border-radius: 6px;
+				transition: all 0.2s ease;
+			}
+
+			.toc a:hover {
+				background: rgba(0,0,0,0.05);
+				color: black;
+			}
+
+			.toc a.h3 {
+				padding-left: 1.2rem;
+				font-size: 13px;
+			}
+
+			.toc a.active {
+				background: rgba(0,0,0,0.08);
+				font-weight: 600;
+				color: black;
+			}
+
+			/* ===== Content ===== */
+			.content {
+				min-width: 0;
+			}
+
+			/* Hero */
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
 				border-radius: 12px;
 				box-shadow: var(--box-shadow);
+				width: 100%;
+				max-width: 1200px;
 			}
+
+			/* ===== Blog ===== */
 			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
+				width: 100%;
+				max-width: 1200px;
 				margin: auto;
-				padding: 1em;
+				padding: 1.5rem;
+				line-height: 1.75;
+				font-size: 18px;
 				color: rgb(var(--gray-dark));
 			}
+
+			.prose p {
+				max-width: 70ch;
+			}
+
+			.prose img {
+				width: 100%;
+				border-radius: 8px;
+				margin: 1.5rem 0;
+			}
+
+			.prose pre {
+				max-width: 100%;
+				overflow-x: auto;
+				padding: 1rem;
+				border-radius: 8px;
+			}
+
+			/* Title */
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
 				text-align: center;
-				line-height: 1;
+				margin-bottom: 2rem;
 			}
+
 			.title h1 {
-				margin: 0 0 0.5em 0;
+				font-size: 2.5rem;
+				margin-bottom: 0.5rem;
 			}
+
 			.date {
-				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
+				margin-bottom: 0.5rem;
 			}
-			.last-updated-on {
-				font-style: italic;
+
+			/* ===== Mobile ===== */
+			@media (max-width: 1024px) {
+				.layout {
+					grid-template-columns: 1fr;
+				}
+				.toc {
+					display: none;
+				}
 			}
 		</style>
 	</head>
 
 	<body>
 		<Header />
-		<main>
-			<article>
+
+		<main class="layout">
+			<!-- TOC -->
+			<aside class="toc">
+				<div class="toc-title">Table of Contents</div>
+				<nav id="toc"></nav>
+			</aside>
+
+			<!-- Content -->
+			<article class="content">
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
+					{heroImage && <Image width={1600} height={800} src={heroImage} alt="" />}
 				</div>
+
 				<div class="prose">
 					<div class="title">
 						<div class="date">
@@ -77,10 +174,64 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						<h1>{title}</h1>
 						<hr />
 					</div>
+
 					<slot />
 				</div>
 			</article>
 		</main>
+
 		<Footer />
+
+		<script>
+			const toc = document.getElementById("toc");
+			const headings = document.querySelectorAll(".prose h2, .prose h3");
+
+			headings.forEach((heading) => {
+				const id = heading.textContent
+					.toLowerCase()
+					.replace(/[^a-z0-9]+/g, "-");
+
+				heading.id = id;
+
+				const link = document.createElement("a");
+				link.href = "#" + id;
+				link.textContent = heading.textContent;
+
+				if (heading.tagName === "H3") {
+					link.classList.add("h3");
+				}
+
+				toc.appendChild(link);
+			});
+
+			/* Smooth scroll */
+			document.querySelectorAll('.toc a').forEach(anchor => {
+				anchor.addEventListener('click', function(e) {
+					e.preventDefault();
+					document.querySelector(this.getAttribute('href')).scrollIntoView({
+						behavior: 'smooth'
+					});
+				});
+			});
+
+			/* Highlight active */
+			const links = document.querySelectorAll(".toc a");
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							links.forEach((l) => l.classList.remove("active"));
+							const id = entry.target.id;
+							const active = document.querySelector(`.toc a[href="#${id}"]`);
+							if (active) active.classList.add("active");
+						}
+					});
+				},
+				{ rootMargin: "-40% 0px -55% 0px" }
+			);
+
+			headings.forEach((h) => observer.observe(h));
+		</script>
 	</body>
 </html>

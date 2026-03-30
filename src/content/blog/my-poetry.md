@@ -6,6 +6,7 @@ heroImage: '../../assets/poetry.jpg'
 ---
 
 ## Thăm Đỉnh Samu
+
 > Đông này có chuyến du lịch xa\
 > Tới đỉnh Sa Mu buổi chiều tà\
 > Ngắm nghía trời mây, thăm núi nọ\
@@ -27,6 +28,7 @@ heroImage: '../../assets/poetry.jpg'
 *CauGiay, Hanoi 2023-12-24*
 
 ## Ngày Đông
+
 > Trời đông gió lạnh suốt bao ngày \
 > Phố xá người qua tự vắng thay \
 > Bước tiếp trên đường ta đã chọn \
