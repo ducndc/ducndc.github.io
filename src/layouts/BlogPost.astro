@@ -12,226 +12,260 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
+<head>
+	<BaseHead title={title} description={description} />
 
-		<style>
-			/* ===== Layout ===== */
-			.layout {
+	<style>
+		/* ===== Layout ===== */
+		.layout {
 			display: grid;
 			grid-template-columns: 260px 1fr;
 			gap: 2rem;
 			width: 100%;
 			padding: 1rem 2rem;
+		}
+
+		/* ===== TOC ===== */
+		.toc {
+			position: sticky;
+			top: 100px;
+			height: fit-content;
+			font-size: 14px;
+			color: rgb(var(--gray));
+			background: rgba(0,0,0,0.02);
+			padding: 1rem;
+			border-radius: 12px;
+			backdrop-filter: blur(6px);
+		}
+
+		.toc-title {
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+			font-size: 13px;
+			text-transform: uppercase;
+			letter-spacing: 0.05em;
+		}
+
+		.toc nav {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+
+		.toc a {
+			display: block;
+			padding: 0.35rem 0.5rem;
+			text-decoration: none;
+			color: inherit;
+			border-radius: 6px;
+			border-left: 2px solid transparent;
+			transition: all 0.2s ease;
+		}
+
+		.toc a:hover {
+			background: rgba(0,0,0,0.05);
+		}
+
+		.toc a.active {
+			color: black;
+			font-weight: 600;
+			border-left: 2px solid black;
+			background: rgba(0,0,0,0.06);
+		}
+
+		.toc a.h3 {
+			padding-left: 1.5rem;
+			font-size: 13px;
+			opacity: 0.85;
+		}
+
+		/* ===== Content ===== */
+		.content {
+			min-width: 0;
+		}
+
+		.hero-image img {
+			display: block;
+			margin: 0 auto;
+			border-radius: 12px;
+			box-shadow: var(--box-shadow);
+			width: 100%;
+			max-width: 1200px;
+		}
+
+		.prose {
+			width: 100%;
+			max-width: 1200px;
+			margin: auto;
+			padding: 1.5rem;
+			line-height: 1.75;
+			font-size: 18px;
+			color: rgb(var(--gray-dark));
+		}
+
+		.prose p {
+			max-width: 70ch;
+		}
+
+		.prose img {
+			width: 100%;
+			border-radius: 8px;
+			margin: 1.5rem 0;
+		}
+
+		.prose pre {
+			max-width: 100%;
+			overflow-x: auto;
+			padding: 1rem;
+			border-radius: 8px;
+		}
+
+		.title {
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		.title h1 {
+			font-size: 2.5rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.date {
+			color: rgb(var(--gray));
+			margin-bottom: 0.5rem;
+		}
+
+		/* ===== Mobile ===== */
+		@media (max-width: 1024px) {
+			.layout {
+				grid-template-columns: 1fr;
 			}
-
-
-			/* ===== TOC Sidebar ===== */
 			.toc {
-				position: sticky;
-				top: 100px;
-				height: fit-content;
-				font-size: 14px;
-				color: rgb(var(--gray));
-				background: rgba(0,0,0,0.02);
-				padding: 1rem;
-				border-radius: 12px;
-				backdrop-filter: blur(6px);
+				display: none;
 			}
+		}
+	</style>
+</head>
 
-			.toc-title {
-				font-weight: bold;
-				margin-bottom: 0.5rem;
-				font-size: 13px;
-				text-transform: uppercase;
-				letter-spacing: 0.05em;
-			}
+<body>
+	<Header />
 
-			.toc a {
-				display: block;
-				padding: 0.35rem 0.4rem;
-				text-decoration: none;
-				color: inherit;
-				border-radius: 6px;
-				transition: all 0.2s ease;
-			}
+	<main class="layout">
+		<!-- TOC -->
+		<aside class="toc">
+			<div class="toc-title">Table of Contents</div>
+			<nav id="toc"></nav>
+		</aside>
 
-			.toc a:hover {
-				background: rgba(0,0,0,0.05);
-				color: black;
-			}
+		<!-- Content -->
+		<article class="content">
+			<div class="hero-image">
+				{heroImage && <Image width={1600} height={800} src={heroImage} alt="" />}
+			</div>
 
-			.toc a.h3 {
-				padding-left: 1.2rem;
-				font-size: 13px;
-			}
-
-			.toc a.active {
-				background: rgba(0,0,0,0.08);
-				font-weight: 600;
-				color: black;
-			}
-
-			/* ===== Content ===== */
-			.content {
-				min-width: 0;
-			}
-
-			/* Hero */
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-				width: 100%;
-				max-width: 1200px;
-			}
-
-			/* ===== Blog ===== */
-			.prose {
-				width: 100%;
-				max-width: 1200px;
-				margin: auto;
-				padding: 1.5rem;
-				line-height: 1.75;
-				font-size: 18px;
-				color: rgb(var(--gray-dark));
-			}
-
-			.prose p {
-				max-width: 70ch;
-			}
-
-			.prose img {
-				width: 100%;
-				border-radius: 8px;
-				margin: 1.5rem 0;
-			}
-
-			.prose pre {
-				max-width: 100%;
-				overflow-x: auto;
-				padding: 1rem;
-				border-radius: 8px;
-			}
-
-			/* Title */
-			.title {
-				text-align: center;
-				margin-bottom: 2rem;
-			}
-
-			.title h1 {
-				font-size: 2.5rem;
-				margin-bottom: 0.5rem;
-			}
-
-			.date {
-				color: rgb(var(--gray));
-				margin-bottom: 0.5rem;
-			}
-
-			/* ===== Mobile ===== */
-			@media (max-width: 1024px) {
-				.layout {
-					grid-template-columns: 1fr;
-				}
-				.toc {
-					display: none;
-				}
-			}
-		</style>
-	</head>
-
-	<body>
-		<Header />
-
-		<main class="layout">
-			<!-- TOC -->
-			<aside class="toc">
-				<div class="toc-title">Table of Contents</div>
-				<nav id="toc"></nav>
-			</aside>
-
-			<!-- Content -->
-			<article class="content">
-				<div class="hero-image">
-					{heroImage && <Image width={1600} height={800} src={heroImage} alt="" />}
-				</div>
-
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-
-					<slot />
-				</div>
-			</article>
-		</main>
-
-		<Footer />
-
-		<script>
-			const toc = document.getElementById("toc");
-			const headings = document.querySelectorAll(".prose h2, .prose h3");
-
-			headings.forEach((heading) => {
-				const id = heading.textContent
-					.toLowerCase()
-					.replace(/[^a-z0-9]+/g, "-");
-
-				heading.id = id;
-
-				const link = document.createElement("a");
-				link.href = "#" + id;
-				link.textContent = heading.textContent;
-
-				if (heading.tagName === "H3") {
-					link.classList.add("h3");
-				}
-
-				toc.appendChild(link);
-			});
-
-			/* Smooth scroll */
-			document.querySelectorAll('.toc a').forEach(anchor => {
-				anchor.addEventListener('click', function(e) {
-					e.preventDefault();
-					document.querySelector(this.getAttribute('href')).scrollIntoView({
-						behavior: 'smooth'
-					});
-				});
-			});
-
-			/* Highlight active */
-			const links = document.querySelectorAll(".toc a");
-
-			const observer = new IntersectionObserver(
-				(entries) => {
-					entries.forEach((entry) => {
-						if (entry.isIntersecting) {
-							links.forEach((l) => l.classList.remove("active"));
-							const id = entry.target.id;
-							const active = document.querySelector(`.toc a[href="#${id}"]`);
-							if (active) active.classList.add("active");
+			<div class="prose">
+				<div class="title">
+					<div class="date">
+						<FormattedDate date={pubDate} />
+						{
+							updatedDate && (
+								<div>
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)
 						}
-					});
-				},
-				{ rootMargin: "-40% 0px -55% 0px" }
-			);
+					</div>
+					<h1>{title}</h1>
+					<hr />
+				</div>
 
-			headings.forEach((h) => observer.observe(h));
-		</script>
-	</body>
+				<slot />
+			</div>
+		</article>
+	</main>
+
+	<Footer />
+
+	<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const toc = document.getElementById("toc");
+		const headings = Array.from(document.querySelectorAll(".prose h2, .prose h3"));
+
+		if (!toc || headings.length === 0) return;
+
+		/* ===== Build TOC ===== */
+		headings.forEach((heading) => {
+			const text = heading.textContent.trim();
+
+			const id = text
+				.toLowerCase()
+				.normalize("NFD")
+				.replace(/[\u0300-\u036f]/g, "")
+				.replace(/[^a-z0-9]+/g, "-");
+
+			heading.id = id;
+
+			const link = document.createElement("a");
+			link.href = "#" + id;
+			link.textContent = text;
+
+			if (heading.tagName === "H3") {
+				link.classList.add("h3");
+			}
+
+			toc.appendChild(link);
+		});
+
+		const links = Array.from(document.querySelectorAll(".toc a"));
+
+		/* ===== Smooth scroll ===== */
+		links.forEach(link => {
+			link.addEventListener("click", (e) => {
+				e.preventDefault();
+
+				const target = document.querySelector(link.getAttribute("href"));
+				if (!target) return;
+
+				const yOffset = -80;
+				const y = target.getBoundingClientRect().top + window.scrollY + yOffset;
+
+				window.scrollTo({ top: y, behavior: "smooth" });
+			});
+		});
+
+		/* ===== Scroll Spy ===== */
+		let activeId = null;
+
+		const setActive = (id) => {
+			if (activeId === id) return;
+
+			activeId = id;
+			links.forEach(link => {
+				link.classList.toggle(
+					"active",
+					link.getAttribute("href") === "#" + id
+				);
+			});
+		};
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				const visible = entries
+					.filter(e => e.isIntersecting)
+					.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+
+				if (visible.length > 0) {
+					setActive(visible[0].target.id);
+				}
+			},
+			{
+				rootMargin: "-30% 0px -60% 0px",
+				threshold: [0, 1]
+			}
+		);
+
+		headings.forEach(h => observer.observe(h));
+	});
+	</script>
+</body>
 </html>
