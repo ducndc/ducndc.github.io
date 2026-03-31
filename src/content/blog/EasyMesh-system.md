@@ -70,12 +70,16 @@ The IEEE 802.11 parameter configuration process should be started after receivin
 The AP-autoconfiguration renew message should be multicast by the registration server to notify AP registration clients that have configured data using the AP-autoconfiguration process to restart the AP-autoconfiguration process to update the data. This data update process is very important for the 1905.1 network to maintain synchronization of configuration parameters during the life cycle (restart, upgrade operations, etc.). All APs previously configured by the registration server should start The IEEE 802.11 parameter configuration after receiving the AP-autoconfiguration renew message. All APs previously configured by the registration server should start The IEEE 802.11 parameter configuration after receiving the AP-autoconfiguration renew message.
 </div>
 
+![Alt text](../../assets/technology/easymesh/renew-autoconfig.png)
+
 ### Topology Managerment
 
 - Topology discovery message (neighbor multicast): If the following event occurs, then within 1 s, a 1905.1 management entity shall transmit a topology discovery message
 - Topology query message (unicast): A 1905.1 management entity may send a topology query message to another 1905.1 management entity
 - Topology response message (unicast): If a 1905.1 management entity receives a topology query message, then within 1 s it shall respond. The topology response message shall contain the same MID that was received in the topology query message.
 - Topology notification message (relayed multicast): If a 1905.1 management entity detects that any of the information specified to be sent in a topology response message has changed, then it shall within 1 s
+
+![Alt text](../../assets/technology/easymesh/topology-management.png)
 
 ### Link metrics
 
@@ -90,6 +94,8 @@ The Link metric information dissemination protocol enables a 1905.1 management e
 <div style="text-align: justify; text-indent: 2em;">
 Link metric query messages can be sent from one 1905.1 management entity to another 1905.1 management entity, and all interfaces between all 1905 devices can send this message to each other. Link metric query messages are transmitted in CMDU unicast. If a 1905.1 managed entity receives a Link metric query message, it shall respond using the Link metric response message
 </div>
+
+![Alt text](../../assets/technology/easymesh/link-metric.png)
 
 ## Documents
 
