@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Point — Interactive Layer Diagram</title>
+<style>
+:root {
+  --font: system-ui, -apple-system, sans-serif;
+  --txt: #1a1a18;
+  --txt2: #5f5e5a;
+  --bg2: #f5f4f0;
+  --brd: rgba(0,0,0,0.11);
+  --brd2: rgba(0,0,0,0.2);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --txt: #e8e6de;
+    --txt2: #9c9a92;
+    --bg2: #2a2a28;
+    --brd: rgba(255,255,255,0.09);
+    --brd2: rgba(255,255,255,0.17);
+  }
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: var(--font);
+  color: var(--txt);
+  background: transparent;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 64px;
+}
+
+.connector {
+  height: 18px;
+  position: relative;
+  margin-left: 70px;
+}
+.connector::before {
+  content: '';
+  position: absolute;
+  left: -0.5px;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--brd2);
+  opacity: 0.4;
+}
+.connector::after {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.lbl {
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 14px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  transition: opacity .15s;
+}
+.lbl:hover { opacity: .82; }
+.lbl-title { font-size: 13px; font-weight: 500; line-height: 1.3; }
+.lbl-sub   { font-size: 11px; line-height: 1.35; opacity: .68; }
+
+.panel {
+  padding: 0;
+  display: none;
+  flex-direction: column;
+}
+.panel.open { display: flex; }
+.panel-inner { padding: 12px 14px 14px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.chip {
+  font-size: 11px; font-weight: 500;
+  padding: 3px 10px; border-radius: 12px;
+  border: none; cursor: pointer; transition: opacity .15s;
+}
+.chip:hover { opacity: .75; }
+
+.detail {
+  display: none;
+  font-size: 12px; line-height: 1.65;
+  color: var(--txt2);
+  background: var(--bg2);
+  border: 0.5px solid var(--brd);
+  border-radius: 7px;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+}
+.detail.open { display: block; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+.card {
+  border-radius: 7px;
+  padding: 9px 11px;
+  border: 0.5px solid;
+  cursor: default;
+}
+.card-t { font-size: 12px; font-weight: 500; line-height: 1.3; margin-bottom: 2px; }
+.card-s { font-size: 11px; line-height: 1.35; opacity: .72; }
+
+/* Purple – L4 */
+.L4-lbl  { background: #EEEDFE; color: #3C3489; }
+.L4-pan  { background: #EEEDFE; }
+.L4-chip { background: #534AB7; color: #EEEDFE; }
+.L4-card { border-color: #AFA9EC; color: #3C3489; background: rgba(255,255,255,.55); }
+.con-L4::after { border-bottom: 6px solid #534AB7; }
+@media (prefers-color-scheme: dark) {
+  .L4-lbl  { background: #3C3489; color: #CECBF6; }
+  .L4-pan  { background: #26215C; }
+  .L4-chip { background: #7F77DD; color: #EEEDFE; }
+  .L4-card { border-color: #534AB7; color: #CECBF6; background: rgba(255,255,255,.06); }
+}
+
+/* Teal – L3 */
+.L3-lbl  { background: #E1F5EE; color: #085041; }
+.L3-pan  { background: #E1F5EE; }
+.L3-chip { background: #0F6E56; color: #E1F5EE; }
+.L3-card { border-color: #5DCAA5; color: #085041; background: rgba(255,255,255,.55); }
+.con-L3::after { border-bottom: 6px solid #0F6E56; }
+@media (prefers-color-scheme: dark) {
+  .L3-lbl  { background: #085041; color: #9FE1CB; }
+  .L3-pan  { background: #04342C; }
+  .L3-chip { background: #1D9E75; color: #E1F5EE; }
+  .L3-card { border-color: #0F6E56; color: #9FE1CB; background: rgba(255,255,255,.06); }
+}
+
+/* Coral – L2 */
+.L2-lbl  { background: #FAECE7; color: #712B13; }
+.L2-pan  { background: #FAECE7; }
+.L2-chip { background: #993C1D; color: #FAECE7; }
+.L2-card { border-color: #F0997B; color: #712B13; background: rgba(255,255,255,.55); }
+.con-L2::after { border-bottom: 6px solid #993C1D; }
+@media (prefers-color-scheme: dark) {
+  .L2-lbl  { background: #712B13; color: #F5C4B3; }
+  .L2-pan  { background: #4A1B0C; }
+  .L2-chip { background: #D85A30; color: #FAECE7; }
+  .L2-card { border-color: #993C1D; color: #F5C4B3; background: rgba(255,255,255,.06); }
+}
+
+/* Amber – L1 */
+.L1-lbl  { background: #FAEEDA; color: #633806; }
+.L1-pan  { background: #FAEEDA; }
+.L1-chip { background: #854F0B; color: #FAEEDA; }
+.L1-card { border-color: #EF9F27; color: #633806; background: rgba(255,255,255,.55); }
+@media (prefers-color-scheme: dark) {
+  .L1-lbl  { background: #633806; color: #FAC775; }
+  .L1-pan  { background: #412402; }
+  .L1-chip { background: #BA7517; color: #FAEEDA; }
+  .L1-card { border-color: #854F0B; color: #FAC775; background: rgba(255,255,255,.06); }
+}
+</style>
+</head>
+<body>
+
+<!-- L4 Management -->
+<div class="row">
+  <button class="lbl L4-lbl" onclick="toggle('L4')">
+    <span class="lbl-title">Management &amp; services</span>
+    <span class="lbl-sub">Interfaces · Control plane</span>
+  </button>
+  <div class="panel L4-pan" id="L4">
+    <div class="panel-inner">
+      <div class="chips">
+        <button class="chip L4-chip" onclick="detail('L4','webui')">Web UI / CLI</button>
+        <button class="chip L4-chip" onclick="detail('L4','cloud')">Cloud controller</button>
+        <button class="chip L4-chip" onclick="detail('L4','api')">REST / MQTT API</button>
+        <button class="chip L4-chip" onclick="detail('L4','ota')">OTA updates</button>
+        <button class="chip L4-chip" onclick="detail('L4','mgmt')">TR-069 · NETCONF · SNMP</button>
+      </div>
+      <div class="detail" id="L4-webui">Local admin interface. HTML/JS web panel for configuration, BusyBox CLI for shell access. Requires CSRF protection and strict input validation.</div>
+      <div class="detail" id="L4-cloud">Central controller manages hundreds of APs simultaneously — pushing config, collecting telemetry, triggering firmware updates. Handles intermittent connectivity gracefully without dropping client traffic.</div>
+      <div class="detail" id="L4-api">REST for synchronous config/query, MQTT pub-sub for real-time telemetry and event streaming. WebSocket used for controller dashboards requiring live updates.</div>
+      <div class="detail" id="L4-ota">Atomic dual-partition update: new image written to inactive slot, checksum verified, then boot pointer swapped. Failed update rolls back automatically — no bricking in the field.</div>
+      <div class="detail" id="L4-mgmt">TR-069 (CWMP) for ISP-managed CPE, NETCONF/YANG for structured config push, SNMP for legacy monitoring. All three may coexist on an enterprise AP.</div>
+      <div class="cards" id="L4-cards">
+        <div class="card L4-card"><div class="card-t">Web UI / CLI</div><div class="card-s">Local admin tool</div></div>
+        <div class="card L4-card"><div class="card-t">Cloud controller</div><div class="card-s">Mobile app · Dashboard</div></div>
+        <div class="card L4-card"><div class="card-t">API (REST / MQTT)</div><div class="card-s">Remote management</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="connector con-L4"></div>
+
+<!-- L3 Network -->
+<div class="row">
+  <button class="lbl L3-lbl" onclick="toggle('L3')">
+    <span class="lbl-title">Network protocols</span>
+    <span class="lbl-sub">Wi-Fi · Mesh · Security</span>
+  </button>
+  <div class="panel L3-pan" id="L3">
+    <div class="panel-inner">
+      <div class="chips">
+        <button class="chip L3-chip" onclick="detail('L3','80211')">IEEE 802.11</button>
+        <button class="chip L3-chip" onclick="detail('L3','mesh')">Mesh / EasyMesh</button>
+        <button class="chip L3-chip" onclick="detail('L3','sec')">WPA3 · 802.1X</button>
+        <button class="chip L3-chip" onclick="detail('L3','roam')">Roaming · Band steering</button>
+        <button class="chip L3-chip" onclick="detail('L3','qos')">QoS · OFDMA · MU-MIMO</button>
+      </div>
+      <div class="detail" id="L3-80211">802.11ax (Wi-Fi 6) is the current baseline; 802.11be (Wi-Fi 7) adds multi-link operation. OFDMA splits a channel among multiple clients simultaneously, MU-MIMO serves multiple spatial streams, DFS avoids radar on 5 GHz channels.</div>
+      <div class="detail" id="L3-mesh">EasyMesh (IEEE 1905.1) standardises multi-vendor mesh coordination. The controller AP manages topology, backhaul selection, and client steering. 802.11s operates at the MAC layer for peer mesh without a central controller.</div>
+      <div class="detail" id="L3-sec">WPA3 uses SAE (Simultaneous Authentication of Equals) instead of PSK — eliminates offline dictionary attacks. Enterprise mode adds 802.1X port auth: client presents a certificate to a RADIUS server before getting network access.</div>
+      <div class="detail" id="L3-roam">Band steering nudges dual-band clients from 2.4 GHz to 5 GHz. 802.11r (Fast BSS Transition) pre-authenticates to the next AP before the client moves, reducing roaming interruption to &lt;50 ms. 802.11k/v give clients neighbour reports.</div>
+      <div class="detail" id="L3-qos">OFDMA (Wi-Fi 6+) subdivides a channel into resource units — multiple clients transmit simultaneously in one TXOP. WMM QoS maps traffic to four access categories. MU-MIMO serves up to 8 spatial streams at once on Wi-Fi 6.</div>
+      <div class="cards" id="L3-cards">
+        <div class="card L3-card"><div class="card-t">IEEE 802.11</div><div class="card-s">a/b/g/n/ac/ax/be</div></div>
+        <div class="card L3-card"><div class="card-t">Mesh / EasyMesh</div><div class="card-s">Band steering · Roaming</div></div>
+        <div class="card L3-card"><div class="card-t">Security</div><div class="card-s">WPA3 · RADIUS · TLS</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="connector con-L3"></div>
+
+<!-- L2 Firmware -->
+<div class="row">
+  <button class="lbl L2-lbl" onclick="toggle('L2')">
+    <span class="lbl-title">Firmware &amp; embedded OS</span>
+    <span class="lbl-sub">Linux · Drivers · Services</span>
+  </button>
+  <div class="panel L2-pan" id="L2">
+    <div class="panel-inner">
+      <div class="chips">
+        <button class="chip L2-chip" onclick="detail('L2','os')">Linux / OpenWrt</button>
+        <button class="chip L2-chip" onclick="detail('L2','drivers')">Drivers</button>
+        <button class="chip L2-chip" onclick="detail('L2','svcs')">System services</button>
+        <button class="chip L2-chip" onclick="detail('L2','boot')">Bootloader</button>
+        <button class="chip L2-chip" onclick="detail('L2','mem')">Memory constraints</button>
+      </div>
+      <div class="detail" id="L2-os">OpenWrt is the most common open-source base — active community, extensive package repo, UCI config system. Yocto/Buildroot suit vendors who need full control. Yocto produces minimal, auditable images; OpenWrt trades size for convenience.</div>
+      <div class="detail" id="L2-drivers">Wi-Fi driver quality is the single biggest factor in AP performance. The MAC layer manages association, QoS, and retransmit logic; the PHY layer handles modulation and calibration. Open-source drivers (ath10k, mt76, ath11k) have improved but some features need proprietary blobs.</div>
+      <div class="detail" id="L2-svcs">hostapd manages the AP role (auth, association, WPA state machine). wpa_supplicant handles the station role for mesh backhaul. dnsmasq provides DHCP and DNS. dropbear is a minimal SSH server. All run as long-lived daemons under a process supervisor.</div>
+      <div class="detail" id="L2-boot">U-Boot initialises hardware, selects the active image partition, and hands off to the kernel. A GPIO button held on power-up can force TFTP recovery mode. Dual-image layout means a bad OTA update never permanently bricks the device.</div>
+      <div class="detail" id="L2-mem">Entry-level APs: 64–128 MB RAM, 16–32 MB flash. Every kernel module, daemon, and package competes for this budget. Lean kernel configs, stripped binaries, and tmpfs for runtime data are essential discipline.</div>
+      <div class="cards" id="L2-cards">
+        <div class="card L2-card"><div class="card-t">Linux / OpenWrt</div><div class="card-s">Yocto · Buildroot · Kernel</div></div>
+        <div class="card L2-card"><div class="card-t">Drivers</div><div class="card-s">Wi-Fi · Ethernet · GPIO</div></div>
+        <div class="card L2-card"><div class="card-t">System services</div><div class="card-s">hostapd · dnsmasq · SSH</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="connector con-L2"></div>
+
+<!-- L1 Hardware -->
+<div class="row">
+  <button class="lbl L1-lbl" onclick="toggle('L1')">
+    <span class="lbl-title">Hardware</span>
+    <span class="lbl-sub">SoC · RF · Power</span>
+  </button>
+  <div class="panel L1-pan" id="L1">
+    <div class="panel-inner">
+      <div class="chips">
+        <button class="chip L1-chip" onclick="detail('L1','soc')">SoC architecture</button>
+        <button class="chip L1-chip" onclick="detail('L1','rf')">RF &amp; antenna</button>
+        <button class="chip L1-chip" onclick="detail('L1','mem')">Memory</button>
+        <button class="chip L1-chip" onclick="detail('L1','poe')">PoE · Power mgmt</button>
+        <button class="chip L1-chip" onclick="detail('L1','phy')">Ethernet PHY</button>
+      </div>
+      <div class="detail" id="L1-soc">Major vendors: MediaTek (MT7986/MT7988), Qualcomm (IPQ series), Broadcom (BCM6750). Each integrates CPU cores (ARM Cortex-A), NPU for packet processing, and the Wi-Fi MAC on a single die. SoC choice determines frequency bands, spatial streams, and PCIe lanes available.</div>
+      <div class="detail" id="L1-rf">RF front-end chain: baseband → PA (power amplifier) → filter → antenna switch → antenna. MIMO requires one complete chain per spatial stream — a 4×4 AP has four chains per band. Antenna gain, placement, and inter-element spacing directly determine coverage and throughput.</div>
+      <div class="detail" id="L1-mem">DRAM (DDR3/DDR4) holds the running OS, driver buffers, and packet queues. NAND flash stores firmware images; NOR flash stores the bootloader (faster random-read for early boot). Some designs add eMMC for larger storage.</div>
+      <div class="detail" id="L1-poe">802.3af delivers 15.4 W — enough for single-band entry APs. 802.3at (PoE+) provides 30 W for dual-band. 802.3bt (PoE++) reaches 90 W for tri-band or outdoor APs. The PD negotiates class with the PSE switch before drawing power.</div>
+      <div class="detail" id="L1-phy">The Ethernet PHY bridges the SoC's MAC to the physical RJ-45 connector. Multi-gig PHYs (2.5G, 5G, 10G) are now common on backhaul ports to keep up with Wi-Fi 6/6E throughput. SGMII or USXGMII connects PHY to SoC on high-speed designs.</div>
+      <div class="cards" id="L1-cards">
+        <div class="card L1-card"><div class="card-t">SoC (CPU + Wi-Fi)</div><div class="card-s">ARM / MIPS · MediaTek · QCA</div></div>
+        <div class="card L1-card"><div class="card-t">RF &amp; antenna</div><div class="card-s">MIMO · Filter · PA · Switch</div></div>
+        <div class="card L1-card"><div class="card-t">Memory &amp; power</div><div class="card-s">DDR · NAND · PoE 802.3bt</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const openLayers = {};
+function toggle(id) {
+  const panel = document.getElementById(id);
+  const cards = document.getElementById(id + '-cards');
+  if (openLayers[id]) {
+    panel.classList.remove('open');
+    openLayers[id] = false;
+  } else {
+    panel.classList.add('open');
+    if (cards) cards.style.display = 'grid';
+    openLayers[id] = true;
+  }
+  clearDetails(id);
+}
+function clearDetails(layer) {
+  document.querySelectorAll('[id^="' + layer + '-"]').forEach(el => {
+    if (!el.id.endsWith('-cards')) el.classList.remove('open');
+  });
+}
+function detail(layer, key) {
+  const panel = document.getElementById(layer + '-' + key);
+  const cards = document.getElementById(layer + '-cards');
+  const wasOpen = panel.classList.contains('open');
+  clearDetails(layer);
+  if (!wasOpen) {
+    panel.classList.add('open');
+    if (cards) cards.style.display = 'none';
+  } else {
+    if (cards) cards.style.display = 'grid';
+  }
+}
+</script>
+</body>
+</html>
