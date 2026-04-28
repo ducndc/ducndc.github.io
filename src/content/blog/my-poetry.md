@@ -9,7 +9,7 @@ heroImage: '../../assets/poetry.jpg'
 
 > Chiều hè Lan Hạ bỗng mưa sa \
 > Tiễn khách du thuyền chút thiết tha \
-> Cố  chí tu bất phóng khích \
+> Cố  chí tu thân bất phóng khích \
 > Trường lộ gian khổ chẳng than oa
 
 *CatBa, HaiPhong, 2026-04-27*
