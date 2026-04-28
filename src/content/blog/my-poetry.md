@@ -5,6 +5,15 @@ pubDate: 'Mar 28 2026'
 heroImage: '../../assets/poetry.jpg'
 ---
 
+## Chiều Lan Hạ 
+
+> Chiều hè Lan Hạ bỗng mưa sa \
+> Tiễn khách du thuyền chút thiết tha \
+> Cố  chí tu bất phóng khích \
+> Trường lộ gian khổ chẳng than oa
+
+*CatBa, HaiPhong, 2026-04-27*
+
 ## Thăm Đỉnh Samu
 
 > Đông này có chuyến du lịch xa\
