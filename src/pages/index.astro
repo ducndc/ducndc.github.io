@@ -9,6 +9,21 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style is:global>
+			header {
+				position: fixed !important;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 100;
+				background: rgba(255, 255, 255, 0.92);
+				backdrop-filter: blur(8px);
+				-webkit-backdrop-filter: blur(8px);
+			}
+			body {
+				padding-top: 60px;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
