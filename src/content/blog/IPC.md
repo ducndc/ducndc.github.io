@@ -1,7 +1,7 @@
 ---
 title: 'Inter-Process Communication'
 description: 'Inter-Process Communication'
-pubDate: 'August 17 2025'
+pubDate: 'August 17 2022'
 heroImage: '../../assets/ipc.png'
 ---
 

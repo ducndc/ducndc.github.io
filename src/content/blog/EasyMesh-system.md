@@ -1,7 +1,7 @@
 ---
 title: 'EasyMesh System'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: 'September 12 2022'
+pubDate: 'September 12 2023'
 heroImage: '../../assets/EasyMesh.png'
 ---
 
