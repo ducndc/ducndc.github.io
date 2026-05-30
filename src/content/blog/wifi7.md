@@ -57,6 +57,14 @@ A single-radio MLD operates on a single radio, but can still support multiple li
 
 ![H1](../../assets/img/wifi/EMLSR.png)
 
+<iframe
+  width="800"
+  height="450"
+  src="https://www.youtube.com/embed/iCTVc2aza0I"
+  title="YouTube video"
+  allowfullscreen>
+</iframe>
+
 <div style="text-align: justify; text-indent: 2em;">
 In the EMLSR mode of MLO, an STA MLD, equipped with multiple receive chains, listens on a set of active links. Initially, Link 1 and Link 2 are in the listening phase. This phase includes executing clear channel assessment (CCA) and receiving the initial control frame (ICF) from an AP MLD. Link 1 secures channel access, leading to the transmission of a PHY protocol data unit (PPDU) from STA1 to AP1. Concurrently, Link 2 remains inactive. At the end of the transmission on Link 1, both Link 1 and Link 2 resume active channel listening. Link 2 then secures channel access, prompting AP2 to transmit a multiuser request to send (MU-RTS) ICF to STA2 on Link 2. Throughout the transmission period on Link 2, Link 1 is inactive.
 </div>
@@ -69,11 +77,27 @@ In the multi-radio mode, you can communicate on multiple links at the same time.
 
 ![H1](../../assets/img/wifi/STR.png)
 
+<iframe
+  width="800"
+  height="450"
+  src="https://www.youtube.com/embed/BOKN7-JmCHo"
+  title="YouTube video"
+  allowfullscreen>
+</iframe>
+
 <div style="text-align: justify; text-indent: 2em;">
 In the preceding figure, the AP MLD and STA MLD are dual-radio MLDs, and can transmit UL and DL frames asynchronously on Link 1 and Link 2 at the same time. For more information about how you can perform 802.11be system-level simulation using STR MLO
 </div>
 
 ![H1](../../assets/img/wifi/NSTR.png)
+
+<iframe
+  width="800"
+  height="450"
+  src="https://www.youtube.com/embed/mpV6lprDqj8"
+  title="YouTube video"
+  allowfullscreen>
+</iframe>
 
 <div style="text-align: justify; text-indent: 2em;">
 In NSTR mode, the AP MLD and STA MLD can transmit and receive simultaneously on Link 1 and Link 2, but cannot transmit on one link while receiving on another.
