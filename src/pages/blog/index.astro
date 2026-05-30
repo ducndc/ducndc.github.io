@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
@@ -10,104 +9,129 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+const postsByYear = posts.reduce((acc, post) => {
+	const year = new Date(post.data.pubDate).getFullYear();
+	if (!acc[year]) acc[year] = [];
+	acc[year].push(post);
+	return acc;
+}, {} as Record<number, typeof posts>);
+
+const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
+		<style is:global>
+			header {
+				position: fixed !important;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 100;
+				background: rgba(255, 255, 255, 0.92);
+				backdrop-filter: blur(8px);
+				-webkit-backdrop-filter: blur(8px);
 			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
+			body {
+				padding-top: 60px;
+			}
+		</style>
+
+		<style>
+			.blog-layout {
+				width: 80%;
+				max-width: 1200px;
+				min-width: 320px;
+				margin: 0 auto;
+				padding: 2rem 0;
+			}
+
+			.year-section {
+				margin-bottom: 2.5rem;
+			}
+
+			.year-heading {
+				font-size: 1rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: rgb(var(--gray));
+				margin-bottom: 0.75rem;
+				padding-bottom: 0.4rem;
+				border-bottom: 1px solid rgba(0,0,0,0.08);
+			}
+
+			.posts-list {
+				list-style: none;
 				margin: 0;
 				padding: 0;
 			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
+
+			.post-item a {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				gap: 1rem;
+				padding: 0.65rem 0.5rem;
 				text-decoration: none;
-				transition: 0.2s ease;
+				border-radius: 6px;
+				transition: background 0.15s ease;
 			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
+
+			.post-item a:hover {
+				background: rgba(0,0,0,0.03);
 			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
+
+			.post-item a:hover .post-title {
 				color: rgb(var(--accent));
 			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
+
+			.post-title {
+				font-size: 1.25rem;
+				font-weight: 500;
+				color: rgb(var(--black));
+				transition: color 0.15s ease;
+				line-height: 1.4;
 			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
+
+			.post-date {
+				font-size: 0.95rem;
+				color: rgb(var(--gray));
+				white-space: nowrap;
+				flex-shrink: 0;
+			}
+
+			@media (max-width: 480px) {
+				.post-item a {
+					flex-direction: column;
+					gap: 0.1rem;
 				}
 			}
 		</style>
 	</head>
 	<body>
 		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
+		<main class="blog-layout">
+			{years.map((year) => (
+				<div class="year-section">
+					<h2 class="year-heading">{year}</h2>
+					<ul class="posts-list">
+						{postsByYear[year].map((post) => (
+							<li class="post-item">
 								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
+									<span class="post-title">{post.data.title}</span>
+									<span class="post-date">
 										<FormattedDate date={post.data.pubDate} />
-									</p>
+									</span>
 								</a>
 							</li>
-						))
-					}
-				</ul>
-			</section>
+						))}
+					</ul>
+				</div>
+			))}
 		</main>
 		<Footer />
 	</body>
