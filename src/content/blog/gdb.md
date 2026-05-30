@@ -1,7 +1,7 @@
 ---
 title: 'GNU Debugger'
 description: 'GNU Debugger'
-pubDate: 'August 17 2025'
+pubDate: 'August 17 2023'
 heroImage: '../../assets/gdb.jpg'
 ---
 

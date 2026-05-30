@@ -1,7 +1,7 @@
 ---
 title: 'Out Of Memory'
 description: 'Out Of Memory'
-pubDate: 'December 10 2025'
+pubDate: 'December 10 2022'
 heroImage: '../../assets/oom.png'
 ---
 

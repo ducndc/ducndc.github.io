@@ -1,7 +1,7 @@
 ---
 title: 'WiFi Overview'
 description: 'WiFi Overview'
-pubDate: 'May 14 2025'
+pubDate: 'May 14 2023'
 heroImage: '../../assets/wifi.jpg'
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'In-Memory Layout of a Program (Process)'
 description: 'In-Memory Layout of a Program (Process)'
-pubDate: 'August 11 2025'
+pubDate: 'August 11 2022'
 heroImage: '../../assets/stack_heap.png'
 ---
 
