@@ -15,7 +15,7 @@ WPA3 was designed from the ground up to address these vulnerabilities, modernize
  
 ---
  
-### 1. A Brief History of Wi-Fi Security
+## History of Wi-Fi Security
  
 Understanding WPA3 requires appreciating the lineage it evolved from. Wi-Fi security did not begin strong — it began as almost an afterthought.
  
@@ -33,7 +33,7 @@ Understanding WPA3 requires appreciating the lineage it evolved from. Wi-Fi secu
  
 ---
  
-### 2. WPA3-Personal vs. WPA3-Enterprise
+## WPA3-Personal vs. WPA3-Enterprise
  
 WPA3 ships in two distinct operational modes, each designed for a different threat model and deployment context.
  
@@ -49,7 +49,7 @@ Additionally, the Wi-Fi Alliance introduced **Wi-Fi Enhanced Open™** as a comp
  
 ---
  
-### 3. SAE Handshake — The Core Innovation
+## SAE Handshake — The Core Innovation
  
 The most fundamental change in WPA3-Personal is the replacement of the Pre-Shared Key (PSK) handshake with **Simultaneous Authentication of Equals (SAE)**, also known as the **Dragonfly Key Exchange**, specified in IEEE 802.11-2016.
  
@@ -76,7 +76,7 @@ The critical property is that SAE prevents an attacker from capturing the handsh
  
 ---
  
-### 4. Key Security Features
+## Key Security Features
  
 #### Forward Secrecy
 Every WPA3 session generates a fresh Pairwise Master Key. Compromising the Wi-Fi password later cannot decrypt previously recorded sessions — a critical property for sensitive environments.
@@ -98,7 +98,7 @@ Device Provisioning Protocol enables secure onboarding of IoT devices without sc
  
 ---
  
-### 5. WPA2 vs. WPA3 — Side by Side
+## WPA2 vs. WPA3 — Side by Side
  
 | Feature | WPA2 | WPA3 |
 |---|---|---|
@@ -114,7 +114,7 @@ Device Provisioning Protocol enables secure onboarding of IoT devices without sc
  
 ---
  
-### 6. Real-World Deployment & Use Cases
+## Real-World Deployment & Use Cases
  
 #### Home & SOHO Networks
  
@@ -155,7 +155,7 @@ sae_anti_clogging_threshold=5
  
 ---
  
-### 7. Challenges & Limitations
+## Challenges & Limitations
  
 #### Dragonblood Vulnerabilities (2019)
  
@@ -177,7 +177,7 @@ The SAE handshake involves more computational work than WPA2's PSK exchange, par
  
 ---
  
-### 8. The Road Ahead
+## The Road Ahead
  
 #### Wi-Fi 7 (802.11be) and WPA3
  

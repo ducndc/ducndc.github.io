@@ -113,7 +113,7 @@ This table summarizes the different types of MLO modes in Wi-Fi 7.
 
 ![H1](../../assets/img/wifi/MLO_MODE_CHAR.png)
 
-## 320 MHz Bandwidth
+## Bandwidth (320 MHz)
 
 <div style="text-align: justify; text-indent: 2em;">
 Wi-Fi 6 devices suffer from low quality-of-service (QoS) due to the overcrowded and limited unlicensed spectra in the 2.4 GHz and 5 GHz bands, especially with the introduction of new applications. To achieve a maximum throughput of at least 30 Gbps, Wi-Fi 7 introduces new bandwidth modes, including contiguous 320 MHz, and non-contiguous 160+160 MHz. This figure shows a comparison of the channel bandwidths on which Wi-Fi 7 and Wi-Fi 6 devices communicate.
@@ -125,7 +125,7 @@ Wi-Fi 6 devices suffer from low quality-of-service (QoS) due to the overcrowded 
 Wi-Fi 7 devices can tap into the full potential of the 6 GHz band, effectively doubling their bandwidth compared to the Wi-Fi 6 devices.
 </div>
 
-## 4096-QAM Modulation
+## Modulation (4096-QAM)
 
 <div style="text-align: justify; text-indent: 2em;">
 The highest order modulation Wi-Fi 6 supports is 1024-QAM, enabling each modulation symbol to carry up to 10 bits. This figure shows how Wi-Fi 7 enhances this capability by introducing 4096-QAM, enabling each modulation symbol to carry 12 bits.
