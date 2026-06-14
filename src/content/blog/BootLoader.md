@@ -1,6 +1,6 @@
 ---
-title: 'Bootloader trong Hệ Thống Nhúng Linux'
-description: 'Bootloader trong Hệ Thống Nhúng Linux'
+title: 'Bootloader trong hệ thống nhúng Linux'
+description: 'Bootloader trong hệ thống nhúng Linux'
 pubDate: 'Jun 14 2026'
 heroImage: '../../assets/bootloader.png'
 ---
