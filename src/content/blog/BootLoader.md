@@ -467,12 +467,12 @@ Offset 0x300000 : Start of partition table
 #### Layout NAND Flash
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                      NAND Flash                         │
+┌────────────────────────────────────────────────────────┐
+│                      NAND Flash                        │
 ├────────┬─────────┬──────────┬────────────┬─────────────┤
 │ Block 0│ Block 1 │ Block 2-N│ Block N+1  │ Remaining   │
 │  SPL   │  SPL    │  U-Boot  │  Kernel    │ UBI volume  │
-│  (bk)  │  (bk)  │  (uImage)│  (uImage)  │ (rootfs)    │
+│  (bk)  │  (bk)   │  (uImage)│  (uImage)  │ (rootfs)    │
 │ 128KB  │ 128KB   │  512KB   │   4MB      │             │
 └────────┴─────────┴──────────┴────────────┴─────────────┘
 
