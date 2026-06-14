@@ -48,7 +48,7 @@ Linux Network Stack là hệ thống con (subsystem) phức tạp nhất trong k
 │  ├───────────────────────────────────────────────────┤  │
 │  │  Netfilter / iptables / nftables                  │  │
 │  ├───────────────────────────────────────────────────┤  │
-│  │  Routing Subsystem    FIB │ Neighbour Cache        │  │
+│  │  Routing Subsystem    FIB │ Neighbour Cache       │  │
 │  ├───────────────────────────────────────────────────┤  │
 │  │  Traffic Control      qdisc │ class │ filter      │  │
 │  ├───────────────────────────────────────────────────┤  │
@@ -58,7 +58,7 @@ Linux Network Stack là hệ thống con (subsystem) phức tạp nhất trong k
 │  └───────────────────────────────────────────────────┘  │
 ├─────────────────────────────────────────────────────────┤
 │              Hardware / Driver                          │
-│   NIC Driver (e1000, ixgbe, mlx5…)                     │
+│   NIC Driver (e1000, ixgbe, mlx5…)                      │
 │   Physical Network Interface Card                       │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -211,7 +211,7 @@ Receive Buffer (sk_rcvbuf):
 │  sk_receive_queue (skb queue)      │
 │  [skb1][skb2][skb3]…               │
 │                                    │
-│  sk_rmem_alloc ≤ sk_rcvbuf        │
+│  sk_rmem_alloc ≤ sk_rcvbuf         │
 └────────────────────────────────────┘
 
 Send Buffer (sk_sndbuf):
@@ -219,7 +219,7 @@ Send Buffer (sk_sndbuf):
 │  sk_write_queue (skb queue)        │
 │  [skb1][skb2][skb3]…               │
 │                                    │
-│  sk_wmem_queued ≤ sk_sndbuf       │
+│  sk_wmem_queued ≤ sk_sndbuf        │
 └────────────────────────────────────┘
 ```
 
@@ -328,18 +328,18 @@ udp_rcv()
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
 ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│ Version │  IHL  │   DSCP    │ECN│           Total Length          │
-├─────────────────┼───────────────────────┼─┬─┬─────────────────────┤
-│         Identification                  │R│D│F│  Fragment Offset  │
-├─────────────────┴───────────────────────┴─┴─┴─────────────────────┤
-│      TTL        │    Protocol           │      Header Checksum     │
-├─────────────────────────────────────────────────────────────────────┤
-│                        Source IP Address                            │
-├─────────────────────────────────────────────────────────────────────┤
-│                     Destination IP Address                          │
-├─────────────────────────────────────────────────────────────────────┤
-│                      Options (nếu IHL > 5)                         │
-└─────────────────────────────────────────────────────────────────────┘
+│ Version │  IHL  │   DSCP    │ECN│           Total Length      │
+├─────────────────┼───────────────────────┼─┬─┬─────────────────┤
+│         Identification                  │R│D│F│Fragment Offset│
+├─────────────────┴───────────────────────┴─┴─┴─────────────────┤
+│      TTL        │    Protocol           │ Header Checksum     │
+├───────────────────────────────────────────────────────────────┤
+│                        Source IP Address                      │
+├───────────────────────────────────────────────────────────────┤
+│                     Destination IP Address                    │
+├───────────────────────────────────────────────────────────────┤
+│                      Options (nếu IHL > 5)                    │
+└───────────────────────────────────────────────────────────────┘
 ```
 
 ### IP Receive Path
@@ -655,16 +655,16 @@ ip neigh flush dev eth0
 
 ```
 Egress (Outbound):
-                    ┌──────────────────┐
+                   ┌──────────────────┐
 skb từ network     │   Root qdisc     │
 layer ─────────►   │  (e.g. HTB/HFSC) │
                    │                  │
-                   │  ┌───┐  ┌───┐   │
-                   │  │cls│  │cls│   │  ← Classifiers
-                   │  └───┘  └───┘   │
+                   │  ┌───┐  ┌───┐    │
+                   │  │cls│  │cls│    │  ← Classifiers
+                   │  └───┘  └───┘    │
                    │    │       │     │
-                   │  ┌───┐  ┌───┐   │
-                   │  │cls│  │cls│   │  ← Leaf qdiscs (pfifo, tbf…)
+                   │  ┌───┐  ┌───┐    │
+                   │  │cls│  │cls│    │  ← Leaf qdiscs (pfifo, tbf…)
                    └──────────────────┘
                            │
                            ▼ → NIC TX queue
@@ -760,7 +760,7 @@ ip netns del ns1
 Host Network Namespace
 ┌─────────────────────────────────────────────────────┐
 │                                                     │
-│  eth0 (physical)   docker0 (bridge, 172.17.0.1)    │
+│  eth0 (physical)   docker0 (bridge, 172.17.0.1)     │
 │  192.168.1.100      │                               │
 │       │             │──────────────────────┐        │
 │       │             │                      │        │
