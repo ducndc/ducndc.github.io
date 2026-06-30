@@ -1,44 +1,44 @@
 ---
-title: 'Cấu Hình Mạng Trong OpenWrt'
-description: 'Cấu Hình Mạng Trong OpenWrt'
+title: 'Network Configuration in OpenWrt'
+description: 'Network Configuration in OpenWrt'
 pubDate: 'Jun 30 2026'
 heroImage: '../../assets/AP_Sys.png'
 ---
 
-OpenWrt sử dụng hệ thống cấu hình **UCI (Unified Configuration Interface)** — toàn bộ cấu hình hệ thống được lưu dưới dạng các file text đơn giản trong `/etc/config/`. Đây là điểm khác biệt lớn so với firmware router thông thường (vốn cấu hình ẩn trong NVRAM hoặc binary).
+OpenWrt uses a **UCI (Unified Configuration Interface)** configuration system — the entire system configuration is stored as simple text files in `/etc/config/`. This is a major difference from typical router firmware (which hides configuration in NVRAM or binary).
 
-Các file cấu hình liên quan trực tiếp đến mạng:
+These configuration files are directly related to the network:
 
 | File | Vai trò |
 |---|---|
-| `/etc/config/network` | Định nghĩa interface, device, bridge, VLAN, routing cơ bản |
-| `/etc/config/wireless` | Cấu hình radio, SSID, bảo mật wifi |
+| `/etc/config/network` | Define interface, device, bridge, VLAN, and basic routing |
+| `/etc/config/wireless` | Configure radio, SSID, and Wi-Fi security |
 | `/etc/config/firewall` | Zone, rule, NAT, port forwarding |
 | `/etc/config/dhcp` | DHCP server/client, DNS (dnsmasq), IPv6 RA (odhcpd) |
 
-Mỗi thay đổi trong các file này cần `/etc/init.d/<service> reload` hoặc `reload_config` để áp dụng (hoặc dùng lệnh `uci commit` + `uci` CLI thay vì sửa file trực tiếp).
+Each change in these files requires `/etc/init.d/<service> reload` or `reload_config` to apply (or use the `uci commit` + `uci` CLI command instead of editing the file directly).
 
 ---
 
 ### File `/etc/config/network`
 
-#### Khái niệm cốt lõi: Device vs Interface
+#### Device vs Interface
 
-OpenWrt (từ bản 21.02 trở đi) tách biệt rõ hai khái niệm:
+OpenWrt (from version 21.02 onwards) clearly separates two concepts:
 
-- **`config device`**: đại diện cho lớp 2 (Layer 2) — cổng vật lý, bridge, VLAN sub-interface. Đây là "phần cứng logic".
-- **`config interface`**: đại diện cho lớp 3 (Layer 3) — gán giao thức (static/dhcp/pppoe...), địa chỉ IP lên trên một device.
+- **`config device`**: Representing Layer 2 — physical ports, bridges, VLAN sub-interfaces. This is the "logical hardware".
+- **`config interface`**: Represents Layer 3 — assigns protocols (static/dhcp/pppoe...) and IP addresses to a device.
 
-Một device có thể không có interface nào gán lên nó (ví dụ cổng LAN cắm switch không cần IP riêng), và một interface luôn phải trỏ tới một device.
+A device may not have any interface assigned to it (for example, a LAN port connected to a switch doesn't need a dedicated IP address), and an interface must always point to a device.
 
-#### Các loại `proto` (giao thức) phổ biến cho interface
+#### Common types of protocols for interfaces
 
-- `static`: IP cố định, khai báo `ipaddr`, `netmask`, `gateway` thủ công. Thường dùng cho LAN hoặc AP nối router chính.
-- `dhcp`: tự động xin IPv4 từ DHCP server upstream. Thường dùng cho WAN.
-- `dhcpv6`: xin IPv6 từ upstream (đi kèm dhcp cho dual-stack).
-- `pppoe`: quay số PPPoE — phổ biến với hạ tầng FTTH Việt Nam (cần username/password do ISP cấp).
-- `relay`: dùng cho mô hình relay (relayd) — bắc cầu giữa 2 mạng layer-2 không thể bridge trực tiếp (ví dụ một bên là wifi client, một bên là LAN có dây).
-- `none`: device không gán IP, chỉ tồn tại ở layer 2 (dùng cho cổng switch thuần).
+- `static`: Fixed IP address, manually declares `ipaddr`, `netmask`, and `gateway`. Often used for LANs or APs connected to the main router.
+- `dhcp`: Automatically requests IPv4 from the upstream DHCP server. Often used for WANs.
+- `dhcpv6`: Requests IPv6 from the upstream (includes DHCP for dual-stack).
+- `pppoe`: PPPoE dial-up — common with Vietnam's FTTH infrastructure (requires username/password provided by the ISP).
+- `relay`: Used for relay (relayd) models — bridging between two layer-2 networks that cannot be bridged directly (e.g., one side is a Wi-Fi client, the other is a wired LAN).
+- `none`: Device is not assigned an IP address, only exists at layer 2 (used for pure switch ports).
 
 #### Bridge
 
@@ -50,20 +50,20 @@ config device
     list ports 'eth1'
 ```
 
-Bridge gộp nhiều cổng vật lý (và/hoặc wifi interface) thành một broadcast domain layer-2 duy nhất — về bản chất hoạt động như một switch ảo. Đây là cơ chế đứng sau hầu hết các thiết lập LAN trên OpenWrt: nhiều cổng dây + nhiều SSID wifi cùng đổ vào một bridge sẽ nằm chung một dải IP.
+A bridge combines multiple physical ports (and/or Wi-Fi interfaces) into a single Layer-2 broadcast domain—essentially acting as a virtual switch. This is the mechanism behind most OpenWrt LAN setups: multiple wired ports and multiple Wi-Fi SSIDs all converging on a bridge share the same IP range.
 
-Các tham số STP (`stp`, `forward_delay`, `hello_time`, `ageing_time`, `max_age`, `priority`) dùng để chống loop mạng khi có nhiều đường nối vòng giữa các switch/AP.
+The STP parameters (`stp`, `forward_delay`, `hello_time`, `ageing_time`, `max_age`, `priority`) are used to prevent network loops when there are multiple loop connections between switches/APs.
 
 #### VLAN
 
-OpenWrt hỗ trợ 2 cách khai báo VLAN:
+OpenWrt supports two ways to declare VLANs:
 
-**a) VLAN trên switch chip cũ (DSA legacy / swconfig)** — ít gặp ở thiết bị mới.
+**a) VLAN on old chip switches (DSA legacy / swconfig)** — rarely seen on new devices.
 
-**b) VLAN theo kiểu DSA hiện đại** (phổ biến trên thiết bị mới), có 2 dạng:
+**b) Modern DSA-style VLANs** (common on newer devices), there are two types:
 
-- *Tagged sub-interface trên 1 cổng*: `eth1.2` nghĩa là VLAN ID 2 trên cổng `eth1`. Thường dùng khi ISP yêu cầu gắn tag VLAN cho dịch vụ Internet (ví dụ VLAN 2 cho Internet, VLAN 35 cho IPTV — phổ biến ở các nhà mạng Việt Nam).
-- *Bridge VLAN filtering* (`config bridge-vlan`): khai báo VLAN ngay trên bridge, chỉ định cổng nào tagged (`t`), untagged (`u`), hoặc primary untagged (`u*`):
+- *Tagged sub-interface on a port*: `eth1.2` means VLAN ID 2 on port `eth1`. This is commonly used when the ISP requires VLAN tagging for Internet services (e.g., VLAN 2 for Internet, VLAN 35 for IPTV — common in Vietnamese network providers).
+- *Bridge VLAN filtering* (`config bridge-vlan`): declares VLANs directly on the bridge, specifying which ports are tagged (`t`), untagged (`u`), or primary untagged (`u*`):
 
 ```
 config bridge-vlan
@@ -72,7 +72,7 @@ config bridge-vlan
     list ports 'eth1:u*'
 ```
 
-Cách này cho phép một bridge phục vụ nhiều VLAN cùng lúc, mỗi VLAN tách thành một interface logic riêng (`br-wan.2`) để gán IP/giao thức.
+This method allows a bridge to serve multiple VLANs simultaneously, with each VLAN separated into its own logical interface (`br-wan.2`) for IP/protocol assignment.
 
 #### Routing & Globals
 
@@ -82,41 +82,41 @@ config globals 'globals'
     option _wan_defroute 'wan'
 ```
 
-- `ula_prefix`: dải địa chỉ IPv6 nội bộ (Unique Local Address) tự sinh, dùng khi không có IPv6 từ ISP hoặc cho định tuyến nội bộ.
-- Default route được xác định bởi interface nào có `option defaultroute '1'` và metric thấp nhất khi có nhiều interface đều có khả năng ra Internet.
+- `ula_prefix`: A range of internally generated IPv6 addresses (Unique Local Address), used when there is no IPv6 available from the ISP or for internal routing.
+- The default route is determined by the interface with the `option defaultroute '1'` and the lowest metric when multiple interfaces have Internet access.
 
 ---
 
 ### File `/etc/config/wireless`
 
-#### `wifi-device`: cấu hình radio vật lý
+#### `wifi-device`: physical radio configuration
 
-Mỗi radio (chip wifi) là một `wifi-device`, chứa các tham số tần số, kênh, công suất:
+Each radio (wifi chip) is a `wifi-device`, containing parameters such as frequency, channel, and power:
 
-- `band`: `2.4G` hoặc `5G` (thiết bị Wi-Fi 6E/7 có thể thêm `6G`).
-- `channel`: cố định hoặc `auto` (kích hoạt ACS – Auto Channel Selection).
-- `htmode`: độ rộng kênh và chuẩn — ví dụ `HT20/40` (Wi-Fi 4), `VHT80` (Wi-Fi 5), `HE80` (Wi-Fi 6), `EHT160` (Wi-Fi 7).
-- `country`: mã quốc gia, quyết định danh sách kênh và công suất phát hợp lệ theo luật sở tại.
-- `txpower`: công suất phát (đơn vị dBm hoặc %, tùy driver).
+- Band: 2.4G or 5G (Wi-Fi 6E/7 devices can add 6G).
+- Channel: Fixed or Auto (Activate ACS – Auto Channel Selection).
+- HT Mode: Channel width and standard — e.g., HT20/40 (Wi-Fi 4), VHT80 (Wi-Fi 5), HE80 (Wi-Fi 6), EHT160 (Wi-Fi 7).
+- Country: Country code, determines the list of valid channels and transmit power according to local laws.
+- TX Power: Transmit power (in dBm or %, depending on the driver).
 
-#### `wifi-iface`: SSID ảo trên radio
+#### `wifi-iface`: Virtual SSID on radio
 
-Một radio có thể phát nhiều SSID cùng lúc (multi-SSID/multi-BSSID):
+A radio can broadcast multiple SSIDs simultaneously (multi-SSID/multi-BSSID):
 
-- `mode`: `ap` (phát sóng), `sta` (đóng vai client, dùng cho repeater/mesh backhaul), `mesh` (802.11s), `monitor`.
-- `network`: SSID này gán vào interface mạng (layer-3) nào đã khai báo ở `/etc/config/network` — quyết định client của SSID đó rơi vào dải IP/VLAN nào.
-- `encryption`: kiểu bảo mật — `none`, `psk2` (WPA2-PSK), `psk2+ccmp`, `sae` (WPA3), `sae-mixed` (WPA2/WPA3 hỗn hợp để tương thích ngược).
-- `ieee80211r`: Fast BSS Transition (roaming nhanh giữa các AP cùng hệ thống).
-- `ieee80211k`/`ieee80211v`: hỗ trợ client đo đạc và được "gợi ý" chuyển AP tốt hơn (band steering, roaming thông minh).
-- `isolate`: bật AP isolation — chặn các client trong cùng SSID giao tiếp trực tiếp với nhau (thường dùng cho mạng khách).
-- `hidden`: ẩn SSID khỏi danh sách quét.
+- `mode`: `ap` (broadcast), `sta` (acts as client, used for repeater/mesh backhaul), `mesh` (802.11s), `monitor`.
+- `network`: This SSID is assigned to a network interface (layer-3) as declared in `/etc/config/network` — determining which IP range/VLAN the client of that SSID belongs to.
+- `encryption`: Security type — `none`, `psk2` (WPA2-PSK), `psk2+ccmp`, `sae` (WPA3), `sae-mixed` (a mixture of WPA2/WPA3 for backward compatibility).
+- `ieee80211r`: Fast BSS Transition (fast roaming between APs in the same system).
+- `ieee80211k`/`ieee80211v`: assists clients in measuring and being "suggested" to switch to a better AP (band steering, smart roaming).
+- `isolate`: enables AP isolation — blocks clients on the same SSID from communicating directly with each other (commonly used for guest networks).
+- `hidden`: hides the SSID from the scan list.
 
-#### Các khái niệm nâng cao (Wi-Fi 6/7, Mesh)
+#### Advanced concepts (Wi-Fi 6/7, Mesh)
 
-- **MLO (Multi-Link Operation)** — khai báo qua `config wifi-mld`: gộp nhiều radio (2.4G + 5G, hoặc + 6G) thành một liên kết logic duy nhất tới client hỗ trợ Wi-Fi 7, tăng băng thông/độ ổn định.
-- **EasyMesh / Multi-AP** (`multi_ap`, `multi_ap_backhaul_ssid`): chuẩn IEEE 1905.1, cho phép nhiều AP cùng hãng/cùng hệ sinh thái tự phát hiện và phối hợp với nhau (cấu hình tập trung, roaming liền mạch) mà không cần người dùng tự cấu hình từng AP.
-- **Wireless backhaul** (`config wifi-backhaul`, hoặc interface mode `sta` như `apcli0`): cho phép một AP tự kết nối không dây lên AP gốc để lấy đường truyền, dùng trong mô hình mesh không cần dây LAN nối giữa các node.
-- **WDS (Wireless Distribution System)**: cách cũ hơn để nối nhiều AP qua sóng, không cần đến chuẩn 1905.1, nhưng cũng không cần đặt mode sta.
+- **MLO (Multi-Link Operation)** — declared via `config wifi-mld`: combines multiple radios (2.4G + 5G, or + 6G) into a single logical link to a Wi-Fi 7-enabled client, increasing bandwidth/stability.
+- **EasyMesh / Multi-AP** (`multi_ap`, `multi_ap_backhaul_ssid`): IEEE 1905.1 standard, allows multiple APs from the same manufacturer/ecosystem to automatically discover and coordinate with each other (centralized configuration, seamless roaming) without requiring users to configure each AP individually.
+- **Wireless backhaul** (`config wifi-backhaul`, or interface mode `sta` like `apcli0`): allows an AP to wirelessly connect to the base AP to obtain a connection, used in mesh models that do not require LAN cables between nodes.
+- **WDS (Wireless Distribution System)**: an older way to connect multiple APs wirelessly, doesn't require the 1905.1 standard, but also doesn't require setting the standby mode.
 
 ---
 
@@ -124,7 +124,7 @@ Một radio có thể phát nhiều SSID cùng lúc (multi-SSID/multi-BSSID):
 
 #### Zone
 
-Mỗi `config zone` đại diện cho một vùng tin cậy, liên kết với một hoặc nhiều interface (`list network`):
+Each `config zone` represents a trusted area, associated with one or more interfaces (`list network`):
 
 ```
 config zone
@@ -135,7 +135,7 @@ config zone
     option forward 'ACCEPT'
 ```
 
-Chính sách mặc định của zone WAN thường là `input DROP`, `forward REJECT` (chặn mọi kết nối từ ngoài vào trừ khi có rule cho phép tường minh), trong khi LAN thường `ACCEPT` toàn bộ vì được xem là vùng tin cậy.
+The default WAN zone policy is usually `input DROP` and `forward REJECT` (blocking all external connections unless explicitly allowed by a rule), while LAN zones typically use `ACCEPT` entirely because they are considered trusted zones.
 
 #### Forwarding & NAT
 
@@ -145,14 +145,14 @@ config forwarding
     option dest 'wan'
 ```
 
-Khai báo hướng cho phép forward traffic giữa 2 zone. Kết hợp với `option masq '1'` trên zone wan để bật NAT (masquerade) — biến nhiều IP nội bộ thành 1 IP public khi ra Internet. Đây là cơ chế lõi biến OpenWrt thành router NAT thay vì chỉ là switch/AP.
+Declare the direction to allow traffic forwarding between the two zones. Combine this with `option masq '1'` on the WAN zone to enable NAT (masquerade) — turning multiple internal IPs into a single public IP when accessing the Internet. This is the core mechanism that transforms OpenWrt into a NAT router instead of just a switch/AP.
 
 #### Rule
 
-Các `config rule` xử lý từng trường hợp cụ thể, ví dụ:
-- Mở các cổng cần thiết cho DHCP renew, ICMPv6, IGMP (multicast — quan trọng với dịch vụ IPTV).
-- Chặn truy cập trang quản trị (port 80/443) từ WAN để tăng bảo mật.
-- Cho phép VPN pass-through (ESP, ISAKMP cho IPSec).
+The `config rule` handles each specific case, for example:
+- Open the necessary ports for DHCP renew, ICMPv6, IGMP (multicast — important for IPTV services).
+- Block access to the admin page (ports 80/443) from the WAN to increase security.
+- Allow VPN pass-through (ESP, ISAKMP for IPSec).
 
 #### Redirect (Port Forward / DMZ)
 
@@ -165,13 +165,13 @@ config redirect
     option target 'DNAT'
 ```
 
-Dùng để mở cổng từ ngoài vào một thiết bị cụ thể trong LAN (ví dụ NVR camera, game server). DMZ là dạng đặc biệt forward toàn bộ traffic đến một IP LAN duy nhất.
+Used to open a port from outside to a specific device in the LAN (e.g., NVR camera, game server). DMZ is a special type that forwards all traffic to a single LAN IP address.
 
 ---
 
 ### File `/etc/config/dhcp`
 
-Quản lý bởi **dnsmasq** (DHCPv4 + DNS) và **odhcpd** (DHCPv6/RA):
+Managed by **dnsmasq** (DHCPv4 + DNS) and **odhcpd** (DHCPv6/RA):
 
 ```
 config dhcp 'lan'
@@ -183,51 +183,50 @@ config dhcp 'lan'
     option ra 'server'
 ```
 
-- `start`/`limit`: dải IP cấp động (ví dụ start 100, limit 150 → cấp từ .100 đến .249).
-- `dhcpv6`/`ra`: bật DHCPv6 server và Router Advertisement cho IPv6.
-- `option ignore '1'` trên một interface: tắt hẳn việc cấp DHCP trên interface đó — thường thấy ở mô hình **Dumb AP** (vì để router chính lo việc cấp phát, tránh xung đột 2 DHCP server trong cùng mạng).
-- `list dhcp_option '6,<dns1>,<dns2>'`: chỉ định DNS server đẩy cho client qua DHCP option 6.
+- `start`/`limit`: dynamic IP range allocation (e.g., start 100, limit 150 → allocation from .100 to .249).
+- `dhcpv6`/`ra`: enables DHCPv6 server and Router Advertisement for IPv6.
+- `option ignore '1'` on an interface: completely disables DHCP allocation on that interface — commonly seen in **Dumb AP** models (because the main router handles allocation, avoiding conflicts between two DHCP servers in the same network).
+- `list dhcp_option '6,<dns1>,<dns2>'`: specifies the DNS server to push IP addresses to clients via DHCP option 6.
 
 ---
 
-### Tổng Hợp: Cách Đọc Nhanh Một Cấu Hình OpenWrt Bất Kỳ
+### Summary: How to Quickly Read Any OpenWrt Configuration
 
-Khi nhận một bộ cấu hình OpenWrt chưa rõ mục đích, nên đọc theo trình tự sau để dựng lại kiến trúc mạng:
+When receiving an OpenWrt configuration with an unclear purpose, follow these steps to reconstruct the network architecture:
 
-1. **`/etc/config/network`** → xác định có bao nhiêu zone vật lý (bao nhiêu bridge, VLAN), interface nào là WAN (có defaultroute), interface nào là LAN.
-2. **`/etc/config/wireless`** → xem mỗi SSID gán vào `network` nào — từ đó biết wifi rơi vào LAN chung hay tách VLAN riêng (guest, IoT).
-3. **`/etc/config/firewall`** → xem zone nào bật `masq` (NAT) — nếu có, thiết bị đang đóng vai trò router/gateway thực sự, không phải AP thuần. Nếu hai zone wan/lan forward bị REJECT cả hai chiều và không có masq, khả năng cao đây là Dumb AP.
-4. **`/etc/config/dhcp`** → nếu DHCP trên lan bị `ignore '1'`, thiết bị không tự cấp IP — xác nhận đây là AP phụ ăn theo DHCP của router chính.
+1. **`/etc/config/network`** → Determine how many physical zones there are (how many bridges, VLANs), which interfaces are WAN (with default routes), and which interfaces are LAN.
+2. **`/etc/config/wireless`** → See which network each SSID is assigned to — this will tell you if the Wi-Fi is in a shared LAN or a separate VLAN (guest, IoT).
+3. **`/etc/config/firewall`** → Check which zone has `MASQ` (NAT) enabled — if so, the device is acting as a true router/gateway, not a pure AP. If both WAN/LAN zones are REJECTED in both directions and there is no MASQ, it is highly likely to be a dummy AP.
+4. **`/etc/config/dhcp`** → If DHCP on the LAN is `ignore '1'`, the device does not automatically assign an IP address — this confirms that this is a secondary AP that relies on DHCP from the main router.
 
-Bốn bước trên là đủ để phân loại một thiết bị OpenWrt vào một trong các mô hình triển khai: **Dumb AP, Router (NAT), Relay/Repeater, Mesh (EasyMesh/802.11s), hoặc VLAN multi-SSID** như đã trình bày ở phần trước.
+The four steps above are sufficient to classify an OpenWrt device into one of the deployment models: **Dumb AP, Router (NAT), Relay/Repeater, Mesh (EasyMesh/802.11s), or VLAN multi-SSID** as presented in the previous section.
 
-### Công Cụ Debug Network Trên OpenWrt
- 
-Sau khi đã hiểu cấu hình tĩnh (các file UCI), bước tiếp theo khi xử lý sự cố là kiểm tra trạng thái runtime thực tế bằng các công cụ dòng lệnh. Phần này chia theo từng lớp mạng (OSI) để dễ tra cứu khi gặp sự cố.
- 
-#### Lớp 1-2: Kiểm tra Interface, Link, Bridge
- 
+### Network Debugging Tools on OpenWrt
+
+After understanding the static configuration (UCI files), the next step in troubleshooting is to check the actual runtime state using command-line tools. This section is divided by network layers (OSI) for easy lookup when problems arise.
+
+#### Layers 1-2: Checking Interfaces, Links, and Bridges
 ```
 ip link show
 ```
-Xem trạng thái UP/DOWN, MTU, MAC của từng interface vật lý/ảo. Interface `DOWN` hoặc `NO-CARRIER` thường là dấu hiệu cáp lỗi, cổng hỏng, hoặc cấu hình chưa apply.
+Check the UP/DOWN, MTU, and MAC status of each physical/virtual interface. An interface showing `DOWN` or `NO-CARRIER` is usually an indication of a faulty cable, damaged port, or unapplied configuration.
  
 ```
 ip a
 ```
-Xem toàn bộ IP (cả IPv4/IPv6) đã gán trên từng interface — đối chiếu với những gì khai báo trong `/etc/config/network` để biết cấu hình đã thực sự apply hay chưa.
+Check all the IP addresses (both IPv4 and IPv6) assigned to each interface — compare them with what's declared in `/etc/config/network` to see if the configuration has actually been applied.
  
 ```
 bridge link show
 bridge fdb show
 ```
-`bridge link` cho biết cổng nào đang nằm trong bridge nào, trạng thái forwarding. `bridge fdb` (forwarding database) cho biết bridge đã học được MAC address nào qua cổng nào — hữu ích khi nghi ngờ traffic bị forward sai cổng hoặc có loop.
+The `bridge link` shows which port is on which bridge and the forwarding status. The `bridge fdb` (forwarding database) shows which MAC address the bridge learned through which port — useful when you suspect traffic is being forwarded to the wrong port or is in a loop.
  
 ```
 swconfig list
 swconfig dev switch0 show
 ```
-Dùng trên thiết bị còn switch chip kiểu cũ (không phải DSA) để xem cấu hình VLAN tại tầng switch phần cứng.
+Use this on devices with older-style switch chips (not DSA) to view VLAN configurations at the hardware switch layer.
  
 #### Lớp 3: IP, Routing, ARP/Neighbor
  
@@ -235,13 +234,13 @@ Dùng trên thiết bị còn switch chip kiểu cũ (không phải DSA) để x
 ip route show
 ip route show table all
 ```
-Xem bảng định tuyến hiện tại — đặc biệt quan trọng khi có nhiều WAN/multi-route, để biết default route nào đang thực sự được dùng.
+Check the current routing table—especially important when you have multiple WANs/multi-route systems—to see which default route is actually being used.
  
 ```
 ip neigh show
 arp -a
 ```
-Xem bảng ARP (IPv4) / Neighbor Discovery (IPv6) — xác nhận thiết bị có "nhìn thấy" được MAC của gateway hoặc client hay không. Nếu route đúng nhưng không có ARP entry, khả năng cao là vấn đề ở layer 2 (VLAN sai, cáp, hoặc firewall chặn ARP).
+Check the ARP (IPv4) / Neighbor Discovery (IPv6) table to confirm if the device can "see" the gateway or client's MAC address. If the route is correct but there are no ARP entries, the problem is likely at layer 2 (incorrect VLAN, cable, or firewall blocking ARP).
  
 ```
 ping -c 4 <ip>
@@ -249,32 +248,32 @@ ping6 -c 4 <ipv6>
 traceroute <ip>
 mtr <ip>
 ```
-`ping`/`ping6` kiểm tra kết nối cơ bản. `traceroute`/`mtr` xác định traffic bị nghẽn hoặc mất gói ở chặng (hop) nào — `mtr` ưu việt hơn vì chạy liên tục và thống kê tỉ lệ mất gói theo từng hop.
+`ping`/`ping6` checks basic connectivity. `traceroute`/`mtr` identifies which hops are experiencing traffic congestion or packet loss — `mtr` is superior because it runs continuously and statistically analyzes packet loss rates for each hop.
  
-#### Lớp ứng dụng / DNS / DHCP
+#### Application Layer / DNS / DHCP
  
 ```
 nslookup google.com
 nslookup google.com 8.8.8.8
 ```
-Truy vấn đầu tiên kiểm tra DNS resolver mặc định (thường là dnsmasq local), truy vấn thứ hai chỉ định thẳng DNS ngoài để phân biệt lỗi do DNS local hay do upstream.
+The first query checks the default DNS resolver (usually the local dnsmasq), the second query specifies the external DNS directly to differentiate between errors caused by the local DNS or the upstream DNS.
  
 ```
 cat /tmp/resolv.conf.auto
 uci show dhcp
 ```
-Xem DNS server thực tế đang được dùng (do ISP cấp qua DHCP) và toàn bộ cấu hình DHCP runtime.
+View the actual DNS server being used (provided by the ISP via DHCP) and the entire DHCP runtime configuration.
  
 ```
 cat /tmp/dhcp.leases
 ```
-Danh sách client đã được cấp IP qua DHCP server nội bộ — gồm MAC, IP, hostname, thời gian hết hạn lease. Rất hữu ích để kiểm tra nhanh thiết bị nào đang có mặt trong mạng.
+This list includes clients that have been assigned IP addresses via the internal DHCP server—including MAC address, IP address, hostname, and lease expiration date. It's very useful for quickly checking which devices are currently on the network.
  
 ```
 logread | grep dnsmasq
 logread -f
 ```
-`logread` đọc log hệ thống (syslog) của OpenWrt; thêm `-f` để theo dõi log realtime (tương tự `tail -f`) — cách nhanh nhất để bắt lỗi DHCP/DNS/wifi association ngay lúc nó xảy ra.
+`logread` reads the OpenWrt system logs (syslog); add `-f` to monitor real-time logs (similar to `tail -f`) — the quickest way to catch DHCP/DNS/wifi association errors as they occur.
  
 #### WiFi cụ thể
  
@@ -283,20 +282,20 @@ iwinfo
 iwinfo wlan0 info
 iwinfo wlan0 assoclist
 ```
-`iwinfo` (không tham số) liệt kê toàn bộ radio. `info` xem kênh, công suất, chế độ hiện tại. `assoclist` xem danh sách client đang kết nối kèm RSSI (cường độ tín hiệu), tốc độ TX/RX — rất hữu ích khi nghi ngờ client yếu sóng hoặc rớt kết nối.
+`iwinfo` (no parameters) lists all radios. `info` shows the channel, power, and current mode. `assoclist` shows a list of connected clients along with RSSI (signal strength) and TX/RX speed — very useful when you suspect a client has a weak signal or has dropped out.
  
 ```
 iwinfo wlan0 scan
 ```
-Quét các SSID lân cận — dùng để kiểm tra nhiễu kênh (channel interference) từ AP hàng xóm.
+Scan nearby SSIDs — used to check for channel interference from neighboring APs.
  
 ```
 iw dev
 iw dev wlan0 station dump
 ```
-Bộ công cụ `iw` (thay thế dần `iwinfo` ở một số driver) cho thông tin chi tiết hơn về từng station đang kết nối (signal, bitrate, retries).
+The `iw` toolkit (gradually replacing `iwinfo` in some drivers) provides more detailed information about each connected station (signal, bitrate, retries).
  
-Với chip MediaTek (như trong cấu hình ở phần trước), có thể có thêm công cụ debug riêng của vendor (ví dụ `iwpriv`, hoặc file trạng thái trong `/proc/`), tùy theo driver cụ thể của firmware.
+With MediaTek chips (as in the configuration in the previous section), there may be additional vendor-specific debugging tools (e.g., `iwpriv`, or a state file in `/proc/`), depending on the specific firmware driver.
  
 #### Firewall / NAT / Kết nối
  
@@ -304,46 +303,45 @@ Với chip MediaTek (như trong cấu hình ở phần trước), có thể có 
 iptables -t nat -L -n -v
 iptables -L -n -v
 ```
-Xem rule NAT và filter thực tế đã được nftables/iptables-nft sinh ra từ `/etc/config/firewall` — hữu ích để xác nhận rule mong muốn có thực sự được áp dụng đúng thứ tự hay không (OpenWrt mới dùng nftables, lệnh tương đương là `nft list ruleset`).
+Check the actual NAT rules and filters generated by nftables/iptables-nft from `/etc/config/firewall` — useful to verify that the desired rules are actually applied in the correct order (OpenWrt uses nftables, the equivalent command is `nft list ruleset`).
  
 ```
 nft list ruleset
 ```
-Xem toàn bộ ruleset nftables (chuẩn mới thay iptables từ OpenWrt 21.02+).
+See the full nftables ruleset (the new standard replacing iptables from OpenWrt 21.02+).
  
 ```
 conntrack -L
 ```
-Xem bảng theo dõi kết nối (connection tracking) — hữu ích khi debug NAT, port forward không hoạt động, hoặc nghi ngờ bảng conntrack bị đầy (gây rớt kết nối hàng loạt khi có nhiều client).
+Check the connection tracking table — useful when debugging NAT, port forwarding not working, or if you suspect the connection tracking table is full (causing mass connection drops when there are many clients).
  
-#### Trạng thái logic UCI (qua ubus)
+#### UCI logical state (via ubus)
  
 ```
 ubus call network.interface dump
 ubus call network.device status '{"name":"br-lan"}'
 ubus call network.wireless status
 ```
-Khác với việc đọc file cấu hình tĩnh, `ubus` cho biết trạng thái **runtime thực tế** mà OpenWrt đang áp dụng — bao gồm interface nào up/down, IP đã nhận (với DHCP/PPPoE), lỗi cấu hình nếu có. Đây là cách đáng tin cậy nhất để biết "hệ thống đang nghĩ gì" thay vì chỉ đọc file cấu hình (vì file có thể đã sửa nhưng chưa reload).
+Unlike reading static configuration files, `ubus` shows the **actual runtime** state that OpenWrt is currently using — including which interfaces are up/down, the IP addresses received (with DHCP/PPPoE), and any configuration errors. This is the most reliable way to know "what the system is thinking" instead of just reading the configuration file (because the file may have been modified but not yet reloaded).
  
-#### Băng thông / Hiệu năng
+#### Bandwidth / Performance
  
 ```
-iperf3 -s          # chạy ở 1 đầu làm server
-iperf3 -c <ip>      # chạy ở đầu kia làm client
+iperf3 -s # runs at one end as server
+iperf3 -c <ip> # runs at the other end as client
 ```
-Đo băng thông thực tế giữa 2 điểm trong mạng (cần cài package `iperf3` qua `opkg install iperf3`) — dùng để phân biệt vấn đề là do giới hạn băng thông wifi/dây hay do cấu hình/phần mềm.
+Measures actual bandwidth between two points in the network (requires installing the `iperf3` package via `opkg install iperf3`) — used to differentiate whether the problem is due to Wi-Fi/wired bandwidth limitations or configuration/software issues.
  
 ```
 top
 htop
 ```
-Theo dõi CPU/RAM của thiết bị — nhiều sự cố mạng (rớt kết nối, độ trễ cao) trên router yếu thực chất do CPU quá tải (ví dụ bật quá nhiều tính năng QoS, SQM, hoặc VPN).
- 
-#### Quy trình debug gợi ý khi gặp sự cố mạng
- 
-1. Xác định sự cố ở lớp nào: không lên mạng hoàn toàn (kiểm tra `ip a`, `ip route`) hay chỉ chậm/rớt (kiểm tra `mtr`, `iwinfo assoclist`).
-2. Kiểm tra layer 2 trước (`ip link`, `bridge link`) — vì nếu cáp/bridge sai thì mọi lớp trên đều vô nghĩa.
-3. Kiểm tra layer 3 (`ip route`, `ping` từng chặng bằng `mtr`) để khoanh vùng đứt mạng ở đâu: trong LAN, tại gateway, hay ngoài Internet.
-4. Nếu nghi ngờ DNS, tách riêng test bằng `nslookup <domain> 8.8.8.8` để loại trừ.
-5. Đối chiếu với log thời gian thực (`logread -f`) trong lúc tái hiện sự cố — đặc biệt hiệu quả với lỗi wifi rớt kết nối hoặc DHCP không cấp IP.
-6. Dùng `ubus call network.interface dump` để xác nhận cấu hình UCI đã thực sự được áp dụng đúng như file, tránh trường hợp debug nhầm do quên reload service.
+Monitor your device's CPU/RAM — many network problems (dropped connections, high latency) on weak routers are actually due to CPU overload (e.g., too many QoS, SQM, or VPN features enabled).
+
+#### Suggested debugging procedure when encountering network problems
+
+1. Identify the layer of the problem: complete network outage (check `ip a`, `ip route`) or just slow/dropped connections (check `mtr`, `iwinfo assoclist`).
+2. Check layer 2 first (`ip link`, `bridge link`) — because if the cable/bridge is faulty, all layers above are meaningless.
+3. Check layer 3 (`ip route`, `ping` each hop using `mtr`) to pinpoint the source of the network outage: within the LAN, at the gateway, or on the Internet.
+4. If you suspect DNS, test separately using `nslookup <domain> 8.8.8.8` to rule out other possibilities. 5. Compare with the real-time log (`logread -f`) while reproducing the problem — especially effective for Wi-Fi connection drops or DHCP not assigning IP addresses.
+6. Use `ubus call network.interface dump` to confirm that the UCI configuration has actually been applied correctly as per the file, avoiding incorrect debugging due to forgetting to reload the service.
