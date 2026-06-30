@@ -200,3 +200,150 @@ Khi nhận một bộ cấu hình OpenWrt chưa rõ mục đích, nên đọc th
 4. **`/etc/config/dhcp`** → nếu DHCP trên lan bị `ignore '1'`, thiết bị không tự cấp IP — xác nhận đây là AP phụ ăn theo DHCP của router chính.
 
 Bốn bước trên là đủ để phân loại một thiết bị OpenWrt vào một trong các mô hình triển khai: **Dumb AP, Router (NAT), Relay/Repeater, Mesh (EasyMesh/802.11s), hoặc VLAN multi-SSID** như đã trình bày ở phần trước.
+
+### Công Cụ Debug Network Trên OpenWrt
+ 
+Sau khi đã hiểu cấu hình tĩnh (các file UCI), bước tiếp theo khi xử lý sự cố là kiểm tra trạng thái runtime thực tế bằng các công cụ dòng lệnh. Phần này chia theo từng lớp mạng (OSI) để dễ tra cứu khi gặp sự cố.
+ 
+#### Lớp 1-2: Kiểm tra Interface, Link, Bridge
+ 
+```
+ip link show
+```
+Xem trạng thái UP/DOWN, MTU, MAC của từng interface vật lý/ảo. Interface `DOWN` hoặc `NO-CARRIER` thường là dấu hiệu cáp lỗi, cổng hỏng, hoặc cấu hình chưa apply.
+ 
+```
+ip a
+```
+Xem toàn bộ IP (cả IPv4/IPv6) đã gán trên từng interface — đối chiếu với những gì khai báo trong `/etc/config/network` để biết cấu hình đã thực sự apply hay chưa.
+ 
+```
+bridge link show
+bridge fdb show
+```
+`bridge link` cho biết cổng nào đang nằm trong bridge nào, trạng thái forwarding. `bridge fdb` (forwarding database) cho biết bridge đã học được MAC address nào qua cổng nào — hữu ích khi nghi ngờ traffic bị forward sai cổng hoặc có loop.
+ 
+```
+swconfig list
+swconfig dev switch0 show
+```
+Dùng trên thiết bị còn switch chip kiểu cũ (không phải DSA) để xem cấu hình VLAN tại tầng switch phần cứng.
+ 
+#### Lớp 3: IP, Routing, ARP/Neighbor
+ 
+```
+ip route show
+ip route show table all
+```
+Xem bảng định tuyến hiện tại — đặc biệt quan trọng khi có nhiều WAN/multi-route, để biết default route nào đang thực sự được dùng.
+ 
+```
+ip neigh show
+arp -a
+```
+Xem bảng ARP (IPv4) / Neighbor Discovery (IPv6) — xác nhận thiết bị có "nhìn thấy" được MAC của gateway hoặc client hay không. Nếu route đúng nhưng không có ARP entry, khả năng cao là vấn đề ở layer 2 (VLAN sai, cáp, hoặc firewall chặn ARP).
+ 
+```
+ping -c 4 <ip>
+ping6 -c 4 <ipv6>
+traceroute <ip>
+mtr <ip>
+```
+`ping`/`ping6` kiểm tra kết nối cơ bản. `traceroute`/`mtr` xác định traffic bị nghẽn hoặc mất gói ở chặng (hop) nào — `mtr` ưu việt hơn vì chạy liên tục và thống kê tỉ lệ mất gói theo từng hop.
+ 
+#### Lớp ứng dụng / DNS / DHCP
+ 
+```
+nslookup google.com
+nslookup google.com 8.8.8.8
+```
+Truy vấn đầu tiên kiểm tra DNS resolver mặc định (thường là dnsmasq local), truy vấn thứ hai chỉ định thẳng DNS ngoài để phân biệt lỗi do DNS local hay do upstream.
+ 
+```
+cat /tmp/resolv.conf.auto
+uci show dhcp
+```
+Xem DNS server thực tế đang được dùng (do ISP cấp qua DHCP) và toàn bộ cấu hình DHCP runtime.
+ 
+```
+cat /tmp/dhcp.leases
+```
+Danh sách client đã được cấp IP qua DHCP server nội bộ — gồm MAC, IP, hostname, thời gian hết hạn lease. Rất hữu ích để kiểm tra nhanh thiết bị nào đang có mặt trong mạng.
+ 
+```
+logread | grep dnsmasq
+logread -f
+```
+`logread` đọc log hệ thống (syslog) của OpenWrt; thêm `-f` để theo dõi log realtime (tương tự `tail -f`) — cách nhanh nhất để bắt lỗi DHCP/DNS/wifi association ngay lúc nó xảy ra.
+ 
+#### WiFi cụ thể
+ 
+```
+iwinfo
+iwinfo wlan0 info
+iwinfo wlan0 assoclist
+```
+`iwinfo` (không tham số) liệt kê toàn bộ radio. `info` xem kênh, công suất, chế độ hiện tại. `assoclist` xem danh sách client đang kết nối kèm RSSI (cường độ tín hiệu), tốc độ TX/RX — rất hữu ích khi nghi ngờ client yếu sóng hoặc rớt kết nối.
+ 
+```
+iwinfo wlan0 scan
+```
+Quét các SSID lân cận — dùng để kiểm tra nhiễu kênh (channel interference) từ AP hàng xóm.
+ 
+```
+iw dev
+iw dev wlan0 station dump
+```
+Bộ công cụ `iw` (thay thế dần `iwinfo` ở một số driver) cho thông tin chi tiết hơn về từng station đang kết nối (signal, bitrate, retries).
+ 
+Với chip MediaTek (như trong cấu hình ở phần trước), có thể có thêm công cụ debug riêng của vendor (ví dụ `iwpriv`, hoặc file trạng thái trong `/proc/`), tùy theo driver cụ thể của firmware.
+ 
+#### Firewall / NAT / Kết nối
+ 
+```
+iptables -t nat -L -n -v
+iptables -L -n -v
+```
+Xem rule NAT và filter thực tế đã được nftables/iptables-nft sinh ra từ `/etc/config/firewall` — hữu ích để xác nhận rule mong muốn có thực sự được áp dụng đúng thứ tự hay không (OpenWrt mới dùng nftables, lệnh tương đương là `nft list ruleset`).
+ 
+```
+nft list ruleset
+```
+Xem toàn bộ ruleset nftables (chuẩn mới thay iptables từ OpenWrt 21.02+).
+ 
+```
+conntrack -L
+```
+Xem bảng theo dõi kết nối (connection tracking) — hữu ích khi debug NAT, port forward không hoạt động, hoặc nghi ngờ bảng conntrack bị đầy (gây rớt kết nối hàng loạt khi có nhiều client).
+ 
+#### Trạng thái logic UCI (qua ubus)
+ 
+```
+ubus call network.interface dump
+ubus call network.device status '{"name":"br-lan"}'
+ubus call network.wireless status
+```
+Khác với việc đọc file cấu hình tĩnh, `ubus` cho biết trạng thái **runtime thực tế** mà OpenWrt đang áp dụng — bao gồm interface nào up/down, IP đã nhận (với DHCP/PPPoE), lỗi cấu hình nếu có. Đây là cách đáng tin cậy nhất để biết "hệ thống đang nghĩ gì" thay vì chỉ đọc file cấu hình (vì file có thể đã sửa nhưng chưa reload).
+ 
+#### Băng thông / Hiệu năng
+ 
+```
+iperf3 -s          # chạy ở 1 đầu làm server
+iperf3 -c <ip>      # chạy ở đầu kia làm client
+```
+Đo băng thông thực tế giữa 2 điểm trong mạng (cần cài package `iperf3` qua `opkg install iperf3`) — dùng để phân biệt vấn đề là do giới hạn băng thông wifi/dây hay do cấu hình/phần mềm.
+ 
+```
+top
+htop
+```
+Theo dõi CPU/RAM của thiết bị — nhiều sự cố mạng (rớt kết nối, độ trễ cao) trên router yếu thực chất do CPU quá tải (ví dụ bật quá nhiều tính năng QoS, SQM, hoặc VPN).
+ 
+#### Quy trình debug gợi ý khi gặp sự cố mạng
+ 
+1. Xác định sự cố ở lớp nào: không lên mạng hoàn toàn (kiểm tra `ip a`, `ip route`) hay chỉ chậm/rớt (kiểm tra `mtr`, `iwinfo assoclist`).
+2. Kiểm tra layer 2 trước (`ip link`, `bridge link`) — vì nếu cáp/bridge sai thì mọi lớp trên đều vô nghĩa.
+3. Kiểm tra layer 3 (`ip route`, `ping` từng chặng bằng `mtr`) để khoanh vùng đứt mạng ở đâu: trong LAN, tại gateway, hay ngoài Internet.
+4. Nếu nghi ngờ DNS, tách riêng test bằng `nslookup <domain> 8.8.8.8` để loại trừ.
+5. Đối chiếu với log thời gian thực (`logread -f`) trong lúc tái hiện sự cố — đặc biệt hiệu quả với lỗi wifi rớt kết nối hoặc DHCP không cấp IP.
+6. Dùng `ubus call network.interface dump` để xác nhận cấu hình UCI đã thực sự được áp dụng đúng như file, tránh trường hợp debug nhầm do quên reload service.
