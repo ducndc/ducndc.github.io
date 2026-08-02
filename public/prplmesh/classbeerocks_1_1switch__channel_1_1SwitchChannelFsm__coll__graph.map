@@ -1,0 +1,35 @@
+<map id="beerocks::switch_channel::SwitchChannelFsm" name="beerocks::switch_channel::SwitchChannelFsm">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1212,135,1385,175"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1beerocks__fsm.html" title=" " alt="" coords="863,5,1014,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1028,37,1108,52,1189,77,1237,104,1276,133,1273,137,1234,108,1187,82,1107,57,1027,43"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1beerocks__fsm__config.html" title=" " alt="" coords="425,5,591,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="605,30,863,30,863,35,605,35"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1TaskPoolInterface.html" title="The TaskPoolInterface provides interface for adding tasks and sending messages between tasks." alt="" coords="160,143,348,168"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="313,137,397,121,511,111,627,107,856,111,1059,125,1212,141,1211,147,1058,131,856,117,628,113,511,117,398,126,314,142"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1TaskPool.html" title="The TaskPool is single instance tasks container which responsible to run each task and allow passing ..." alt="" coords="439,315,577,340"/>
+<area shape="poly" id="edge13_Node000013_Node000004" title=" " alt="" coords="274,178,325,240,360,272,399,300,440,316,438,321,396,304,356,277,321,243,270,181"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1BackhaulManager.html" title=" " alt="" coords="845,315,1032,340"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="978,306,1254,173,1257,178,980,311"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1EventLoopThread.html" title=" " alt="" coords="415,364,601,389"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="614,362,845,335,846,341,615,367"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1thread__base.html" title=" " alt="" coords="177,364,331,389"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="345,374,415,374,415,379,345,379"/>
+<area shape="rect" id="Node000008" href="$classieee1905__1_1_1CmduMessageTx.html" title=" " alt="" coords="409,543,607,568"/>
+<area shape="poly" id="edge17_Node000001_Node000008" title=" " alt="" coords="601,567,652,570,708,570,765,564,820,550,901,515,977,469,1049,416,1113,360,1170,304,1217,251,1281,174,1285,177,1221,255,1173,307,1117,364,1052,421,980,474,903,520,822,555,766,569,708,575,652,576,601,572"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="621,551,737,542,786,533,820,520,844,501,865,478,898,427,919,376,932,339,937,341,924,378,902,429,869,482,847,505,823,524,788,538,738,547,621,556"/>
+<area shape="rect" id="Node000009" href="$classieee1905__1_1_1CmduMessage.html" title=" " alt="" coords="162,543,346,568"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="360,553,408,553,408,558,360,558"/>
+<area shape="rect" id="Node000010" href="$classClassList.html" title=" " alt="" coords="5,543,83,568"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="97,553,162,553,162,558,97,558"/>
+<area shape="rect" id="Node000011" href="$structbeerocks_1_1BackhaulManager_1_1SBackhaulConfig.html" title=" " alt="" coords="415,414,601,454"/>
+<area shape="poly" id="edge10_Node000005_Node000011" title=" " alt="" coords="615,421,716,405,821,379,871,359,914,338,916,343,873,364,822,385,717,410,616,426"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1wan__monitor.html" title="Monitors the wired WAN port." alt="" coords="429,479,587,504"/>
+<area shape="poly" id="edge11_Node000005_Node000012" title=" " alt="" coords="600,488,652,484,709,475,766,460,820,438,854,416,885,388,926,338,931,342,889,392,858,420,823,443,768,465,710,480,653,489,601,494"/>
+<area shape="poly" id="edge12_Node000005_Node000013" title=" " alt="" coords="590,325,845,325,845,330,590,330"/>
+<area shape="rect" id="Node000014" href="$structbeerocks_1_1BackhaulManager_1_1sUnsuccessfulAssociationPolicy.html" title=" " alt="" coords="397,135,619,175"/>
+<area shape="poly" id="edge14_Node000005_Node000014" title=" " alt="" coords="632,158,742,169,789,177,823,189,861,217,893,252,917,286,933,313,928,316,913,289,889,255,858,221,820,194,788,182,742,174,632,163"/>
+<area shape="rect" id="Node000015" href="$structsMacAddr.html" title=" " alt="" coords="467,200,549,225"/>
+<area shape="poly" id="edge15_Node000005_Node000015" title=" " alt="" coords="563,214,683,228,753,243,822,262,876,287,920,312,917,317,874,291,820,267,752,248,682,234,562,219"/>
+<area shape="rect" id="Node000016" href="$structbeerocks_1_1BackhaulManager_1_1sQosManagementSettings.html" title="QoS management settings received from WFA&#45;CA dev_set_config." alt="" coords="415,250,601,290"/>
+<area shape="poly" id="edge16_Node000005_Node000016" title=" " alt="" coords="615,279,822,305,867,312,866,317,821,310,615,284"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="wfa_map::TriggerChannelSwitchAnnouncement::opclass" name="wfa_map::TriggerChannelSwitchAnnouncement::opclass">
+<area shape="rect" id="Node000001" title=" " alt="" coords="657,13,868,53"/>
+<area shape="rect" id="Node000002" href="$classvbss_1_1vbss__actions.html#a99ec768c8cb7d564c55ee3f4a0c46331" title="Sends a trigger channel switch announcement request." alt="" coords="451,5,609,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="644,35,609,35,609,30,644,30"/>
+<area shape="rect" id="Node000003" href="$classvbss__task.html#ac2fe81f4ebb0cac193419f29d1a256ab" title="Handles the VBSS Response which contains a single Virtual BSS Event TLV." alt="" coords="240,13,403,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,35,403,35,403,30,437,30"/>
+<area shape="rect" id="Node000004" href="$classvbss__task.html#a4216939148df9db770e952402325e89d" title="Handle ieee1905 message." alt="" coords="5,13,192,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="226,35,192,35,192,30,226,30"/>
+</map>

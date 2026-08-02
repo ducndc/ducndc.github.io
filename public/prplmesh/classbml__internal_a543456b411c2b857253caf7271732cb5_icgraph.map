@@ -1,0 +1,103 @@
+<map id="bml_internal::connect_to_master" name="bml_internal::connect_to_master">
+<area shape="rect" id="Node000001" title=" " alt="" coords="725,765,872,805"/>
+<area shape="rect" id="Node000002" href="$classbml__internal.html#ad56ff61d0135ed4d127eab39e5024b62" title=" " alt="" coords="515,5,661,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="793,752,785,605,765,398,750,292,730,195,705,115,691,84,675,60,660,47,663,43,679,57,696,82,710,113,735,194,755,291,771,397,790,604,799,751"/>
+<area shape="rect" id="Node000004" href="$classbml__internal.html#a4892b2dcfabcbdd16f6a65060886190a" title=" " alt="" coords="515,71,661,111"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="793,752,782,617,761,431,745,336,726,250,702,178,689,150,675,128,657,113,661,109,679,125,694,147,707,176,731,248,750,335,766,430,788,617,798,751"/>
+<area shape="rect" id="Node000006" href="$classbml__internal.html#a198a704c7d4b409080ee64f15ad5dc53" title="Clear wifi credentials for specific AL&#45;MAC." alt="" coords="524,139,652,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="792,752,779,630,756,466,740,382,721,306,700,243,675,199,651,179,654,175,679,196,705,240,726,304,745,381,761,465,784,630,797,751"/>
+<area shape="rect" id="Node000012" href="$classbml__internal.html#a4229e57ca687f6ebb7a3f8fd45651d40" title=" " alt="" coords="523,209,653,249"/>
+<area shape="poly" id="edge7_Node000001_Node000012" title=" " alt="" coords="790,752,775,645,750,504,716,368,696,314,675,276,661,263,645,252,648,247,665,259,679,273,701,312,721,366,755,503,780,644,796,751"/>
+<area shape="rect" id="Node000016" href="$classbml__internal.html#a909727e1d1470cc7b356ea801bcff99b" title=" " alt="" coords="523,287,653,327"/>
+<area shape="poly" id="edge9_Node000001_Node000016" title=" " alt="" coords="793,752,784,677,765,577,749,523,730,469,705,416,675,368,654,346,629,329,632,325,658,342,679,365,710,414,735,467,754,521,770,576,789,676,798,751"/>
+<area shape="rect" id="Node000020" href="$classbml__internal.html#ad08ea6d8dc673badb5dc245e48048698" title=" " alt="" coords="515,379,661,405"/>
+<area shape="poly" id="edge11_Node000001_Node000020" title=" " alt="" coords="792,752,784,686,764,601,749,555,729,511,705,469,675,431,658,417,638,407,640,402,661,413,679,427,709,466,734,508,754,554,769,599,789,685,798,751"/>
+<area shape="rect" id="Node000028" href="$classbml__internal.html#a20fe95aac52a5ed653ec1264d6170214" title="Get DCS continuous scans param." alt="" coords="249,1123,421,1163"/>
+<area shape="poly" id="edge15_Node000001_Node000028" title=" " alt="" coords="799,820,793,887,775,971,760,1015,739,1057,713,1094,679,1126,650,1144,618,1157,585,1166,550,1171,483,1172,421,1165,422,1160,483,1166,550,1165,584,1161,616,1152,647,1139,676,1122,709,1091,735,1054,755,1013,770,970,788,886,794,819"/>
+<area shape="rect" id="Node000032" href="$classbml__internal.html#afb8f1a59a10b53227c8002978144b1ab" title="Get DCS continuous scan params." alt="" coords="499,441,677,481"/>
+<area shape="poly" id="edge17_Node000001_Node000032" title=" " alt="" coords="790,752,778,697,756,629,723,558,701,526,676,497,658,484,661,479,679,493,705,522,728,556,761,627,783,696,795,751"/>
+<area shape="rect" id="Node000036" href="$classbml__internal.html#a485a89b08ace3ed8ae58cee980e6789f" title="Get DCS channel scan results." alt="" coords="515,507,661,547"/>
+<area shape="poly" id="edge19_Node000001_Node000036" title=" " alt="" coords="785,753,770,710,747,660,715,608,676,563,654,549,657,545,679,559,720,605,751,657,775,708,790,751"/>
+<area shape="rect" id="Node000040" href="$classbml__internal.html#aef10b94f3bddf6a37080032e37045bc5" title=" " alt="" coords="499,573,677,613"/>
+<area shape="poly" id="edge21_Node000001_Node000040" title=" " alt="" coords="778,754,737,690,708,657,676,627,656,616,659,611,679,623,712,653,741,687,783,752"/>
+<area shape="rect" id="Node000047" href="$classbml__internal.html#a4fede4ef0c9c7d6249229fdbe0e2dc28" title=" " alt="" coords="499,637,677,677"/>
+<area shape="poly" id="edge24_Node000001_Node000047" title=" " alt="" coords="765,758,724,724,676,692,651,680,654,675,679,687,727,720,768,754"/>
+<area shape="rect" id="Node000051" href="$classbml__internal.html#adf6ed8aabc56576f4a8795b260a1ae19" title=" " alt="" coords="519,701,657,741"/>
+<area shape="poly" id="edge26_Node000001_Node000051" title=" " alt="" coords="718,764,654,744,655,739,720,759"/>
+<area shape="rect" id="Node000055" href="$classbml__internal.html#a5641dec3d34a8a0888303d42b9ccd4db" title="fetches the unassoc sta link metrics from db" alt="" coords="501,765,675,805"/>
+<area shape="poly" id="edge28_Node000001_Node000055" title=" " alt="" coords="711,788,676,788,676,783,711,783"/>
+<area shape="rect" id="Node000059" href="$classbml__internal.html#ad42754a78284f73d5707449e95c53cdf" title=" " alt="" coords="513,829,663,869"/>
+<area shape="poly" id="edge30_Node000001_Node000059" title=" " alt="" coords="720,812,655,832,654,827,718,807"/>
+<area shape="rect" id="Node000065" href="$classbml__internal.html#aeadc329ee99ce891a2d80da4021db704" title=" " alt="" coords="526,894,650,919"/>
+<area shape="poly" id="edge32_Node000001_Node000065" title=" " alt="" coords="769,817,728,852,679,884,647,896,645,891,676,879,725,847,766,813"/>
+<area shape="rect" id="Node000069" href="$classbml__internal.html#ade80c49048b94427711e7ed21510f96f" title=" " alt="" coords="517,944,659,984"/>
+<area shape="poly" id="edge34_Node000001_Node000069" title=" " alt="" coords="780,819,738,876,710,906,679,933,656,946,653,942,676,928,707,903,734,873,776,816"/>
+<area shape="rect" id="Node000073" href="$classbml__internal.html#a4d7dfd9435febee3ba66a543142ac3f9" title=" " alt="" coords="515,1008,661,1048"/>
+<area shape="poly" id="edge36_Node000001_Node000073" title=" " alt="" coords="789,820,773,860,750,908,718,956,679,998,661,1010,658,1006,676,994,714,953,745,905,768,858,784,818"/>
+<area shape="rect" id="Node000077" href="$classbml__internal.html#a8169343454b21a818c12d9a6ad4ab990" title=" " alt="" coords="517,1072,659,1112"/>
+<area shape="poly" id="edge38_Node000001_Node000077" title=" " alt="" coords="794,819,782,872,759,937,726,1003,704,1034,679,1062,661,1075,658,1070,676,1058,700,1031,721,1001,755,934,776,870,789,818"/>
+<area shape="rect" id="Node000081" href="$classbml__internal.html#a024504d323eee6f8f7d365794458a965" title=" " alt="" coords="524,1187,652,1227"/>
+<area shape="poly" id="edge40_Node000001_Node000081" title=" " alt="" coords="798,819,791,890,772,983,757,1033,736,1081,711,1128,679,1170,654,1189,650,1185,675,1166,706,1125,732,1079,751,1031,767,982,786,890,793,819"/>
+<area shape="rect" id="Node000152" href="$classbml__internal.html#a78ccebfd5e7258f40c2cf35ee5784622" title="Set DCS continuous scan params." alt="" coords="247,1493,424,1533"/>
+<area shape="poly" id="edge48_Node000001_Node000152" title=" " alt="" coords="795,819,780,916,755,1042,721,1162,701,1208,679,1241,657,1258,634,1266,588,1267,543,1267,522,1275,501,1291,484,1314,477,1338,475,1361,477,1385,479,1409,478,1434,470,1459,453,1483,426,1502,423,1497,449,1479,465,1456,473,1433,474,1410,472,1386,470,1361,471,1337,479,1312,497,1287,519,1270,542,1262,588,1261,633,1260,654,1253,675,1237,697,1206,716,1160,750,1041,775,915,790,819"/>
+<area shape="rect" id="Node000185" href="$classbml__internal.html#ae8a08b26ec37420a897b2e574863d2dc" title="Add the Wi&#45;Fi credentials for the beerocks network." alt="" coords="515,1301,661,1341"/>
+<area shape="poly" id="edge49_Node000001_Node000185" title=" " alt="" coords="796,820,781,924,755,1062,722,1195,701,1247,679,1284,656,1303,653,1299,675,1281,697,1245,716,1193,750,1061,775,923,790,819"/>
+<area shape="rect" id="Node000189" href="$classbml__internal.html#a8c7487ce77dad4ae1d25848b453e4184" title=" " alt="" coords="519,1365,657,1405"/>
+<area shape="poly" id="edge50_Node000001_Node000189" title=" " alt="" coords="797,819,785,938,761,1097,746,1178,727,1252,705,1313,679,1355,659,1371,656,1367,675,1352,700,1310,722,1250,740,1177,756,1096,779,937,792,819"/>
+<area shape="rect" id="Node000190" href="$classbml__internal.html#aa69aed5d0ca82eb1cfcaefd58f60b0a6" title="Update wifi credentials." alt="" coords="519,1429,657,1469"/>
+<area shape="poly" id="edge51_Node000001_Node000190" title=" " alt="" coords="798,819,787,949,765,1128,750,1219,730,1302,707,1371,694,1398,679,1419,659,1435,656,1431,675,1416,689,1395,702,1369,725,1301,744,1218,760,1127,782,949,793,819"/>
+<area shape="rect" id="Node000003" href="$bml_8cpp.html#a61cac3a3c3e24ab7bc8d37593324a62b" title=" " alt="" coords="240,11,431,37"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="501,28,431,27,431,22,501,22"/>
+<area shape="rect" id="Node000005" href="$bml_8cpp.html#aa094a34ca65c4488bb5f03d67e4dea5e" title=" " alt="" coords="240,61,431,86"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="500,87,431,83,431,77,501,82"/>
+<area shape="rect" id="Node000007" href="$bml_8cpp.html#a0d53895d877d30ee060d020ff71b4fd3" title=" " alt="" coords="248,110,423,135"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="510,150,422,138,423,132,511,145"/>
+<area shape="rect" id="Node000013" href="$bml_8cpp.html#a92f72ec86a580112752a6d2fcea02a0b" title=" " alt="" coords="263,159,407,185"/>
+<area shape="poly" id="edge8_Node000012_Node000013" title=" " alt="" coords="509,213,450,199,398,187,399,182,451,193,510,207"/>
+<area shape="rect" id="Node000017" href="$bml_8cpp.html#ad4118ac7dc1e295f1b13e05a1e7864c5" title=" " alt="" coords="251,209,419,234"/>
+<area shape="poly" id="edge10_Node000016_Node000017" title=" " alt="" coords="533,283,450,249,403,237,405,231,452,244,535,278"/>
+<area shape="rect" id="Node000021" href="$classdevice_1_1serial_1_1SerialDevice.html#a27e698b9464330b6878cfcf4946561bc" title=" " alt="" coords="247,259,424,299"/>
+<area shape="poly" id="edge12_Node000020_Node000021" title=" " alt="" coords="552,374,450,313,418,301,419,296,452,308,555,370"/>
+<area shape="rect" id="Node000022" href="$bml_8cpp.html#a27ddc4408f489c2581ecd84336798fb8" title=" " alt="" coords="287,323,383,349"/>
+<area shape="poly" id="edge13_Node000020_Node000022" title=" " alt="" coords="516,379,450,364,383,349,384,344,451,359,517,374"/>
+<area shape="rect" id="Node000027" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a90819258a767d0bbc4132ae895b3d083" title=" " alt="" coords="238,373,433,413"/>
+<area shape="poly" id="edge14_Node000020_Node000027" title=" " alt="" coords="501,395,433,395,433,390,501,390"/>
+<area shape="rect" id="Node000029" href="$bml_8cpp.html#afecd1715a349227bc4cb5cef3a2cb3ce" title=" " alt="" coords="5,1123,172,1163"/>
+<area shape="poly" id="edge16_Node000028_Node000029" title=" " alt="" coords="235,1145,172,1145,172,1140,235,1140"/>
+<area shape="rect" id="Node000033" href="$bml_8cpp.html#aa26f92034611ac52b32982801beda8a1" title=" " alt="" coords="252,437,419,477"/>
+<area shape="poly" id="edge18_Node000032_Node000033" title=" " alt="" coords="486,462,419,461,419,456,486,457"/>
+<area shape="rect" id="Node000037" href="$bml_8cpp.html#a32f043873928ef8eb05383acc707ed72" title=" " alt="" coords="247,502,424,527"/>
+<area shape="poly" id="edge20_Node000036_Node000037" title=" " alt="" coords="501,525,424,522,424,516,501,520"/>
+<area shape="rect" id="Node000041" href="$bml_8cpp.html#ae4ff0dff47acb9f8e0cbd2e153b1293f" title=" " alt="" coords="250,616,421,656"/>
+<area shape="poly" id="edge22_Node000040_Node000041" title=" " alt="" coords="486,613,422,624,421,619,485,608"/>
+<area shape="rect" id="Node000044" href="$bml_8cpp.html#a6bd283356a61a3a7aff9ace323500d12" title=" " alt="" coords="252,552,419,592"/>
+<area shape="poly" id="edge23_Node000040_Node000044" title=" " alt="" coords="485,587,419,582,419,576,485,582"/>
+<area shape="rect" id="Node000048" href="$bml_8cpp.html#a91ee00f2617ccc421e2938776c0f8176" title=" " alt="" coords="230,681,441,706"/>
+<area shape="poly" id="edge25_Node000047_Node000048" title=" " alt="" coords="486,675,425,683,425,678,485,669"/>
+<area shape="rect" id="Node000052" href="$bml_8cpp.html#affdb1e77fab3d26e43c062e5cca060bf" title=" " alt="" coords="259,731,411,771"/>
+<area shape="poly" id="edge27_Node000051_Node000052" title=" " alt="" coords="505,734,412,745,411,739,505,728"/>
+<area shape="rect" id="Node000056" href="$bml_8cpp.html#ac30da9bc40a24ba83e286fe419c5dd1b" title=" " alt="" coords="261,795,410,835"/>
+<area shape="poly" id="edge29_Node000055_Node000056" title=" " alt="" coords="488,800,411,809,410,803,487,794"/>
+<area shape="rect" id="Node000060" href="$bml_8cpp.html#a3210aadab4f832651001446203ac3c01" title=" " alt="" coords="266,859,405,885"/>
+<area shape="poly" id="edge31_Node000059_Node000060" title=" " alt="" coords="500,860,405,868,404,863,499,855"/>
+<area shape="rect" id="Node000066" href="$bml_8cpp.html#af50b77ec85d52b8a6a7f5548d1558c99" title=" " alt="" coords="298,909,373,934"/>
+<area shape="poly" id="edge33_Node000065_Node000066" title=" " alt="" coords="512,914,373,922,373,917,511,908"/>
+<area shape="rect" id="Node000070" href="$bml_8cpp.html#a7c8f543218d201daa79381872407b565" title=" " alt="" coords="259,958,412,983"/>
+<area shape="poly" id="edge35_Node000069_Node000070" title=" " alt="" coords="503,969,412,971,412,966,503,964"/>
+<area shape="rect" id="Node000074" href="$bml_8cpp.html#a7561b5ddca4a93eafb08425965c2d305" title=" " alt="" coords="261,1008,410,1048"/>
+<area shape="poly" id="edge37_Node000073_Node000074" title=" " alt="" coords="502,1031,410,1031,410,1025,502,1025"/>
+<area shape="rect" id="Node000078" href="$bml_8cpp.html#a40c45a5fdef5d85c8bd480ae75fd92db" title=" " alt="" coords="264,1073,407,1098"/>
+<area shape="poly" id="edge39_Node000077_Node000078" title=" " alt="" coords="503,1092,407,1090,407,1085,503,1087"/>
+<area shape="poly" id="edge46_Node000081_Node000028" title=" " alt="" coords="510,1190,414,1165,416,1160,511,1185"/>
+<area shape="rect" id="Node000082" href="$classbml__internal.html#a21d11eda89c708b878e0a6d231c550ef" title=" " alt="" coords="263,1301,408,1341"/>
+<area shape="poly" id="edge41_Node000081_Node000082" title=" " alt="" coords="522,1235,500,1248,486,1259,477,1270,467,1281,452,1292,409,1309,407,1304,449,1287,464,1277,473,1266,483,1255,497,1243,520,1230"/>
+<area shape="rect" id="Node000086" href="$classbml__internal.html#a8b6afdf1149d9e08994a7b451d83e944" title="Delete client persistent DB info." alt="" coords="270,1365,401,1405"/>
+<area shape="poly" id="edge42_Node000081_Node000086" title=" " alt="" coords="515,1236,501,1247,490,1261,484,1274,478,1301,472,1328,465,1342,452,1355,429,1371,402,1380,400,1375,426,1366,449,1351,460,1339,467,1326,473,1300,479,1272,485,1258,497,1243,511,1232"/>
+<area shape="rect" id="Node000090" href="$classbml__internal.html#a8b69e76cd700c1ad6e826016e698f6bf" title=" " alt="" coords="270,1429,401,1469"/>
+<area shape="poly" id="edge43_Node000081_Node000090" title=" " alt="" coords="514,1235,501,1247,486,1269,480,1290,479,1333,477,1376,469,1398,453,1419,429,1436,402,1446,400,1441,427,1431,449,1415,464,1395,472,1375,474,1333,474,1289,482,1266,497,1244,511,1231"/>
+<area shape="rect" id="Node000094" href="$classbml__internal.html#aa8b507c0eee69e62f66a8198c604afaf" title=" " alt="" coords="220,1187,451,1213"/>
+<area shape="poly" id="edge44_Node000081_Node000094" title=" " alt="" coords="510,1207,451,1206,451,1200,510,1202"/>
+<area shape="rect" id="Node000098" href="$classbml__internal.html#a71ad84606a9e5c7992c9957553d9cfc1" title=" " alt="" coords="257,1237,413,1277"/>
+<area shape="poly" id="edge45_Node000081_Node000098" title=" " alt="" coords="511,1225,414,1244,413,1239,510,1220"/>
+<area shape="poly" id="edge47_Node000081_Node000152" title=" " alt="" coords="514,1235,501,1247,483,1277,476,1307,476,1336,479,1365,483,1394,482,1424,473,1453,453,1483,426,1502,423,1498,449,1479,468,1451,477,1423,477,1394,474,1365,471,1336,470,1306,478,1275,497,1244,510,1231"/>
+</map>

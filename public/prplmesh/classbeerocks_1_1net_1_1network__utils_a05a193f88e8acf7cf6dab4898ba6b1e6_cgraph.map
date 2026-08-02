@@ -1,0 +1,9 @@
+<map id="beerocks::net::network_utils::linux_get_non_physical_bridge_interfaces" name="beerocks::net::network_utils::linux_get_non_physical_bridge_interfaces">
+<area shape="rect" id="Node000001" title="Retrieves the list of non&#45;physical interfaces (veth, dummy, etc.) that are attached to bridges on the..." alt="" coords="5,70,188,125"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1network__utils.html#a8aa20e8ec45ef54c97c65c86cc5e27a1" title="Retrieves the list of bridge interfaces on the linux device." alt="" coords="236,5,399,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,67,242,47,243,52,182,72"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1network__utils.html#ac33179916a7a42897fe851c1090f0bf9" title=" " alt="" coords="240,70,395,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,95,227,95,227,100,189,100"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1network__utils.html#a4dcb7f40db6ddff62e1638113445af7f" title="To check whether the interface is a physical interface." alt="" coords="240,149,395,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="175,122,228,142,227,147,173,127"/>
+</map>

@@ -1,0 +1,25 @@
+<map id="beerocks::ServicePrioritizationTask::gather_iface_details" name="beerocks::ServicePrioritizationTask::gather_iface_details">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1353,101,1552,141"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ServicePrioritizationTask.html#ae2e99bf8e69f4d4851d19c2f4a0a23f0" title=" " alt="" coords="1091,37,1290,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1356,101,1272,80,1274,75,1357,95"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1ServicePrioritizationTask.html#a7b5df85fc8510b1d1a40be405aed6114" title=" " alt="" coords="1076,101,1305,141"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1340,124,1305,124,1305,119,1340,119"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1ServicePrioritizationTask.html#af020a5d3ab6b0585f40f4d5d9ccd9d48" title=" " alt="" coords="1091,165,1290,205"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="1357,147,1274,168,1272,163,1356,142"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ServicePrioritizationTask.html#aec7e243086895d0391886903e7dd296a" title=" " alt="" coords="829,101,1028,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1095,83,1012,104,1010,99,1094,78"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ServicePrioritizationTask.html#a7e2e62b9c3b2d4aff9130236d0d10c91" title=" " alt="" coords="546,69,745,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="815,111,744,103,745,98,816,106"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1ServicePrioritizationTask.html#a1137988bf2924d503eb455159df06ec2" title=" " alt="" coords="509,133,781,173"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="816,137,782,141,781,135,815,131"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ServicePrioritizationTask.html#a8ebca74339d5ba7171bb7e1da622f3dd" title="Handle events, which are being send from containing thread." alt="" coords="257,5,456,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="540,69,447,48,448,43,541,64"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ServicePrioritizationTask.html#aacba0133addb53651c88e76e57ae9a86" title=" " alt="" coords="252,69,461,109"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="532,92,462,92,462,87,532,87"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ServicePrioritizationTask.html#a91e60881a7bef29731f794ef7f13043f" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="5,69,204,109"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="238,92,204,92,204,87,238,87"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1ServicePrioritizationTask.html#a596f45b7e89d646058fa9f92e529f15e" title="Handle CMDU message." alt="" coords="257,133,456,173"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="496,156,456,156,456,151,496,151"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="1062,124,1028,124,1028,119,1062,119"/>
+<area shape="poly" id="edge12_Node000011_Node000003" title=" " alt="" coords="1094,165,1010,144,1012,139,1095,159"/>
+</map>

@@ -1,0 +1,60 @@
+<map id="bwl::base_wlan_hal" name="bwl::base_wlan_hal">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,373,141,398"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1ap__wlan__hal.html" title=" " alt="" coords="209,266,332,291"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,364,244,289,247,294,111,368"/>
+<area shape="rect" id="Node000007" href="$classbwl_1_1dummy_1_1base__wlan__hal__dummy.html" title=" " alt="" coords="189,165,352,205"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="91,360,134,309,187,251,242,204,245,208,191,255,138,313,95,364"/>
+<area shape="rect" id="Node000010" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html" title=" " alt="" coords="193,336,348,376"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="155,379,194,373,195,379,155,385"/>
+<area shape="poly" id="edge18_Node000001_Node000010" title=" " alt="" coords="124,367,193,356,193,361,125,373"/>
+<area shape="rect" id="Node000013" href="$classbwl_1_1mon__wlan__hal.html" title=" " alt="" coords="204,401,337,426"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="155,394,204,401,203,407,155,400"/>
+<area shape="rect" id="Node000016" href="$classbwl_1_1nl80211_1_1base__wlan__hal__nl80211.html" title=" " alt="" coords="205,503,337,543"/>
+<area shape="poly" id="edge25_Node000001_Node000016" title=" " alt="" coords="98,407,140,445,191,484,220,500,217,505,188,489,136,449,95,410"/>
+<area shape="rect" id="Node000018" href="$classbwl_1_1sta__wlan__hal.html" title=" " alt="" coords="207,450,334,475"/>
+<area shape="poly" id="edge29_Node000001_Node000018" title=" " alt="" coords="114,402,190,435,227,447,225,452,188,440,112,406"/>
+<area shape="rect" id="Node000020" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html" title=" " alt="" coords="197,567,345,607"/>
+<area shape="poly" id="edge35_Node000001_Node000020" title=" " alt="" coords="88,409,128,480,157,519,191,553,209,564,206,569,188,557,153,522,123,483,83,412"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1dummy_1_1ap__wlan__hal__dummy.html" title=" " alt="" coords="422,5,571,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,256,329,238,350,216,362,194,367,174,370,134,374,96,383,76,398,55,420,40,423,44,402,59,387,78,379,97,375,135,373,175,367,196,354,219,333,242,309,261"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1dwpal_1_1ap__wlan__hal__dwpal.html" title=" " alt="" coords="427,69,567,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="320,256,350,228,365,202,371,178,379,155,398,131,421,117,445,107,447,112,423,122,402,135,384,158,376,180,370,204,354,231,323,260"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="291,255,321,232,350,204,365,178,371,154,379,131,398,107,425,91,428,96,402,111,384,134,376,156,370,180,354,207,324,236,294,259"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1nl80211_1_1ap__wlan__hal__nl80211.html" title=" " alt="" coords="421,261,572,301"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="346,277,421,278,421,283,346,282"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html" title=" " alt="" coords="400,326,593,351"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="332,292,401,311,448,323,447,329,399,316,331,297"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="294,153,339,103,368,77,399,55,422,43,425,48,401,60,371,82,343,107,298,156"/>
+<area shape="rect" id="Node000008" href="$classbwl_1_1dummy_1_1mon__wlan__hal__dummy.html" title=" " alt="" coords="417,133,577,173"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="366,169,416,162,417,167,366,175"/>
+<area shape="rect" id="Node000009" href="$classbwl_1_1dummy_1_1sta__wlan__hal__dummy.html" title=" " alt="" coords="420,197,573,237"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="367,196,420,204,419,209,366,201"/>
+<area shape="poly" id="edge12_Node000010_Node000004" title=" " alt="" coords="339,325,350,313,363,289,369,266,370,221,373,177,381,155,398,131,417,117,439,107,441,112,420,121,402,135,386,157,378,178,375,221,375,267,368,291,354,316,343,329"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="306,327,330,310,350,289,363,265,369,242,370,197,373,153,381,131,398,107,425,89,428,94,402,111,386,133,378,154,375,197,375,243,368,267,354,292,333,314,309,331"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1dwpal_1_1mon__wlan__hal__dwpal.html" title=" " alt="" coords="421,376,572,416"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="351,376,421,389,421,394,350,381"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="362,361,430,373,429,379,361,366"/>
+<area shape="rect" id="Node000012" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html" title=" " alt="" coords="425,440,569,480"/>
+<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="316,379,353,398,378,418,401,438,425,449,423,454,399,442,374,422,351,402,313,384"/>
+<area shape="poly" id="edge17_Node000010_Node000012" title=" " alt="" coords="361,379,380,397,401,414,458,437,456,442,399,418,377,401,357,383"/>
+<area shape="poly" id="edge20_Node000013_Node000008" title=" " alt="" coords="345,391,350,386,367,361,375,337,376,312,374,287,371,262,372,236,380,210,398,184,415,170,418,174,402,187,385,212,378,237,377,262,379,287,381,312,380,338,372,364,354,390,349,395"/>
+<area shape="poly" id="edge21_Node000013_Node000011" title=" " alt="" coords="351,413,421,408,421,413,352,418"/>
+<area shape="poly" id="edge22_Node000013_Node000011" title=" " alt="" coords="345,396,421,391,421,396,346,402"/>
+<area shape="rect" id="Node000014" href="$classbwl_1_1nl80211_1_1mon__wlan__hal__nl80211.html" title=" " alt="" coords="415,504,578,544"/>
+<area shape="poly" id="edge23_Node000013_Node000014" title=" " alt="" coords="342,429,354,435,369,449,378,463,387,477,402,490,423,502,421,506,398,494,383,480,374,466,365,452,350,440,340,434"/>
+<area shape="rect" id="Node000015" href="$classbwl_1_1whm_1_1mon__wlan__hal__whm.html" title=" " alt="" coords="424,568,569,608"/>
+<area shape="poly" id="edge24_Node000013_Node000015" title=" " alt="" coords="348,431,354,435,367,450,374,466,379,496,383,526,390,540,402,554,425,570,422,574,398,558,386,543,378,527,374,497,369,467,362,453,350,439,345,435"/>
+<area shape="poly" id="edge26_Node000016_Node000005" title=" " alt="" coords="342,492,350,485,364,463,371,442,372,399,374,356,382,334,398,311,420,296,423,300,402,315,387,336,379,357,378,399,376,443,369,465,354,488,346,496"/>
+<area shape="poly" id="edge27_Node000016_Node000014" title=" " alt="" coords="351,520,415,521,415,526,351,526"/>
+<area shape="rect" id="Node000017" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html" title=" " alt="" coords="419,632,574,672"/>
+<area shape="poly" id="edge28_Node000016_Node000017" title=" " alt="" coords="346,547,354,553,370,570,378,586,386,602,402,618,422,630,419,634,398,622,382,605,373,589,365,573,350,557,343,552"/>
+<area shape="poly" id="edge30_Node000018_Node000009" title=" " alt="" coords="344,441,350,436,366,413,374,390,375,367,374,344,372,320,373,296,381,272,398,247,418,232,421,237,402,251,386,274,379,297,377,320,379,343,380,367,379,391,371,415,354,439,348,445"/>
+<area shape="poly" id="edge31_Node000018_Node000012" title=" " alt="" coords="348,468,424,467,424,472,348,473"/>
+<area shape="poly" id="edge32_Node000018_Node000012" title=" " alt="" coords="348,451,424,450,424,455,348,456"/>
+<area shape="poly" id="edge33_Node000018_Node000017" title=" " alt="" coords="342,480,354,489,367,505,374,522,379,555,383,587,389,603,402,618,421,632,418,636,398,622,385,605,378,589,373,556,369,524,363,508,350,493,339,484"/>
+<area shape="rect" id="Node000019" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html" title=" " alt="" coords="427,696,566,736"/>
+<area shape="poly" id="edge34_Node000018_Node000019" title=" " alt="" coords="345,481,354,489,371,514,379,539,380,563,379,588,377,612,378,635,386,659,402,682,429,700,426,705,398,686,381,661,373,636,371,611,373,587,375,563,374,540,366,516,350,492,341,485"/>
+<area shape="poly" id="edge36_Node000020_Node000006" title=" " alt="" coords="347,556,350,553,366,529,372,506,372,458,370,434,372,410,380,386,398,362,416,349,419,354,402,366,385,389,377,411,376,434,377,458,378,506,370,531,354,556,351,560"/>
+<area shape="poly" id="edge37_Node000020_Node000015" title=" " alt="" coords="359,585,424,585,424,590,359,590"/>
+<area shape="poly" id="edge38_Node000020_Node000019" title=" " alt="" coords="306,614,350,649,401,682,428,694,426,699,399,686,347,653,303,618"/>
+</map>

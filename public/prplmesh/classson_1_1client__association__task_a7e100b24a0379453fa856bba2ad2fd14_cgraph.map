@@ -1,0 +1,112 @@
+<map id="son::client_association_task::handle_cmdu_1905_client_capability_report_message" name="son::client_association_task::handle_cmdu_1905_client_capability_report_message">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,1212,180,1281"/>
+<area shape="rect" id="Node000002" href="$classson_1_1client__association__task.html#a6a0a82d14835ba6d7057804c2d975d95" title="Creates additional sub&#45;objects STA HT(VHT)Capabilities to AssociationEventData data model object." alt="" coords="232,367,439,422"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,1211,147,989,183,839,225,687,272,547,315,434,320,436,277,549,231,689,189,840,152,990,104,1212"/>
+<area shape="rect" id="Node000011" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="749,198,879,223"/>
+<area shape="poly" id="edge40_Node000001_Node000011" title=" " alt="" coords="93,1212,103,1036,126,783,143,651,165,529,193,426,208,386,226,353,253,314,280,284,308,260,337,241,403,213,490,187,560,175,631,174,698,181,754,192,753,197,697,187,631,180,560,180,491,192,405,218,339,245,311,264,284,287,258,318,230,356,213,388,198,428,171,530,149,652,131,783,108,1037,98,1212"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1utils.html#a60f18fee9412cd028f819500d398df82" title=" " alt="" coords="262,1316,409,1356"/>
+<area shape="poly" id="edge21_Node000001_Node000018" title=" " alt="" coords="181,1277,229,1295,266,1309,265,1314,227,1300,179,1282"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1WifiChannel.html#a7639a0183d51e7d83bf66f4743002592" title="Get the bandwidth object." alt="" coords="258,1380,413,1420"/>
+<area shape="poly" id="edge22_Node000001_Node000019" title=" " alt="" coords="126,1280,172,1324,229,1366,246,1374,244,1379,227,1370,169,1328,122,1283"/>
+<area shape="rect" id="Node000020" href="$classson_1_1db.html#ac81559587b2ba7f970e462adc48fec7d" title="Search a STA that is identified by the mac and get a copy of the STA&#39;s wifiChannel object." alt="" coords="513,629,656,669"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="92,1212,98,1128,117,1015,134,955,157,895,188,838,226,788,255,760,288,736,359,699,432,674,499,658,500,663,434,679,361,704,291,741,258,764,230,791,192,841,162,897,139,956,122,1016,103,1128,97,1212"/>
+<area shape="rect" id="Node000021" href="$classson_1_1assoc__frame__utils.html#affa0af247b0ebc07b3e172ee3ecde847" title="Get station capabilities from provided assocReqFrame object." alt="" coords="252,1186,419,1241"/>
+<area shape="poly" id="edge26_Node000001_Node000021" title=" " alt="" coords="180,1232,238,1224,238,1229,181,1237"/>
+<area shape="rect" id="Node000025" href="$classson_1_1wireless__utils.html#af18845dd0decd4d4eb531095443b2d0c" title="get max supported bandwidth in station capabilities. in this order:" alt="" coords="228,1444,443,1484"/>
+<area shape="poly" id="edge30_Node000001_Node000025" title=" " alt="" coords="113,1280,132,1316,158,1356,191,1396,230,1430,238,1435,235,1440,226,1434,187,1400,154,1359,128,1318,108,1283"/>
+<area shape="rect" id="Node000026" href="$classieee1905__1_1_1CmduMessageRx.html#ad1db8fee42b3e3a1aaf8312a139b72f3" title=" " alt="" coords="235,1572,436,1612"/>
+<area shape="poly" id="edge31_Node000001_Node000026" title=" " alt="" coords="102,1281,115,1341,138,1416,155,1454,176,1492,201,1527,230,1558,235,1562,232,1567,226,1562,197,1531,171,1495,151,1457,134,1417,109,1342,96,1282"/>
+<area shape="rect" id="Node000028" href="$classieee1905__1_1_1CmduMessage.html#a358caf51a92d3596ae4377707b1f871d" title=" " alt="" coords="243,1508,427,1548"/>
+<area shape="poly" id="edge33_Node000001_Node000028" title=" " alt="" coords="106,1281,122,1329,148,1386,184,1444,205,1471,230,1494,236,1499,233,1503,226,1498,201,1474,179,1448,143,1389,117,1331,101,1282"/>
+<area shape="rect" id="Node000033" href="$classbeerocks_1_1WifiChannel.html#a536aa8a3003f3ab04e0a56f9f2b3cd23" title="check if the channel is an empty" alt="" coords="258,1636,413,1676"/>
+<area shape="poly" id="edge39_Node000001_Node000033" title=" " alt="" coords="99,1281,108,1352,130,1444,147,1492,169,1540,196,1583,230,1622,247,1635,244,1639,226,1626,192,1587,164,1542,142,1494,125,1446,103,1353,94,1282"/>
+<area shape="rect" id="Node000034" href="$classassoc__frame_1_1AssocReqFrame.html#a2348264ff3fa1f3d674877e0ddf04f03" title=" " alt="" coords="234,1700,437,1740"/>
+<area shape="poly" id="edge41_Node000001_Node000034" title=" " alt="" coords="97,1281,102,1363,110,1416,121,1472,138,1530,161,1587,192,1640,230,1686,234,1690,231,1694,226,1690,187,1643,157,1589,133,1532,116,1473,104,1417,97,1364,91,1282"/>
+<area shape="rect" id="Node000035" href="$classson_1_1wireless__utils.html#a2b6a4295af11c16e1aa9de87bd876389" title="Print station capabilities." alt="" coords="727,1261,901,1301"/>
+<area shape="poly" id="edge42_Node000001_Node000035" title=" " alt="" coords="180,1248,714,1274,713,1279,180,1253"/>
+<area shape="rect" id="Node000036" href="$classson_1_1db.html#aece96e1762b74774a1f0e192bc6d8184" title="Set ClientCapabilities values for Station and AssocEvent object Full path to data element: &#39;Device...." alt="" coords="271,1007,400,1047"/>
+<area shape="poly" id="edge44_Node000001_Node000036" title=" " alt="" coords="108,1211,127,1174,154,1133,187,1092,226,1056,256,1041,259,1045,230,1061,191,1095,158,1136,132,1177,112,1213"/>
+<area shape="rect" id="Node000037" href="$classson_1_1db.html#a31f3332ee3d9b10d6be72c6f3049965b" title="Set the (Re)association frame for station sta_mac" alt="" coords="241,1071,430,1111"/>
+<area shape="poly" id="edge46_Node000001_Node000037" title=" " alt="" coords="125,1210,171,1167,227,1127,253,1114,256,1118,229,1132,174,1172,128,1214"/>
+<area shape="rect" id="Node000038" href="$classson_1_1db.html#ac72d78891bae91e8e344679617fdfdc0" title=" " alt="" coords="241,802,429,827"/>
+<area shape="poly" id="edge48_Node000001_Node000038" title=" " alt="" coords="110,1211,226,993,317,838,321,841,230,996,114,1213"/>
+<area shape="rect" id="Node000045" href="$classson_1_1db.html#aff3457068e75388b8fca9a41e921027e" title="update the STA wifiChannel object with the new bandwidth" alt="" coords="516,1125,653,1165"/>
+<area shape="poly" id="edge63_Node000001_Node000045" title=" " alt="" coords="144,1210,184,1188,227,1171,299,1154,372,1145,502,1139,502,1145,372,1150,300,1160,229,1176,186,1193,146,1214"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#abb5da915591469a35a2ade2e0a8c8169" title="Adds station capabilities sub&#45;objects into data model under instance of object AssociationEventData." alt="" coords="504,69,665,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="352,366,410,279,489,177,548,117,552,121,493,180,414,283,356,369"/>
+<area shape="rect" id="Node000008" href="$classson_1_1db.html#af568dec76bf497734a7466a1673cdddf" title=" " alt="" coords="503,235,666,275"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="373,365,427,328,489,291,517,278,519,283,492,296,430,333,376,369"/>
+<area shape="rect" id="Node000010" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="741,379,887,405"/>
+<area shape="poly" id="edge19_Node000002_Node000010" title=" " alt="" coords="403,365,446,351,490,341,543,334,585,331,626,333,679,341,729,354,774,371,772,376,728,359,678,347,626,339,585,336,544,339,491,347,447,356,405,370"/>
+<area shape="poly" id="edge20_Node000002_Node000011" title=" " alt="" coords="349,366,372,330,403,290,443,250,490,220,551,200,616,191,679,190,735,194,734,200,679,195,616,196,552,205,492,225,446,255,407,293,376,333,354,368"/>
+<area shape="rect" id="Node000013" href="$classson_1_1db.html#ad61cae97fc8b06eb61b3882c251cee4c" title=" " alt="" coords="521,515,648,555"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="373,420,427,460,492,499,510,507,507,512,489,504,424,464,370,425"/>
+<area shape="rect" id="Node000015" href="$classson_1_1db.html#a1658327fa4b7356f72d9e91a90dc93cc" title=" " alt="" coords="491,465,679,490"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="407,420,491,449,521,458,520,464,490,455,405,425"/>
+<area shape="rect" id="Node000017" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="745,889,883,914"/>
+<area shape="poly" id="edge18_Node000002_Node000017" title=" " alt="" coords="356,421,411,493,449,532,492,564,518,577,543,583,589,584,612,584,634,588,657,597,681,615,698,636,708,657,713,697,715,740,719,763,729,788,760,837,792,876,788,880,755,840,724,791,714,765,709,741,708,698,702,659,693,639,677,619,655,602,633,593,611,589,589,589,542,588,517,582,489,569,445,536,407,497,352,424"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#af130328d3c69b76af7b7b6569c119789" title="Sets value for parameters of optional sub&#45;object STA WiFi6Capabilities." alt="" coords="735,69,893,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="666,87,721,87,721,92,666,92"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a92fb9a50e7e882df959b3fa35e74aa84" title="Sets value for parameters of optional sub&#45;object STA HTCapabilities." alt="" coords="735,5,893,45"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="656,67,728,46,730,52,658,72"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#acec29b3c83437e1396515a07cc14a4c5" title="Sets value for parameters of optional sub&#45;object STA VHTCapabilities." alt="" coords="735,133,893,173"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="658,107,730,127,728,132,656,112"/>
+<area shape="rect" id="Node000007" href="$classson_1_1wireless__utils.html#a90131ac8ab4d119fb9cf3f1138e8d012" title="Calculate the vht MCS set (mask of 16bits) using the maximum supported MCS and number of Spatial stre..." alt="" coords="963,133,1094,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="894,151,950,151,950,156,894,156"/>
+<area shape="rect" id="Node000009" href="$classson_1_1db.html#a848cb5e1d274b6c17a31b9081e0c3a2f" title="Get radio containing a BSS with a specific BSSID Searches all Agent objects for sRadio object contain..." alt="" coords="751,248,877,288"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="667,257,737,261,737,266,666,262"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="642,272,680,291,740,330,789,368,786,373,737,335,677,296,639,277"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="666,236,734,223,735,228,667,242"/>
+<area shape="rect" id="Node000012" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="955,198,1102,223"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="880,208,942,208,942,213,880,213"/>
+<area shape="rect" id="Node000014" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="751,737,877,777"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="650,552,680,571,698,590,708,608,716,626,729,648,789,725,785,728,724,651,711,629,703,610,694,593,677,575,647,557"/>
+<area shape="poly" id="edge17_Node000015_Node000010" title=" " alt="" coords="637,462,678,449,774,408,776,413,680,455,639,467"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="727,457,901,497"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="679,475,713,475,713,480,679,480"/>
+<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="664,488,681,501,706,536,718,571,721,604,718,638,712,708,716,746,729,788,758,837,792,877,787,880,754,840,724,790,711,747,707,708,713,637,716,604,713,572,701,539,677,505,661,492"/>
+<area shape="poly" id="edge25_Node000020_Node000010" title=" " alt="" coords="613,627,646,600,676,565,692,533,699,504,706,475,725,444,746,424,769,409,772,413,749,428,729,447,711,477,704,505,697,535,681,568,650,603,617,631"/>
+<area shape="poly" id="edge24_Node000020_Node000017" title=" " alt="" coords="613,668,681,730,736,798,797,876,793,879,732,801,677,734,609,672"/>
+<area shape="rect" id="Node000022" href="$classson_1_1assoc__frame__utils.html#a8385943aa086fc7340aa8cdef78a1cb0" title="Set default mcs and default short GI from station&#39;s supported rates (by getting nearest reference val..." alt="" coords="505,1190,664,1245"/>
+<area shape="poly" id="edge27_Node000021_Node000022" title=" " alt="" coords="419,1212,492,1213,492,1219,419,1217"/>
+<area shape="rect" id="Node000023" href="$classson_1_1wireless__utils.html#a23ed6594ae6a4d62410b8bced8dfb50c" title=" " alt="" coords="743,1197,885,1237"/>
+<area shape="poly" id="edge28_Node000022_Node000023" title=" " alt="" coords="664,1215,729,1215,729,1220,664,1220"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1utils.html#a444f7dfcd73d9155f17df02aa712c2cd" title=" " alt="" coords="949,1197,1108,1237"/>
+<area shape="poly" id="edge29_Node000023_Node000024" title=" " alt="" coords="885,1215,936,1215,936,1220,885,1220"/>
+<area shape="rect" id="Node000027" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="745,1578,883,1603"/>
+<area shape="poly" id="edge32_Node000026_Node000027" title=" " alt="" coords="436,1591,679,1592,731,1591,732,1596,679,1597,436,1597"/>
+<area shape="rect" id="Node000029" href="$classieee1905__1_1_1CmduMessage.html#adc10ea7cfba25c0f58359cb954a5d69c" title=" " alt="" coords="493,1543,677,1583"/>
+<area shape="poly" id="edge34_Node000028_Node000029" title=" " alt="" coords="428,1538,479,1545,478,1551,427,1543"/>
+<area shape="rect" id="Node000030" href="$classieee1905__1_1_1CmduMessage.html#af54c8bd541643a03b9567fc61eef25f9" title=" " alt="" coords="493,1479,677,1519"/>
+<area shape="poly" id="edge36_Node000028_Node000030" title=" " alt="" coords="427,1515,478,1508,479,1514,428,1520"/>
+<area shape="rect" id="Node000032" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="547,1429,622,1454"/>
+<area shape="poly" id="edge38_Node000028_Node000032" title=" " alt="" coords="411,1505,441,1494,465,1479,490,1464,533,1450,535,1455,492,1469,468,1483,444,1498,413,1510"/>
+<area shape="poly" id="edge35_Node000029_Node000027" title=" " alt="" coords="677,1571,732,1578,731,1583,677,1577"/>
+<area shape="rect" id="Node000031" href="$classClassList.html#aea43ae47ce1af363533f665105410639" title=" " alt="" coords="737,1486,891,1511"/>
+<area shape="poly" id="edge37_Node000030_Node000031" title=" " alt="" coords="677,1496,723,1496,723,1501,677,1501"/>
+<area shape="poly" id="edge43_Node000035_Node000024" title=" " alt="" coords="881,1259,947,1239,949,1244,883,1264"/>
+<area shape="poly" id="edge45_Node000036_Node000017" title=" " alt="" coords="400,1024,460,1021,530,1014,605,1002,678,982,737,953,785,920,788,925,739,957,680,986,606,1007,531,1020,460,1027,400,1029"/>
+<area shape="poly" id="edge47_Node000037_Node000017" title=" " alt="" coords="430,1085,488,1078,551,1067,616,1049,677,1024,713,1002,744,975,793,923,797,927,748,979,716,1007,680,1029,618,1054,552,1072,488,1084,430,1090"/>
+<area shape="poly" id="edge62_Node000038_Node000010" title=" " alt="" coords="337,801,356,716,390,589,412,523,436,464,461,416,489,386,522,368,558,356,595,351,633,350,705,358,765,373,764,378,704,363,633,355,596,356,559,362,524,373,492,390,466,419,440,466,417,525,395,590,361,717,342,802"/>
+<area shape="poly" id="edge57_Node000038_Node000017" title=" " alt="" coords="347,826,369,856,402,893,443,930,492,958,542,973,583,975,625,969,678,957,732,940,778,918,781,923,734,945,679,963,626,974,583,981,541,978,490,962,440,934,398,897,365,859,343,829"/>
+<area shape="rect" id="Node000039" href="$classson_1_1db.html#a6cf0599dce84fa3528aa8c7f644bfa47" title="Add station &#39;WiFi6Capabilities&#39; data element, set values to its parameters." alt="" coords="514,795,655,835"/>
+<area shape="poly" id="edge49_Node000038_Node000039" title=" " alt="" coords="430,812,500,812,500,817,430,817"/>
+<area shape="rect" id="Node000040" href="$classson_1_1db.html#af5e6849af57b22d0ee3d80cfe63fa366" title="Add station &#39;HTCapabilities&#39; data element, set values to its parameters." alt="" coords="514,859,655,899"/>
+<area shape="poly" id="edge50_Node000038_Node000040" title=" " alt="" coords="387,825,501,855,500,860,385,830"/>
+<area shape="rect" id="Node000041" href="$classson_1_1db.html#a587f7f7da29378336150b138138d1045" title="Add station &#39;VHTCapabilities&#39; data element, set values to its parameters." alt="" coords="743,597,885,637"/>
+<area shape="poly" id="edge51_Node000038_Node000041" title=" " alt="" coords="356,800,414,765,490,730,542,712,584,703,626,695,678,679,762,641,764,646,680,684,627,700,585,709,543,717,492,734,417,770,358,804"/>
+<area shape="rect" id="Node000042" href="$classson_1_1db.html#adbac1a22db0baab7e56e16ad932a2896" title=" " alt="" coords="505,400,664,440"/>
+<area shape="poly" id="edge53_Node000038_Node000042" title=" " alt="" coords="336,801,347,739,373,646,393,593,419,542,451,493,489,450,494,446,497,450,493,454,455,496,424,544,398,596,378,647,352,741,341,802"/>
+<area shape="rect" id="Node000043" href="$classson_1_1db.html#a71e4d46a9c17bba9db086749873288be" title=" " alt="" coords="508,745,661,770"/>
+<area shape="poly" id="edge58_Node000038_Node000043" title=" " alt="" coords="391,799,515,771,516,776,392,805"/>
+<area shape="rect" id="Node000044" href="$classson_1_1db.html#a05ce186d1c2c7e3985e90e79f6e743ae" title=" " alt="" coords="508,923,661,949"/>
+<area shape="poly" id="edge60_Node000038_Node000044" title=" " alt="" coords="355,825,414,866,492,908,514,917,513,922,490,913,411,870,352,830"/>
+<area shape="poly" id="edge52_Node000041_Node000007" title=" " alt="" coords="835,595,869,557,899,508,914,461,918,418,916,379,911,341,907,303,910,265,921,226,947,184,951,180,955,183,951,187,926,228,915,266,913,303,916,340,921,378,923,419,919,462,904,510,873,560,839,599"/>
+<area shape="poly" id="edge55_Node000042_Node000010" title=" " alt="" coords="664,408,727,400,728,405,664,413"/>
+<area shape="poly" id="edge56_Node000042_Node000011" title=" " alt="" coords="597,398,659,308,695,263,725,234,738,226,740,231,728,238,699,267,663,312,602,401"/>
+<area shape="poly" id="edge54_Node000042_Node000017" title=" " alt="" coords="666,437,681,450,708,493,721,534,723,573,719,612,714,652,711,694,714,739,729,788,758,837,791,877,787,880,754,840,724,790,709,740,705,694,708,652,714,612,718,573,716,535,704,495,677,454,662,441"/>
+<area shape="poly" id="edge59_Node000043_Node000014" title=" " alt="" coords="661,755,737,755,737,760,661,760"/>
+<area shape="poly" id="edge61_Node000044_Node000014" title=" " alt="" coords="651,921,677,908,713,881,744,850,791,787,795,791,748,853,716,885,680,913,653,926"/>
+<area shape="poly" id="edge65_Node000045_Node000017" title=" " alt="" coords="647,1123,677,1105,719,1061,754,1012,781,965,800,926,804,928,786,967,758,1015,723,1065,680,1109,650,1127"/>
+<area shape="poly" id="edge64_Node000045_Node000024" title=" " alt="" coords="654,1149,770,1162,902,1183,942,1191,941,1197,901,1188,769,1167,653,1154"/>
+</map>

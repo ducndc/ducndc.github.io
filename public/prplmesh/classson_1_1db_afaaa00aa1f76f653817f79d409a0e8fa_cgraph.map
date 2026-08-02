@@ -1,0 +1,12 @@
+<map id="son::db::client_db_entry_to_mac" name="son::db::client_db_entry_to_mac">
+<area shape="rect" id="Node000001" title="Get client MAC address from db entry." alt="" coords="5,23,131,63"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1network__utils.html#a640b4109482b5726ce59132dc5482c9c" title=" " alt="" coords="179,51,333,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,50,165,55,165,60,131,55"/>
+<area shape="rect" id="Node000003" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="381,5,527,31"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="131,37,367,21,368,26,131,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="330,49,392,32,394,37,331,54"/>
+<area shape="rect" id="Node000004" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="389,59,519,84"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="333,69,375,69,375,74,333,74"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="575,59,721,84"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="520,69,561,69,561,74,520,74"/>
+</map>

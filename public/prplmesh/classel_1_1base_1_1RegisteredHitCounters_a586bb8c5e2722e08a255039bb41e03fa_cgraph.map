@@ -1,0 +1,13 @@
+<map id="el::base::RegisteredHitCounters::validateEveryN" name="el::base::RegisteredHitCounters::validateEveryN">
+<area shape="rect" id="Node000001" title="Validates counter for every N, i.e, registers new if does not exist otherwise updates original one." alt="" coords="5,149,215,189"/>
+<area shape="rect" id="Node000002" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html#a0c3218784c8bdbe88dcbadf95da6b4e2" title="Gets pointer from repository with speicifed arguments. Arguments are passed to predicate in order to ..." alt="" coords="263,5,489,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,146,194,109,261,70,277,63,280,68,264,75,196,113,141,151"/>
+<area shape="rect" id="Node000003" href="$classel_1_1base_1_1HitCounter.html#ac2b3af741dc18e7839f4211af26a2887" title=" " alt="" coords="307,85,445,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,146,293,122,294,127,195,151"/>
+<area shape="rect" id="Node000004" href="$classel_1_1base_1_1threading_1_1ThreadSafe.html#ad265274e935408d2444cfd253f28965a" title=" " alt="" coords="311,149,441,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="215,166,298,166,298,171,215,171"/>
+<area shape="rect" id="Node000005" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html#a561a5d418106a16473ff94d43a4b6b04" title=" " alt="" coords="281,213,471,282"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="179,186,268,213,267,218,178,191"/>
+<area shape="rect" id="Node000006" href="$classel_1_1base_1_1HitCounter.html#a04dcca0a3f1b1f9a0ef8d812f00cecf0" title="Validates hit counts and resets it if necessary." alt="" coords="307,306,445,346"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="132,187,188,239,225,267,264,292,295,305,293,310,261,296,222,272,185,243,129,191"/>
+</map>

@@ -1,0 +1,25 @@
+<map id="el::base::RegisteredLoggers::RegisteredLoggers" name="el::base::RegisteredLoggers::RegisteredLoggers">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,135,191,175"/>
+<area shape="rect" id="Node000002" href="$classel_1_1Configurations.html#ab34fa2ed4ac77f47b41e464c2d186239" title="Sets configurations to &quot;factory based&quot; configurations." alt="" coords="239,135,363,175"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,152,225,152,225,157,191,157"/>
+<area shape="rect" id="Node000003" href="$classel_1_1Configurations.html#a332717de96efc851a202b7afcc5e395c" title="Sets value of configuration for specified level." alt="" coords="411,113,561,138"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="362,142,396,137,397,142,363,148"/>
+<area shape="rect" id="Node000011" href="$classel_1_1Configurations.html#a56c82c15ea39cc230a5c85ec2c41cbfd" title="Sets configuration for all levels." alt="" coords="424,163,548,203"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="363,161,410,169,410,174,362,167"/>
+<area shape="rect" id="Node000004" href="$classel_1_1base_1_1threading_1_1ThreadSafe.html#ad265274e935408d2444cfd253f28965a" title=" " alt="" coords="609,41,739,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="524,110,601,83,603,88,525,115"/>
+<area shape="rect" id="Node000005" href="$classel_1_1Configurations.html#a05c373510ca513e4f61999c84d512831" title="Thread unsafe set." alt="" coords="612,105,736,145"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="562,123,599,123,599,128,562,128"/>
+<area shape="rect" id="Node000008" href="$classel_1_1Configurations.html#a800efb58724eb771027135b282eae512" title="Sets configurations (Unsafely) for all levels including Level::Global if includeGlobalLevel is true." alt="" coords="803,163,939,203"/>
+<area shape="poly" id="edge11_Node000003_Node000008" title=" " alt="" coords="530,136,610,155,703,168,790,176,789,181,702,173,609,160,529,141"/>
+<area shape="rect" id="Node000006" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html#a561a5d418106a16473ff94d43a4b6b04" title=" " alt="" coords="787,5,956,75"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="720,103,777,78,779,83,722,108"/>
+<area shape="rect" id="Node000007" href="$classel_1_1Configuration.html#a04755de11422d7570869433ea157b705" title="Set string based configuration value." alt="" coords="809,99,934,139"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="736,121,795,119,795,124,736,126"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="718,143,791,165,789,170,717,148"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="827,165,749,141,750,136,828,160"/>
+<area shape="rect" id="Node000009" href="$classel_1_1LevelHelper.html#a1279f27df29a003df5ecc3d0bf4dacbb" title="Casts int(ushort) to level, useful for iterating through enum." alt="" coords="1004,141,1191,166"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="939,171,990,165,990,170,940,177"/>
+<area shape="rect" id="Node000010" href="$classel_1_1LevelHelper.html#a7f0dbfceb2354a72c2802d02c300430d" title="Applies specified function to each level starting from startIndex." alt="" coords="1016,191,1179,231"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="940,188,1002,196,1002,202,939,194"/>
+</map>

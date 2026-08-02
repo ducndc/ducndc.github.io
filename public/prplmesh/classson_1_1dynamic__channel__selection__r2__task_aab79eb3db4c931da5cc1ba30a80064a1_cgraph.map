@@ -1,0 +1,12 @@
+<map id="son::dynamic_channel_selection_r2_task::compute_scan_channels" name="son::dynamic_channel_selection_r2_task::compute_scan_channels">
+<area shape="rect" id="Node000001" title="Compute OperatingClass / Channels for the Scan Request based on database info." alt="" coords="5,55,195,110"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a4607911194218d9fe95b7a6feae96919" title="Get the channel scan pool object." alt="" coords="245,5,387,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,55,230,45,232,50,196,60"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="456,35,583,75"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="195,74,442,57,443,62,195,79"/>
+<area shape="rect" id="Node000004" href="$classson_1_1wireless__utils.html#a078f6f46bf99ac53d10ce191a06be7a7" title="get operating class number by channel and channel bandwidth" alt="" coords="243,121,389,175"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="192,108,230,119,229,124,190,113"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="388,33,442,41,442,46,387,38"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a9ca3466505a1ccda48a6a6a428bb9e74" title="Get the center channel of the channel." alt="" coords="437,128,601,168"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="390,145,424,145,424,151,390,151"/>
+</map>

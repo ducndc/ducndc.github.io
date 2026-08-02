@@ -1,0 +1,13 @@
+<map id="son::db::set_controller_qm_descriptor" name="son::db::set_controller_qm_descriptor">
+<area shape="rect" id="Node000001" title="Store a controller&#45;managed QoS management descriptor." alt="" coords="608,60,759,100"/>
+<area shape="rect" id="Node000002" href="$classson_1_1service__prioritization__task.html#a60adf763bc7c1460bb7a224224868bcc" title="Handle QoS Management Notification messages from an Agent." alt="" coords="357,5,560,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="594,67,560,61,561,55,595,62"/>
+<area shape="rect" id="Node000004" href="$namespaceprplmesh_1_1controller_1_1actions.html#af706d2212809d6d6302f9360b23e01d3" title="Configure TR&#45;181 SetQMDescriptors inputs for the current BSS." alt="" coords="361,99,556,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="595,98,556,105,556,99,594,93"/>
+<area shape="rect" id="Node000003" href="$classson_1_1service__prioritization__task.html#adde4bce673598053fd0a4cfe2ab26e4e" title="Handle ieee1905 message." alt="" coords="104,20,309,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="344,43,309,43,309,37,344,37"/>
+<area shape="rect" id="Node000005" href="$namespaceprplmesh_1_1controller_1_1actions.html#a2814d2a0df8cb7900316bfe0575ca9b1" title=" " alt="" coords="129,99,284,139"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="347,121,284,121,284,116,347,116"/>
+<area shape="rect" id="Node000006" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,106,56,131"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="116,121,56,121,56,116,116,116"/>
+</map>

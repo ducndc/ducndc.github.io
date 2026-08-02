@@ -1,0 +1,13 @@
+<map id="son::db::dm_clear_sta_stats" name="son::db::dm_clear_sta_stats">
+<area shape="rect" id="Node000001" title="Clears all stats for corresponding STA." alt="" coords="5,69,156,109"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a8913d159e0c21d8e42f9c293d1462a3b" title="Sets Extended Link Metrics for corresponding STA." alt="" coords="204,5,363,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,67,206,47,207,52,146,72"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#af5ab4481a07b86081fa2aedcd40fb554" title="Set values for estimated MAC data rate downlink and uplink for STA.EstMACDataRateDownlink and STA...." alt="" coords="213,69,354,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="156,87,198,87,198,92,156,92"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#acafdcfdd4dbd56ca540666bc27e7a6a4" title="Sets Traffic Stats for corresponding STA." alt="" coords="213,133,354,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="146,107,207,127,206,132,144,112"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="411,77,548,102"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="346,43,427,70,426,75,344,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="354,87,397,87,397,92,354,92"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="344,131,426,104,427,109,346,136"/>
+</map>

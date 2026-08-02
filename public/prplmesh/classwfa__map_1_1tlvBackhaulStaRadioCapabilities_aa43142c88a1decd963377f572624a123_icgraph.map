@@ -1,0 +1,13 @@
+<map id="wfa_map::tlvBackhaulStaRadioCapabilities::ruid" name="wfa_map::tlvBackhaulStaRadioCapabilities::ruid">
+<area shape="rect" id="Node000001" title=" " alt="" coords="707,53,912,93"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1TopologyTask.html#aed2b2d4be519251d73cec842a650683c" title="Add and fill bSTA Radio Capabilities." alt="" coords="475,5,645,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="693,57,645,49,646,44,694,51"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1CapabilityReportingTask.html#a293fe155b47b065d9015137cacf4875c" title=" " alt="" coords="461,84,659,139"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="694,93,659,99,658,93,693,88"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1TopologyTask.html#a60a4e6ffc0a8793d606f20a36de81606" title="Handles 1905 Topology Query message." alt="" coords="233,13,396,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="461,35,396,35,396,30,461,30"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1TopologyTask.html#a2c75b5c339449510a43209a2e90fcee8" title="Handle CMDU message." alt="" coords="5,13,168,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="220,35,168,35,168,30,220,30"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1CapabilityReportingTask.html#a6a8c641f2791e991564843ee929042bc" title="Handle CMDU message." alt="" coords="216,91,413,131"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="447,114,413,114,413,109,447,109"/>
+</map>

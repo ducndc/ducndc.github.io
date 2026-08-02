@@ -1,0 +1,17 @@
+<map id="son::db::get_channel_preference" name="son::db::get_channel_preference">
+<area shape="rect" id="Node000001" title="Get the preference score for a given operating class &amp; channel pair." alt="" coords="5,169,148,209"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="212,5,387,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,168,131,112,161,81,195,55,205,49,208,54,197,60,164,85,135,115,93,171"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="236,69,363,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,167,148,143,195,119,222,108,223,113,197,124,151,147,110,172"/>
+<area shape="rect" id="Node000004" href="$classson_1_1wireless__utils.html#afd8cfe5f9708a2d9c1e4503956c83619" title="Match channel number in the given operating class." alt="" coords="196,133,403,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,175,182,170,183,175,149,180"/>
+<area shape="rect" id="Node000006" href="$classson_1_1wireless__utils.html#ac7d7bb75d799bf38c516cbdd1300d243" title=" " alt="" coords="220,198,379,253"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="149,198,207,208,206,213,148,203"/>
+<area shape="rect" id="Node000007" href="$classson_1_1wireless__utils.html#a72ea0ed0fd09c2536d4f7815cf0aacb6" title="convert operating class to bandwidth based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="230,277,369,331"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="108,207,150,235,197,262,219,272,216,276,195,266,147,239,105,212"/>
+<area shape="rect" id="Node000008" href="$classson_1_1wireless__utils.html#a23eca76fb7a6f97322af76197c4db29c" title=" " alt="" coords="230,356,369,396"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="90,208,132,273,162,309,198,340,219,352,216,357,194,345,158,313,127,276,86,211"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a8d99a3fb7cc8f914325695a89005bddf" title="convert operating class to channel set based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="451,126,589,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="403,151,437,151,437,156,403,156"/>
+</map>

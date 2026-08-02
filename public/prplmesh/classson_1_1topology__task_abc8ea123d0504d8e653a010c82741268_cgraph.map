@@ -1,0 +1,21 @@
+<map id="son::topology_task::handle_bss_configuration_report_tlv" name="son::topology_task::handle_bss_configuration_report_tlv">
+<area shape="rect" id="Node000001" title="Handles the recieving of a BSS Configuration Report TLV. Currently only updates the backhaul/fronthau..." alt="" coords="5,5,183,60"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a39cb768c3e3115545cbdb128e6fedd98" title="Finds and returns sBss with a specified BSSID (and optionaly al_mac)." alt="" coords="822,20,941,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,27,445,21,768,23,808,25,808,30,768,29,445,27,183,32"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a9bd42fbb07f1d92a4aa3cadc6ebe279c" title=" " alt="" coords="231,71,371,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,52,235,65,234,70,182,57"/>
+<area shape="poly" id="edge10_Node000003_Node000002" title=" " alt="" coords="371,69,418,62,631,43,808,33,809,38,631,48,419,67,371,74"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a51ffceccdddec5ba0aba3e1643bb15fa" title=" " alt="" coords="419,121,541,147"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="347,94,422,115,420,120,346,99"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a52cc5aff6b1b56c4c5ba26da9516bae4" title="Add or update instance of &quot;BSS&quot; data element, set values for its parameters." alt="" coords="589,71,768,96"/>
+<area shape="poly" id="edge9_Node000003_Node000005" title=" " alt="" coords="371,81,575,81,575,86,371,86"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="818,149,945,189"/>
+<area shape="poly" id="edge11_Node000003_Node000007" title=" " alt="" coords="318,94,362,126,390,143,420,155,469,170,521,179,625,187,723,185,804,178,805,183,723,191,625,193,520,184,468,175,418,161,387,147,359,131,315,98"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="530,119,615,97,616,102,531,124"/>
+<area shape="rect" id="Node000008" href="$classson_1_1db.html#a45836132d4b9f88be5bd7d6ffa6feca8" title="Get agent containing a specific radio." alt="" coords="613,121,744,161"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="542,133,599,135,599,141,542,139"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="730,68,816,46,817,51,731,73"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#a12d3c2aabc63ee0fcdb1ca26f854f484" title="Get agent from its ALID." alt="" coords="816,71,947,96"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="768,81,802,81,802,86,768,86"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="732,93,769,106,836,139,834,144,767,111,730,99"/>
+</map>

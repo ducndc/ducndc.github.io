@@ -1,0 +1,25 @@
+<map id="bwl::nl80211::ap_wlan_hal_nl80211::add_bss" name="bwl::nl80211::ap_wlan_hal_nl80211::add_bss">
+<area shape="rect" id="Node000001" title="Dynamically add a new BSS for the radio." alt="" coords="5,174,160,214"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1base__wlan__hal__nl80211.html#afb994d630bad0b392b6e3d7680f0c3ea" title="Register a new interface and immediately connect to it for commands and event handling." alt="" coords="211,5,373,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,172,145,123,206,71,215,65,218,69,210,75,149,127,103,176"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1base__wlan__hal.html#a23e4b6e82754f75aa36decfde1c4fc62" title=" " alt="" coords="224,85,360,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,172,207,134,224,127,226,132,209,139,127,176"/>
+<area shape="rect" id="Node000004" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="227,149,357,175"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,180,212,171,213,177,161,185"/>
+<area shape="rect" id="Node000006" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a7d2f2df88299fdcca1b78cab47c643c4" title="set key/value in the head section" alt="" coords="208,199,376,253"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="161,203,195,208,194,214,160,208"/>
+<area shape="rect" id="Node000007" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a4c2ae1523e94a2807a6b361a3e2ead48" title="stores the configuration" alt="" coords="223,278,361,318"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="118,212,209,262,226,270,224,275,207,267,115,216"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1nl80211_1_1base__wlan__hal__nl80211.html#ad0a2d247d2de4a2ff085316053894a8e" title=" " alt="" coords="210,367,374,421"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="103,213,149,266,210,328,244,356,240,360,206,332,145,270,99,216"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="435,144,582,169"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="357,158,421,156,422,161,358,163"/>
+<area shape="rect" id="Node000008" href="$classmapf_1_1encryption_1_1sha256.html#af67f7766d4fbc962f08f8556c566920e" title="Calculate and return the sha256 digest." alt="" coords="424,218,593,258"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="360,276,422,259,423,264,362,282"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1string__utils.html#a711eb3f0775f9e2c954c754f484f3a4b" title=" " alt="" coords="435,282,582,322"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="361,297,422,298,421,303,361,302"/>
+<area shape="rect" id="Node000010" href="$classmapf_1_1encryption_1_1sha256.html#abf4dbb7363678f48e9e5540bb95a12e4" title=" " alt="" coords="424,346,593,386"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="357,315,432,339,431,344,356,321"/>
+<area shape="poly" id="edge8_Node000008_Node000008" title=" " alt="" coords="468,218,466,208,472,199,487,193,509,191,534,194,548,202,545,206,532,199,509,197,488,199,475,203,471,209,473,217"/>
+<area shape="poly" id="edge12_Node000011_Node000011" title=" " alt="" coords="251,367,251,357,259,348,272,342,292,340,316,343,329,351,326,356,314,348,292,345,274,347,262,352,256,358,256,367"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="beerocks::qos_management::request_type_from_value" name="beerocks::qos_management::request_type_from_value">
+<area shape="rect" id="Node000001" title="Convert an IEEE descriptor request type value to an enum." alt="" coords="1032,91,1219,131"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1qos__management.html#a0eb22f7bf67af2ebb41a8a63288d014e" title="Parse a complete SCS/MSCS descriptor element." alt="" coords="797,84,984,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1019,114,984,114,984,109,1019,109"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1qos__management.html#a8e4ede5766aacf86c6f0a106be903afe" title="Check whether the descriptor carries a remove request." alt="" coords="549,5,749,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="793,82,733,63,735,58,794,77"/>
+<area shape="rect" id="Node000004" href="$namespacebeerocks_1_1qos__management.html#abf21056384cd4654b4a135088fbfb00d" title="Validate a complete QoS management descriptor element." alt="" coords="556,84,743,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="784,114,743,114,743,109,784,109"/>
+<area shape="rect" id="Node000008" href="$namespacebeerocks_1_1qos__management.html#a5a309735f4dbb697c075d9dd26681626" title="Parse a complete SCS/MSCS descriptor element byte vector." alt="" coords="556,163,743,217"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="794,145,735,165,733,160,793,140"/>
+<area shape="rect" id="Node000005" href="$namespaceprplmesh_1_1controller_1_1actions.html#af706d2212809d6d6302f9360b23e01d3" title="Configure TR&#45;181 SetQMDescriptors inputs for the current BSS." alt="" coords="307,91,501,131"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="542,114,501,114,501,109,542,109"/>
+<area shape="rect" id="Node000006" href="$namespaceprplmesh_1_1controller_1_1actions.html#a2814d2a0df8cb7900316bfe0575ca9b1" title=" " alt="" coords="104,91,259,131"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="292,114,259,114,259,109,292,109"/>
+<area shape="rect" id="Node000007" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,99,56,124"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="90,114,56,114,56,109,90,109"/>
+</map>

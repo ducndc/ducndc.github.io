@@ -1,0 +1,14 @@
+<map id="son::agent_monitoring_task::dm_add_agent_disconnected_event" name="son::agent_monitoring_task::dm_add_agent_disconnected_event">
+<area shape="rect" id="Node000001" title="Adds NBAPI AgentDisconnectedEvent object, all its sub&#45;objects and set values for it&#39;s parameters para..." alt="" coords="5,77,276,117"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#ac65d6f65812a13cae41ed412e381c6a6" title="Removes excessive NBAPI objects from system bus, if amount of them succeed the limit." alt="" coords="347,5,529,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,75,341,46,342,51,225,80"/>
+<area shape="rect" id="Node000004" href="$classson_1_1agent__monitoring__task.html#ae1fd7c5f0fd26eee5ae72ea643eef5a6" title="Set values for parameters of NBAPI AgentDisconnected, adds its sub&#45;objects." alt="" coords="324,70,552,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="276,95,310,95,310,100,276,100"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#a080b5ff0a4f667bd91f808de477d53c6" title="Returns ambiorix object." alt="" coords="600,146,771,171"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="221,115,324,135,461,148,586,154,586,160,461,154,324,140,220,120"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a6db1e54425fbb798118e69c6de5b04b1" title="Get index and instance path from full data model path. Simplifies ambiorix/nbapi calls." alt="" coords="608,5,763,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="529,23,594,23,594,28,529,28"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a911f80eb1a385d8fdb141e2c7b2bbf07" title=" " alt="" coords="615,77,755,117"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="552,95,601,95,601,100,552,100"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="549,122,621,140,619,145,548,127"/>
+</map>

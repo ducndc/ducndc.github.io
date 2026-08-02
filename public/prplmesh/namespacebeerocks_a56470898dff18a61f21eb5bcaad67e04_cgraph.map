@@ -1,0 +1,11 @@
+<map id="beerocks::get_cumulative_preference" name="beerocks::get_cumulative_preference">
+<area shape="rect" id="Node000001" title="Returns the cumulative preference of a given channel. A cumulative preference is calculated by adding..." alt="" coords="5,27,176,67"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks.html#a1f1f9f29d0e9a690e414a95c5a4ffdbd" title="Returns the preference score of a given channel." alt="" coords="224,27,393,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,45,210,45,210,50,176,50"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="463,5,626,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="393,34,449,27,450,32,394,39"/>
+<area shape="rect" id="Node000004" href="$classson_1_1wireless__utils.html#afd8cfe5f9708a2d9c1e4503956c83619" title="Match channel number in the given operating class." alt="" coords="441,55,648,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="394,55,428,59,427,64,393,60"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a8d99a3fb7cc8f914325695a89005bddf" title="convert operating class to channel set based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="696,48,835,103"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="649,73,682,73,682,78,649,78"/>
+</map>

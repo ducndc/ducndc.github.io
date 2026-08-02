@@ -1,0 +1,5 @@
+<map id="bwl::nl80211::wpa_ctrl_socket_cmd::connect" name="bwl::nl80211::wpa_ctrl_socket_cmd::connect">
+<area shape="rect" id="Node000001" title="Connect socket to hostapd/wpa_supplicant deamon. This implementation implies opening the socket." alt="" coords="5,5,160,45"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a990f5585492bcc8b0146304f4923a382" title="Open wpa_ctrl socket. Once successful, a new file descriptor is available for sending messages hostap..." alt="" coords="208,5,360,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,23,194,23,194,28,160,28"/>
+</map>

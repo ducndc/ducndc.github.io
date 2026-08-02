@@ -1,0 +1,16 @@
+<map id="el::base::TypedConfigurations" name="el::base::TypedConfigurations">
+<area shape="rect" id="Node000001" title="Configurations with data types." alt="" coords="1341,18,1536,43"/>
+<area shape="rect" id="Node000002" href="$classel_1_1base_1_1threading_1_1ThreadSafe.html" title="Base of thread safe class, this class is inheritable&#45;only." alt="" coords="419,15,548,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="561,16,624,7,691,3,1129,3,1239,7,1341,16,1341,21,1239,12,1129,8,691,8,625,12,562,21"/>
+<area shape="rect" id="Node000007" href="$classel_1_1base_1_1utils_1_1AbstractRegistry.html" title="Abstract registry (aka repository) that provides basic interface for pointer repository specified by ..." alt="" coords="597,44,788,84"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="562,43,597,48,597,53,561,48"/>
+<area shape="rect" id="Node000003" href="$classel_1_1base_1_1threading_1_1internal_1_1NoMutex.html" title="Mutex wrapper used when multi&#45;threading is disabled." alt="" coords="179,15,312,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="326,32,418,32,418,37,326,37"/>
+<area shape="rect" id="Node000004" href="$classel_1_1base_1_1NoCopy.html" title="Internal helper class that prevent copy constructor for class." alt="" coords="5,22,129,47"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="143,32,178,32,178,37,143,37"/>
+<area shape="rect" id="Node000005" href="$classel_1_1Configurations.html" title="Thread&#45;safe Configuration repository." alt="" coords="1065,47,1189,73"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1203,50,1341,37,1341,42,1204,56"/>
+<area shape="rect" id="Node000006" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html" title=" " alt="" coords="837,43,1016,98"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1030,63,1065,61,1065,66,1030,68"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="802,64,837,65,837,71,801,70"/>
+</map>

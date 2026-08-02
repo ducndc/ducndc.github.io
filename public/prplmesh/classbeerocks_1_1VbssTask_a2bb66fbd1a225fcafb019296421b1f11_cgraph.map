@@ -1,0 +1,13 @@
+<map id="beerocks::VbssTask::handle_channel_switch_request" name="beerocks::VbssTask::handle_channel_switch_request">
+<area shape="rect" id="Node000001" title="Handle the channel switch announcement request sent by the controller." alt="" coords="5,85,171,139"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1slave__thread.html#ab425241b241a7796d1cc9d1d56e68e70" title="Forwards given received CMDU message through the specified socket connection." alt="" coords="240,5,399,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,82,218,55,239,47,241,52,220,60,152,87"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="238,70,401,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,99,224,92,225,97,172,104"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1slave__thread.html#a8c39a142418df7191fa4e423b43ae217" title=" " alt="" coords="241,120,398,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,119,228,126,227,132,171,125"/>
+<area shape="rect" id="Node000005" href="$classieee1905__1_1_1CmduMessageRx.html#ad1db8fee42b3e3a1aaf8312a139b72f3" title=" " alt="" coords="219,184,420,224"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="146,137,220,170,240,177,238,182,218,174,144,142"/>
+<area shape="rect" id="Node000006" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="468,191,605,217"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="420,201,454,201,454,207,420,207"/>
+</map>

@@ -1,0 +1,120 @@
+<map id="device.serial.SerialDevice.__exit__" name="device.serial.SerialDevice.__exit__">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,931,183,971"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1dummy_1_1sta__wlan__hal__dummy.html#a72e2eea006566f5250e15035573ffccf" title=" " alt="" coords="267,93,434,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,931,100,777,121,540,138,416,161,302,191,207,209,171,229,143,253,125,256,129,233,146,213,173,196,209,166,303,143,417,126,541,106,777,99,931"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#abdcd461a9456b2e20c3325f9437ef10d" title=" " alt="" coords="271,157,430,197"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,930,150,755,228,505,287,338,334,208,339,210,292,340,233,507,155,757,104,932"/>
+<area shape="rect" id="Node000009" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html#a77d704eda022eb76a5945c72113b605a" title=" " alt="" coords="266,587,435,627"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="107,930,229,760,323,636,327,640,233,763,112,933"/>
+<area shape="rect" id="Node000013" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#aaf6b70b21ef742e1898db51d82cb94d1" title=" " alt="" coords="537,455,689,495"/>
+<area shape="poly" id="edge23_Node000001_Node000013" title=" " alt="" coords="94,931,101,862,122,766,139,714,162,663,192,615,229,573,261,548,297,527,335,510,374,497,452,481,523,473,524,478,453,486,376,503,337,515,299,532,264,552,232,577,196,618,167,665,144,716,127,768,106,863,99,931"/>
+<area shape="rect" id="Node000028" href="$classbeerocks_1_1cli__bml.html#a749800a38e18949d3df5f3be78cfee09" title=" " alt="" coords="285,774,417,814"/>
+<area shape="poly" id="edge40_Node000001_Node000028" title=" " alt="" coords="110,929,159,876,193,848,229,824,270,807,273,812,232,828,196,852,163,880,113,933"/>
+<area shape="rect" id="Node000036" href="$classbeerocks_1_1cli__socket.html#a610537052815b84656620ad94c1cc59e" title=" " alt="" coords="279,838,422,878"/>
+<area shape="poly" id="edge48_Node000001_Node000036" title=" " alt="" coords="134,928,230,887,265,876,267,881,232,892,137,933"/>
+<area shape="rect" id="Node000038" href="$classbwl_1_1sta__wlan__hal.html#a01f175d5248f296f18a1b0999bbe7c4e" title=" " alt="" coords="283,902,418,942"/>
+<area shape="poly" id="edge52_Node000001_Node000038" title=" " alt="" coords="182,938,269,928,270,934,183,944"/>
+<area shape="rect" id="Node000039" href="$classbeerocks_1_1cli.html#a8a595f965331d88341dbbfb71dec2fa7" title=" " alt="" coords="267,967,434,992"/>
+<area shape="poly" id="edge53_Node000001_Node000039" title=" " alt="" coords="183,958,254,966,254,971,182,963"/>
+<area shape="rect" id="Node000040" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__cmd.html#a87ef6c473749c3b6b7dbb9cd3f02856e" title="Disconnect socket from hostapd/wpa_supplicant deamon. This implementation implies closing the socket." alt="" coords="265,1017,436,1057"/>
+<area shape="poly" id="edge54_Node000001_Node000040" title=" " alt="" coords="145,969,232,1001,262,1010,260,1015,230,1006,144,974"/>
+<area shape="rect" id="Node000042" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a609ed83012c520db859b121211bd4e36" title="Detach and close event socket to hostapd/wpa_supplicant deamon." alt="" coords="261,1081,440,1121"/>
+<area shape="poly" id="edge56_Node000001_Node000042" title=" " alt="" coords="115,969,165,1018,197,1044,232,1066,249,1074,247,1079,229,1071,194,1048,161,1022,111,973"/>
+<area shape="rect" id="Node000047" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a69346781e9a9f3ef178a04c61260ab88" title="Abstract method: Disconnect from hostapd/wpa_supplicant deamon. This interface has to be implemented ..." alt="" coords="275,1145,427,1185"/>
+<area shape="poly" id="edge63_Node000001_Node000047" title=" " alt="" coords="107,970,126,1005,153,1049,189,1093,232,1130,263,1146,260,1150,229,1135,185,1097,149,1052,121,1008,102,973"/>
+<area shape="rect" id="Node000048" href="$classbeerocks_1_1CmduServerImpl.html#aed2f47c0c601c27a757406dd5a90c797" title="Disconnects a client socket connection." alt="" coords="260,1209,441,1249"/>
+<area shape="poly" id="edge64_Node000001_Node000048" title=" " alt="" coords="103,970,118,1017,144,1078,182,1141,205,1170,232,1194,249,1205,246,1209,229,1199,201,1173,177,1144,139,1080,113,1019,98,972"/>
+<area shape="rect" id="Node000051" href="$classbeerocks_1_1CmduServer.html#ab33bebc31818bdd83e49f13ec3c176d1" title="Disconnects a client socket connection." alt="" coords="273,1273,429,1313"/>
+<area shape="poly" id="edge67_Node000001_Node000051" title=" " alt="" coords="101,971,112,1028,135,1106,153,1147,174,1188,201,1226,232,1258,261,1276,258,1280,229,1263,197,1229,170,1191,148,1150,130,1108,107,1029,95,972"/>
+<area shape="rect" id="Node000052" href="$classdevice_1_1serial_1_1SerialDevice.html#a9364fd32c70b964bb96bf2968824ea16" title=" " alt="" coords="231,1337,471,1363"/>
+<area shape="poly" id="edge68_Node000001_Node000052" title=" " alt="" coords="99,971,106,1039,126,1135,143,1186,166,1236,195,1283,232,1323,240,1328,236,1332,229,1327,191,1286,161,1239,138,1188,121,1136,101,1040,94,972"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a0feaa359383114c27ff76915782e4d48" title=" " alt="" coords="996,43,1192,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="429,162,450,154,469,143,485,122,491,101,498,79,506,69,517,60,579,31,645,14,713,5,781,3,847,7,910,15,1015,37,1013,42,909,21,847,13,781,8,714,10,646,19,581,36,520,64,509,72,503,81,496,102,490,125,472,147,453,159,431,167"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1base__wlan__hal.html#a23e4b6e82754f75aa36decfde1c4fc62" title=" " alt="" coords="1026,235,1162,275"/>
+<area shape="poly" id="edge7_Node000003_Node000006" title=" " alt="" coords="430,181,948,234,1013,242,1012,247,948,239,430,186"/>
+<area shape="rect" id="Node000007" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#aa53a6860a61e1124a50d8b73f382c7cb" title=" " alt="" coords="527,127,699,167"/>
+<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="430,165,514,156,514,161,430,170"/>
+<area shape="rect" id="Node000008" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a0c1293afb975ee5283a8cf6c6608a7e0" title=" " alt="" coords="771,90,933,130"/>
+<area shape="poly" id="edge13_Node000003_Node000008" title=" " alt="" coords="430,160,469,142,483,129,492,115,501,101,517,89,550,77,583,70,651,66,717,72,775,84,774,89,716,77,651,71,584,75,551,82,520,94,505,104,496,118,488,133,472,147,432,165"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="1051,44,1048,33,1055,24,1070,19,1094,17,1121,19,1136,27,1133,31,1120,25,1094,22,1072,24,1058,29,1053,35,1056,42"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1KeyValueParser.html#aa6b73c9c987d8bbf823d9c031b8de822" title=" " alt="" coords="1257,43,1399,83"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="1192,61,1243,61,1243,66,1192,66"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="1286,44,1284,33,1290,24,1305,19,1328,17,1354,19,1368,27,1366,31,1353,24,1328,22,1306,24,1294,29,1289,35,1291,42"/>
+<area shape="poly" id="edge9_Node000007_Node000007" title=" " alt="" coords="569,128,566,117,574,108,589,103,613,101,641,103,656,111,654,115,640,109,613,106,590,108,577,113,572,119,574,126"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="699,131,756,122,757,127,700,136"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="933,92,982,82,983,87,934,97"/>
+<area shape="poly" id="edge12_Node000008_Node000006" title=" " alt="" coords="888,128,1049,226,1046,230,885,132"/>
+<area shape="poly" id="edge15_Node000009_Node000006" title=" " alt="" coords="367,585,423,522,513,437,567,392,626,351,689,314,755,286,821,268,889,257,954,251,1012,250,1012,255,955,257,890,262,822,273,757,291,692,319,629,355,570,397,516,441,427,526,371,589"/>
+<area shape="rect" id="Node000010" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html#aafd46e72fa1c8f326442f4a2147f3d56" title=" " alt="" coords="522,669,705,709"/>
+<area shape="poly" id="edge16_Node000009_Node000010" title=" " alt="" coords="417,625,536,662,534,667,415,630"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html#a67b4c39734fe79aeb3403bfae3dd1e91" title="Reads connection status information." alt="" coords="765,661,939,701"/>
+<area shape="poly" id="edge21_Node000009_Node000011" title=" " alt="" coords="436,605,565,611,637,618,709,630,779,654,778,659,707,635,636,624,564,616,435,610"/>
+<area shape="rect" id="Node000012" href="$classbwl_1_1nl80211_1_1base__wlan__hal__nl80211.html#ad0a2d247d2de4a2ff085316053894a8e" title=" " alt="" coords="1012,532,1176,587"/>
+<area shape="poly" id="edge22_Node000009_Node000012" title=" " alt="" coords="435,599,998,563,998,568,436,604"/>
+<area shape="poly" id="edge17_Node000010_Node000010" title=" " alt="" coords="569,669,566,659,574,650,589,644,613,642,641,645,656,652,654,657,640,650,613,647,590,649,577,654,572,660,574,667"/>
+<area shape="poly" id="edge18_Node000010_Node000011" title=" " alt="" coords="705,683,750,681,751,687,705,688"/>
+<area shape="poly" id="edge19_Node000011_Node000012" title=" " alt="" coords="924,658,947,646,961,634,970,623,980,610,994,597,1004,591,1007,595,998,601,983,614,974,626,965,638,949,651,926,663"/>
+<area shape="poly" id="edge20_Node000012_Node000012" title=" " alt="" coords="1049,532,1049,522,1057,513,1072,507,1094,505,1120,508,1135,516,1133,521,1119,513,1094,511,1073,512,1060,517,1054,524,1054,532"/>
+<area shape="poly" id="edge25_Node000013_Node000006" title=" " alt="" coords="626,453,678,391,714,357,755,329,802,311,868,293,1012,265,1013,271,869,298,803,316,757,334,717,361,682,395,631,457"/>
+<area shape="rect" id="Node000014" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#af3456fffaa2892fed9faad71310ca044" title=" " alt="" coords="758,431,946,471"/>
+<area shape="poly" id="edge24_Node000013_Node000014" title=" " alt="" coords="689,465,744,459,745,465,690,470"/>
+<area shape="rect" id="Node000015" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a1f4b19e0fea5b145dc52461ac52282ed" title=" " alt="" coords="769,367,935,407"/>
+<area shape="poly" id="edge26_Node000013_Node000015" title=" " alt="" coords="663,453,755,417,776,409,778,414,757,422,664,458"/>
+<area shape="rect" id="Node000016" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a4cc18f40cd8669537979750224ffb07c" title=" " alt="" coords="1015,405,1173,445"/>
+<area shape="poly" id="edge37_Node000013_Node000016" title=" " alt="" coords="690,483,812,491,880,489,947,481,996,467,1041,448,1043,453,998,472,949,486,880,495,811,497,689,489"/>
+<area shape="rect" id="Node000026" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#ace3ffc750067529a0f74af9b4e31a09b" title=" " alt="" coords="765,597,939,637"/>
+<area shape="poly" id="edge38_Node000013_Node000026" title=" " alt="" coords="650,493,807,587,804,592,647,498"/>
+<area shape="poly" id="edge27_Node000015_Node000006" title=" " alt="" coords="888,365,1043,279,1046,284,891,369"/>
+<area shape="poly" id="edge28_Node000015_Node000015" title=" " alt="" coords="808,368,805,357,812,348,828,343,852,341,880,343,895,351,892,355,878,349,852,346,829,348,815,353,810,359,813,366"/>
+<area shape="poly" id="edge29_Node000015_Node000016" title=" " alt="" coords="936,397,1002,408,1001,413,935,403"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#aa86ae2cd6c1807233fc9b3272e6a400b" title="read and return content tree of first object matching requested path." alt="" coords="1240,277,1416,317"/>
+<area shape="poly" id="edge30_Node000016_Node000017" title=" " alt="" coords="1120,402,1174,365,1239,326,1253,319,1255,324,1241,331,1177,369,1123,406"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a9c53014f07cbb416bf29ebe304cd3fc4" title="get amxc var object id from the object path. eg: &quot;RootObj.TemplateObj.id&quot; or &quot;RootObj...." alt="" coords="1249,341,1407,381"/>
+<area shape="poly" id="edge31_Node000016_Node000018" title=" " alt="" coords="1167,402,1240,382,1242,387,1169,407"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a12a0350a7f7c462b12b7b6915ed3cc80" title="read and return object parameter content." alt="" coords="1240,405,1416,445"/>
+<area shape="poly" id="edge32_Node000016_Node000019" title=" " alt="" coords="1173,422,1226,422,1226,427,1173,427"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#afeccb522241e4efd8cccf4bd9160c786" title="return ssid instance path from ssid reference param of an upper layer object" alt="" coords="1249,469,1407,524"/>
+<area shape="poly" id="edge33_Node000016_Node000020" title=" " alt="" coords="1161,442,1236,466,1235,471,1159,447"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a9704f3d3418137deacd61a21b8c1843a" title="resolve a search path, and retrieve first matching result." alt="" coords="1240,549,1416,589"/>
+<area shape="poly" id="edge35_Node000016_Node000024" title=" " alt="" coords="1126,443,1194,493,1217,514,1241,533,1256,540,1253,545,1239,537,1214,518,1190,497,1122,447"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a714ae6775bbeddf3d784987cf0fc4424" title="Template method reads child typed value (with possible conversion)" alt="" coords="1464,477,1640,517"/>
+<area shape="poly" id="edge34_Node000020_Node000021" title=" " alt="" coords="1407,494,1450,494,1450,499,1407,499"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a4e1a50159b84bf6084a38a466197358b" title="resolve a search path, and retrieve all matching results." alt="" coords="1464,549,1640,589"/>
+<area shape="poly" id="edge36_Node000024_Node000025" title=" " alt="" coords="1416,566,1450,566,1450,571,1416,571"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a0c4353b1ebd4987022e8de381b653d8f" title="remove instance." alt="" coords="1006,611,1182,651"/>
+<area shape="poly" id="edge39_Node000026_Node000027" title=" " alt="" coords="940,619,993,622,992,628,939,624"/>
+<area shape="rect" id="Node000029" href="$bml_8cpp.html#acabce8b1276e63b41f1930a311344952" title=" " alt="" coords="557,733,670,759"/>
+<area shape="poly" id="edge41_Node000028_Node000029" title=" " alt="" coords="416,779,542,756,543,761,417,784"/>
+<area shape="rect" id="Node000033" href="$classSocket.html#aacc2ad59fc693055e3c0adcdbb4da209" title=" " alt="" coords="542,899,685,924"/>
+<area shape="poly" id="edge45_Node000028_Node000033" title=" " alt="" coords="418,801,446,810,472,824,488,839,497,855,505,870,520,884,533,891,531,896,517,888,501,873,492,857,484,842,469,828,444,815,416,806"/>
+<area shape="rect" id="Node000034" href="$classbeerocks_1_1cli__bml.html#ac5ada42aac543e4f5f9098e4602831b7" title=" " alt="" coords="546,834,681,874"/>
+<area shape="poly" id="edge46_Node000028_Node000034" title=" " alt="" coords="418,806,533,833,532,838,416,811"/>
+<area shape="rect" id="Node000035" href="$classSocketSelect.html#a140121a463d9080563a02a0423b1766d" title=" " alt="" coords="756,873,948,899"/>
+<area shape="poly" id="edge47_Node000028_Node000035" title=" " alt="" coords="417,790,552,795,631,804,709,819,768,840,818,864,816,869,765,845,707,824,630,809,552,800,417,795"/>
+<area shape="rect" id="Node000030" href="$classbeerocks_1_1thread__base.html#a68267d8557e8e5c2b20e77713e69d67f" title=" " alt="" coords="775,726,929,766"/>
+<area shape="poly" id="edge42_Node000029_Node000030" title=" " alt="" coords="671,743,761,743,761,749,671,749"/>
+<area shape="rect" id="Node000031" href="$classbeerocks_1_1thread__base.html#a496e5b65e88db15e9e427e553404bd13" title=" " alt="" coords="1017,701,1171,741"/>
+<area shape="poly" id="edge43_Node000030_Node000031" title=" " alt="" coords="929,735,1003,727,1003,733,930,740"/>
+<area shape="rect" id="Node000032" href="$classbeerocks_1_1thread__base.html#aaabec23b5335e4e97310e010e0aaaa43" title=" " alt="" coords="1017,765,1171,805"/>
+<area shape="poly" id="edge44_Node000030_Node000032" title=" " alt="" coords="930,756,1004,767,1003,773,929,761"/>
+<area shape="poly" id="edge49_Node000036_Node000033" title=" " alt="" coords="423,870,537,893,536,898,421,875"/>
+<area shape="rect" id="Node000037" href="$classbeerocks_1_1socket__thread.html#aecfed6b8d9d250939dac50332bd157cb" title=" " alt="" coords="531,949,696,989"/>
+<area shape="poly" id="edge50_Node000036_Node000037" title=" " alt="" coords="423,868,472,888,487,899,497,910,506,922,520,933,534,941,532,945,517,937,502,926,493,914,484,903,469,892,421,873"/>
+<area shape="poly" id="edge51_Node000037_Node000035" title=" " alt="" coords="671,946,801,901,802,906,673,951"/>
+<area shape="rect" id="Node000041" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a667ccafc98eef9b87f79efbccf1a03bf" title="Close wpa_ctrl socket. It also cleans/frees the internal resources used by wpa_ctrl socket." alt="" coords="537,1015,689,1055"/>
+<area shape="poly" id="edge55_Node000040_Node000041" title=" " alt="" coords="436,1033,523,1033,523,1038,436,1039"/>
+<area shape="poly" id="edge57_Node000042_Node000041" title=" " alt="" coords="431,1078,524,1055,525,1060,432,1083"/>
+<area shape="rect" id="Node000043" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a1c9be061f1bd48229c2faef46be35a41" title="Removes wpa_ctrl event socket from monitored event queues list." alt="" coords="519,1130,708,1170"/>
+<area shape="poly" id="edge58_Node000042_Node000043" title=" " alt="" coords="441,1115,505,1127,504,1132,440,1120"/>
+<area shape="rect" id="Node000044" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a78b2ce8b862fdaea6610ce25a239f722" title="Returns the current wpa_ctrl socket file descriptor." alt="" coords="776,1101,928,1141"/>
+<area shape="poly" id="edge62_Node000042_Node000044" title=" " alt="" coords="440,1101,762,1114,762,1120,440,1107"/>
+<area shape="rect" id="Node000045" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a3e0a6e6247c6f2cc2e6c3930dd883c6c" title="Detach the wpa_ctrl socket (i.e unsubscribe client) to stop receiving events from hostapd/wpa_supplic..." alt="" coords="536,1194,691,1234"/>
+<area shape="poly" id="edge60_Node000042_Node000045" title=" " alt="" coords="441,1116,472,1130,488,1143,497,1155,506,1168,520,1180,531,1186,528,1190,517,1184,502,1171,493,1158,484,1146,469,1135,439,1121"/>
+<area shape="poly" id="edge59_Node000043_Node000044" title=" " alt="" coords="708,1136,762,1129,763,1134,709,1141"/>
+<area shape="rect" id="Node000046" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#aa417f17c66410dd74fdc08a24015500a" title="Returns the wpa_ctrl socket file path." alt="" coords="776,1194,928,1234"/>
+<area shape="poly" id="edge61_Node000045_Node000046" title=" " alt="" coords="691,1211,762,1211,762,1217,691,1217"/>
+<area shape="rect" id="Node000049" href="$classbeerocks_1_1CmduServerImpl.html#a0cd6444f2c383c6d7fff1cb1f0ac3cbc" title="Removes connection." alt="" coords="523,1258,704,1298"/>
+<area shape="poly" id="edge65_Node000048_Node000049" title=" " alt="" coords="442,1243,509,1256,508,1261,441,1248"/>
+<area shape="rect" id="Node000050" href="$classbeerocks_1_1CmduServer.html#a5421205ef8bf13a03dd147397c656ece" title="Notifies a client&#45;disconnected event." alt="" coords="760,1258,944,1298"/>
+<area shape="poly" id="edge66_Node000049_Node000050" title=" " alt="" coords="704,1275,747,1275,747,1281,704,1281"/>
+</map>

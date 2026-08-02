@@ -1,0 +1,15 @@
+<map id="son::dynamic_channel_selection_r2_task::add_radio_to_channel_scan_request_tlv" name="son::dynamic_channel_selection_r2_task::add_radio_to_channel_scan_request_tlv">
+<area shape="rect" id="Node000001" title="Add radio to channel scan request TLV." alt="" coords="5,146,168,215"/>
+<area shape="rect" id="Node000002" href="$classson_1_1dynamic__channel__selection__r2__task.html#aab79eb3db4c931da5cc1ba30a80064a1" title="Compute OperatingClass / Channels for the Scan Request based on database info." alt="" coords="216,99,405,153"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,158,202,150,203,155,169,163"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="667,142,793,182"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="168,176,653,162,653,167,169,181"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a4607911194218d9fe95b7a6feae96919" title="Get the channel scan pool object." alt="" coords="455,85,598,125"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="405,114,441,110,442,116,406,119"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="406,131,653,153,653,158,405,137"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a078f6f46bf99ac53d10ce191a06be7a7" title="get operating class number by channel and channel bandwidth" alt="" coords="453,5,600,60"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="374,96,449,63,451,68,376,101"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="599,122,654,138,653,143,597,127"/>
+<area shape="rect" id="Node000006" href="$classson_1_1wireless__utils.html#a9ca3466505a1ccda48a6a6a428bb9e74" title="Get the center channel of the channel." alt="" coords="648,13,812,53"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="600,30,634,30,634,35,600,35"/>
+</map>

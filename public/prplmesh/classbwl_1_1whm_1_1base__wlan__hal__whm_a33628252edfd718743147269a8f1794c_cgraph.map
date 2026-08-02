@@ -1,0 +1,126 @@
+<map id="bwl::whm::base_wlan_hal_whm::refresh_radio_info" name="bwl::whm::base_wlan_hal_whm::refresh_radio_info">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,757,197,797"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a6ab827802cf4b8775a8c5231838d6906" title="Converts a string&#45;based bandwidth (Ref TR181 Device.WiFi.Radio.{i}.SupportedFrequencyBands: 2...." alt="" coords="262,325,421,365"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,757,110,685,132,584,150,528,174,473,205,421,243,375,249,371,252,375,247,379,209,424,179,475,155,530,137,585,115,686,107,757"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a3a08ef601535562b01d22b67defd472b" title="Converts a string&#45;based bandwith to beerocks::eWiFiBandwidth." alt="" coords="262,390,421,445"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,757,117,699,144,619,162,575,185,532,212,492,243,455,249,451,252,454,247,459,216,495,189,535,167,578,149,621,123,700,109,758"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ae8c51f247ecc3e69f0660a46ae9981de" title="invokes a data model function." alt="" coords="253,469,429,509"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,756,122,708,150,645,190,578,215,547,244,519,250,514,253,519,247,523,219,550,195,581,155,647,127,710,111,758"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a2dcbe2b1656e8cd5926941e704f5338d" title="Get the center frequency of a channel." alt="" coords="246,533,437,573"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="110,755,130,719,160,673,198,625,244,583,253,577,255,582,247,587,202,628,164,676,135,721,115,758"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#aa86ae2cd6c1807233fc9b3272e6a400b" title="read and return content tree of first object matching requested path." alt="" coords="745,659,921,699"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="172,795,279,817,344,826,413,830,485,830,557,822,627,805,693,778,710,763,718,746,725,727,741,709,749,703,752,708,744,713,730,730,722,748,714,767,696,782,629,810,558,827,485,835,413,836,343,831,278,822,171,800"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a12a0350a7f7c462b12b7b6915ed3cc80" title="read and return object parameter content." alt="" coords="1196,1507,1372,1547"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="108,797,119,863,140,961,174,1080,222,1206,251,1268,285,1327,323,1381,366,1429,414,1469,467,1499,525,1519,589,1525,835,1525,1182,1524,1182,1530,835,1531,589,1531,524,1524,465,1504,411,1473,362,1433,319,1384,281,1330,246,1271,217,1209,169,1082,135,963,114,864,103,798"/>
+<area shape="rect" id="Node000009" href="$classson_1_1wireless__utils.html#aa54d97d210e1f56b022e58e3947e91c1" title=" " alt="" coords="276,1565,407,1605"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="106,797,118,943,143,1168,162,1285,185,1393,214,1483,230,1518,247,1545,265,1561,262,1565,243,1548,225,1521,209,1485,180,1395,157,1286,138,1168,112,944,101,798"/>
+<area shape="rect" id="Node000010" href="$namespacebwl_1_1whm_1_1utils__wlan__hal__whm.html#a683d8c14029444e24db57709005ce604" title="Convert from a bool radio.enable to eRadioState." alt="" coords="265,1630,418,1685"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="106,797,116,955,139,1200,158,1329,182,1448,212,1548,229,1586,247,1616,256,1624,252,1628,243,1619,224,1589,207,1549,177,1450,153,1330,134,1201,110,955,101,798"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a44caa4776008e3b164e013ca8660a81d" title="try to read MRSNO support for m_radio and fill m_radio_info.rsn_override_support with a non&#45;default v..." alt="" coords="495,344,685,384"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="144,755,244,713,275,705,302,702,350,701,372,699,393,693,414,682,435,662,457,630,465,597,465,564,459,531,454,497,453,463,461,429,483,394,486,391,490,395,487,398,466,431,458,464,459,497,465,530,470,564,471,598,462,632,439,666,417,686,395,698,373,704,350,706,302,707,276,711,246,719,146,760"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a9704f3d3418137deacd61a21b8c1843a" title="resolve a search path, and retrieve first matching result." alt="" coords="1196,796,1372,836"/>
+<area shape="poly" id="edge66_Node000001_Node000019" title=" " alt="" coords="115,797,186,924,246,1016,320,1116,407,1217,456,1265,508,1311,563,1353,620,1391,681,1423,744,1450,794,1466,836,1475,876,1470,922,1450,942,1425,978,1367,1079,1190,1263,847,1268,849,1083,1192,983,1369,947,1428,926,1454,878,1475,836,1480,793,1472,742,1454,678,1428,617,1396,559,1358,504,1315,452,1269,403,1220,315,1119,241,1019,182,927,110,799"/>
+<area shape="rect" id="Node000024" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#aa2e98c325c59c23a41fca49183097b3c" title=" " alt="" coords="245,728,437,768"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="197,763,232,759,232,764,198,768"/>
+<area shape="rect" id="Node000050" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a5ab2aadd20a396f13e48e0a68a398155" title="return search path of Radio object instance by Name." alt="" coords="258,598,425,653"/>
+<area shape="poly" id="edge67_Node000001_Node000050" title=" " alt="" coords="125,755,179,714,244,670,267,657,269,662,247,674,182,718,129,759"/>
+<area shape="rect" id="Node000052" href="$classbeerocks_1_1string__utils.html#adc10d3f8a693da93fc162414173fa6be" title=" " alt="" coords="268,1709,415,1749"/>
+<area shape="poly" id="edge70_Node000001_Node000052" title=" " alt="" coords="106,797,112,969,120,1098,133,1239,151,1381,175,1513,190,1571,207,1622,226,1664,247,1696,258,1706,255,1710,243,1699,222,1666,202,1624,185,1572,170,1514,145,1382,127,1240,115,1098,107,969,100,798"/>
+<area shape="rect" id="Node000056" href="$classbeerocks_1_1string__utils.html#aea97ffe1489d4608c5035b257deaaadc" title=" " alt="" coords="268,1773,415,1813"/>
+<area shape="poly" id="edge74_Node000001_Node000056" title=" " alt="" coords="105,798,110,980,117,1117,129,1269,147,1422,172,1563,187,1625,205,1680,225,1725,247,1760,258,1770,255,1774,243,1763,220,1728,200,1682,182,1627,167,1564,142,1423,124,1270,112,1118,105,980,100,798"/>
+<area shape="rect" id="Node000006" href="$classson_1_1wireless__utils.html#ae3508c67d6e27af6dab9dc810c6f1f75" title="Translate a channel number to its frequency value." alt="" coords="525,5,655,45"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="423,531,435,520,455,490,468,462,476,433,478,405,473,350,460,294,446,238,440,181,443,152,450,123,463,93,483,62,496,50,510,40,513,45,499,54,487,66,468,95,455,124,448,153,446,181,451,237,465,293,478,349,484,405,481,434,473,463,460,493,439,523,426,535"/>
+<area shape="poly" id="edge12_Node000011_Node000007" title=" " alt="" coords="682,382,697,394,718,426,726,458,726,489,722,520,718,551,718,582,725,612,745,644,749,649,746,652,741,647,720,614,712,582,713,551,717,520,721,489,721,459,713,428,693,398,679,386"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="746,171,921,211"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="608,342,665,287,702,255,741,227,764,214,767,219,744,232,705,260,668,291,612,346"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a9c53014f07cbb416bf29ebe304cd3fc4" title="get amxc var object id from the object path. eg: &quot;RootObj.TemplateObj.id&quot; or &quot;RootObj...." alt="" coords="754,349,913,389"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="685,363,740,365,740,370,685,369"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a30d7f388719c3ebbb6a33bdebfd97fb7" title="get content, with provided depth, of all objects matching path in map of Ambiorix variant objects,..." alt="" coords="745,285,921,325"/>
+<area shape="poly" id="edge14_Node000011_Node000014" title=" " alt="" coords="673,341,736,326,737,331,674,347"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a9ceb141040e30e9128c80f97b25bcf42" title="return radio instance path from radio reference param of an upper layer object" alt="" coords="754,579,913,634"/>
+<area shape="poly" id="edge15_Node000011_Node000015" title=" " alt="" coords="676,382,696,394,742,460,810,566,805,569,738,463,693,398,674,387"/>
+<area shape="poly" id="edge19_Node000011_Node000019" title=" " alt="" coords="614,341,670,303,705,285,742,271,793,258,834,253,875,256,925,271,1000,302,1055,338,1100,385,1150,450,1177,493,1201,538,1239,631,1264,716,1279,782,1274,783,1259,718,1234,632,1196,540,1173,495,1146,454,1096,388,1051,342,998,307,923,276,874,262,834,258,794,263,743,276,707,289,673,308,617,346"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aa0db55a4edda99dfff997c429d96d039" title="return path of AccessPoint template object." alt="" coords="981,464,1139,504"/>
+<area shape="poly" id="edge21_Node000011_Node000021" title=" " alt="" coords="596,343,615,301,646,248,688,196,713,174,741,156,791,134,835,126,857,127,878,132,925,156,960,186,988,221,1010,261,1028,303,1050,385,1059,450,1054,451,1044,386,1023,305,1006,263,984,224,956,189,923,161,877,137,856,132,835,131,793,140,744,161,716,178,691,200,650,251,620,303,601,345"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a2c0efdb6dc58346e59121eaa07357723" title="return search/resolve path of AccessPoint instance objects." alt="" coords="743,413,924,453"/>
+<area shape="poly" id="edge23_Node000011_Node000023" title=" " alt="" coords="662,381,750,407,749,412,660,387"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a714ae6775bbeddf3d784987cf0fc4424" title="Template method reads child typed value (with possible conversion)" alt="" coords="972,997,1148,1037"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="911,632,926,645,958,685,984,730,1006,777,1023,825,1046,914,1058,983,1053,984,1041,915,1018,826,1001,779,980,732,954,688,922,649,908,636"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a1a5545dffedd09421ede59773e0a9c29" title="Finds a variant child, matching a provided key name into a composite variant." alt="" coords="1196,997,1372,1037"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="1148,1015,1182,1015,1182,1020,1148,1020"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a6ac03e859bbafcb4e6e464aa2d5cbb70" title="Factory method: creating smart pointer for AmbiorixVariant object referencing an external amx variant..." alt="" coords="1420,997,1596,1037"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="1372,1015,1406,1015,1406,1020,1372,1020"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a4e1a50159b84bf6084a38a466197358b" title="resolve a search path, and retrieve all matching results." alt="" coords="1420,796,1596,836"/>
+<area shape="poly" id="edge20_Node000019_Node000020" title=" " alt="" coords="1372,813,1406,813,1406,819,1372,819"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="1205,407,1363,447"/>
+<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="1138,461,1191,448,1193,453,1139,467"/>
+<area shape="poly" id="edge24_Node000023_Node000022" title=" " alt="" coords="924,429,1191,425,1191,431,924,435"/>
+<area shape="rect" id="Node000025" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#ace9c3fe04cd13fec2d5a6e7646402c57" title=" " alt="" coords="488,408,692,448"/>
+<area shape="poly" id="edge26_Node000024_Node000025" title=" " alt="" coords="413,726,435,708,454,676,462,645,461,614,457,584,453,553,453,522,462,490,483,458,487,455,490,459,487,462,467,492,459,523,459,553,463,583,467,614,467,646,459,678,439,711,416,730"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a5948a3e62fde12b42cd4ba0421fcb2d7" title="Template Factory method: copy a provided value into a newly created AmbiorixVariant object." alt="" coords="502,1195,678,1235"/>
+<area shape="poly" id="edge27_Node000024_Node000026" title=" " alt="" coords="356,767,574,1181,569,1183,351,769"/>
+<area shape="rect" id="Node000028" href="$classbwl_1_1base__wlan__hal.html#a23e4b6e82754f75aa36decfde1c4fc62" title=" " alt="" coords="522,472,658,512"/>
+<area shape="poly" id="edge29_Node000024_Node000028" title=" " alt="" coords="412,726,435,708,451,684,458,662,458,616,456,593,458,569,466,546,483,522,508,505,511,509,487,526,471,548,464,570,462,593,463,616,463,662,455,687,439,711,415,730"/>
+<area shape="rect" id="Node000029" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a7c9049cf5de43afa7b1358c6b3dba777" title=" " alt="" coords="501,664,679,704"/>
+<area shape="poly" id="edge30_Node000024_Node000029" title=" " alt="" coords="419,725,498,705,500,710,420,731"/>
+<area shape="rect" id="Node000032" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a1874c5a3dbec67158d081ac85edaa319" title=" " alt="" coords="495,536,685,576"/>
+<area shape="poly" id="edge42_Node000024_Node000032" title=" " alt="" coords="410,726,435,707,447,693,453,678,458,648,463,617,470,601,483,586,489,581,492,586,487,590,475,604,468,619,463,648,459,679,452,695,439,711,413,730"/>
+<area shape="rect" id="Node000033" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#ab955979ecda004e0bd8ea529f3dfdb12" title=" " alt="" coords="493,600,687,640"/>
+<area shape="poly" id="edge43_Node000024_Node000033" title=" " alt="" coords="403,725,436,707,450,693,459,679,468,664,484,650,494,644,497,648,487,654,472,668,463,682,454,696,439,711,406,730"/>
+<area shape="rect" id="Node000034" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a420079f575b67cd6d35f6482f45c9d9e" title=" " alt="" coords="485,728,695,768"/>
+<area shape="poly" id="edge44_Node000024_Node000034" title=" " alt="" coords="437,745,472,745,472,751,437,751"/>
+<area shape="rect" id="Node000035" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a32d7891815cfdfbd7681c866e7e5ebf9" title=" " alt="" coords="497,925,683,965"/>
+<area shape="poly" id="edge45_Node000024_Node000035" title=" " alt="" coords="369,766,555,915,551,919,366,770"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#ad81da59567d620fe77fb0719f76b6d59" title="Factory method: creating smart pointer for AmbiorixVariant object with empty local variant context." alt="" coords="745,1400,921,1440"/>
+<area shape="poly" id="edge28_Node000026_Node000027" title=" " alt="" coords="606,1233,660,1307,700,1349,744,1386,754,1392,751,1396,741,1390,696,1353,656,1310,602,1236"/>
+<area shape="poly" id="edge31_Node000029_Node000007" title=" " alt="" coords="679,679,731,678,732,684,679,685"/>
+<area shape="poly" id="edge32_Node000029_Node000013" title=" " alt="" coords="677,663,693,650,713,619,721,589,721,558,717,528,712,496,712,465,720,432,741,400,744,396,748,400,745,403,725,434,717,465,718,496,722,527,726,558,726,590,718,622,697,654,681,667"/>
+<area shape="poly" id="edge33_Node000029_Node000014" title=" " alt="" coords="677,663,693,650,707,631,717,611,726,573,724,534,717,496,710,457,708,417,716,377,726,356,741,336,743,333,747,336,745,339,731,359,721,379,713,418,715,456,722,495,729,534,731,573,722,613,712,633,697,654,681,667"/>
+<area shape="poly" id="edge34_Node000029_Node000015" title=" " alt="" coords="656,661,694,649,740,634,742,640,695,655,658,666"/>
+<area shape="poly" id="edge39_Node000029_Node000019" title=" " alt="" coords="674,662,693,650,709,629,715,607,722,584,729,574,741,564,789,544,831,540,874,548,925,564,977,584,1028,609,1121,670,1199,732,1255,784,1252,788,1196,736,1118,674,1025,614,975,589,923,569,872,553,830,545,790,549,744,569,733,577,726,587,720,608,714,631,696,654,677,666"/>
+<area shape="poly" id="edge40_Node000029_Node000021" title=" " alt="" coords="677,662,693,650,705,635,712,619,715,586,719,552,726,536,741,521,766,504,794,491,852,474,912,468,967,469,967,474,912,473,853,479,796,496,769,508,744,525,731,539,724,554,720,586,717,620,710,637,697,654,680,666"/>
+<area shape="poly" id="edge41_Node000029_Node000023" title=" " alt="" coords="677,662,693,650,709,628,716,607,717,563,718,518,725,494,741,470,753,459,757,463,745,474,730,496,723,519,723,563,721,608,713,631,697,654,680,667"/>
+<area shape="rect" id="Node000030" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#afeccb522241e4efd8cccf4bd9160c786" title="return ssid instance path from ssid reference param of an upper layer object" alt="" coords="754,918,913,973"/>
+<area shape="poly" id="edge35_Node000029_Node000030" title=" " alt="" coords="680,701,697,714,714,738,722,762,724,786,723,809,723,856,729,880,745,904,748,907,744,911,741,907,725,882,717,857,717,809,719,786,717,763,709,741,693,718,677,706"/>
+<area shape="rect" id="Node000031" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#adacd2a5c614fd3b6cd7a4cc7afde8a62" title="get mac address of SSID object data" alt="" coords="754,853,913,893"/>
+<area shape="poly" id="edge37_Node000029_Node000031" title=" " alt="" coords="676,702,696,714,714,732,723,749,731,767,745,788,799,842,796,846,741,791,727,770,719,751,710,735,693,718,674,707"/>
+<area shape="poly" id="edge36_Node000030_Node000016" title=" " alt="" coords="914,968,984,991,982,996,912,973"/>
+<area shape="poly" id="edge38_Node000031_Node000016" title=" " alt="" coords="900,891,925,903,983,943,1031,985,1027,989,980,948,923,908,898,896"/>
+<area shape="poly" id="edge52_Node000035_Node000007" title=" " alt="" coords="610,923,651,879,692,823,706,791,712,763,720,736,741,709,746,705,749,709,745,712,725,739,717,765,711,793,697,825,655,882,614,927"/>
+<area shape="poly" id="edge53_Node000035_Node000015" title=" " alt="" coords="604,924,646,861,692,779,705,741,710,709,719,678,741,645,745,641,748,645,745,648,723,680,716,710,710,742,697,781,651,863,608,927"/>
+<area shape="poly" id="edge61_Node000035_Node000016" title=" " alt="" coords="604,964,625,999,656,1040,696,1081,719,1097,744,1111,792,1128,832,1132,873,1126,923,1111,953,1098,981,1082,1027,1045,1031,1049,984,1086,955,1103,925,1116,874,1131,832,1137,791,1133,742,1116,716,1102,693,1085,652,1044,621,1002,600,967"/>
+<area shape="poly" id="edge62_Node000035_Node000019" title=" " alt="" coords="611,923,667,878,703,856,742,839,799,823,857,811,976,798,1088,797,1182,802,1182,807,1088,802,976,804,858,816,800,828,744,844,705,861,670,883,614,927"/>
+<area shape="poly" id="edge54_Node000035_Node000030" title=" " alt="" coords="683,943,740,943,740,948,683,948"/>
+<area shape="poly" id="edge55_Node000035_Node000031" title=" " alt="" coords="658,923,751,895,753,900,659,928"/>
+<area shape="rect" id="Node000036" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#ad83d7fbb887dabfa1bfd26885d164a42" title="get interface name of AccessPoint object data" alt="" coords="754,1256,913,1296"/>
+<area shape="poly" id="edge46_Node000035_Node000036" title=" " alt="" coords="602,964,665,1110,707,1189,727,1220,745,1241,752,1247,749,1251,741,1245,722,1223,702,1192,661,1112,597,967"/>
+<area shape="rect" id="Node000037" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a715c4d6f21d3aeda97e7e501c79357db" title="get status of AccessPoint object data" alt="" coords="754,997,913,1037"/>
+<area shape="poly" id="edge48_Node000035_Node000037" title=" " alt="" coords="659,963,753,991,751,996,658,968"/>
+<area shape="rect" id="Node000038" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a6eb7bb2261ba076a86d2037c68cbfb5e" title="get CustomAlias of AccessPoint object data" alt="" coords="752,1061,915,1101"/>
+<area shape="poly" id="edge50_Node000035_Node000038" title=" " alt="" coords="618,963,674,1005,744,1047,758,1054,756,1059,741,1052,671,1009,615,968"/>
+<area shape="rect" id="Node000039" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#abe2d2923144fe604ebcf4ebc6a3e9234" title="Gets channel utilization." alt="" coords="750,1321,917,1375"/>
+<area shape="poly" id="edge56_Node000035_Node000039" title=" " alt="" coords="603,964,697,1182,709,1219,714,1249,723,1277,745,1306,749,1310,745,1314,741,1310,719,1279,709,1250,703,1220,692,1184,598,967"/>
+<area shape="rect" id="Node000048" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a0c9413724e2f45a0a6768cbe487d5deb" title="return search path of AccessPoint object instance by interface name." alt="" coords="754,723,913,778"/>
+<area shape="poly" id="edge63_Node000035_Node000048" title=" " alt="" coords="606,923,663,863,701,828,741,795,760,783,763,787,744,799,704,832,667,867,610,927"/>
+<area shape="rect" id="Node000049" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a6a9d21bb0298bc920964b82ac6a7ec50" title="Convert custom_alias &#45;&gt; vap_type." alt="" coords="754,1177,913,1231"/>
+<area shape="poly" id="edge65_Node000035_Node000049" title=" " alt="" coords="604,964,657,1054,698,1107,744,1155,760,1167,757,1171,741,1159,694,1110,653,1057,599,967"/>
+<area shape="poly" id="edge47_Node000036_Node000016" title=" " alt="" coords="902,1254,922,1241,965,1196,1000,1144,1026,1092,1045,1049,1050,1051,1031,1095,1005,1146,969,1199,926,1245,905,1258"/>
+<area shape="poly" id="edge49_Node000037_Node000016" title=" " alt="" coords="913,1015,958,1015,958,1020,913,1020"/>
+<area shape="poly" id="edge51_Node000038_Node000016" title=" " alt="" coords="904,1059,975,1039,976,1044,906,1064"/>
+<area shape="rect" id="Node000040" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a3b735b415c8b60d3e7bda360208bac2d" title="update link_id and ap mld mac address for enabled vap which has mld_id is enabled" alt="" coords="982,1435,1138,1490"/>
+<area shape="poly" id="edge57_Node000039_Node000040" title=" " alt="" coords="899,1373,925,1386,1001,1426,998,1431,923,1390,897,1378"/>
+<area shape="poly" id="edge58_Node000040_Node000008" title=" " alt="" coords="1139,1482,1201,1500,1200,1505,1137,1487"/>
+<area shape="poly" id="edge60_Node000040_Node000019" title=" " alt="" coords="1127,1433,1146,1415,1162,1378,1172,1328,1179,1205,1182,1080,1186,1027,1193,985,1225,909,1260,847,1264,849,1229,911,1199,986,1191,1027,1187,1080,1184,1205,1177,1328,1167,1379,1150,1417,1131,1437"/>
+<area shape="rect" id="Node000041" href="$classbeerocks_1_1net_1_1network__utils.html#a640b4109482b5726ce59132dc5482c9c" title=" " alt="" coords="1207,1443,1361,1483"/>
+<area shape="poly" id="edge59_Node000040_Node000041" title=" " alt="" coords="1138,1460,1193,1460,1193,1465,1138,1465"/>
+<area shape="poly" id="edge64_Node000048_Node000021" title=" " alt="" coords="905,721,922,709,964,662,999,610,1025,559,1044,516,1049,518,1030,561,1003,613,969,666,926,713,908,725"/>
+<area shape="rect" id="Node000051" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a7f96ac72dd88efe1686ffadd5458f940" title="return path of Radio template object." alt="" coords="977,117,1143,157"/>
+<area shape="poly" id="edge68_Node000050_Node000051" title=" " alt="" coords="422,596,435,584,455,552,464,521,466,492,464,462,461,432,460,400,467,367,483,331,536,252,562,222,589,198,619,177,654,158,742,123,798,109,855,105,912,107,964,113,963,118,912,112,856,110,798,115,743,128,656,163,622,181,592,202,565,226,540,255,488,333,472,368,466,401,466,432,469,462,471,492,470,522,460,554,439,587,426,600"/>
+<area shape="poly" id="edge69_Node000051_Node000022" title=" " alt="" coords="1084,156,1150,228,1215,317,1265,394,1261,396,1211,320,1146,231,1080,159"/>
+<area shape="rect" id="Node000053" href="$classbeerocks_1_1string__utils.html#ad6a5e6fda086252e48c5122fd2552d9d" title="trim whitespace in place from the head and tail of a string." alt="" coords="517,1709,663,1749"/>
+<area shape="poly" id="edge71_Node000052_Node000053" title=" " alt="" coords="415,1727,503,1727,503,1732,415,1732"/>
+<area shape="rect" id="Node000054" href="$classbeerocks_1_1string__utils.html#a03316c7e6197ba5b20b09ae807d36681" title="trim whitespace in place from the head of a string." alt="" coords="760,1677,907,1717"/>
+<area shape="poly" id="edge72_Node000053_Node000054" title=" " alt="" coords="663,1717,746,1706,747,1711,664,1722"/>
+<area shape="rect" id="Node000055" href="$classbeerocks_1_1string__utils.html#aa8c0f4131490f9f0f50b0d643ca4eccc" title="trim whitespace in place from the tail of a string." alt="" coords="760,1741,907,1781"/>
+<area shape="poly" id="edge73_Node000053_Node000055" title=" " alt="" coords="664,1736,747,1747,746,1753,663,1742"/>
+</map>

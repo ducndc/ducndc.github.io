@@ -1,0 +1,9 @@
+<map id="beerocks::TrafficSeparationTask::cleanup_ts_runtime_state" name="beerocks::TrafficSeparationTask::cleanup_ts_runtime_state">
+<area shape="rect" id="Node000001" title="Clear TS state and restore transport defaults used outside TS mode." alt="" coords="5,41,212,81"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1TrafficSeparationTask.html#a59f206125f126659fbf0d8a80ba38b7e" title="Configure primary VLAN in transport/broker when it changed." alt="" coords="260,5,496,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,45,246,40,247,46,213,50"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1TrafficSeparationTask.html#a4de974af2db8f85c04f2385748c978a8" title="Reset broker interface monitoring to bridge defaults after TS cleanup." alt="" coords="272,70,484,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,73,259,79,258,84,212,78"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="544,85,707,110"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="484,95,530,95,530,100,484,100"/>
+</map>

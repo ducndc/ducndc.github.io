@@ -1,0 +1,16 @@
+<map id="el::Configurations::unsafeSetIfNotExist" name="el::Configurations::unsafeSetIfNotExist">
+<area shape="rect" id="Node000001" title="Unsafely sets configuration if does not already exist." alt="" coords="5,131,153,171"/>
+<area shape="rect" id="Node000002" href="$classel_1_1Configurations.html#a05c373510ca513e4f61999c84d512831" title="Thread unsafe set." alt="" coords="201,131,325,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,148,187,148,187,153,153,153"/>
+<area shape="rect" id="Node000003" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html#a561a5d418106a16473ff94d43a4b6b04" title=" " alt="" coords="373,5,543,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="297,128,372,84,381,79,384,84,375,89,300,133"/>
+<area shape="rect" id="Node000004" href="$classel_1_1Configuration.html#a04755de11422d7570869433ea157b705" title="Set string based configuration value." alt="" coords="395,99,521,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="325,138,381,129,382,134,326,143"/>
+<area shape="rect" id="Node000005" href="$classel_1_1Configurations.html#a800efb58724eb771027135b282eae512" title="Sets configurations (Unsafely) for all levels including Level::Global if includeGlobalLevel is true." alt="" coords="390,163,526,203"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="326,167,377,176,376,181,325,172"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="390,166,338,157,339,152,390,160"/>
+<area shape="rect" id="Node000006" href="$classel_1_1LevelHelper.html#a1279f27df29a003df5ecc3d0bf4dacbb" title="Casts int(ushort) to level, useful for iterating through enum." alt="" coords="591,141,777,166"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="526,171,576,165,577,170,527,177"/>
+<area shape="rect" id="Node000007" href="$classel_1_1LevelHelper.html#a7f0dbfceb2354a72c2802d02c300430d" title="Applies specified function to each level starting from startIndex." alt="" coords="603,191,765,231"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="527,188,589,196,588,202,526,194"/>
+</map>

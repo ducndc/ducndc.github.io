@@ -1,0 +1,13 @@
+<map id="beerocks::LinkMetricsCollectionTask::send_ap_metric_query_message" name="beerocks::LinkMetricsCollectionTask::send_ap_metric_query_message">
+<area shape="rect" id="Node000001" title="Sends an AP Metrics Query message for each bssid on &#39;bssid_list&#39; to the Fronthaul...." alt="" coords="773,49,1023,89"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#a6982045ccca14450dee286d489b95c5c" title="Callback of the timer that sends periodic AP Metrics Report." alt="" coords="517,15,725,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="760,55,725,51,726,45,760,49"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ac9a314ab00c022c45d1debb8d45e5e1c" title=" " alt="" coords="517,81,725,121"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="760,87,726,91,725,86,760,82"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ac5afcf33798c915971e489dab51ee587" title="Schedules periodic reporting according to the new metric reporting policy." alt="" coords="261,5,469,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="504,37,469,36,470,31,504,31"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#a6ddc1aebb881c86980486b3bf9937476" title="Handle events, which are being send from containing thread." alt="" coords="5,13,213,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="248,35,213,35,213,30,248,30"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ab2452024f7d97d1001a79ab2b61e84ce" title="Handle CMDU message." alt="" coords="261,85,469,125"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="504,105,470,106,469,100,504,100"/>
+</map>

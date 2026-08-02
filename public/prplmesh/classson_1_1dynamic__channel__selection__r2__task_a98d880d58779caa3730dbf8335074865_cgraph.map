@@ -1,0 +1,17 @@
+<map id="son::dynamic_channel_selection_r2_task::handle_continuous_scan_request_event" name="son::dynamic_channel_selection_r2_task::handle_continuous_scan_request_event">
+<area shape="rect" id="Node000001" title="Handle continuous scan request events. Add a radio scan request in the event to pending scan requests..." alt="" coords="5,94,221,149"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#ac3598d3fbf69880a6794d1c82bf610ad" title="Get the channel scan dwell time msec object." alt="" coords="269,5,435,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,92,268,55,286,48,288,53,270,60,181,96"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#abfbf6f7e1173d6239cb773049cd0379f" title="Get the channel scan interval sec object." alt="" coords="281,69,423,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="221,104,267,98,268,103,222,109"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a4607911194218d9fe95b7a6feae96919" title="Get the channel scan pool object." alt="" coords="281,133,423,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="222,133,268,139,267,145,221,138"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#aa90dda0e9954ac27804942805fbabd35" title=" " alt="" coords="289,197,415,237"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="181,146,270,183,288,190,286,195,268,188,179,151"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="485,69,611,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="415,43,474,63,473,68,413,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="424,87,471,87,471,92,424,92"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="413,131,473,111,474,116,415,136"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a45836132d4b9f88be5bd7d6ffa6feca8" title="Get agent containing a specific radio." alt="" coords="483,197,613,237"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="416,215,469,215,469,220,416,220"/>
+</map>

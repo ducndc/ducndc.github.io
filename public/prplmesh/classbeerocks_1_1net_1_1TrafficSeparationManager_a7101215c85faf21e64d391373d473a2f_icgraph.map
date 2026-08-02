@@ -1,0 +1,37 @@
+<map id="beerocks::net::TrafficSeparationManager::is_applied" name="beerocks::net::TrafficSeparationManager::is_applied">
+<area shape="rect" id="Node000001" title="Return true when TS policies are currently applied on managed ports." alt="" coords="1536,163,1744,203"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#af6683055e48a5eaf029d65e536501bd9" title="Add an access port (fronthaul BSS) to be managed." alt="" coords="1280,5,1488,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1608,155,1554,106,1521,81,1487,60,1461,48,1463,43,1489,55,1524,77,1558,102,1612,151"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a47cb51701956dda760fe5e0bf4eda165" title="Add a new trunk port to be managed by Traffic Separation manager." alt="" coords="1280,69,1488,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1579,160,1487,124,1452,112,1453,107,1489,119,1581,155"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#ae08612b23e487dc73c584f65209c1e3b" title="Apply the current configuration to all configured trunk and access ports." alt="" coords="1280,133,1488,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1522,172,1488,168,1488,163,1523,167"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#aec4e9b95266fb0639abf7980de40d1dc" title="Configure the TrafficSeparationManager with a new TS configuration." alt="" coords="1014,145,1222,185"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="1522,188,1488,188,1384,190,1280,188,1222,183,1222,177,1280,183,1384,185,1488,183,1522,182"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a19a52bca349deac603b83551317c815c" title="Remove an existing access port from management." alt="" coords="1280,248,1488,288"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="1567,209,1446,250,1444,245,1566,204"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a39dc8c0e42d0576c854800cd3cf24c09" title="Remove an existing trunk port from management." alt="" coords="1280,312,1488,352"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="1610,214,1556,259,1489,302,1462,314,1460,310,1487,298,1553,255,1606,210"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1266,161,1222,163,1222,158,1266,156"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a3f0b1f715117f254b2ea6c2f1e49d75f" title="Drop managed ports whose backing netdev no longer exists." alt="" coords="1014,299,1222,339"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="1267,293,1223,301,1222,296,1266,288"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#af6d75e50997ade08e0c5152b77895149" title="Remove all existing access ports from management." alt="" coords="1004,235,1232,275"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="1266,265,1232,263,1232,258,1266,259"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#af0998dab08c8ffd114d3decfa0a51e1d" title="Reset the manager to its initial, unconfigured state." alt="" coords="748,299,956,339"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1022,281,936,301,935,296,1020,275"/>
+<area shape="rect" id="Node000010" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a6399bf8470ea43f321f449fa87feafd6" title=" " alt="" coords="505,267,700,307"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="734,306,700,302,701,297,735,301"/>
+<area shape="rect" id="Node000014" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a7a180880e96a912857dc4318d3cf202a" title=" " alt="" coords="505,331,700,371"/>
+<area shape="poly" id="edge15_Node000009_Node000014" title=" " alt="" coords="735,336,701,341,700,336,734,331"/>
+<area shape="rect" id="Node000011" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#aac089b03173c7612a350ee4c88ebd7e3" title=" " alt="" coords="248,235,457,275"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="491,275,457,271,458,265,492,270"/>
+<area shape="rect" id="Node000013" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a5c0aca14420d7ca96243ca373890df1b" title=" " alt="" coords="255,299,450,339"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="492,303,450,309,450,304,491,298"/>
+<area shape="rect" id="Node000012" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#aee99f7636a6049c1504f9a825b416b9f" title=" " alt="" coords="5,267,200,307"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="235,272,201,277,200,272,234,267"/>
+<area shape="poly" id="edge14_Node000013_Node000012" title=" " alt="" coords="241,307,200,302,200,296,242,302"/>
+<area shape="poly" id="edge17_Node000015_Node000007" title=" " alt="" coords="1266,329,1222,327,1222,321,1266,323"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a13337d4577ab1292d4f619c45a9e5520" title="Remove all existing trunk ports from management." alt="" coords="1011,363,1225,403"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="1267,357,1224,365,1223,360,1266,352"/>
+<area shape="poly" id="edge19_Node000016_Node000009" title=" " alt="" coords="1020,362,935,341,936,336,1022,357"/>
+</map>

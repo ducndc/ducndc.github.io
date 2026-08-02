@@ -1,0 +1,25 @@
+<map id="beerocks::ServicePrioritizationTask::handle_qos_management_descriptors" name="beerocks::ServicePrioritizationTask::handle_qos_management_descriptors">
+<area shape="rect" id="Node000001" title="Forward QoS management descriptor TLVs to the owning AP manager." alt="" coords="5,177,212,231"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="261,5,460,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,174,184,115,220,83,259,55,270,49,273,53,261,60,223,87,188,118,133,178"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1message__com.html#aca33ce73fa0075ee0b7f0c78984aa519" title=" " alt="" coords="277,69,445,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="153,174,203,146,259,119,277,112,279,117,261,124,206,151,156,179"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="279,134,442,159"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="212,178,290,160,292,165,213,183"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1slave__thread.html#a8c39a142418df7191fa4e423b43ae217" title=" " alt="" coords="282,184,439,224"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="212,201,268,201,268,207,212,207"/>
+<area shape="rect" id="Node000009" href="$classieee1905__1_1_1CmduMessageRx.html#a9e40a53f37d6f1b7f2e2a064fff8f58c" title=" " alt="" coords="260,248,461,288"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="213,228,269,242,268,247,211,233"/>
+<area shape="rect" id="Node000011" href="$classwfa__map_1_1tlvQoSManagementDescriptor.html#ad55510ecce9e9f0cc2bff5b08af1276d" title=" " alt="" coords="261,312,460,352"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="149,229,201,264,261,298,278,305,275,310,259,302,198,269,146,234"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1slave__thread.html#a45a56addb54bad73fd898146a93f3279" title="Sends given CMDU message through the specified socket connection." alt="" coords="282,376,439,416"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="131,230,185,296,221,331,261,362,272,368,270,373,259,366,218,335,181,300,127,234"/>
+<area shape="rect" id="Node000003" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="539,13,679,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="460,23,525,23,525,28,460,28"/>
+<area shape="rect" id="Node000005" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="509,69,708,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="445,87,496,87,496,92,445,92"/>
+<area shape="rect" id="Node000006" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="756,77,871,102"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="708,87,742,87,742,92,708,92"/>
+<area shape="rect" id="Node000010" href="$classClassList.html#a8ae86a33e961882f333a6d6c4168d558" title="Get the list of classes of type T." alt="" coords="529,255,688,281"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="461,265,516,265,516,271,461,271"/>
+</map>

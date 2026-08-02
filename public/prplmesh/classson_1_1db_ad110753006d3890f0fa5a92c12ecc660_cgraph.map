@@ -1,0 +1,15 @@
+<map id="son::db::dm_add_sta_element" name="son::db::dm_add_sta_element">
+<area shape="rect" id="Node000001" title="Adds STA instance to the datamodel." alt="" coords="5,99,149,139"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a15584625df423d5f8f07e0ce185c375d" title="Restores station steering event from database to add to new data model path of station." alt="" coords="214,5,353,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,96,196,55,212,48,214,53,198,60,116,101"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a098b9f20c35758512ebba987e2b52103" title="Set values for parameters of NBAPI object MultiAPSTA.SteeringSummaryStats." alt="" coords="197,69,369,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="149,106,183,101,184,106,150,111"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#a39cb768c3e3115545cbdb128e6fedd98" title="Finds and returns sBss with a specified BSSID (and optionaly al_mac)." alt="" coords="224,134,343,159"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="150,126,210,134,210,139,149,131"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a6db1e54425fbb798118e69c6de5b04b1" title="Get index and instance path from full data model path. Simplifies ambiorix/nbapi calls." alt="" coords="206,184,361,224"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="125,136,198,168,218,176,216,181,196,173,123,141"/>
+<area shape="rect" id="Node000003" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="417,13,548,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,23,403,23,403,28,353,28"/>
+<area shape="rect" id="Node000004" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="596,13,743,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="548,23,582,23,582,28,548,28"/>
+</map>

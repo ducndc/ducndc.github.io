@@ -1,0 +1,39 @@
+<map id="son::db::is_radio_5ghz" name="son::db::is_radio_5ghz">
+<area shape="rect" id="Node000001" title=" " alt="" coords="855,299,1008,325"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#aa8fa3e20a75641c973286b493d589dd1" title="Checks if it&#39;s possible to initiate client steering." alt="" coords="640,65,767,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="918,287,901,249,877,204,845,159,805,119,786,108,766,100,768,95,789,103,808,115,849,155,882,201,906,247,923,285"/>
+<area shape="rect" id="Node000007" href="$classson_1_1pre__association__steering__task.html#a9fa127e08662a74ed585c142e0e2cdb3" title=" " alt="" coords="628,130,779,185"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="908,291,864,245,805,200,777,185,780,180,808,195,867,242,912,287"/>
+<area shape="rect" id="Node000009" href="$classson_1_1optimal__path__task.html#a8ae56673423c6a8a0ec26c6ffa16f7b5" title=" " alt="" coords="600,209,807,249"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="882,297,759,252,761,247,884,292"/>
+<area shape="rect" id="Node000010" href="$classson_1_1optimal__path__task.html#a1537cbc42bde4c1b05be6d590071f8ec" title=" " alt="" coords="376,216,533,256"/>
+<area shape="poly" id="edge19_Node000001_Node000010" title=" " alt="" coords="841,302,600,264,533,253,534,247,600,259,842,296"/>
+<area shape="rect" id="Node000011" href="$classson_1_1db.html#ac72d78891bae91e8e344679617fdfdc0" title=" " alt="" coords="609,325,797,350"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="841,325,798,330,797,324,841,319"/>
+<area shape="rect" id="Node000016" href="$classson_1_1btm__request__task.html#a7142a159671a74703864a3f34124ec53" title=" " alt="" coords="626,375,781,415"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="889,333,808,365,772,377,770,372,806,360,887,328"/>
+<area shape="rect" id="Node000017" href="$classson_1_1client__steering__task.html#af2447481b375e5c3167a78b738fb7bb1" title=" " alt="" coords="636,439,771,479"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="913,337,868,383,839,408,808,429,772,445,770,440,805,424,836,404,864,380,909,333"/>
+<area shape="rect" id="Node000018" href="$classson_1_1load__balancer__task.html#ad1ab126fe8b8617f8b65708ac8763e57" title=" " alt="" coords="638,503,769,543"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="921,339,904,373,879,415,847,457,808,493,770,512,768,507,805,488,843,453,875,412,899,371,917,336"/>
+<area shape="rect" id="Node000003" href="$namespaceprplmesh_1_1controller_1_1actions.html#afa9769f7e6ee07ec9ef2778688c985a1" title="Send BTMRequest from NBAPI for the current STA and given parameters." alt="" coords="379,5,531,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="626,70,530,46,531,41,627,64"/>
+<area shape="rect" id="Node000006" href="$namespaceprplmesh_1_1controller_1_1actions.html#ac2976c0ab1d3a21c4a5a111797722bb7" title=" " alt="" coords="373,69,537,109"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="626,89,537,91,537,85,626,84"/>
+<area shape="rect" id="Node000004" href="$namespaceprplmesh_1_1controller_1_1actions.html#a2814d2a0df8cb7900316bfe0575ca9b1" title=" " alt="" coords="129,37,284,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="365,40,285,50,284,45,364,34"/>
+<area shape="rect" id="Node000005" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,45,56,70"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="116,60,56,60,56,55,116,55"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="359,80,284,70,284,65,360,74"/>
+<area shape="rect" id="Node000008" href="$classson_1_1pre__association__steering__task.html#afd2da49e63ce4a050e3bd2008ba59b9f" title=" " alt="" coords="359,137,551,177"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="614,160,551,160,551,155,614,155"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="586,235,534,237,533,231,586,230"/>
+<area shape="rect" id="Node000012" href="$classson_1_1client__association__task.html#a7e100b24a0379453fa856bba2ad2fd14" title=" " alt="" coords="367,295,542,364"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="595,337,542,335,542,329,596,331"/>
+<area shape="rect" id="Node000014" href="$classson_1_1topology__task.html#ae8e33dbc575656ce92be5f924e535f48" title="Handles 1905 Topology Notification message." alt="" coords="357,388,552,428"/>
+<area shape="poly" id="edge14_Node000011_Node000014" title=" " alt="" coords="636,356,601,365,517,391,516,385,599,360,634,351"/>
+<area shape="rect" id="Node000013" href="$classson_1_1client__association__task.html#a40fe0c16babdf211684f389cde7034fd" title="Handle ieee1905 message." alt="" coords="104,309,309,349"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="353,332,310,332,310,327,353,327"/>
+<area shape="rect" id="Node000015" href="$classson_1_1topology__task.html#a33a4287ef785394e07d05d087fe54528" title="Handle ieee1905 message." alt="" coords="120,388,293,428"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="344,411,294,411,294,405,344,405"/>
+</map>
