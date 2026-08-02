@@ -1,0 +1,21 @@
+<map id="BML_EVENT_STEERING" name="BML_EVENT_STEERING">
+<area shape="rect" id="Node000001" title=" " alt="" coords="783,153,960,179"/>
+<area shape="rect" id="Node000002" href="$structBML__STEERING__EV__PROB__REQ.html" title=" " alt="" coords="381,5,612,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="627,25,694,39,760,64,792,83,821,108,862,151,858,155,817,111,789,88,757,68,693,44,625,30"/>
+<area shape="rect" id="Node000003" href="$structBML__STEERING__EV__CONNECT.html" title=" " alt="" coords="385,55,609,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="623,79,691,92,760,110,808,130,849,151,847,156,806,135,758,115,690,97,622,84"/>
+<area shape="rect" id="Node000004" href="$structBML__STEERING__DATA__RATE__INFO.html" title=" " alt="" coords="5,31,252,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="266,50,385,57,384,63,266,55"/>
+<area shape="rect" id="Node000005" href="$structBML__STEERING__RRM__CAPS.html" title=" " alt="" coords="25,80,232,105"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="246,82,349,75,384,73,385,78,350,81,246,88"/>
+<area shape="rect" id="Node000006" href="$structBML__STEERING__EV__DISCONNECT.html" title=" " alt="" coords="373,104,620,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="634,128,759,143,803,151,803,156,758,149,633,133"/>
+<area shape="rect" id="Node000007" href="$structBML__STEERING__EV__ACTIVITY.html" title=" " alt="" coords="387,153,606,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="620,163,782,163,782,169,620,169"/>
+<area shape="rect" id="Node000008" href="$structBML__STEERING__EV__SNR__XING.html" title=" " alt="" coords="383,203,610,228"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="624,200,758,183,803,176,803,181,759,189,624,205"/>
+<area shape="rect" id="Node000009" href="$structBML__STEERING__EV__CLIENT__MEASUREMENT.html" title=" " alt="" coords="394,253,599,293"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="613,254,685,239,758,218,806,198,847,177,849,181,808,203,760,223,686,244,614,259"/>
+<area shape="rect" id="Node000010" href="$structBML__STEERING__EV__AUTH__FAIL.html" title="Auth Failure Event Data This data is provided with WIFI_STEERING_EVENT_AUTH_FAIL." alt="" coords="382,317,611,343"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="625,313,692,296,757,269,789,248,817,223,858,177,862,181,821,226,792,252,760,274,694,301,626,318"/>
+</map>

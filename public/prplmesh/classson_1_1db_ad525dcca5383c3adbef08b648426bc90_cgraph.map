@@ -1,0 +1,9 @@
+<map id="son::db::dm_remove_interface_element" name="son::db::dm_remove_interface_element">
+<area shape="rect" id="Node000001" title="Removes the interface of given MAC from Device&#39;s Data Model." alt="" coords="5,37,147,77"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a6db1e54425fbb798118e69c6de5b04b1" title="Get index and instance path from full data model path. Simplifies ambiorix/nbapi calls." alt="" coords="195,5,349,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,43,181,38,182,43,148,48"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a3bb575e41a50e531ef0420877e02997e" title="Gets Interface according to device and interface MAC addresses." alt="" coords="198,69,346,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,66,185,72,184,78,147,72"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a12d3c2aabc63ee0fcdb1ca26f854f484" title="Get agent from its ALID." alt="" coords="397,77,528,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="346,87,383,87,383,92,346,92"/>
+</map>

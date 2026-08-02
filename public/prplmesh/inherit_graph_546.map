@@ -1,0 +1,84 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classel_1_1Loggable.html" title="Base of Easylogging++ friendly class." alt="" coords="24,55,116,80"/>
+<area shape="rect" id="Node000001" href="$classel_1_1Configuration.html" title="Represents single configuration that has representing level, configuration type and a string based va..." alt="" coords="240,5,357,31"/>
+<area shape="poly" id="edge869_Node000000_Node000001" title=" " alt="" coords="129,51,182,39,239,27,240,32,183,45,130,56"/>
+<area shape="rect" id="Node000002" href="$classel_1_1Logger.html" title="Represents a logger holding ID and configurations we need to write logs." alt="" coords="259,104,338,129"/>
+<area shape="poly" id="edge870_Node000000_Node000002" title=" " alt="" coords="130,77,260,106,258,111,129,83"/>
+<area shape="rect" id="Node000040" href="$classel_1_1base_1_1LogFormat.html" title="Represents log format containing flags and date format. This is used internally to start initial log." alt="" coords="229,55,368,80"/>
+<area shape="poly" id="edge871_Node000000_Node000040" title=" " alt="" coords="130,65,229,65,229,70,130,70"/>
+<area shape="rect" id="Node000021" href="$classel_1_1base_1_1NoCopy.html" title="Internal helper class that prevent copy constructor for class." alt="" coords="8,1079,132,1104"/>
+<area shape="rect" id="Node000022" href="$classel_1_1LogBuilder.html" title=" " alt="" coords="248,1005,349,1031"/>
+<area shape="poly" id="edge872_Node000021_Node000022" title=" " alt="" coords="108,1070,182,1041,247,1024,248,1029,183,1046,110,1075"/>
+<area shape="rect" id="Node000024" href="$classel_1_1base_1_1LogDispatcher.html" title="Dispatches log messages." alt="" coords="219,1055,379,1080"/>
+<area shape="poly" id="edge874_Node000021_Node000024" title=" " alt="" coords="146,1081,218,1073,219,1078,146,1086"/>
+<area shape="rect" id="Node000025" href="$classel_1_1base_1_1NullWriter.html" title="Writes nothing &#45; Used when certain log is disabled." alt="" coords="232,1104,365,1129"/>
+<area shape="poly" id="edge875_Node000021_Node000025" title=" " alt="" coords="146,1097,232,1107,231,1112,146,1102"/>
+<area shape="rect" id="Node000020" href="$classel_1_1base_1_1Storage.html" title="Easylogging++ management storage." alt="" coords="238,907,359,932"/>
+<area shape="poly" id="edge876_Node000021_Node000020" title=" " alt="" coords="81,1065,120,1003,148,970,181,942,208,929,237,922,238,927,210,934,184,947,151,974,124,1006,86,1067"/>
+<area shape="rect" id="Node000026" href="$classel_1_1base_1_1VRegistry.html" title="Represents registries for verbose logging." alt="" coords="231,956,366,981"/>
+<area shape="poly" id="edge877_Node000021_Node000026" title=" " alt="" coords="89,1067,129,1028,154,1008,182,992,230,975,232,980,184,996,157,1013,132,1032,93,1071"/>
+<area shape="rect" id="Node000027" href="$classel_1_1base_1_1Writer.html" title="Main entry point of each logging." alt="" coords="243,1153,354,1179"/>
+<area shape="poly" id="edge878_Node000021_Node000027" title=" " alt="" coords="109,1108,184,1139,244,1155,242,1160,182,1145,107,1113"/>
+<area shape="rect" id="Node000029" href="$classel_1_1base_1_1threading_1_1internal_1_1NoMutex.html" title="Mutex wrapper used when multi&#45;threading is disabled." alt="" coords="232,1203,365,1243"/>
+<area shape="poly" id="edge880_Node000021_Node000029" title=" " alt="" coords="93,1112,133,1152,184,1189,233,1208,231,1213,181,1194,129,1156,89,1116"/>
+<area shape="rect" id="Node000030" href="$classel_1_1base_1_1threading_1_1internal_1_1NoScopedLock.html" title="Lock guard wrapper used when multi&#45;threading is disabled." alt="" coords="214,1268,383,1323"/>
+<area shape="poly" id="edge881_Node000021_Node000030" title=" " alt="" coords="85,1115,123,1184,151,1221,184,1253,215,1271,213,1276,181,1257,147,1225,118,1187,80,1118"/>
+<area shape="rect" id="Node000023" href="$classel_1_1base_1_1DefaultLogBuilder.html" title=" " alt="" coords="481,1015,659,1040"/>
+<area shape="poly" id="edge873_Node000022_Node000023" title=" " alt="" coords="363,1018,481,1022,480,1027,363,1023"/>
+<area shape="rect" id="Node000028" href="$classel_1_1base_1_1PErrorWriter.html" title=" " alt="" coords="497,1153,643,1179"/>
+<area shape="poly" id="edge879_Node000027_Node000028" title=" " alt="" coords="368,1163,497,1163,497,1169,368,1169"/>
+<area shape="rect" id="Node000003" href="$classel_1_1base_1_1threading_1_1ThreadSafe.html" title="Base of thread safe class, this class is inheritable&#45;only." alt="" coords="5,550,135,590"/>
+<area shape="poly" id="edge898_Node000003_Node000002" title=" " alt="" coords="73,536,87,444,109,325,141,213,160,170,181,140,198,128,218,119,259,113,260,118,220,125,201,132,185,144,164,172,146,215,115,326,92,444,78,537"/>
+<area shape="poly" id="edge899_Node000003_Node000020" title=" " alt="" coords="75,604,82,666,100,744,114,785,132,824,155,861,184,892,210,907,239,915,237,920,208,912,181,896,151,864,127,827,109,787,94,746,77,667,70,604"/>
+<area shape="poly" id="edge901_Node000003_Node000026" title=" " alt="" coords="73,604,77,675,92,767,106,815,126,862,152,905,184,943,206,957,232,964,230,969,204,961,181,947,147,908,121,864,101,817,87,768,72,676,68,604"/>
+<area shape="rect" id="Node000004" href="$classel_1_1Callback.html" title=" " alt="" coords="211,154,387,194"/>
+<area shape="poly" id="edge882_Node000003_Node000004" title=" " alt="" coords="69,536,74,467,90,378,104,331,124,285,149,242,181,204,209,186,212,190,184,208,153,245,128,287,109,333,95,379,79,468,74,537"/>
+<area shape="rect" id="Node000009" href="$classel_1_1Callback.html" title=" " alt="" coords="221,219,376,244"/>
+<area shape="poly" id="edge887_Node000003_Node000009" title=" " alt="" coords="70,536,78,475,96,399,110,360,129,321,152,286,181,255,200,242,220,234,222,239,202,247,184,259,156,289,133,324,115,362,101,401,83,476,76,537"/>
+<area shape="rect" id="Node000011" href="$classel_1_1Callback.html" title=" " alt="" coords="210,269,387,309"/>
+<area shape="poly" id="edge889_Node000003_Node000011" title=" " alt="" coords="74,536,86,487,106,429,137,370,157,342,181,319,208,302,211,306,184,323,162,346,142,372,111,431,91,489,80,537"/>
+<area shape="rect" id="Node000013" href="$classel_1_1base_1_1utils_1_1AbstractRegistry.html" title=" " alt="" coords="193,333,404,388"/>
+<area shape="poly" id="edge891_Node000003_Node000013" title=" " alt="" coords="82,536,120,466,148,429,181,397,198,386,201,390,184,401,152,433,125,469,87,538"/>
+<area shape="rect" id="Node000014" href="$classel_1_1base_1_1utils_1_1AbstractRegistry.html" title=" " alt="" coords="183,412,415,467"/>
+<area shape="poly" id="edge892_Node000003_Node000014" title=" " alt="" coords="100,538,137,507,181,477,207,464,209,469,184,482,141,511,103,542"/>
+<area shape="rect" id="Node000015" href="$classel_1_1base_1_1utils_1_1AbstractRegistry.html" title=" " alt="" coords="206,491,391,561"/>
+<area shape="poly" id="edge893_Node000003_Node000015" title=" " alt="" coords="148,552,205,541,206,546,149,558"/>
+<area shape="rect" id="Node000016" href="$classel_1_1base_1_1utils_1_1AbstractRegistry.html" title=" " alt="" coords="194,585,403,640"/>
+<area shape="poly" id="edge894_Node000003_Node000016" title=" " alt="" coords="149,582,194,590,193,596,148,587"/>
+<area shape="rect" id="Node000017" href="$classel_1_1base_1_1utils_1_1AbstractRegistry.html" title=" " alt="" coords="207,664,391,719"/>
+<area shape="poly" id="edge895_Node000003_Node000017" title=" " alt="" coords="107,597,143,624,184,649,211,661,209,666,181,654,140,628,104,601"/>
+<area shape="rect" id="Node000019" href="$classel_1_1Callback.html" title=" " alt="" coords="237,743,360,768"/>
+<area shape="poly" id="edge897_Node000003_Node000019" title=" " alt="" coords="87,602,125,667,152,700,184,728,210,740,238,748,236,753,208,745,181,732,148,704,121,670,83,604"/>
+<area shape="rect" id="Node000031" href="$classel_1_1base_1_1TypedConfigurations.html" title="Configurations with data types." alt="" coords="201,792,396,817"/>
+<area shape="poly" id="edge900_Node000003_Node000031" title=" " alt="" coords="82,603,96,644,117,691,146,738,184,777,206,789,203,794,181,781,142,741,112,694,91,646,77,605"/>
+<area shape="rect" id="Node000032" href="$classel_1_1base_1_1utils_1_1AbstractRegistry.html" title="Abstract registry (aka repository) that provides basic interface for pointer repository specified by ..." alt="" coords="203,842,394,882"/>
+<area shape="poly" id="edge902_Node000003_Node000032" title=" " alt="" coords="79,603,90,653,110,713,141,774,161,802,184,827,204,840,201,845,181,831,157,806,136,777,105,715,85,654,74,604"/>
+<area shape="rect" id="Node000005" href="$classel_1_1LogDispatchCallback.html" title=" " alt="" coords="488,161,652,187"/>
+<area shape="poly" id="edge883_Node000004_Node000005" title=" " alt="" coords="400,171,488,171,488,177,400,177"/>
+<area shape="rect" id="Node000006" href="$classNetLogger.html" title=" " alt="" coords="789,112,871,137"/>
+<area shape="poly" id="edge884_Node000005_Node000006" title=" " alt="" coords="650,156,788,130,789,135,651,161"/>
+<area shape="rect" id="Node000007" href="$classRollMonitor.html" title=" " alt="" coords="786,161,874,187"/>
+<area shape="poly" id="edge885_Node000005_Node000007" title=" " alt="" coords="666,171,786,171,786,177,666,177"/>
+<area shape="rect" id="Node000008" href="$classel_1_1base_1_1DefaultLogDispatchCallback.html" title=" " alt="" coords="735,211,925,251"/>
+<area shape="poly" id="edge886_Node000005_Node000008" title=" " alt="" coords="642,187,739,209,738,214,641,192"/>
+<area shape="rect" id="Node000010" href="$classel_1_1LoggerRegistrationCallback.html" title=" " alt="" coords="470,219,670,244"/>
+<area shape="poly" id="edge888_Node000009_Node000010" title=" " alt="" coords="390,229,470,229,470,234,390,234"/>
+<area shape="rect" id="Node000012" href="$classel_1_1PerformanceTrackingCallback.html" title=" " alt="" coords="463,276,677,301"/>
+<area shape="poly" id="edge890_Node000011_Node000012" title=" " alt="" coords="401,286,462,286,462,291,401,291"/>
+<area shape="rect" id="Node000018" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html" title="A pointer registry mechanism to manage memory and provide search functionalities. (predicate version)" alt="" coords="487,663,653,703"/>
+<area shape="poly" id="edge896_Node000017_Node000018" title=" " alt="" coords="404,686,486,683,486,688,405,691"/>
+<area shape="rect" id="Node000033" href="$classel_1_1base_1_1utils_1_1Registry.html" title=" " alt="" coords="491,871,649,911"/>
+<area shape="poly" id="edge903_Node000032_Node000033" title=" " alt="" coords="408,871,491,880,491,886,408,876"/>
+<area shape="rect" id="Node000035" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html" title=" " alt="" coords="481,936,659,991"/>
+<area shape="poly" id="edge905_Node000032_Node000035" title=" " alt="" coords="393,884,416,893,440,907,464,921,493,934,491,938,461,926,437,911,414,898,391,889"/>
+<area shape="rect" id="Node000037" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html" title=" " alt="" coords="470,728,670,783"/>
+<area shape="poly" id="edge907_Node000032_Node000037" title=" " alt="" coords="393,835,413,826,437,810,461,793,488,780,491,785,464,798,440,815,416,831,395,840"/>
+<area shape="rect" id="Node000039" href="$classel_1_1base_1_1utils_1_1Registry.html" title="A pointer registry mechanism to manage memory and provide search functionalities. (non&#45;predicate vers..." alt="" coords="491,807,649,847"/>
+<area shape="poly" id="edge909_Node000032_Node000039" title=" " alt="" coords="408,845,491,835,491,840,408,851"/>
+<area shape="rect" id="Node000034" href="$classel_1_1base_1_1RegisteredLoggers.html" title="Loggers repository." alt="" coords="737,879,923,904"/>
+<area shape="poly" id="edge904_Node000033_Node000034" title=" " alt="" coords="663,889,737,889,737,894,663,894"/>
+<area shape="rect" id="Node000036" href="$classel_1_1Configurations.html" title="Thread&#45;safe Configuration repository." alt="" coords="768,951,892,976"/>
+<area shape="poly" id="edge906_Node000035_Node000036" title=" " alt="" coords="673,961,768,961,768,966,673,966"/>
+<area shape="rect" id="Node000038" href="$classel_1_1base_1_1RegisteredHitCounters.html" title="Repository for hit counters used across the application." alt="" coords="725,743,935,768"/>
+<area shape="poly" id="edge908_Node000037_Node000038" title=" " alt="" coords="684,753,725,753,725,758,684,758"/>
+</map>

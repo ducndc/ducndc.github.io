@@ -1,0 +1,9 @@
+<map id="beerocks::TrafficSeparationTask::build_ts_config" name="beerocks::TrafficSeparationTask::build_ts_config">
+<area shape="rect" id="Node000001" title="Build manager configuration (bridges + private/guest VLAN IDs) from DB/BPL." alt="" coords="5,69,188,109"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1bpl.html#aeb05bfb897270cedbb19c9ee568a22c6" title="Reads guest bridge iface name." alt="" coords="240,5,403,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,67,237,47,238,52,168,72"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1bpl.html#a18ab670177a4e1b56b056d0ca3b6a900" title="Reads private bridge iface name." alt="" coords="236,69,407,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,87,222,87,222,92,188,92"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="240,134,403,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="176,107,258,128,257,133,175,112"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="son::agent_monitoring_task::dm_add_sta_to_agent_connected_event" name="son::agent_monitoring_task::dm_add_sta_to_agent_connected_event">
+<area shape="rect" id="Node000001" title="Search for appropriate BSS from bss list of tlvAssociatedClients, for each STA from its list of clien..." alt="" coords="803,5,969,60"/>
+<area shape="rect" id="Node000002" href="$classson_1_1agent__monitoring__task.html#a588f808421f59763dc4bda8ce2bccc8b" title="Add NBAPI AgentConnected event and its sub&#45;objects: Radios, BSSes, STAs to data model." alt="" coords="501,13,755,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="789,35,755,35,755,30,789,30"/>
+<area shape="rect" id="Node000003" href="$classson_1_1agent__monitoring__task.html#ac1aca39cf3892e8abb8e8f0140106ac4" title="Recive Topology Response message, checks that Agent configured BSSes reported in M2 message...." alt="" coords="259,13,453,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="488,35,454,35,454,30,488,30"/>
+<area shape="rect" id="Node000004" href="$classson_1_1agent__monitoring__task.html#a857b28805f805f45faae7de8733cf998" title="Handle ieee1905 message." alt="" coords="5,13,211,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="245,35,211,35,211,30,245,30"/>
+</map>

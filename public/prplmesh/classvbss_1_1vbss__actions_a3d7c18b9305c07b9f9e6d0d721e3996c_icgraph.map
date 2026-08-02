@@ -1,0 +1,25 @@
+<map id="vbss::vbss_actions::send_client_info_tlv_msg" name="vbss::vbss_actions::send_client_info_tlv_msg">
+<area shape="rect" id="Node000001" title="Sends a CmduMessage with the given message type and a single Client Info TLV." alt="" coords="707,152,884,192"/>
+<area shape="rect" id="Node000002" href="$classvbss_1_1vbss__actions.html#a795e37fa49d409331024d18b14895af3" title="Sends a request for the client security context." alt="" coords="488,62,637,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="725,150,637,118,638,113,726,145"/>
+<area shape="rect" id="Node000006" href="$classvbss_1_1vbss__actions.html#a3d251852b661a5d1644d61e7b93624c5" title="Sends a move cancel request." alt="" coords="467,152,659,192"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="693,175,659,175,659,169,693,169"/>
+<area shape="rect" id="Node000010" href="$classvbss_1_1vbss__actions.html#a6e59b0793b1a2af7e3d5c6e7bca5d8f9" title="Sends a move preparation request." alt="" coords="473,237,652,277"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="728,199,619,240,617,235,726,194"/>
+<area shape="rect" id="Node000003" href="$classvbss__task.html#a7a25c19c78a7e5809b3c086a07efe7eb" title="Begin process of moving client from one agent to another after recieving a move event." alt="" coords="246,5,413,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="474,68,402,48,404,43,475,63"/>
+<area shape="rect" id="Node000005" href="$classvbss__task.html#a3d662a5cb22d47900dfe0f2f50cd06b4" title="Begin process of creating a VBSS after recieving a create event, starting with fetching the Client Se..." alt="" coords="248,69,411,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="474,92,411,92,411,87,474,87"/>
+<area shape="rect" id="Node000004" href="$classvbss__task.html#a4ad8cc387fc095261aa6cb0098fd7246" title=" " alt="" coords="15,45,182,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="233,41,183,48,182,43,232,36"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="234,79,182,72,183,66,234,74"/>
+<area shape="rect" id="Node000007" href="$classvbss__task.html#a113749d93b85e16f45dea88e9afba9ff" title="Handles a timeout situation where a Multi&#45;AP Agent has not replied to a VBSS message within some time..." alt="" coords="240,134,419,159"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="453,163,419,159,419,154,453,157"/>
+<area shape="rect" id="Node000008" href="$classvbss__task.html#ac2fe81f4ebb0cac193419f29d1a256ab" title="Handles the VBSS Response which contains a single Virtual BSS Event TLV." alt="" coords="248,184,411,224"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="453,190,411,196,411,190,452,184"/>
+<area shape="rect" id="Node000009" href="$classvbss__task.html#a4216939148df9db770e952402325e89d" title="Handle ieee1905 message." alt="" coords="5,216,192,256"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="235,220,192,226,192,220,234,214"/>
+<area shape="rect" id="Node000011" href="$classvbss__task.html#a7ac6641077f19f6db5ac735886856628" title="Handles a Client Security Context Response which returns a Client Info TLV and a Client Security Cont..." alt="" coords="246,248,413,288"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="459,265,413,267,413,262,459,259"/>
+<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="232,257,192,252,193,246,232,252"/>
+</map>

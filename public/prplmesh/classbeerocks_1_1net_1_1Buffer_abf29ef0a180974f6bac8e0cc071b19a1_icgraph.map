@@ -1,0 +1,9 @@
+<map id="beerocks::net::Buffer::append" name="beerocks::net::Buffer::append">
+<area shape="rect" id="Node000001" title="Appends given data to buffer contents." alt="" coords="265,69,409,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1CmduSerializerStreamImpl.html#a7a14b5ac2a615a4888fd540098784eff" title="Serializes a CMDU to a byte buffer." alt="" coords="12,5,211,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,68,182,48,183,43,253,63"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1btl_1_1MessageSerializerStreamImpl.html#a3246790893643f83356c1bf68423c3fe" title="Serializes a transport message to a byte buffer." alt="" coords="5,69,217,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,92,217,92,217,87,251,87"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1UccSerializerStreamImpl.html#aa0fae87423e44badf45a01b445dd4688" title="Serializes a UCC reply string to a byte buffer." alt="" coords="10,133,213,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="253,116,183,136,182,131,252,111"/>
+</map>

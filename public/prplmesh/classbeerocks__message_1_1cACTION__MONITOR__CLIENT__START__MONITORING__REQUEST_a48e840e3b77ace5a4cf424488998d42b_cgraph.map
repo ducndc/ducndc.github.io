@@ -1,0 +1,34 @@
+<map id="beerocks_message::cACTION_MONITOR_CLIENT_START_MONITORING_REQUEST::init" name="beerocks_message::cACTION_MONITOR_CLIENT_START_MONITORING_REQUEST::init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,109,296,163"/>
+<area shape="rect" id="Node000002" href="$classBaseClass.html#a5c1871e2ca2e1915af1153a41225dc5c" title="Increments m_buff_ptr__ pointer while avoiding out&#45;of&#45;bounds accesses." alt="" coords="380,7,599,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,106,271,77,343,49,404,33,406,38,345,55,273,82,208,111"/>
+<area shape="rect" id="Node000003" href="$classBaseClass.html#a37dde0700f9595f82dd24aaee7218b41" title=" " alt="" coords="687,5,885,45"/>
+<area shape="poly" id="edge13_Node000001_Node000003" title=" " alt="" coords="279,106,344,93,673,39,673,44,344,99,280,111"/>
+<area shape="rect" id="Node000004" href="$classbeerocks__message_1_1cACTION__MONITOR__CLIENT__START__MONITORING__REQUEST.html#a224bed27bc59f8310dbca1162b1a104d" title=" " alt="" coords="344,109,635,163"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="296,133,330,133,330,139,296,139"/>
+<area shape="rect" id="Node000013" href="$classbeerocks__message_1_1cACTION__MONITOR__CLIENT__START__MONITORING__REQUEST.html#a22f3390bc5ed593d67ada46edf103304" title=" " alt="" coords="344,187,635,242"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="270,161,358,182,357,187,268,166"/>
+<area shape="rect" id="Node000014" href="$structbeerocks__message_1_1sClientMonitoringParams.html#abf16a6aa762da87b54488b627ca0b474" title=" " alt="" coords="393,267,585,307"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="190,161,260,207,302,231,345,251,381,263,379,268,343,256,299,235,257,212,187,166"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="599,19,673,21,673,26,599,25"/>
+<area shape="rect" id="Node000005" href="$structbeerocks__message_1_1sClientMonitoringParams.html#a61a3b1fdb1793547db4fbdac7ea87fe7" title=" " alt="" coords="683,75,889,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="635,113,669,108,669,114,635,118"/>
+<area shape="rect" id="Node000008" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#ad1b2d415442befaebf429eb28606b267" title=" " alt="" coords="747,149,825,174"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="635,146,733,154,733,160,635,151"/>
+<area shape="rect" id="Node000006" href="$structbeerocks_1_1net_1_1sIpv4Addr.html#a923c8baf150b2e9049d77530cfe1768c" title=" " alt="" coords="937,17,1105,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="868,72,925,58,926,63,869,77"/>
+<area shape="rect" id="Node000007" href="$structsMacAddr.html#a5c175ce1ce905a74f335e606139c76be" title=" " alt="" coords="941,82,1101,107"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="889,92,928,92,928,97,889,97"/>
+<area shape="rect" id="Node000009" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="984,131,1059,157"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="826,156,970,145,971,150,826,161"/>
+<area shape="rect" id="Node000010" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a257b5dfca4a855c44bbe9a463fc83c5b" title=" " alt="" coords="984,181,1059,206"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="826,164,971,184,970,189,825,169"/>
+<area shape="rect" id="Node000011" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a7efdf705e4169e195766ef00794d6839" title=" " alt="" coords="984,230,1059,255"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="821,172,938,215,971,226,970,231,936,220,819,177"/>
+<area shape="rect" id="Node000012" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a8441413dcd7cdc7a6696fd66d0fa2134" title=" " alt="" coords="1153,230,1207,255"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1059,240,1139,240,1139,245,1059,245"/>
+<area shape="rect" id="Node000015" href="$structbeerocks_1_1net_1_1sIpv4Addr.html#af9c507d5e0906c23b98a73cce9e70b74" title=" " alt="" coords="702,219,870,259"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="585,269,688,252,689,257,586,274"/>
+<area shape="rect" id="Node000016" href="$structsMacAddr.html#a8fa62336de553bad9d080e45633cb94e" title=" " alt="" coords="713,283,859,309"/>
+<area shape="poly" id="edge16_Node000014_Node000016" title=" " alt="" coords="586,287,699,291,698,296,586,292"/>
+</map>

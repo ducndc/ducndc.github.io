@@ -1,0 +1,29 @@
+<map id="beerocks::ChannelScanTask::trigger_next_radio_scan" name="beerocks::ChannelScanTask::trigger_next_radio_scan">
+<area shape="rect" id="Node000001" title="Find the next pending Radio Scan and send a Trigger Scan request to the monitor." alt="" coords="5,184,195,224"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelScanTask.html#a5cb9158053651798de1bebd469a8bdff" title="Send a Trigger Scan Request CMDU to the monitor." alt="" coords="243,184,432,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,201,229,201,229,207,195,207"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1message__com.html#aca33ce73fa0075ee0b7f0c78984aa519" title=" " alt="" coords="497,5,665,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="351,182,402,120,438,85,479,55,490,49,492,53,481,60,442,89,406,124,355,186"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="500,70,663,95"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="361,182,413,143,479,106,502,97,504,102,481,110,416,148,364,186"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1BackhaulManager.html#a634f4550764f8a170612cce73ebd3861" title=" " alt="" coords="488,120,675,160"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="414,181,491,161,492,166,415,187"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1message__com.html#a028861029a2c3f999d81c46c1792eebe" title=" " alt="" coords="497,184,665,224"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="432,201,484,201,484,207,432,207"/>
+<area shape="rect" id="Node000012" href="$classson_1_1wireless__utils.html#abfa70ce5ef15ec84099607efe70af48e" title="Retrieve the subset of 20MHz channels of the given channel &amp; bandwidth." alt="" coords="480,248,683,288"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="415,221,492,242,491,247,414,227"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1BackhaulManager.html#a1429298b96ad16663983ba4b95111705" title="Sends given CMDU message through the specified socket connection." alt="" coords="488,312,675,352"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="365,222,417,260,481,298,497,305,495,309,479,302,414,264,362,226"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1ChannelScanTask.html#a6e2b4be2ad0194be8a84be522712f672" title="Sets the status for the individual channels within a given scan." alt="" coords="487,376,676,416"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="353,223,404,291,440,329,482,362,492,368,489,373,478,366,437,333,400,294,349,226"/>
+<area shape="rect" id="Node000004" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="731,5,929,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="666,23,717,23,717,28,666,28"/>
+<area shape="rect" id="Node000005" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="989,13,1103,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="930,23,975,23,975,28,930,28"/>
+<area shape="rect" id="Node000009" href="$classieee1905__1_1_1CmduMessage.html#a05ca2e3fc9b6628dd7eca553a8d68aad" title=" " alt="" coords="738,152,922,192"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="665,191,724,183,725,188,666,196"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1message__com.html#a2ac9090c0d8d3b371a7518031d80ad16" title=" " alt="" coords="746,216,914,256"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="666,212,732,221,732,226,665,217"/>
+<area shape="rect" id="Node000010" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="977,159,1115,185"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="922,169,963,169,963,175,922,175"/>
+</map>

@@ -1,0 +1,59 @@
+<map id="son::wireless_utils::get_center_channel" name="son::wireless_utils::get_center_channel">
+<area shape="rect" id="Node000001" title="Get the center channel of the channel." alt="" coords="1579,161,1721,201"/>
+<area shape="rect" id="Node000002" href="$tlvf__utils_8cpp.html#a8bdd1ea1d2cb882972b5d7b759d18660" title="Get a list of permanent non operable channels for operating class." alt="" coords="1367,193,1509,233"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1565,196,1509,205,1508,199,1565,191"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1ChannelSelectionTask.html#af3e294e8f028efed01ed18eda3bbad38" title=" " alt="" coords="1345,107,1531,147"/>
+<area shape="poly" id="edge27_Node000001_Node000025" title=" " alt="" coords="1565,162,1517,150,1519,145,1566,157"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1tlvf__utils.html#aa16577d935aaab5a19519812c445d77e" title="Adds a new AP Radio Basic Capabilities TLV to given message." alt="" coords="1107,221,1253,276"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1354,227,1253,241,1253,236,1353,222"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1ChannelSelectionTask.html#aa51e06829a2ee6c1cbf8cc0fcafb7698" title=" " alt="" coords="1063,157,1297,197"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="1353,204,1297,196,1298,190,1354,198"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1tlvf__utils.html#acbb3f40382e4bda5cdb20646ded78836" title="Compute the map {OpClass: vector&lt;Channel&gt;} of Channels that the Agent can scan." alt="" coords="1097,395,1263,435"/>
+<area shape="poly" id="edge20_Node000002_Node000019" title=" " alt="" coords="1402,243,1208,397,1205,393,1399,239"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1CapabilityReportingTask.html#a7b00b32fa754ce14fc09180c85ec881e" title=" " alt="" coords="520,352,717,407"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1095,272,1015,290,892,315,769,342,718,355,717,350,767,337,891,310,1014,285,1094,266"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1ApAutoConfigurationTask.html#acac857cb125f8b47cf8715889f8008d6" title=" " alt="" coords="785,221,998,276"/>
+<area shape="poly" id="edge10_Node000003_Node000010" title=" " alt="" coords="1094,251,998,251,998,246,1094,246"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1CapabilityReportingTask.html#a9acb331eed8a595e767c64ee983f0200" title=" " alt="" coords="261,433,459,488"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="519,413,449,436,447,431,517,408"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1CapabilityReportingTask.html#a95ab455be4b0b197194827083763e214" title=" " alt="" coords="254,355,466,409"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="506,383,466,384,466,378,506,378"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1CapabilityReportingTask.html#ac964d82b2215485effda1e3b9d1625b2" title=" " alt="" coords="251,290,469,330"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="506,352,435,333,436,328,508,347"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1CapabilityReportingTask.html#a88f1851388eaee3fe4cdd87b10266a0a" title="Handle events, which are being send from containing thread." alt="" coords="5,401,203,441"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="247,446,202,439,203,433,248,440"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="241,403,203,408,202,403,240,397"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1CapabilityReportingTask.html#a6a8c641f2791e991564843ee929042bc" title="Handle CMDU message." alt="" coords="5,290,203,330"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="237,313,203,313,203,307,237,307"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aec7c837c390bb5fa3bd9237f3c5498ec" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="517,229,720,269"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="771,251,720,251,720,246,771,246"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a0805d78df62071cfdd3ad89bddc67963" title="Handle events, which are being send from containing thread." alt="" coords="259,226,461,266"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="504,250,461,250,461,244,504,245"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1ChannelSelectionTask.html#ad6aaa1324ee633b1100c2912b63bc818" title=" " alt="" coords="768,157,1015,197"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="1049,179,1015,179,1015,174,1049,174"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1ChannelSelectionTask.html#a65b820e8cf4c13421a28ce657eb2d23c" title=" " alt="" coords="526,71,711,125"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="807,155,711,127,712,122,809,150"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1ChannelSelectionTask.html#a11c581ca3cc0151f26ccd3e6a422a69c" title=" " alt="" coords="526,149,711,204"/>
+<area shape="poly" id="edge18_Node000014_Node000018" title=" " alt="" coords="754,179,712,179,712,174,754,174"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1ChannelSelectionTask.html#ab67214343b93cc468593dcbbaf5d2456" title="Handles Vendor Specific messages." alt="" coords="263,85,457,125"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="512,103,457,105,457,99,512,98"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1ChannelSelectionTask.html#a85b2df533a6c739eae4a108daeb29410" title="Handle CMDU message." alt="" coords="11,49,197,89"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="249,92,196,84,197,79,250,86"/>
+<area shape="poly" id="edge19_Node000018_Node000016" title=" " alt="" coords="512,150,432,127,433,122,514,145"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1tlvf__utils.html#ab4943b6e7a735e396cd873a95cdb3f69" title="Fill the Channel Scan Capabilities TLV." alt="" coords="812,352,971,407"/>
+<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="1082,406,971,392,971,387,1083,401"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1ChannelScanTask.html#ada72e745797beb5ed2adfe907a0180b8" title="Handle ChannelScanTask::eEvent::BACKHAUL_MANAGER_ENABLED as the last event in the series son_slave_th..." alt="" coords="786,431,997,471"/>
+<area shape="poly" id="edge23_Node000019_Node000021" title=" " alt="" coords="1083,430,997,441,997,436,1083,425"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1ChannelScanTask.html#a263b981f2b87820d7e26526041e04fc3" title="Handles 1905 channel scan request message." alt="" coords="789,495,994,535"/>
+<area shape="poly" id="edge25_Node000019_Node000023" title=" " alt="" coords="1123,443,1016,486,977,498,975,493,1014,481,1121,438"/>
+<area shape="poly" id="edge22_Node000020_Node000004" title=" " alt="" coords="799,382,718,382,718,377,799,377"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1ChannelScanTask.html#aaf005f47a2265db55d408929e91efd57" title="Handle events, which are being send from containing thread." alt="" coords="524,431,713,471"/>
+<area shape="poly" id="edge24_Node000021_Node000022" title=" " alt="" coords="772,454,713,454,713,449,772,449"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1ChannelScanTask.html#a0313f2336162a0ea45324002d446ea64" title="Handles incoming messages." alt="" coords="524,495,713,535"/>
+<area shape="poly" id="edge26_Node000023_Node000024" title=" " alt="" coords="775,518,714,518,714,513,775,513"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1ChannelSelectionTask.html#ad4ae37f19f6c651e16f9d16e9925fabd" title=" " alt="" coords="1087,41,1273,96"/>
+<area shape="poly" id="edge28_Node000025_Node000026" title=" " alt="" coords="1336,107,1273,93,1274,87,1337,102"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1ChannelSelectionTask.html#a7d6483025a229705407c13db63a7afb8" title=" " alt="" coords="257,5,463,60"/>
+<area shape="poly" id="edge29_Node000026_Node000027" title=" " alt="" coords="1073,67,463,40,464,34,1073,61"/>
+<area shape="poly" id="edge30_Node000027_Node000017" title=" " alt="" coords="243,52,197,58,197,53,243,46"/>
+</map>

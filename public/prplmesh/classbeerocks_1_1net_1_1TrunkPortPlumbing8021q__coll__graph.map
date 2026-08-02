@@ -1,0 +1,9 @@
+<map id="beerocks::net::TrunkPortPlumbing8021q" name="beerocks::net::TrunkPortPlumbing8021q">
+<area shape="rect" id="Node000001" title="802.1Q&#45;based implementation of per&#45;trunk traffic&#45;separation plumbing." alt="" coords="337,47,504,87"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1PortPlumbing.html" title="Common base class for per&#45;port plumbing (trunk or access)." alt="" coords="19,5,206,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,30,314,45,338,49,337,54,313,50,219,35"/>
+<area shape="rect" id="Node000003" href="$structbeerocks_1_1net_1_1sTrunkPort.html" title=" " alt="" coords="26,55,199,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,65,337,65,337,70,213,70"/>
+<area shape="rect" id="Node000004" href="$structbeerocks_1_1net_1_1sTrafficSeparationConfig.html" title="Traffic separation configuration that includes information about." alt="" coords="5,105,220,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="233,100,313,85,337,80,338,85,314,90,234,105"/>
+</map>

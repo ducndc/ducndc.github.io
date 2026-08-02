@@ -1,0 +1,21 @@
+<map id="bwl::nl80211::wpa_ctrl_socket::path" name="bwl::nl80211::wpa_ctrl_socket::path">
+<area shape="rect" id="Node000001" title="Returns the wpa_ctrl socket file path." alt="" coords="897,101,1049,141"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#ac0835aab2f72abcdb0cd5f4992856231" title="Attach the wpa_ctrl socket (i.e subscribe client) to be notified with events from hostapd/wpa_supplic..." alt="" coords="696,69,848,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="883,110,848,104,849,99,884,104"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a3e0a6e6247c6f2cc2e6c3930dd883c6c" title="Detach the wpa_ctrl socket (i.e unsubscribe client) to stop receiving events from hostapd/wpa_supplic..." alt="" coords="695,133,849,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="884,138,850,144,849,138,883,133"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#afbd96f8a915bea6677281a6ae5806133" title="Opens and attach event socket to hostapd/wpa_supplicant deamon." alt="" coords="477,69,638,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="683,92,638,92,638,87,683,87"/>
+<area shape="rect" id="Node000004" href="$classdevice_1_1serial_1_1SerialDevice.html#a27e698b9464330b6878cfcf4946561bc" title=" " alt="" coords="234,5,411,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="470,68,396,48,397,43,471,63"/>
+<area shape="rect" id="Node000005" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a90819258a767d0bbc4132ae895b3d083" title=" " alt="" coords="225,69,420,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="463,92,420,92,420,87,463,87"/>
+<area shape="rect" id="Node000007" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a609ed83012c520db859b121211bd4e36" title="Detach and close event socket to hostapd/wpa_supplicant deamon." alt="" coords="468,133,647,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="681,156,647,156,647,151,681,151"/>
+<area shape="rect" id="Node000008" href="$classdevice_1_1serial_1_1SerialDevice.html#a86412c3938993f5fa486643d11ebcf87" title=" " alt="" coords="234,133,411,173"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="454,156,411,156,411,151,454,151"/>
+<area shape="rect" id="Node000009" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a133c4403ab2cc3943128e25277ddf2d4" title="Closes wpa_ctrl event socket and remove the relative file descriptor from event monitoring FDs queue." alt="" coords="247,197,399,237"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="471,180,397,200,396,195,470,174"/>
+<area shape="rect" id="Node000010" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#ac60d9b281805d469409ce0df0facc454" title="Custom destructor of wpa_ctrl event socket object. It enforces socket disconnection." alt="" coords="5,190,177,245"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="233,220,178,220,178,215,233,215"/>
+</map>

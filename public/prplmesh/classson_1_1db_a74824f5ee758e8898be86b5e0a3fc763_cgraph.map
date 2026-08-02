@@ -1,0 +1,23 @@
+<map id="son::db::handle_current_op_class" name="son::db::handle_current_op_class">
+<area shape="rect" id="Node000001" title="Create instances for each bandwidth possible for Radio.{i}.CurrentOperatingClasses and Backhaul...." alt="" coords="5,171,164,211"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a45836132d4b9f88be5bd7d6ffa6feca8" title="Get agent containing a specific radio." alt="" coords="431,5,561,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,169,145,118,176,91,211,70,262,49,316,36,369,28,417,23,417,29,369,33,317,41,264,54,213,74,179,96,148,122,103,172"/>
+<area shape="rect" id="Node000003" href="$classson_1_1wireless__utils.html#a00f5b16456dacf54f6f19db8f13f9de6" title="Get bandwith from the operating class (cannot distinguish between 320&#45;1 and 320&#45;2)" alt="" coords="423,249,569,303"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,209,164,230,213,248,262,259,314,267,409,274,409,279,313,272,262,264,211,253,162,235,119,213"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a0109d9013ec19e74e9431bbc896dffb5" title="Get index of Current Operating Class profile in database for Operating Class bandwidth." alt="" coords="214,199,373,239"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,199,201,204,200,209,164,204"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="433,184,559,224"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="164,183,265,181,375,184,420,189,419,194,374,189,265,186,165,189"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#ac3348e7487c4eb489f981b799f47806a" title="Set DM values for Radio.CurrentOperatingClassProfile and Backhaul.CurrentOperatingClassProfile if nee..." alt="" coords="212,84,375,124"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="133,168,231,127,233,132,135,173"/>
+<area shape="rect" id="Node000009" href="$classson_1_1wireless__utils.html#a23eca76fb7a6f97322af76197c4db29c" title=" " alt="" coords="224,313,363,353"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="109,209,155,249,213,292,235,305,232,309,211,297,152,254,105,213"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="365,236,410,249,409,254,364,241"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="373,210,419,207,419,212,373,216"/>
+<area shape="poly" id="edge9_Node000006_Node000002" title=" " alt="" coords="345,81,430,48,432,53,347,86"/>
+<area shape="poly" id="edge10_Node000006_Node000005" title=" " alt="" coords="339,122,376,140,424,168,438,176,436,180,421,173,373,145,337,126"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a28baec66d2b4f3c4df7a9a536b25bce0" title=" " alt="" coords="425,69,567,109"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="375,95,411,93,412,98,375,101"/>
+<area shape="rect" id="Node000008" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="427,134,565,159"/>
+<area shape="poly" id="edge11_Node000006_Node000008" title=" " alt="" coords="375,119,422,128,421,134,374,124"/>
+</map>

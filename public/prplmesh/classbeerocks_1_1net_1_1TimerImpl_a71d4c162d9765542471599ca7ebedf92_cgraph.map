@@ -1,0 +1,11 @@
+<map id="beerocks::net::TimerImpl::schedule" name="beerocks::net::TimerImpl::schedule">
+<area shape="rect" id="Node000001" title="Schedules the timer for repeated fixed&#45;delay execution, beginning after the specified initial delay." alt="" coords="5,37,172,77"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1TimerImpl.html#a8488a9dde80ab529d37dc9e2ac9331b3" title="Converts given duration to a timespec structure." alt="" coords="220,5,387,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,42,206,37,207,42,173,48"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1TimerImpl.html#a79df158524024e6db0612b5b6bc82c7a" title="Arms (starts) or disarms (stops) the timer." alt="" coords="220,69,387,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,67,207,72,206,77,172,72"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1TimerImpl.html#a91175ea2d0b53e8298c036324bbf6ae9" title="Gets file descriptor." alt="" coords="435,77,621,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="387,87,421,87,421,92,387,92"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1FileDescriptorImpl.html#a380211675fdc135606551a3204d66433" title="Gets file descriptor." alt="" coords="669,69,860,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="621,87,655,87,655,92,621,92"/>
+</map>

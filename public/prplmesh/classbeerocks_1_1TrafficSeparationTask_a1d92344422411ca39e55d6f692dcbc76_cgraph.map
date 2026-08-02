@@ -1,0 +1,8 @@
+<map id="beerocks::TrafficSeparationTask::get_ports_from_db" name="beerocks::TrafficSeparationTask::get_ports_from_db">
+<area shape="rect" id="Node000001" title="Collect persistent trunk ports from current DB state." alt="" coords="5,35,188,75"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1TrafficSeparationTask.html#ac9781827d4a04cde9d8e6d4f6bf8cf7f" title="Add currently selected backhaul connection interface as a trunk candidate." alt="" coords="236,5,480,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,42,222,38,223,43,188,47"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="528,42,691,67"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="188,54,236,55,480,55,514,54,514,60,480,60,236,60,188,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="480,37,515,41,514,46,480,42"/>
+</map>

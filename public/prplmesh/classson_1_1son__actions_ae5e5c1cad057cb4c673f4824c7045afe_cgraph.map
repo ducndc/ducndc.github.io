@@ -1,0 +1,36 @@
+<map id="son::son_actions::handle_dead_station" name="son::son_actions::handle_dead_station">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,247,172,287"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#ad5cce2e7b28755f1d5f6b6df44a45818" title=" " alt="" coords="233,5,401,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,246,108,203,134,147,170,89,193,63,218,40,226,35,229,39,222,44,196,66,174,92,138,150,113,205,98,248"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a6cf6fbee422cf2147b815f10633b9fcd" title=" " alt="" coords="220,55,415,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,246,144,174,178,133,218,97,245,83,248,87,222,102,182,136,148,177,103,249"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="467,156,605,181"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="101,245,148,190,181,162,219,141,254,130,290,124,363,124,431,135,488,149,486,155,430,140,363,130,291,130,255,135,221,146,184,166,152,194,105,249"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#afadc519f1f65f2e01ea4512d3c1c3b54" title=" " alt="" coords="236,255,399,280"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="172,265,222,265,222,270,172,270"/>
+<area shape="rect" id="Node000007" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="463,205,609,231"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="151,285,208,299,275,307,346,306,381,300,414,289,429,279,437,267,446,254,461,241,475,234,477,238,464,246,450,258,442,271,432,283,416,294,382,305,346,311,275,313,207,304,149,290"/>
+<area shape="rect" id="Node000008" href="$classson_1_1task__pool.html#a7043f48b413457c5345519150a57f889" title=" " alt="" coords="255,355,380,395"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="127,285,221,334,252,348,250,353,219,339,124,290"/>
+<area shape="rect" id="Node000009" href="$classson_1_1task__pool.html#aec2e8de3733006e59c60eaa000818377" title=" " alt="" coords="236,420,399,445"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="105,286,152,345,184,378,221,405,236,413,234,417,219,410,181,382,148,349,101,289"/>
+<area shape="rect" id="Node000010" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="252,469,383,495"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="100,287,117,323,143,369,178,416,222,456,240,466,237,470,218,460,174,420,139,372,113,326,96,289"/>
+<area shape="rect" id="Node000012" href="$classson_1_1task__pool.html#a2ed2c02ac7513e109abdbf5e178bdc5e" title=" " alt="" coords="246,519,389,559"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="98,287,113,332,138,391,174,452,196,480,222,505,235,514,232,519,218,509,192,484,169,455,133,393,108,334,93,289"/>
+<area shape="rect" id="Node000013" href="$classson_1_1db.html#ae5487f9cc95f3f9b06e592153e06e18f" title=" " alt="" coords="244,156,391,181"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="118,245,165,217,219,190,240,183,242,188,221,195,167,221,121,249"/>
+<area shape="rect" id="Node000014" href="$classson_1_1db.html#acfebd24d55c7094f997e0a5dee0ff94a" title=" " alt="" coords="241,205,393,231"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="172,247,244,231,245,236,173,252"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="364,78,416,97,464,121,505,146,503,151,461,126,414,102,362,83"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="385,252,413,240,428,228,437,216,446,203,461,190,472,184,475,189,464,195,450,207,441,219,432,232,416,244,387,257"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1utils.html#ad3f7a5cd43fcde74d2f168eaf29eb992" title=" " alt="" coords="473,255,599,295"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="399,268,459,270,459,275,399,273"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="374,252,465,231,466,236,375,257"/>
+<area shape="rect" id="Node000011" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="463,469,609,495"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="383,479,449,479,449,485,383,485"/>
+<area shape="poly" id="edge16_Node000013_Node000004" title=" " alt="" coords="391,166,453,166,453,171,391,171"/>
+<area shape="poly" id="edge17_Node000013_Node000007" title=" " alt="" coords="375,179,466,200,465,205,374,184"/>
+<area shape="poly" id="edge19_Node000014_Node000004" title=" " alt="" coords="374,203,465,182,466,187,375,208"/>
+<area shape="poly" id="edge20_Node000014_Node000007" title=" " alt="" coords="394,215,449,215,449,221,394,221"/>
+</map>

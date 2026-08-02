@@ -1,0 +1,13 @@
+<map id="bwl::whm::ap_wlan_hal_whm::sta_deauth" name="bwl::whm::ap_wlan_hal_whm::sta_deauth">
+<area shape="rect" id="Node000001" title="Deauthenticate the station with the given MAC address." alt="" coords="5,69,164,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ae8c51f247ecc3e69f0660a46ae9981de" title="invokes a data model function." alt="" coords="212,5,388,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,67,218,47,220,52,153,72"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1base__wlan__hal.html#aece312da1a6de2a350f2c5087110cc3d" title=" " alt="" coords="232,69,368,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,87,218,87,218,92,165,92"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a0c9413724e2f45a0a6768cbe487d5deb" title="return search path of AccessPoint object instance by interface name." alt="" coords="221,134,379,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="146,107,208,128,207,133,144,112"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aa0db55a4edda99dfff997c429d96d039" title="return path of AccessPoint template object." alt="" coords="436,141,595,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="380,159,422,159,422,164,380,164"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="643,141,801,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="595,159,629,159,629,164,595,164"/>
+</map>

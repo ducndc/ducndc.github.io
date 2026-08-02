@@ -1,0 +1,23 @@
+<map id="beerocks::ChannelScanTask::abort_scan_request" name="beerocks::ChannelScanTask::abort_scan_request">
+<area shape="rect" id="Node000001" title="Abort the unfinished Radio Scans for the given request." alt="" coords="5,120,195,160"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1message__com.html#aca33ce73fa0075ee0b7f0c78984aa519" title=" " alt="" coords="252,5,420,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,118,182,86,242,55,258,48,260,53,244,60,184,91,133,122"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="255,70,417,95"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="182,117,269,96,270,101,184,123"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1BackhaulManager.html#a634f4550764f8a170612cce73ebd3861" title=" " alt="" coords="243,120,429,160"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="195,137,229,137,229,143,195,143"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1message__com.html#a028861029a2c3f999d81c46c1792eebe" title=" " alt="" coords="252,184,420,224"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="175,158,250,178,248,183,174,163"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1BackhaulManager.html#a1429298b96ad16663983ba4b95111705" title="Sends given CMDU message through the specified socket connection." alt="" coords="243,248,429,288"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="128,158,180,196,244,234,258,240,256,245,241,238,177,200,125,162"/>
+<area shape="rect" id="Node000003" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="477,5,676,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="420,23,464,23,464,28,420,28"/>
+<area shape="rect" id="Node000004" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="735,13,850,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="677,23,722,23,722,28,677,28"/>
+<area shape="rect" id="Node000008" href="$classieee1905__1_1_1CmduMessage.html#a05ca2e3fc9b6628dd7eca553a8d68aad" title=" " alt="" coords="485,152,669,192"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="420,190,471,183,471,189,421,195"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1message__com.html#a2ac9090c0d8d3b371a7518031d80ad16" title=" " alt="" coords="493,216,661,256"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="421,213,479,220,479,226,420,218"/>
+<area shape="rect" id="Node000009" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="724,159,861,185"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="669,169,710,169,710,175,669,175"/>
+</map>

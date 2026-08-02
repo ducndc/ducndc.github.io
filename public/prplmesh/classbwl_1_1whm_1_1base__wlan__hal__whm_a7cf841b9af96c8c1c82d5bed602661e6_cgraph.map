@@ -1,0 +1,27 @@
+<map id="bwl::whm::base_wlan_hal_whm::subscribe_to_sta_events" name="bwl::whm::base_wlan_hal_whm::subscribe_to_sta_events">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,250,153,305"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a12a0350a7f7c462b12b7b6915ed3cc80" title="read and return object parameter content." alt="" coords="437,5,613,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,248,136,186,166,153,200,124,254,93,312,69,370,51,423,38,425,43,371,56,313,74,256,98,203,129,169,157,140,190,98,251"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af195c649294605f0c93ff289dfad9df0" title="return accesspoint object instance path from path of child AssociatedDevice object instance" alt="" coords="446,70,605,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,248,145,207,172,187,200,170,258,145,318,126,432,104,433,109,320,131,260,150,203,174,175,191,149,211,107,252"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a948d6af296857af9f72b954b365927bc" title=" " alt="" coords="205,366,365,421"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="130,302,203,344,225,357,222,362,200,349,127,307"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a11e44e499d815949df6ab7d392771d03" title=" " alt="" coords="205,445,365,499"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="98,303,141,366,170,401,203,431,208,435,205,439,200,435,166,404,137,370,94,306"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aa0db55a4edda99dfff997c429d96d039" title="return path of AccessPoint template object." alt="" coords="446,277,605,317"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="153,278,432,291,432,296,153,283"/>
+<area shape="rect" id="Node000008" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a8591266c89fb31da4a9790b1cfe0e274" title="Subscribe to AffiliatedSta Active changes for MLO link updates." alt="" coords="201,185,368,239"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="153,251,187,240,189,245,155,256"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a6cbc2838430438cb1ec01e0d47f0659f" title="subscribe for event for a given object." alt="" coords="416,341,635,381"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="154,288,405,336,404,341,153,294"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="683,277,841,317"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="605,295,669,295,669,300,605,300"/>
+<area shape="poly" id="edge8_Node000008_Node000002" title=" " alt="" coords="300,183,346,119,378,84,414,55,425,49,428,53,418,60,382,88,350,122,304,186"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="327,182,415,134,432,126,434,131,417,138,330,187"/>
+<area shape="poly" id="edge12_Node000008_Node000006" title=" " alt="" coords="353,237,417,261,443,270,442,276,415,267,351,242"/>
+<area shape="rect" id="Node000009" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="453,149,598,174"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="368,192,450,174,452,179,369,197"/>
+<area shape="rect" id="Node000010" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a64859812c4d9e0b8e4f5a86c8470d7b2" title="Queue AffiliatedSta link ADD/REMOVE for AP manager processing." alt="" coords="430,198,621,253"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="368,214,417,217,416,222,368,219"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="312,238,358,284,387,307,417,327,430,334,428,338,415,332,383,311,354,288,308,241"/>
+</map>

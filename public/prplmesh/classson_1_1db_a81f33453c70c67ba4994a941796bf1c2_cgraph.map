@@ -1,0 +1,28 @@
+<map id="son::db::remove_candidate_client" name="son::db::remove_candidate_client">
+<area shape="rect" id="Node000001" title="Removes client with least timelife remaining from persistent db (with preference to disconnected clie..." alt="" coords="5,241,184,281"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a253307a80eb0361757e0030f3080d5a7" title="Clear client&#39;s persistent information." alt="" coords="240,163,379,203"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,239,240,205,242,210,151,244"/>
+<area shape="rect" id="Node000011" href="$classson_1_1db.html#ac6a3e07c3b6cf311eedc11bd82061d97" title="Returns the preferred client to be removed." alt="" coords="232,292,387,332"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="180,279,219,288,218,293,179,284"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a680ac0309e2ec8eb6de3a3a75b065854" title="Get db entry from MAC address." alt="" coords="463,5,589,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="324,161,369,109,400,80,433,55,449,46,452,51,436,60,403,84,373,112,328,164"/>
+<area shape="rect" id="Node000006" href="$namespacebeerocks_1_1bpl.html#a212d0b983373233e935e95e55ee45ade" title="find if entry exists" alt="" coords="451,69,601,109"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="348,160,434,119,452,112,454,117,436,124,350,165"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="683,299,820,325"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="380,200,694,293,693,298,378,205"/>
+<area shape="rect" id="Node000008" href="$classson_1_1db.html#a06e969578f5af21b70e619bbf14728c6" title="Removes a client entry from persistent_db and decrements clients counter." alt="" coords="435,133,617,173"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="379,171,420,165,421,170,379,176"/>
+<area shape="rect" id="Node000010" href="$classson_1_1db.html#a9ec2b6f7ea8df38b769a555d9967a54b" title="Get string representation of node type." alt="" coords="674,198,829,223"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="379,184,661,202,660,208,379,190"/>
+<area shape="rect" id="Node000004" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="686,13,817,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="589,23,672,23,672,28,589,28"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="885,13,1032,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="817,23,871,23,871,28,817,28"/>
+<area shape="rect" id="Node000009" href="$namespacebeerocks_1_1bpl.html#a940044f9e67e50e0d32d632d7e1f5a2d" title="Remove entry by name." alt="" coords="665,133,837,173"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="618,151,652,151,652,156,618,156"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="606,171,688,192,687,197,605,176"/>
+<area shape="poly" id="edge12_Node000011_Node000007" title=" " alt="" coords="387,309,669,309,669,315,387,315"/>
+<area shape="rect" id="Node000012" href="$classson_1_1db.html#a95def19c25bb7354275ae73873f27096" title=" " alt="" coords="456,350,596,375"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="387,327,458,344,457,349,386,333"/>
+<area shape="poly" id="edge14_Node000012_Node000007" title=" " alt="" coords="583,347,681,325,682,330,584,352"/>
+</map>

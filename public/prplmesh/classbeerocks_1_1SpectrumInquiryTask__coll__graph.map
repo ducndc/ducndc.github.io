@@ -1,0 +1,32 @@
+<map id="beerocks::SpectrumInquiryTask" name="beerocks::SpectrumInquiryTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1121,57,1328,83"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1Task.html" title=" " alt="" coords="878,5,989,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1003,28,1153,55,1152,60,1002,33"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1slave__thread.html" title=" " alt="" coords="855,160,1012,185"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="983,153,1186,80,1188,85,984,158"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1EventLoopThread.html" title=" " alt="" coords="500,12,685,37"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="700,38,766,55,832,82,860,100,885,120,923,158,919,162,882,124,857,104,829,87,765,60,698,43"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1thread__base.html" title=" " alt="" coords="177,12,331,37"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="345,22,500,22,500,27,345,27"/>
+<area shape="rect" id="Node000006" href="$classieee1905__1_1_1CmduMessageTx.html" title=" " alt="" coords="493,61,692,87"/>
+<area shape="poly" id="edge15_Node000001_Node000006" title=" " alt="" coords="706,71,1121,68,1121,73,706,76"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="661,87,831,131,902,157,900,162,830,137,660,92"/>
+<area shape="rect" id="Node000007" href="$classieee1905__1_1_1CmduMessage.html" title=" " alt="" coords="162,61,346,87"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="360,71,493,71,493,77,360,77"/>
+<area shape="rect" id="Node000008" href="$classClassList.html" title=" " alt="" coords="5,61,83,87"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="97,71,162,71,162,77,97,77"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1TaskPool.html" title="The TaskPool is single instance tasks container which responsible to run each task and allow passing ..." alt="" coords="524,289,661,315"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="675,296,752,284,792,273,829,258,857,242,882,222,919,184,923,188,886,226,860,246,832,263,793,278,753,289,676,301"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1TaskPoolInterface.html" title="The TaskPoolInterface provides interface for adding tasks and sending messages between tasks." alt="" coords="160,289,348,315"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="362,299,524,299,524,305,362,305"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1slave__thread_1_1sSlaveState.html" title=" " alt="" coords="514,339,671,379"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="685,354,759,341,795,328,829,310,863,281,891,246,924,184,929,187,895,249,867,285,832,315,797,333,760,346,686,360"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1slave__thread_1_1cRadioManagers.html" title=" " alt="" coords="514,111,671,151"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="685,142,716,146,855,162,854,167,716,151,684,147"/>
+<area shape="rect" id="Node000013" href="$structbeerocks_1_1slave__thread_1_1sAgentConfig.html" title=" " alt="" coords="514,175,671,215"/>
+<area shape="poly" id="edge12_Node000003_Node000013" title=" " alt="" coords="685,196,756,196,830,191,881,183,882,188,831,197,756,201,685,202"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1logging.html" title=" " alt="" coords="531,240,655,265"/>
+<area shape="poly" id="edge13_Node000003_Node000014" title=" " alt="" coords="668,245,747,235,830,217,872,201,908,183,911,188,874,206,831,222,748,240,669,250"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1log__levels.html" title=" " alt="" coords="183,240,325,265"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="338,250,530,250,530,255,338,255"/>
+</map>

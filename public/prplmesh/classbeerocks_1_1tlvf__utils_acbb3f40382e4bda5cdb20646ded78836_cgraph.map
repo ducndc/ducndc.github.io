@@ -1,0 +1,29 @@
+<map id="beerocks::tlvf_utils::get_channel_scan_map" name="beerocks::tlvf_utils::get_channel_scan_map">
+<area shape="rect" id="Node000001" title="Compute the map {OpClass: vector&lt;Channel&gt;} of Channels that the Agent can scan." alt="" coords="5,221,172,261"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1WifiChannel.html#ac35559bb3c4aaa27a28278469e1aefcb" title="Get the freq type object." alt="" coords="223,85,377,125"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,219,158,178,219,135,230,129,232,134,221,140,161,182,113,223"/>
+<area shape="rect" id="Node000003" href="$tlvf__utils_8cpp.html#a8bdd1ea1d2cb882972b5d7b759d18660" title="Get a list of permanent non operable channels for operating class." alt="" coords="229,149,371,189"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,219,227,191,229,196,149,224"/>
+<area shape="rect" id="Node000010" href="$classson_1_1wireless__utils.html#a6bc7c9d6c145e2a5e328c9522b9e7380" title="Get a list of operating classes that are associated with the frequency type." alt="" coords="220,214,380,269"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="172,239,206,239,206,244,172,244"/>
+<area shape="rect" id="Node000011" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="235,293,365,318"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="156,259,245,286,243,291,155,264"/>
+<area shape="rect" id="Node000013" href="$classson_1_1wireless__utils.html#a72ea0ed0fd09c2536d4f7815cf0aacb6" title="convert operating class to bandwidth based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="231,342,369,397"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="118,259,221,328,230,333,228,338,219,333,115,264"/>
+<area shape="rect" id="Node000004" href="$classson_1_1wireless__utils.html#a768d727978f743c838fd35e8a37f2be6" title="Get the center channel of the channel." alt="" coords="442,5,585,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="361,147,378,135,394,116,401,96,409,76,426,55,433,50,436,55,430,59,414,79,406,98,399,119,382,139,364,151"/>
+<area shape="rect" id="Node000007" href="$classson_1_1wireless__utils.html#a1cbb62842c7103638ee87731445a3b88" title="Get a list of overlapping 5GHz/6GHz beacon channel for a given channel and bandwidth." alt="" coords="428,214,599,269"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="361,187,420,207,418,212,359,192"/>
+<area shape="rect" id="Node000008" href="$classson_1_1wireless__utils.html#ac7d7bb75d799bf38c516cbdd1300d243" title=" " alt="" coords="434,70,593,125"/>
+<area shape="poly" id="edge9_Node000003_Node000008" title=" " alt="" coords="359,147,420,126,422,131,361,152"/>
+<area shape="rect" id="Node000009" href="$classson_1_1wireless__utils.html#a23eca76fb7a6f97322af76197c4db29c" title=" " alt="" coords="444,149,583,189"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="371,167,431,167,431,172,371,172"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1utils.html#a444f7dfcd73d9155f17df02aa712c2cd" title=" " alt="" coords="655,44,813,84"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="585,35,641,45,640,50,584,40"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="647,145,821,185"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="576,43,600,55,699,134,695,139,597,60,573,48"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="579,212,597,199,612,183,621,167,630,151,645,132,691,90,695,94,649,135,635,153,626,170,617,186,600,203,582,216"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="592,211,662,187,663,192,594,216"/>
+<area shape="rect" id="Node000012" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="440,293,587,318"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="366,303,426,303,426,308,366,308"/>
+</map>

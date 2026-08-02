@@ -1,0 +1,26 @@
+<map id="beerocks::net::Buffer::data" name="beerocks::net::Buffer::data">
+<area shape="rect" id="Node000001" title="Returns pointer to the raw data." alt="" coords="564,229,708,269"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1NetlinkEventListenerImpl.html#a98fa789b0bbba5f637f8b598037af659" title="Parses data received through the Netlink socket connection." alt="" coords="316,5,500,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="620,217,604,180,581,138,551,96,514,59,495,48,498,43,518,55,555,92,586,135,609,178,625,215"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1CmduParserStreamImpl.html#ab6223e31614fcfd1afcb3f1cb0568a22" title="Parses a CMDU out of a byte buffer." alt="" coords="317,69,499,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="611,219,570,170,543,145,515,124,491,112,493,107,517,119,547,141,574,166,615,216"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1UccParserStreamImpl.html#a23de5e072bbfd56e956de82c1fd8d27f" title="Parses a UCC command string out of a byte buffer." alt="" coords="315,133,501,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="589,225,515,188,483,176,484,171,517,183,591,220"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1btl_1_1MessageParserStreamImpl.html#a4c013c5a49130ed17846aaea89ee7aa1" title="Parses a transport message out of a byte buffer." alt="" coords="310,197,506,237"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="550,240,506,234,507,228,551,235"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1SocketConnectionImpl.html#a077ac593eceadf5ddbed1c074d6156e2" title="Receives data through the socket connection." alt="" coords="300,261,516,301"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="551,264,516,269,516,264,550,259"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1net_1_1SocketConnectionImpl.html#a2ffc67b8d3e731b4ba7d6b3808045df5" title="Receives data through the socket connection." alt="" coords="300,325,516,365"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="591,278,517,316,484,328,483,323,515,311,589,274"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1net_1_1SocketConnectionImpl.html#afa24cc73cf1eeb6fe32293eb65b0ffb5" title="Sends data through the socket connection." alt="" coords="300,389,516,429"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="615,283,574,332,547,358,517,380,493,392,491,387,515,375,543,354,570,329,611,279"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1net_1_1SocketConnectionImpl.html#aa4a10d02c031d74ef51e9ec80904e2be" title="Sends data through the socket connection." alt="" coords="300,453,516,493"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="625,283,609,321,586,364,555,407,518,443,498,456,495,451,514,439,551,403,581,361,604,318,620,281"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1NetlinkEventListenerImpl.html#a5c49bfe5b03f623fc536a07984218d36" title="Class constructor." alt="" coords="5,5,252,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,28,252,28,252,23,302,23"/>
+<area shape="rect" id="Node000010" href="$classdevice_1_1serial_1_1SerialDevice.html#a5aa9f875f96abefba12f5367550e0c43" title=" " alt="" coords="16,373,241,398"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="286,402,241,398,242,392,286,396"/>
+<area shape="rect" id="Node000011" href="$classdevice_1_1serial_1_1SerialDevice.html#a806576a7e9dcb8e2208f4bca7d22ee02" title=" " alt="" coords="10,422,247,447"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="287,423,248,427,247,421,286,418"/>
+<area shape="poly" id="edge10_Node000010_Node000010" title=" " alt="" coords="178,364,176,359,168,355,129,351,99,353,83,358,80,364,88,371,84,374,74,364,79,354,98,348,129,346,169,350,180,355,183,362"/>
+</map>

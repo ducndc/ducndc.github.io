@@ -1,0 +1,29 @@
+<map id="bwl::whm::base_wlan_hal_whm::refresh_radio_capabilities" name="bwl::whm::base_wlan_hal_whm::refresh_radio_capabilities">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,201,169,256"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#aa86ae2cd6c1807233fc9b3272e6a400b" title="read and return content tree of first object matching requested path." alt="" coords="489,209,665,249"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,226,475,226,475,231,170,231"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a7922ed0e1754ad87475b082ac8c0459e" title="try to read optional MSCS/SCS radio capabilities and fill m_radio_info.{mscs_supported,..." alt="" coords="217,5,441,60"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,199,151,139,182,106,216,77,236,64,239,69,219,81,185,110,155,142,109,203"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a9704f3d3418137deacd61a21b8c1843a" title="resolve a search path, and retrieve first matching result." alt="" coords="489,78,665,118"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="111,199,156,157,185,137,216,121,282,101,349,90,416,86,476,86,476,92,416,91,350,96,283,106,218,126,188,141,160,161,114,203"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a5ab2aadd20a396f13e48e0a68a398155" title="return search path of Radio object instance by Name." alt="" coords="246,409,413,464"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="105,255,150,325,182,363,219,396,235,406,232,410,216,400,178,367,146,328,101,258"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1string__utils.html#aea97ffe1489d4608c5035b257deaaadc" title=" " alt="" coords="256,266,403,306"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="170,245,244,263,242,268,169,251"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a4205d12bdb54b4b5d28c9ed8ba9ab07c" title=" " alt="" coords="253,331,406,385"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="125,254,168,286,219,316,241,326,239,331,216,320,165,290,122,258"/>
+<area shape="rect" id="Node000012" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#ac1ee84d7f31987a9d58467af13d07bf4" title=" " alt="" coords="249,136,409,191"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="169,204,235,186,236,191,170,209"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a12a0350a7f7c462b12b7b6915ed3cc80" title="read and return object parameter content." alt="" coords="489,13,665,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="441,30,476,30,476,35,441,35"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a4e1a50159b84bf6084a38a466197358b" title="resolve a search path, and retrieve all matching results." alt="" coords="713,78,889,118"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="666,95,699,95,699,101,666,101"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a7f96ac72dd88efe1686ffadd5458f940" title="return path of Radio template object." alt="" coords="494,345,661,385"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="412,410,494,386,495,391,413,415"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="722,246,881,286"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="623,342,741,289,744,294,625,347"/>
+<area shape="poly" id="edge11_Node000011_Node000002" title=" " alt="" coords="405,331,440,316,492,286,537,255,540,259,495,290,443,320,407,336"/>
+<area shape="poly" id="edge13_Node000012_Node000002" title=" " alt="" coords="410,182,488,203,487,208,409,187"/>
+<area shape="poly" id="edge14_Node000012_Node000005" title=" " alt="" coords="409,140,487,119,488,124,410,145"/>
+<area shape="poly" id="edge15_Node000012_Node000009" title=" " alt="" coords="410,160,532,168,600,178,666,194,715,213,759,237,757,241,713,218,665,199,599,184,531,174,409,166"/>
+</map>

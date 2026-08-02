@@ -1,0 +1,13 @@
+<map id="beerocks::CmduClientImpl::forward_cmdu" name="beerocks::CmduClientImpl::forward_cmdu">
+<area shape="rect" id="Node000001" title="Forwards a CMDU message to the connected server." alt="" coords="5,69,183,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CmduPeer.html#addcd1ab5feb73f60da09bf1df9b5dbf9" title="Forwards a CMDU message that was sent by a remote process." alt="" coords="231,69,376,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,87,217,87,217,92,183,92"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1Socket_1_1Connection.html#a482d47968f7745ac6785073a5c60b620" title="Sends data through the socket connection." alt="" coords="441,5,591,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="370,67,435,47,437,52,371,72"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1Socket_1_1Connection.html#a6ab08378af58ec338acd0a3ee61bcbda" title="Returns the underlying socket used by this connection." alt="" coords="441,69,591,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="376,87,427,87,427,92,376,92"/>
+<area shape="rect" id="Node000005" href="$classieee1905__1_1_1CmduMessage.html#ad5f4ed0d3023d6b312e9b8c58df57707" title=" " alt="" coords="424,133,608,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="371,107,437,127,435,132,370,112"/>
+<area shape="rect" id="Node000006" href="$classClassList.html#a9aaab6648b85a86c9fea88c6eb9a4944" title=" " alt="" coords="656,141,772,166"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="608,151,642,151,642,156,608,156"/>
+</map>

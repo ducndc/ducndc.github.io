@@ -1,0 +1,43 @@
+<map id="wfa_map::tlvApWifi6Capabilities::radio_uid" name="wfa_map::tlvApWifi6Capabilities::radio_uid">
+<area shape="rect" id="Node000001" title=" " alt="" coords="2107,163,2317,203"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CapabilityReportingTask.html#a0c3ed297cf068482e53263a6d967814b" title="Adds an AP WIFI6 Capabilities TLV to AP Capability Report message." alt="" coords="1852,130,2059,170"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2093,171,2059,166,2059,161,2094,165"/>
+<area shape="rect" id="Node000009" href="$classson_1_1db.html#a522c85f809dd878e67b794b0f62f8a7a" title="Add optional sub&#45;object of AP WIFI6 Capabilities data element, set values for its parameters." alt="" coords="1882,195,2029,235"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="2093,201,2029,209,2028,204,2093,196"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1CapabilityReportingTask.html#a7b00b32fa754ce14fc09180c85ec881e" title=" " alt="" coords="1607,104,1804,159"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1838,144,1804,141,1804,136,1839,139"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1CapabilityReportingTask.html#a9acb331eed8a595e767c64ee983f0200" title=" " alt="" coords="1351,5,1548,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1626,101,1558,74,1528,63,1530,58,1560,69,1628,96"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1CapabilityReportingTask.html#a95ab455be4b0b197194827083763e214" title=" " alt="" coords="1343,84,1555,139"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="1593,125,1555,122,1556,117,1593,120"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1CapabilityReportingTask.html#ac964d82b2215485effda1e3b9d1625b2" title=" " alt="" coords="1340,163,1559,203"/>
+<area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="1594,157,1549,166,1548,161,1593,151"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1CapabilityReportingTask.html#a88f1851388eaee3fe4cdd87b10266a0a" title="Handle events, which are being send from containing thread." alt="" coords="1086,51,1283,91"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1337,52,1284,60,1283,54,1337,46"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="1329,96,1283,89,1284,84,1330,91"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1CapabilityReportingTask.html#a6a8c641f2791e991564843ee929042bc" title="Handle CMDU message." alt="" coords="1086,159,1283,199"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1326,184,1283,183,1283,178,1326,179"/>
+<area shape="rect" id="Node000010" href="$classson_1_1Controller.html#a0f2e34ba79e3e12b1d9f4fa823e0fe32" title="Get info from &#39;AP WIFI6 Capabilities&#39; TLV, set data to AP WiFi6Capabilities data element." alt="" coords="1620,199,1791,239"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1868,219,1791,221,1791,215,1868,214"/>
+<area shape="rect" id="Node000011" href="$classson_1_1Controller.html#a1c3f28c28843aa013194eb39d6f42af4" title=" " alt="" coords="1373,231,1526,271"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1607,234,1527,244,1526,239,1606,229"/>
+<area shape="rect" id="Node000012" href="$classson_1_1Controller.html#af95fdd37db5176f9564602420e3e9df2" title=" " alt="" coords="1095,224,1274,279"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1359,254,1274,254,1274,249,1359,249"/>
+<area shape="rect" id="Node000020" href="$classson_1_1Controller.html#ade8c52acf70251d04bffcc0d23a01272" title=" " alt="" coords="1077,303,1292,357"/>
+<area shape="poly" id="edge20_Node000011_Node000020" title=" " alt="" coords="1369,278,1278,305,1277,300,1368,273"/>
+<area shape="rect" id="Node000013" href="$classson_1_1Controller.html#a143d4db51e884c7b84c146aca4f5fb4b" title=" " alt="" coords="859,271,1029,311"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="1082,271,1030,280,1029,275,1081,266"/>
+<area shape="rect" id="Node000014" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="619,279,811,304"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="845,294,811,294,811,289,845,289"/>
+<area shape="rect" id="Node000015" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="400,249,571,275"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="605,280,571,276,571,270,605,275"/>
+<area shape="rect" id="Node000016" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="409,299,562,339"/>
+<area shape="poly" id="edge16_Node000014_Node000016" title=" " alt="" coords="606,307,562,313,562,307,605,302"/>
+<area shape="rect" id="Node000017" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,307,352,332"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="395,322,353,322,353,317,395,317"/>
+<area shape="rect" id="Node000018" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,281,109,307"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="197,311,109,300,110,295,197,306"/>
+<area shape="rect" id="Node000019" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,331,163,356"/>
+<area shape="poly" id="edge19_Node000017_Node000019" title=" " alt="" coords="197,332,163,336,163,331,196,327"/>
+<area shape="poly" id="edge21_Node000020_Node000013" title=" " alt="" coords="1064,313,1029,308,1030,302,1064,308"/>
+</map>

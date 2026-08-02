@@ -1,0 +1,16 @@
+<map id="bwl::nl80211::wpa_ctrl_socket::close" name="bwl::nl80211::wpa_ctrl_socket::close">
+<area shape="rect" id="Node000001" title="Close wpa_ctrl socket. It also cleans/frees the internal resources used by wpa_ctrl socket." alt="" coords="677,69,829,109"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__cmd.html#a87ef6c473749c3b6b7dbb9cd3f02856e" title="Disconnect socket from hostapd/wpa_supplicant deamon. This implementation implies closing the socket." alt="" coords="455,5,625,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="672,68,606,48,608,43,673,63"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a609ed83012c520db859b121211bd4e36" title="Detach and close event socket to hostapd/wpa_supplicant deamon." alt="" coords="451,69,629,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="664,92,630,92,630,87,664,87"/>
+<area shape="rect" id="Node000007" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a141e2f50f2c459e8627c82bcf3c4aa02" title="Base Destructor of wpa_ctrl socket object. This will close the socket and cleans all internal resourc..." alt="" coords="451,133,629,173"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="673,116,608,136,606,131,672,111"/>
+<area shape="rect" id="Node000003" href="$classdevice_1_1serial_1_1SerialDevice.html#a86412c3938993f5fa486643d11ebcf87" title=" " alt="" coords="225,5,403,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,28,403,28,403,23,441,23"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="455,68,384,48,386,43,456,63"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a133c4403ab2cc3943128e25277ddf2d4" title="Closes wpa_ctrl event socket and remove the relative file descriptor from event monitoring FDs queue." alt="" coords="238,69,390,109"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="437,92,390,92,390,87,437,87"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#ac60d9b281805d469409ce0df0facc454" title="Custom destructor of wpa_ctrl event socket object. It enforces socket disconnection." alt="" coords="5,62,177,117"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="224,92,178,92,178,87,224,87"/>
+</map>

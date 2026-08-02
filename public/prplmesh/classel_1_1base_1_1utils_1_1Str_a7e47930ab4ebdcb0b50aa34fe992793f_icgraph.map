@@ -1,0 +1,16 @@
+<map id="el::base::utils::Str::cStringCaseEq" name="el::base::utils::Str::cStringCaseEq">
+<area shape="rect" id="Node000001" title="Compares cstring equality (case&#45;insensitive) &#45; uses toupper(char) Dont use strcasecmp because of CRT ..." alt="" coords="967,37,1092,77"/>
+<area shape="rect" id="Node000002" href="$classel_1_1ConfigurationTypeHelper.html#a83a46879f2cfe2b417a187d8d8623cff" title="Converts from configStr to ConfigurationType." alt="" coords="736,5,919,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="953,48,918,42,919,37,954,43"/>
+<area shape="rect" id="Node000007" href="$classel_1_1LevelHelper.html#a3dcd4cba95cdf58f223b196f814a9205" title="Converts from levelStr to Level." alt="" coords="747,69,907,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="954,72,908,79,907,74,953,67"/>
+<area shape="rect" id="Node000003" href="$classel_1_1Configurations_1_1Parser.html#a70e0d8b27e7c1b5dd94e6838c304a751" title=" " alt="" coords="556,37,688,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="723,44,689,50,688,44,722,39"/>
+<area shape="rect" id="Node000004" href="$classel_1_1Configurations_1_1Parser.html#ab8e266318b9feaeee4d3169e4a7ca275" title="Parses configuration from file." alt="" coords="349,37,508,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="542,60,508,60,508,55,542,55"/>
+<area shape="rect" id="Node000005" href="$classel_1_1Configurations.html#aaa098126d64a5ee04a3944b1a65dcdca" title="Parses configuration from file." alt="" coords="177,37,301,77"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="336,60,301,60,301,55,336,55"/>
+<area shape="rect" id="Node000006" href="$classel_1_1Configurations.html#ae341bd647734d1180a5a138222d2f1ea" title="Constructor used to set configurations using configuration file." alt="" coords="5,37,129,77"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="163,60,130,60,130,55,163,55"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="733,77,688,70,689,65,734,72"/>
+</map>

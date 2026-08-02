@@ -1,0 +1,14 @@
+<map id="beerocks::ChannelSelectionTask::check_received_preferences_contain_violation" name="beerocks::ChannelSelectionTask::check_received_preferences_contain_violation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,48,229,103"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="517,5,679,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,49,277,41,394,28,502,20,503,25,395,33,278,46,230,54"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks.html#a1f1f9f29d0e9a690e414a95c5a4ffdbd" title="Returns the preference score of a given channel." alt="" coords="277,55,447,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="229,73,264,73,264,78,229,78"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1AgentDB.html#a662ffd73ff93ff8025a6276766949814" title="Get a pointer to the parent radio struct of given MAC address." alt="" coords="290,119,434,159"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="223,100,277,115,276,120,222,105"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="444,53,531,31,532,37,446,58"/>
+<area shape="rect" id="Node000004" href="$classson_1_1wireless__utils.html#afd8cfe5f9708a2d9c1e4503956c83619" title="Match channel number in the given operating class." alt="" coords="495,55,701,95"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="447,73,481,73,481,78,447,78"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a8d99a3fb7cc8f914325695a89005bddf" title="convert operating class to channel set based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="749,48,888,103"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="702,73,735,73,735,78,702,78"/>
+</map>

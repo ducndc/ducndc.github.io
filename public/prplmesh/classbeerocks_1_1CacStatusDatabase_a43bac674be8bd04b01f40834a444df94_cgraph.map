@@ -1,0 +1,13 @@
+<map id="beerocks::CacStatusDatabase::update_cac_status_db" name="beerocks::CacStatusDatabase::update_cac_status_db">
+<area shape="rect" id="Node000001" title="Update all collected channel information by given radio." alt="" coords="5,105,207,145"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="255,5,429,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,103,254,55,271,48,273,53,256,60,150,108"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1WifiChannel.html#ac35559bb3c4aaa27a28278469e1aefcb" title="Get the freq type object." alt="" coords="265,69,419,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,107,251,101,251,106,207,113"/>
+<area shape="rect" id="Node000004" href="$classson_1_1wireless__utils.html#a078f6f46bf99ac53d10ce191a06be7a7" title="get operating class number by channel and channel bandwidth" alt="" coords="269,134,415,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="207,138,255,145,255,151,207,143"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1WifiChannel.html#a536aa8a3003f3ab04e0a56f9f2b3cd23" title="check if the channel is an empty" alt="" coords="265,213,419,253"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="146,143,256,198,275,206,273,211,254,202,143,148"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a9ca3466505a1ccda48a6a6a428bb9e74" title="Get the center channel of the channel." alt="" coords="477,141,641,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="415,159,464,159,464,164,415,164"/>
+</map>

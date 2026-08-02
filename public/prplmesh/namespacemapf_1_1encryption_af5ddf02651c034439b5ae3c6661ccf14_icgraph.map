@@ -1,0 +1,37 @@
+<map id="mapf::encryption::wps_calculate_keys" name="mapf::encryption::wps_calculate_keys">
+<area shape="rect" id="Node000001" title="Calculate WPS secret authkey and KeyWrapKey based on remote and local public keys generated with diff..." alt="" coords="1913,101,2064,141"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a4a8159b0775e7021cf9180bceb008c5f" title="Diffie&#45;Hellman public key exchange keys calculation class member params authkey and keywrapauth are c..." alt="" coords="1663,58,1865,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1899,110,1865,104,1866,99,1900,104"/>
+<area shape="rect" id="Node000007" href="$classson_1_1Controller.html#ac601e69162471dd25e94525b9d758b86" title="Calculate keys and update M2/M8 attributes." alt="" coords="1677,137,1851,177"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="1900,138,1852,146,1851,141,1899,133"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a77a1197c159c919b540d58d0856a97ab" title=" " alt="" coords="1412,5,1615,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1649,60,1597,48,1598,43,1650,55"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a5ae75a6a0c4ded228199640d295890d5" title=" " alt="" coords="1412,69,1615,109"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="1649,90,1615,90,1615,85,1649,84"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a63e7e8c1cffc9f7b1bf8929f5b1ba266" title="Parse AP&#45;Autoconfiguration and apply configuration if M2/M8 is present." alt="" coords="1109,53,1364,93"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1399,48,1353,56,1352,51,1398,43"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="859,53,1061,93"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1096,76,1061,76,1061,71,1096,71"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="1398,85,1364,83,1365,78,1399,80"/>
+<area shape="rect" id="Node000008" href="$classson_1_1Controller.html#a0b4634133dc3d3b2f411fd5b0ea60854" title="add WSC M2/M8 TLV to the current CMDU" alt="" coords="1426,133,1601,173"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1663,158,1601,157,1601,152,1663,153"/>
+<area shape="rect" id="Node000017" href="$classson_1_1Controller.html#a5db8351cb35bd0c93471fa1e491a80a7" title=" " alt="" coords="1426,197,1601,237"/>
+<area shape="poly" id="edge17_Node000007_Node000017" title=" " alt="" coords="1667,183,1598,200,1597,195,1666,178"/>
+<area shape="rect" id="Node000009" href="$classson_1_1Controller.html#a3143b35b7110c8139cea082fa8d17f3a" title="Parse AP&#45;Autoconfiguration WSC which should include one AP Radio Basic Capabilities TLV and one WSC T..." alt="" coords="1116,149,1357,189"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1412,162,1358,165,1357,160,1412,156"/>
+<area shape="rect" id="Node000010" href="$classson_1_1Controller.html#a143d4db51e884c7b84c146aca4f5fb4b" title=" " alt="" coords="875,149,1045,189"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1103,172,1045,172,1045,167,1103,167"/>
+<area shape="rect" id="Node000011" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="619,157,811,182"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="861,172,811,172,811,167,861,167"/>
+<area shape="rect" id="Node000012" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="400,127,571,153"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="605,158,571,154,571,148,605,153"/>
+<area shape="rect" id="Node000013" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="409,177,562,217"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="606,185,562,191,562,185,605,180"/>
+<area shape="rect" id="Node000014" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,185,352,210"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="395,200,353,200,353,195,395,195"/>
+<area shape="rect" id="Node000015" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,159,109,185"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="197,189,109,178,110,173,197,184"/>
+<area shape="rect" id="Node000016" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,209,163,234"/>
+<area shape="poly" id="edge16_Node000014_Node000016" title=" " alt="" coords="197,210,163,214,163,209,196,205"/>
+<area shape="poly" id="edge18_Node000017_Node000009" title=" " alt="" coords="1412,203,1352,192,1353,187,1413,197"/>
+</map>

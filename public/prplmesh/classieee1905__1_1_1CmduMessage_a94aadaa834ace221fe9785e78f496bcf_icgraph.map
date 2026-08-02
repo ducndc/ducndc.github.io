@@ -1,0 +1,9 @@
+<map id="ieee1905_1::CmduMessage::is_finalized" name="ieee1905_1::CmduMessage::is_finalized">
+<area shape="rect" id="Node000001" title=" " alt="" coords="439,49,623,89"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1beerocks__ucc__listener.html#a28d169ba6e1cf249b8620af238dd655a" title="Receives WFA&#45;CA command, executes it and returns a reply to the sender." alt="" coords="229,5,375,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="424,55,374,47,375,41,425,49"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#af76c899c13b8b033b5726995a5b5b16c" title="Sends a CDMU message to the transport process for dispatching." alt="" coords="213,85,391,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="425,88,391,93,390,88,424,83"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1beerocks__ucc__listener.html#ab1b827e14408f91d33af6e38cc33c915" title=" " alt="" coords="5,5,165,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="215,35,166,35,166,30,215,30"/>
+</map>

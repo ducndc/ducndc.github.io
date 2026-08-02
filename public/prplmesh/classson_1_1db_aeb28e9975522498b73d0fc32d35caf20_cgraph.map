@@ -1,0 +1,21 @@
+<map id="son::db::add_station" name="son::db::add_station">
+<area shape="rect" id="Node000001" title="add client node and Station object." alt="" coords="5,223,145,249"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#ad110753006d3890f0fa5a92c12ecc660" title="Adds STA instance to the datamodel." alt="" coords="204,133,348,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,221,213,176,215,181,108,226"/>
+<area shape="rect" id="Node000004" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="627,131,757,157"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="139,246,228,259,339,265,399,264,460,259,520,249,578,232,605,219,629,202,669,165,673,169,633,206,607,224,580,237,521,254,460,264,399,270,339,271,227,264,138,251"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a39cb768c3e3115545cbdb128e6fedd98" title="Finds and returns sBss with a specified BSSID (and optionaly al_mac)." alt="" coords="433,198,552,223"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="145,229,419,212,420,218,146,234"/>
+<area shape="rect" id="Node000009" href="$classson_1_1db.html#af2ea74d4cecf365c413eff5608454d4a" title=" " alt="" coords="193,299,359,325"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="111,246,230,292,228,297,109,251"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a15584625df423d5f8f07e0ce185c375d" title="Restores station steering event from database to add to new data model path of station." alt="" coords="423,5,562,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,131,346,93,405,55,418,49,420,53,408,60,349,98,302,135"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#a098b9f20c35758512ebba987e2b52103" title="Set values for parameters of NBAPI object MultiAPSTA.SteeringSummaryStats." alt="" coords="407,69,579,109"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="344,131,411,111,412,116,345,136"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="349,170,432,192,430,197,348,175"/>
+<area shape="rect" id="Node000008" href="$classson_1_1db.html#a6db1e54425fbb798118e69c6de5b04b1" title="Get index and instance path from full data model path. Simplifies ambiorix/nbapi calls." alt="" coords="415,133,570,173"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="349,151,402,151,402,156,349,156"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="555,43,580,55,629,87,669,120,665,124,625,92,577,60,553,48"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="805,131,952,157"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="758,141,792,141,792,147,758,147"/>
+</map>

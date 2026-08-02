@@ -1,0 +1,24 @@
+<map id="bwl::dwpal::ap_wlan_hal_dwpal::send_unassoc_sta_link_metric_query" name="bwl::dwpal::ap_wlan_hal_dwpal::send_unassoc_sta_link_metric_query">
+<area shape="rect" id="Node000001" title="Prepare and send unassoc query to hostapd." alt="" coords="5,149,184,203"/>
+<area shape="rect" id="Node000002" href="$classson_1_1wireless__utils.html#ae3508c67d6e27af6dab9dc810c6f1f75" title="Translate a channel number to its frequency value." alt="" coords="471,5,601,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,147,163,94,195,69,231,48,288,29,347,19,405,15,457,16,457,21,405,21,348,24,289,35,233,53,198,73,167,98,118,150"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1utils.html#a444f7dfcd73d9155f17df02aa712c2cd" title=" " alt="" coords="244,63,403,103"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,146,231,112,249,105,251,110,233,117,155,151"/>
+<area shape="rect" id="Node000004" href="$classson_1_1wireless__utils.html#aec6ccfc3181af54627e40947f7e5ea5c" title="Get the vht central frequency object." alt="" coords="232,127,415,167"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="184,162,218,157,219,163,184,167"/>
+<area shape="rect" id="Node000008" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="258,191,389,217"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="184,184,244,192,244,197,184,190"/>
+<area shape="rect" id="Node000010" href="$classson_1_1wireless__utils.html#a72ea0ed0fd09c2536d4f7815cf0aacb6" title="convert operating class to bandwidth based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="254,241,393,295"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="164,201,243,233,241,238,162,206"/>
+<area shape="rect" id="Node000011" href="$classson_1_1wireless__utils.html#a4a9475de64b16eec74c471a08b4db153" title="Get a frequency type based on a frequency." alt="" coords="258,320,389,360"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="120,202,169,254,200,282,233,306,247,313,244,318,231,310,197,286,165,258,116,206"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="392,124,413,113,428,99,437,85,446,70,461,55,469,50,472,54,464,59,450,74,441,88,432,102,416,117,395,129"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a078f6f46bf99ac53d10ce191a06be7a7" title="get operating class number by channel and channel bandwidth" alt="" coords="463,70,609,125"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="409,124,448,115,450,120,411,129"/>
+<area shape="rect" id="Node000007" href="$classson_1_1wireless__utils.html#a68db75b4bc3f334a634182d2aa287b3a" title="Get a frequency type based on a channel number." alt="" coords="471,149,601,189"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="415,154,457,158,457,164,415,159"/>
+<area shape="rect" id="Node000006" href="$classson_1_1wireless__utils.html#a9ca3466505a1ccda48a6a6a428bb9e74" title="Get the center channel of the channel." alt="" coords="657,77,821,117"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="610,95,644,95,644,100,610,100"/>
+<area shape="rect" id="Node000009" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="463,214,609,239"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="389,208,449,215,449,220,389,214"/>
+</map>

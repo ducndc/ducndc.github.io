@@ -1,0 +1,17 @@
+<map id="beerocks::CacStatusDatabase::add_cac_completion_report_tlv" name="beerocks::CacStatusDatabase::add_cac_completion_report_tlv">
+<area shape="rect" id="Node000001" title="Fills in CAC Completion Report TLV by given radio." alt="" coords="5,141,216,181"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CacStatusDatabase.html#a0464a8ee34c1828d2e7784ad5a1aa785" title="Get the completion status object of a given radio." alt="" coords="264,141,465,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,159,250,159,250,164,216,164"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="513,5,688,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,139,444,98,512,55,526,48,528,53,515,60,447,102,392,143"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1WifiChannel.html#ac35559bb3c4aaa27a28278469e1aefcb" title="Get the freq type object." alt="" coords="523,69,678,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="430,139,521,111,522,116,432,144"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a078f6f46bf99ac53d10ce191a06be7a7" title="get operating class number by channel and channel bandwidth" alt="" coords="527,134,674,189"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="466,159,514,159,514,164,466,164"/>
+<area shape="rect" id="Node000007" href="$classson_1_1wireless__utils.html#a0f3158e1775db68715ae38aa66fc28ce" title="Calculates the list of overlapping 5GHz channels and bandwidths for the given source channel." alt="" coords="529,213,672,267"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="426,179,517,210,516,215,425,184"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1WifiChannel.html#a536aa8a3003f3ab04e0a56f9f2b3cd23" title="check if the channel is an empty" alt="" coords="523,292,678,332"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="389,179,444,227,515,276,529,284,527,289,512,281,440,231,385,183"/>
+<area shape="rect" id="Node000006" href="$classson_1_1wireless__utils.html#a9ca3466505a1ccda48a6a6a428bb9e74" title="Get the center channel of the channel." alt="" coords="736,141,900,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="674,159,722,159,722,164,674,164"/>
+</map>

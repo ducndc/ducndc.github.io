@@ -1,0 +1,16 @@
+<map id="beerocks::TopologyTask::send_topology_notification" name="beerocks::TopologyTask::send_topology_notification">
+<area shape="rect" id="Node000001" title=" " alt="" coords="713,96,897,136"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1TopologyTask.html#a0780b67fb70bc42f04d6656b2e4af62d" title="Handle events, which are being send from containing thread." alt="" coords="477,5,639,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="737,93,664,67,614,48,616,43,666,61,739,88"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1TopologyTask.html#ab78d9672cf6cbc285891adeb251a3b5d" title="Handles 1905 Topology Discovery message." alt="" coords="216,64,403,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="699,112,403,93,403,87,699,107"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1TopologyTask.html#a05adef496b0405f7c3938f95fa18084b" title="Handles Vendor Specific Topology Notification message." alt="" coords="451,121,665,175"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="700,132,666,137,665,131,700,127"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1TopologyTask.html#a17d02c8e9d749d9642d232a0708a2ee0" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="477,200,639,240"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="759,145,666,190,633,202,631,197,664,186,756,140"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1TopologyTask.html#a2c75b5c339449510a43209a2e90fcee8" title="Handle CMDU message." alt="" coords="5,96,168,136"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="203,102,169,107,168,102,202,97"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1TopologyTask.html#acf09562b1a6321b78f21fd72826ae73f" title="Handles Vendor Specific messages." alt="" coords="226,128,393,168"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="437,151,393,151,393,145,437,145"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="212,137,168,130,168,125,212,131"/>
+</map>

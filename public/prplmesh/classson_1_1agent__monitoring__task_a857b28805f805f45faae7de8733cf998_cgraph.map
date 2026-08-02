@@ -1,0 +1,74 @@
+<map id="son::agent_monitoring_task::handle_ieee1905_1_msg" name="son::agent_monitoring_task::handle_ieee1905_1_msg">
+<area shape="rect" id="Node000001" title="Handle ieee1905 message." alt="" coords="5,252,211,292"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessageRx.html#ad1db8fee42b3e3a1aaf8312a139b72f3" title=" " alt="" coords="837,98,1038,138"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,251,126,200,154,132,173,96,197,63,225,33,258,9,343,4,516,3,773,6,811,21,848,42,906,86,903,91,845,46,809,26,771,11,516,8,343,9,260,14,228,37,201,66,178,99,158,134,131,201,116,253"/>
+<area shape="rect" id="Node000004" href="$classieee1905__1_1_1CmduMessage.html#a94ce761475d53857b8d5543fa9e4c0bd" title=" " alt="" coords="264,252,448,292"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="211,270,250,270,250,275,211,275"/>
+<area shape="rect" id="Node000009" href="$classWSC_1_1m1.html#a7bd44ab8e0b6599d92383ac3e3f7110d" title=" " alt="" coords="296,862,416,888"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="117,292,167,472,209,597,261,722,301,793,339,850,335,853,296,796,256,724,204,599,162,474,112,294"/>
+<area shape="rect" id="Node000012" href="$classson_1_1agent__monitoring__task.html#a23f3d9735744863f82dfc12f41613221" title="Store in &#39;bss_stats&#39; last received BSS statistics." alt="" coords="267,671,445,711"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="121,291,176,409,216,487,261,564,296,615,331,659,327,662,292,618,256,567,211,490,171,412,116,294"/>
+<area shape="rect" id="Node000015" href="$classson_1_1agent__monitoring__task.html#a6a9cdebd4bfdbe9fc14290ed74131a9c" title="Store in &#39;radio_stats&#39; last received radio statistics." alt="" coords="263,23,449,63"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="122,250,177,179,215,137,257,98,301,68,304,72,260,102,219,141,181,183,126,254"/>
+<area shape="rect" id="Node000016" href="$classson_1_1agent__monitoring__task.html#acbc604782b6743fab1d6a29da7cef303" title="Schedules the agent requests and queries triggered by the reception of an M1 message." alt="" coords="281,112,431,152"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="143,250,306,157,309,162,146,255"/>
+<area shape="rect" id="Node000019" href="$classson_1_1agent__monitoring__task.html#ac1aca39cf3892e8abb8e8f0140106ac4" title="Recive Topology Response message, checks that Agent configured BSSes reported in M2 message...." alt="" coords="259,514,453,554"/>
+<area shape="poly" id="edge21_Node000001_Node000019" title=" " alt="" coords="130,291,328,502,324,505,126,294"/>
+<area shape="rect" id="Node000003" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="1119,204,1257,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="990,135,1143,196,1141,201,988,140"/>
+<area shape="rect" id="Node000005" href="$classieee1905__1_1_1CmduMessage.html#adc10ea7cfba25c0f58359cb954a5d69c" title=" " alt="" coords="845,294,1029,334"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="435,290,502,302,588,310,675,314,832,315,831,320,675,319,588,315,501,307,434,295"/>
+<area shape="rect" id="Node000006" href="$classieee1905__1_1_1CmduMessage.html#af54c8bd541643a03b9567fc61eef25f9" title=" " alt="" coords="545,252,729,292"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="448,270,531,270,531,275,448,275"/>
+<area shape="rect" id="Node000008" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="599,202,674,228"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="445,250,501,238,585,221,586,227,502,243,446,255"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="1015,291,1054,278,1150,233,1153,238,1056,283,1016,296"/>
+<area shape="rect" id="Node000007" href="$classClassList.html#aea43ae47ce1af363533f665105410639" title=" " alt="" coords="860,244,1015,269"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="729,265,846,259,846,264,729,270"/>
+<area shape="rect" id="Node000010" href="$classieee1905__1_1_1tlvWsc.html#a6edd48fc44d964eafc4188ab846bfc1c" title=" " alt="" coords="568,855,705,895"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="416,872,554,872,554,878,416,878"/>
+<area shape="rect" id="Node000011" href="$classieee1905__1_1_1tlvWsc.html#a086fade50c45099f5f4850b3a1a0baf8" title=" " alt="" coords="568,919,705,959"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="414,885,555,918,554,923,412,890"/>
+<area shape="rect" id="Node000013" href="$classieee1905__1_1_1CmduMessageRx.html#a9e40a53f37d6f1b7f2e2a064fff8f58c" title=" " alt="" coords="837,798,1038,838"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="380,709,433,751,466,772,502,789,584,810,668,821,750,825,823,824,823,830,749,831,667,827,583,815,500,794,464,777,430,756,376,713"/>
+<area shape="rect" id="Node000014" href="$classClassList.html#a8ae86a33e961882f333a6d6c4168d558" title="Get the list of classes of type T." alt="" coords="1109,805,1267,830"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="1038,815,1095,815,1095,820,1038,820"/>
+<area shape="poly" id="edge16_Node000015_Node000002" title=" " alt="" coords="449,26,520,19,602,15,688,19,773,32,807,43,840,57,897,88,894,93,837,62,805,48,771,38,687,24,602,21,520,24,449,31"/>
+<area shape="poly" id="edge19_Node000016_Node000002" title=" " alt="" coords="387,110,438,82,501,59,576,45,636,41,696,47,773,59,828,72,879,90,877,95,826,77,771,64,696,52,636,47,577,50,502,64,441,87,389,115"/>
+<area shape="rect" id="Node000017" href="$classson_1_1db.html#ab4ae43c08c0353a6fcb7974c3461e8f8" title="Get the list of BSS configured on a given radio." alt="" coords="557,138,716,178"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="432,136,544,147,543,152,431,142"/>
+<area shape="rect" id="Node000018" href="$classwfa__map_1_1tlvApRadioBasicCapabilities.html#ab939e70332915d9cabdae8f039aa3a62" title=" " alt="" coords="547,74,727,114"/>
+<area shape="poly" id="edge20_Node000016_Node000018" title=" " alt="" coords="431,119,533,105,534,111,432,125"/>
+<area shape="poly" id="edge41_Node000019_Node000002" title=" " alt="" coords="374,511,427,459,462,429,500,403,539,383,575,371,640,358,702,342,735,327,770,302,787,285,796,269,804,250,818,229,859,184,900,145,904,149,863,188,822,233,809,253,801,271,791,288,774,306,737,331,704,347,641,363,577,376,541,388,503,408,466,434,431,463,377,515"/>
+<area shape="rect" id="Node000020" href="$classson_1_1db.html#a9bebb1d8021b6f1f81b6d4d62b7ab678" title=" " alt="" coords="561,418,712,458"/>
+<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="396,511,446,489,500,467,547,453,549,459,502,472,448,493,399,516"/>
+<area shape="rect" id="Node000021" href="$classson_1_1agent__monitoring__task.html#a588f808421f59763dc4bda8ce2bccc8b" title="Add NBAPI AgentConnected event and its sub&#45;objects: Radios, BSSes, STAs to data model." alt="" coords="510,482,763,522"/>
+<area shape="poly" id="edge23_Node000019_Node000021" title=" " alt="" coords="453,520,496,515,497,520,454,525"/>
+<area shape="rect" id="Node000024" href="$classson_1_1agent__monitoring__task.html#a427692aa843b733ec109b5356346831f" title="Adds NBAPI AgentDisconnectedEvent object, all its sub&#45;objects and set values for it&#39;s parameters para..." alt="" coords="501,546,772,586"/>
+<area shape="poly" id="edge28_Node000019_Node000024" title=" " alt="" coords="454,542,488,546,487,551,453,547"/>
+<area shape="rect" id="Node000025" href="$classson_1_1db.html#ac65d6f65812a13cae41ed412e381c6a6" title="Removes excessive NBAPI objects from system bus, if amount of them succeed the limit." alt="" coords="846,619,1029,659"/>
+<area shape="poly" id="edge39_Node000019_Node000025" title=" " alt="" coords="395,552,445,575,502,595,588,613,675,625,833,636,832,641,675,631,587,619,501,600,443,580,393,556"/>
+<area shape="rect" id="Node000029" href="$classson_1_1agent__monitoring__task.html#a18201ac37b683c73adf8bb3d41c94d77" title="Add Neighbor of AgentConnected event to NBAPI data model. Ex. Device.WiFi.DataElements...." alt="" coords="544,725,729,780"/>
+<area shape="poly" id="edge35_Node000019_Node000029" title=" " alt="" coords="375,552,445,644,503,710,532,726,530,731,500,714,441,647,371,556"/>
+<area shape="rect" id="Node000031" href="$classson_1_1db.html#ae6ed3da5432f675e9049e63be86505c1" title=" " alt="" coords="567,660,706,700"/>
+<area shape="poly" id="edge40_Node000019_Node000031" title=" " alt="" coords="381,552,434,596,467,619,502,639,555,660,553,665,500,644,465,624,431,600,377,556"/>
+<area shape="poly" id="edge27_Node000021_Node000002" title=" " alt="" coords="756,479,770,468,791,440,801,412,804,385,802,357,799,297,804,265,818,230,834,205,853,182,894,144,898,148,857,185,838,208,822,232,809,266,804,298,807,357,809,385,807,414,796,442,774,472,759,484"/>
+<area shape="rect" id="Node000022" href="$classson_1_1agent__monitoring__task.html#a7aa5a239841cbc2e1ac975545d51e1a6" title="Search for appropriate BSS from bss list of tlvAssociatedClients, for each STA from its list of clien..." alt="" coords="854,409,1021,464"/>
+<area shape="poly" id="edge24_Node000021_Node000022" title=" " alt="" coords="729,479,840,455,841,460,730,484"/>
+<area shape="rect" id="Node000023" href="$classson_1_1db.html#a080b5ff0a4f667bd91f808de477d53c6" title="Returns ambiorix object." alt="" coords="1103,489,1273,514"/>
+<area shape="poly" id="edge26_Node000021_Node000023" title=" " alt="" coords="750,479,770,468,786,450,793,431,800,411,819,394,881,368,908,363,935,362,990,372,1056,394,1090,410,1121,432,1169,477,1165,481,1118,436,1087,415,1054,399,989,377,935,367,909,368,882,373,821,399,805,414,798,432,790,453,774,472,752,484"/>
+<area shape="poly" id="edge25_Node000022_Node000023" title=" " alt="" coords="1022,455,1126,483,1125,488,1020,461"/>
+<area shape="poly" id="edge34_Node000024_Node000023" title=" " alt="" coords="720,543,820,524,961,510,1089,502,1089,507,961,515,820,530,721,548"/>
+<area shape="poly" id="edge29_Node000024_Node000025" title=" " alt="" coords="720,583,842,613,841,618,719,588"/>
+<area shape="rect" id="Node000027" href="$classson_1_1agent__monitoring__task.html#ae1fd7c5f0fd26eee5ae72ea643eef5a6" title="Set values for parameters of NBAPI AgentDisconnected, adds its sub&#45;objects." alt="" coords="823,540,1051,594"/>
+<area shape="poly" id="edge31_Node000024_Node000027" title=" " alt="" coords="772,564,810,564,810,569,772,569"/>
+<area shape="rect" id="Node000026" href="$classson_1_1db.html#a6db1e54425fbb798118e69c6de5b04b1" title="Get index and instance path from full data model path. Simplifies ambiorix/nbapi calls." alt="" coords="1111,619,1265,659"/>
+<area shape="poly" id="edge30_Node000025_Node000026" title=" " alt="" coords="1029,636,1097,636,1097,642,1029,642"/>
+<area shape="poly" id="edge33_Node000027_Node000023" title=" " alt="" coords="1042,537,1125,515,1126,520,1043,542"/>
+<area shape="rect" id="Node000028" href="$classson_1_1db.html#a911f80eb1a385d8fdb141e2c7b2bbf07" title=" " alt="" coords="1118,547,1258,587"/>
+<area shape="poly" id="edge32_Node000027_Node000028" title=" " alt="" coords="1051,564,1104,564,1104,570,1051,570"/>
+<area shape="poly" id="edge37_Node000029_Node000013" title=" " alt="" coords="730,770,832,792,831,797,729,775"/>
+<area shape="poly" id="edge36_Node000029_Node000023" title=" " alt="" coords="729,734,932,698,1015,680,1053,669,1067,654,1074,638,1078,604,1081,569,1087,551,1101,533,1121,518,1124,523,1105,537,1092,554,1086,570,1083,605,1079,639,1071,656,1056,673,1016,685,933,703,730,739"/>
+<area shape="rect" id="Node000030" href="$classieee1905__1_1_1tlv1905NeighborDevice.html#af43a5e278faaab724330b4c0114ac530" title=" " alt="" coords="820,734,1055,774"/>
+<area shape="poly" id="edge38_Node000029_Node000030" title=" " alt="" coords="729,750,806,750,806,756,729,755"/>
+</map>

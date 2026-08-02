@@ -1,0 +1,57 @@
+<map id="beerocks::ServicePrioritizationTask::qos_apply_active_rule" name="beerocks::ServicePrioritizationTask::qos_apply_active_rule">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,120,204,160"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="838,33,1001,58"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,118,180,76,214,56,251,41,330,22,412,10,494,4,574,3,723,12,839,28,839,33,722,17,574,8,494,9,412,15,331,27,253,46,217,61,183,81,129,122"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ServicePrioritizationTask.html#ae2e99bf8e69f4d4851d19c2f4a0a23f0" title=" " alt="" coords="267,56,466,96"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,117,270,97,272,102,188,122"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1ServicePrioritizationTask.html#a7b5df85fc8510b1d1a40be405aed6114" title=" " alt="" coords="252,184,481,224"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="188,157,272,178,270,183,187,163"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1ServicePrioritizationTask.html#af020a5d3ab6b0585f40f4d5d9ccd9d48" title=" " alt="" coords="267,120,466,160"/>
+<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="204,137,253,137,253,143,204,143"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1ServicePrioritizationTask.html#a2c18643c8c7ab8ae84bd8d9b99a84f5e" title="Sends notification to HostAP/Driver about the current service prioritization config." alt="" coords="264,335,469,375"/>
+<area shape="poly" id="edge23_Node000001_Node000016" title=" " alt="" coords="132,158,332,324,329,328,129,162"/>
+<area shape="poly" id="edge14_Node000003_Node000002" title=" " alt="" coords="466,65,529,61,824,46,824,52,529,67,466,71"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ServicePrioritizationTask.html#a1f826aa7e6ed7de96a1fdc300782393c" title=" " alt="" coords="551,120,750,160"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="457,93,549,114,548,119,456,99"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1ServicePrioritizationTask.html#afc20eec1059a4bdcaf172ed02cbfb9c7" title=" " alt="" coords="551,184,750,224"/>
+<area shape="poly" id="edge15_Node000003_Node000013" title=" " alt="" coords="461,94,483,106,499,122,508,139,516,155,531,170,541,176,538,180,528,174,511,158,503,141,495,125,480,110,458,98"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="716,117,771,99,873,60,875,65,773,104,717,122"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1network__utils.html#a57666a2cd1ba948bc17259e97d62b9c4" title="Get list of BSS interfaces." alt="" coords="842,108,997,148"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="750,133,828,129,828,135,750,138"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1net_1_1network__utils.html#a33df92609d8353b9455e87d82b833232" title="Gets the interface name of the network interface with given MAC address." alt="" coords="826,172,1013,212"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="751,156,813,169,812,174,750,162"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1network__utils.html#afb3f2a54bf1096ca51513e1f370bd2c5" title="Get list of linux interfaces." alt="" coords="1071,111,1243,151"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="997,126,1057,127,1057,132,997,131"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1network__utils.html#ac33179916a7a42897fe851c1090f0bf9" title=" " alt="" coords="1079,31,1234,86"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="988,105,1065,82,1067,87,989,110"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1net_1_1network__utils.html#a9ed67fbcfac8592ae689144f0f2b8186" title=" " alt="" coords="1067,228,1247,268"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1005,209,1059,222,1057,227,1004,214"/>
+<area shape="rect" id="Node000011" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="1303,178,1433,203"/>
+<area shape="poly" id="edge13_Node000008_Node000011" title=" " alt="" coords="1013,189,1289,188,1289,193,1013,194"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1string__utils.html#ac5ba735c54be1ae2bf849bf9c60257f6" title=" " alt="" coords="1295,228,1441,268"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="1247,245,1281,245,1281,251,1247,251"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="1230,225,1306,204,1307,210,1232,230"/>
+<area shape="rect" id="Node000012" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="1489,178,1636,203"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1434,188,1476,188,1476,193,1434,193"/>
+<area shape="poly" id="edge17_Node000014_Node000004" title=" " alt="" coords="456,181,548,160,549,165,457,186"/>
+<area shape="poly" id="edge18_Node000014_Node000013" title=" " alt="" coords="482,201,537,201,537,207,482,207"/>
+<area shape="poly" id="edge21_Node000015_Node000002" title=" " alt="" coords="466,117,529,105,824,57,825,62,530,110,467,122"/>
+<area shape="poly" id="edge20_Node000015_Node000004" title=" " alt="" coords="466,137,537,137,537,143,466,143"/>
+<area shape="poly" id="edge22_Node000015_Node000013" title=" " alt="" coords="457,157,549,178,548,183,456,163"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1message__com.html#aca33ce73fa0075ee0b7f0c78984aa519" title=" " alt="" coords="567,471,735,511"/>
+<area shape="poly" id="edge24_Node000016_Node000017" title=" " alt="" coords="395,373,455,415,530,456,554,465,552,470,528,461,453,419,392,377"/>
+<area shape="rect" id="Node000020" href="$classbeerocks__message_1_1cACTION__APMANAGER__HOSTAP__SERVICE__PRIO__CONFIG.html#a89896e63f85cafeaa9baf373b53c0136" title=" " alt="" coords="529,249,772,303"/>
+<area shape="poly" id="edge27_Node000016_Node000020" title=" " alt="" coords="439,332,537,304,539,310,440,337"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1slave__thread_1_1cRadioManagers.html#aa9dffcd24bd64a7a1b7d0a3a4f2fda05" title="Preform an operation in context of each radio." alt="" coords="565,327,736,382"/>
+<area shape="poly" id="edge28_Node000016_Node000021" title=" " alt="" coords="470,352,551,352,551,357,470,357"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1slave__thread.html#a45a56addb54bad73fd898146a93f3279" title="Sends given CMDU message through the specified socket connection." alt="" coords="572,407,729,447"/>
+<area shape="poly" id="edge31_Node000016_Node000024" title=" " alt="" coords="447,372,559,401,558,406,446,377"/>
+<area shape="rect" id="Node000018" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="820,471,1019,511"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="735,488,806,488,806,493,735,493"/>
+<area shape="rect" id="Node000019" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="1099,478,1214,503"/>
+<area shape="poly" id="edge26_Node000018_Node000019" title=" " alt="" coords="1019,488,1086,488,1086,493,1019,493"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1slave__thread_1_1cRadioManagers.html#a5b9b5d535e4dcc310f2f958a7808b0a9" title=" " alt="" coords="841,303,998,343"/>
+<area shape="poly" id="edge29_Node000021_Node000022" title=" " alt="" coords="736,342,827,331,827,336,736,347"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1slave__thread_1_1cRadioManagers.html#ab6ad90b40bfe58721c1913029a6cc393" title=" " alt="" coords="821,367,1017,407"/>
+<area shape="poly" id="edge30_Node000021_Node000023" title=" " alt="" coords="736,362,807,371,807,376,736,367"/>
+</map>

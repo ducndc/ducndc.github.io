@@ -1,0 +1,9 @@
+<map id="beerocks::ChannelScanTask::abort_scan_request" name="beerocks::ChannelScanTask::abort_scan_request">
+<area shape="rect" id="Node000001" title="Abort the unfinished Radio Scans for the given request." alt="" coords="496,37,685,77"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelScanTask.html#a263b981f2b87820d7e26526041e04fc3" title="Handles 1905 channel scan request message." alt="" coords="243,5,448,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="482,46,448,41,449,36,483,41"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelScanTask.html#ad2818ef22c645aa1533475f6a25fc91a" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="251,69,440,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="483,74,440,80,440,74,482,69"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ChannelScanTask.html#a0313f2336162a0ea45324002d446ea64" title="Handles incoming messages." alt="" coords="5,5,195,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="229,28,195,28,195,23,229,23"/>
+</map>

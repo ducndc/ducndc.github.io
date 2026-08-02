@@ -1,0 +1,11 @@
+<map id="beerocks::net::SocketConnectionImpl::send_to" name="beerocks::net::SocketConnectionImpl::send_to">
+<area shape="rect" id="Node000001" title="Sends data through the socket connection." alt="" coords="5,101,221,141"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1Buffer.html#a582583a6549f3ecc11fc58bf5a5d7aaa" title="Returns pointer to the raw data." alt="" coords="273,5,417,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,99,282,48,284,53,164,104"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1Buffer.html#a4c70d268fe092fc5318af68d1ecebb8f" title="Returns the length of the buffer (number of bytes)." alt="" coords="273,69,417,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,104,259,99,259,104,222,109"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1Socket_1_1Address.html#a216e2af311a82c133ac97e8d770de2cb" title="Returns the length of the sockaddr structure." alt="" coords="269,133,420,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="222,134,256,138,255,144,221,139"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1Socket_1_1Address.html#a1e4b73b30de449e5e0b740323a71c61c" title="Returns address of sockaddr structure." alt="" coords="269,197,420,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="164,139,284,190,282,195,162,144"/>
+</map>

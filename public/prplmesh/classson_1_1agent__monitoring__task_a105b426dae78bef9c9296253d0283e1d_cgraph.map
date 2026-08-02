@@ -1,0 +1,115 @@
+<map id="son::agent_monitoring_task::handle_event" name="son::agent_monitoring_task::handle_event">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,913,156,953"/>
+<area shape="rect" id="Node000002" href="$classson_1_1agent__monitoring__task.html#a427692aa843b733ec109b5356346831f" title="Adds NBAPI AgentDisconnectedEvent object, all its sub&#45;objects and set values for it&#39;s parameters para..." alt="" coords="204,111,475,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,912,325,163,330,165,91,914"/>
+<area shape="rect" id="Node000008" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="837,981,983,1006"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="156,929,419,932,585,940,751,956,840,975,839,980,750,961,584,945,419,937,156,935"/>
+<area shape="rect" id="Node000009" href="$classson_1_1agent__monitoring__task.html#a4bfa3966422efce49eac3c7ce47aec47" title="Sends Multi&#45;AP Policy Config Request message." alt="" coords="262,581,417,635"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="96,911,306,645,310,648,100,915"/>
+<area shape="rect" id="Node000049" href="$classson_1_1agent__monitoring__task.html#a31e469b8783501865fe3b4eca2fe7a63" title="Send Service Prioritization Request message to an Agent." alt="" coords="256,1057,423,1097"/>
+<area shape="poly" id="edge42_Node000001_Node000049" title=" " alt="" coords="119,951,291,1048,289,1053,116,956"/>
+<area shape="rect" id="Node000061" href="$classson_1_1agent__monitoring__task.html#acef9affe78cf32503fe0713e51aac1d4" title="Send QoS management enablement settings to an Agent." alt="" coords="239,1386,439,1441"/>
+<area shape="poly" id="edge57_Node000001_Node000061" title=" " alt="" coords="95,952,319,1372,314,1375,90,955"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#ac65d6f65812a13cae41ed412e381c6a6" title="Removes excessive NBAPI objects from system bus, if amount of them succeed the limit." alt="" coords="545,5,728,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="386,108,522,55,546,47,548,52,524,60,388,113"/>
+<area shape="rect" id="Node000005" href="$classson_1_1agent__monitoring__task.html#ae1fd7c5f0fd26eee5ae72ea643eef5a6" title="Set values for parameters of NBAPI AgentDisconnected, adds its sub&#45;objects." alt="" coords="523,70,751,125"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="475,113,508,109,509,114,475,118"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a080b5ff0a4f667bd91f808de477d53c6" title="Returns ambiorix object." alt="" coords="825,138,995,163"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="475,133,811,145,811,150,475,138"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a6db1e54425fbb798118e69c6de5b04b1" title="Get index and instance path from full data model path. Simplifies ambiorix/nbapi calls." alt="" coords="833,5,987,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="728,23,819,23,819,28,728,28"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#a911f80eb1a385d8fdb141e2c7b2bbf07" title=" " alt="" coords="840,73,980,113"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="751,93,826,92,826,97,751,98"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="751,117,832,133,831,138,750,122"/>
+<area shape="rect" id="Node000010" href="$classson_1_1agent__monitoring__task.html#a8ec4a3feb1b12b12bc082f423f129858" title=" " alt="" coords="547,242,726,297"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="349,579,372,524,410,454,459,380,489,345,521,314,538,301,541,306,524,318,492,349,463,383,414,457,377,527,354,581"/>
+<area shape="rect" id="Node000011" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="811,385,1009,425"/>
+<area shape="poly" id="edge25_Node000009_Node000011" title=" " alt="" coords="348,579,372,529,408,466,431,434,458,405,488,379,521,358,553,344,582,336,608,333,633,335,751,357,797,366,841,379,839,384,796,372,750,363,633,340,608,339,583,341,555,349,524,362,491,383,462,409,435,438,412,469,376,531,353,582"/>
+<area shape="rect" id="Node000017" href="$classson_1_1agent__monitoring__task.html#addc9965ecd32ba3e51e2266949982f53" title=" " alt="" coords="541,790,732,845"/>
+<area shape="poly" id="edge17_Node000009_Node000017" title=" " alt="" coords="381,633,587,780,584,784,378,638"/>
+<area shape="rect" id="Node000026" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="811,916,1009,956"/>
+<area shape="poly" id="edge26_Node000009_Node000026" title=" " alt="" coords="355,634,379,683,416,743,465,804,493,831,524,854,561,867,629,883,798,914,797,920,628,888,560,872,521,858,490,835,461,807,412,746,375,685,350,637"/>
+<area shape="rect" id="Node000028" href="$classson_1_1db.html#aab283c054f83dc7fba44ec27b8cd10bd" title="Sets Unsuccessful Association policy parameters for corresponding device." alt="" coords="547,373,726,427"/>
+<area shape="poly" id="edge28_Node000009_Node000028" title=" " alt="" coords="362,579,429,509,473,471,521,438,534,431,536,436,524,442,477,475,433,513,366,582"/>
+<area shape="rect" id="Node000029" href="$classson_1_1db.html#adafff3d5ca5af13b6ef65847c2554b02" title="Sets metric reporting policy parameters." alt="" coords="557,452,716,492"/>
+<area shape="poly" id="edge29_Node000009_Node000029" title=" " alt="" coords="380,578,445,539,522,502,543,493,545,498,524,506,448,544,383,583"/>
+<area shape="rect" id="Node000030" href="$classson_1_1db.html#a71cc6170566fba8b68822dc179781f8c" title="Sets steering policy parameters." alt="" coords="552,516,721,556"/>
+<area shape="poly" id="edge30_Node000009_Node000030" title=" " alt="" coords="416,587,539,557,541,562,418,592"/>
+<area shape="rect" id="Node000031" href="$classwfa__map_1_1tlvMetricReportingPolicy.html#a157bba5f5d913be34be1068a7f6d09a7" title=" " alt="" coords="542,581,731,635"/>
+<area shape="poly" id="edge31_Node000009_Node000031" title=" " alt="" coords="417,605,528,605,528,611,417,611"/>
+<area shape="rect" id="Node000032" href="$classwfa__map_1_1tlvProfile2UnsuccessfulAssociationPolicy.html#ae16749548626019fe46665f264f37b53" title=" " alt="" coords="526,659,747,714"/>
+<area shape="poly" id="edge32_Node000009_Node000032" title=" " alt="" coords="418,626,520,653,519,658,416,631"/>
+<area shape="rect" id="Node000033" href="$classson_1_1son__actions.html#a4d57f77f9343433c6fdc6a2009e215bb" title=" " alt="" coords="558,1213,715,1253"/>
+<area shape="poly" id="edge33_Node000009_Node000033" title=" " alt="" coords="352,635,525,1200,547,1215,544,1219,521,1203,347,636"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="718,294,752,314,767,328,777,341,786,353,800,366,821,377,819,382,797,370,782,357,772,344,763,331,749,318,715,299"/>
+<area shape="rect" id="Node000013" href="$namespacebeerocks_1_1bpl.html#ad9c1a99cbd59bc03c178752f36abb14a" title="Reads VLAN ID for private/home SSIDs used by Traffic Separation." alt="" coords="833,462,987,517"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="681,295,717,324,753,358,768,380,776,399,784,417,800,435,825,453,822,457,797,439,780,420,771,401,763,382,749,362,714,328,677,299"/>
+<area shape="rect" id="Node000014" href="$classson_1_1db.html#a989e3f1e4fb67b2b48b9a6d9e7674885" title="Sets the default 802.1Q settings for EasyMesh service prioritization." alt="" coords="829,316,991,356"/>
+<area shape="poly" id="edge14_Node000010_Node000014" title=" " alt="" coords="727,288,816,310,815,316,726,294"/>
+<area shape="rect" id="Node000015" href="$classson_1_1db.html#ad0cebb12b343a983f18792bce385ccbf" title="Get default 802.1Q settings for agent." alt="" coords="841,188,979,228"/>
+<area shape="poly" id="edge15_Node000010_Node000015" title=" " alt="" coords="726,247,827,224,828,229,727,252"/>
+<area shape="rect" id="Node000016" href="$classwfa__map_1_1tlvProfile2Default802dotQSettings.html#a99109e8e78a40e939afbfa267675aa70" title=" " alt="" coords="799,252,1021,292"/>
+<area shape="poly" id="edge16_Node000010_Node000016" title=" " alt="" coords="726,268,785,268,785,273,726,273"/>
+<area shape="rect" id="Node000012" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="1069,393,1209,418"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1009,403,1056,403,1056,408,1009,408"/>
+<area shape="poly" id="edge18_Node000017_Node000011" title=" " alt="" coords="728,788,749,769,772,728,780,688,779,649,772,610,765,571,763,531,772,490,797,448,815,431,818,435,801,451,777,492,769,532,770,570,777,609,784,649,786,689,777,730,753,772,731,792"/>
+<area shape="poly" id="edge20_Node000017_Node000013" title=" " alt="" coords="727,788,749,769,766,742,774,715,776,690,774,664,773,610,780,582,797,552,828,522,832,526,801,555,785,583,778,611,779,663,781,690,779,716,771,744,753,772,730,792"/>
+<area shape="rect" id="Node000018" href="$namespacebeerocks_1_1bpl.html#ab9851f88e4722703a7f97ae69cf8c0a0" title="Reads VLAN ID for guest SSIDs used by Traffic Separation." alt="" coords="833,630,987,685"/>
+<area shape="poly" id="edge19_Node000017_Node000018" title=" " alt="" coords="720,787,749,769,764,750,772,732,780,713,797,694,819,680,822,685,800,698,785,716,777,734,769,753,752,773,723,792"/>
+<area shape="rect" id="Node000019" href="$classwfa__map_1_1tlvProfile2TrafficSeparationPolicy.html#aae2ce348bb420a62b807c6bcb52eeeee" title=" " alt="" coords="821,709,999,763"/>
+<area shape="poly" id="edge21_Node000017_Node000019" title=" " alt="" coords="728,787,807,764,808,769,730,792"/>
+<area shape="rect" id="Node000023" href="$classson_1_1db.html#ac58c355159889bc88275bcf7deba4beb" title="Sets Service Set Identifier (SSID) to VLAN ID (VID) mapping for EasyMesh traffic separation." alt="" coords="829,788,991,828"/>
+<area shape="poly" id="edge22_Node000017_Node000023" title=" " alt="" coords="732,811,816,809,816,814,732,817"/>
+<area shape="rect" id="Node000024" href="$classson_1_1db.html#aa454ccbc5271798aa7f3a1ac9e5ad4b1" title=" " alt="" coords="837,852,983,892"/>
+<area shape="poly" id="edge23_Node000017_Node000024" title=" " alt="" coords="733,834,824,852,823,857,732,839"/>
+<area shape="rect" id="Node000025" href="$classson_1_1db.html#a002ced5436948109edb3ffda1bb86ca4" title="Get traffic separation policy for agent." alt="" coords="825,565,995,605"/>
+<area shape="poly" id="edge24_Node000017_Node000025" title=" " alt="" coords="725,788,749,769,762,750,769,731,771,693,774,654,782,635,797,615,811,604,814,609,801,619,786,637,779,656,776,693,774,732,767,752,753,772,728,792"/>
+<area shape="rect" id="Node000027" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="1082,923,1197,949"/>
+<area shape="poly" id="edge27_Node000026_Node000027" title=" " alt="" coords="1009,933,1068,933,1068,939,1009,939"/>
+<area shape="poly" id="edge40_Node000033_Node000008" title=" " alt="" coords="714,1220,733,1212,749,1199,765,1177,772,1155,773,1133,771,1110,770,1086,771,1063,779,1040,797,1017,823,1000,826,1005,800,1021,784,1042,777,1064,775,1086,777,1109,778,1133,777,1156,770,1180,753,1203,736,1216,717,1225"/>
+<area shape="rect" id="Node000034" href="$classbeerocks_1_1beerocks__header.html#a1bd46582d8b9cf054a8be6157afa460a" title=" " alt="" coords="842,1273,978,1313"/>
+<area shape="poly" id="edge34_Node000033_Node000034" title=" " alt="" coords="716,1248,829,1273,828,1278,715,1253"/>
+<area shape="rect" id="Node000035" href="$classbeerocks_1_1message__com.html#a028861029a2c3f999d81c46c1792eebe" title=" " alt="" coords="826,1337,994,1377"/>
+<area shape="poly" id="edge35_Node000033_Node000035" title=" " alt="" coords="670,1251,729,1287,800,1323,819,1330,817,1335,798,1328,726,1292,667,1256"/>
+<area shape="rect" id="Node000039" href="$classson_1_1db.html#a3e957d7858d4c86d1c75cce4a391ffaa" title=" " alt="" coords="822,1402,998,1427"/>
+<area shape="poly" id="edge36_Node000033_Node000039" title=" " alt="" coords="672,1252,712,1281,753,1317,767,1337,775,1355,784,1372,800,1387,812,1394,810,1399,797,1391,780,1375,770,1357,762,1340,749,1320,709,1285,669,1256"/>
+<area shape="rect" id="Node000040" href="$classson_1_1db.html#af2ed84bacfd1b7408c3961a5bb694d88" title=" " alt="" coords="847,1031,973,1071"/>
+<area shape="poly" id="edge37_Node000033_Node000040" title=" " alt="" coords="714,1219,733,1211,749,1199,761,1185,768,1171,772,1142,777,1111,784,1096,797,1081,814,1069,833,1060,835,1065,817,1073,800,1085,788,1099,782,1113,777,1142,773,1173,765,1188,752,1203,735,1215,717,1224"/>
+<area shape="rect" id="Node000041" href="$classieee1905__1_1_1CmduMessage.html#a94ce761475d53857b8d5543fa9e4c0bd" title=" " alt="" coords="818,1095,1002,1135"/>
+<area shape="poly" id="edge38_Node000033_Node000041" title=" " alt="" coords="715,1215,749,1199,764,1186,772,1173,781,1158,797,1144,808,1138,811,1143,800,1149,786,1162,777,1175,768,1190,752,1204,717,1220"/>
+<area shape="rect" id="Node000046" href="$classson_1_1db.html#a77630986a58efaa0443f06452d8c28c1" title=" " alt="" coords="839,1159,981,1185"/>
+<area shape="poly" id="edge39_Node000033_Node000046" title=" " alt="" coords="715,1213,839,1185,840,1190,716,1218"/>
+<area shape="rect" id="Node000048" href="$classson_1_1Controller.html#aa2ca2350953de40ad9eb1cb787e274a7" title="Sends given CMDU message to the broker server running in the transport process to be forwarded to ano..." alt="" coords="839,1209,981,1249"/>
+<area shape="poly" id="edge41_Node000033_Node000048" title=" " alt="" coords="716,1230,825,1228,825,1233,716,1235"/>
+<area shape="poly" id="edge43_Node000049_Node000011" title=" " alt="" coords="344,1056,365,1000,400,923,424,882,452,843,485,806,521,775,553,758,583,752,613,751,642,754,669,756,696,754,722,744,749,724,772,690,781,657,780,624,775,590,769,556,767,520,775,484,797,448,816,430,819,434,801,451,780,486,773,521,774,555,780,589,786,624,786,658,777,693,753,727,725,749,697,759,669,762,641,759,613,757,584,757,555,763,524,780,488,810,456,846,429,885,405,926,370,1002,349,1058"/>
+<area shape="poly" id="edge52_Node000049_Node000026" title=" " alt="" coords="423,1071,604,1054,690,1039,724,1031,749,1020,764,1008,773,995,782,980,797,966,808,959,811,964,800,970,786,983,777,998,768,1012,752,1025,726,1036,691,1045,605,1059,423,1076"/>
+<area shape="poly" id="edge56_Node000049_Node000033" title=" " alt="" coords="367,1096,435,1147,478,1175,524,1199,546,1208,544,1213,522,1204,476,1179,432,1151,363,1100"/>
+<area shape="rect" id="Node000050" href="$classson_1_1db.html#a7aca79e1782136ccca9bda81a7c782da" title="Clear transient controller QoS management descriptors for an Agent." alt="" coords="547,1452,726,1492"/>
+<area shape="poly" id="edge44_Node000049_Node000050" title=" " alt="" coords="352,1096,377,1149,416,1222,466,1304,525,1381,559,1414,594,1442,591,1446,555,1418,521,1384,462,1307,411,1225,372,1152,347,1099"/>
+<area shape="rect" id="Node000058" href="$classwfa__map_1_1tlvQoSManagementDescriptor.html#ac21996ab352efcfa30c1ea7b082846c4" title=" " alt="" coords="537,971,736,1011"/>
+<area shape="poly" id="edge51_Node000049_Node000058" title=" " alt="" coords="408,1055,553,1012,554,1017,410,1060"/>
+<area shape="rect" id="Node000059" href="$classson_1_1db.html#a25c348c70ef6a976cdcf3ad842bf9e42" title="Get controller QoS management descriptors for an Agent." alt="" coords="561,1331,712,1371"/>
+<area shape="poly" id="edge53_Node000049_Node000059" title=" " alt="" coords="360,1096,430,1172,524,1263,597,1320,593,1325,521,1267,426,1175,356,1099"/>
+<area shape="rect" id="Node000060" href="$classwfa__map_1_1tlvServicePrioritizationRule.html#a39a809208b4d03a63efd406fe9af344f" title=" " alt="" coords="530,1085,743,1125"/>
+<area shape="poly" id="edge55_Node000049_Node000060" title=" " alt="" coords="423,1082,517,1091,516,1097,422,1088"/>
+<area shape="rect" id="Node000051" href="$classson_1_1db.html#a0a52cb618f08a3daae6c7716ef8a4459" title=" " alt="" coords="829,1452,991,1492"/>
+<area shape="poly" id="edge45_Node000050_Node000051" title=" " alt="" coords="726,1469,815,1469,815,1475,726,1475"/>
+<area shape="rect" id="Node000055" href="$classson_1_1db.html#adaa74381f961489ca2ccef36b1712975" title="Remove a QoS management descriptor from the Data Model." alt="" coords="839,1516,981,1556"/>
+<area shape="poly" id="edge47_Node000050_Node000055" title=" " alt="" coords="724,1489,826,1514,825,1519,722,1495"/>
+<area shape="rect" id="Node000052" href="$classson_1_1db.html#a39cb768c3e3115545cbdb128e6fedd98" title="Finds and returns sBss with a specified BSSID (and optionaly al_mac)." alt="" coords="1080,1523,1199,1549"/>
+<area shape="poly" id="edge46_Node000051_Node000052" title=" " alt="" coords="983,1490,1080,1517,1079,1522,982,1495"/>
+<area shape="poly" id="edge48_Node000055_Node000052" title=" " alt="" coords="981,1533,1066,1533,1066,1539,981,1539"/>
+<area shape="rect" id="Node000056" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="1074,1602,1205,1627"/>
+<area shape="poly" id="edge49_Node000055_Node000056" title=" " alt="" coords="970,1554,1089,1595,1088,1600,968,1559"/>
+<area shape="rect" id="Node000057" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="1257,1602,1404,1627"/>
+<area shape="poly" id="edge50_Node000056_Node000057" title=" " alt="" coords="1205,1612,1243,1612,1243,1617,1205,1617"/>
+<area shape="poly" id="edge54_Node000059_Node000051" title=" " alt="" coords="672,1369,730,1402,800,1436,822,1445,820,1450,798,1441,728,1407,669,1373"/>
+<area shape="poly" id="edge63_Node000061_Node000033" title=" " alt="" coords="384,1384,590,1258,592,1263,387,1388"/>
+<area shape="poly" id="edge60_Node000061_Node000052" title=" " alt="" coords="389,1438,452,1471,524,1502,659,1548,715,1563,768,1573,822,1578,879,1579,1021,1565,1088,1550,1089,1555,1022,1571,880,1584,822,1583,767,1578,714,1568,657,1553,522,1506,450,1476,387,1443"/>
+<area shape="poly" id="edge62_Node000061_Node000056" title=" " alt="" coords="363,1439,391,1473,429,1511,473,1548,524,1576,593,1601,666,1617,741,1628,814,1634,951,1633,1060,1623,1061,1629,951,1638,814,1639,740,1633,665,1623,592,1606,522,1581,470,1552,425,1515,387,1477,359,1443"/>
+<area shape="rect" id="Node000062" href="$classbeerocks_1_1message__com.html#aca33ce73fa0075ee0b7f0c78984aa519" title=" " alt="" coords="553,1149,721,1189"/>
+<area shape="poly" id="edge58_Node000061_Node000062" title=" " alt="" coords="355,1384,382,1343,420,1293,467,1242,521,1199,539,1190,541,1194,524,1204,470,1246,424,1296,386,1346,359,1387"/>
+<area shape="rect" id="Node000063" href="$classson_1_1db.html#a2d1012e00a3f4f9a977d9aeb7d0aa838" title="Get QoS management settings for a BSS." alt="" coords="558,1681,715,1721"/>
+<area shape="poly" id="edge61_Node000061_Node000063" title=" " alt="" coords="356,1440,381,1487,419,1546,467,1608,494,1636,524,1660,546,1674,544,1678,521,1665,491,1640,463,1611,414,1550,377,1490,351,1442"/>
+<area shape="poly" id="edge59_Node000062_Node000026" title=" " alt="" coords="720,1154,749,1135,764,1115,771,1095,772,1053,773,1010,781,988,797,966,801,962,804,966,801,970,785,990,778,1011,777,1053,776,1096,769,1118,752,1139,722,1159"/>
+</map>

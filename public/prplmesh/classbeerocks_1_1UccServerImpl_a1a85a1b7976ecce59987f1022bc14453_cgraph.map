@@ -1,0 +1,9 @@
+<map id="beerocks::UccServerImpl::handle_read" name="beerocks::UccServerImpl::handle_read">
+<area shape="rect" id="Node000001" title="Handles the read event in a client socket connected to the server socket." alt="" coords="5,69,176,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1BufferImpl.html#ae4839d38274aa425666378a955bb3ffe" title="Returns pointer to the raw data." alt="" coords="231,5,400,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,67,231,47,232,52,162,72"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1BufferImpl.html#af52f653c59abfd05a66b23770fb15098" title="Returns the length of the buffer (number of bytes)." alt="" coords="231,69,400,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,87,217,87,217,92,177,92"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1UccServer.html#a9d97e34a38bb85d9b5f6abe7f9031d8e" title="Notifies a command&#45;received event." alt="" coords="224,133,407,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="162,107,232,127,231,132,161,112"/>
+</map>

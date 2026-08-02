@@ -1,0 +1,15 @@
+<map id="beerocks::ChannelSelectionTask::send_acs_list_to_platform" name="beerocks::ChannelSelectionTask::send_acs_list_to_platform">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,62,191,117"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1BackhaulManager.html#a634f4550764f8a170612cce73ebd3861" title=" " alt="" coords="239,5,425,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,61,244,47,246,52,191,67"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1message__com.html#a028861029a2c3f999d81c46c1792eebe" title=" " alt="" coords="248,69,416,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,87,234,87,234,92,191,92"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1BackhaulManager.html#a1429298b96ad16663983ba4b95111705" title="Sends given CMDU message through the specified socket connection." alt="" coords="239,133,425,173"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="191,112,246,127,244,132,190,117"/>
+<area shape="rect" id="Node000004" href="$classieee1905__1_1_1CmduMessage.html#a05ca2e3fc9b6628dd7eca553a8d68aad" title=" " alt="" coords="473,37,657,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="416,75,459,69,460,74,417,80"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1message__com.html#a2ac9090c0d8d3b371a7518031d80ad16" title=" " alt="" coords="481,101,649,141"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="417,98,468,105,467,111,416,104"/>
+<area shape="rect" id="Node000005" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="705,45,843,70"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="658,55,692,55,692,60,658,60"/>
+</map>

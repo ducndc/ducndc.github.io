@@ -1,0 +1,24 @@
+<map id="beerocks::net::network_utils::linux_get_iface_name" name="beerocks::net::network_utils::linux_get_iface_name">
+<area shape="rect" id="Node000001" title="Gets the interface name corresponding to a particular index." alt="" coords="939,165,1125,205"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1PlatformManager.html#a7d78660942fb72c10a22189e35d74944" title=" " alt="" coords="706,69,889,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="976,162,890,124,858,112,860,107,892,119,978,157"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1TopologyTask.html#ab78d9672cf6cbc285891adeb251a3b5d" title="Handles 1905 Topology Discovery message." alt="" coords="704,133,891,173"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="925,173,891,169,891,163,926,168"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wan__monitor.html#a4ccf964bf0489d52bde2aa61b7c92f04" title=" " alt="" coords="719,197,876,237"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="926,202,876,209,876,204,925,197"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1dwpal_1_1mon__wlan__hal__dwpal.html#aa02a2f2f4eefe51c76e644c1694f89be" title=" " alt="" coords="706,262,889,317"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="976,213,892,252,863,264,861,260,890,247,974,209"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1PlatformManager.html#a7c6d7acfed15c442bde711e7ce869f8f" title=" " alt="" coords="470,69,653,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="692,92,653,92,653,87,692,87"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1PlatformManager.html#a262af19fef984284761bce414148453c" title="Handles received CMDU message." alt="" coords="236,5,419,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="474,68,400,48,402,43,475,63"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1PlatformManager.html#a10b9694713bc5ef5abb67e34ad711960" title=" " alt="" coords="236,69,419,109"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="456,101,419,101,419,95,456,96"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1PlatformManager.html#a5377c7c85697c760f05df9d5a2bc8836" title=" " alt="" coords="5,5,188,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="223,28,188,28,188,23,223,23"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="432,78,470,78,470,83,432,83"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1TopologyTask.html#a2c75b5c339449510a43209a2e90fcee8" title="Handle CMDU message." alt="" coords="480,133,643,173"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="690,156,643,156,643,151,690,151"/>
+<area shape="rect" id="Node000010" href="$classbeerocks__analyzer_1_1BeerocksCliThread.html#a92bf696a77a66cb7f85321dc56a6c826" title=" " alt="" coords="467,197,656,237"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="705,220,656,220,656,215,705,215"/>
+</map>

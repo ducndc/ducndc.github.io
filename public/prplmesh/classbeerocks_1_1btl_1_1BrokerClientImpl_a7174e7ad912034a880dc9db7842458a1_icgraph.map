@@ -1,0 +1,17 @@
+<map id="beerocks::btl::BrokerClientImpl::send_message" name="beerocks::btl::BrokerClientImpl::send_message">
+<area shape="rect" id="Node000001" title="Sends a transport message to the server." alt="" coords="461,141,639,181"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#aa00b7d417c9dd3c8641e65abcc0c8a4c" title="Configures the transport process to bind a given local al_mac address." alt="" coords="233,5,411,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="515,134,468,96,412,60,387,48,389,43,415,55,471,92,518,130"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#a03d7935ee0520c1212c8e53b8c057b57" title="Configures the transport process to use given network bridge." alt="" coords="233,69,411,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="472,140,385,112,387,107,474,135"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#adc39a61fca2ef5256b41955b904cf278" title="Configures the transport process to use the primary vlan id." alt="" coords="233,134,411,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="447,164,411,164,411,159,447,159"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#a3cfbb327674950e28f104e54fabd6c93" title="Sends a CDMU message to the transport process for dispatching." alt="" coords="231,213,413,253"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="474,188,387,216,385,211,472,183"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#ae5d2205cbd734364008b8cd59947bd26" title="Subscribes for the reception of a set of CMDU messages." alt="" coords="233,277,411,317"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="518,193,471,231,415,268,389,280,387,275,412,263,468,227,515,189"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#a45fe4484b796e9f07ad78aae74999951" title="Forwards a CMDU message to the transport process for dispatching." alt="" coords="5,181,183,221"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="217,221,182,216,183,211,217,216"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#af76c899c13b8b033b5726995a5b5b16c" title="Sends a CDMU message to the transport process for dispatching." alt="" coords="5,245,183,285"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="217,251,183,256,182,250,217,245"/>
+</map>

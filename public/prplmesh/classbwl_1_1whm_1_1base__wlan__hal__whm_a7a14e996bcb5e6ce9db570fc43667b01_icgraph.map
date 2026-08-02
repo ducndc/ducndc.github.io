@@ -1,0 +1,7 @@
+<map id="bwl::whm::base_wlan_hal_whm::process_rssi_eventing_event" name="bwl::whm::base_wlan_hal_whm::process_rssi_eventing_event">
+<area shape="rect" id="Node000001" title="Process the event &quot;RssiUpdate&quot; when received from the dm." alt="" coords="439,5,601,60"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#af15b0840155f8fa7feda07bb1335d123" title="subscribe to WiFi.Radio.XXXXX.NaStaMonitor.RssiEventing RssiUpdate dm notification" alt="" coords="220,5,391,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="425,35,391,35,391,30,425,30"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a16ba83b10a2fee80c51ffc4d9ab3f906" title="Measure the RSSI of an unassociated station. The result of the measurement should be sent as an inter..." alt="" coords="5,5,172,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,35,172,35,172,30,206,30"/>
+</map>

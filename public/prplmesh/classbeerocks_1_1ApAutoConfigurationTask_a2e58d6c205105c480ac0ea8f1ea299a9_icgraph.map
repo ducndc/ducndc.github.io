@@ -1,0 +1,12 @@
+<map id="beerocks::ApAutoConfigurationTask::fsm_state_to_string" name="beerocks::ApAutoConfigurationTask::fsm_state_to_string">
+<area shape="rect" id="Node000001" title="Convert enum of task state to string." alt="" coords="789,50,992,90"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aa896d647bc56c4e4a4863e2bafd7c48f" title="Parse AP&#45;Autoconfiguration Renew message." alt="" coords="256,5,479,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="775,64,479,43,479,38,775,59"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a2ebd26c78e3d780d6761952d735a983c" title=" " alt="" coords="527,75,741,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="776,87,742,91,741,86,776,82"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="5,49,208,89"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="243,53,209,57,208,52,242,47"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a22e39830c1aaacc84bc8aabfd5de1582" title="Handles Vendor Specific messages." alt="" coords="266,85,469,125"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="513,106,469,106,469,101,513,101"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="252,91,208,85,208,80,253,86"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="beerocks::ChannelScanTask::get_scan_results_for_request" name="beerocks::ChannelScanTask::get_scan_results_for_request">
+<area shape="rect" id="Node000001" title="Get all stored results for the given request." alt="" coords="988,55,1177,110"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelScanTask.html#a2e9e58a24a3cb4162315b62142dfb110" title="Send 1905 CHANNEL_SCAN_REPORT message back to the sender." alt="" coords="751,55,940,110"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="975,85,940,85,940,80,975,80"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ChannelScanTask.html#a263b981f2b87820d7e26526041e04fc3" title="Handles 1905 channel scan request message." alt="" coords="243,5,448,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="737,59,702,53,570,39,448,31,448,26,570,33,703,48,738,54"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ChannelScanTask.html#ae7338c97218b0c13d4c6ccdb5741deba" title=" " alt="" coords="496,63,703,103"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="737,85,703,85,703,80,737,80"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ChannelScanTask.html#ad2818ef22c645aa1533475f6a25fc91a" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="505,127,694,167"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="738,113,678,129,676,124,737,108"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelScanTask.html#a0313f2336162a0ea45324002d446ea64" title="Handles incoming messages." alt="" coords="5,63,195,103"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="246,51,187,65,186,60,245,46"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="482,85,195,85,195,80,482,80"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ChannelScanTask.html#ae0e6081315b9e7389903488459ff92df" title="Handles Vendor Specific messages." alt="" coords="251,120,440,160"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="497,108,435,123,434,117,496,103"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="245,119,186,105,187,100,246,114"/>
+</map>

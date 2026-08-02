@@ -1,0 +1,10 @@
+<map id="vbss::vbss_actions::send_client_security_ctx_request" name="vbss::vbss_actions::send_client_security_ctx_request">
+<area shape="rect" id="Node000001" title="Sends a request for the client security context." alt="" coords="435,30,584,85"/>
+<area shape="rect" id="Node000002" href="$classvbss__task.html#a7a25c19c78a7e5809b3c086a07efe7eb" title="Begin process of moving client from one agent to another after recieving a move event." alt="" coords="220,5,387,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="421,46,387,41,387,36,422,41"/>
+<area shape="rect" id="Node000004" href="$classvbss__task.html#a3d662a5cb22d47900dfe0f2f50cd06b4" title="Begin process of creating a VBSS after recieving a create event, starting with fetching the Client Se..." alt="" coords="222,69,385,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="422,74,385,79,384,74,421,68"/>
+<area shape="rect" id="Node000003" href="$classvbss__task.html#a4ad8cc387fc095261aa6cb0098fd7246" title=" " alt="" coords="5,45,172,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="206,42,173,48,172,42,205,37"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="208,78,172,72,172,67,209,73"/>
+</map>

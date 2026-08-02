@@ -1,0 +1,16 @@
+<map id="beerocks::ChannelSelectionTask::pending_operating_channel_report" name="beerocks::ChannelSelectionTask::pending_operating_channel_report">
+<area shape="rect" id="Node000001" title=" " alt="" coords="977,77,1163,132"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelSelectionTask.html#a091f082d789bbcd7b65af399108f887b" title="if channel selection context is waiting for a channel selection notification, consume the event and r..." alt="" coords="744,41,929,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="963,91,929,86,930,80,964,86"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ChannelSelectionTask.html#a76c61d8b1a2051b98f90e5b90c048ef1" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="744,121,929,161"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="964,124,930,129,929,124,963,118"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ChannelSelectionTask.html#a591994b25a779fb4a1c09e631a2ecc2a" title=" " alt="" coords="496,5,681,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="730,56,681,49,682,43,731,51"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ChannelSelectionTask.html#a7a537a832e1da18da953a6af812cec3a" title=" " alt="" coords="481,85,696,125"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="731,87,697,92,696,86,730,81"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelSelectionTask.html#ab67214343b93cc468593dcbbaf5d2456" title="Handles Vendor Specific messages." alt="" coords="239,49,433,89"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="483,50,434,57,433,52,482,45"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ChannelSelectionTask.html#a85b2df533a6c739eae4a108daeb29410" title="Handle CMDU message." alt="" coords="5,49,191,89"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="225,71,191,71,191,66,225,66"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="467,90,433,85,434,80,468,85"/>
+</map>

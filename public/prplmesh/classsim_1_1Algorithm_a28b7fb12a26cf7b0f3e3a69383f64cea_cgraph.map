@@ -1,0 +1,112 @@
+<map id="sim.Algorithm.set_start" name="sim.Algorithm.set_start">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,2084,163,2109"/>
+<area shape="rect" id="Node000002" href="$classson_1_1ApManager.html#a876b9b5b7676f845d1998f3ae507d25c" title="Starts AP manager." alt="" coords="231,560,382,585"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,2084,89,1810,108,1333,124,1084,146,860,159,766,173,689,190,631,209,595,218,587,221,591,213,598,195,633,179,690,164,767,151,861,129,1084,113,1334,94,1810,88,2084"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1PlatformManager.html#aed887af7b8c18960779bc2384067c721" title="Starts platform manager." alt="" coords="215,1346,398,1386"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,2084,127,1888,164,1741,208,1591,249,1484,287,1397,292,1400,254,1486,213,1592,169,1742,132,1889,90,2085"/>
+<area shape="rect" id="Node000030" href="$classbeerocks_1_1thread__base.html#abb5940aadceb705f6017e413f2778994" title=" " alt="" coords="476,1603,631,1643"/>
+<area shape="poly" id="edge60_Node000001_Node000030" title=" " alt="" coords="83,2084,86,2017,102,1915,118,1858,140,1802,170,1750,209,1704,239,1693,303,1677,462,1640,463,1646,304,1682,241,1698,212,1708,174,1753,145,1804,123,1860,107,1916,91,2017,88,2084"/>
+<area shape="rect" id="Node000039" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="236,609,377,635"/>
+<area shape="poly" id="edge13_Node000001_Node000039" title=" " alt="" coords="85,2084,299,648,304,649,90,2084"/>
+<area shape="rect" id="Node000584" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#a986eb800fb75dff9d31d69e4ec013f2f" title="Starts the transport process." alt="" coords="237,1719,376,1773"/>
+<area shape="poly" id="edge35_Node000001_Node000584" title=" " alt="" coords="84,2083,94,2029,115,1949,132,1905,152,1862,178,1820,209,1783,223,1771,227,1775,213,1787,182,1823,157,1864,136,1907,120,1951,99,2030,90,2084"/>
+<area shape="rect" id="Node000632" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#ae59a2e90ac53b2d299644ccefa09a2b8" title="Start the Broker&#39;s server socket." alt="" coords="231,1797,382,1852"/>
+<area shape="poly" id="edge39_Node000001_Node000632" title=" " alt="" coords="86,2083,100,2042,125,1983,161,1920,183,1890,209,1863,218,1855,221,1860,212,1867,187,1893,165,1922,130,1985,105,2043,91,2085"/>
+<area shape="rect" id="Node000641" href="$classbeerocks_1_1cli__bml.html#a9a8074ec786d806cde7b7986dcdc20f1" title=" " alt="" coords="241,1877,373,1917"/>
+<area shape="poly" id="edge41_Node000001_Node000641" title=" " alt="" coords="89,2082,132,2009,167,1965,209,1927,227,1916,230,1921,212,1931,171,1969,137,2012,94,2085"/>
+<area shape="rect" id="Node000642" href="$classbeerocks_1_1cli__socket.html#add2b018b0d4a6329ad91981c8cd96332" title=" " alt="" coords="235,1603,378,1643"/>
+<area shape="poly" id="edge42_Node000001_Node000642" title=" " alt="" coords="83,2084,86,2012,101,1900,117,1837,139,1774,169,1714,209,1660,222,1649,225,1653,213,1664,174,1717,144,1776,122,1839,107,1901,91,2012,88,2084"/>
+<area shape="rect" id="Node000643" href="$classbeerocks_1_1cli.html#a3a9057716deef608181f59656ee86919" title=" " alt="" coords="241,1941,372,1967"/>
+<area shape="poly" id="edge44_Node000001_Node000643" title=" " alt="" coords="93,2082,139,2030,172,2001,209,1976,227,1968,229,1973,212,1980,176,2005,143,2034,97,2086"/>
+<area shape="rect" id="Node000644" href="$classson_1_1Monitor.html#a765693c40e9cc08fd6eeaa7aaa0ba94b" title="Start the monitor with Agent&#45;provided configuration." alt="" coords="243,1991,371,2016"/>
+<area shape="poly" id="edge45_Node000001_Node000644" title=" " alt="" coords="104,2082,151,2054,210,2026,235,2018,237,2023,212,2031,154,2059,107,2086"/>
+<area shape="rect" id="Node000646" href="$classbeerocks_1_1bpl_1_1arp__monitor.html#a5489b44e810613814bfef52bc6e3e921" title=" " alt="" coords="243,2041,370,2081"/>
+<area shape="poly" id="edge47_Node000001_Node000646" title=" " alt="" coords="162,2082,230,2071,231,2076,163,2087"/>
+<area shape="rect" id="Node000648" href="$classbeerocks_1_1beerocks__fsm.html#a5e1daebea7c7a4162636f46a938c72cc" title=" " alt="" coords="219,2105,394,2160"/>
+<area shape="poly" id="edge49_Node000001_Node000648" title=" " alt="" coords="91,2108,101,2121,117,2132,161,2149,213,2159,261,2160,261,2165,212,2165,160,2155,114,2136,98,2125,87,2111"/>
+<area shape="poly" id="edge50_Node000001_Node000648" title=" " alt="" coords="95,2107,115,2118,141,2127,206,2141,205,2146,140,2132,112,2123,93,2112"/>
+<area shape="poly" id="edge51_Node000001_Node000648" title=" " alt="" coords="122,2107,206,2123,205,2128,121,2112"/>
+<area shape="poly" id="edge52_Node000001_Node000648" title=" " alt="" coords="163,2098,206,2105,206,2110,162,2104"/>
+<area shape="poly" id="edge53_Node000001_Node000648" title=" " alt="" coords="103,2081,134,2079,173,2082,255,2099,253,2104,172,2087,134,2085,104,2087"/>
+<area shape="poly" id="edge54_Node000001_Node000648" title=" " alt="" coords="88,2082,101,2072,121,2066,173,2064,230,2075,279,2095,277,2100,229,2080,172,2070,122,2071,103,2077,91,2086"/>
+<area shape="rect" id="Node000649" href="$classson_1_1monitor__rssi.html#abe0f305c0cfa251da5ecfe01c3b62a51" title=" " alt="" coords="241,2185,372,2225"/>
+<area shape="poly" id="edge55_Node000001_Node000649" title=" " alt="" coords="105,2108,153,2138,212,2170,229,2178,227,2183,210,2175,150,2143,102,2112"/>
+<area shape="rect" id="Node000651" href="$classson_1_1monitor__stats.html#ae74a854d7f113207845f832c23324895" title=" " alt="" coords="241,2249,372,2289"/>
+<area shape="poly" id="edge56_Node000001_Node000651" title=" " alt="" coords="96,2108,141,2168,174,2204,212,2235,230,2245,227,2249,209,2239,170,2208,136,2172,91,2111"/>
+<area shape="rect" id="Node000652" href="$classson_1_1monitor__pre__association__steering__hal.html#ac6003b1dc1d135d7caa2398ba7a53b46" title=" " alt="" coords="211,2313,403,2353"/>
+<area shape="poly" id="edge57_Node000001_Node000652" title=" " alt="" coords="92,2109,107,2146,132,2197,167,2252,189,2277,212,2299,219,2304,216,2308,209,2303,185,2280,163,2255,127,2200,102,2148,87,2111"/>
+<area shape="rect" id="Node000654" href="$classtest__sim_1_1AlgorithmTest.html#a7552d71e47107954becab8178a3fd4ba" title=" " alt="" coords="213,2377,400,2403"/>
+<area shape="poly" id="edge58_Node000001_Node000654" title=" " alt="" coords="90,2109,101,2157,123,2226,139,2263,159,2300,183,2334,212,2363,221,2369,218,2373,209,2367,179,2337,155,2303,134,2266,118,2228,95,2159,85,2110"/>
+<area shape="rect" id="Node000657" href="$classsim_1_1Algorithm.html#a93fbeb95be41261707ac2511c1a2f20f" title=" " alt="" coords="241,2427,373,2452"/>
+<area shape="poly" id="edge59_Node000001_Node000657" title=" " alt="" coords="89,2110,97,2166,116,2248,132,2293,153,2337,180,2378,212,2413,230,2425,227,2429,209,2418,175,2381,149,2340,127,2295,111,2250,91,2167,84,2111"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1Transaction.html#ac0401da5e95a0aec5193024fd10954a1" title="Adds a rollback action to undo a transaction step not commited." alt="" coords="478,1103,629,1143"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="314,1345,333,1305,362,1253,401,1200,449,1153,464,1144,467,1149,452,1158,405,1203,366,1256,337,1307,319,1347"/>
+<area shape="rect" id="Node000005" href="$namespacebeerocks_1_1bpl.html#ae2d47625aeee02327b81dcf4e44be274" title=" " alt="" coords="491,1231,616,1271"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="337,1344,388,1312,450,1281,477,1270,479,1275,452,1286,391,1317,340,1348"/>
+<area shape="rect" id="Node000008" href="$namespacebeerocks_1_1bpl.html#a70b2a87f3d9c2241f7e3ed26e60df2b3" title=" " alt="" coords="479,1296,628,1321"/>
+<area shape="poly" id="edge5_Node000003_Node000008" title=" " alt="" coords="393,1344,484,1322,486,1327,394,1349"/>
+<area shape="rect" id="Node000010" href="$namespacebeerocks_1_1bpl.html#a2bc82a3068e7aee6d7cf61158aa8c0f3" title=" " alt="" coords="490,1346,617,1386"/>
+<area shape="poly" id="edge6_Node000003_Node000010" title=" " alt="" coords="398,1363,477,1363,477,1369,398,1369"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1PlatformManager.html#a0f2852d2a8097ac6125322a0e47a04fb" title="Checks if WLAN parameters have changed." alt="" coords="451,1410,656,1450"/>
+<area shape="poly" id="edge7_Node000003_Node000011" title=" " alt="" coords="385,1384,463,1404,462,1409,384,1389"/>
+<area shape="rect" id="Node000026" href="$namespacebeerocks.html#ad47544055778467bd4eb4fd15bf6d68e" title=" " alt="" coords="471,1475,635,1529"/>
+<area shape="poly" id="edge8_Node000003_Node000026" title=" " alt="" coords="336,1384,388,1421,452,1460,466,1467,464,1472,449,1465,385,1426,333,1389"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1Transaction.html#a78d4e48fdeb37611f6826bccda3a67bf" title="Commits transaction." alt="" coords="478,1039,629,1079"/>
+<area shape="poly" id="edge9_Node000003_Node000027" title=" " alt="" coords="310,1345,325,1294,353,1225,393,1152,419,1119,449,1089,464,1079,467,1083,452,1094,423,1122,398,1155,357,1227,330,1296,315,1347"/>
+<area shape="rect" id="Node000028" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="472,1553,635,1579"/>
+<area shape="poly" id="edge10_Node000003_Node000028" title=" " alt="" coords="321,1385,341,1419,371,1461,408,1503,452,1539,466,1546,463,1551,449,1543,404,1507,367,1464,337,1422,316,1388"/>
+<area shape="rect" id="Node000029" href="$classbeerocks_1_1PlatformManager.html#a49b70635ac673a467627f6c2e5e72e2b" title=" " alt="" coords="462,1167,645,1207"/>
+<area shape="poly" id="edge11_Node000003_Node000029" title=" " alt="" coords="320,1344,372,1282,409,1247,449,1217,461,1211,463,1215,452,1222,412,1251,376,1286,324,1348"/>
+<area shape="poly" id="edge12_Node000003_Node000030" title=" " alt="" coords="318,1386,336,1428,365,1483,404,1539,427,1565,452,1588,465,1597,463,1601,449,1592,423,1569,399,1543,360,1485,331,1430,313,1388"/>
+<area shape="poly" id="edge16_Node000039_Node000004" title=" " alt="" coords="311,635,314,713,320,770,331,834,349,902,374,970,408,1034,453,1090,468,1101,464,1106,449,1093,404,1037,369,972,344,904,326,836,315,771,309,713,305,635"/>
+<area shape="poly" id="edge17_Node000039_Node000027" title=" " alt="" coords="311,635,318,703,339,807,357,865,381,923,413,977,453,1024,467,1035,464,1040,449,1028,409,980,377,925,352,867,334,809,313,704,306,635"/>
+<area shape="rect" id="Node000040" href="$classson_1_1db.html#aea960e132a652e8bd6268373bea2f2c9" title=" " alt="" coords="471,845,635,871"/>
+<area shape="poly" id="edge14_Node000039_Node000040" title=" " alt="" coords="315,634,332,673,361,726,401,783,425,809,452,831,464,838,461,842,449,835,422,813,397,786,356,729,327,675,310,636"/>
+<area shape="rect" id="Node000042" href="$classson_1_1periodic__operation__pool.html#a627de2ee2236f739147ce7fae71304eb" title="Add a new operation to the operation pool An operation will run each time it&#39;s interval lapses." alt="" coords="475,895,631,935"/>
+<area shape="poly" id="edge15_Node000039_Node000042" title=" " alt="" coords="314,634,329,681,356,747,397,818,423,851,452,880,465,889,462,893,449,884,419,855,393,821,351,749,324,683,309,636"/>
+<area shape="rect" id="Node000043" href="$classbeerocks_1_1net_1_1network__utils.html#a18232a842c0eb002067fbb9e12c9c64a" title="Generate a locally administrated mac address for ethernet switch node (eth backhaul) derived from the..." alt="" coords="473,960,633,1015"/>
+<area shape="poly" id="edge18_Node000039_Node000043" title=" " alt="" coords="313,635,325,691,350,774,368,819,391,865,419,908,453,946,463,954,460,959,449,949,415,911,387,868,363,822,345,776,319,692,307,636"/>
+<area shape="rect" id="Node000044" href="$classson_1_1db.html#af2ed84bacfd1b7408c3961a5bb694d88" title=" " alt="" coords="704,53,829,93"/>
+<area shape="poly" id="edge19_Node000039_Node000044" title=" " alt="" coords="376,612,390,605,401,595,413,575,421,549,428,482,426,401,420,315,414,229,413,150,416,115,423,84,434,59,449,39,479,19,512,7,548,3,584,5,655,21,716,45,714,50,654,26,583,10,548,8,513,12,481,23,452,43,438,61,428,86,422,116,418,150,419,228,425,314,431,401,434,482,426,550,418,577,405,599,393,609,379,617"/>
+<area shape="rect" id="Node000045" href="$classson_1_1db.html#a3b89d1a3fdb0d282b6a55b44456f0213" title=" " alt="" coords="474,167,633,207"/>
+<area shape="poly" id="edge20_Node000039_Node000045" title=" " alt="" coords="376,612,401,595,418,572,430,548,436,525,439,502,436,456,425,410,415,363,410,315,413,291,420,267,431,242,449,218,460,207,464,211,453,221,436,245,425,269,418,292,416,315,420,362,430,408,441,455,445,502,442,526,435,550,423,574,405,599,379,616"/>
+<area shape="rect" id="Node000046" href="$classson_1_1db.html#a1a59b8471f7bbb67b89f506b160d2131" title=" " alt="" coords="452,231,655,271"/>
+<area shape="poly" id="edge21_Node000039_Node000046" title=" " alt="" coords="376,612,401,595,415,576,425,557,434,518,432,480,425,441,417,402,415,363,424,322,434,302,449,282,452,278,456,282,453,285,438,305,429,324,420,363,423,402,430,440,438,479,440,519,430,559,420,579,404,599,379,616"/>
+<area shape="rect" id="Node000047" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="477,53,630,93"/>
+<area shape="poly" id="edge22_Node000039_Node000047" title=" " alt="" coords="376,612,390,605,401,595,423,564,437,534,445,503,448,473,441,413,425,353,410,292,402,230,404,199,412,167,427,135,449,103,463,90,466,94,453,107,431,138,417,169,410,200,407,230,415,291,431,351,446,412,453,473,451,504,442,535,427,567,405,599,393,609,379,617"/>
+<area shape="rect" id="Node000576" href="$classson_1_1periodic__operation__pool.html#a8cc7d5d5212ec651068b944eb93cf8a7" title="Checks if the operation identified by the ID number is still alive which means that the operation is ..." alt="" coords="471,295,636,335"/>
+<area shape="poly" id="edge24_Node000039_Node000576" title=" " alt="" coords="376,611,401,595,421,565,429,535,429,504,425,473,420,442,420,410,428,378,449,346,457,338,460,342,453,349,433,380,425,411,425,441,430,472,435,504,435,535,426,567,405,599,379,616"/>
+<area shape="rect" id="Node000577" href="$classson_1_1db.html#a15f73a2dfe0cdd36643f9cb92357ff6f" title="Load all clients from persistent db. Creates nodes for the clients in runtime&#45;db and set persistent p..." alt="" coords="473,359,634,399"/>
+<area shape="poly" id="edge25_Node000039_Node000577" title=" " alt="" coords="376,611,401,595,417,573,425,551,426,528,425,505,424,458,432,434,449,410,459,401,463,405,453,413,437,436,430,458,430,505,431,528,430,552,422,575,404,599,379,615"/>
+<area shape="rect" id="Node000062" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="488,424,619,449"/>
+<area shape="poly" id="edge26_Node000039_Node000062" title=" " alt="" coords="376,610,401,595,414,579,421,563,424,529,427,494,435,477,449,460,473,445,476,450,452,464,439,480,432,496,429,530,426,564,418,582,404,599,379,614"/>
+<area shape="rect" id="Node000579" href="$classson_1_1db.html#ac15d4debe9369bb69092b5c1845bfa52" title="Get from persistent db all steer history event and register them on a system bus." alt="" coords="479,474,628,514"/>
+<area shape="poly" id="edge27_Node000039_Node000579" title=" " alt="" coords="377,607,401,595,417,578,424,561,432,542,449,524,465,514,467,519,452,528,437,545,429,563,421,581,404,599,379,612"/>
+<area shape="rect" id="Node000581" href="$classson_1_1periodic__operation__pool.html#adca625b00a872a255930601f1cf6c5bd" title="Iterates over the operation pool triggering those who lapsed their interval." alt="" coords="475,538,631,578"/>
+<area shape="poly" id="edge28_Node000039_Node000581" title=" " alt="" coords="356,607,462,579,463,584,357,612"/>
+<area shape="rect" id="Node000582" href="$classson_1_1task__pool.html#a66fe783cc7a039b8e9bfd72f315fe80c" title=" " alt="" coords="487,602,620,642"/>
+<area shape="poly" id="edge29_Node000039_Node000582" title=" " alt="" coords="378,619,473,619,473,625,378,625"/>
+<area shape="rect" id="Node000482" href="$classson_1_1db.html#a22bd4a79309872655571cf9bdc9f8fb9" title=" " alt="" coords="488,666,619,706"/>
+<area shape="poly" id="edge30_Node000039_Node000482" title=" " alt="" coords="357,632,475,663,474,668,356,638"/>
+<area shape="rect" id="Node000458" href="$classson_1_1db.html#a5f958c40e5da3ff348ff77d3da5c201f" title=" " alt="" coords="453,731,653,756"/>
+<area shape="poly" id="edge31_Node000039_Node000458" title=" " alt="" coords="325,633,379,674,414,696,452,716,474,724,472,729,450,721,412,701,376,678,322,637"/>
+<area shape="rect" id="Node000459" href="$classson_1_1db.html#a63c01a849eea466ea9d18db5003581e3" title=" " alt="" coords="473,781,634,821"/>
+<area shape="poly" id="edge32_Node000039_Node000459" title=" " alt="" coords="319,633,371,696,409,733,452,765,466,773,463,778,449,770,406,737,367,700,315,637"/>
+<area shape="rect" id="Node000380" href="$classson_1_1db.html#aa54bdd03910e4a5bdd8c8f3091cdb18f" title=" " alt="" coords="478,117,629,143"/>
+<area shape="poly" id="edge33_Node000039_Node000380" title=" " alt="" coords="376,612,390,605,401,595,421,567,434,540,441,513,443,486,437,431,424,376,410,321,404,266,406,238,414,210,428,182,449,154,464,141,467,145,453,157,432,185,419,212,412,239,409,266,415,321,429,375,443,430,449,486,446,514,439,542,425,570,405,599,393,609,379,617"/>
+<area shape="poly" id="edge23_Node000047_Node000044" title=" " alt="" coords="630,70,690,70,690,75,630,75"/>
+<area shape="poly" id="edge34_Node000380_Node000044" title=" " alt="" coords="607,115,655,102,690,93,691,98,657,107,608,120"/>
+<area shape="rect" id="Node000585" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#a156f96517c37154df5a8f3bbff7f6344" title=" " alt="" coords="480,1667,627,1737"/>
+<area shape="poly" id="edge36_Node000584_Node000585" title=" " alt="" coords="376,1731,466,1715,467,1720,377,1736"/>
+<area shape="rect" id="Node000619" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#ac6a0bfd2d9df005008879413bcf5b611" title=" " alt="" coords="460,1761,647,1816"/>
+<area shape="poly" id="edge37_Node000584_Node000619" title=" " alt="" coords="377,1756,446,1768,446,1773,376,1761"/>
+<area shape="rect" id="Node000631" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#aa1f58801a8c774ee766114aecc7c3ace" title=" " alt="" coords="473,1841,634,1910"/>
+<area shape="poly" id="edge38_Node000584_Node000631" title=" " alt="" coords="377,1768,404,1783,429,1804,452,1825,463,1832,460,1836,449,1830,425,1808,401,1787,375,1773"/>
+<area shape="rect" id="Node000633" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#a7b77e4e08323db856c6d0d9b76c805eb" title="Handler method to accept incoming socket connections." alt="" coords="478,1935,629,1989"/>
+<area shape="poly" id="edge40_Node000632_Node000633" title=" " alt="" coords="384,1850,404,1863,420,1878,429,1892,438,1906,452,1920,467,1930,464,1934,449,1924,433,1909,424,1895,416,1881,401,1867,381,1854"/>
+<area shape="poly" id="edge43_Node000642_Node000030" title=" " alt="" coords="379,1621,462,1621,462,1626,379,1626"/>
+<area shape="rect" id="Node000645" href="$classson_1_1monitor__db.html#a2400f91e5d33c207857da094f6c2d5f0" title=" " alt="" coords="461,2014,646,2054"/>
+<area shape="poly" id="edge46_Node000644_Node000645" title=" " alt="" coords="371,2009,447,2018,447,2024,371,2014"/>
+<area shape="rect" id="Node000647" href="$classbeerocks_1_1bpl_1_1arp__monitor.html#a9daa46880ba00c51410d8430a76c60c5" title=" " alt="" coords="490,2078,617,2118"/>
+<area shape="poly" id="edge48_Node000646_Node000647" title=" " alt="" coords="371,2068,477,2084,476,2089,370,2073"/>
+</map>

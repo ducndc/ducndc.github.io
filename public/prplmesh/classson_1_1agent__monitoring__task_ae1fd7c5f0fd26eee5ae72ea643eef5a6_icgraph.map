@@ -1,0 +1,11 @@
+<map id="son::agent_monitoring_task::dm_set_agent_disconnected_event_params" name="son::agent_monitoring_task::dm_set_agent_disconnected_event_params">
+<area shape="rect" id="Node000001" title="Set values for parameters of NBAPI AgentDisconnected, adds its sub&#45;objects." alt="" coords="820,30,1048,85"/>
+<area shape="rect" id="Node000002" href="$classson_1_1agent__monitoring__task.html#a427692aa843b733ec109b5356346831f" title="Adds NBAPI AgentDisconnectedEvent object, all its sub&#45;objects and set values for it&#39;s parameters para..." alt="" coords="501,37,772,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="806,60,772,60,772,55,806,55"/>
+<area shape="rect" id="Node000003" href="$classson_1_1agent__monitoring__task.html#a105b426dae78bef9c9296253d0283e1d" title=" " alt="" coords="281,5,431,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="487,43,431,37,432,31,488,38"/>
+<area shape="rect" id="Node000004" href="$classson_1_1agent__monitoring__task.html#ac1aca39cf3892e8abb8e8f0140106ac4" title="Recive Topology Response message, checks that Agent configured BSSes reported in M2 message...." alt="" coords="259,69,453,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="488,77,454,81,453,76,487,72"/>
+<area shape="rect" id="Node000005" href="$classson_1_1agent__monitoring__task.html#a857b28805f805f45faae7de8733cf998" title="Handle ieee1905 message." alt="" coords="5,69,211,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="245,92,211,92,211,87,245,87"/>
+</map>

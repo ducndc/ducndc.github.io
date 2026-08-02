@@ -1,0 +1,17 @@
+<map id="beerocks::coordinated_cac::CacFsm::send_preference_report" name="beerocks::coordinated_cac::CacFsm::send_preference_report">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,217,135"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="277,5,440,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,78,264,41,292,32,294,37,266,46,174,82"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1BackhaulManager.html#a634f4550764f8a170612cce73ebd3861" title=" " alt="" coords="265,55,452,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,91,251,86,252,92,218,96"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1message__com.html#a028861029a2c3f999d81c46c1792eebe" title=" " alt="" coords="275,119,443,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="218,118,261,124,261,129,217,124"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1BackhaulManager.html#a1429298b96ad16663983ba4b95111705" title="Sends given CMDU message through the specified socket connection." alt="" coords="265,183,452,223"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="176,132,266,169,286,176,284,181,264,174,174,137"/>
+<area shape="rect" id="Node000005" href="$classieee1905__1_1_1CmduMessage.html#a05ca2e3fc9b6628dd7eca553a8d68aad" title=" " alt="" coords="500,87,684,127"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="443,125,486,119,486,124,444,130"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1message__com.html#a2ac9090c0d8d3b371a7518031d80ad16" title=" " alt="" coords="508,151,676,191"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="444,148,495,155,494,161,443,154"/>
+<area shape="rect" id="Node000006" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="732,95,869,120"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="684,105,718,105,718,110,684,110"/>
+</map>

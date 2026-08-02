@@ -1,0 +1,16 @@
+<map id="beerocks::net::TrafficSeparationManager::reset" name="beerocks::net::TrafficSeparationManager::reset">
+<area shape="rect" id="Node000001" title="Reset the manager to its initial, unconfigured state." alt="" coords="5,69,213,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#af4b34f605d88124d10e9a6ad0fcfa80f" title="Rollback of the current configuration on all trunk and access ports." alt="" coords="271,5,479,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,67,278,46,279,51,194,72"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#af6d75e50997ade08e0c5152b77895149" title="Remove all existing access ports from management." alt="" coords="261,69,489,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,87,248,87,248,92,214,92"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a13337d4577ab1292d4f619c45a9e5520" title="Remove all existing trunk ports from management." alt="" coords="268,133,483,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="194,107,279,128,278,133,193,112"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a19a52bca349deac603b83551317c815c" title="Remove an existing access port from management." alt="" coords="537,69,745,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="489,87,523,87,523,92,489,92"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a7101215c85faf21e64d391373d473a2f" title="Return true when TS policies are currently applied on managed ports." alt="" coords="793,101,1001,141"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="746,100,780,104,779,109,745,105"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a39dc8c0e42d0576c854800cd3cf24c09" title="Remove an existing trunk port from management." alt="" coords="537,133,745,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="483,151,524,151,524,156,483,156"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="745,138,779,133,780,139,746,143"/>
+</map>

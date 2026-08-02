@@ -1,0 +1,41 @@
+<map id="MultiVendorExample::MultiVendorExample" name="MultiVendorExample::MultiVendorExample">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,181,156,221"/>
+<area shape="rect" id="Node000002" href="$classvendor__example_1_1tlvf__vendor__example__utils.html#a321ca4f9cc7d715abbb121616c2b4167" title="Adds a new Example vendor TLV to given message." alt="" coords="209,59,384,114"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,179,203,123,214,117,216,122,205,128,113,184"/>
+<area shape="rect" id="Node000006" href="$classvendor__example_1_1tlvf__vendor__example__utils.html#a6c10ce9a3fb67965d132b85e96d78fdc" title="Parses a vendor&#45;specific TLV from the received message." alt="" coords="204,138,389,193"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="156,186,190,180,191,186,156,191"/>
+<area shape="rect" id="Node000017" href="$classmulti__vendor_1_1tlvf__handler.html#a189bad019531024f676676c50f85ae2a" title="Register a handler for a given IEEE 1905.1 message type." alt="" coords="211,217,382,257"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="156,211,198,218,197,224,156,216"/>
+<area shape="rect" id="Node000019" href="$classmulti__vendor_1_1tlvf__handler.html#a6dab05f4f9ec3ff739fca1e145ef56c3" title="Register a parser for vendor&#45;specific TLVs for a given IEEE 1905.1 message type." alt="" coords="214,281,379,321"/>
+<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="116,219,205,267,222,274,220,279,203,272,113,224"/>
+<area shape="rect" id="Node000003" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="439,5,637,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,62,445,46,446,51,385,67"/>
+<area shape="rect" id="Node000005" href="$classvendor__example_1_1tlvVendorExample.html#a5f7d31f1cdbaa7334e2bb87bea22bf31" title=" " alt="" coords="448,69,628,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="384,85,434,86,434,91,384,90"/>
+<area shape="rect" id="Node000004" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="717,19,857,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="638,25,703,27,703,32,637,31"/>
+<area shape="rect" id="Node000007" href="$classieee1905__1_1_1CmduMessageRx.html#ad28c1bbf9f57dd19a44cb389399c4427" title=" " alt="" coords="437,133,639,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="389,158,424,156,424,162,390,163"/>
+<area shape="rect" id="Node000008" href="$classmulti__vendor_1_1tlvf__handler.html#aae476b51a05e40c4d777f1a97354d7f4" title="Safely read vendor&#45;specific data from TLV buffer with comprehensive bounds checking." alt="" coords="470,198,606,253"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="390,186,457,203,456,208,389,191"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="615,131,637,119,652,106,660,92,669,78,685,63,717,47,719,52,688,68,674,81,665,95,656,109,640,124,618,136"/>
+<area shape="rect" id="Node000009" href="$classieee1905__1_1_1CmduMessage.html#a0160c49e715795eb7e05410ba6044ed4" title=" " alt="" coords="695,77,879,117"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="605,201,637,183,651,169,660,156,669,141,685,127,695,121,698,126,688,131,673,145,665,158,656,173,640,187,608,206"/>
+<area shape="rect" id="Node000011" href="$classieee1905__1_1_1CmduMessage.html#a891727be584a9281551c3b3c0b8b70dc" title=" " alt="" coords="695,141,879,181"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="605,205,695,182,696,187,607,211"/>
+<area shape="rect" id="Node000013" href="$classieee1905__1_1_1CmduMessageRx.html#acf551f9cff1193c0abaf9410e9a0862c" title=" " alt="" coords="687,205,888,245"/>
+<area shape="poly" id="edge13_Node000008_Node000013" title=" " alt="" coords="606,223,673,223,673,228,606,228"/>
+<area shape="rect" id="Node000015" href="$structsVendorOUI.html#a4cf77c47bc4e72c4a3babca7cee73882" title=" " alt="" coords="701,270,874,295"/>
+<area shape="poly" id="edge15_Node000008_Node000015" title=" " alt="" coords="607,238,719,264,718,270,605,243"/>
+<area shape="rect" id="Node000016" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="750,319,825,345"/>
+<area shape="poly" id="edge16_Node000008_Node000016" title=" " alt="" coords="608,247,640,264,664,286,674,296,688,306,737,322,735,327,685,310,670,300,660,290,637,269,605,252"/>
+<area shape="rect" id="Node000010" href="$classClassList.html#a85c697e57f45fec5630d09477ff3a4ad" title=" " alt="" coords="936,85,1116,110"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="880,95,922,95,922,100,880,100"/>
+<area shape="rect" id="Node000012" href="$classClassList.html#a592da5d93a935f503a3e8b0196811197" title=" " alt="" coords="936,141,1116,181"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="880,159,922,159,922,164,880,164"/>
+<area shape="rect" id="Node000014" href="$classClassList.html#a95f0086b3f9843d81234007de30ad049" title="get previousely added class" alt="" coords="954,213,1098,238"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="888,223,940,223,940,228,888,228"/>
+<area shape="rect" id="Node000018" href="$classmulti__vendor_1_1tlvf__handler.html#aca75c632fa6e67b7ed0fcb06c54e194a" title=" " alt="" coords="474,279,602,319"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="377,255,462,277,460,282,375,260"/>
+<area shape="poly" id="edge20_Node000019_Node000018" title=" " alt="" coords="379,298,460,297,460,302,379,303"/>
+</map>

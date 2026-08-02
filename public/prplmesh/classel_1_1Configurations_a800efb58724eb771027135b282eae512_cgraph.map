@@ -1,0 +1,14 @@
+<map id="el::Configurations::unsafeSetGlobally" name="el::Configurations::unsafeSetGlobally">
+<area shape="rect" id="Node000001" title="Sets configurations (Unsafely) for all levels including Level::Global if includeGlobalLevel is true." alt="" coords="5,87,141,127"/>
+<area shape="rect" id="Node000002" href="$classel_1_1LevelHelper.html#a1279f27df29a003df5ecc3d0bf4dacbb" title="Casts int(ushort) to level, useful for iterating through enum." alt="" coords="189,5,376,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,85,144,62,188,41,213,32,215,37,190,46,146,67,107,90"/>
+<area shape="rect" id="Node000003" href="$classel_1_1LevelHelper.html#a7f0dbfceb2354a72c2802d02c300430d" title="Applies specified function to each level starting from startIndex." alt="" coords="201,55,364,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="141,94,187,87,188,92,142,100"/>
+<area shape="rect" id="Node000004" href="$classel_1_1Configurations.html#a05c373510ca513e4f61999c84d512831" title="Thread unsafe set." alt="" coords="221,119,345,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,124,207,134,206,139,141,129"/>
+<area shape="poly" id="edge6_Node000004_Node000001" title=" " alt="" coords="220,124,155,114,156,108,221,119"/>
+<area shape="rect" id="Node000005" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html#a561a5d418106a16473ff94d43a4b6b04" title=" " alt="" coords="424,65,593,134"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="345,126,410,114,411,119,345,131"/>
+<area shape="rect" id="Node000006" href="$classel_1_1Configuration.html#a04755de11422d7570869433ea157b705" title="Set string based configuration value." alt="" coords="446,158,571,198"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="345,147,433,162,432,168,345,153"/>
+</map>

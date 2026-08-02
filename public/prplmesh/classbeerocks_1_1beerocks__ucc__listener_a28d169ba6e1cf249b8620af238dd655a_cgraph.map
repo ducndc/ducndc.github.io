@@ -1,0 +1,94 @@
+<map id="beerocks::beerocks_ucc_listener::handle_wfa_ca_command" name="beerocks::beerocks_ucc_listener::handle_wfa_ca_command">
+<area shape="rect" id="Node000001" title="Receives WFA&#45;CA command, executes it and returns a reply to the sender." alt="" coords="5,863,151,918"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="199,5,397,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,863,81,700,97,458,112,333,133,217,161,122,178,84,197,56,199,53,203,56,201,59,182,87,166,124,138,219,117,334,103,459,86,700,82,863"/>
+<area shape="rect" id="Node000004" href="$classieee1905__1_1_1eMessageTypeValidate.html#abf78892a51c1f41ec2b485da5135abf8" title=" " alt="" coords="206,69,390,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="77,863,83,711,101,489,116,374,137,268,163,180,179,146,197,120,199,117,203,120,201,123,184,149,168,182,142,269,121,374,106,489,89,711,83,863"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1beerocks__ucc__listener.html#aacebaab3ccced8fa7a7114474db405cd" title="Checks for forbidden characters inside WFA&#45;CA command." alt="" coords="227,134,369,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="78,863,87,725,108,528,123,426,143,332,167,254,181,224,197,200,213,185,217,188,201,203,186,226,172,256,148,333,128,427,113,529,92,726,83,863"/>
+<area shape="rect" id="Node000006" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="199,213,397,253"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="78,863,88,737,110,557,125,466,145,381,168,312,182,285,197,264,200,260,204,264,201,267,186,287,173,314,150,383,130,467,115,558,94,737,84,863"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1beerocks__ucc__listener.html#a34d8dbd4ea38740d16bab12d1776eed2" title=" " alt="" coords="225,342,371,397"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="76,863,78,779,93,661,108,596,130,532,159,470,197,414,212,400,216,404,201,418,163,473,135,534,113,598,99,662,84,779,81,863"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1beerocks__ucc__listener.html#afa3067822b79b8501b4ffa9fbbb5cabd" title="Parse command &quot;DEV_SEND_1905&quot; TLVs parameters into an ordered list of TLV structure &quot;tlv_hex_t&quot;,..." alt="" coords="218,473,378,527"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="78,863,87,798,106,712,121,666,141,620,166,577,197,538,205,531,208,535,201,542,170,580,146,622,126,668,111,713,92,799,84,863"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1string__utils.html#aea97ffe1489d4608c5035b257deaaadc" title=" " alt="" coords="469,251,616,291"/>
+<area shape="poly" id="edge46_Node000001_Node000014" title=" " alt="" coords="76,863,78,784,83,731,92,675,107,616,129,559,158,505,197,458,222,439,247,431,272,428,296,429,346,429,370,422,396,406,407,394,414,381,419,355,425,328,432,314,444,301,456,292,459,296,447,305,436,317,430,330,424,356,419,383,411,397,399,410,373,427,346,435,296,435,272,434,248,436,224,444,201,462,163,508,134,561,112,618,97,676,88,732,83,784,81,863"/>
+<area shape="rect" id="Node000018" href="$classieee1905__1_1_1CmduMessage.html#af7b831cab6164a284abb14b2c447ce60" title=" " alt="" coords="206,552,390,592"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="80,863,91,808,113,738,147,666,170,632,197,602,202,597,206,602,201,606,174,635,151,668,118,740,97,809,86,864"/>
+<area shape="rect" id="Node000020" href="$classieee1905__1_1_1CmduMessage.html#a94ce761475d53857b8d5543fa9e4c0bd" title=" " alt="" coords="206,616,390,656"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="84,862,99,819,122,767,154,713,174,688,197,666,203,661,207,665,200,670,178,691,159,716,127,769,104,821,89,864"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1beerocks__ucc__listener.html#a9d965e64ac60efeee228b60f844c3bfb" title=" " alt="" coords="225,745,371,799"/>
+<area shape="poly" id="edge25_Node000001_Node000026" title=" " alt="" coords="114,861,153,834,197,808,212,801,214,806,200,813,156,839,117,866"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1beerocks__ucc__listener.html#a86314f93bbed19727d907c5f33ec3b9b" title=" " alt="" coords="225,823,371,878"/>
+<area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="151,875,211,864,212,869,152,880"/>
+<area shape="rect" id="Node000028" href="$classbeerocks_1_1beerocks__ucc__listener.html#aaedf0b5b7b02a2601ac3090df58cb31d" title=" " alt="" coords="225,902,371,957"/>
+<area shape="poly" id="edge27_Node000001_Node000028" title=" " alt="" coords="152,901,212,912,211,917,151,906"/>
+<area shape="rect" id="Node000029" href="$classbeerocks_1_1beerocks__ucc__listener.html#a5580813be13459edb97cee13a2de280a" title="Calls back handler function for &quot;dev_reset_default&quot; WFA&#45;CA command." alt="" coords="225,981,371,1035"/>
+<area shape="poly" id="edge28_Node000001_Node000029" title=" " alt="" coords="119,916,200,966,214,973,212,977,197,970,117,921"/>
+<area shape="rect" id="Node000030" href="$classbeerocks_1_1beerocks__ucc__listener.html#afca0b76d81354da444703177b8e2ce3b" title="Lets controller/agent to handle case DEV_SEND_1905 internally (by task or some different internal log..." alt="" coords="209,1059,387,1114"/>
+<area shape="poly" id="edge29_Node000001_Node000030" title=" " alt="" coords="97,917,139,981,167,1015,200,1045,208,1050,205,1054,197,1049,164,1018,134,984,92,920"/>
+<area shape="rect" id="Node000031" href="$classbeerocks_1_1beerocks__ucc__listener.html#a7efc14c4afa8b621770f8485da41a965" title="Calls back handler function for &quot;dev_set_config&quot; WFA&#45;CA command." alt="" coords="225,1138,371,1193"/>
+<area shape="poly" id="edge30_Node000001_Node000031" title=" " alt="" coords="89,917,103,962,126,1017,158,1074,178,1100,200,1123,215,1134,212,1139,197,1127,174,1103,154,1076,121,1019,98,963,84,919"/>
+<area shape="rect" id="Node000032" href="$classbeerocks_1_1beerocks__ucc__listener.html#aa7bdd8ee345a0bbbcd9e15603842fdff" title=" " alt="" coords="225,1217,371,1271"/>
+<area shape="poly" id="edge31_Node000001_Node000032" title=" " alt="" coords="85,918,95,976,116,1052,131,1092,150,1131,173,1169,201,1202,215,1214,211,1218,197,1206,169,1172,145,1134,126,1094,111,1053,90,977,80,918"/>
+<area shape="rect" id="Node000033" href="$classbeerocks_1_1beerocks__ucc__listener.html#a79936ff2e369f936c9273d35341cf725" title=" " alt="" coords="219,1295,377,1350"/>
+<area shape="poly" id="edge32_Node000001_Node000033" title=" " alt="" coords="83,918,89,989,106,1086,121,1138,142,1189,168,1238,201,1281,209,1289,206,1293,197,1284,163,1240,137,1191,116,1139,101,1087,83,990,77,919"/>
+<area shape="rect" id="Node000034" href="$classbeerocks_1_1string__utils.html#a711eb3f0775f9e2c954c754f484f3a4b" title=" " alt="" coords="225,1375,371,1415"/>
+<area shape="poly" id="edge33_Node000001_Node000034" title=" " alt="" coords="86,918,100,1016,125,1149,141,1215,159,1276,179,1326,201,1360,215,1371,211,1375,197,1363,174,1328,154,1278,136,1217,120,1150,95,1017,80,919"/>
+<area shape="rect" id="Node000035" href="$classieee1905__1_1_1CmduMessage.html#a94aadaa834ace221fe9785e78f496bcf" title=" " alt="" coords="206,1439,390,1479"/>
+<area shape="poly" id="edge34_Node000001_Node000035" title=" " alt="" coords="85,918,97,1028,120,1180,136,1257,155,1328,176,1386,201,1425,204,1428,200,1432,197,1428,172,1388,150,1329,131,1259,115,1181,92,1029,79,918"/>
+<area shape="rect" id="Node000037" href="$classbeerocks_1_1beerocks__ucc__listener.html#aeb5744f208fc229217f9bbdb3a788361" title="Parse the strings vector which containing parameter names, and values into unordered map which will c..." alt="" coords="229,1503,367,1558"/>
+<area shape="poly" id="edge36_Node000001_Node000037" title=" " alt="" coords="84,918,95,1039,118,1210,134,1297,153,1377,175,1444,201,1489,218,1504,215,1509,197,1492,170,1446,148,1379,129,1298,113,1211,90,1040,79,919"/>
+<area shape="rect" id="Node000038" href="$classbeerocks_1_1beerocks__ucc__listener.html#ae3241350af542f78be71e196d00d5e0c" title="Generate WFA&#45;CA reply message and send it." alt="" coords="217,1583,379,1623"/>
+<area shape="poly" id="edge37_Node000001_Node000038" title=" " alt="" coords="83,918,92,1054,112,1249,127,1350,147,1442,171,1517,185,1547,201,1569,207,1575,203,1579,197,1572,181,1549,166,1519,142,1443,122,1351,106,1250,86,1054,78,918"/>
+<area shape="rect" id="Node000040" href="$classieee1905__1_1_1CmduMessageTx.html#a52f44e03ed4c2697412b7f21a6e5bf35" title=" " alt="" coords="199,277,397,317"/>
+<area shape="poly" id="edge39_Node000001_Node000040" title=" " alt="" coords="79,863,91,748,114,588,129,507,148,432,171,370,197,328,200,324,204,328,201,331,176,373,153,433,135,508,119,589,96,749,84,864"/>
+<area shape="rect" id="Node000041" href="$classbeerocks_1_1beerocks__ucc__listener.html#af1c3f93d5e65a42c3c11fa9c5fb56a3b" title=" " alt="" coords="223,1647,373,1702"/>
+<area shape="poly" id="edge41_Node000001_Node000041" title=" " alt="" coords="83,918,90,1065,110,1278,125,1389,145,1491,170,1575,185,1608,201,1633,214,1645,210,1649,197,1636,180,1610,165,1577,140,1492,120,1390,104,1279,85,1065,78,918"/>
+<area shape="rect" id="Node000042" href="$classieee1905__1_1_1CmduMessage.html#a78208fb1096a26adb957257f0293759d" title=" " alt="" coords="206,680,390,720"/>
+<area shape="poly" id="edge42_Node000001_Node000042" title=" " alt="" coords="91,862,133,796,162,760,197,730,206,724,209,729,200,734,166,764,137,799,95,864"/>
+<area shape="rect" id="Node000043" href="$classbeerocks_1_1beerocks__ucc__listener.html#a4f2468a0be17c2eac84043f62299ca62" title="Helper function to validate the &#39;program&#39; parameter given by the UCC and log errors if any." alt="" coords="222,1726,374,1781"/>
+<area shape="poly" id="edge47_Node000001_Node000043" title=" " alt="" coords="82,918,88,1079,105,1317,120,1440,140,1554,167,1648,183,1685,201,1713,212,1724,209,1728,197,1716,178,1687,162,1650,135,1555,115,1441,100,1317,82,1079,77,918"/>
+<area shape="rect" id="Node000044" href="$classbeerocks_1_1beerocks__ucc__listener.html#af8bc6b6662c060b69d08b55da0a39a21" title="Convert string of WFA&#45;CA command into enum." alt="" coords="219,1805,377,1859"/>
+<area shape="poly" id="edge48_Node000001_Node000044" title=" " alt="" coords="82,918,85,1092,101,1354,115,1490,136,1616,164,1720,182,1761,201,1792,209,1800,205,1804,197,1795,177,1763,159,1722,131,1617,110,1491,95,1354,80,1093,77,918"/>
+<area shape="rect" id="Node000003" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="473,13,613,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,23,459,23,459,28,397,28"/>
+<area shape="rect" id="Node000007" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="485,201,600,226"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="397,223,471,216,471,222,398,228"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1net_1_1network__utils.html#a640b4109482b5726ce59132dc5482c9c" title=" " alt="" coords="465,552,620,592"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="379,521,462,546,460,551,377,526"/>
+<area shape="poly" id="edge13_Node000009_Node000014" title=" " alt="" coords="373,470,395,452,408,433,415,414,417,377,421,339,429,320,443,301,456,291,459,295,447,305,433,323,426,340,423,377,420,415,413,435,399,455,376,474"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1beerocks__ucc__listener.html#ae8a778d63dae8bc558ab680b7b3616f6" title="Checks that the given string is in binary notation." alt="" coords="467,315,619,370"/>
+<area shape="poly" id="edge14_Node000009_Node000015" title=" " alt="" coords="368,470,396,451,411,433,419,416,427,398,444,379,453,372,456,377,447,383,432,401,423,418,415,436,399,455,371,475"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1beerocks__ucc__listener.html#a7d6b5c8f009e290dd55fb5d56284aff6" title="Checks that the given string is in decimal notation." alt="" coords="467,394,619,449"/>
+<area shape="poly" id="edge15_Node000009_Node000016" title=" " alt="" coords="377,472,453,447,455,452,379,477"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1beerocks__ucc__listener.html#a8c3f57266af5bc44ea0a2f793f303055" title="Checks that the given string is in a hex notation." alt="" coords="467,473,619,527"/>
+<area shape="poly" id="edge16_Node000009_Node000017" title=" " alt="" coords="378,497,453,497,453,503,378,503"/>
+<area shape="rect" id="Node000011" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="693,535,838,561"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="620,561,679,555,679,560,621,566"/>
+<area shape="rect" id="Node000012" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="700,585,831,610"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="621,578,686,586,686,591,620,583"/>
+<area shape="rect" id="Node000013" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="891,585,1037,610"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="831,595,877,595,877,600,831,600"/>
+<area shape="rect" id="Node000019" href="$classClassList.html#a214eeee361b851ea2044604a0a6ef239" title=" " alt="" coords="445,617,640,642"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="385,589,475,611,474,616,383,595"/>
+<area shape="rect" id="Node000021" href="$classieee1905__1_1_1CmduMessage.html#adc10ea7cfba25c0f58359cb954a5d69c" title=" " alt="" coords="451,667,635,707"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="391,652,438,662,437,668,390,658"/>
+<area shape="rect" id="Node000023" href="$classieee1905__1_1_1CmduMessage.html#af54c8bd541643a03b9567fc61eef25f9" title=" " alt="" coords="451,731,635,771"/>
+<area shape="poly" id="edge22_Node000020_Node000023" title=" " alt="" coords="376,654,399,666,414,679,424,692,432,704,447,716,457,723,455,727,444,721,429,708,419,695,410,682,396,670,373,659"/>
+<area shape="rect" id="Node000025" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="505,795,580,821"/>
+<area shape="poly" id="edge24_Node000020_Node000025" title=" " alt="" coords="382,654,399,666,412,681,419,696,424,725,428,754,435,767,447,781,468,794,492,801,491,806,466,798,444,785,431,770,423,756,418,726,414,697,407,684,396,670,379,658"/>
+<area shape="rect" id="Node000022" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="697,674,834,699"/>
+<area shape="poly" id="edge21_Node000021_Node000022" title=" " alt="" coords="635,684,683,684,683,689,635,689"/>
+<area shape="rect" id="Node000024" href="$classClassList.html#aea43ae47ce1af363533f665105410639" title=" " alt="" coords="688,738,843,763"/>
+<area shape="poly" id="edge23_Node000023_Node000024" title=" " alt="" coords="635,748,674,748,674,753,635,753"/>
+<area shape="rect" id="Node000036" href="$classClassList.html#ad7d2c5efe7d1f687543f6feb8a44b23e" title=" " alt="" coords="467,1446,618,1471"/>
+<area shape="poly" id="edge35_Node000035_Node000036" title=" " alt="" coords="390,1456,454,1456,454,1461,390,1461"/>
+<area shape="rect" id="Node000039" href="$classbeerocks_1_1beerocks__ucc__listener.html#a685d950d2445f09a2fa2dc647770ef09" title="Convert enum of WFA&#45;CA status to string." alt="" coords="468,1575,617,1630"/>
+<area shape="poly" id="edge38_Node000038_Node000039" title=" " alt="" coords="380,1600,455,1600,455,1605,380,1605"/>
+<area shape="poly" id="edge40_Node000040_Node000007" title=" " alt="" coords="366,275,396,263,420,249,444,236,471,227,473,232,446,241,423,254,398,268,368,280"/>
+<area shape="poly" id="edge43_Node000042_Node000021" title=" " alt="" coords="390,692,437,690,437,695,390,698"/>
+<area shape="poly" id="edge44_Node000042_Node000023" title=" " alt="" coords="391,716,438,726,437,732,390,722"/>
+<area shape="poly" id="edge45_Node000042_Node000025" title=" " alt="" coords="376,718,399,730,414,743,423,756,432,769,447,780,469,791,493,798,491,803,467,796,444,785,428,772,419,759,410,746,396,734,373,723"/>
+</map>

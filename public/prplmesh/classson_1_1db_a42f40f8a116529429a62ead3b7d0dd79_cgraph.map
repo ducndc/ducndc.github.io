@@ -1,0 +1,63 @@
+<map id="son::db::update_master_configuration" name="son::db::update_master_configuration">
+<area shape="rect" id="Node000001" title="Updates master configuration if a setting is changed through NBAPI." alt="" coords="5,569,164,609"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1bpl.html#a2135bf726b926104b57b54f5c72f097d" title="Commit changes to prplmesh. uci package." alt="" coords="255,5,383,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,569,99,462,124,309,141,229,161,157,184,97,210,56,224,44,241,35,243,40,227,48,214,59,189,99,166,158,146,231,129,310,104,463,91,569"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1bpl.html#a83e581de63e675113689b0ec806a371a" title="Sets Band Steering in configuration." alt="" coords="251,69,386,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="86,569,101,474,128,339,145,270,165,207,186,155,210,119,237,101,240,106,214,123,191,158,170,209,150,272,133,341,106,475,91,570"/>
+<area shape="rect" id="Node000004" href="$namespacebeerocks_1_1bpl.html#ae2627af04e8c19a08c25d5bc68581292" title="Sets Channel Select Task in configuration." alt="" coords="232,133,405,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="83,569,88,497,105,394,121,337,143,282,172,229,210,183,218,176,222,180,214,187,177,232,148,284,126,339,110,395,93,498,89,569"/>
+<area shape="rect" id="Node000005" href="$namespacebeerocks_1_1bpl.html#a5a1636e626b84d0c9dc912e4232d3046" title="Sets 11k Roaming in configuration." alt="" coords="235,197,402,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="85,569,93,507,113,421,129,374,150,328,177,285,210,247,222,238,225,243,214,251,181,288,155,331,134,376,118,422,98,508,90,569"/>
+<area shape="rect" id="Node000006" href="$namespacebeerocks_1_1bpl.html#aafb67aeca4e601abad453c9cbf2362d1" title="Sets Client Roaming in configuration." alt="" coords="249,261,388,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="87,569,99,517,121,448,158,375,182,341,210,311,235,296,237,300,214,315,186,344,162,378,126,450,104,519,92,570"/>
+<area shape="rect" id="Node000007" href="$namespacebeerocks_1_1bpl.html#aef682dcab5c298e75708dff198800b45" title="Sets Daisy Chaining in configuration." alt="" coords="249,326,389,381"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="91,568,108,531,134,484,168,434,210,391,234,376,237,380,214,395,172,438,138,486,113,533,96,570"/>
+<area shape="rect" id="Node000008" href="$namespacebeerocks_1_1bpl.html#a394fd6d3bee3a56cc5e890d8403829f0" title="Sets DFS Re&#45;Entry option in configuration." alt="" coords="255,405,382,445"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="98,568,144,512,175,481,211,455,241,441,243,445,213,460,179,485,148,515,102,571"/>
+<area shape="rect" id="Node000009" href="$namespacebeerocks_1_1bpl.html#a2413def34001ff542fe77e97cb55a3d2" title="Sets DFS Task in configuration." alt="" coords="255,469,382,509"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="117,567,161,543,211,519,241,508,243,513,213,524,164,547,120,572"/>
+<area shape="rect" id="Node000010" href="$namespacebeerocks_1_1bpl.html#a7877ee5deb60abfc21363cb992c574a7" title="Sets Statistics Polling Task in configuration." alt="" coords="212,533,425,573"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="164,575,198,569,199,575,165,580"/>
+<area shape="rect" id="Node000011" href="$namespacebeerocks_1_1bpl.html#a38e092bce93e9e0e8e8b3bc2856437a6" title="Sets the Statistics Polling Task poll rate in seconds in configuration." alt="" coords="212,598,425,653"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="165,599,199,604,198,609,164,604"/>
+<area shape="rect" id="Node000012" href="$namespacebeerocks_1_1bpl.html#a85548432ddc7036d3817dafc9d55d821" title="Sets Health Check Task in configuration." alt="" coords="253,677,384,717"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="117,607,161,635,213,662,241,673,239,678,211,666,159,639,114,612"/>
+<area shape="rect" id="Node000013" href="$namespacebeerocks_1_1bpl.html#a5f60e19f809dd43922e9c2737d015c83" title="Sets IRE Roaming Flag in configuration." alt="" coords="255,741,382,781"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="101,608,146,667,178,699,213,727,243,742,241,747,211,732,174,703,142,671,97,611"/>
+<area shape="rect" id="Node000014" href="$namespacebeerocks_1_1bpl.html#af125ec0a46013a7082c647e7857f1b9b" title="Sets link metrics request interval configuration for periodic requests from agents." alt="" coords="231,806,406,861"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="96,609,112,647,137,696,171,747,214,791,221,797,218,801,210,795,167,750,133,699,107,649,91,611"/>
+<area shape="rect" id="Node000015" href="$namespacebeerocks_1_1bpl.html#abfa330d4242f2349d346622af26182ca" title="Sets Load Balancing in configuration." alt="" coords="249,885,389,925"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="92,609,103,661,126,731,142,769,162,806,186,840,214,870,237,885,234,890,210,874,181,843,157,809,137,771,121,733,98,662,87,610"/>
+<area shape="rect" id="Node000016" href="$namespacebeerocks_1_1bpl.html#a3e989e2c624043dfa72035986e690375" title="Sets Optimal Path Prefer Signal Strenght in configuration." alt="" coords="235,950,403,1005"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="90,609,99,672,119,759,135,806,156,853,182,897,214,935,225,945,221,949,210,939,178,900,151,855,130,808,114,760,93,673,85,610"/>
+<area shape="rect" id="Node000017" href="$namespacebeerocks_1_1bpl.html#a35c78021488c3c83cb23734da8408840" title="Sets roaming hysteresis percentage in configuration." alt="" coords="235,1029,402,1083"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="89,610,93,684,110,792,125,851,147,910,177,965,214,1014,225,1024,222,1028,210,1018,172,968,143,912,120,853,105,793,88,685,83,610"/>
+<area shape="rect" id="Node000018" href="$namespacebeerocks_1_1bpl.html#ae046393edd4d7ddbf2debd4fca134635" title="Sets steering disassociation timer in milliseconds in configuration." alt="" coords="239,1107,398,1162"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="91,609,106,710,132,855,149,930,169,998,190,1055,214,1093,229,1106,226,1110,210,1096,186,1057,164,1000,144,931,127,856,100,711,86,610"/>
+<area shape="rect" id="Node000019" href="$classson_1_1db.html#ace96e285143c25c6a8c420545a882515" title="Synchronizes settings struct from config struct. Called after config struct is updated from NBAPI." alt="" coords="239,1187,398,1227"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="90,610,102,725,126,894,143,981,163,1061,187,1127,200,1152,214,1172,229,1184,225,1188,210,1175,196,1155,182,1129,158,1063,138,982,121,895,97,725,85,610"/>
+<area shape="rect" id="Node000020" href="$classson_1_1db.html#a908d5f147d10995ca1324ee702cf188c" title=" " alt="" coords="486,819,657,859"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="396,1191,423,1172,447,1134,455,1097,454,1060,447,1023,440,985,438,947,447,908,471,869,474,866,478,869,475,872,452,910,444,947,445,985,452,1022,459,1059,461,1097,452,1136,427,1175,400,1195"/>
+<area shape="rect" id="Node000021" href="$classson_1_1db.html#a2329333017bab2d286a016a6117e34c3" title=" " alt="" coords="493,883,650,923"/>
+<area shape="poly" id="edge20_Node000019_Node000021" title=" " alt="" coords="397,1190,423,1171,443,1142,451,1113,451,1084,447,1055,443,1025,443,994,451,964,471,933,479,925,483,929,475,936,456,966,448,995,448,1024,452,1054,456,1084,456,1114,448,1144,427,1175,400,1195"/>
+<area shape="rect" id="Node000022" href="$classson_1_1db.html#ab12b1e5e85c9fead4d15130c539e5dc0" title=" " alt="" coords="493,947,650,987"/>
+<area shape="poly" id="edge21_Node000019_Node000022" title=" " alt="" coords="397,1190,423,1171,439,1150,446,1129,447,1086,448,1042,455,1019,471,997,479,990,483,994,475,1000,460,1022,453,1043,452,1086,451,1130,444,1153,427,1175,400,1194"/>
+<area shape="rect" id="Node000023" href="$classson_1_1db.html#ad67477cbc4d2701627e668f1013b7444" title=" " alt="" coords="493,1011,650,1051"/>
+<area shape="poly" id="edge22_Node000019_Node000023" title=" " alt="" coords="397,1188,424,1171,435,1158,442,1145,447,1118,452,1089,459,1075,471,1061,479,1055,482,1059,475,1065,464,1078,457,1091,452,1119,447,1147,439,1161,427,1175,400,1193"/>
+<area shape="rect" id="Node000024" href="$classson_1_1db.html#ad6b9c3d924c4764f4dfc8124abcb26ab" title=" " alt="" coords="473,1075,669,1130"/>
+<area shape="poly" id="edge23_Node000019_Node000024" title=" " alt="" coords="391,1184,424,1171,448,1156,472,1140,486,1133,489,1138,475,1145,451,1161,427,1176,393,1189"/>
+<area shape="rect" id="Node000025" href="$classson_1_1db.html#aeb7ec3fdfbb335ed94ba823712bb1827" title=" " alt="" coords="493,1155,650,1195"/>
+<area shape="poly" id="edge24_Node000019_Node000025" title=" " alt="" coords="398,1194,479,1184,480,1189,398,1199"/>
+<area shape="rect" id="Node000026" href="$classson_1_1db.html#a852d37c68fe6728829d1b8397f09d049" title=" " alt="" coords="499,1219,643,1259"/>
+<area shape="poly" id="edge25_Node000019_Node000026" title=" " alt="" coords="398,1214,486,1225,486,1231,398,1219"/>
+<area shape="rect" id="Node000027" href="$classson_1_1db.html#ae80540f53a423788931c48316260c04d" title=" " alt="" coords="475,1283,667,1323"/>
+<area shape="poly" id="edge26_Node000019_Node000027" title=" " alt="" coords="367,1224,474,1268,495,1276,493,1281,472,1273,365,1229"/>
+<area shape="rect" id="Node000028" href="$classson_1_1db.html#ab9e957958089c6e6fbc57bf36f2aa616" title=" " alt="" coords="484,1347,659,1387"/>
+<area shape="poly" id="edge27_Node000019_Node000028" title=" " alt="" coords="341,1225,398,1278,435,1307,475,1332,488,1339,485,1344,472,1337,432,1311,394,1282,337,1229"/>
+<area shape="rect" id="Node000029" href="$classson_1_1db.html#ae52242954fd50ff8b49a4f5afc221241" title=" " alt="" coords="491,1411,652,1451"/>
+<area shape="poly" id="edge28_Node000019_Node000029" title=" " alt="" coords="333,1225,355,1262,387,1308,427,1355,475,1397,484,1402,481,1407,472,1401,424,1359,383,1311,350,1265,328,1228"/>
+<area shape="rect" id="Node000030" href="$classson_1_1db.html#a61df992acdd56d9de687dd7ab7382c41" title=" " alt="" coords="501,1475,641,1515"/>
+<area shape="poly" id="edge29_Node000019_Node000030" title=" " alt="" coords="329,1226,347,1274,378,1337,420,1403,446,1434,475,1461,490,1471,487,1475,472,1465,442,1438,416,1407,373,1340,343,1276,324,1228"/>
+<area shape="rect" id="Node000031" href="$classson_1_1db.html#abf2411317a32888f6f094ae062632150" title=" " alt="" coords="496,1539,647,1579"/>
+<area shape="poly" id="edge30_Node000019_Node000031" title=" " alt="" coords="327,1226,341,1285,369,1365,389,1408,413,1450,442,1490,475,1525,486,1533,482,1537,472,1529,438,1493,409,1453,384,1411,364,1367,336,1286,321,1228"/>
+</map>

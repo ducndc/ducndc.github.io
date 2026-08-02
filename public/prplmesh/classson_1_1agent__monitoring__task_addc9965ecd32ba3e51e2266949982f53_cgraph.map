@@ -1,0 +1,25 @@
+<map id="son::agent_monitoring_task::add_traffic_separation_policy_tlv" name="son::agent_monitoring_task::add_traffic_separation_policy_tlv">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,227,196,282"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="244,5,443,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,226,133,188,162,142,198,95,242,55,250,50,253,54,246,59,202,99,166,145,137,190,117,228"/>
+<area shape="rect" id="Node000004" href="$namespacebeerocks_1_1bpl.html#ab9851f88e4722703a7f97ae69cf8c0a0" title="Reads VLAN ID for guest SSIDs used by Traffic Separation." alt="" coords="266,70,421,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="128,225,179,179,243,134,252,128,255,133,245,138,182,184,131,229"/>
+<area shape="rect" id="Node000005" href="$namespacebeerocks_1_1bpl.html#ad9c1a99cbd59bc03c178752f36abb14a" title="Reads VLAN ID for private/home SSIDs used by Traffic Separation." alt="" coords="266,149,421,203"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="185,225,252,203,254,208,186,230"/>
+<area shape="rect" id="Node000006" href="$classwfa__map_1_1tlvProfile2TrafficSeparationPolicy.html#aae2ce348bb420a62b807c6bcb52eeeee" title=" " alt="" coords="254,227,433,282"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="196,252,241,252,241,257,196,257"/>
+<area shape="rect" id="Node000010" href="$classson_1_1db.html#ac58c355159889bc88275bcf7deba4beb" title="Sets Service Set Identifier (SSID) to VLAN ID (VID) mapping for EasyMesh traffic separation." alt="" coords="263,307,424,347"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="194,280,263,300,261,305,193,285"/>
+<area shape="rect" id="Node000011" href="$classson_1_1db.html#aa454ccbc5271798aa7f3a1ac9e5ad4b1" title=" " alt="" coords="270,371,417,411"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="135,280,185,319,245,356,260,363,258,368,243,361,182,323,132,284"/>
+<area shape="rect" id="Node000012" href="$classson_1_1db.html#a002ced5436948109edb3ffda1bb86ca4" title="Get traffic separation policy for agent." alt="" coords="258,435,429,475"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="120,280,171,350,206,388,246,420,255,426,252,431,242,425,202,392,167,354,116,284"/>
+<area shape="rect" id="Node000003" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="520,13,660,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="443,23,506,23,506,28,443,28"/>
+<area shape="rect" id="Node000007" href="$classwfa__map_1_1cSsidVlanId.html#accefbdfe06ed39d3b9a979ba239adbad" title=" " alt="" coords="513,177,667,217"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="432,231,499,216,500,221,433,237"/>
+<area shape="rect" id="Node000008" href="$classBaseClass.html#ad7d1ccb5971536f7abdc44ce56b4430d" title=" " alt="" coords="513,242,667,267"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="433,252,500,252,500,257,433,257"/>
+<area shape="rect" id="Node000009" href="$classBaseClass.html#a37dde0700f9595f82dd24aaee7218b41" title=" " alt="" coords="491,292,689,332"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="433,273,491,286,490,291,432,278"/>
+</map>

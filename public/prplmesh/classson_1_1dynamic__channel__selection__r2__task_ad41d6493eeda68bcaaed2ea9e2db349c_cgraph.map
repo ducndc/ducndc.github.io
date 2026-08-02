@@ -1,0 +1,13 @@
+<map id="son::dynamic_channel_selection_r2_task::handle_timeout_in_busy_agents" name="son::dynamic_channel_selection_r2_task::handle_timeout_in_busy_agents">
+<area shape="rect" id="Node000001" title="Scan all agent for timeout and abort scans in progress." alt="" coords="5,62,183,117"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#acfdbeaf62662fd4f581cb1673e76a63c" title="Get the channel scan is enabled flag." alt="" coords="233,5,375,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,60,223,47,225,52,184,65"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#afe98dc62c8a09a249ec2bdb4901c27a8" title="Set the channel scan in progress object." alt="" coords="233,69,375,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="183,87,219,87,219,92,183,92"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a79f107d7e0d99d3eb775106767d3c1a7" title="Set the channel scan results status object." alt="" coords="231,133,377,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="184,114,225,127,223,132,182,119"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="425,69,552,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="363,43,418,62,417,67,362,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="376,87,411,87,411,92,376,92"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="362,131,417,111,418,116,363,136"/>
+</map>

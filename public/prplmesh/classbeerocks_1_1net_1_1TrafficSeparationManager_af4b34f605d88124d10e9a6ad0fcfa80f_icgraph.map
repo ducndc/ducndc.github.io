@@ -1,0 +1,23 @@
+<map id="beerocks::net::TrafficSeparationManager::clear_policies" name="beerocks::net::TrafficSeparationManager::clear_policies">
+<area shape="rect" id="Node000001" title="Rollback of the current configuration on all trunk and access ports." alt="" coords="1047,92,1255,132"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#ae08612b23e487dc73c584f65209c1e3b" title="Apply the current configuration to all configured trunk and access ports." alt="" coords="776,5,984,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1073,90,943,48,944,43,1075,85"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#aec4e9b95266fb0639abf7980de40d1dc" title="Configure the TrafficSeparationManager with a new TS configuration." alt="" coords="505,19,713,59"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="1032,99,713,55,714,50,1033,93"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#af0998dab08c8ffd114d3decfa0a51e1d" title="Reset the manager to its initial, unconfigured state." alt="" coords="776,120,984,160"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="1033,127,985,132,984,127,1033,122"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#af3d3eaa3405dc89a5a6bc1c88fd003a3" title=" " alt="" coords="761,184,999,224"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1091,140,1000,175,961,186,959,181,998,169,1089,135"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="762,34,714,36,714,31,762,28"/>
+<area shape="rect" id="Node000005" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a6399bf8470ea43f321f449fa87feafd6" title=" " alt="" coords="512,95,707,135"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="762,132,707,126,707,121,763,126"/>
+<area shape="rect" id="Node000009" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a7a180880e96a912857dc4318d3cf202a" title=" " alt="" coords="512,159,707,199"/>
+<area shape="poly" id="edge10_Node000004_Node000009" title=" " alt="" coords="763,159,707,167,707,162,762,154"/>
+<area shape="rect" id="Node000006" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#aac089b03173c7612a350ee4c88ebd7e3" title=" " alt="" coords="248,63,457,103"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="498,104,457,98,458,93,499,98"/>
+<area shape="rect" id="Node000008" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a5c0aca14420d7ca96243ca373890df1b" title=" " alt="" coords="255,127,450,167"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="499,131,450,137,450,132,498,126"/>
+<area shape="rect" id="Node000007" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#aee99f7636a6049c1504f9a825b416b9f" title=" " alt="" coords="5,95,200,135"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="235,100,201,105,200,100,234,95"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="241,135,200,130,200,124,242,130"/>
+</map>

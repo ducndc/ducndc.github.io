@@ -1,0 +1,28 @@
+<map id="son::db::timestamp_to_string_seconds" name="son::db::timestamp_to_string_seconds">
+<area shape="rect" id="Node000001" title="Get string representation of number of seconds in timestamp." alt="" coords="1283,101,1417,141"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a7a199f518c192e3c0bb5379a6247acec" title="Set the client&#39;s time&#45;life delay." alt="" coords="1084,5,1213,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1303,97,1234,60,1205,48,1208,43,1236,55,1306,92"/>
+<area shape="rect" id="Node000010" href="$classson_1_1db.html#a40c035b472203e493c6d8ed04723c91c" title="Set the client&#39;s selected&#45;bands." alt="" coords="1063,69,1235,109"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1269,111,1235,106,1235,100,1269,106"/>
+<area shape="rect" id="Node000011" href="$classson_1_1db.html#a6f5e7c2b8a037fa680f3d252c5e7d171" title="Set the client&#39;s stay&#45;on&#45;initial&#45;radio." alt="" coords="1075,133,1223,173"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="1270,137,1223,144,1222,139,1269,131"/>
+<area shape="rect" id="Node000012" href="$classson_1_1db.html#aba22d9fed634c561c9382837f2644f0e" title="Update client&#39;s persistent information with the runtime information." alt="" coords="1073,197,1224,237"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="1306,151,1236,188,1208,200,1205,195,1234,183,1303,146"/>
+<area shape="rect" id="Node000003" href="$classson_1_1son__management.html#a83cffa6de5e1d1e1a7916b7ebaa9f9ef" title=" " alt="" coords="859,101,1015,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1080,53,1064,60,976,104,973,99,1062,55,1078,48"/>
+<area shape="rect" id="Node000004" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="619,109,811,134"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="845,124,811,124,811,119,845,119"/>
+<area shape="rect" id="Node000005" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="400,79,571,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="605,110,571,106,571,100,605,105"/>
+<area shape="rect" id="Node000006" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="409,129,562,169"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="606,137,562,143,562,137,605,132"/>
+<area shape="rect" id="Node000007" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,137,352,162"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="395,152,353,152,353,147,395,147"/>
+<area shape="rect" id="Node000008" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,111,109,137"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="197,141,109,130,110,125,197,136"/>
+<area shape="rect" id="Node000009" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,161,163,186"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="197,162,163,166,163,161,196,157"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="1049,107,1015,112,1015,107,1048,102"/>
+<area shape="poly" id="edge12_Node000011_Node000003" title=" " alt="" coords="1060,143,1014,136,1015,130,1061,137"/>
+<area shape="poly" id="edge14_Node000012_Node000003" title=" " alt="" coords="1078,195,1062,188,973,144,976,139,1064,183,1080,190"/>
+</map>

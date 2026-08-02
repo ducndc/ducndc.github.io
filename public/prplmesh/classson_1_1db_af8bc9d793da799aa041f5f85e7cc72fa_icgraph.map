@@ -1,0 +1,16 @@
+<map id="son::db::dm_set_qos_management_disallowed_sta_lists" name="son::db::dm_set_qos_management_disallowed_sta_lists">
+<area shape="rect" id="Node000001" title="Update QoS management disallowed STA lists in the Data Model." alt="" coords="807,30,979,85"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a3168124c22910f851f4202a0667f0825" title="Set the controller MSCS disallowed STA list." alt="" coords="560,5,759,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="792,46,758,42,759,36,793,41"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#ae83f5dc41984c7e098539e75486c0b79" title="Set the controller SCS disallowed STA list." alt="" coords="566,69,753,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="793,74,753,79,753,74,792,68"/>
+<area shape="rect" id="Node000003" href="$namespaceprplmesh_1_1controller_1_1actions.html#ae6af3d4bdd8e322a75f92bd869f26caa" title="Configure the controller MSCS disallowed STA list." alt="" coords="307,5,512,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="546,28,512,28,512,23,546,23"/>
+<area shape="rect" id="Node000004" href="$namespaceprplmesh_1_1controller_1_1actions.html#a2814d2a0df8cb7900316bfe0575ca9b1" title=" " alt="" coords="104,37,259,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="293,44,259,49,259,44,293,39"/>
+<area shape="rect" id="Node000005" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,45,56,70"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="90,60,56,60,56,55,90,55"/>
+<area shape="rect" id="Node000007" href="$namespaceprplmesh_1_1controller_1_1actions.html#a9219467102a28528c5d0d572de32b8f6" title="Configure the controller SCS disallowed STA list." alt="" coords="312,69,507,109"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="552,92,507,92,507,87,552,87"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="298,76,258,71,259,66,299,71"/>
+</map>

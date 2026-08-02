@@ -1,0 +1,13 @@
+<map id="beerocks::qos_management::is_valid_qos_management_descriptor_element" name="beerocks::qos_management::is_valid_qos_management_descriptor_element">
+<area shape="rect" id="Node000001" title="Validate a complete QoS management descriptor element." alt="" coords="5,45,192,100"/>
+<area shape="rect" id="Node000002" href="$structbeerocks_1_1qos__management_1_1sDescriptorElementInfo.html#a19542b193ef9330dc5ef39b9fd56a2c0" title="Check whether the parsed descriptor metadata is usable." alt="" coords="240,5,427,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,54,226,48,227,54,192,59"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1qos__management.html#a0eb22f7bf67af2ebb41a8a63288d014e" title="Parse a complete SCS/MSCS descriptor element." alt="" coords="240,84,427,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,85,227,91,226,96,192,91"/>
+<area shape="rect" id="Node000004" href="$namespacebeerocks_1_1qos__management.html#afc034a67da9186989a91b2d70a4ee844" title="Check whether the descriptor starts with an MSCS extension element header." alt="" coords="475,27,671,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="426,84,483,68,485,74,428,89"/>
+<area shape="rect" id="Node000005" href="$namespacebeerocks_1_1qos__management.html#a07a3ccca88cbb1c81098c75889a8f5be" title="Check whether the descriptor starts with an SCS element header." alt="" coords="479,91,666,131"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="427,109,466,109,466,114,427,114"/>
+<area shape="rect" id="Node000006" href="$namespacebeerocks_1_1qos__management.html#a0772e50cae8e6b3cf40ef88a3decf2a1" title="Convert an IEEE descriptor request type value to an enum." alt="" coords="479,155,666,195"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="428,134,485,149,483,154,426,139"/>
+</map>

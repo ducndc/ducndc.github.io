@@ -1,0 +1,13 @@
+<map id="el::Configurations" name="el::Configurations">
+<area shape="rect" id="Node000001" title="Thread&#45;safe Configuration repository." alt="" coords="39,465,163,491"/>
+<area shape="rect" id="Node000002" href="$classel_1_1base_1_1utils_1_1RegistryWithPred.html" title=" " alt="" coords="11,361,190,416"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,430,103,465,98,465,98,430"/>
+<area shape="rect" id="Node000003" href="$classel_1_1base_1_1utils_1_1AbstractRegistry.html" title="Abstract registry (aka repository) that provides basic interface for pointer repository specified by ..." alt="" coords="5,272,196,312"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,326,103,361,98,361,98,326"/>
+<area shape="rect" id="Node000004" href="$classel_1_1base_1_1threading_1_1ThreadSafe.html" title="Base of thread safe class, this class is inheritable&#45;only." alt="" coords="36,183,165,223"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="103,237,103,272,98,272,98,237"/>
+<area shape="rect" id="Node000005" href="$classel_1_1base_1_1threading_1_1internal_1_1NoMutex.html" title="Mutex wrapper used when multi&#45;threading is disabled." alt="" coords="34,80,167,120"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="103,134,103,183,98,183,98,134"/>
+<area shape="rect" id="Node000006" href="$classel_1_1base_1_1NoCopy.html" title="Internal helper class that prevent copy constructor for class." alt="" coords="39,5,163,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="103,44,103,80,98,80,98,44"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="beerocks::bpl::ServicePrioritizationUtils_tc::apply_single_value_map" name="beerocks::bpl::ServicePrioritizationUtils_tc::apply_single_value_map">
+<area shape="rect" id="Node000001" title="Apply the same PCP value on all listed interfaces." alt="" coords="5,53,229,93"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1bpl_1_1ServicePrioritizationUtils__tc.html#a5bee7ba82777f61913b4ec7dd9a0382c" title="Prepare the TC qdisc used by service&#45;prioritization filters." alt="" coords="277,21,501,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,58,264,53,264,59,230,63"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1bpl_1_1ServicePrioritizationUtils__tc.html#ae83360c1a149f9f1c7775d41f3b4c203" title="Remove service&#45;prioritization filters from an interface." alt="" coords="277,85,501,125"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="230,84,264,88,264,93,229,89"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1network__utils.html#a32b27f12e051affee2e348583ca21aae" title="Add a clsact qdisc unless one already exists." alt="" coords="549,21,748,61"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="501,39,535,39,535,44,501,44"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1os__utils.html#acfc3b82da1d1ff545e757fa0a2f7974a" title="Operates system call and return its output." alt="" coords="1024,24,1199,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="734,19,796,9,886,3,976,9,1027,18,1026,23,976,15,886,8,796,15,735,24"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1network__utils.html#a41d6738755bad39c0faf144e80126546" title="Return true when an interface has a clsact qdisc." alt="" coords="796,24,976,64"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="748,40,782,40,782,45,748,45"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="977,41,1010,41,1010,47,977,47"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1network__utils.html#aa95201455f62814d90457ef510a39d95" title="Run a TC command and log unexpected failures." alt="" coords="568,85,729,125"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="501,103,554,103,554,108,501,108"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="729,99,846,90,976,73,1021,64,1022,70,976,79,847,95,730,104"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1os__utils.html#a6d92a32fc5eb6697d4ff6d6f93060e21" title="Operates system call." alt="" coords="822,139,950,179"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="730,121,809,139,808,144,729,126"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="vbss_task::get_matching_active_move" name="vbss_task::get_matching_active_move">
+<area shape="rect" id="Node000001" title="Get the active move event which corresponds to the given VBSSID and is in the given state." alt="" coords="485,101,653,141"/>
+<area shape="rect" id="Node000002" href="$classvbss__task.html#a7ac6641077f19f6db5ac735886856628" title="Handles a Client Security Context Response which returns a Client Info TLV and a Client Security Cont..." alt="" coords="255,5,422,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="517,97,436,60,404,48,406,43,438,55,519,93"/>
+<area shape="rect" id="Node000004" href="$classvbss__task.html#a349cd629de1d20544e5082046717c61b" title="Handles either a Move Preperation or a Move Cancel response since they both return a single Client In..." alt="" coords="255,69,422,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="471,110,422,104,423,98,472,105"/>
+<area shape="rect" id="Node000005" href="$classvbss__task.html#a7c51fbd66defaf870ca5077b7913c523" title="Handles the &quot;Trigger Channel Switch Announcement Response&quot; which includes a Client Info TLV and a Tri..." alt="" coords="240,133,437,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="472,138,438,142,437,137,471,132"/>
+<area shape="rect" id="Node000006" href="$classvbss__task.html#ac2fe81f4ebb0cac193419f29d1a256ab" title="Handles the VBSS Response which contains a single Virtual BSS Event TLV." alt="" coords="257,197,420,237"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="519,150,438,188,406,200,404,195,436,183,517,145"/>
+<area shape="rect" id="Node000003" href="$classvbss__task.html#a4216939148df9db770e952402325e89d" title="Handle ieee1905 message." alt="" coords="5,101,192,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="261,52,241,60,142,104,140,99,239,55,259,47"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="242,105,193,112,192,106,241,100"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="226,141,192,136,193,131,227,136"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="259,195,239,188,140,144,142,139,241,183,261,190"/>
+</map>

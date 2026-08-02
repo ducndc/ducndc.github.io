@@ -1,0 +1,39 @@
+<map id="beerocks::net::resolve_profile_disallow_flags" name="beerocks::net::resolve_profile_disallow_flags">
+<area shape="rect" id="Node000001" title="Resolve unsupported disallow flags using certification policy." alt="" coords="2056,60,2209,100"/>
+<area shape="poly" id="edge20_Node000001_Node000001" title=" " alt="" coords="2172,48,2158,41,2133,39,2110,41,2097,45,2092,51,2094,59,2089,60,2087,50,2094,41,2109,35,2133,33,2160,36,2174,43"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a77a1197c159c919b540d58d0856a97ab" title=" " alt="" coords="1797,19,2000,59"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2042,67,2000,59,2001,54,2043,61"/>
+<area shape="rect" id="Node000005" href="$namespacebeerocks_1_1net.html#a2a3ca7264c20333847455b3d008f30f3" title="Derive trunk mode (tagged/untagged) from profile&#45;disallow flags and policy." alt="" coords="1789,107,2008,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="2043,98,1974,110,1973,105,2042,93"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a63e7e8c1cffc9f7b1bf8929f5b1ba266" title="Parse AP&#45;Autoconfiguration and apply configuration if M2/M8 is present." alt="" coords="1487,19,1741,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1783,41,1741,41,1741,36,1783,36"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="1236,19,1439,59"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1473,41,1439,41,1439,36,1473,36"/>
+<area shape="poly" id="edge19_Node000005_Node000005" title=" " alt="" coords="1940,98,1929,89,1899,86,1874,88,1861,93,1858,98,1865,105,1861,109,1853,99,1857,89,1873,83,1899,81,1931,85,1944,94"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1TrafficSeparationTask.html#a8146b1b7a10195e5ca3a3087808ddab7" title="Resolve one exact WDS trunk from current DB state." alt="" coords="1518,100,1710,140"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1776,123,1710,123,1710,117,1776,117"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1TrafficSeparationTask.html#a9bf1ca12f5a30d57b90ddb7c75d276ee" title="Add one WDS iface (e.g. wlan1.2.sta1)." alt="" coords="1241,100,1434,140"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1504,123,1434,123,1434,117,1504,117"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1TrafficSeparationTask.html#a518ae2ffe549324475d317744d31fdd1" title="Handle task events (like other prplMesh tasks)." alt="" coords="1005,28,1188,68"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1256,99,1164,71,1165,66,1257,93"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1TrafficSeparationTask.html#a3fc5b13efde04c86992206aace57d457" title="Re&#45;add exact FH/WDS ports from the current DB snapshot." alt="" coords="1005,93,1188,147"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1227,123,1188,123,1188,117,1227,117"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1TrafficSeparationTask.html#a5813e2c4fb2e06981290a1b7d725d708" title="Retry pending WDS iface additions after transient readiness failures." alt="" coords="748,165,957,205"/>
+<area shape="poly" id="edge17_Node000007_Node000017" title=" " alt="" coords="1260,146,1188,163,1069,178,958,185,958,180,1069,172,1188,157,1258,141"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1TrafficSeparationTask.html#ac4609e76597eae084c1f91e62d9b679b" title="Refresh config and reapply TS on currently managed ports." alt="" coords="761,101,944,141"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="991,123,944,124,944,118,991,118"/>
+<area shape="rect" id="Node000011" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a6399bf8470ea43f321f449fa87feafd6" title=" " alt="" coords="505,37,700,77"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="760,100,681,80,682,75,761,95"/>
+<area shape="rect" id="Node000015" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a7a180880e96a912857dc4318d3cf202a" title=" " alt="" coords="505,101,700,141"/>
+<area shape="poly" id="edge15_Node000010_Node000015" title=" " alt="" coords="747,124,700,124,700,119,747,119"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1TrafficSeparationTask.html#a28e752a84a54d229bae728f9d44b70f2" title="Periodic task hook (executed by the task scheduler)." alt="" coords="511,165,694,205"/>
+<area shape="poly" id="edge16_Node000010_Node000016" title=" " alt="" coords="761,147,682,168,681,163,760,142"/>
+<area shape="rect" id="Node000012" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#aac089b03173c7612a350ee4c88ebd7e3" title=" " alt="" coords="248,5,457,45"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="491,46,457,41,458,36,492,41"/>
+<area shape="rect" id="Node000014" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a5c0aca14420d7ca96243ca373890df1b" title=" " alt="" coords="255,69,450,109"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="492,74,450,80,450,74,491,69"/>
+<area shape="rect" id="Node000013" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#aee99f7636a6049c1504f9a825b416b9f" title=" " alt="" coords="5,37,200,77"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="235,43,201,48,200,42,234,38"/>
+<area shape="poly" id="edge14_Node000014_Node000013" title=" " alt="" coords="241,78,200,72,200,67,242,73"/>
+<area shape="poly" id="edge18_Node000017_Node000016" title=" " alt="" coords="734,188,694,188,694,183,734,183"/>
+</map>

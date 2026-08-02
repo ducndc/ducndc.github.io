@@ -1,0 +1,27 @@
+<map id="bwl::nl80211_client_whm::get_sta_info" name="bwl::nl80211_client_whm::get_sta_info">
+<area shape="rect" id="Node000001" title="Gets station information." alt="" coords="5,155,141,195"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211__client__whm.html#affd183c3f55fe5a9a3363f84127180eb" title=" " alt="" coords="204,5,373,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,153,133,111,188,69,197,64,199,68,191,74,136,115,95,157"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1nl80211__client__whm.html#a39ad0e5aabdeee26c9f1fc5982fce1e7" title=" " alt="" coords="204,84,373,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,153,190,138,191,143,142,158"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="223,163,354,188"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="141,173,209,173,209,178,141,178"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aefe2371c98eb62692705c48c55f57e66" title="return search path of associated device object instance filter by MAC address." alt="" coords="189,212,388,267"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="142,193,184,205,183,211,141,198"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a25baabb314db0c10ac46f457c9297dc5" title="return search path of EndPoint object instance by interface name." alt="" coords="209,291,368,345"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="95,194,136,235,191,277,199,282,197,287,188,282,133,239,91,198"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a3a08ef601535562b01d22b67defd472b" title="Converts a string&#45;based bandwith to beerocks::eWiFiBandwidth." alt="" coords="436,45,595,100"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,45,423,54,422,59,373,50"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="373,94,422,86,423,91,374,100"/>
+<area shape="rect" id="Node000006" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="442,163,589,188"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="354,173,428,173,428,178,354,178"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a0c9413724e2f45a0a6768cbe487d5deb" title="return search path of AccessPoint object instance by interface name." alt="" coords="436,215,595,269"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="388,238,422,238,422,244,388,243"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aa0db55a4edda99dfff997c429d96d039" title="return path of AccessPoint template object." alt="" coords="643,230,801,270"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="595,242,629,244,629,249,595,248"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="849,262,1008,302"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="802,260,836,265,836,270,801,265"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a1e2b0e0feb40677f7765eb23f85736d9" title="return path of EndPoint template object." alt="" coords="643,294,801,334"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="368,315,629,312,629,318,369,320"/>
+<area shape="poly" id="edge13_Node000012_Node000010" title=" " alt="" coords="801,299,836,294,836,299,802,304"/>
+</map>

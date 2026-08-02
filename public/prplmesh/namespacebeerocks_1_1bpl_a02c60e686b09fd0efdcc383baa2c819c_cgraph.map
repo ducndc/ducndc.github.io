@@ -1,0 +1,27 @@
+<map id="beerocks::bpl::cfg_get_sta_iface" name="beerocks::bpl::cfg_get_sta_iface">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,180,132,220"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1bpl.html#a7c6c6345517250775ad8a2ad5f0ffbf1" title=" " alt="" coords="181,134,361,189"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,185,167,179,168,184,133,190"/>
+<area shape="rect" id="Node000007" href="$namespacebeerocks_1_1bpl.html#a125fe5ec18f6ac33d8394adc023212c7" title=" " alt="" coords="180,69,361,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="92,178,132,148,179,119,193,112,195,117,181,124,135,152,96,182"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a1e2b0e0feb40677f7765eb23f85736d9" title="return path of EndPoint template object." alt="" coords="191,216,350,256"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="133,209,178,217,177,222,132,214"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a5ab2aadd20a396f13e48e0a68a398155" title="return search path of Radio object instance by Name." alt="" coords="187,287,354,342"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="103,218,181,266,204,278,202,283,179,270,100,223"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1bpl_1_1BplConfigService.html#a1fc3d84d90f02eccb91bfa46df26dc33" title="Get backend client for common&#45;bus DM access." alt="" coords="425,5,590,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="341,132,360,119,374,103,383,88,391,71,408,55,417,49,419,54,411,59,396,75,387,90,379,106,363,123,344,136"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a30d7f388719c3ebbb6a33bdebfd97fb7" title="get content, with provided depth, of all objects matching path in map of Ambiorix variant objects,..." alt="" coords="419,184,595,224"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="361,175,406,183,405,188,360,180"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1bpl_1_1BplConfigService.html#a522e236e6b81712d60a5551c5630cd73" title="Get singleton service instance." alt="" coords="425,69,590,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="360,131,427,111,429,116,362,137"/>
+<area shape="rect" id="Node000006" href="$namespacebeerocks_1_1bpl.html#ad81c05f745bc5b4e3dc80b3a39c0304b" title=" " alt="" coords="409,134,605,159"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="361,153,395,151,396,156,361,158"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="345,67,419,46,421,51,346,72"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="361,87,411,87,411,92,361,92"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="354,107,442,128,440,133,353,112"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="653,271,812,311"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="351,243,640,277,639,282,350,248"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a7f96ac72dd88efe1686ffadd5458f940" title="return path of Radio template object." alt="" coords="424,299,591,339"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="355,313,411,314,410,320,354,319"/>
+<area shape="poly" id="edge14_Node000011_Node000009" title=" " alt="" coords="591,306,639,300,640,305,591,311"/>
+</map>

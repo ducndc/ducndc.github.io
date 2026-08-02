@@ -1,0 +1,31 @@
+<map id="son::db::add_hostap_supported_operating_class" name="son::db::add_hostap_supported_operating_class">
+<area shape="rect" id="Node000001" title="Add supported operating class to the database. Currently this function is a wrapper which converts th..." alt="" coords="5,313,189,353"/>
+<area shape="rect" id="Node000002" href="$classson_1_1wireless__utils.html#ae3508c67d6e27af6dab9dc810c6f1f75" title="Translate a channel number to its frequency value." alt="" coords="251,5,382,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,312,116,261,143,193,182,120,207,86,235,55,241,51,244,55,239,59,211,89,187,123,148,195,121,263,106,314"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a801b922005faf75c58bd8ae6ee1dc6d3" title="Add instance of &#39;OperatingClasses&#39; data element, set values for its parameters." alt="" coords="247,69,387,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,312,123,272,152,221,189,167,236,119,242,114,245,119,239,123,194,170,156,224,128,274,109,314"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#a5d1773668e08161c2454224fe14172e0" title=" " alt="" coords="244,133,389,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="111,311,162,249,197,214,236,183,245,178,247,182,239,188,201,218,166,253,115,315"/>
+<area shape="rect" id="Node000007" href="$classson_1_1wireless__utils.html#ac7d7bb75d799bf38c516cbdd1300d243" title=" " alt="" coords="237,198,396,253"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="138,311,247,257,249,261,140,316"/>
+<area shape="rect" id="Node000008" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="251,499,382,525"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="114,352,163,418,199,454,239,486,249,491,246,496,236,490,195,458,159,421,109,355"/>
+<area shape="rect" id="Node000010" href="$classson_1_1wireless__utils.html#a72ea0ed0fd09c2536d4f7815cf0aacb6" title="convert operating class to bandwidth based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="247,342,386,397"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="190,346,234,353,233,358,189,351"/>
+<area shape="rect" id="Node000011" href="$classson_1_1wireless__utils.html#a8d99a3fb7cc8f914325695a89005bddf" title="convert operating class to channel set based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="247,421,386,475"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="137,351,239,406,251,412,248,417,236,410,134,356"/>
+<area shape="rect" id="Node000012" href="$classson_1_1db.html#afd957f8a44302d4d811b16390fdfa4a0" title=" " alt="" coords="244,277,389,317"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="189,316,230,309,231,314,190,321"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1WifiChannel.html#a5df4fc1203a5bf5a9fb569e043daf557" title="Set the tx power." alt="" coords="239,549,394,589"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="110,352,129,391,157,439,194,490,239,535,245,540,242,544,236,539,190,494,153,442,124,393,105,355"/>
+<area shape="rect" id="Node000014" href="$classson_1_1wireless__utils.html#a23eca76fb7a6f97322af76197c4db29c" title=" " alt="" coords="247,613,386,653"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="106,353,122,402,149,468,187,538,212,570,239,599,244,604,241,608,236,603,208,574,183,541,144,470,117,404,101,354"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="454,133,581,173"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="381,107,442,127,440,132,379,112"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="445,77,590,102"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="387,87,431,87,431,92,387,92"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="389,151,440,151,440,156,389,156"/>
+<area shape="rect" id="Node000009" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="444,499,591,525"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="382,509,430,509,430,515,382,515"/>
+<area shape="poly" id="edge13_Node000012_Node000004" title=" " alt="" coords="370,275,395,262,445,222,487,182,490,186,449,227,397,266,373,280"/>
+</map>

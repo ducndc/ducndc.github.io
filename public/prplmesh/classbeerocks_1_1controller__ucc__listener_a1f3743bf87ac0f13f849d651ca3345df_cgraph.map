@@ -1,0 +1,23 @@
+<map id="beerocks::controller_ucc_listener::handle_dev_reset_default" name="beerocks::controller_ucc_listener::handle_dev_reset_default">
+<area shape="rect" id="Node000001" title="Callback handler function for &quot;dev_reset_default&quot; WFA&#45;CA command." alt="" coords="5,222,151,277"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1controller__ucc__listener.html#a5a6e8da54a3263b47cfbd7eb2f54639f" title="Clear configuration on Controller database." alt="" coords="216,158,352,213"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,224,202,208,204,213,152,229"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1beerocks__ucc__listener.html#a48ae1842ddb13ce7975de3654db2f7bb" title="Sends second WFA&#45;CA reply message to UCC client." alt="" coords="199,265,369,305"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="151,259,185,265,185,271,151,265"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a6e1945f3613ad77c3f469a79554108ef" title=" " alt="" coords="441,5,571,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,156,353,105,383,79,416,55,427,49,429,54,419,60,387,83,357,109,309,160"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a2326fbb2c3adaec6efee5f6ed61547d9" title="Clear all known default 802.1Q settings." alt="" coords="433,69,579,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="338,156,416,119,434,112,436,117,418,124,340,160"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a7b2128e766af258f576317129dda8b22" title="clears complete global values for mld." alt="" coords="441,133,571,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="352,173,427,162,427,167,353,178"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#a8521470e0ad462ab5238c745fdb0a422" title="Clear all known traffic separation configurations." alt="" coords="417,197,595,237"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="353,192,404,200,403,205,352,198"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a90fc5ee7ef1398b839aec8868399f5c2" title="Disable periodic link metrics requests by setting interval to zero." alt="" coords="423,261,589,301"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="340,210,418,247,436,254,434,259,416,252,338,215"/>
+<area shape="rect" id="Node000008" href="$namespacebeerocks_1_1bpl.html#af125ec0a46013a7082c647e7857f1b9b" title="Sets link metrics request interval configuration for periodic requests from agents." alt="" coords="643,250,817,305"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="590,277,629,276,629,282,590,283"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1beerocks__ucc__listener.html#ae3241350af542f78be71e196d00d5e0c" title="Generate WFA&#45;CA reply message and send it." alt="" coords="425,329,587,369"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="355,303,424,323,422,328,353,308"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1beerocks__ucc__listener.html#a685d950d2445f09a2fa2dc647770ef09" title="Convert enum of WFA&#45;CA status to string." alt="" coords="655,329,805,383"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="588,349,642,351,642,356,588,354"/>
+</map>

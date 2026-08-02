@@ -1,0 +1,11 @@
+<map id="device.serial.SerialDevice.sendstring" name="device.serial.SerialDevice.sendstring">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,77,243,102"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1SocketConnectionImpl.html#afa24cc73cf1eeb6fe32293eb65b0ffb5" title="Sends data through the socket connection." alt="" coords="291,37,507,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,74,277,69,277,74,234,79"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1Socket_1_1Connection.html#a482d47968f7745ac6785073a5c60b620" title="Sends data through the socket connection." alt="" coords="323,101,474,141"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="234,99,310,108,309,114,233,105"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1Buffer.html#a582583a6549f3ecc11fc58bf5a5d7aaa" title="Returns pointer to the raw data." alt="" coords="555,5,699,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="506,40,541,35,541,40,507,45"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1Buffer.html#a4c70d268fe092fc5318af68d1ecebb8f" title="Returns the length of the buffer (number of bytes)." alt="" coords="555,69,699,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="507,70,541,75,541,80,506,75"/>
+</map>

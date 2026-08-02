@@ -1,0 +1,10 @@
+<map id="bwl::nl80211::wpa_ctrl_socket_event::open" name="bwl::nl80211::wpa_ctrl_socket_event::open">
+<area shape="rect" id="Node000001" title="Opens wpa_ctrl event socket and add the new file descriptor to event monitoring FDs queue." alt="" coords="5,63,157,103"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a90edb74ed0ac30bedbd230ed63e58aff" title="Adds wpa_ctrl event socket to monitored event queues list. If the file descriptor value is new (not f..." alt="" coords="205,5,399,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,60,210,46,212,51,158,66"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a78b2ce8b862fdaea6610ce25a239f722" title="Returns the current wpa_ctrl socket file descriptor." alt="" coords="447,35,599,75"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="157,75,433,58,433,63,158,81"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a990f5585492bcc8b0146304f4923a382" title="Open wpa_ctrl socket. Once successful, a new file descriptor is available for sending messages hostap..." alt="" coords="226,120,378,160"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="158,100,213,114,212,119,157,105"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="399,36,433,40,432,45,399,41"/>
+</map>

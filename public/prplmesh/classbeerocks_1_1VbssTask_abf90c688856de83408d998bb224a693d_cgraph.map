@@ -1,0 +1,66 @@
+<map id="beerocks::VbssTask::handle_cmdu" name="beerocks::VbssTask::handle_cmdu">
+<area shape="rect" id="Node000001" title="Handle CMDU message." alt="" coords="5,284,147,324"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessage.html#a94ce761475d53857b8d5543fa9e4c0bd" title=" " alt="" coords="195,55,379,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,283,97,245,120,198,152,149,193,106,202,100,205,104,196,110,157,152,125,201,102,248,87,285"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1VbssTask.html#a2bb66fbd1a225fcafb019296421b1f11" title="Handle the channel switch announcement request sent by the controller." alt="" coords="204,277,369,331"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="147,301,190,301,190,307,147,307"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1VbssTask.html#a5cc93f0e1b147805a5bd59e92f12b09c" title="Handle the Move Cancel request sent by the controller." alt="" coords="211,355,363,410"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="131,322,201,348,199,353,129,327"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1VbssTask.html#acd7e34aaacaa641619ebf8e356ee4dd1" title="Handle the security context request sent by the controller." alt="" coords="201,434,372,489"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="95,322,138,370,166,397,196,420,203,425,200,429,193,425,162,401,134,374,91,326"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1VbssTask.html#a9ca3338dce64a70e35691235fb716d03" title="Handle the Virtual BSS Move Preparation Request message." alt="" coords="195,119,378,174"/>
+<area shape="poly" id="edge23_Node000001_Node000015" title=" " alt="" coords="91,282,135,234,193,185,202,179,205,183,196,189,138,238,95,286"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1VbssTask.html#aae1b07176606887ead877a94508f3740" title="Forward Virtual BSS Request messages to the AP manager." alt="" coords="216,198,357,253"/>
+<area shape="poly" id="edge28_Node000001_Node000016" title=" " alt="" coords="129,281,202,254,204,259,131,286"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1VbssTask.html#a2615e75eeeb5a20a5d3fc7d542c4f621" title="Forward Virtual BSS Response messages to the Controller." alt="" coords="216,513,357,567"/>
+<area shape="poly" id="edge33_Node000001_Node000017" title=" " alt="" coords="87,323,102,360,126,407,157,456,196,499,206,507,202,511,193,503,153,459,121,410,97,362,82,325"/>
+<area shape="rect" id="Node000003" href="$classieee1905__1_1_1CmduMessage.html#adc10ea7cfba25c0f58359cb954a5d69c" title=" " alt="" coords="435,127,619,167"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="355,92,447,120,446,125,354,97"/>
+<area shape="rect" id="Node000005" href="$classieee1905__1_1_1CmduMessage.html#af54c8bd541643a03b9567fc61eef25f9" title=" " alt="" coords="435,5,619,45"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="378,53,421,44,422,50,380,58"/>
+<area shape="rect" id="Node000007" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="490,70,565,95"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="379,75,476,78,476,84,379,80"/>
+<area shape="rect" id="Node000004" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="685,238,822,263"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="573,164,713,230,711,234,571,169"/>
+<area shape="rect" id="Node000006" href="$classClassList.html#aea43ae47ce1af363533f665105410639" title=" " alt="" coords="676,13,831,38"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="620,23,662,23,662,28,620,28"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1slave__thread.html#ab425241b241a7796d1cc9d1d56e68e70" title="Forwards given received CMDU message through the specified socket connection." alt="" coords="448,269,607,309"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="370,296,434,292,434,298,370,302"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="446,398,609,423"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="357,329,380,342,404,364,414,373,428,383,447,391,444,396,425,388,410,378,400,367,377,346,355,334"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1slave__thread.html#a8c39a142418df7191fa4e423b43ae217" title=" " alt="" coords="449,205,606,245"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="368,274,426,255,450,247,452,252,428,260,370,279"/>
+<area shape="rect" id="Node000012" href="$classieee1905__1_1_1CmduMessageRx.html#ad1db8fee42b3e3a1aaf8312a139b72f3" title=" " alt="" coords="427,333,628,373"/>
+<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="370,318,416,328,415,333,369,324"/>
+<area shape="poly" id="edge12_Node000012_Node000004" title=" " alt="" coords="596,331,627,319,676,294,720,268,722,273,679,299,629,324,598,336"/>
+<area shape="poly" id="edge14_Node000013_Node000009" title=" " alt="" coords="352,353,378,342,426,319,445,311,447,316,428,324,380,346,354,358"/>
+<area shape="poly" id="edge15_Node000013_Node000010" title=" " alt="" coords="364,389,433,397,432,402,363,394"/>
+<area shape="poly" id="edge16_Node000013_Node000011" title=" " alt="" coords="361,354,377,342,393,321,400,299,407,277,425,255,435,248,438,252,428,259,412,280,405,301,398,323,381,346,364,358"/>
+<area shape="poly" id="edge17_Node000013_Node000012" title=" " alt="" coords="363,371,413,365,413,370,364,376"/>
+<area shape="poly" id="edge19_Node000014_Node000009" title=" " alt="" coords="363,432,377,421,394,396,399,371,406,345,413,332,425,319,434,312,438,316,428,323,417,335,411,347,405,372,398,398,381,424,366,436"/>
+<area shape="poly" id="edge20_Node000014_Node000010" title=" " alt="" coords="372,441,452,424,453,429,373,446"/>
+<area shape="poly" id="edge21_Node000014_Node000011" title=" " alt="" coords="365,432,377,421,391,400,397,380,399,339,401,298,409,277,425,256,435,247,439,251,429,259,414,279,406,299,404,339,403,381,396,403,381,424,368,436"/>
+<area shape="poly" id="edge22_Node000014_Node000012" title=" " alt="" coords="356,432,377,420,401,402,425,384,443,376,445,381,428,389,404,406,380,425,358,436"/>
+<area shape="poly" id="edge24_Node000015_Node000009" title=" " alt="" coords="362,172,380,185,396,203,405,221,413,239,428,255,437,261,434,265,425,259,408,242,400,224,392,206,377,189,359,176"/>
+<area shape="poly" id="edge25_Node000015_Node000010" title=" " alt="" coords="367,172,381,185,397,211,404,238,403,288,401,312,403,336,411,360,429,384,436,390,432,394,425,387,406,362,398,337,396,312,398,288,399,238,392,214,377,188,364,176"/>
+<area shape="poly" id="edge26_Node000015_Node000011" title=" " alt="" coords="372,172,453,198,452,204,370,177"/>
+<area shape="poly" id="edge27_Node000015_Node000012" title=" " alt="" coords="366,172,381,185,394,203,401,220,404,255,409,287,416,303,429,319,433,323,429,327,425,323,411,306,403,289,399,255,395,222,389,205,377,188,362,176"/>
+<area shape="poly" id="edge29_Node000016_Node000009" title=" " alt="" coords="358,241,439,263,438,268,357,247"/>
+<area shape="poly" id="edge30_Node000016_Node000010" title=" " alt="" coords="359,247,381,263,393,279,399,295,404,326,409,356,416,369,428,383,436,389,433,394,425,387,412,372,404,357,399,327,394,297,388,282,377,267,356,251"/>
+<area shape="poly" id="edge31_Node000016_Node000011" title=" " alt="" coords="357,223,435,223,435,228,357,228"/>
+<area shape="poly" id="edge32_Node000016_Node000012" title=" " alt="" coords="359,250,380,263,396,278,405,292,413,306,428,319,438,325,435,330,425,323,409,309,400,295,391,281,377,267,356,254"/>
+<area shape="poly" id="edge39_Node000017_Node000010" title=" " alt="" coords="356,513,377,499,392,484,400,469,409,453,425,438,447,426,450,431,428,442,413,456,405,471,396,487,380,503,359,517"/>
+<area shape="poly" id="edge40_Node000017_Node000012" title=" " alt="" coords="356,515,377,499,388,485,394,471,399,443,405,414,412,399,425,385,432,379,436,383,429,389,417,402,410,416,405,444,399,473,393,488,381,503,359,519"/>
+<area shape="rect" id="Node000018" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="428,516,627,556"/>
+<area shape="poly" id="edge34_Node000017_Node000018" title=" " alt="" coords="357,536,414,535,414,541,358,541"/>
+<area shape="rect" id="Node000020" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="428,580,627,620"/>
+<area shape="poly" id="edge36_Node000017_Node000020" title=" " alt="" coords="358,555,434,574,433,579,357,560"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1slave__thread.html#ab9ba082d272fbaf1152b1854f54eddbd" title="Forwards given received CMDU message to the broker server for dispatching which eventually will be se..." alt="" coords="432,644,623,684"/>
+<area shape="poly" id="edge38_Node000017_Node000022" title=" " alt="" coords="325,565,373,598,428,630,444,637,442,641,425,634,370,603,322,570"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1slave__thread.html#a61ecc9b5d2682e83d769d6c9337a7053" title=" " alt="" coords="440,452,615,492"/>
+<area shape="poly" id="edge41_Node000017_Node000023" title=" " alt="" coords="357,518,442,493,443,498,358,523"/>
+<area shape="rect" id="Node000019" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="683,523,823,549"/>
+<area shape="poly" id="edge35_Node000018_Node000019" title=" " alt="" coords="627,533,669,533,669,539,627,539"/>
+<area shape="rect" id="Node000021" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="696,587,811,613"/>
+<area shape="poly" id="edge37_Node000020_Node000021" title=" " alt="" coords="627,597,682,597,682,603,627,603"/>
+</map>

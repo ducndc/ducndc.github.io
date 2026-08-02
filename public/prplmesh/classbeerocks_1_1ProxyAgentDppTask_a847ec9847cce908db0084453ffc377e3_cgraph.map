@@ -1,0 +1,15 @@
+<map id="beerocks::ProxyAgentDppTask::handle_proxied_encap_dpp" name="beerocks::ProxyAgentDppTask::handle_proxied_encap_dpp">
+<area shape="rect" id="Node000001" title="Parse Proxied Encap DPP Message." alt="" coords="5,127,208,167"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1slave__thread.html#ab9ba082d272fbaf1152b1854f54eddbd" title="Forwards given received CMDU message to the broker server for dispatching which eventually will be se..." alt="" coords="261,5,452,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,124,190,90,255,55,272,48,274,53,257,60,192,94,138,129"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1slave__thread.html#ab425241b241a7796d1cc9d1d56e68e70" title="Forwards given received CMDU message through the specified socket connection." alt="" coords="277,69,436,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,124,263,108,265,113,195,129"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="275,134,438,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,144,261,144,261,149,208,149"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1slave__thread.html#a8c39a142418df7191fa4e423b43ae217" title=" " alt="" coords="278,184,435,224"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="195,164,265,180,264,186,194,169"/>
+<area shape="rect" id="Node000006" href="$classieee1905__1_1_1CmduMessageRx.html#ad1db8fee42b3e3a1aaf8312a139b72f3" title=" " alt="" coords="256,248,457,288"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="138,165,192,199,257,234,274,241,272,246,255,238,190,204,136,169"/>
+<area shape="rect" id="Node000007" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="505,255,643,281"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="458,265,491,265,491,271,458,271"/>
+</map>

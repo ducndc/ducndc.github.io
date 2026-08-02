@@ -1,0 +1,21 @@
+<map id="bwl::whm::ap_wlan_hal_whm::read_acs_report" name="bwl::whm::ap_wlan_hal_whm::read_acs_report">
+<area shape="rect" id="Node000001" title="The Channel Survey Report is fetched from the pwhm module. Each channel&#39;s interference factor is repo..." alt="" coords="5,65,164,105"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ae8c51f247ecc3e69f0660a46ae9981de" title="invokes a data model function." alt="" coords="212,29,388,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,69,198,64,199,69,165,75"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a6cef841c3d8996ddefecb264a4295eb9" title="Assigns interference factor is directly assigned as rank to each channel to determine multi&#45;AP prefer..." alt="" coords="221,94,379,149"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,96,207,103,207,108,164,101"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#aa86ae2cd6c1807233fc9b3272e6a400b" title="read and return content tree of first object matching requested path." alt="" coords="441,5,617,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="360,91,387,79,435,55,453,48,455,53,437,60,389,84,363,96"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a7922e593a14b1ff6bc125e0ec4232995" title="Retrieves the rank of the channel." alt="" coords="436,69,621,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="379,108,422,102,423,107,380,113"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a9704f3d3418137deacd61a21b8c1843a" title="resolve a search path, and retrieve first matching result." alt="" coords="441,133,617,173"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="380,130,428,137,427,142,379,135"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a5ab2aadd20a396f13e48e0a68a398155" title="return search path of Radio object instance by Name." alt="" coords="445,198,612,253"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="359,146,437,183,453,190,450,195,435,188,357,151"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a4e1a50159b84bf6084a38a466197358b" title="resolve a search path, and retrieve all matching results." alt="" coords="669,133,845,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="617,151,656,151,656,156,617,156"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a7f96ac72dd88efe1686ffadd5458f940" title="return path of Radio template object." alt="" coords="674,205,841,245"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="612,223,660,223,660,228,612,228"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="893,205,1052,245"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="841,223,880,223,880,228,841,228"/>
+</map>

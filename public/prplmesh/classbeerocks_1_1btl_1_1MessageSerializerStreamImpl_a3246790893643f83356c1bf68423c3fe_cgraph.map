@@ -1,0 +1,15 @@
+<map id="beerocks::btl::MessageSerializerStreamImpl::serialize_message" name="beerocks::btl::MessageSerializerStreamImpl::serialize_message">
+<area shape="rect" id="Node000001" title="Serializes a transport message to a byte buffer." alt="" coords="5,196,217,236"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1Buffer.html#abf29ef0a180974f6bac8e0cc071b19a1" title="Appends given data to buffer contents." alt="" coords="269,5,413,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,194,182,128,221,89,264,55,273,50,275,54,267,60,224,93,186,131,130,198"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1transport_1_1messages_1_1Message_1_1Frame.html#a20d4a19dc6bd149f1b434ff65dc27bd9" title=" " alt="" coords="265,70,416,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,194,264,134,274,129,276,133,267,138,152,198"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1transport_1_1messages_1_1Message.html#ae217007377426d75e8911ec322cbebc7" title=" " alt="" coords="265,149,416,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,195,251,189,252,194,218,200"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1transport_1_1messages_1_1Message.html#a645d6a962c58119e3922f1623d2b2004" title=" " alt="" coords="265,227,416,282"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="218,231,252,237,251,242,217,236"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1Buffer.html#a4c70d268fe092fc5318af68d1ecebb8f" title="Returns the length of the buffer (number of bytes)." alt="" coords="269,307,413,347"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="153,234,266,291,282,298,280,303,264,296,150,239"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1Buffer.html#a734407b8be14b1550e5c5ebcad7374ac" title="Returns the size of the buffer." alt="" coords="269,371,413,411"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="132,234,189,293,226,327,267,356,276,362,273,367,264,361,223,331,185,297,128,238"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="son::DhcpTask::handle_timer_timeout" name="son::DhcpTask::handle_timer_timeout">
+<area shape="rect" id="Node000001" title="Handles periodic lease poll timer timeout." alt="" coords="5,69,161,109"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1bpl.html#acb546da3743c139822e02a41798977f1" title="Get dhcp leases from lucy&#45;rpc via ubus." alt="" coords="217,5,353,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,67,207,47,209,52,148,72"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a867d1efbec2e8354bc8d795b46686f85" title="Set STA DHCPv4 lease information for both node and datamodel." alt="" coords="209,69,360,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,87,195,87,195,92,161,92"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#a62d9f0aa743ff7014a309facdc58163e" title="Set STA DHCPv6 lease information for both node and datamodel." alt="" coords="209,133,360,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="148,107,209,127,207,132,146,112"/>
+<area shape="rect" id="Node000003" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="408,13,553,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,23,394,23,394,28,353,28"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="412,109,549,134"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="361,99,399,105,398,111,360,104"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="360,138,398,132,399,137,361,144"/>
+</map>

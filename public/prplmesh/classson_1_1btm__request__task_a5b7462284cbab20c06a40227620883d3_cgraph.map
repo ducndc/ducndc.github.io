@@ -1,0 +1,9 @@
+<map id="son::btm_request_task::add_steer_history_to_persistent_db" name="son::btm_request_task::add_steer_history_to_persistent_db">
+<area shape="rect" id="Node000001" title="Save data about client steer event to persistent db." alt="" coords="5,30,160,85"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a717682ba48df9dfd29512447a90d3779" title="Adds a client to the persistent db, if already exists, remove old entry and add a new one." alt="" coords="208,37,372,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,55,195,55,195,60,160,60"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1bpl.html#a1827c43b3401e8f22a41fad87098e83a" title="Add new entry with initial value." alt="" coords="431,5,581,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="372,43,417,36,418,41,373,48"/>
+<area shape="rect" id="Node000004" href="$namespacebeerocks_1_1bpl.html#a940044f9e67e50e0d32d632d7e1f5a2d" title="Remove entry by name." alt="" coords="420,69,592,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="373,67,407,72,406,77,372,72"/>
+</map>

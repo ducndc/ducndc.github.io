@@ -1,0 +1,110 @@
+<map id="beerocks::wbapi::AmbiorixClient::get_object" name="beerocks::wbapi::AmbiorixClient::get_object">
+<area shape="rect" id="Node000001" title="read and return content tree of first object matching requested path." alt="" coords="1273,774,1449,814"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1bpl.html#a38414d0ddd49ca2ecb581023ac01428f" title=" " alt="" coords="1021,227,1212,267"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1351,761,1334,690,1307,594,1270,487,1223,383,1179,319,1136,269,1140,266,1184,316,1228,381,1275,485,1313,592,1339,688,1356,760"/>
+<area shape="rect" id="Node000019" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a7c9049cf5de43afa7b1358c6b3dba777" title=" " alt="" coords="1028,489,1205,529"/>
+<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="1349,762,1333,713,1307,654,1271,594,1249,567,1224,543,1204,530,1207,526,1227,539,1253,563,1275,591,1312,651,1338,711,1354,760"/>
+<area shape="rect" id="Node000021" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a33628252edfd718743147269a8f1794c" title=" " alt="" coords="521,553,713,593"/>
+<area shape="poly" id="edge47_Node000001_Node000021" title=" " alt="" coords="1355,761,1345,697,1323,618,1306,578,1284,540,1257,506,1224,479,1185,462,1131,452,1069,447,1002,448,869,459,769,479,732,494,697,514,642,555,639,550,694,509,730,489,767,474,868,454,1001,442,1069,442,1132,446,1186,457,1227,474,1261,503,1288,537,1310,576,1328,616,1350,696,1360,760"/>
+<area shape="rect" id="Node000026" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#aeb1396fd4e2855d7c5ec257836004411" title=" " alt="" coords="519,423,716,477"/>
+<area shape="poly" id="edge26_Node000001_Node000026" title=" " alt="" coords="1356,760,1349,691,1328,602,1311,557,1289,514,1260,476,1224,444,1193,426,1161,411,1092,390,1021,380,948,379,877,386,810,397,698,425,697,420,809,391,876,380,948,374,1021,375,1093,385,1163,406,1196,421,1227,440,1264,472,1293,511,1316,555,1333,601,1354,690,1362,760"/>
+<area shape="rect" id="Node000027" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a44caa4776008e3b164e013ca8660a81d" title="try to read MRSNO support for m_radio and fill m_radio_info.rsn_override_support with a non&#45;default v..." alt="" coords="769,617,959,657"/>
+<area shape="poly" id="edge28_Node000001_Node000027" title=" " alt="" coords="1338,764,1291,707,1260,679,1224,658,1158,636,1089,625,1020,623,959,626,959,621,1020,618,1089,620,1159,631,1226,653,1263,675,1295,703,1342,761"/>
+<area shape="rect" id="Node000028" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a4cc18f40cd8669537979750224ffb07c" title=" " alt="" coords="1038,878,1195,918"/>
+<area shape="poly" id="edge30_Node000001_Node000028" title=" " alt="" coords="1315,823,1226,867,1190,880,1188,875,1224,862,1313,818"/>
+<area shape="rect" id="Node000038" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a9714c6260bf43c8c1afbd30be3b29eff" title=" " alt="" coords="782,683,946,737"/>
+<area shape="poly" id="edge45_Node000001_Node000038" title=" " alt="" coords="1260,780,946,726,947,721,1260,774"/>
+<area shape="rect" id="Node000039" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a32d7891815cfdfbd7681c866e7e5ebf9" title=" " alt="" coords="1024,553,1209,593"/>
+<area shape="poly" id="edge48_Node000001_Node000039" title=" " alt="" coords="1342,763,1295,688,1262,648,1224,613,1191,595,1193,590,1227,609,1266,645,1299,685,1346,760"/>
+<area shape="rect" id="Node000040" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a2c0791cc3c4724b80c63d959ebf1ff4f" title=" " alt="" coords="1017,942,1217,982"/>
+<area shape="poly" id="edge50_Node000001_Node000040" title=" " alt="" coords="1339,827,1291,881,1260,908,1227,932,1202,944,1200,939,1224,928,1257,904,1287,877,1335,823"/>
+<area shape="rect" id="Node000041" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a900a2fbda0f3d57f05602d102e64b49b" title=" " alt="" coords="1029,1006,1204,1046"/>
+<area shape="poly" id="edge51_Node000001_Node000041" title=" " alt="" coords="1349,828,1330,867,1303,912,1269,957,1227,996,1206,1008,1203,1004,1224,992,1265,954,1299,909,1325,864,1344,826"/>
+<area shape="rect" id="Node000042" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a4205d12bdb54b4b5d28c9ed8ba9ab07c" title=" " alt="" coords="1040,799,1193,853"/>
+<area shape="poly" id="edge52_Node000001_Node000042" title=" " alt="" coords="1260,810,1194,819,1193,813,1259,805"/>
+<area shape="rect" id="Node000043" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#ac1ee84d7f31987a9d58467af13d07bf4" title=" " alt="" coords="1037,668,1197,723"/>
+<area shape="poly" id="edge54_Node000001_Node000043" title=" " alt="" coords="1297,771,1184,725,1186,720,1299,766"/>
+<area shape="rect" id="Node000044" href="$classbwl_1_1whm_1_1mon__wlan__hal__whm.html#a85c3c4f6fef19e000d047a2d67a25462" title=" " alt="" coords="1017,1070,1216,1110"/>
+<area shape="poly" id="edge56_Node000001_Node000044" title=" " alt="" coords="1355,828,1339,879,1313,942,1277,1005,1253,1034,1227,1060,1209,1072,1206,1068,1224,1056,1249,1031,1272,1002,1309,939,1334,877,1350,826"/>
+<area shape="rect" id="Node000045" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a6cef841c3d8996ddefecb264a4295eb9" title="Assigns interference factor is directly assigned as rank to each channel to determine multi&#45;AP prefer..." alt="" coords="1037,1135,1196,1189"/>
+<area shape="poly" id="edge57_Node000001_Node000045" title=" " alt="" coords="1358,828,1345,890,1321,969,1304,1011,1283,1051,1257,1090,1227,1124,1198,1144,1195,1139,1224,1120,1253,1087,1278,1049,1299,1008,1316,967,1340,889,1353,827"/>
+<area shape="rect" id="Node000047" href="$classbwl_1_1whm_1_1mon__wlan__hal__whm.html#abd45a3e819bb9c58704c40eb9c6b300e" title=" " alt="" coords="1008,1214,1225,1254"/>
+<area shape="poly" id="edge59_Node000001_Node000047" title=" " alt="" coords="1362,828,1354,905,1333,1006,1316,1059,1293,1112,1264,1161,1227,1204,1211,1216,1208,1212,1224,1200,1260,1158,1289,1109,1311,1057,1328,1004,1349,904,1356,828"/>
+<area shape="rect" id="Node000048" href="$classbwl_1_1whm_1_1mon__wlan__hal__whm.html#a880f0fc166b66041a650be7c3ba85f75" title=" " alt="" coords="1021,1278,1213,1318"/>
+<area shape="poly" id="edge60_Node000001_Node000048" title=" " alt="" coords="1363,828,1359,915,1353,972,1342,1033,1325,1096,1301,1158,1269,1216,1227,1268,1212,1280,1209,1276,1223,1264,1264,1214,1296,1156,1320,1094,1336,1032,1348,971,1354,915,1358,828"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1bpl.html#aec406fb66b75c97129cea9424a4d87f9" title="Get AirTies cloud credentials." alt="" coords="788,116,940,171"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1053,224,930,173,932,168,1055,220"/>
+<area shape="rect" id="Node000007" href="$namespacebeerocks_1_1bpl.html#a67bb7baccda32bb49b349deefa196d86" title="Reads MLD configuration from Device.WiFi.APMLD.*.MLDConfig for a given mld_id." alt="" coords="779,195,949,235"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="1007,236,949,229,950,223,1008,231"/>
+<area shape="rect" id="Node000011" href="$namespacebeerocks_1_1bpl.html#a8b1a3b72f1adad291614970620dd2859" title="Reads wireless network configuration for the given interface." alt="" coords="779,323,949,363"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="1057,275,961,314,928,326,926,321,959,309,1055,270"/>
+<area shape="rect" id="Node000012" href="$namespacebeerocks_1_1bpl.html#ad8e5ea8c306cb5aeee5c7743953c6837" title="Reads wireless settings (SSIDs and WiFi credentials) for all fronthaul interfaces." alt="" coords="774,259,954,299"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="1008,264,954,271,954,265,1007,258"/>
+<area shape="rect" id="Node000014" href="$namespacebeerocks_1_1bpl.html#a8dbd75d3169fd86e13151565c5e9f4f5" title=" " alt="" coords="801,51,927,91"/>
+<area shape="poly" id="edge14_Node000002_Node000014" title=" " alt="" coords="1088,219,1032,162,997,132,959,106,926,91,929,86,961,101,1000,127,1036,158,1092,215"/>
+<area shape="rect" id="Node000004" href="$tlvf__airties__utils_8cpp.html#adc0c571878a60df235ee107a8393a6ca" title=" " alt="" coords="545,131,689,156"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="774,146,689,146,689,141,774,141"/>
+<area shape="rect" id="Node000005" href="$classairties_1_1tlvf__airties__utils.html#ae14efb724a05a1b2f871231eee555eba" title=" " alt="" coords="256,123,467,163"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="532,146,467,146,467,141,532,141"/>
+<area shape="rect" id="Node000006" href="$classMultiVendorAirties.html#a41a0ca0eb967a2a817d2deca7042c497" title=" " alt="" coords="39,123,175,163"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="242,146,175,146,175,141,242,141"/>
+<area shape="rect" id="Node000008" href="$classprplmesh_1_1controller_1_1whm_1_1WifiManager.html#aab5ce4359dbd0903adc9aa16f70cecfd" title=" " alt="" coords="530,188,705,243"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="765,218,705,218,705,213,765,213"/>
+<area shape="rect" id="Node000009" href="$classprplmesh_1_1controller_1_1whm_1_1WifiManager.html#ab69cf69339860f6fd6e56385226f911b" title=" " alt="" coords="277,188,445,243"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="516,218,446,218,446,213,516,213"/>
+<area shape="rect" id="Node000010" href="$classprplmesh_1_1controller_1_1whm_1_1WifiManager.html#ad61000b255c708a3ca161a651d13c166" title=" " alt="" coords="5,188,208,243"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="263,218,208,218,208,213,263,213"/>
+<area shape="poly" id="edge13_Node000012_Node000008" title=" " alt="" coords="772,258,704,240,705,235,774,253"/>
+<area shape="rect" id="Node000013" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="592,267,643,292"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="761,282,643,282,643,277,761,277"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1PlatformManager.html#a0f2852d2a8097ac6125322a0e47a04fb" title="Checks if WLAN parameters have changed." alt="" coords="515,55,720,95"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="787,75,720,76,720,71,787,70"/>
+<area shape="rect" id="Node000018" href="$bpl__test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="592,5,643,31"/>
+<area shape="poly" id="edge18_Node000014_Node000018" title=" " alt="" coords="786,57,643,26,644,21,787,52"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1PlatformManager.html#aed887af7b8c18960779bc2384067c721" title="Starts platform manager." alt="" coords="270,55,453,95"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="501,78,453,78,453,73,501,73"/>
+<area shape="rect" id="Node000017" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="28,63,185,88"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="256,78,186,78,186,73,256,73"/>
+<area shape="rect" id="Node000020" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#aa2e98c325c59c23a41fca49183097b3c" title=" " alt="" coords="768,553,960,593"/>
+<area shape="poly" id="edge20_Node000019_Node000020" title=" " alt="" coords="1024,535,944,555,943,550,1023,530"/>
+<area shape="rect" id="Node000025" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#aed3268dd9ff9d79a49b25e75b42ca659" title=" " alt="" coords="771,489,957,529"/>
+<area shape="poly" id="edge25_Node000019_Node000025" title=" " alt="" coords="1014,511,957,511,957,506,1014,506"/>
+<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="754,575,714,575,714,570,754,570"/>
+<area shape="rect" id="Node000022" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#af0bbbb6fbd5fcfa3da29718285f13c2b" title=" " alt="" coords="287,549,435,589"/>
+<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="508,574,435,572,436,567,508,568"/>
+<area shape="rect" id="Node000024" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a37d8ec7e528bc25f2067973546989a51" title=" " alt="" coords="286,616,437,671"/>
+<area shape="poly" id="edge24_Node000021_Node000024" title=" " alt="" coords="532,599,438,625,436,620,530,594"/>
+<area shape="rect" id="Node000023" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#ab53d194bfe3bcf5d9115b98471dacf17" title=" " alt="" coords="27,549,186,589"/>
+<area shape="poly" id="edge23_Node000022_Node000023" title=" " alt="" coords="273,571,186,571,186,566,273,566"/>
+<area shape="poly" id="edge27_Node000026_Node000022" title=" " alt="" coords="546,486,407,551,405,546,544,481"/>
+<area shape="poly" id="edge29_Node000027_Node000021" title=" " alt="" coords="772,616,694,595,696,590,774,611"/>
+<area shape="rect" id="Node000029" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#aaf6b70b21ef742e1898db51d82cb94d1" title=" " alt="" coords="541,758,693,798"/>
+<area shape="poly" id="edge31_Node000028_Node000029" title=" " alt="" coords="1024,877,1006,867,991,850,982,833,974,818,959,804,927,790,893,779,823,767,754,765,694,769,693,764,754,760,823,762,894,774,929,785,961,800,979,814,987,831,995,847,1010,863,1026,872"/>
+<area shape="rect" id="Node000034" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a1f4b19e0fea5b145dc52461ac52282ed" title=" " alt="" coords="781,838,947,878"/>
+<area shape="poly" id="edge36_Node000028_Node000034" title=" " alt="" coords="1024,886,947,874,948,869,1025,881"/>
+<area shape="rect" id="Node000035" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a9a906fc4036fd00d9bd4afdf37cb2682" title=" " alt="" coords="539,901,695,941"/>
+<area shape="poly" id="edge41_Node000028_Node000035" title=" " alt="" coords="1024,905,696,920,696,914,1024,899"/>
+<area shape="rect" id="Node000037" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a7b3daff27b332775019fb8f1140ed5cf" title=" " alt="" coords="779,977,949,1017"/>
+<area shape="poly" id="edge42_Node000028_Node000037" title=" " alt="" coords="1030,925,1009,932,906,979,904,974,1007,928,1029,920"/>
+<area shape="rect" id="Node000030" href="$classdevice_1_1serial_1_1SerialDevice.html#a86412c3938993f5fa486643d11ebcf87" title=" " alt="" coords="273,765,450,805"/>
+<area shape="poly" id="edge32_Node000029_Node000030" title=" " alt="" coords="527,783,450,785,450,780,527,778"/>
+<area shape="rect" id="Node000031" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#ac8632be27dd4918ed8d86ffaa1c063d4" title=" " alt="" coords="292,701,431,741"/>
+<area shape="poly" id="edge33_Node000029_Node000031" title=" " alt="" coords="527,761,430,739,432,734,528,755"/>
+<area shape="rect" id="Node000032" href="$classdevice_1_1serial_1_1SerialDevice.html#a27e698b9464330b6878cfcf4946561bc" title=" " alt="" coords="18,669,195,709"/>
+<area shape="poly" id="edge34_Node000031_Node000032" title=" " alt="" coords="278,713,195,702,196,697,279,708"/>
+<area shape="rect" id="Node000033" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a90819258a767d0bbc4132ae895b3d083" title=" " alt="" coords="9,733,204,773"/>
+<area shape="poly" id="edge35_Node000031_Node000033" title=" " alt="" coords="279,734,204,743,204,738,278,728"/>
+<area shape="poly" id="edge37_Node000034_Node000029" title=" " alt="" coords="787,836,679,801,681,796,789,831"/>
+<area shape="poly" id="edge38_Node000034_Node000034" title=" " alt="" coords="906,826,891,819,864,817,840,819,826,823,821,829,823,837,818,838,816,828,823,819,839,813,864,811,893,814,908,821"/>
+<area shape="poly" id="edge39_Node000034_Node000035" title=" " alt="" coords="773,884,696,904,695,898,771,879"/>
+<area shape="rect" id="Node000036" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#abc44a8ec9b70f8c687c9e00c0188d5b8" title=" " alt="" coords="548,837,687,877"/>
+<area shape="poly" id="edge40_Node000034_Node000036" title=" " alt="" coords="767,860,687,860,687,854,767,855"/>
+<area shape="poly" id="edge43_Node000037_Node000035" title=" " alt="" coords="784,975,682,943,684,938,786,970"/>
+<area shape="poly" id="edge44_Node000037_Node000037" title=" " alt="" coords="906,965,891,958,864,955,840,957,826,962,821,968,823,976,818,977,816,967,823,958,839,952,864,950,893,953,908,960"/>
+<area shape="poly" id="edge46_Node000038_Node000024" title=" " alt="" coords="768,700,437,656,437,651,768,695"/>
+<area shape="poly" id="edge49_Node000039_Node000020" title=" " alt="" coords="1010,575,960,575,960,570,1010,570"/>
+<area shape="poly" id="edge53_Node000042_Node000038" title=" " alt="" coords="1037,796,1007,782,919,740,921,735,1009,777,1040,791"/>
+<area shape="poly" id="edge55_Node000043_Node000038" title=" " alt="" coords="1023,703,946,708,946,703,1023,698"/>
+<area shape="rect" id="Node000046" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a754120130d489861c2d544fed92dec82" title="The Channel Survey Report is fetched from the pwhm module. Each channel&#39;s interference factor is repo..." alt="" coords="785,1142,943,1182"/>
+<area shape="poly" id="edge58_Node000045_Node000046" title=" " alt="" coords="1024,1165,944,1165,944,1159,1024,1159"/>
+</map>

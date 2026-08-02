@@ -1,0 +1,12 @@
+<map id="beerocks::TrafficSeparationTask::clear_scheduled_work" name="beerocks::TrafficSeparationTask::clear_scheduled_work">
+<area shape="rect" id="Node000001" title="Reset any scheduled task work." alt="" coords="481,69,668,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1TrafficSeparationTask.html#af75815cd1c5179668c447ee7762da8ae" title="Reset pending debounced apply state." alt="" coords="243,5,426,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="485,68,409,48,411,43,486,63"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1TrafficSeparationTask.html#ad8810756ba86ca81d17bd3b2096b0753" title="Clear one WDS iface (e.g. wlan1.2.sta1)." alt="" coords="236,69,433,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="468,92,434,92,434,87,468,87"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1TrafficSeparationTask.html#a28e752a84a54d229bae728f9d44b70f2" title="Periodic task hook (executed by the task scheduler)." alt="" coords="243,133,426,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="486,116,411,136,409,131,485,110"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1TrafficSeparationTask.html#a518ae2ffe549324475d317744d31fdd1" title="Handle task events (like other prplMesh tasks)." alt="" coords="5,37,188,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,42,188,48,188,42,229,37"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="222,77,188,72,189,67,223,72"/>
+</map>

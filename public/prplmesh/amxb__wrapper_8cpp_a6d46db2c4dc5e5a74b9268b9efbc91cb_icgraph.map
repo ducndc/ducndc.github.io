@@ -1,0 +1,11 @@
+<map id="amxb_connect" name="amxb_connect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="453,92,560,117"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1prplmesh__amx_1_1AmxClient.html#a130c24dfb9da9f3a9b5060e4fb51de47" title=" " alt="" coords="238,5,394,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="459,90,388,63,390,58,461,85"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ab5410e0c67efb4726d27227bd8e21df7" title="Connect to the bus and register datamodel." alt="" coords="227,85,405,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="439,107,405,107,405,102,439,102"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnection.html#a0fdea8eeb3cb0997eb8961298a1a28a8" title="connect to an ambiorix backend: load backend, connect to the bus" alt="" coords="228,149,404,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="456,124,377,151,375,146,454,119"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#abf9bb794c11ea06faa0351cf90bab84f" title="Initialize the ambiorix library: load all available backends, connect to all available bus,..." alt="" coords="5,85,179,125"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="213,107,179,107,179,102,213,102"/>
+</map>

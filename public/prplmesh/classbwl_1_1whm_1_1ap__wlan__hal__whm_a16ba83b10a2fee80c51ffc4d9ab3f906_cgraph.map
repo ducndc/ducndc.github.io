@@ -1,0 +1,11 @@
+<map id="bwl::whm::ap_wlan_hal_whm::sta_unassoc_rssi_measurement" name="bwl::whm::ap_wlan_hal_whm::sta_unassoc_rssi_measurement">
+<area shape="rect" id="Node000001" title="Measure the RSSI of an unassociated station. The result of the measurement should be sent as an inter..." alt="" coords="5,70,172,125"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#af15b0840155f8fa7feda07bb1335d123" title="subscribe to WiFi.Radio.XXXXX.NaStaMonitor.RssiEventing RssiUpdate dm notification" alt="" coords="220,70,391,125"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,95,207,95,207,100,172,100"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1base__wlan__hal.html#a23e4b6e82754f75aa36decfde1c4fc62" title=" " alt="" coords="480,5,616,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="390,69,438,55,466,46,468,51,439,60,392,74"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a7a14e996bcb5e6ce9db570fc43667b01" title="Process the event &quot;RssiUpdate&quot; when received from the dm." alt="" coords="467,70,629,125"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="391,95,453,95,453,100,391,100"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a6cbc2838430438cb1ec01e0d47f0659f" title="subscribe for event for a given object." alt="" coords="439,149,657,189"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="392,120,468,143,466,148,390,125"/>
+</map>

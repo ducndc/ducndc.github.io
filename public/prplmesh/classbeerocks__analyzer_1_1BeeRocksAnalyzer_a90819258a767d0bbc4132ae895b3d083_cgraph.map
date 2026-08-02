@@ -1,0 +1,118 @@
+<map id="beerocks_analyzer.BeeRocksAnalyzer.createAction" name="beerocks_analyzer.BeeRocksAnalyzer.createAction">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,617,200,657"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1netlink__socket.html#a508fa8feacaca18245276f3bbd7e7bb9" title="Connects the Netlink socket." alt="" coords="550,11,685,51"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,616,117,500,145,332,165,246,188,167,215,103,230,79,246,61,279,39,314,23,352,12,391,6,468,4,537,11,536,17,468,9,392,11,353,17,316,28,281,43,250,65,234,82,219,106,193,169,170,247,150,333,123,501,109,616"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__cmd.html#a3d8943d45be93af9bd08ba7719ebca13" title="Connect socket to hostapd/wpa_supplicant deamon. This implementation implies opening the socket." alt="" coords="282,165,437,205"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="104,616,115,547,139,448,158,394,181,339,211,287,246,240,265,223,287,209,290,213,268,227,250,244,215,290,186,342,163,396,144,450,120,548,109,617"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#afbd96f8a915bea6677281a6ae5806133" title="Opens and attach event socket to hostapd/wpa_supplicant deamon." alt="" coords="279,254,440,294"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="105,616,118,556,144,475,162,431,185,387,213,347,246,311,265,297,268,301,250,315,217,350,190,390,167,433,149,477,123,558,110,617"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1nl80211__socket.html#a9f5a1d3cac23b404ed66a24bc7fa6563" title="Connects the Netlink socket." alt="" coords="289,75,430,115"/>
+<area shape="poly" id="edge8_Node000001_Node000011" title=" " alt="" coords="102,616,109,534,129,412,148,344,172,276,205,210,246,151,264,133,285,119,288,124,267,138,250,154,210,213,177,278,153,346,135,413,114,535,107,617"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1cli__bml.html#a88d061dcee78a80e0113062ce2db3708" title=" " alt="" coords="293,454,425,494"/>
+<area shape="poly" id="edge11_Node000001_Node000013" title=" " alt="" coords="119,614,172,559,208,529,247,504,279,489,282,494,249,508,211,534,176,563,123,618"/>
+<area shape="rect" id="Node000015" href="$classbml__internal.html#ad08ea6d8dc673badb5dc245e48048698" title=" " alt="" coords="767,420,913,445"/>
+<area shape="poly" id="edge42_Node000001_Node000015" title=" " alt="" coords="110,615,129,576,158,528,197,479,221,458,247,440,315,408,388,389,463,379,538,378,610,383,677,392,783,414,782,419,676,397,610,388,538,383,464,385,389,394,317,413,249,444,224,462,201,483,162,531,133,579,115,617"/>
+<area shape="rect" id="Node000066" href="$classbeerocks_1_1cli__socket.html#ac50bb15149c55854f67b3435950a6710" title=" " alt="" coords="977,221,1119,261"/>
+<area shape="poly" id="edge27_Node000001_Node000066" title=" " alt="" coords="107,615,124,569,152,507,192,444,218,416,246,392,308,354,364,332,417,321,469,317,580,317,643,314,716,303,962,255,964,260,716,308,644,319,580,322,469,322,418,326,366,337,311,359,250,396,221,420,196,447,156,510,128,570,112,617"/>
+<area shape="rect" id="Node000068" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a352be83e33d7e94a1cf08c454e9c0395" title="Abstract method: Connect to hostapd/wpa_supplicant deamon. This method has to be implemented with app..." alt="" coords="283,518,435,558"/>
+<area shape="poly" id="edge31_Node000001_Node000068" title=" " alt="" coords="142,614,247,567,270,559,271,564,249,572,144,619"/>
+<area shape="rect" id="Node000069" href="$classbeerocks_1_1cli.html#a6b122eb5a707c7892d7b0751831920f2" title=" " alt="" coords="284,583,435,608"/>
+<area shape="poly" id="edge32_Node000001_Node000069" title=" " alt="" coords="200,618,269,607,270,612,200,624"/>
+<area shape="rect" id="Node000070" href="$classbeerocks_1_1net_1_1ClientSocketAbstractImpl.html#a4967ac457553c28acbdce233aece9a1b" title="Connects to a server socket." alt="" coords="267,657,451,697"/>
+<area shape="poly" id="edge33_Node000001_Node000070" title=" " alt="" coords="200,649,254,657,253,663,200,654"/>
+<area shape="rect" id="Node000074" href="$classbeerocks_1_1net_1_1ClientSocket.html#a662a5d186ec193034b9d6f0b515fc44a" title="Connects the socket to the address specified." alt="" coords="267,721,451,761"/>
+<area shape="poly" id="edge38_Node000001_Node000074" title=" " alt="" coords="141,654,192,680,249,706,270,714,268,719,247,711,189,685,139,659"/>
+<area shape="rect" id="Node000075" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ad6b66a1b6aac6fc32498d5b208101c35" title="connect to an ambiorix backend: load backend, connect to the bus" alt="" coords="271,785,447,825"/>
+<area shape="poly" id="edge39_Node000001_Node000075" title=" " alt="" coords="122,655,175,712,210,743,249,770,262,777,260,781,247,775,207,748,171,716,118,659"/>
+<area shape="rect" id="Node000079" href="$classbwl_1_1dummy_1_1sta__wlan__hal__dummy.html#a9e1f96954080fd7f24148a854786bbb7" title=" " alt="" coords="283,849,436,889"/>
+<area shape="poly" id="edge43_Node000001_Node000079" title=" " alt="" coords="115,656,135,694,164,742,203,792,250,834,271,846,268,851,246,839,199,796,160,745,130,697,111,658"/>
+<area shape="rect" id="Node000080" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#ab6afc9d3478bb21684cb51063fcfbdd1" title=" " alt="" coords="287,1373,431,1413"/>
+<area shape="poly" id="edge44_Node000001_Node000080" title=" " alt="" coords="110,656,158,869,199,1021,250,1174,297,1277,341,1359,337,1362,292,1279,246,1176,194,1022,152,870,105,657"/>
+<area shape="rect" id="Node000094" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html#ad1009834e00695e8a2cb3d3210801c00" title=" " alt="" coords="282,1123,437,1163"/>
+<area shape="poly" id="edge54_Node000001_Node000094" title=" " alt="" coords="114,656,166,790,206,881,250,971,295,1047,338,1110,333,1113,291,1050,246,974,201,883,161,792,109,658"/>
+<area shape="rect" id="Node000103" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#ac8632be27dd4918ed8d86ffaa1c063d4" title=" " alt="" coords="290,921,429,961"/>
+<area shape="poly" id="edge63_Node000001_Node000103" title=" " alt="" coords="112,656,128,705,156,770,197,839,222,870,250,898,279,917,276,921,246,903,218,874,192,842,152,772,123,706,107,657"/>
+<area shape="rect" id="Node000130" href="$classbwl_1_1sta__wlan__hal.html#a6d1ba526686dbb2bd533af685bd612cd" title=" " alt="" coords="292,1437,427,1477"/>
+<area shape="poly" id="edge65_Node000001_Node000130" title=" " alt="" coords="108,656,117,807,141,1038,160,1158,184,1270,214,1361,231,1396,250,1423,264,1434,280,1443,277,1447,261,1439,246,1426,227,1399,209,1363,179,1271,155,1159,136,1038,112,807,102,657"/>
+<area shape="rect" id="Node000131" href="$classdevice_1_1serial_1_1SerialDevice.html#a570e070377ee70497d57097728bfdde8" title=" " alt="" coords="248,1501,471,1527"/>
+<area shape="poly" id="edge66_Node000001_Node000131" title=" " alt="" coords="107,657,114,818,123,938,136,1069,154,1201,179,1321,194,1374,210,1420,229,1458,250,1487,255,1491,251,1495,246,1490,225,1461,205,1423,188,1376,173,1323,149,1201,130,1070,117,939,109,819,102,657"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a990f5585492bcc8b0146304f4923a382" title="Open wpa_ctrl socket. Once successful, a new file descriptor is available for sending messages hostap..." alt="" coords="764,194,916,234"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="437,173,568,167,642,168,716,175,770,187,769,192,716,180,642,174,568,172,437,179"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#ac0835aab2f72abcdb0cd5f4992856231" title="Attach the wpa_ctrl socket (i.e subscribe client) to be notified with events from hostapd/wpa_supplic..." alt="" coords="541,190,693,230"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="439,251,527,229,528,235,441,257"/>
+<area shape="rect" id="Node000008" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#aafc4beb21390283c406e97fea99af776" title="Opens wpa_ctrl event socket and add the new file descriptor to event monitoring FDs queue." alt="" coords="541,254,693,294"/>
+<area shape="poly" id="edge6_Node000005_Node000008" title=" " alt="" coords="440,271,527,271,527,277,440,277"/>
+<area shape="poly" id="edge7_Node000008_Node000004" title=" " alt="" coords="692,251,751,235,752,240,693,256"/>
+<area shape="poly" id="edge10_Node000011_Node000002" title=" " alt="" coords="429,75,536,49,537,54,431,80"/>
+<area shape="rect" id="Node000012" href="$classbwl_1_1netlink__socket.html#a5f09135cefb6c348abc2c6a0d69cc10b" title="Closes the Netlink socket." alt="" coords="550,75,685,115"/>
+<area shape="poly" id="edge9_Node000011_Node000012" title=" " alt="" coords="430,93,536,93,536,98,430,98"/>
+<area shape="rect" id="Node000014" href="$bml_8cpp.html#a27ddc4408f489c2581ecd84336798fb8" title=" " alt="" coords="569,420,665,445"/>
+<area shape="poly" id="edge12_Node000013_Node000014" title=" " alt="" coords="425,461,555,440,556,445,426,466"/>
+<area shape="rect" id="Node000062" href="$classbeerocks_1_1cli__bml.html#a749800a38e18949d3df5f3be78cfee09" title=" " alt="" coords="551,521,683,561"/>
+<area shape="poly" id="edge24_Node000013_Node000062" title=" " alt="" coords="426,488,539,518,537,523,425,493"/>
+<area shape="rect" id="Node000065" href="$classbeerocks_1_1cli__bml.html#ac5ada42aac543e4f5f9098e4602831b7" title=" " alt="" coords="773,495,907,535"/>
+<area shape="poly" id="edge26_Node000013_Node000065" title=" " alt="" coords="426,477,759,506,759,511,425,482"/>
+<area shape="poly" id="edge13_Node000014_Node000015" title=" " alt="" coords="666,430,753,430,753,435,666,435"/>
+<area shape="rect" id="Node000016" href="$classbml__internal.html#a543456b411c2b857253caf7271732cb5" title=" " alt="" coords="975,477,1121,517"/>
+<area shape="poly" id="edge14_Node000015_Node000016" title=" " alt="" coords="883,443,970,470,969,475,882,448"/>
+<area shape="rect" id="Node000022" href="$classbml__internal.html#ad7c61dd97a20c9a9c3bd2244bd3326e5" title=" " alt="" coords="975,413,1121,453"/>
+<area shape="poly" id="edge17_Node000015_Node000022" title=" " alt="" coords="914,430,961,430,961,435,914,435"/>
+<area shape="rect" id="Node000023" href="$classbml__internal.html#ab5eab83e1adf633566bd04e449a348fe" title=" " alt="" coords="975,541,1121,567"/>
+<area shape="poly" id="edge20_Node000015_Node000023" title=" " alt="" coords="864,443,918,481,941,505,965,526,981,534,978,539,963,531,937,509,914,485,861,448"/>
+<area shape="rect" id="Node000028" href="$classbml__internal.html#aa44b05af7f3f0acf39ee88dd59f0a2cb" title=" " alt="" coords="976,591,1120,631"/>
+<area shape="poly" id="edge21_Node000015_Node000028" title=" " alt="" coords="868,443,894,460,918,481,934,507,941,531,949,553,966,576,973,582,970,586,962,580,944,556,936,533,929,510,914,485,890,464,865,448"/>
+<area shape="rect" id="Node000029" href="$classbeerocks_1_1message__com.html#a48fb69fa1285fc72a89d8066d6551cae" title=" " alt="" coords="964,285,1132,325"/>
+<area shape="poly" id="edge22_Node000015_Node000029" title=" " alt="" coords="853,418,900,378,963,334,975,328,977,333,965,339,903,382,856,422"/>
+<area shape="rect" id="Node000051" href="$classbeerocks_1_1promise.html#aabca4734c68453e37f32ba8204b06d29" title=" " alt="" coords="979,349,1117,389"/>
+<area shape="poly" id="edge23_Node000015_Node000051" title=" " alt="" coords="882,417,969,390,970,395,883,422"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1socket__thread.html#aaf94dfd1d81f2d50d5c66a1e66990d8f" title=" " alt="" coords="1180,385,1345,425"/>
+<area shape="poly" id="edge15_Node000016_Node000017" title=" " alt="" coords="1104,474,1131,462,1179,434,1193,427,1196,432,1181,439,1133,467,1106,479"/>
+<area shape="rect" id="Node000019" href="$classSocket.html#a31acd9caa7282bc222e1e391e696965c" title=" " alt="" coords="1204,449,1321,475"/>
+<area shape="poly" id="edge16_Node000016_Node000019" title=" " alt="" coords="1121,482,1190,471,1191,476,1122,487"/>
+<area shape="poly" id="edge18_Node000022_Node000017" title=" " alt="" coords="1121,420,1166,414,1167,420,1122,426"/>
+<area shape="poly" id="edge19_Node000022_Node000019" title=" " alt="" coords="1122,440,1191,449,1190,455,1121,445"/>
+<area shape="poly" id="edge25_Node000062_Node000065" title=" " alt="" coords="683,530,759,522,759,527,684,536"/>
+<area shape="poly" id="edge28_Node000066_Node000017" title=" " alt="" coords="1112,258,1133,270,1165,294,1194,321,1240,372,1236,376,1190,325,1161,298,1131,275,1109,263"/>
+<area shape="poly" id="edge30_Node000066_Node000019" title=" " alt="" coords="1119,259,1134,271,1149,292,1156,314,1158,355,1160,395,1167,415,1182,435,1194,444,1190,448,1178,438,1162,417,1155,396,1153,355,1151,315,1144,295,1130,274,1116,263"/>
+<area shape="rect" id="Node000067" href="$classbeerocks_1_1cli__socket.html#a610537052815b84656620ad94c1cc59e" title=" " alt="" coords="1191,221,1334,261"/>
+<area shape="poly" id="edge29_Node000066_Node000067" title=" " alt="" coords="1119,238,1177,238,1177,243,1119,243"/>
+<area shape="poly" id="edge34_Node000070_Node000070" title=" " alt="" coords="312,657,309,647,317,638,333,632,359,630,389,633,405,640,403,645,388,638,359,635,335,637,320,642,314,648,317,655"/>
+<area shape="rect" id="Node000071" href="$classbeerocks_1_1net_1_1Socket_1_1Address.html#a216e2af311a82c133ac97e8d770de2cb" title="Returns the length of the sockaddr structure." alt="" coords="542,585,693,625"/>
+<area shape="poly" id="edge35_Node000070_Node000071" title=" " alt="" coords="431,654,531,626,532,631,433,659"/>
+<area shape="rect" id="Node000072" href="$classbeerocks_1_1net_1_1Socket_1_1Address.html#aafbd78134f802b31af99cca0bdfbd06e" title="Returns the address name." alt="" coords="542,649,693,689"/>
+<area shape="poly" id="edge36_Node000070_Node000072" title=" " alt="" coords="451,671,528,669,528,674,451,676"/>
+<area shape="rect" id="Node000073" href="$classbeerocks_1_1net_1_1Socket_1_1Address.html#a1e4b73b30de449e5e0b740323a71c61c" title="Returns address of sockaddr structure." alt="" coords="542,713,693,753"/>
+<area shape="poly" id="edge37_Node000070_Node000073" title=" " alt="" coords="452,694,529,711,528,716,451,699"/>
+<area shape="rect" id="Node000076" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#a1fa5bc085a004b323809c35377202e85" title=": get a connection to the uri" alt="" coords="529,856,705,911"/>
+<area shape="poly" id="edge40_Node000075_Node000076" title=" " alt="" coords="431,822,471,834,520,849,518,854,470,839,430,827"/>
+<area shape="rect" id="Node000078" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#afc17bdf3d36234281315b46abe6f4abd" title=": get single instance" alt="" coords="529,777,705,832"/>
+<area shape="poly" id="edge41_Node000075_Node000078" title=" " alt="" coords="447,802,515,802,515,807,447,807"/>
+<area shape="rect" id="Node000081" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a17781b3a3b1a01f1b65544cd5a7642ec" title=" " alt="" coords="533,1373,702,1413"/>
+<area shape="poly" id="edge45_Node000080_Node000081" title=" " alt="" coords="431,1390,519,1390,519,1395,431,1395"/>
+<area shape="rect" id="Node000086" href="$classson_1_1wireless__utils.html#ae3508c67d6e27af6dab9dc810c6f1f75" title="Translate a channel number to its frequency value." alt="" coords="552,1309,683,1349"/>
+<area shape="poly" id="edge46_Node000080_Node000086" title=" " alt="" coords="431,1372,538,1345,539,1351,432,1377"/>
+<area shape="rect" id="Node000087" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#abdcd461a9456b2e20c3325f9437ef10d" title=" " alt="" coords="538,1487,697,1527"/>
+<area shape="poly" id="edge47_Node000080_Node000087" title=" " alt="" coords="433,1406,472,1422,487,1433,497,1444,506,1455,520,1466,544,1479,542,1484,517,1471,503,1459,493,1448,484,1437,469,1427,431,1410"/>
+<area shape="rect" id="Node000088" href="$classbwl_1_1base__wlan__hal.html#a23e4b6e82754f75aa36decfde1c4fc62" title=" " alt="" coords="772,1277,908,1317"/>
+<area shape="poly" id="edge51_Node000080_Node000088" title=" " alt="" coords="432,1407,519,1422,620,1438,663,1438,715,1422,747,1404,775,1379,817,1327,821,1330,779,1383,750,1408,717,1427,664,1443,620,1443,518,1427,431,1413"/>
+<area shape="rect" id="Node000091" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a704dd52a1b6bb2f7817b67dc16ba567d" title=" " alt="" coords="524,1551,711,1591"/>
+<area shape="poly" id="edge49_Node000080_Node000091" title=" " alt="" coords="433,1401,454,1410,472,1423,485,1437,492,1452,498,1481,502,1510,509,1524,521,1537,526,1542,522,1546,517,1541,504,1526,497,1511,492,1482,487,1454,481,1440,469,1427,451,1414,431,1406"/>
+<area shape="rect" id="Node000092" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a39505cc030d795b3587bbd1f93167ba4" title=" " alt="" coords="534,1616,701,1671"/>
+<area shape="poly" id="edge52_Node000080_Node000092" title=" " alt="" coords="433,1399,454,1409,473,1423,489,1445,497,1468,499,1513,499,1557,506,1579,521,1602,525,1606,522,1610,517,1605,501,1581,494,1558,493,1513,492,1469,485,1448,469,1426,451,1413,431,1404"/>
+<area shape="poly" id="edge48_Node000087_Node000088" title=" " alt="" coords="683,1485,714,1466,749,1434,778,1397,821,1327,825,1330,783,1400,753,1438,718,1471,686,1489"/>
+<area shape="poly" id="edge50_Node000091_Node000088" title=" " alt="" coords="697,1549,714,1537,737,1514,757,1489,790,1432,813,1376,828,1329,833,1331,818,1378,795,1434,762,1491,741,1518,718,1541,700,1553"/>
+<area shape="poly" id="edge53_Node000092_Node000088" title=" " alt="" coords="699,1614,714,1601,741,1570,763,1535,798,1460,819,1387,831,1330,837,1331,825,1389,803,1462,768,1538,745,1573,718,1605,702,1618"/>
+<area shape="poly" id="edge56_Node000094_Node000086" title=" " alt="" coords="378,1162,437,1227,476,1263,520,1294,540,1305,538,1309,517,1299,473,1267,433,1230,374,1165"/>
+<area shape="poly" id="edge60_Node000094_Node000088" title=" " alt="" coords="437,1131,499,1128,571,1130,646,1142,682,1152,717,1166,749,1186,778,1211,821,1263,817,1266,774,1215,746,1190,715,1171,681,1157,645,1147,571,1136,499,1133,437,1136"/>
+<area shape="rect" id="Node000095" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html#acefd7e41cb994ce88d963c00e3b7b4d5" title="Adds a new network." alt="" coords="527,1245,707,1285"/>
+<area shape="poly" id="edge55_Node000094_Node000095" title=" " alt="" coords="393,1161,451,1195,520,1230,537,1237,535,1242,518,1235,448,1200,390,1166"/>
+<area shape="rect" id="Node000097" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html#a77d704eda022eb76a5945c72113b605a" title=" " alt="" coords="533,986,702,1026"/>
+<area shape="poly" id="edge57_Node000094_Node000097" title=" " alt="" coords="385,1121,444,1079,517,1035,533,1028,535,1033,520,1040,447,1083,388,1125"/>
+<area shape="rect" id="Node000100" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html#a4bf5d542e2320be73f1c96d36fd3f614" title="Enables a network." alt="" coords="519,1181,716,1221"/>
+<area shape="poly" id="edge59_Node000094_Node000100" title=" " alt="" coords="438,1158,514,1175,513,1180,436,1163"/>
+<area shape="rect" id="Node000101" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html#aa5406e36f540269502fec54510c338f0" title="Configures a network." alt="" coords="529,1051,706,1105"/>
+<area shape="poly" id="edge61_Node000094_Node000101" title=" " alt="" coords="436,1121,515,1101,516,1106,438,1126"/>
+<area shape="poly" id="edge58_Node000097_Node000088" title=" " alt="" coords="700,1024,718,1036,742,1061,764,1090,797,1152,821,1213,834,1262,829,1264,815,1214,793,1154,759,1093,738,1065,714,1040,697,1028"/>
+<area shape="poly" id="edge62_Node000101_Node000088" title=" " alt="" coords="689,1103,718,1122,752,1156,781,1194,825,1263,820,1266,777,1197,748,1160,714,1127,686,1108"/>
+<area shape="poly" id="edge64_Node000103_Node000088" title=" " alt="" coords="429,936,506,936,590,941,666,952,696,960,718,972,750,1002,776,1038,796,1078,812,1119,832,1199,840,1263,834,1263,826,1200,807,1121,791,1080,771,1041,746,1006,714,976,694,965,665,957,590,946,506,942,429,941"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="beerocks::ChannelScanTask::trigger_next_radio_scan" name="beerocks::ChannelScanTask::trigger_next_radio_scan">
+<area shape="rect" id="Node000001" title="Find the next pending Radio Scan and send a Trigger Scan request to the monitor." alt="" coords="243,5,432,45"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelScanTask.html#ad2818ef22c645aa1533475f6a25fc91a" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="5,5,195,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,28,195,28,195,23,229,23"/>
+</map>

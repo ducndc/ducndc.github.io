@@ -1,0 +1,11 @@
+<map id="son::db::restore_steer_history" name="son::db::restore_steer_history">
+<area shape="rect" id="Node000001" title="Get from persistent db all steer history event and register them on a system bus." alt="" coords="5,37,155,77"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1bpl.html#a3d6fffc72a34896fda6d9f6ce2929911" title="Get all entries by type as a nested map &lt;Entry&#45;name, &lt;Attrebute&#45;name, value&gt;&gt;." alt="" coords="207,5,353,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,43,193,37,194,42,155,48"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#ab57eb8b0f56ee5fc8e84477732b3cfdb" title="Adds NBAPI SteerEvent object. Data model path example: &quot;Device.WiFi.DataElements.SteerEvent...." alt="" coords="203,69,357,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,67,190,72,189,77,154,72"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#ac65d6f65812a13cae41ed412e381c6a6" title="Removes excessive NBAPI objects from system bus, if amount of them succeed the limit." alt="" coords="405,69,588,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="357,87,392,87,392,92,357,92"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a6db1e54425fbb798118e69c6de5b04b1" title="Get index and instance path from full data model path. Simplifies ambiorix/nbapi calls." alt="" coords="636,69,791,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="588,87,622,87,622,92,588,92"/>
+</map>

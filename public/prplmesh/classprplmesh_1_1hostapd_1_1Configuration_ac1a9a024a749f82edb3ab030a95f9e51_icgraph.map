@@ -1,0 +1,19 @@
+<map id="prplmesh::hostapd::Configuration::get_vap" name="prplmesh::hostapd::Configuration::get_vap">
+<area shape="rect" id="Node000001" title="helper: get exiting vap" alt="" coords="697,75,851,115"/>
+<area shape="rect" id="Node000002" href="$classprplmesh_1_1hostapd_1_1Configuration.html#ae7e6df94d49bb58285a4675f6f3d8f55" title="get the value of the given key for the given vap" alt="" coords="459,5,649,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="696,73,617,48,619,43,698,68"/>
+<area shape="rect" id="Node000004" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a122f30d1d97793a2d35937075250c1e6" title="set key/value for the given vap" alt="" coords="470,103,638,158"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="684,112,638,120,638,114,684,107"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1nl80211_1_1ap__wlan__hal__nl80211.html#aa6d44c5b5747025ee9fb493490b90d83" title="Update wifi credentials." alt="" coords="5,14,156,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="445,23,329,21,204,25,157,31,156,25,204,20,329,15,445,17"/>
+<area shape="poly" id="edge9_Node000004_Node000003" title=" " alt="" coords="490,100,451,83,410,69,344,56,277,48,156,42,156,37,277,43,345,51,411,64,453,78,492,95"/>
+<area shape="rect" id="Node000005" href="$classprplmesh_1_1hostapd_1_1Configuration.html#acf480b3cbde2baec907616db87b9269e" title="disables vap by setting start_disabled to 1 and removing the &quot;ssid&quot; parameter." alt="" coords="219,79,395,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="456,121,395,113,396,107,456,115"/>
+<area shape="rect" id="Node000006" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a1e7193fe68590ed8558b2c5f4730ed4f" title="set key/value for a vap or the head." alt="" coords="204,143,411,183"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="457,146,411,152,410,147,456,141"/>
+<area shape="rect" id="Node000007" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a556a0a50e595af8cb01c6cf2baf457f2" title="set key/value for a vap or the head." alt="" coords="204,207,411,247"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="485,166,412,197,377,209,376,204,410,192,483,161"/>
+<area shape="rect" id="Node000008" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a4949ecf6579bd61edde1de07e5975526" title="set key/value for the given vap" alt="" coords="223,271,391,326"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="520,170,471,216,412,261,389,273,386,269,409,256,468,212,517,166"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="214,78,155,63,157,58,215,73"/>
+</map>

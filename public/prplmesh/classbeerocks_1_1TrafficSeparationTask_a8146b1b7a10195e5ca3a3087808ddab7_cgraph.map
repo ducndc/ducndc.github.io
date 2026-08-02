@@ -1,0 +1,28 @@
+<map id="beerocks::TrafficSeparationTask::fill_wds_trunk_from_db" name="beerocks::TrafficSeparationTask::fill_wds_trunk_from_db">
+<area shape="rect" id="Node000001" title="Resolve one exact WDS trunk from current DB state." alt="" coords="5,129,197,169"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="273,31,436,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,127,183,96,244,67,271,58,273,63,246,72,185,101,134,132"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1network__utils.html#a57666a2cd1ba948bc17259e97d62b9c4" title="Get list of BSS interfaces." alt="" coords="277,81,432,121"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,129,263,116,264,121,198,134"/>
+<area shape="rect" id="Node000006" href="$namespacebeerocks_1_1net.html#a2a3ca7264c20333847455b3d008f30f3" title="Derive trunk mode (tagged/untagged) from profile&#45;disallow flags and policy." alt="" coords="245,177,464,202"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="198,162,261,172,260,177,197,167"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1net_1_1network__utils.html#a33df92609d8353b9455e87d82b833232" title="Gets the interface name of the network interface with given MAC address." alt="" coords="261,237,448,277"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="147,167,246,211,291,230,289,235,244,216,145,172"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1network__utils.html#afb3f2a54bf1096ca51513e1f370bd2c5" title="Get list of linux interfaces." alt="" coords="516,5,688,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="420,79,463,65,523,47,524,52,465,71,422,84"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1network__utils.html#ac33179916a7a42897fe851c1090f0bf9" title=" " alt="" coords="525,70,679,125"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="432,97,511,96,511,101,432,103"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="315,178,306,168,311,158,327,152,355,150,389,154,399,159,403,164,398,167,396,163,388,159,355,155,328,157,314,162,312,168,319,175"/>
+<area shape="rect" id="Node000007" href="$namespacebeerocks_1_1net.html#a5ae7541552c0d365b8b17682be8b33f3" title="Resolve unsupported disallow flags using certification policy." alt="" coords="525,173,679,213"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="464,188,512,189,512,195,464,194"/>
+<area shape="poly" id="edge8_Node000007_Node000007" title=" " alt="" coords="562,174,560,164,566,154,581,149,602,147,627,150,640,157,638,162,625,155,602,152,582,154,570,159,565,165,568,172"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1net_1_1network__utils.html#a9ed67fbcfac8592ae689144f0f2b8186" title=" " alt="" coords="512,237,692,277"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="448,255,498,255,498,260,448,260"/>
+<area shape="rect" id="Node000011" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="748,302,879,327"/>
+<area shape="poly" id="edge14_Node000008_Node000011" title=" " alt="" coords="445,275,512,287,629,300,735,308,734,313,629,305,512,292,444,280"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1string__utils.html#ac5ba735c54be1ae2bf849bf9c60257f6" title=" " alt="" coords="740,237,887,277"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="692,255,726,255,726,260,692,260"/>
+<area shape="poly" id="edge12_Node000009_Node000011" title=" " alt="" coords="677,275,753,296,751,301,676,280"/>
+<area shape="rect" id="Node000012" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="935,302,1081,327"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="879,312,921,312,921,317,879,317"/>
+</map>

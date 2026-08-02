@@ -1,0 +1,102 @@
+<map id="beerocks::slave_thread::send_cmdu" name="beerocks::slave_thread::send_cmdu">
+<area shape="rect" id="Node000001" title="Sends given CMDU message through the specified socket connection." alt="" coords="1445,630,1603,670"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ApAutoConfigurationTask.html#ada834f903766d60a484873465d14ae35" title="Parse the vendor extension from m2 for Radio Operational Mode." alt="" coords="1119,309,1397,364"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1512,618,1496,570,1472,511,1439,451,1419,424,1396,399,1373,381,1347,366,1349,362,1375,376,1399,395,1423,420,1443,449,1477,509,1501,568,1517,616"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a95d2fe317a667e36a2f20f5b45f3ba73" title="Parse the vendor extension from m2 for Service Status." alt="" coords="829,5,1071,60"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1517,616,1505,499,1481,343,1465,265,1445,195,1422,137,1409,116,1395,100,1361,73,1323,53,1282,38,1239,27,1152,17,1071,19,1071,13,1152,12,1240,22,1283,33,1325,48,1364,69,1399,96,1413,113,1427,135,1450,193,1470,264,1487,342,1510,499,1523,616"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#aa049b84aef7de43ce4938de95fefa56c" title=" " alt="" coords="1153,785,1363,825"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="1499,682,1455,727,1428,749,1399,768,1355,787,1353,782,1396,764,1425,745,1452,723,1495,679"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a4651e4f06a6208ce716370f1726a135c" title="Handles 1905 AP Autoconfiguration message." alt="" coords="534,571,757,625"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="1431,647,1397,645,757,607,757,602,1397,639,1432,641"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ab3e6c9261d9f4f6935e9eac943b8875e" title=" " alt="" coords="1154,849,1362,904"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1512,684,1494,720,1469,762,1437,803,1399,839,1364,858,1361,853,1396,834,1433,800,1465,759,1489,718,1507,682"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a5e28c715b45c8268101af80597430819" title="Parse Multi&#45;AP Policy Configuration message." alt="" coords="849,409,1051,464"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1498,621,1454,573,1427,549,1396,530,1357,512,1323,501,1262,492,1198,489,1118,478,1051,463,1052,458,1119,473,1199,483,1263,487,1325,496,1359,507,1399,525,1430,545,1458,569,1502,617"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a36c817d724198f0187bc08fc62dcf131" title=" " alt="" coords="1157,409,1359,464"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1504,619,1461,552,1430,516,1396,486,1358,465,1361,460,1399,481,1434,512,1465,548,1509,616"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1ServicePrioritizationTask.html#af956be6621a8c1424f57756f53ae6629" title="Forward QoS management descriptor TLVs to the owning AP manager." alt="" coords="1155,1137,1361,1192"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="1521,684,1505,785,1478,917,1462,982,1443,1042,1422,1091,1399,1125,1382,1139,1363,1150,1360,1145,1379,1135,1395,1122,1417,1089,1438,1040,1457,981,1473,915,1499,784,1515,683"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#a3d43c5d9aa58124152530fea7e473650" title=" " alt="" coords="1154,928,1362,983"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="1519,684,1505,735,1482,798,1447,862,1425,892,1399,917,1363,939,1361,934,1396,913,1421,888,1443,859,1477,796,1500,734,1514,683"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#a8ad86a62b13078b5251bb5444279c256" title=" " alt="" coords="1134,1007,1382,1047"/>
+<area shape="poly" id="edge22_Node000001_Node000017" title=" " alt="" coords="1523,684,1514,750,1494,834,1478,878,1457,921,1431,961,1399,996,1380,1009,1377,1005,1396,992,1427,958,1453,919,1473,876,1489,833,1509,749,1518,683"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1ApAutoConfigurationTask.html#abde6f5f875801d7797b0160d378211f3" title=" " alt="" coords="842,84,1058,139"/>
+<area shape="poly" id="edge25_Node000001_Node000019" title=" " alt="" coords="1517,617,1503,510,1478,369,1462,299,1443,237,1420,186,1395,153,1359,128,1318,109,1275,96,1230,88,1140,84,1058,92,1058,86,1140,79,1231,83,1276,90,1320,104,1362,123,1399,149,1425,183,1448,235,1467,298,1484,368,1508,509,1522,616"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a133d91ad40ad9b0d0ffb679e4de92ab9" title=" " alt="" coords="1153,655,1363,709"/>
+<area shape="poly" id="edge27_Node000001_Node000020" title=" " alt="" coords="1432,664,1363,672,1362,667,1431,658"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1ApAutoConfigurationTask.html#adb30b7e86baa7623b1bacf00163b42b9" title=" " alt="" coords="849,799,1051,853"/>
+<area shape="poly" id="edge33_Node000001_Node000025" title=" " alt="" coords="1483,680,1443,703,1398,723,1322,745,1260,754,1197,760,1119,775,1035,801,1033,796,1118,770,1197,755,1259,749,1320,740,1396,718,1441,698,1481,675"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#a4ee1a15bd44cd14d0271cfb67cd3e3e0" title="Sends an AP Metrics Query message for each bssid on &#39;bssid_list&#39; to the Fronthaul...." alt="" coords="1133,1071,1383,1111"/>
+<area shape="poly" id="edge35_Node000001_Node000026" title=" " alt="" coords="1526,684,1521,762,1503,863,1487,917,1465,970,1436,1019,1399,1061,1383,1073,1380,1069,1396,1057,1432,1016,1461,967,1482,915,1498,862,1515,761,1520,684"/>
+<area shape="rect" id="Node000031" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a50d8defc1b9d3b496a023b6378e4cf98" title="Send AP MLD Configuration to FHs." alt="" coords="1150,539,1366,579"/>
+<area shape="poly" id="edge41_Node000001_Node000031" title=" " alt="" coords="1464,627,1396,601,1336,582,1338,577,1398,595,1466,622"/>
+<area shape="rect" id="Node000034" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a72a581359091be1f52e50c3bd120e1c3" title="Sends AP&#45;MLD mode&#45;only update for a specific SSID on a radio." alt="" coords="1157,163,1359,203"/>
+<area shape="poly" id="edge47_Node000001_Node000034" title=" " alt="" coords="1520,616,1516,536,1499,431,1483,375,1461,320,1433,269,1395,224,1378,211,1358,201,1361,196,1381,206,1399,220,1437,266,1466,318,1488,373,1504,430,1521,536,1526,616"/>
+<area shape="rect" id="Node000035" href="$classbeerocks_1_1ApAutoConfigurationTask.html#ab9e7331dc7629c5f92f1f9e4ae028e7f" title=" " alt="" coords="1155,234,1361,274"/>
+<area shape="poly" id="edge49_Node000001_Node000035" title=" " alt="" coords="1518,617,1509,550,1489,464,1473,420,1452,376,1427,335,1395,299,1379,286,1360,276,1363,271,1382,281,1399,295,1431,331,1457,373,1478,417,1494,463,1514,549,1523,616"/>
+<area shape="rect" id="Node000037" href="$classbeerocks_1_1ServicePrioritizationTask.html#a2c18643c8c7ab8ae84bd8d9b99a84f5e" title="Sends notification to HostAP/Driver about the current service prioritization config." alt="" coords="1155,1219,1361,1259"/>
+<area shape="poly" id="edge52_Node000001_Node000037" title=" " alt="" coords="1522,684,1509,801,1485,957,1468,1036,1449,1108,1426,1166,1399,1206,1382,1220,1362,1230,1360,1225,1379,1216,1395,1203,1421,1164,1444,1106,1463,1035,1480,956,1504,800,1517,684"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a77a1197c159c919b540d58d0856a97ab" title=" " alt="" coords="849,294,1051,334"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1104,328,1051,324,1052,319,1105,323"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a63e7e8c1cffc9f7b1bf8929f5b1ba266" title="Parse AP&#45;Autoconfiguration and apply configuration if M2/M8 is present." alt="" coords="518,258,773,298"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="834,303,773,296,773,290,835,298"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="255,497,458,537"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="611,309,384,498,381,494,608,305"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="839,69,831,74,775,118,727,170,688,220,661,259,657,256,684,217,723,167,772,114,828,69,836,64"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="534,569,428,539,429,534,535,564"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ab2452024f7d97d1001a79ab2b61e84ce" title="Handle CMDU message." alt="" coords="541,950,749,990"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="1141,897,750,957,749,952,1140,892"/>
+<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="835,444,680,457,510,479,425,499,424,494,509,474,680,451,835,439"/>
+<area shape="poly" id="edge15_Node000012_Node000004" title=" " alt="" coords="1143,415,1070,399,949,377,896,366,829,349,757,325,694,301,695,296,759,320,830,343,897,361,950,372,1071,394,1144,410"/>
+<area shape="poly" id="edge16_Node000012_Node000011" title=" " alt="" coords="1143,439,1052,439,1052,434,1143,434"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1ServicePrioritizationTask.html#a1137988bf2924d503eb455159df06ec2" title=" " alt="" coords="509,1171,781,1211"/>
+<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="1141,1172,782,1188,782,1183,1141,1167"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1ServicePrioritizationTask.html#a596f45b7e89d646058fa9f92e529f15e" title="Handle CMDU message." alt="" coords="257,1171,456,1211"/>
+<area shape="poly" id="edge19_Node000014_Node000015" title=" " alt="" coords="496,1194,456,1194,456,1189,496,1189"/>
+<area shape="poly" id="edge21_Node000016_Node000010" title=" " alt="" coords="1140,961,749,970,749,965,1140,955"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#a8626490386e0c5ca6e6630b1cea34ccc" title=" " alt="" coords="833,979,1067,1019"/>
+<area shape="poly" id="edge23_Node000017_Node000018" title=" " alt="" coords="1120,1017,1067,1013,1068,1007,1121,1012"/>
+<area shape="poly" id="edge24_Node000018_Node000010" title=" " alt="" coords="819,989,749,983,750,977,819,984"/>
+<area shape="poly" id="edge26_Node000019_Node000004" title=" " alt="" coords="860,147,831,160,744,212,675,260,672,256,741,207,828,156,857,142"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aa85c6f665898794b2fbc04e85a6bdc3a" title="Wait until given radio radio_iface has completed the AP configuration. Perform the necessary actions ..." alt="" coords="849,720,1051,775"/>
+<area shape="poly" id="edge28_Node000020_Node000021" title=" " alt="" coords="1141,710,1052,729,1051,723,1139,704"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aa896d647bc56c4e4a4863e2bafd7c48f" title="Parse AP&#45;Autoconfiguration Renew message." alt="" coords="534,653,757,708"/>
+<area shape="poly" id="edge31_Node000020_Node000024" title=" " alt="" coords="1140,684,757,684,757,678,1140,679"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aec7c837c390bb5fa3bd9237f3c5498ec" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="544,769,747,809"/>
+<area shape="poly" id="edge29_Node000021_Node000022" title=" " alt="" coords="835,766,747,778,747,772,835,760"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a0805d78df62071cfdd3ad89bddc67963" title="Handle events, which are being send from containing thread." alt="" coords="255,769,458,809"/>
+<area shape="poly" id="edge30_Node000022_Node000023" title=" " alt="" coords="530,791,458,791,458,786,530,786"/>
+<area shape="poly" id="edge32_Node000024_Node000005" title=" " alt="" coords="533,651,508,639,469,615,433,588,377,539,380,535,436,584,472,611,511,634,535,646"/>
+<area shape="poly" id="edge34_Node000025_Node000022" title=" " alt="" coords="835,815,747,804,747,798,835,809"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#a6982045ccca14450dee286d489b95c5c" title="Callback of the timer that sends periodic AP Metrics Report." alt="" coords="846,1107,1054,1147"/>
+<area shape="poly" id="edge36_Node000026_Node000027" title=" " alt="" coords="1120,1110,1055,1118,1054,1113,1119,1105"/>
+<area shape="rect" id="Node000030" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ac9a314ab00c022c45d1debb8d45e5e1c" title=" " alt="" coords="846,1043,1054,1083"/>
+<area shape="poly" id="edge39_Node000026_Node000030" title=" " alt="" coords="1119,1081,1054,1075,1054,1070,1120,1076"/>
+<area shape="rect" id="Node000028" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ac5afcf33798c915971e489dab51ee587" title="Schedules periodic reporting according to the new metric reporting policy." alt="" coords="541,1092,749,1147"/>
+<area shape="poly" id="edge37_Node000027_Node000028" title=" " alt="" coords="832,1127,750,1125,750,1119,832,1122"/>
+<area shape="rect" id="Node000029" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#a6ddc1aebb881c86980486b3bf9937476" title="Handle events, which are being send from containing thread." alt="" coords="253,1099,461,1139"/>
+<area shape="poly" id="edge38_Node000028_Node000029" title=" " alt="" coords="528,1122,461,1122,461,1117,528,1117"/>
+<area shape="poly" id="edge40_Node000030_Node000010" title=" " alt="" coords="857,1042,829,1034,703,993,704,988,830,1029,858,1037"/>
+<area shape="rect" id="Node000032" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a4c8e3087fb11faf3faad6d746bc9fad4" title="Handle Agent AP MLD Configuration TLV from the controller." alt="" coords="849,488,1051,543"/>
+<area shape="poly" id="edge42_Node000031_Node000032" title=" " alt="" coords="1136,545,1051,532,1052,527,1137,539"/>
+<area shape="rect" id="Node000033" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a3483fc78bfe63224fb7ad4a5cf20d76a" title="Parse AP MLD Configuration Request message." alt="" coords="532,489,759,544"/>
+<area shape="poly" id="edge46_Node000031_Node000033" title=" " alt="" coords="1136,567,989,566,829,557,758,546,759,540,830,551,989,561,1136,561"/>
+<area shape="poly" id="edge43_Node000032_Node000004" title=" " alt="" coords="839,484,828,478,773,435,725,385,685,338,658,300,662,297,690,334,728,382,776,431,831,473,841,479"/>
+<area shape="poly" id="edge44_Node000032_Node000033" title=" " alt="" coords="835,519,759,519,759,514,835,513"/>
+<area shape="poly" id="edge45_Node000033_Node000005" title=" " alt="" coords="518,519,458,519,458,514,518,514"/>
+<area shape="poly" id="edge48_Node000034_Node000004" title=" " alt="" coords="1143,180,993,183,911,191,830,205,751,230,685,260,683,256,749,225,829,199,910,185,993,178,1143,175"/>
+<area shape="rect" id="Node000036" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7463a76b6a73f05fee9c09d990a2a654" title=" " alt="" coords="839,215,1061,269"/>
+<area shape="poly" id="edge50_Node000035_Node000036" title=" " alt="" coords="1141,252,1062,249,1062,244,1141,247"/>
+<area shape="poly" id="edge51_Node000036_Node000004" title=" " alt="" coords="825,259,773,266,773,260,824,254"/>
+<area shape="rect" id="Node000038" href="$classbeerocks_1_1ServicePrioritizationTask.html#aec7e243086895d0391886903e7dd296a" title=" " alt="" coords="851,1222,1049,1262"/>
+<area shape="poly" id="edge53_Node000037_Node000038" title=" " alt="" coords="1141,1243,1049,1244,1049,1238,1141,1238"/>
+<area shape="poly" id="edge58_Node000038_Node000014" title=" " alt="" coords="837,1226,766,1214,767,1209,838,1221"/>
+<area shape="rect" id="Node000039" href="$classbeerocks_1_1ServicePrioritizationTask.html#a7e2e62b9c3b2d4aff9130236d0d10c91" title=" " alt="" coords="546,1235,745,1275"/>
+<area shape="poly" id="edge54_Node000038_Node000039" title=" " alt="" coords="837,1250,745,1254,745,1248,837,1244"/>
+<area shape="rect" id="Node000040" href="$classbeerocks_1_1ServicePrioritizationTask.html#a8ebca74339d5ba7171bb7e1da622f3dd" title="Handle events, which are being send from containing thread." alt="" coords="257,1235,456,1275"/>
+<area shape="poly" id="edge55_Node000039_Node000040" title=" " alt="" coords="533,1258,456,1258,456,1253,533,1253"/>
+<area shape="rect" id="Node000041" href="$classbeerocks_1_1ServicePrioritizationTask.html#aacba0133addb53651c88e76e57ae9a86" title=" " alt="" coords="252,1299,461,1339"/>
+<area shape="poly" id="edge56_Node000039_Node000041" title=" " alt="" coords="541,1281,448,1302,447,1297,540,1276"/>
+<area shape="rect" id="Node000042" href="$classbeerocks_1_1ServicePrioritizationTask.html#a91e60881a7bef29731f794ef7f13043f" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="5,1299,204,1339"/>
+<area shape="poly" id="edge57_Node000041_Node000042" title=" " alt="" coords="238,1322,204,1322,204,1317,238,1317"/>
+</map>

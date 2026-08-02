@@ -1,0 +1,11 @@
+<map id="bwl::nl80211::wpa_ctrl_socket_event::del_event_fd" name="bwl::nl80211::wpa_ctrl_socket_event::del_event_fd">
+<area shape="rect" id="Node000001" title="Removes wpa_ctrl event socket from monitored event queues list." alt="" coords="677,37,867,77"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a609ed83012c520db859b121211bd4e36" title="Detach and close event socket to hostapd/wpa_supplicant deamon." alt="" coords="451,37,629,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="663,60,630,60,630,55,663,55"/>
+<area shape="rect" id="Node000003" href="$classdevice_1_1serial_1_1SerialDevice.html#a86412c3938993f5fa486643d11ebcf87" title=" " alt="" coords="225,5,403,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,45,403,41,403,35,437,40"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a133c4403ab2cc3943128e25277ddf2d4" title="Closes wpa_ctrl event socket and remove the relative file descriptor from event monitoring FDs queue." alt="" coords="238,69,390,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="437,75,391,81,390,76,436,69"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#ac60d9b281805d469409ce0df0facc454" title="Custom destructor of wpa_ctrl event socket object. It enforces socket disconnection." alt="" coords="5,62,177,117"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="224,92,178,92,178,87,224,87"/>
+</map>

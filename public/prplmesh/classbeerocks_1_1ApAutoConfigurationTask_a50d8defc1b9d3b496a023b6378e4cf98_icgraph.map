@@ -1,0 +1,13 @@
+<map id="beerocks::ApAutoConfigurationTask::send_ap_mld_configuration" name="beerocks::ApAutoConfigurationTask::send_ap_mld_configuration">
+<area shape="rect" id="Node000001" title="Send AP MLD Configuration to FHs." alt="" coords="809,46,1025,86"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a4c8e3087fb11faf3faad6d746bc9fad4" title="Handle Agent AP MLD Configuration TLV from the controller." alt="" coords="559,5,761,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="795,53,761,48,762,43,796,48"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a3483fc78bfe63224fb7ad4a5cf20d76a" title="Parse AP MLD Configuration Request message." alt="" coords="270,71,497,125"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="796,76,497,94,497,89,795,71"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a63e7e8c1cffc9f7b1bf8929f5b1ba266" title="Parse AP&#45;Autoconfiguration and apply configuration if M2/M8 is present." alt="" coords="256,6,511,46"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="545,33,511,32,511,26,545,27"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="546,62,498,74,496,69,545,57"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="5,42,208,82"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="243,47,208,51,208,46,242,42"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="256,84,208,78,209,73,257,79"/>
+</map>

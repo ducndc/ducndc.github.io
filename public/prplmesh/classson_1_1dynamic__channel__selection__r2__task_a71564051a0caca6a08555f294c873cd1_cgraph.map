@@ -1,0 +1,13 @@
+<map id="son::dynamic_channel_selection_r2_task::abort_active_scans_in_agent" name="son::dynamic_channel_selection_r2_task::abort_active_scans_in_agent">
+<area shape="rect" id="Node000001" title="Abort all the requests for current agent. Used if something went wrong in one of the TLVF creation st..." alt="" coords="5,62,173,117"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#acfdbeaf62662fd4f581cb1673e76a63c" title="Get the channel scan is enabled flag." alt="" coords="223,5,366,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,61,216,47,218,52,174,66"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#afe98dc62c8a09a249ec2bdb4901c27a8" title="Set the channel scan in progress object." alt="" coords="223,69,366,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="174,87,209,87,209,92,174,92"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a79f107d7e0d99d3eb775106767d3c1a7" title="Set the channel scan results status object." alt="" coords="221,133,368,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="174,113,218,127,216,132,173,118"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="416,69,543,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="354,43,409,62,407,67,352,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="366,87,402,87,402,92,366,92"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="352,131,407,111,409,116,354,136"/>
+</map>

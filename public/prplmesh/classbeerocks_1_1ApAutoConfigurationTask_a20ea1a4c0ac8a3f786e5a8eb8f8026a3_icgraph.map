@@ -1,0 +1,10 @@
+<map id="beerocks::ApAutoConfigurationTask::handle_profile2_traffic_separation_policy_tlv" name="beerocks::ApAutoConfigurationTask::handle_profile2_traffic_separation_policy_tlv">
+<area shape="rect" id="Node000001" title=" " alt="" coords="559,34,761,89"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a63e7e8c1cffc9f7b1bf8929f5b1ba266" title="Parse AP&#45;Autoconfiguration and apply configuration if M2/M8 is present." alt="" coords="256,5,511,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="545,49,511,45,511,39,545,44"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a5e28c715b45c8268101af80597430819" title="Parse Multi&#45;AP Policy Configuration message." alt="" coords="282,70,485,125"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="545,79,485,87,485,82,545,74"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="5,41,208,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="243,46,208,51,208,46,242,41"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="268,85,208,77,209,72,269,80"/>
+</map>

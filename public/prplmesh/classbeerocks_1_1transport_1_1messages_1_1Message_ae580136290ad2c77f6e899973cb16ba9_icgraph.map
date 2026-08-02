@@ -1,0 +1,118 @@
+<map id="beerocks::transport::messages::Message::frames" name="beerocks::transport::messages::Message::frames">
+<area shape="rect" id="Node000001" title=" " alt="" coords="2417,998,2568,1053"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1transport_1_1messages_1_1CmduXxMessage.html#aec60a284de2ed6a265ff3944a632b5ab" title=" " alt="" coords="1814,256,2049,296"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2486,984,2473,858,2450,691,2434,607,2415,531,2393,468,2367,426,2335,394,2298,368,2258,345,2215,327,2129,301,2049,287,2049,281,2130,296,2217,322,2260,340,2301,363,2338,390,2371,422,2398,466,2420,529,2440,606,2456,690,2479,857,2491,984"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1transport_1_1messages_1_1Message.html#a4a4513b1d55938888a1e11289973ca44" title=" " alt="" coords="2164,1611,2315,1666"/>
+<area shape="poly" id="edge16_Node000001_Node000022" title=" " alt="" coords="2491,1067,2478,1189,2455,1348,2439,1428,2420,1501,2397,1560,2371,1602,2346,1621,2316,1633,2314,1628,2343,1617,2367,1598,2392,1558,2414,1499,2433,1427,2449,1347,2473,1188,2485,1066"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1transport_1_1messages_1_1CmduXxMessage.html#aad4266b0f33280666589d6124bbd0e4b" title=" " alt="" coords="2138,191,2341,246"/>
+<area shape="poly" id="edge17_Node000001_Node000023" title=" " alt="" coords="2485,985,2471,841,2447,647,2431,548,2412,456,2391,379,2367,324,2351,301,2331,281,2288,248,2291,244,2335,277,2355,298,2372,321,2396,378,2417,455,2436,547,2452,646,2477,841,2491,984"/>
+<area shape="rect" id="Node000028" href="$classbeerocks_1_1transport_1_1messages_1_1SubscribeMessage.html#a1159e2e75f02e02a4f6cecda4be24598" title=" " alt="" coords="2135,849,2344,903"/>
+<area shape="poly" id="edge26_Node000001_Node000028" title=" " alt="" coords="2432,993,2285,906,2288,901,2435,989"/>
+<area shape="rect" id="Node000044" href="$classbeerocks_1_1transport_1_1messages_1_1CmduTxConfirmationMessage.html#add75ccb8e28169017dc0beaf192f2ba5" title=" " alt="" coords="2128,437,2351,491"/>
+<area shape="poly" id="edge49_Node000001_Node000044" title=" " alt="" coords="2471,986,2250,492,2255,490,2476,984"/>
+<area shape="rect" id="Node000046" href="$classbeerocks_1_1transport_1_1messages_1_1InterfaceConfigurationRequestMessage.html#a6dc9f559d37bc3be6c6cd990cf61c4c4" title=" " alt="" coords="2126,1389,2353,1443"/>
+<area shape="poly" id="edge52_Node000001_Node000046" title=" " alt="" coords="2473,1066,2428,1149,2372,1243,2315,1324,2265,1390,2261,1387,2311,1321,2367,1240,2424,1146,2468,1064"/>
+<area shape="rect" id="Node000049" href="$classbeerocks_1_1transport_1_1messages_1_1AlMacAddressConfigurationMessage.html#aea6942fbbd0e2c4be16b4a360d107893" title=" " alt="" coords="2109,1174,2369,1229"/>
+<area shape="poly" id="edge57_Node000001_Node000049" title=" " alt="" coords="2443,1063,2282,1176,2278,1172,2440,1058"/>
+<area shape="rect" id="Node000053" href="$classbeerocks_1_1transport_1_1messages_1_1VlanConfigurationRequestMessage.html#a9a30ad7a0fb41b6ddb8222d90874ca50" title=" " alt="" coords="2139,1533,2340,1587"/>
+<area shape="poly" id="edge62_Node000001_Node000053" title=" " alt="" coords="2491,1067,2480,1144,2459,1245,2444,1299,2424,1354,2400,1408,2372,1457,2354,1480,2333,1501,2290,1534,2286,1530,2329,1497,2350,1477,2367,1455,2396,1405,2419,1352,2439,1298,2454,1244,2475,1143,2485,1066"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#addd332ccb3d5ef11758d6024c8dba480" title=" " alt="" coords="657,307,808,376"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1800,285,1625,290,1431,293,1180,293,1079,297,978,306,809,330,808,325,978,301,1079,292,1180,288,1431,288,1625,285,1800,279"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#a3cfbb327674950e28f104e54fabd6c93" title="Sends a CDMU message to the transport process for dispatching." alt="" coords="1571,213,1753,253"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="1800,258,1753,250,1754,245,1801,253"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#a14913e65d7efeede44ede7ffca4c722c" title=" " alt="" coords="1579,134,1745,189"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="1869,253,1726,191,1728,186,1871,248"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#ac6a0bfd2d9df005008879413bcf5b611" title=" " alt="" coords="397,1145,584,1199"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="720,390,503,1145,497,1144,715,389"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#a986eb800fb75dff9d31d69e4ec013f2f" title="Starts the transport process." alt="" coords="211,966,349,1021"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="445,1138,312,1023,315,1019,449,1134"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,981,109,1006"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="197,996,110,996,110,991,197,991"/>
+<area shape="rect" id="Node000007" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,923,163,949"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="197,972,127,951,129,946,198,967"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#a45fe4484b796e9f07ad78aae74999951" title="Forwards a CMDU message to the transport process for dispatching." alt="" coords="1341,149,1518,189"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1575,212,1502,192,1503,187,1576,207"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#af76c899c13b8b033b5726995a5b5b16c" title="Sends a CDMU message to the transport process for dispatching." alt="" coords="1341,213,1518,253"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="1557,236,1518,236,1518,231,1557,231"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#ad021b7e892d402112bff57dbe158fec8" title=" " alt="" coords="1349,70,1509,125"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1565,138,1509,122,1510,117,1567,132"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#a9654fd0d5e4df6647c18c386b300dd1c" title="forward a 1905.1 packet." alt="" coords="1112,134,1251,189"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1336,124,1251,146,1250,141,1335,119"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#a3cd16c188572052c173b1539519d9831" title=" " alt="" coords="885,166,1023,221"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="1099,176,1024,186,1023,181,1098,170"/>
+<area shape="poly" id="edge14_Node000014_Node000003" title=" " alt="" coords="902,231,787,309,784,304,899,226"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#a544c2bd15f658cda27b9f094c854a47c" title=" " alt="" coords="632,166,833,221"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="871,196,834,196,834,191,871,191"/>
+<area shape="poly" id="edge18_Node000023_Node000002" title=" " alt="" coords="2125,243,2040,259,2039,253,2124,237"/>
+<area shape="poly" id="edge19_Node000023_Node000003" title=" " alt="" coords="2186,255,2128,286,2062,311,1968,333,1888,346,1817,353,1750,354,1609,349,1431,344,1180,344,808,344,808,339,1180,339,1431,339,1610,344,1750,349,1816,348,1887,341,1967,328,2061,305,2126,281,2183,251"/>
+<area shape="poly" id="edge24_Node000023_Node000008" title=" " alt="" coords="2124,224,1754,234,1754,228,2124,219"/>
+<area shape="poly" id="edge25_Node000023_Node000011" title=" " alt="" coords="2124,210,1745,172,1745,167,2125,205"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#a7fa1b2a7394d32f50b58221e3229e618" title="Handles transport message received from server." alt="" coords="1843,91,2020,131"/>
+<area shape="poly" id="edge20_Node000023_Node000024" title=" " alt="" coords="2158,189,2060,152,2002,133,2004,128,2062,147,2160,184"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1transport_1_1messages_1_1CmduXxMessage.html#aee91ca193ed7279fef32ab3e2e518406" title=" " alt="" coords="1830,11,2033,66"/>
+<area shape="poly" id="edge23_Node000023_Node000027" title=" " alt="" coords="2199,184,2136,131,2099,104,2060,81,2032,68,2034,63,2063,76,2102,100,2140,127,2202,180"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#a582285fdba8c4042d5a0e9e844d7104c" title="Handles the read event in a client socket connected to the server socket." alt="" coords="1573,37,1751,77"/>
+<area shape="poly" id="edge21_Node000024_Node000025" title=" " alt="" coords="1829,93,1751,77,1752,72,1830,88"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#adab8f3342b3feee39d48d0ad95f8927e" title="Class constructor." alt="" coords="1341,5,1518,45"/>
+<area shape="poly" id="edge22_Node000025_Node000026" title=" " alt="" coords="1559,46,1518,40,1518,35,1560,41"/>
+<area shape="rect" id="Node000029" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#ad5c73e0980512c66c075a0d3d6ad9891" title="Handle broker subscribe/unsubscribe messages." alt="" coords="1856,733,2007,787"/>
+<area shape="poly" id="edge27_Node000028_Node000029" title=" " alt="" coords="2156,846,2060,809,2006,789,2008,784,2062,804,2158,841"/>
+<area shape="rect" id="Node000035" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#a8980812b1e78aa971494f7a7e9297ce7" title=" " alt="" coords="881,853,1027,893"/>
+<area shape="poly" id="edge42_Node000028_Node000035" title=" " alt="" coords="2121,879,1663,879,1428,879,1027,877,1027,871,1428,873,1663,873,2121,873"/>
+<area shape="rect" id="Node000036" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#add00e3fe675e4d0fe263f2358c5e77a1" title=" " alt="" coords="881,917,1027,957"/>
+<area shape="poly" id="edge43_Node000028_Node000036" title=" " alt="" coords="2121,895,1909,918,1786,926,1663,929,1428,929,1209,932,1027,937,1027,932,1209,927,1428,924,1663,924,1785,921,1908,912,2121,890"/>
+<area shape="rect" id="Node000037" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#afd8c0ea3202be1c377496acf016b8682" title=" " alt="" coords="881,1036,1027,1076"/>
+<area shape="poly" id="edge44_Node000028_Node000037" title=" " alt="" coords="2222,917,2196,962,2161,1012,2116,1060,2090,1081,2063,1098,2007,1123,1958,1137,1913,1143,1870,1142,1778,1132,1725,1126,1663,1124,1428,1124,1318,1119,1208,1107,1027,1075,1027,1070,1209,1101,1318,1114,1428,1119,1663,1119,1725,1121,1778,1126,1870,1137,1913,1137,1957,1132,2005,1118,2060,1094,2087,1077,2113,1056,2157,1009,2192,959,2217,914"/>
+<area shape="rect" id="Node000038" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#a888fe4716d4553bdbce4c6097f5b2bf7" title=" " alt="" coords="881,507,1027,547"/>
+<area shape="poly" id="edge45_Node000028_Node000038" title=" " alt="" coords="2222,836,2200,780,2165,714,2119,647,2091,618,2060,593,2008,560,1961,538,1917,524,1874,517,1781,515,1663,517,1428,517,1209,521,1027,526,1027,521,1209,515,1428,512,1663,512,1781,510,1874,512,1918,519,1963,533,2010,556,2063,588,2095,614,2123,644,2170,711,2205,778,2227,834"/>
+<area shape="rect" id="Node000039" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#aec9cce140e2a84e581a0ec70475b11d1" title=" " alt="" coords="881,583,1027,623"/>
+<area shape="poly" id="edge46_Node000028_Node000039" title=" " alt="" coords="2215,838,2190,794,2154,745,2111,696,2060,656,2006,624,1959,602,1915,586,1872,576,1780,568,1663,568,1428,568,1318,571,1209,578,1027,596,1027,591,1208,573,1318,566,1428,563,1663,563,1780,563,1873,571,1916,581,1961,597,2009,620,2063,651,2114,692,2158,741,2194,791,2220,835"/>
+<area shape="rect" id="Node000040" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#ab35e9687d0b6e24c8facc75e13fe5639" title=" " alt="" coords="881,671,1027,711"/>
+<area shape="poly" id="edge47_Node000028_Node000040" title=" " alt="" coords="2203,840,2140,780,2101,750,2060,724,1956,671,1870,639,1827,629,1780,623,1663,619,1428,619,1318,624,1208,638,1109,657,1027,675,1026,670,1108,651,1208,633,1317,619,1428,613,1663,613,1780,618,1828,624,1871,634,1958,666,2063,719,2105,745,2144,776,2207,836"/>
+<area shape="rect" id="Node000041" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#a6230cd634bb02d734b5a86039fc703a8" title=" " alt="" coords="881,789,1027,829"/>
+<area shape="poly" id="edge48_Node000028_Node000041" title=" " alt="" coords="2121,862,1908,840,1785,831,1663,828,1428,828,1209,824,1027,816,1027,811,1209,818,1428,823,1663,823,1786,826,1909,834,2121,857"/>
+<area shape="rect" id="Node000042" href="$classbeerocks_1_1transport_1_1messages_1_1SubscribeMessage.html#addbb36a823f80c9e3e2a69ffa2c53d14" title=" " alt="" coords="1827,965,2036,1019"/>
+<area shape="poly" id="edge40_Node000028_Node000042" title=" " alt="" coords="2158,911,2062,948,2010,967,2008,962,2060,943,2156,906"/>
+<area shape="rect" id="Node000043" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#ae5d2205cbd734364008b8cd59947bd26" title="Subscribes for the reception of a set of CMDU messages." alt="" coords="1843,1044,2020,1084"/>
+<area shape="poly" id="edge41_Node000028_Node000043" title=" " alt="" coords="2207,916,2144,977,2105,1008,2063,1034,2021,1051,2019,1046,2060,1030,2102,1004,2141,973,2204,912"/>
+<area shape="rect" id="Node000030" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#a536d51f93acafd3ee9be76ba4ae6f093" title="Handle incoming message." alt="" coords="1587,733,1737,787"/>
+<area shape="poly" id="edge28_Node000029_Node000030" title=" " alt="" coords="1842,763,1738,763,1738,757,1842,757"/>
+<area shape="rect" id="Node000031" href="$classbeerocks_1_1transport_1_1broker_1_1tests_1_1BrokerServerWrapper.html#ad7fef60b07ef1d92f91dffec3a25fed3" title="Handle incoming message." alt="" coords="1336,654,1523,709"/>
+<area shape="poly" id="edge29_Node000030_Node000031" title=" " alt="" coords="1573,733,1510,711,1512,706,1575,728"/>
+<area shape="rect" id="Node000032" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#a7b77e4e08323db856c6d0d9b76c805eb" title="Handler method to accept incoming socket connections." alt="" coords="1354,733,1505,787"/>
+<area shape="poly" id="edge30_Node000030_Node000032" title=" " alt="" coords="1573,763,1505,763,1505,757,1573,757"/>
+<area shape="rect" id="Node000033" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#ae59a2e90ac53b2d299644ccefa09a2b8" title="Start the Broker&#39;s server socket." alt="" coords="1106,733,1257,787"/>
+<area shape="poly" id="edge31_Node000032_Node000033" title=" " alt="" coords="1340,763,1257,763,1257,757,1340,757"/>
+<area shape="poly" id="edge32_Node000033_Node000007" title=" " alt="" coords="1092,760,734,755,489,755,428,760,367,775,308,798,254,824,161,881,102,925,99,921,158,876,251,819,306,793,365,770,427,755,489,749,734,749,1092,755"/>
+<area shape="poly" id="edge33_Node000033_Node000035" title=" " alt="" coords="1120,796,1028,844,1002,856,1000,851,1025,839,1117,791"/>
+<area shape="poly" id="edge34_Node000033_Node000036" title=" " alt="" coords="1149,800,1095,854,1028,908,1007,920,1005,915,1025,903,1091,850,1145,796"/>
+<area shape="poly" id="edge35_Node000033_Node000037" title=" " alt="" coords="1155,800,1029,971,974,1038,970,1034,1025,968,1151,797"/>
+<area shape="poly" id="edge36_Node000033_Node000038" title=" " alt="" coords="1152,723,1097,649,1063,609,1025,573,992,549,995,545,1028,569,1066,606,1102,646,1157,720"/>
+<area shape="poly" id="edge37_Node000033_Node000039" title=" " alt="" coords="1128,727,983,625,986,621,1131,723"/>
+<area shape="poly" id="edge38_Node000033_Node000040" title=" " alt="" coords="1092,736,1020,713,1021,708,1094,731"/>
+<area shape="poly" id="edge39_Node000033_Node000041" title=" " alt="" coords="1093,782,1027,796,1026,791,1092,777"/>
+<area shape="poly" id="edge50_Node000044_Node000003" title=" " alt="" coords="2114,467,1663,467,1180,467,1129,464,1077,458,975,436,883,407,807,377,809,372,885,402,977,430,1078,453,1129,459,1180,461,1663,461,2114,461"/>
+<area shape="rect" id="Node000045" href="$classbeerocks_1_1transport_1_1messages_1_1CmduTxConfirmationMessage.html#a9c248b7bdf684c88b4e4405c76dd2e50" title=" " alt="" coords="1820,371,2043,426"/>
+<area shape="poly" id="edge51_Node000044_Node000045" title=" " alt="" coords="2114,440,2042,425,2043,420,2115,435"/>
+<area shape="rect" id="Node000047" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#a03d7935ee0520c1212c8e53b8c057b57" title="Configures the transport process to use given network bridge." alt="" coords="1843,1432,2020,1472"/>
+<area shape="poly" id="edge53_Node000046_Node000047" title=" " alt="" coords="2112,1433,2021,1444,2020,1439,2112,1428"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#ab295e9ba7e9cf2ced0efed1f543296a6" title=" " alt="" coords="1075,1265,1288,1335"/>
+<area shape="poly" id="edge54_Node000046_Node000021" title=" " alt="" coords="2171,1451,2119,1472,2062,1487,1989,1498,1932,1501,1874,1497,1801,1487,1652,1458,1506,1418,1375,1376,1269,1337,1271,1332,1376,1371,1508,1413,1653,1452,1802,1481,1875,1491,1932,1495,1989,1493,2061,1481,2117,1466,2169,1446"/>
+<area shape="rect" id="Node000048" href="$classbeerocks_1_1transport_1_1messages_1_1InterfaceConfigurationRequestMessage.html#a2c772043331e9dc7966f82afd930fe71" title=" " alt="" coords="1818,1353,2045,1407"/>
+<area shape="poly" id="edge56_Node000046_Node000048" title=" " alt="" coords="2112,1404,2045,1396,2045,1391,2112,1398"/>
+<area shape="poly" id="edge55_Node000021_Node000004" title=" " alt="" coords="1061,1291,859,1265,744,1245,631,1221,565,1202,567,1197,633,1216,745,1240,860,1259,1061,1286"/>
+<area shape="rect" id="Node000050" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#aa00b7d417c9dd3c8641e65abcc0c8a4c" title="Configures the transport process to bind a given local al_mac address." alt="" coords="1843,1209,2020,1249"/>
+<area shape="poly" id="edge58_Node000049_Node000050" title=" " alt="" coords="2096,1217,2020,1224,2020,1219,2095,1212"/>
+<area shape="rect" id="Node000051" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#a66b78e1a377d3175569bed45524e9f7b" title=" " alt="" coords="651,1137,814,1207"/>
+<area shape="poly" id="edge59_Node000049_Node000051" title=" " alt="" coords="2095,1193,1891,1181,1663,1175,1180,1175,814,1175,814,1169,1180,1169,1663,1169,1891,1175,2096,1187"/>
+<area shape="rect" id="Node000052" href="$classbeerocks_1_1transport_1_1messages_1_1AlMacAddressConfigurationMessage.html#a9ef9f7d735ec4352a89c1ca37107591f" title=" " alt="" coords="1801,1274,2061,1329"/>
+<area shape="poly" id="edge61_Node000049_Node000052" title=" " alt="" coords="2147,1236,2062,1264,2023,1277,2021,1271,2061,1259,2145,1231"/>
+<area shape="poly" id="edge60_Node000051_Node000004" title=" " alt="" coords="637,1175,584,1175,584,1169,637,1169"/>
+<area shape="rect" id="Node000054" href="$classbeerocks_1_1btl_1_1BrokerClientImpl.html#adc39a61fca2ef5256b41955b904cf278" title="Configures the transport process to use the primary vlan id." alt="" coords="1843,1598,2020,1653"/>
+<area shape="poly" id="edge63_Node000053_Node000054" title=" " alt="" coords="2126,1587,2021,1609,2020,1604,2125,1582"/>
+<area shape="rect" id="Node000055" href="$classbeerocks_1_1transport_1_1Ieee1905Transport.html#aae6fdb9b0b4d345cbe0daf69bf23ca6f" title=" " alt="" coords="1091,1469,1271,1539"/>
+<area shape="poly" id="edge64_Node000053_Node000055" title=" " alt="" coords="2125,1563,1772,1557,1554,1547,1336,1531,1271,1522,1272,1517,1336,1525,1555,1542,1773,1551,2125,1558"/>
+<area shape="rect" id="Node000056" href="$classbeerocks_1_1transport_1_1messages_1_1VlanConfigurationRequestMessage.html#aa3ef226e51e1845fccc65217b2488b7e" title=" " alt="" coords="1831,1677,2032,1731"/>
+<area shape="poly" id="edge66_Node000053_Node000056" title=" " alt="" coords="2128,1592,2111,1602,2096,1618,2088,1634,2079,1651,2063,1667,2033,1684,2031,1679,2060,1663,2075,1648,2083,1632,2091,1615,2108,1598,2125,1587"/>
+<area shape="poly" id="edge65_Node000055_Node000004" title=" " alt="" coords="1078,1467,869,1379,749,1323,631,1264,530,1202,533,1197,633,1259,751,1319,871,1374,1080,1462"/>
+</map>

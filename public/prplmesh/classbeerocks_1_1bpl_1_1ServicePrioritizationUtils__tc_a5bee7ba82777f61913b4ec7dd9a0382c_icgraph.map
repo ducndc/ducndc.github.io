@@ -1,0 +1,8 @@
+<map id="beerocks::bpl::ServicePrioritizationUtils_tc::ensure_qdisc" name="beerocks::bpl::ServicePrioritizationUtils_tc::ensure_qdisc">
+<area shape="rect" id="Node000001" title="Prepare the TC qdisc used by service&#45;prioritization filters." alt="" coords="549,5,773,45"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1bpl_1_1ServicePrioritizationUtils__tc.html#ace791df1384b4929932d7cee64dc63c5" title="Apply DSCP&#45;to&#45;PCP mapping on all listed interfaces." alt="" coords="5,5,229,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="535,25,501,24,277,24,230,25,230,20,277,19,501,19,536,19"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1bpl_1_1ServicePrioritizationUtils__tc.html#ab924a3436b5637dfae88fb013d02dd97" title="Apply the same PCP value on all listed interfaces." alt="" coords="277,33,501,73"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="536,41,502,44,501,39,536,36"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="264,43,229,39,230,34,264,38"/>
+</map>

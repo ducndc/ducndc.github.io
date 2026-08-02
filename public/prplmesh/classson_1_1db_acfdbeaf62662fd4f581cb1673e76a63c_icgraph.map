@@ -1,0 +1,34 @@
+<map id="son::db::get_channel_scan_is_enabled" name="son::db::get_channel_scan_is_enabled">
+<area shape="rect" id="Node000001" title="Get the channel scan is enabled flag." alt="" coords="1141,149,1284,189"/>
+<area shape="rect" id="Node000002" href="$classson_1_1dynamic__channel__selection__r2__task.html#a71564051a0caca6a08555f294c873cd1" title="Abort all the requests for current agent. Used if something went wrong in one of the TLVF creation st..." alt="" coords="921,12,1089,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1167,143,1092,95,1050,69,1053,65,1095,90,1170,139"/>
+<area shape="rect" id="Node000006" href="$classson_1_1son__management.html#a83cffa6de5e1d1e1a7916b7ebaa9f9ef" title=" " alt="" coords="927,149,1083,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1128,171,1083,171,1083,166,1128,166"/>
+<area shape="rect" id="Node000013" href="$classson_1_1dynamic__channel__selection__r2__task.html#adb82d4e94aec3ddbbf66b76ba7944854" title="Handle scan report events." alt="" coords="916,213,1093,268"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1142,196,1085,216,1083,211,1140,191"/>
+<area shape="rect" id="Node000015" href="$classson_1_1dynamic__channel__selection__r2__task.html#ad41d6493eeda68bcaaed2ea9e2db349c" title="Scan all agent for timeout and abort scans in progress." alt="" coords="669,84,847,139"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1133,148,1093,139,964,123,847,116,847,111,965,118,1094,134,1134,143"/>
+<area shape="rect" id="Node000016" href="$classson_1_1dynamic__channel__selection__task.html#ad5b0589c10fd76b87a9b09fa00a71c89" title=" " alt="" coords="929,293,1081,333"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="1187,201,1146,243,1095,283,1072,295,1069,290,1092,278,1143,239,1184,198"/>
+<area shape="rect" id="Node000003" href="$classson_1_1dynamic__channel__selection__r2__task.html#a862c2ebfea88b34b4fd122ad34f7f469" title="Trigger pending scan request for the agent if it is idle." alt="" coords="648,5,868,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="907,39,868,38,868,33,907,34"/>
+<area shape="rect" id="Node000004" href="$classson_1_1dynamic__channel__selection__r2__task.html#a66becdad7668203e8450b30a8ac5f0be" title="Trigger pending scan requests for any idle agent." alt="" coords="425,9,600,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="634,37,600,38,600,33,634,32"/>
+<area shape="rect" id="Node000005" href="$classson_1_1dynamic__channel__selection__r2__task.html#a5ef741fa94eb56870d69d8eee97e49bc" title=" " alt="" coords="211,53,377,93"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="412,56,378,62,377,56,411,51"/>
+<area shape="rect" id="Node000007" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="662,163,854,188"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="913,174,854,175,854,170,913,168"/>
+<area shape="rect" id="Node000008" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="427,156,598,181"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="648,175,598,174,598,168,648,170"/>
+<area shape="rect" id="Node000009" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="436,206,589,246"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="683,193,590,213,589,208,682,188"/>
+<area shape="rect" id="Node000010" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="223,213,365,239"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="422,229,365,229,365,223,422,223"/>
+<area shape="rect" id="Node000011" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,188,109,213"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="209,218,109,206,110,201,210,213"/>
+<area shape="rect" id="Node000012" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,237,163,263"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="210,238,163,244,163,238,209,233"/>
+<area shape="rect" id="Node000014" href="$classson_1_1dynamic__channel__selection__r2__task.html#a90458658bc2339468c9c3c6e0c80de01" title=" " alt="" coords="650,221,866,261"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="903,243,866,243,866,238,903,238"/>
+<area shape="poly" id="edge15_Node000015_Node000005" title=" " alt="" coords="655,105,377,82,378,77,655,100"/>
+</map>

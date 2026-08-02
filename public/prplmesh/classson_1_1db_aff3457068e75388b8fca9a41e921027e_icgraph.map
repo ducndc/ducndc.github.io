@@ -1,0 +1,21 @@
+<map id="son::db::update_sta_wifi_channel_bw" name="son::db::update_sta_wifi_channel_bw">
+<area shape="rect" id="Node000001" title="update the STA wifiChannel object with the new bandwidth" alt="" coords="1095,60,1232,100"/>
+<area shape="rect" id="Node000002" href="$classson_1_1client__association__task.html#a7e100b24a0379453fa856bba2ad2fd14" title=" " alt="" coords="872,5,1047,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1081,67,1046,60,1047,54,1082,61"/>
+<area shape="rect" id="Node000004" href="$classson_1_1Controller.html#a66178f9ff1eb5ce0dec0521e60a548ba" title=" " alt="" coords="876,99,1043,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1081,98,1043,106,1042,100,1080,93"/>
+<area shape="rect" id="Node000003" href="$classson_1_1client__association__task.html#a40fe0c16babdf211684f389cde7034fd" title="Handle ieee1905 message." alt="" coords="619,20,824,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="858,43,824,43,824,37,858,37"/>
+<area shape="rect" id="Node000005" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="625,106,817,131"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="862,121,817,121,817,116,862,116"/>
+<area shape="rect" id="Node000006" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="400,77,571,102"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="611,108,571,103,571,97,612,102"/>
+<area shape="rect" id="Node000007" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="409,127,562,167"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="612,134,562,140,562,135,611,129"/>
+<area shape="rect" id="Node000008" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,134,352,159"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="395,149,353,149,353,144,395,144"/>
+<area shape="rect" id="Node000009" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,109,109,134"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="197,138,109,127,110,122,197,133"/>
+<area shape="rect" id="Node000010" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,158,163,183"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="197,160,163,164,163,158,196,154"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="beerocks::net::TrafficSeparationManager::configure" name="beerocks::net::TrafficSeparationManager::configure">
+<area shape="rect" id="Node000001" title="Configure the TrafficSeparationManager with a new TS configuration." alt="" coords="5,101,213,141"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#ae08612b23e487dc73c584f65209c1e3b" title="Apply the current configuration to all configured trunk and access ports." alt="" coords="261,101,469,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,119,248,119,248,124,213,124"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#af4b34f605d88124d10e9a6ad0fcfa80f" title="Rollback of the current configuration on all trunk and access ports." alt="" coords="517,5,725,45"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="202,99,261,87,503,42,504,48,262,92,203,104"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a7101215c85faf21e64d391373d473a2f" title="Return true when TS policies are currently applied on managed ports." alt="" coords="517,197,725,237"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="203,139,262,151,504,195,503,200,261,156,202,144"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,99,516,55,539,47,540,52,518,60,412,104"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a93745c3e9dab90d357c7dce840c2743e" title=" " alt="" coords="517,69,725,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="469,106,503,101,504,107,470,111"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#acd605b19762f0934d7c42f201b934636" title="Return true when a TS configuration is loaded into the manager." alt="" coords="517,133,725,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="470,132,504,136,503,141,469,137"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="419,139,470,160,518,183,539,190,537,195,516,188,468,165,417,144"/>
+</map>

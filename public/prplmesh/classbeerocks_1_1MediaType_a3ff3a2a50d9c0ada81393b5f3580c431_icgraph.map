@@ -1,0 +1,18 @@
+<map id="beerocks::MediaType::get_802_11_media_type" name="beerocks::MediaType::get_802_11_media_type">
+<area shape="rect" id="Node000001" title="Gets media type for the given radio." alt="" coords="968,41,1139,81"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1MediaType.html#ae38476d8b925db823f597a09ea604b1c" title="Gets media type for given interface." alt="" coords="773,12,920,52"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="954,50,920,45,921,40,955,45"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#aae1586cf76e11fc264144d0aad55be31" title="Gets the list of neighbors connected to this device (from topology database)." alt="" coords="517,69,725,109"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="955,70,726,85,725,80,954,65"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1TopologyTask.html#ac7da3f97f7ebe52b13d12408b627ff75" title="Add and fill device information tlv." alt="" coords="527,5,715,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="759,32,716,31,716,25,760,27"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="760,57,701,72,700,67,759,51"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1TopologyTask.html#a60a4e6ffc0a8793d606f20a36de81606" title="Handles 1905 Topology Query message." alt="" coords="284,5,447,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="513,28,447,28,447,23,513,23"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1TopologyTask.html#a2c75b5c339449510a43209a2e90fcee8" title="Handle CMDU message." alt="" coords="28,5,191,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="270,28,191,28,191,23,270,23"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#a9463a185a665b9ca4f1a70f1592275b8" title=" " alt="" coords="261,69,469,109"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="504,92,469,92,469,87,504,87"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ab2452024f7d97d1001a79ab2b61e84ce" title="Handle CMDU message." alt="" coords="5,69,213,109"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="248,92,213,92,213,87,248,87"/>
+</map>

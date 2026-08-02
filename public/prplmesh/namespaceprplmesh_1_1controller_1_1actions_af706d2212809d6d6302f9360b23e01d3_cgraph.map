@@ -1,0 +1,36 @@
+<map id="prplmesh::controller::actions::set_qm_descriptors" name="prplmesh::controller::actions::set_qm_descriptors">
+<area shape="rect" id="Node000001" title="Configure TR&#45;181 SetQMDescriptors inputs for the current BSS." alt="" coords="5,170,200,210"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a3e957d7858d4c86d1c75cce4a391ffaa" title=" " alt="" coords="253,5,429,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,168,169,105,205,71,247,41,262,33,265,38,249,46,209,75,173,109,120,171"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a848cb5e1d274b6c17a31b9081e0c3a2f" title="Get radio containing a BSS with a specific BSSID Searches all Agent objects for sRadio object contain..." alt="" coords="278,55,405,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,167,247,112,276,98,279,103,249,116,141,172"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1network__utils.html#a640b4109482b5726ce59132dc5482c9c" title=" " alt="" coords="264,170,419,210"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,187,250,187,250,193,200,193"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="503,124,649,149"/>
+<area shape="poly" id="edge13_Node000001_Node000005" title=" " alt="" coords="183,167,248,155,374,142,489,136,489,141,375,148,248,161,184,173"/>
+<area shape="rect" id="Node000006" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="750,235,881,260"/>
+<area shape="poly" id="edge14_Node000001_Node000006" title=" " alt="" coords="183,207,248,219,382,233,516,241,736,245,736,251,516,246,382,238,248,225,182,213"/>
+<area shape="rect" id="Node000008" href="$namespacebeerocks_1_1qos__management.html#abf21056384cd4654b4a135088fbfb00d" title="Validate a complete QoS management descriptor element." alt="" coords="248,349,435,404"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="122,209,175,269,211,304,250,334,258,340,256,345,246,339,207,308,171,273,118,212"/>
+<area shape="rect" id="Node000014" href="$classson_1_1db.html#a603e2ffc8fea8966cc144e89adfab2e0" title="Store a controller&#45;managed QoS management descriptor." alt="" coords="266,285,417,325"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="141,208,249,264,279,277,276,282,247,268,139,213"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="419,170,506,150,507,155,420,175"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="420,196,670,226,737,235,736,240,669,231,419,201"/>
+<area shape="rect" id="Node000007" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="961,235,1108,260"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="881,245,948,245,948,250,881,250"/>
+<area shape="rect" id="Node000009" href="$structbeerocks_1_1qos__management_1_1sDescriptorElementInfo.html#a19542b193ef9330dc5ef39b9fd56a2c0" title="Check whether the parsed descriptor metadata is usable." alt="" coords="483,344,669,399"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="435,372,469,371,469,376,435,377"/>
+<area shape="rect" id="Node000010" href="$namespacebeerocks_1_1qos__management.html#a0eb22f7bf67af2ebb41a8a63288d014e" title="Parse a complete SCS/MSCS descriptor element." alt="" coords="483,423,669,477"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="431,402,476,416,474,421,429,407"/>
+<area shape="rect" id="Node000011" href="$namespacebeerocks_1_1qos__management.html#afc034a67da9186989a91b2d70a4ee844" title="Check whether the descriptor starts with an MSCS extension element header." alt="" coords="717,366,913,406"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="669,422,726,407,727,412,670,428"/>
+<area shape="rect" id="Node000012" href="$namespacebeerocks_1_1qos__management.html#a07a3ccca88cbb1c81098c75889a8f5be" title="Check whether the descriptor starts with an SCS element header." alt="" coords="722,430,909,470"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="670,447,708,447,708,453,670,453"/>
+<area shape="rect" id="Node000013" href="$namespacebeerocks_1_1qos__management.html#a0772e50cae8e6b3cf40ef88a3decf2a1" title="Convert an IEEE descriptor request type value to an enum." alt="" coords="722,494,909,534"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="670,472,727,488,726,493,669,478"/>
+<area shape="rect" id="Node000015" href="$classson_1_1db.html#a63a0a44b5a71c1c4552694ee656ff69b" title="Set a QoS management descriptor in Device.WiFi.DataElements Data Model." alt="" coords="486,288,666,313"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="417,301,472,300,472,305,417,306"/>
+<area shape="poly" id="edge18_Node000015_Node000006" title=" " alt="" coords="633,285,744,260,745,266,635,290"/>
+<area shape="rect" id="Node000016" href="$classson_1_1db.html#a39cb768c3e3115545cbdb128e6fedd98" title="Finds and returns sBss with a specified BSSID (and optionaly al_mac)." alt="" coords="756,288,875,313"/>
+<area shape="poly" id="edge17_Node000015_Node000016" title=" " alt="" coords="666,298,743,298,743,303,666,303"/>
+</map>

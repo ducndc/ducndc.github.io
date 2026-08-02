@@ -1,0 +1,17 @@
+<map id="el::base::utils::DateTime::getDateTime" name="el::base::utils::DateTime::getDateTime">
+<area shape="rect" id="Node000001" title="Gets current date and time with a subsecond part." alt="" coords="5,61,171,101"/>
+<area shape="rect" id="Node000002" href="$classel_1_1base_1_1utils_1_1DateTime.html#a7197976eff45378efdca75ae070492e7" title="Cross platform gettimeofday for Windows and unix platform. This can be used to determine current micr..." alt="" coords="219,29,384,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,66,205,61,205,66,171,72"/>
+<area shape="rect" id="Node000003" href="$classel_1_1base_1_1utils_1_1DateTime.html#a535546a91e5fa6cd30d2ac2a980d442a" title="Converts timeval (struct from ctime) to string using specified format and subsecond precision." alt="" coords="219,93,384,133"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="171,91,205,96,205,102,170,96"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="261,30,259,20,265,10,280,5,301,3,326,6,340,13,337,18,325,11,301,8,281,10,269,15,264,21,266,28"/>
+<area shape="rect" id="Node000004" href="$classel_1_1base_1_1utils_1_1DateTime.html#ad0b327f1a8512fbccaee6788f942e717" title=" " alt="" coords="432,61,597,101"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="384,98,418,93,419,98,385,104"/>
+<area shape="rect" id="Node000005" href="$classel_1_1base_1_1utils_1_1DateTime.html#ae9e46f004059acb5447885e1103c3ea8" title=" " alt="" coords="432,125,597,165"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="385,123,419,128,418,134,384,128"/>
+<area shape="rect" id="Node000006" href="$classel_1_1base_1_1utils_1_1Str.html#aa327f63f50daa9058b9c26b949725044" title=" " alt="" coords="851,125,976,165"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="597,140,645,139,803,139,837,140,836,145,803,144,645,144,597,145"/>
+<area shape="rect" id="Node000007" href="$classel_1_1base_1_1utils_1_1Str.html#a42c64659443d9e4144d5382007315896" title=" " alt="" coords="645,153,803,193"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="598,154,632,158,632,164,597,159"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="802,159,837,154,837,159,803,164"/>
+</map>

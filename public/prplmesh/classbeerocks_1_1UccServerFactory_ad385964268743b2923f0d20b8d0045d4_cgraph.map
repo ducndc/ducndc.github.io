@@ -1,0 +1,9 @@
+<map id="beerocks::UccServerFactory::create_instance" name="beerocks::UccServerFactory::create_instance">
+<area shape="rect" id="Node000001" title="Creates an instance of a UCC server." alt="" coords="5,37,195,77"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1TcpServerSocket.html#a002578bb329231b72e4b66c456888aa4" title=" " alt="" coords="243,37,409,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,55,229,55,229,60,195,60"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1InternetAddress.html#a800c1ab6991c093c791eb1b0d0e9cfe4" title=" " alt="" coords="457,5,659,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="409,43,443,38,444,44,410,49"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1ServerSocketAbstractImpl.html#a0b20928bb6bdafb1e35061799f8d07c8" title="Returns the underlying socket used by this server." alt="" coords="464,69,652,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="410,66,451,72,450,77,409,71"/>
+</map>
