@@ -1,0 +1,63 @@
+@startuml
+skinparam sequenceArrowThickness 1
+skinparam roundcorner 5
+skinparam maxmessagesize 200
+skinparam sequenceParticipant underline
+
+participant "WLAN Service" as WLAN #90EE90
+participant "Platform Service" as PLAT #6A5ACD
+participant "Controller" as CTRL #F5DEB3
+
+box "Multi-AP Agent" #DDDDDD
+participant "Radio Agent" as RA #F5DEB3
+participant "AP Manager" as APM #F5DEB3
+participant "Backhaul Manager" as BM #F5DEB3
+end box
+
+participant "Hostapd" as HOST #90EE90
+participant "Supplicant" as SUPP #90EE90
+
+group WLAN / Platform init flow
+    note over WLAN #FFFF99 : WLAN HW init start
+    note over PLAT #00FFFF : Start Controller\nStart Agent
+    note over WLAN #FFFF99 : WLAN HW init done\nHostapd config file ready
+    WLAN -> PLAT : WLAN Init done
+end
+
+group Radio Agent - Register to platform & backhaul manager
+    RA -> PLAT : Register request
+    PLAT -> RA : Register response
+    RA -> BM : Register request
+    BM -> RA : Register response
+end
+
+group Radio Agent - Enable Hostapd
+    PLAT -> RA : Start Hostapd
+    note over WLAN, RA #00FFFF : if WLAN ready: start Hostapd\nelse: sleep ~200msec and re-check if ready
+end
+
+group Radio Agent - Hostapd attach, init
+    note over RA #00FFFF : Start AP Manager
+    RA <-> HOST #0000FF : Attach, check error
+    RA -> PLAT : If attach timeout report error
+    RA <-> HOST #0000FF : Get Radio Info
+    RA <-> HOST #0000FF : Check ACS report ready
+    RA <-> HOST #0000FF : Get ACS report
+end
+
+group Radio Agent - If hostapd attached
+    group GW Backhaul manager - connect
+        RA -> BM : Connect request
+        rnote over CTRL, BM #FFA500 : Execute: Multi-AP Controller Discovery
+    end
+    group Radio Agent - If controller discovery success
+        RA <- BM : Connect success
+        rnote over CTRL, RA #FFA500 : Execute: Multi-Ap Autoconfiguration
+        rnote over CTRL, RA #FFA500 : Execute: Channel selection
+    end
+    group Radio Agent - If controller discovery fail
+        RA <- BM : Connect fail
+    end
+end
+
+@enduml
