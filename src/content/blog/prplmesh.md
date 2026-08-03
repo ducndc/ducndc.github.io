@@ -128,6 +128,8 @@ The following high level flow diagram describes the GW boot flow inducing intera
 entities in the system.
 </div>
 
+![Alt text](../../assets/technology/easymesh/GWBoot.png)
+
 ### Source Code 
 
 <a href="/prplmesh/index.html">prplMesh API Documentation</a>
