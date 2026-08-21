@@ -27,8 +27,9 @@ EasyMesh defines a common set of capabilities that every conformant multi-AP imp
 
 ### prplMesh Architecture Analysis
 
-Below is a detailed analysis of the architecture, traversing the complete pipeline:
-$$\text{IEEE 1905} \longrightarrow \text{Controller} \longrightarrow \text{Agent} \longrightarrow \text{Backhaul Manager} \longrightarrow \text{AP Manager} \longrightarrow \text{Wi-Fi HAL} \longrightarrow \text{Vendor Driver}$$
+Below is a detailed analysis of the architecture, traversing:
+
+![Alt text](../../assets/technology/easymesh/data_flow.png)
 
 ---
 
@@ -37,22 +38,6 @@ $$\text{IEEE 1905} \longrightarrow \text{Controller} \longrightarrow \text{Agent
 ![Alt text](../../assets/technology/easymesh/prplmesh_arch.png)
 
 ---
-
-### BeeRocks Architecture
-
-<div style="text-align: justify; text-indent: 2em;">
-BeeRocks is designed to run on any Linux-based networking device. The design accounts for the platform/hardware
-abstraction needed so that platform-porting effort is limited to a minimal number of affected components. As
-described in the high-level architecture above, BeeRocks is divided into controller and agent components, where
-the agent runs on every network node and the controller runs on only one device — the gateway (GW) or an
-Intelligent Range Extender (IRE) operating in master mode.
-</div>
-
-<div style="text-align: justify; text-indent: 2em;">
-BeeRocks' internal IPC uses Unix Domain Sockets (UDS), chosen for their portability and efficiency. BeeRocks
-provides a communication thread base class that wraps UDS communication in a reusable component. External
-communication with the EasyMesh framework is handled over the framework's local bus.
-</div>
 
 #### Layer-by-Layer Architecture & Components
 
