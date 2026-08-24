@@ -247,6 +247,12 @@ WIFI:T:WPA;R:3;S:MyNet;P:a2bc-de3f-ghi4;K:<base64 public key>;;
  
 ---
 
+### WPA3-Personal (SAE) Connection Message Flow
+
+![Alt text](../../assets/technology/WPA3/data_flow.png)
+
+---
+
 ### Transition Disable
 
 <div style="text-align: justify; text-indent: 2em;">
