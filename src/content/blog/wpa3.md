@@ -6,7 +6,7 @@ heroImage: '../../assets/wpa3.jpg'
 ---
 
 <div style="text-align: justify; text-indent: 2em;">
-In June 2018, the Wi-Fi Alliance officially announced WPA3 (Wi-Fi Protected Access 3), the most significant overhaul of wireless security in over a decade. The announcement came not a moment too soon — by that point, WPA2, which had been the industry standard since 2004, was showing serious cracks.
+In June 2018, the Wi-Fi Alliance officially announced WPA3 (Wi-Fi Protected Access 3), the most significant overhaul of wireless security in over a decade. The announcement came not a moment too soon by that point, WPA2, which had been the industry standard since 2004, was showing serious cracks.
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
@@ -14,11 +14,11 @@ The most devastating blow to WPA2's reputation came in October 2017 with the dis
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-Note: By 2018, WPA2-PSK networks were vulnerable to offline brute-force attacks that could be executed on commodity hardware at billions of password guesses per second — a sobering reality for anyone relying on a short Wi-Fi passphrase.
+Note: By 2018, WPA2-PSK networks were vulnerable to offline brute-force attacks that could be executed on commodity hardware at billions of password guesses per second a sobering reality for anyone relying on a short Wi-Fi passphrase.
 </div>
 
 <div style="text-align: justify; text-indent: 2em;">
-WPA3 was designed from the ground up to address these vulnerabilities, modernize cryptographic standards, and make Wi-Fi security robust enough for the next generation of connected devices — from smartphones and laptops to IoT sensors and smart-city infrastructure.
+WPA3 was designed from the ground up to address these vulnerabilities, modernize cryptographic standards, and make Wi-Fi security robust enough for the next generation of connected devices from smartphones and laptops to IoT sensors and smart-city infrastructure.
 </div>
 
 ---
@@ -26,7 +26,7 @@ WPA3 was designed from the ground up to address these vulnerabilities, modernize
 ### History of Wi-Fi Security
 
 <div style="text-align: justify; text-indent: 2em;">
-Understanding WPA3 requires appreciating the lineage it evolved from. Wi-Fi security did not begin strong — it began as almost an afterthought.
+Understanding WPA3 requires appreciating the lineage it evolved from. Wi-Fi security did not begin strong it began as almost an afterthought.
 </div>
 
 ##### WEP (1997–2003)
@@ -316,7 +316,11 @@ The Problem: Some legacy STAs fail/crash when parsing an RSNE that lists too man
 The Solution: Instead of stuffing everything into one RSNE, the AP splits the information into multiple separate elements:
 </div>
 
+<div style="text-align: center;">
+
 ![Alt text](../../assets/technology/WPA3/rsn.png)
+
+</div>
 
 <div style="text-align: justify; text-indent: 2em;">
 - A STA that supports RSN Overriding signals this capability by setting the last six octets of its SNonce to a fixed value `50:6F:9A:00:00:29` (SNonce cookie) during the 4-way handshake — the AP recognizes this and returns all RSNE/RSNXE variants in Message 3 so the STA can verify it isn't being subjected to a downgrade attack (ensuring the AP isn't hiding stronger security options).
