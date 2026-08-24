@@ -15,6 +15,8 @@ On a WLAN, when a STA moves between different APs, the service continuity and da
 
 ![Alt text](../../assets/technology/802_11r/auth.png)
 
+--- 
+
 ### 802.1x Implementation
 
 ![Alt text](../../assets/technology/802_11r/802.1x.png)
@@ -22,6 +24,8 @@ On a WLAN, when a STA moves between different APs, the service continuity and da
 ![Alt text](../../assets/technology/802_11r/802_1x.png)
 
 ![Alt text](../../assets/technology/802_11r/802_1x_ext.png)
+
+--- 
 
 ### Fast BSS Transition
 
@@ -54,15 +58,27 @@ a mobility domain.
 
 ![Alt text](../../assets/technology/802_11r/key3.png)
 
-#### Two modes
+---
 
-1. Over-the-Air
+### Over-the-Air
+
+<div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/OverAir.png)
 
-2. Over-the-DS
+</div>
+
+![Alt text](../../assets/technology/802_11r/connection-message-flow.png)
+
+### Over-the-DS
+
+<div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/OverDS.png)
+
+</div>
+
+![Alt text](../../assets/technology/802_11r/overDS.png)
 
 #### Two protocols
 
@@ -79,7 +95,7 @@ This protocol is executed when an FTO requires a resource request prior to its t
 
 ![Alt text](../../assets/technology/802_11r/rnse2.png)
 
-#### Frame by Frame
+### Frame by Frame
 
 ![Alt text](../../assets/technology/802_11r/fbf.png)
 
