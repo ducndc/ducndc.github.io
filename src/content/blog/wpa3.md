@@ -49,7 +49,7 @@ WPA2 introduced mandatory support for AES-CCMP (Advanced Encryption Standard in 
 
 ---
  
-### What is the WPA3?
+### WPA3 Definition and Architecture
 
 <div style="text-align: justify; text-indent: 2em;">
 WPA3 (Wi-Fi Protected Access 3) is the security standard succeeding WPA2, split into two main branches:
@@ -71,7 +71,7 @@ Each device (AP or STA) is configured to operate in one of several "modes" — c
 
 ---
 
-### Types of "Security Association" (WPA2 vs WPA3)
+##### Types of "Security Association" (WPA2 vs WPA3)
 
 <div style="text-align: justify; text-indent: 2em;">
 When an AP and STA successfully connect, the result can be a WPA3 security association or a WPA2 security association, depending on the negotiated AKM and PMF.
@@ -85,7 +85,9 @@ When an AP and STA successfully connect, the result can be a WPA3 security assoc
 
 ![Alt text](../../assets/technology/WPA3/wpa2.png)
 
-### WPA3-Personal — Modes
+---
+
+### WPA3-Personal
 ##### WPA3-Personal Only Mode
 
 <div style="text-align: justify; text-indent: 2em;">
@@ -139,9 +141,13 @@ See details in section 6 (SAE-PK).
 
 ![Alt text](../../assets/technology/WPA3/wpa3.png)
 
---- 
+#### WPA3-Personal (SAE) Connection Message Flow
 
-### WPA3-Enterprise — Modes
+![Alt text](../../assets/technology/WPA3/data_flow.png)
+
+---
+
+### WPA3-Enterprise
 
 | Mode | Required/Allowed AKM | PMF | Notes |
 |---|---|---|---|
@@ -151,9 +157,14 @@ See details in section 6 (SAE-PK).
 
 ![Alt text](../../assets/technology/WPA3/wpa3enterprise.png)
 
+#### WPA3-Enterprise Connection Message Flow
+
+![Alt text](../../assets/technology/WPA3/wpa3-enterprise-connection-flow.png)
+
 ---
 
-### AKM Summary Table
+### AKM-based Classification
+##### AKM Summary Table
 
 | AKM Selector | Name | Type | Security Association |
 |---|---|---|---|
@@ -185,7 +196,7 @@ Enterprise: FT-802.1X-SHA256 → 802.1X-SHA256 → 802.1X-SHA1
 
 ---
 
-### SAE-PK (SAE Public Key)
+#### SAE-PK (SAE Public Key)
 
 #####  The Problem
 
@@ -225,7 +236,7 @@ Example (λ=12): `a2bc-de3f-ghi4`
 
 ---
  
-### WIFI URI / QR Code
+#### WIFI URI / QR Code
 
 <div style="text-align: justify; text-indent: 2em;">
 WPA3 defines a `WIFI:...;;` syntax for embedding network information into a QR code, enabling quick device provisioning.
@@ -247,13 +258,7 @@ WIFI:T:WPA;R:3;S:MyNet;P:a2bc-de3f-ghi4;K:<base64 public key>;;
  
 ---
 
-### WPA3-Personal (SAE) Connection Message Flow
-
-![Alt text](../../assets/technology/WPA3/data_flow.png)
-
----
-
-### Transition Disable
+#### Transition Disable
 
 <div style="text-align: justify; text-indent: 2em;">
 The Problem: A STA configured in "Transition Mode" (accepting both WPA2 & WPA3) can still be tricked into connecting to a fake AP that only supports weaker algorithms (PSK, SHA-1, etc.).
@@ -269,7 +274,7 @@ The Solution: After successfully connecting using the strongest algorithm, the A
 
 </div>
 
-#### Transition Disable Bitmap Bits
+##### Transition Disable Bitmap Bits
 
 | Bit | Name | Strongest algorithm | Algorithms disabled |
 |---|---|---|---|
@@ -280,7 +285,7 @@ The Solution: After successfully connecting using the strongest algorithm, the A
  
 ---
 
-### Server Certificate Validation & UOSC (WPA3-Enterprise)
+#### Server Certificate Validation & UOSC (WPA3-Enterprise)
 
 <div style="text-align: justify; text-indent: 2em;">
 When using EAP-TLS/TTLS/PEAP, the STA is required to validate the server's certificate. If validation fails, the STA may (optionally) allow the user to perform UOSC – User Override of Server Certificate (manual acceptance) — unless prohibited by a TOD (Trust Override Disable) policy embedded in the certificate:
@@ -301,7 +306,7 @@ When using EAP-TLS/TTLS/PEAP, the STA is required to validate the server's certi
 
 --- 
 
-### RSN Overriding — Solving Compatibility Issues When Extending the Standard
+#### RSN Overriding — Solving Compatibility Issues When Extending the Standard
 
 <div style="text-align: justify; text-indent: 2em;">
 The Problem: Some legacy STAs fail/crash when parsing an RSNE that lists too many AKMs/ciphers at once (e.g., when an AP adds SAE alongside PSK).
@@ -323,7 +328,7 @@ The Solution: Instead of stuffing everything into one RSNE, the AP splits the in
 
 --- 
 
-### Constraints by Frequency Band / Wi-Fi Generation
+#### Constraints by Frequency Band / Wi-Fi Generation
 
 | Band / Standard | Key constraints |
 |---|---|
@@ -333,7 +338,7 @@ The Solution: Instead of stuffing everything into one RSNE, the AP splits the in
 
 ---
 
-### Data Packet Handling Protections
+#### Data Packet Handling Protections
 
 <div style="text-align: justify; text-indent: 2em;">
 The specification lists numerous real-world vulnerabilities that have been exploited (fragmentation/cache attacks, plaintext injection, etc.) and requires devices to:
@@ -366,7 +371,7 @@ The specification lists numerous real-world vulnerabilities that have been explo
 
 ---
 
-### Combined Overview of the WPA3 Ecosystem
+### Summary
 
 <div style="text-align: center;">
 
