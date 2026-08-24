@@ -38,11 +38,23 @@ On a WLAN, when a STA moves between different APs, the service continuity and da
 
 #### Key Hierarchy
 
+<div style="text-align: center;">
+
 ![Alt text](../../assets/technology/802_11r/key.png)
+
+</div>
+
+<div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/key1.png)
 
+</div>
+
+<div style="text-align: center;">
+
 ![Alt text](../../assets/technology/802_11r/key2.png)
+
+</div>
 
 1. The R0KH interacts with the IEEE 802.1X Authenticator to receive the MSK resulting from an EAP authentication.
 2. The R1KH interacts with the IEEE 802.1X Authenticator to open the Controlled Port.
@@ -56,7 +68,11 @@ domain identi er (MDID).
 2. mobility domain identi er (MDID): An identi er that names
 a mobility domain.
 
+<div style="text-align: center;">
+
 ![Alt text](../../assets/technology/802_11r/key3.png)
+
+</div>
 
 ---
 
@@ -80,20 +96,34 @@ a mobility domain.
 
 ![Alt text](../../assets/technology/802_11r/overDS.png)
 
-#### Two protocols
+---
+
+### FT Protocols
 
 1. FT protocol
 2. FT resource request protocol
 
 This protocol is executed when an FTO requires a resource request prior to its transition.
 
+<div style="text-align: center;">
+
 ![Alt text](../../assets/technology/802_11r/ft.png)
+
+</div>
 
 ![Alt text](../../assets/technology/802_11r/ft1.png)
 
 ![Alt text](../../assets/technology/802_11r/rnse.png)
 
 ![Alt text](../../assets/technology/802_11r/rnse2.png)
+
+<div style="text-align: center;">
+
+![Alt text](../../assets/technology/802_11r/FTO.png)
+
+</div>
+
+---
 
 ### Frame by Frame
 
@@ -165,6 +195,8 @@ cryptographic strength of the channels for which the keys are used.
 
 ![Alt text](../../assets/technology/802_11r/fbf21.png)
 
+---
+
 ### Relationship between state and services between a given pair of nonmesh STAs
 
 ![Alt text](../../assets/technology/802_11r/fbf22.png)
@@ -172,3 +204,7 @@ cryptographic strength of the channels for which the keys are used.
 ![Alt text](../../assets/technology/802_11r/fbf23.png)
 
 ![Alt text](../../assets/technology/802_11r/fbf24.png)
+
+### Source 
+
+[1] www.thewlpc.com/presentations/analysis-of-a-fast-roam-prg-25

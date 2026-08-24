@@ -1,5 +1,5 @@
 ---
-title: 'hostapd'
+title: 'Hostapd Architecture'
 description: 'IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/WPA3/EAP/RADIUS Authenticator'
 pubDate: 'Aug 21 2026'
 heroImage: '../../assets/prplmesh.png'
@@ -204,13 +204,13 @@ The station management state machine is governed by **[`src/ap/ieee802_11.c`](ho
 
 ---
 
-### 5.2 DFS Radar Detection & Channel Switch Announcement (CSA) Flow
+### DFS Radar Detection & Channel Switch Announcement (CSA) Flow
 
 ![Alt text](../../assets/technology/hostapd/dfs.png)
 
 ---
 
-## 6. Source Tree Organization Reference Table
+## Source Tree Organization Reference Table
 
 | Directory / File | Key Architectural Role | Primary Components & APIs |
 | :--- | :--- | :--- |
@@ -239,7 +239,7 @@ The station management state machine is governed by **[`src/ap/ieee802_11.c`](ho
 
 ---
 
-## 7. Summary & Architectural Strengths
+## Summary & Architectural Strengths
 
 1. **Clean Separation of Concerns**: High-frequency data plane encryption and transmission reside inside the kernel (`mac80211`/firmware), while complex management state machines and policy decisions reside in user space (`hostapd`).
 2. **Deterministic Concurrency**: The asynchronous, single-threaded `eloop` design completely eliminates concurrency deadlocks and multi-threading race conditions while handling thousands of simultaneous stations.
