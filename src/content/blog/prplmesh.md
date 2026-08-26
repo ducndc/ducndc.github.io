@@ -430,8 +430,7 @@ Load balancing operates on an event-driven model between the Agent and the Contr
 
   ##### Step 1: Identify the Most Loaded Radio
 
-  The task queries updated statistics (ACTION_CONTROL_HOSTAP_STATS_MEASUREMENT_REQUEST) for all candidate radios and identifies the radio with the maximum channel_load_percent (or
-  highest STA count in case of equal load).
+  The task queries updated statistics (ACTION_CONTROL_HOSTAP_STATS_MEASUREMENT_REQUEST) for all candidate radios and identifies the radio with the maximum channel_load_percent (or highest STA count in case of equal load).
 
   ##### Step 2: Select the Client to Offload (Efficiency Ratio Metric)
 
@@ -466,7 +465,7 @@ Load balancing operates on an event-driven model between the Agent and the Contr
 
   • The controller resets client->confined = false.
   • It spawns optimal_path_task.cpp (load notif (low) - optimal_path) to naturally re-evaluate and roam the client back to its highest-performing link.
-  ──────
+ 
   #### Key Configuration Parameters
 
   Configurable via DataModel (X_PRPLWARE-COM_Controller.Configuration) or platform configuration files:
