@@ -5,7 +5,9 @@ pubDate: 'Jul 25 2026'
 heroImage: '../../assets/prplmesh.png'
 ---
 
+<div style="text-align: justify; text-indent: 2em;">
 prplMesh is an open-source, carrier-grade, certifiable implementation of the **Wi-Fi Alliance (WFA) EasyMesh™ (Multi-AP)** standard, built on **IEEE 1905.1**. This post walks through the system's architecture end to end — from the EasyMesh standard's high-level features, through the layered BeeRocks component stack and its inter-process communication, to a practical guide for building, running, and operating prplMesh.
+</div>
 
 ### System Architecture Partitioning
 
@@ -270,6 +272,214 @@ different entities in the system.
 3. **Agent → AP Manager**: [`slave_thread`](prplMesh-6.0.0/agent/src/beerocks/slave/son_slave_thread.cpp) decodes the CMDU and forwards the BTM request over `uds_agent` to the corresponding [`son::ApManager`](prplMesh-6.0.0/agent/src/beerocks/fronthaul_manager/ap_manager/ap_manager.cpp).
 4. **AP Manager → Wi-Fi HAL**: [`ApManager`](prplMesh-6.0.0/agent/src/beerocks/fronthaul_manager/ap_manager/ap_manager.cpp) invokes [`bwl::ap_wlan_hal::send_btm_req()`](prplMesh-6.0.0/common/beerocks/bwl/include/bwl/ap_wlan_hal.h).
 5. **Wi-Fi HAL → Vendor Driver**: [`bwl::nl80211::ap_wlan_hal_nl80211`](prplMesh-6.0.0/common/beerocks/bwl/nl80211/ap_wlan_hal_nl80211.cpp) sends a `BSS_TM_REQ` command over the `wpa_ctrl` socket to `hostapd`, which transmits the 802.11v BSS Transition Management request frame over the air to the client station.
+
+---
+
+### Band Steering 
+
+<div style="text-align: justify; text-indent: 2em;">
+Band Steering is a wireless resource management feature designed to steer multi-band Wi-Fi client stations (STAs) to the most optimal frequency band (e.g., 2.4 GHz, 5 GHz, or 6 GHz) on an Access Point (AP). In prplMesh (an open-source implementation of the Wi-Fi Alliance EasyMesh standard), Band Steering is implemented as part of the centralized controller optimization architecture,
+  closely integrated with roaming and path-selection algorithms.
+</div>
+
+| Frequency Band | Advantages | Limitations |
+| :--- | :--- | :--- |
+| **2.4 GHz** | Long range, superior wall/obstacle penetration. | High channel congestion, limited spectrum (three non-overlapping 20 MHz channels), lower peak data rates. |
+| **5 GHz** | Wider channels (up to 80/160 MHz), higher PHY rates, less RF interference and contention. | Shorter range, higher path loss and wall attenuation. |
+| **6 GHz (Wi-Fi 6E/7)** | Massive clean spectrum, ultra-wide 160/320 MHz channels, no legacy contention. | Highest attenuation, requires Wi-Fi 6E/7 client support and PSC scanning. |
+
+<div style="text-align: center;">
+
+![Alt text](../../assets/technology/easymesh/bandsteering.png)
+
+</div>
+
+#### Key Tasks and Roles
+
+1. **[`optimal_path_task`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/optimal_path_task.cpp)**
+  + The primary decision engine for client path optimization.
+  + When `settings_client_band_steering()` is enabled, it queries `database.get_radio_siblings()` and appends sibling radios to the candidate list.
+  + Evaluates link metrics, PHY rate calculations, RSSI cutoff thresholds, and hysteresis bonuses.
+
+
+2. **[`association_handling_task`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/association_handling_task.cpp)**
+  + Triggers immediately after a client connects or completes a handoff.
+  + Queries 802.11k beacon capabilities, measures initial uplink RSSI, and automatically spawns `optimal_path_task` to evaluate if the client connected on the suboptimal band.
+
+3. **[`client_steering_task`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/client_steering_task.cpp)**
+  + Manages the execution of the steering command across Multi-AP agents using IEEE 1905.1 control messages.
+  + Unblocks the target BSSID, issues 802.11v BTM mandates or legacy association control blocks, and monitors disconnection/reconnection status.
+
+4. **[`pre_association_steering_task`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/pre_association_steering/pre_association_steering_task.cpp)** & **Agent HAL Monitor**
+  + Implements pre-association probe response suppression.
+  + Suppresses 2.4 GHz Probe Responses or Authentication Responses for dual-band STAs with high SNR to compel them to associate with 5 GHz initially.
+
+5. **[`channel_selection_task`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/channel_selection_task.cpp)**
+  + Cooperates with Band Steering during DFS (Dynamic Frequency Selection) radar events or CAC (Channel Availability Check) to steer STAs safely down to 2.4 GHz before clearing 5 GHz channels.
+
+#### Decision Algorithm & Path Selection
+
+##### Sibling Discovery & Compatibility Check
+
++ The `optimal_path_task` checks STA capabilities against candidate sibling radios:
++ Verifies 2.4 GHz, 5 GHz, and 6 GHz capabilities (`get_sta_24ghz_support`, `get_sta_5ghz_support`, `get_sta_6ghz_support`).
++ Ensures candidate VAP shares the matching SSID.
++ Filters out inactive radios or radios undergoing channel selection.
+
+##### Metric Computation & Hysteresis
++ Link quality is evaluated based on either:
++ **Estimated PHY Rate (Default):** Derived from channel bandwidth (20/40/80/160 MHz), modulation coding scheme (MCS), spatial streams (NSS), and estimated DL/UL RSSI.
++ **Signal Strength (RSSI):** When `OptimalPathPreferSignalStrength` is enabled.
+
++ To prevent rapid oscillation (ping-pong effect) between bands:
+$$\text{Current Radio Score} = \text{Metric} \times \left(1 + \frac{\text{RoamingHysteresisPercentBonus}}{100}\right)$$
+
+##### Cutoff Threshold Logic
++ **5 GHz to 2.4 GHz Fallback:** If the client's estimated uplink/downlink RSSI on 5 GHz drops below `roaming_rssi_cutoff_db` (e.g. $-80\text{ dBm}$), 5 GHz is deemed unusable and 2.4 GHz is selected.
++ **2.4 GHz to 5 GHz Upsteering:** If 5 GHz estimated RSSI is safely above `roaming_rssi_cutoff_db` + hysteresis, 5 GHz is preferred.
+
+#### Steering Execution Mechanisms
+
+prplMesh supports two steering mechanisms depending on the client's 802.11 standards compliance:
+
+```
+                                  Client Steering
+                                         │
+                    ┌────────────────────┴────────────────────┐
+                    ▼                                         ▼
+         802.11v BSS Transition                     Legacy Steering
+            (BTM Supported)                       (Non-11v Supported)
+                    │                                         │
+        ┌───────────┴───────────┐                 ┌───────────┴───────────┐
+        │ 1. Unblock Target BSS │                 │ 1. Unblock Target BSS │
+        │ 2. Send 1905.1 BTM    │                 │ 2. Set Timed Block on │
+        │    Steering Request   │                 │    Source BSS (ACL)   │
+        │ 3. Client roams       │                 │ 3. Disassoc / Deauth  │
+        │    seamlessly         │                 │ 4. Client reconnects  │
+        └───────────────────────┘                 └───────────────────────┘
+```
+
+##### 802.11v BSS Transition Management (BTM)
+- Sends Multi-AP `CLIENT_STEERING_REQUEST_MESSAGE` with `tlvSteeringRequest`.
+- Sets `request_mode = STEERING_MANDATE`.
+- Populates target BSSID, target channel number, target operating class, and disassociation timer (`SteeringDisassociationTimerMSec`).
+- The serving AP transmits an IEEE 802.11v BTM Request frame to the station.
+
+##### Legacy Client Steering (Association Control & Timed Block)
+- Sends Multi-AP `Client Association Control Request` with `TIMED_BLOCK` to blacklist the client on non-target BSSIDs for a configurable duration (`STEERING_WAIT_TIME_MS`).
+- Sends Multi-AP `Client Association Control Request` with `UNBLOCK` on the target BSSID.
+- Forces disassociation, leaving the target band as the only available BSSID for reconnection.
+
+---
+
+##### Configuration Parameters
+
+The following parameters in the Controller DataModel (`X_PRPLWARE-COM_Controller.Configuration`) and platform configuration files control Band Steering:
+
+| Parameter | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `BandSteeringEnabled` | `bool` | `false` | Master toggle to enable/disable Band Steering in the controller. |
+| `OptimalPathPreferSignalStrength` | `bool` | `false` | If `true`, steering decisions prioritize RSSI; if `false`, prioritizes estimated PHY rate. |
+| `RoamingHysteresisPercentBonus` | `uint32` | `10` | Percentage bonus added to the current BSS score to prevent ping-pong oscillation. |
+| `SteeringDisassociationTimerMSec` | `uint32` | `200` | Disassociation timer in milliseconds included in 802.11v BTM requests. |
+| `roaming_rssi_cutoff_db` | `int32` | `-80` | Uplink RSSI threshold below which 5 GHz is deemed unusable, triggering fallback to 2.4 GHz. |
+| `roaming_sticky_client_rssi_threshold` | `int32` | `-80` | RSSI threshold where steering flags disassociation as imminent. |
+| `SteeringPolicy` | `uint32` | `0` | Multi-AP steering policy flags sent to Agents. |
+
+---
+
+##### Telemetry & Statistics
+
+prplMesh tracks steering outcomes across the network in DataModel objects (`DataElements.Network.MultiAPSteeringSummaryStats` and `MultiAPSTA.SteeringSummaryStats`):
+- `BTMSuccesses` / `BTMFailures`: Tracks outcomes of 802.11v BTM steering attempts.
+- `BlacklistSuccesses` / `BlacklistFailures`: Tracks outcomes of legacy ACL-based steering attempts.
+- `NoCandidateAPFailures`: Incremented when no candidate BSS satisfies criteria.
+- `failed_5ghz_steer_attempt` / `failed_24ghz_steer_attempt` / `failed_6ghz_steer_attempt`: Per-station counters to prevent repeated failed steering attempts toward incompatible bands.
+
+---
+
+### Load Balancing
+
+<div style="text-align: justify; text-indent: 2em;">
+Load Balancing in prplMesh is a centralized radio resource management mechanism designed to prevent and relieve congestion across access points (APs) and frequency bands in a Multi-AP Wi-Fi mesh network.
+When multiple client stations (STAs) congregate on a single AP or radio (e.g., the 5 GHz band of the main Gateway), channel utilization and airtime contention increase, reducing overall network performance. Load balancing detects these congested conditions and intelligently offloads selected clients to less busy neighbor APs or radios.
+</div>
+
+<div style="text-align: center;">
+
+![Alt text](../../assets/technology/easymesh/loadbalancing.png)
+
+</div>
+
+#### Triggering Mechanism
+
+Load balancing operates on an event-driven model between the Agent and the Controller:
+
+  1. Agent-Side Monitoring (monitor_stats.cpp:390-440):
+      • The Agent periodically tracks channel utilization (channel_load_percent), active STA counts, and per-STA TX/RX airtime consumption.
+      • When active clients exceed monitor_min_active_clients or the load delta crosses conf_client_load_notification_delta_th_percent, the Agent transmits an ACTION_CONTROL_HOSTAP_LOAD_MEASUREMENT_NOTIFICATION CMDU to the Controller.
+  2. Controller-Side Evaluation (controller.cpp:4378-4435):
+      • High Load Trigger: If client_load_percent > monitor_total_ch_load_notification_hi_th_percent and active_client_count > monitor_min_active_clients, the Controller spawns a
+      load_balancer_task.cpp.
+      • Low Load Recovery: If load drops below monitor_total_ch_load_notification_lo_th_percent, the Controller clears confinement flags on previously offloaded STAs, allowing them
+      to roam back.
+
+#### Step-by-Step Operation of load_balancer_task
+
+  The load_balancer_task.cpp executes an optimization algorithm:
+
+  ##### Step 1: Identify the Most Loaded Radio
+
+  The task queries updated statistics (ACTION_CONTROL_HOSTAP_STATS_MEASUREMENT_REQUEST) for all candidate radios and identifies the radio with the maximum channel_load_percent (or
+  highest STA count in case of equal load).
+
+  ##### Step 2: Select the Client to Offload (Efficiency Ratio Metric)
+
+  Rather than picking a random client, prplMesh calculates a Client Efficiency Ratio on the congested radio:
+
+                              ⎛   PHY Rate   ⎞
+    Efficiency Ratio ≈   ∑    ⎜──────────────⎟ × Traffic Share
+                       TX, RX ⎝Actual Bitrate⎠
+
+  • On a 5 GHz Radio: The task targets the least efficient client (typically a client with high airtime consumption but degraded MCS/PHY rate due to distance). Offloading this
+  client frees up disproportionately large airtime for the remaining high-rate STAs.
+  • On a 2.4 GHz Radio: The task targets the most capable client that can achieve better performance on an alternative radio/band.
+
+  ##### Step 3: Simulate Alternative Target APs
+
+  For the chosen client, the algorithm iterates over candidate neighbor APs/radios:
+
+  • Checks capability compatibility (e.g., ensuring 5 GHz is only targeted if the STA supports 5 GHz).
+  • Uses cross-band/cross-radio RSSI and PHY rate estimation (wireless_utils::estimate_ul_params) to predict the client's throughput on the alternative AP.
+  • Selects the target AP that maximizes predicted bitrate and network throughput.
+
+  ##### Step 4: Client Confinement (confined Flag)
+
+  When a client is moved to an AP/band that might have lower raw RSSI than its original AP solely for load balancing reasons:
+  • The controller sets client->confined = true.
+  • Purpose: In optimal_path_task.cpp:94-97, if a station is marked as confined, the optimal path task immediately aborts. This prevents the normal roaming algorithm from
+  immediately steering the client back to the congested AP (preventing ping-pong loops).
+
+  ##### Step 5: Confinement Release & Restoration
+
+  When the overloaded AP's load drops below monitor_total_ch_load_notification_lo_th_percent:
+
+  • The controller resets client->confined = false.
+  • It spawns optimal_path_task.cpp (load notif (low) - optimal_path) to naturally re-evaluate and roam the client back to its highest-performing link.
+  ──────
+  #### Key Configuration Parameters
+
+  Configurable via DataModel (X_PRPLWARE-COM_Controller.Configuration) or platform configuration files:
+
+   Parameter                                        | Type              | Default          | Description
+  --------------------------------------------------|-------------------|------------------|-----------------------------------------------------------------------------------------
+   LoadBalancingTaskEnabled                         | bool              | false            | Master toggle to enable/disable load balancing in the controller.
+   monitor_min_active_clients                       | uint32            | Platform-defined | Minimum number of active clients required on an AP before load balancing activates.
+   monitor_total_ch_load_notification_hi_th_percent | uint32            | Platform-defined | High channel load threshold (%) triggering the load balancer.
+   monitor_total_ch_load_notification_lo_th_percent | uint32            | Platform-defined | Low channel load threshold (%) triggering relaxation and removal of client confinement.
+   conf_client_load_notification_delta_th_percent   | uint32            | Platform-defined | Threshold for change in STA airtime load before sending an updated load notification.
+
+--- 
 
 ### Source Code
 
