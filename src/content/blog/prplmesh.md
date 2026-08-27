@@ -6,12 +6,16 @@ heroImage: '../../assets/prplmesh.png'
 ---
 
 <div style="text-align: justify; text-indent: 2em;">
-prplMesh is an open-source, carrier-grade, certifiable implementation of the **Wi-Fi Alliance (WFA) EasyMesh™ (Multi-AP)** standard, built on **IEEE 1905.1**. This post walks through the system's architecture end to end — from the EasyMesh standard's high-level features, through the layered BeeRocks component stack and its inter-process communication, to a practical guide for building, running, and operating prplMesh.
+PrplMesh is an open-source, carrier-grade, certifiable implementation of the **Wi-Fi Alliance (WFA) EasyMesh™ (Multi-AP)** standard, built on **IEEE 1905.1**. This post walks through the system's architecture end to end — from the EasyMesh standard's high-level features, through the layered BeeRocks component stack and its inter-process communication, to a practical guide for building, running, and operating prplMesh.
 </div>
+
+---
 
 ### System Architecture Partitioning
 
 ![Alt text](../../assets/technology/easymesh/SystemArchitecturePartitioning.png)
+
+---
 
 ### WFA EasyMesh High-Level Features
 
@@ -26,6 +30,8 @@ EasyMesh defines a common set of capabilities that every conformant multi-AP imp
 - **Client steering**: Positioning clients on the most advantageous access point/band.
 - **Backhaul optimization**: Providing robust inter-access-point links.
 - **Higher-layer data payload**: An extensible transport for higher-layer data, enabling vendor- and application-specific extensions on top of the core protocol.
+
+---
 
 ### prplMesh Architecture Analysis
 
@@ -42,6 +48,8 @@ Below is a detailed analysis of the architecture, traversing:
 ---
 
 #### Layer-by-Layer Architecture & Components
+
+---
 
 ##### Layer 1: IEEE 1905 Transport & TLVF Layer
 * **Role**: Handles Layer 2 transport for IEEE 1905.1 Control Message Data Units (CMDUs). It isolates all networking protocol encoding/decoding and packet forwarding from the controller and agent business logic.
@@ -149,8 +157,10 @@ Below is a detailed analysis of the architecture, traversing:
 
 <div style="text-align: justify; text-indent: 2em;">
 To support flexible deployments that meet different customer needs, the Multi-AP stack defines four deployment
-modes:
+modes: EasyMesh Managed Mode, EasyMesh Unmanaged Mode, Non-Mesh Managed Mode, Non-Mesh Unmanaged Mode
 </div>
+
+---
 
 #### EasyMesh Managed Mode
 
@@ -161,6 +171,8 @@ fully deployed. Communication between components is carried over the XSub/XPub l
 
 ![Alt text](../../assets/technology/easymesh/EasyMeshManagedMode.png)
 
+---
+
 #### EasyMesh Unmanaged Mode
 <div style="text-align: justify; text-indent: 2em;">
 This mode is identical to EasyMesh Managed Mode except that the controller is not deployed. It assumes an
@@ -168,6 +180,8 @@ external controller is attached to the local bus, or is otherwise external to th
 </div>
 
 ![Alt text](../../assets/technology/easymesh/EasyMeshUnmanagedMode.png)
+
+---
 
 #### Non-Mesh Managed Mode
 <div style="text-align: justify; text-indent: 2em;">
@@ -178,6 +192,8 @@ controller operates alongside the BeeRocks controller, the enabled features of e
 
 ![Alt text](../../assets/technology/easymesh/NoneMeshManagedMode.png)
 
+---
+
 #### Non-Mesh Unmanaged Mode
 <div style="text-align: justify; text-indent: 2em;">
 This mode is identical to Non-Mesh Managed Mode except that the controller is not deployed. It allows an
@@ -185,6 +201,8 @@ external entity to configure the agent and to receive statistics and events from
 </div>
 
 ![Alt text](../../assets/technology/easymesh/NoneMeshUnmanagedMode.png)
+
+---
 
 ### BeeRocks Inter/Outer Communication (IPC)
 <div style="text-align: justify; text-indent: 2em;">
@@ -201,9 +219,13 @@ point-to-point UDS connections, carrying the same vendor-specific CMDUs:
 
 ![Alt text](../../assets/technology/easymesh/ipc1.png)
 
+---
+
 #### IPC Mechanisms & Sockets Summary
 
 prplMesh utilizes distinct IPC mechanisms suited to each communication boundary:
+
+---
 
 | IPC Type | Socket / Interface Identifier | Endpoints | Purpose |
 | :--- | :--- | :--- | :--- |
@@ -217,7 +239,10 @@ prplMesh utilizes distinct IPC mechanisms suited to each communication boundary:
 | **Netlink Sockets (`AF_NETLINK`)** | `NETLINK_GENERIC` (`nl80211`)| `base_wlan_hal_nl80211` / `nl80211_client` $\leftrightarrow$ Linux Kernel `cfg80211` | Channel surveys, station bitrate dump, interface config |
 | **System Bus / IPC** | Ambiorix (`amxb` / ubus / PCB)| Controller / Agent $\leftrightarrow$ TR-181 Data Model / WHM | Northbound API management and platform abstraction |
 
+---
+
 ### BeeRocks Controller
+
 <div style="text-align: justify; text-indent: 2em;">
 The BeeRocks controller retains its current architecture with respect to module and task structure, and
 introduces a new transport library (BTL) that lets the controller communicate with the local 1905.1 transport
@@ -228,9 +253,13 @@ implementation.
 
 ![Alt text](../../assets/technology/easymesh/BeeRocksController.png)
 
+---
+
 ### Controller Database Structure
 
 ![Alt text](../../assets/technology/easymesh/ControllerDatabaseStructure.png)
+
+---
 
 ### BeeRocks Agent
 
@@ -243,7 +272,11 @@ independent of the controller, aligning with the requirement for separate packag
 
 ![Alt text](../../assets/technology/easymesh/BeeRocksAgent.png)
 
+---
+
 ### BeeRocks Flows
+
+---
 
 #### GW Boot
 
@@ -258,6 +291,8 @@ different entities in the system.
 
 ### End-to-End Control & Communication Flows
 
+---
+
 ##### Flow A: Client Association & Roaming Decision (Uplink Event Flow)
 1. **Vendor Driver → Wi-Fi HAL**: A client associates to an AP. `hostapd` emits an association event over `wpa_ctrl`.
 2. **Wi-Fi HAL → AP Manager**: [`bwl::ap_wlan_hal_nl80211`](prplMesh-6.0.0/common/beerocks/bwl/nl80211/ap_wlan_hal_nl80211.cpp) parses the event and invokes [`ApManager::hal_event_handler`](prplMesh-6.0.0/agent/src/beerocks/fronthaul_manager/ap_manager/ap_manager.cpp#L158) with `Event::STA_Connected`.
@@ -265,6 +300,8 @@ different entities in the system.
 4. **Agent → Transport Broker**: [`beerocks::slave_thread`](prplMesh-6.0.0/agent/src/beerocks/slave/son_slave_thread.cpp) constructs a 1905 **Topology Notification** / **Client Association Event** CMDU and sends it over `uds_broker` to `ieee1905_transport`.
 5. **Transport → Controller**: `ieee1905_transport` transmits the frame via a raw socket over Ethernet/Wi-Fi to the controller's transport daemon, which routes it over `uds_broker` to [`son::Controller`](prplMesh-6.0.0/controller/src/beerocks/master/controller.cpp).
 6. **Controller Execution**: [`son::Controller`](prplMesh-6.0.0/controller/src/beerocks/master/controller.cpp) updates [`son::db`](prplMesh-6.0.0/controller/src/beerocks/master/db/db.h) and triggers [`AssociationHandlingTask`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/association_handling_task.h) / [`OptimalPathTask`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/optimal_path_task.h).
+
+---
 
 ##### Flow B: Client Steering / BTM Request (Downlink Control Flow)
 1. **Controller**: [`ClientSteeringTask`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/client_steering_task.h) determines that a station should steer to another BSSID and generates a Multi-AP **Client Steering Request** CMDU.
@@ -282,11 +319,15 @@ Band Steering is a wireless resource management feature designed to steer multi-
   closely integrated with roaming and path-selection algorithms.
 </div>
 
+---
+
 | Frequency Band | Advantages | Limitations |
 | :--- | :--- | :--- |
 | **2.4 GHz** | Long range, superior wall/obstacle penetration. | High channel congestion, limited spectrum (three non-overlapping 20 MHz channels), lower peak data rates. |
 | **5 GHz** | Wider channels (up to 80/160 MHz), higher PHY rates, less RF interference and contention. | Shorter range, higher path loss and wall attenuation. |
 | **6 GHz (Wi-Fi 6E/7)** | Massive clean spectrum, ultra-wide 160/320 MHz channels, no legacy contention. | Highest attenuation, requires Wi-Fi 6E/7 client support and PSC scanning. |
+
+---
 
 <div style="text-align: center;">
 
@@ -294,13 +335,16 @@ Band Steering is a wireless resource management feature designed to steer multi-
 
 </div>
 
+---
+
 #### Key Tasks and Roles
+
+---
 
 1. **[`optimal_path_task`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/optimal_path_task.cpp)**
   + The primary decision engine for client path optimization.
   + When `settings_client_band_steering()` is enabled, it queries `database.get_radio_siblings()` and appends sibling radios to the candidate list.
   + Evaluates link metrics, PHY rate calculations, RSSI cutoff thresholds, and hysteresis bonuses.
-
 
 2. **[`association_handling_task`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/association_handling_task.cpp)**
   + Triggers immediately after a client connects or completes a handoff.
@@ -317,7 +361,11 @@ Band Steering is a wireless resource management feature designed to steer multi-
 5. **[`channel_selection_task`](prplMesh-6.0.0/controller/src/beerocks/master/tasks/channel_selection_task.cpp)**
   + Cooperates with Band Steering during DFS (Dynamic Frequency Selection) radar events or CAC (Channel Availability Check) to steer STAs safely down to 2.4 GHz before clearing 5 GHz channels.
 
+---
+
 #### Decision Algorithm & Path Selection
+
+---
 
 ##### Sibling Discovery & Compatibility Check
 
@@ -325,6 +373,8 @@ Band Steering is a wireless resource management feature designed to steer multi-
 + Verifies 2.4 GHz, 5 GHz, and 6 GHz capabilities (`get_sta_24ghz_support`, `get_sta_5ghz_support`, `get_sta_6ghz_support`).
 + Ensures candidate VAP shares the matching SSID.
 + Filters out inactive radios or radios undergoing channel selection.
+
+---
 
 ##### Metric Computation & Hysteresis
 + Link quality is evaluated based on either:
@@ -334,9 +384,13 @@ Band Steering is a wireless resource management feature designed to steer multi-
 + To prevent rapid oscillation (ping-pong effect) between bands:
 $$\text{Current Radio Score} = \text{Metric} \times \left(1 + \frac{\text{RoamingHysteresisPercentBonus}}{100}\right)$$
 
+---
+
 ##### Cutoff Threshold Logic
 + **5 GHz to 2.4 GHz Fallback:** If the client's estimated uplink/downlink RSSI on 5 GHz drops below `roaming_rssi_cutoff_db` (e.g. $-80\text{ dBm}$), 5 GHz is deemed unusable and 2.4 GHz is selected.
 + **2.4 GHz to 5 GHz Upsteering:** If 5 GHz estimated RSSI is safely above `roaming_rssi_cutoff_db` + hysteresis, 5 GHz is preferred.
+
+---
 
 #### Steering Execution Mechanisms
 
@@ -359,11 +413,15 @@ prplMesh supports two steering mechanisms depending on the client's 802.11 stand
         └───────────────────────┘                 └───────────────────────┘
 ```
 
+---
+
 ##### 802.11v BSS Transition Management (BTM)
 - Sends Multi-AP `CLIENT_STEERING_REQUEST_MESSAGE` with `tlvSteeringRequest`.
 - Sets `request_mode = STEERING_MANDATE`.
 - Populates target BSSID, target channel number, target operating class, and disassociation timer (`SteeringDisassociationTimerMSec`).
 - The serving AP transmits an IEEE 802.11v BTM Request frame to the station.
+
+---
 
 ##### Legacy Client Steering (Association Control & Timed Block)
 - Sends Multi-AP `Client Association Control Request` with `TIMED_BLOCK` to blacklist the client on non-target BSSIDs for a configurable duration (`STEERING_WAIT_TIME_MS`).
@@ -375,6 +433,8 @@ prplMesh supports two steering mechanisms depending on the client's 802.11 stand
 ##### Configuration Parameters
 
 The following parameters in the Controller DataModel (`X_PRPLWARE-COM_Controller.Configuration`) and platform configuration files control Band Steering:
+
+---
 
 | Parameter | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
@@ -411,6 +471,8 @@ When multiple client stations (STAs) congregate on a single AP or radio (e.g., t
 
 </div>
 
+---
+
 #### Triggering Mechanism
 
 Load balancing operates on an event-driven model between the Agent and the Controller:
@@ -424,13 +486,19 @@ Load balancing operates on an event-driven model between the Agent and the Contr
       • Low Load Recovery: If load drops below monitor_total_ch_load_notification_lo_th_percent, the Controller clears confinement flags on previously offloaded STAs, allowing them
       to roam back.
 
+---
+
 #### Step-by-Step Operation of load_balancer_task
 
   The load_balancer_task.cpp executes an optimization algorithm:
 
+---
+
   ##### Step 1: Identify the Most Loaded Radio
 
   The task queries updated statistics (ACTION_CONTROL_HOSTAP_STATS_MEASUREMENT_REQUEST) for all candidate radios and identifies the radio with the maximum channel_load_percent (or highest STA count in case of equal load).
+
+---
 
   ##### Step 2: Select the Client to Offload (Efficiency Ratio Metric)
 
@@ -440,32 +508,39 @@ Load balancing operates on an event-driven model between the Agent and the Contr
     Efficiency Ratio ≈   ∑    ⎜──────────────⎟ × Traffic Share
                        TX, RX ⎝Actual Bitrate⎠
 
-  • On a 5 GHz Radio: The task targets the least efficient client (typically a client with high airtime consumption but degraded MCS/PHY rate due to distance). Offloading this
+  - On a 5 GHz Radio: The task targets the least efficient client (typically a client with high airtime consumption but degraded MCS/PHY rate due to distance). Offloading this
   client frees up disproportionately large airtime for the remaining high-rate STAs.
-  • On a 2.4 GHz Radio: The task targets the most capable client that can achieve better performance on an alternative radio/band.
+  - On a 2.4 GHz Radio: The task targets the most capable client that can achieve better performance on an alternative radio/band.
+
+---
 
   ##### Step 3: Simulate Alternative Target APs
 
   For the chosen client, the algorithm iterates over candidate neighbor APs/radios:
 
-  • Checks capability compatibility (e.g., ensuring 5 GHz is only targeted if the STA supports 5 GHz).
-  • Uses cross-band/cross-radio RSSI and PHY rate estimation (wireless_utils::estimate_ul_params) to predict the client's throughput on the alternative AP.
-  • Selects the target AP that maximizes predicted bitrate and network throughput.
+  - Checks capability compatibility (e.g., ensuring 5 GHz is only targeted if the STA supports 5 GHz).
+  - Uses cross-band/cross-radio RSSI and PHY rate estimation (wireless_utils::estimate_ul_params) to predict the client's throughput on the alternative AP.
+  - Selects the target AP that maximizes predicted bitrate and network throughput.
+
+---
 
   ##### Step 4: Client Confinement (confined Flag)
 
   When a client is moved to an AP/band that might have lower raw RSSI than its original AP solely for load balancing reasons:
-  • The controller sets client->confined = true.
-  • Purpose: In optimal_path_task.cpp:94-97, if a station is marked as confined, the optimal path task immediately aborts. This prevents the normal roaming algorithm from
+  - The controller sets client->confined = true.
+  - Purpose: In optimal_path_task.cpp:94-97, if a station is marked as confined, the optimal path task immediately aborts. This prevents the normal roaming algorithm from
   immediately steering the client back to the congested AP (preventing ping-pong loops).
+
+---
 
   ##### Step 5: Confinement Release & Restoration
 
   When the overloaded AP's load drops below monitor_total_ch_load_notification_lo_th_percent:
+  - The controller resets client->confined = false.
+  - It spawns optimal_path_task.cpp (load notif (low) - optimal_path) to naturally re-evaluate and roam the client back to its highest-performing link.
 
-  • The controller resets client->confined = false.
-  • It spawns optimal_path_task.cpp (load notif (low) - optimal_path) to naturally re-evaluate and roam the client back to its highest-performing link.
- 
+---
+
   #### Key Configuration Parameters
 
   Configurable via DataModel (X_PRPLWARE-COM_Controller.Configuration) or platform configuration files:
@@ -513,6 +588,7 @@ prplMesh-6.0.0/
 │   └── transport/                 # IEEE 1905.1 transport daemon and broker
 └── tools/                         # Helper tools, Docker build scripts, Beerocks analyzer
 ```
+---
 
 ### prplMesh Usage Guide
 
@@ -538,6 +614,8 @@ sudo ip link set br-lan up
 
 #### Building prplMesh
 
+---
+
 ##### Option A: Native Build with CMake and Ninja (Recommended)
 
 ```bash
@@ -551,6 +629,8 @@ cmake -B ../build -H. -G Ninja \
 ninja -C ../build install
 ```
 
+---
+
 ##### Option B: Using `maptools.py` Utility
 
 ```bash
@@ -563,6 +643,8 @@ python3 ./maptools.py build
 # Clean and rebuild
 python3 ./maptools.py build -c clean make
 ```
+
+---
 
 ##### Option C: Docker Environment
 
@@ -581,6 +663,8 @@ The script `prplmesh_utils.sh` (located in `build/install/scripts/`, or generate
 cd <path/to/install/dir>/scripts    # e.g., ../build/install/scripts
 ```
 
+---
+
 #### Start prplMesh
 
 ```bash
@@ -596,6 +680,8 @@ sudo ./prplmesh_utils.sh start -m Multi-AP-Controller
 # Start with certification mode enabled (e.g., for a WFA test bed)
 sudo ./prplmesh_utils.sh start -c 1
 ```
+
+---
 
 #### Check Status & Stop
 
@@ -614,7 +700,11 @@ sudo ./prplmesh_utils.sh restart
 
 #### CLI Tools and Network Management
 
+---
+
 ##### `prplmesh_cli` (Unified CLI Tool)
+
+---
 
 ```bash
 # Display general mesh network status in human-readable format
@@ -632,6 +722,8 @@ sudo ./build/install/bin/prplmesh_cli -c set_ssid -o <ap_mac_or_iface> -n "MyMes
 # Configure Wi-Fi Security
 sudo ./build/install/bin/prplmesh_cli -c set_security -o <ap_mac_or_iface> -m "WPA2-Personal" -p "MySecretPassword"
 ```
+
+---
 
 ##### `beerocks_cli` (Low-Level Management & Diagnostics)
 
