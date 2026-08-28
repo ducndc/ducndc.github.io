@@ -13,9 +13,15 @@
 	--gray-dark: 34, 41, 57;
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+		0 2px 6px rgba(var(--gray), 25%),
+		0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
 }
+
+/* =========================
+   Fonts
+   ========================= */
+
 @font-face {
 	font-family: "Atkinson";
 	src: url("/fonts/atkinson-regular.woff") format("woff");
@@ -23,6 +29,7 @@
 	font-style: normal;
 	font-display: swap;
 }
+
 @font-face {
 	font-family: "Atkinson";
 	src: url("/fonts/atkinson-bold.woff") format("woff");
@@ -30,25 +37,46 @@
 	font-style: normal;
 	font-display: swap;
 }
+
+/* =========================
+   Base
+   ========================= */
+
 body {
 	font-family: "Times New Roman", Times, serif;
 	margin: 0;
 	padding: 0;
-	text-align: left;
+
+	text-align: justify;
+	text-justify: inter-word;
+
 	background: linear-gradient(var(--gray-gradient)) no-repeat;
 	background-size: 100% 600px;
+
 	word-wrap: break-word;
 	overflow-wrap: break-word;
+
 	color: rgb(var(--gray-dark));
+
 	font-size: 20px;
 	line-height: 1.7;
 }
+
+/* =========================
+   Main content
+   ========================= */
+
 main {
 	width: 720px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
 }
+
+/* =========================
+   Headings
+   ========================= */
+
 h1,
 h2,
 h3,
@@ -59,97 +87,235 @@ h6 {
 	color: rgb(var(--black));
 	line-height: 1.2;
 }
+
 h1 {
 	font-size: 3.052em;
 }
+
 h2 {
 	font-size: 2.441em;
 }
+
 h3 {
 	font-size: 1.953em;
 }
+
 h4 {
 	font-size: 1.563em;
 }
+
 h5 {
 	font-size: 1.25em;
 }
+
+/* =========================
+   Text
+   ========================= */
+
 strong,
 b {
 	font-weight: 700;
 }
+
+p {
+	margin-top: 0;
+	margin-bottom: 1em;
+	line-height: 1.7;
+}
+
+/*
+ * Paragraphs inside the main article.
+ * Keep normal paragraphs reasonably separated.
+ */
+.prose p {
+	margin-top: 0;
+	margin-bottom: 1.2em;
+	line-height: 1.7;
+}
+
+/* =========================
+   Links
+   ========================= */
+
 a {
 	color: var(--accent);
 }
+
 a:hover {
 	color: var(--accent);
 }
-p {
+
+/* =========================
+   Lists
+   ========================= */
+
+/*
+ * Overall list spacing.
+ */
+ul,
+ol {
+	margin-top: 0.5em;
 	margin-bottom: 1em;
+	padding-left: 1.5em;
 }
-.prose p {
-	margin-bottom: 2em;
+
+/*
+ * Individual list items.
+ * Smaller margin keeps items close together.
+ */
+li {
+	line-height: 1.5;
+	margin-bottom: 0.2em;
 }
+
+/*
+ * Important:
+ * Markdown may generate <li><p>...</p></li>.
+ * Remove paragraph margin inside list items.
+ */
+li p,
+.prose li p {
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 1.5;
+}
+
+/* =========================
+   Forms
+   ========================= */
+
 textarea {
 	width: 100%;
 	font-size: 16px;
 }
+
 input {
 	font-size: 16px;
 }
+
+/* =========================
+   Tables
+   ========================= */
+
 table {
 	width: 100%;
+	border-collapse: collapse;
 }
+
+/* =========================
+   Images
+   ========================= */
+
 img {
+	display: block;
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
+	margin: 1.5rem auto;
 }
+
+/*
+ * Center images inside article content.
+ */
+.prose img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 2rem auto;
+}
+
+/* =========================
+   Inline code
+   ========================= */
+
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
 	border-radius: 2px;
+	font-family: monospace;
 }
+
+/* =========================
+   Code blocks
+   ========================= */
+
 pre {
 	padding: 1.5em;
 	border-radius: 8px;
+	overflow-x: auto;
 }
+
 pre > code {
 	all: unset;
 }
+
+/* =========================
+   Blockquote
+   ========================= */
+
 blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
+	margin: 1.5em 0;
+	font-size: 1.1em;
 }
+
+/* =========================
+   Horizontal rule
+   ========================= */
+
 hr {
 	border: none;
 	border-top: 1px solid rgb(var(--gray-light));
+	margin: 2em 0;
 }
+
+/* =========================
+   Responsive
+   ========================= */
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
 	}
+
 	main {
 		padding: 1em;
 	}
+
+	.prose p {
+		line-height: 1.65;
+	}
+
+	li {
+		line-height: 1.5;
+	}
 }
+
+/* =========================
+   Screen reader only
+   ========================= */
 
 .sr-only {
 	border: 0;
 	padding: 0;
 	margin: 0;
+
 	position: absolute !important;
+
 	height: 1px;
 	width: 1px;
+
 	overflow: hidden;
+
 	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
 	clip: rect(1px 1px 1px 1px);
+
 	/* maybe deprecated but we need to support legacy browsers */
 	clip: rect(1px, 1px, 1px, 1px);
+
 	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+
+	/* added line to stop words getting smushed together */
 	white-space: nowrap;
 }

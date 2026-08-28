@@ -9,18 +9,16 @@ heroImage: '../../assets/vim_image.jpeg'
 
 ---
 
-## The two modes
+### The two modes
 
 Vi operates in two modes:
-
 - **Command mode** — every keystroke is a command. This is where you start when you open a file.
 - **Insert mode** — keystrokes produce text, like a normal editor.
-
 Switch to insert mode with `i`, `I`, `a`, `A`, or similar commands. Return to command mode with `ESC`.
 
 ---
 
-## Opening files
+### Opening files
 
 ```
 vi filename          # open an existing or new file
@@ -33,7 +31,7 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 
 ---
 
-## Saving and quitting
+### Saving and quitting
 
 | Command | Action |
 |---------|--------|
@@ -44,9 +42,11 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 
 ---
 
-## Basic editing
+### Basic editing
 
-### Inserting text
+---
+
+#### Inserting text
 
 | Command | Action |
 |---------|--------|
@@ -55,7 +55,9 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 | `a` | Append after cursor |
 | `A` | Append at end of line |
 
-### Changing text
+---
+
+#### Changing text
 
 | Command | Action |
 |---------|--------|
@@ -66,7 +68,9 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 | `s` | Substitute character at cursor |
 | `S` | Substitute entire line |
 
-### Deleting text
+---
+
+#### Deleting text
 
 | Command | Action |
 |---------|--------|
@@ -75,7 +79,9 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 | `dl` or `x` | Delete one character |
 | `D` | Delete to end of line |
 
-### Repeat and undo
+---
+
+#### Repeat and undo
 
 | Command | Action |
 |---------|--------|
@@ -88,9 +94,11 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 
 ---
 
-## Movement
+### Movement
 
-### Basic cursor movement
+---
+
+#### Basic cursor movement
 
 | Command | Action |
 |---------|--------|
@@ -98,14 +106,18 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 | `e` / `b` | Forward / backward one word |
 | `+` / `-` | First character of next / previous line |
 
-### Line navigation
+---
+
+#### Line navigation
 
 | Command | Action |
 |---------|--------|
 | `0` or `^` | Beginning of line |
 | `$` | End of line |
 
-### File navigation
+---
+
+#### File navigation
 
 | Command | Action |
 |---------|--------|
@@ -114,7 +126,9 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 | ` `` ` | Return to previous position |
 | `H` / `M` / `L` | Top / middle / last line on screen |
 
-### Scrolling
+---
+
+#### Scrolling
 
 | Command | Action |
 |---------|--------|
@@ -125,9 +139,11 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 
 ---
 
-## Searching
+### Searching
 
-### Pattern search
+---
+
+#### Pattern search
 
 | Command | Action |
 |---------|--------|
@@ -137,7 +153,9 @@ When a file opens, tildes (`~`) on the left indicate empty lines. The status lin
 
 Search patterns support regular expressions — `.`, `*`, `[]`, and more.
 
-### Character search (within a line)
+---
+
+#### Character search (within a line)
 
 | Command | Action |
 |---------|--------|
@@ -147,11 +165,13 @@ Search patterns support regular expressions — `.`, `*`, `[]`, and more.
 
 ---
 
-## Cutting, copying, and pasting
+### Cutting, copying, and pasting
 
 Deleted text is saved to a buffer automatically and can be pasted with `p`.
 
-### Yank (copy) and put (paste)
+---
+
+#### Yank (copy) and put (paste)
 
 | Command | Action |
 |---------|--------|
@@ -161,11 +181,15 @@ Deleted text is saved to a buffer automatically and can be pasted with `p`.
 | `p` | Paste after cursor |
 | `P` | Paste before cursor |
 
-### Unnamed buffers
+---
+
+#### Unnamed buffers
 
 Vi saves your last nine deletions in numbered buffers. Paste the second-to-last deletion with `"2p`.
 
-### Named buffers (a–z)
+---
+
+#### Named buffers (a–z)
 
 Use named buffers to save specific yanks or deletions:
 
@@ -179,11 +203,13 @@ Using a capital letter (e.g. `"Zyy`) appends to the named buffer rather than rep
 
 ---
 
-## Ex commands
+### Ex commands
 
 Every time you type `:` in vi, you invoke the `ex` line editor — vi's underlying engine. Ex commands are powerful because they can operate on ranges of lines at once.
 
-### Line addressing
+---
+
+#### Line addressing
 
 | Address | Meaning |
 |---------|---------|
@@ -199,7 +225,9 @@ Examples:
 - `:%d` — delete all lines
 - `:/pattern/d` — delete the next line matching pattern
 
-### Global search and replace
+---
+
+#### Global search and replace
 
 ```
 :s/old/new/          # replace first match on current line
@@ -214,7 +242,9 @@ Combine with the global command to restrict replacements to matching lines:
 :g/pattern/s/old/new/g
 ```
 
-### Working with multiple files
+---
+
+#### Working with multiple files
 
 ```
 :e filename          # edit another file (save current first with :w)
@@ -223,7 +253,9 @@ Combine with the global command to restrict replacements to matching lines:
 :args                # list all files currently being edited
 ```
 
-### Search and replace across multiple buffers
+---
+
+#### Search and replace across multiple buffers
 
 ```vim
 :bufdo %s/pattern/replace/ge | update   " replace in all open buffers
@@ -234,11 +266,13 @@ The `e` flag suppresses errors when a pattern isn't found. `update` only writes 
 
 ---
 
-## Vim (Vi IMproved)
+### Vim (Vi IMproved)
 
 Vim adds a substantial layer of features on top of vi:
 
-### Syntax and indentation
+---
+
+#### Syntax and indentation
 
 ```vim
 :syntax on        " enable syntax highlighting
@@ -246,15 +280,21 @@ Vim adds a substantial layer of features on top of vi:
 :set number       " show line numbers
 ```
 
-### Session persistence
+---
+
+#### Session persistence
 
 Vim stores session history in `~/.viminfo`, allowing it to remember your position, yank history, and command history between sessions — even across different files.
 
-### Transparent editing
+---
+
+#### Transparent editing
 
 Vim can open compressed or archived files directly (e.g. `myfile.tar.gz`) and lets you browse and edit directory listings using standard navigation commands.
 
-### Meta-information registers
+---
+
+#### Meta-information registers
 
 Vim exposes several read-only registers for inserting metadata:
 
@@ -265,7 +305,9 @@ Vim exposes several read-only registers for inserting metadata:
 | `:` | Last ex command executed |
 | `.` | Last inserted text |
 
-### Plugins and configuration
+---
+
+#### Plugins and configuration
 
 Vim supports a rich ecosystem of plugins, configurable through `~/.vimrc`. Options worth setting early:
 

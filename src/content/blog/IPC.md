@@ -5,18 +5,16 @@ pubDate: 'August 17 2022'
 heroImage: '../../assets/ipc.png'
 ---
 
-## What is IPC and Why we need it?
+### What is IPC and Why we need it?
 
-<div style="text-align: justify; text-indent: 2em;">
 IPC is a mechanism using which two or more process running on the same machine exchange their personal data with each other. 
 Communication between processes running on different machine are not termed as IPC. Processes running on same machine, often need to exchange data with oter in order to implement some functionality. Linux OS provides serveral mechanisms using which user space processes can carry out communication with each other, each mechanism has its own pros and cons
-</div>
 
-<div style="text-align: justify; text-indent: 2em;">
 User space <==> Netlink Skts / IOCTLS / Device files / System calls <==> Kernel <==> Device drivers <==> Hardware
-</div>
 
-## IPC Techniques
+---
+
+### IPC Techniques
 
 1. Unix Domain sockets
 2. Network Sockets
@@ -27,18 +25,20 @@ User space <==> Netlink Skts / IOCTLS / Device files / System calls <==> Kernel 
 
 ![H1](../../assets/img/linux/ipc.png)
 
-## Sockets
+---
 
-<div style="text-align: justify; text-indent: 2em;">
+### Sockets
+
 Unix/Linux like OS provide Socket Interface to carry out communication betwwen various types of entities.
 The Socket Interface are a bunch of Socket programming releated API
-</div>
 
 Two types:
 - Unix Domain Sockets: IPC between processes running on the same system
 - Network Sockets: Communication between processes running on different physical machines over the network
 
-### Sockets Steps and related API
+---
+
+#### Sockets Steps and related API
 
 1. Remove the socket, if already exits
 2. Create a Unix socket using socket()
@@ -55,13 +55,17 @@ Two types:
 
 ![H1](../../assets/img/linux/sockets.png)
 
-### Sockets Message Types
+---
+
+#### Sockets Message Types
 
 Messages exchange between the client and the server processes can be categorized into two types:
 - Connection Initiation Request Messages (CIR)
 - Service Request Messages (SRM)
 
-### State Machine of Socket based Client Server Communication
+---
+
+#### State Machine of Socket based Client Server Communication
 
 1. When server boots up, it create a connection socket (also called "master socket file descriptor" using socket()), M = socket()
 2. M is the mother of all client handles. M gives birth to all client handles. Client handles are also called "data_sockets"
@@ -71,22 +75,23 @@ Messages exchange between the client and the server processes can be categorized
 6. accept() is the system call used on server side to create client handles
 7. In linux terminology, handles are called as "file descriptors" which are just positive interger numbers. Client handles are called "communication file descriptors" or "data sockets" and M is called "Master socket file descriptor" or "Connection socket"
 
-<div style="text-align: justify; text-indent: 2em;">
 When the server receives new connetion initiation request msg from new client, this request goes on Master socket mainteined by server. Master socket is activated
 When server receives connection initial request from client, server invokes the accept() to establish the didirectional communication
 Return value of accept system call is client handle or communication file descriptor
 accept() is used only for connection oriented communication, not for connection less connection
-</div>
 
-### Unix Domain Sockets
+---
+
+#### Unix Domain Sockets
 
 Using UNIX Domain Sockets, you can setup STREAM of DATAGRAM based communication
 - STREAM : When large files need to be moved or copied from one location to another, eg: copying a movies, continuous flow of bytes
 - DATAGRAM : When small units of data needs to be moved from one process to another within a system
 
-### Multiplexing
+---
 
-<div style="text-align: justify; text-indent: 2em;">
+#### Multiplexing
+
 Multiplexing is a machanism through which the server process can monitor multiple clients at the same time.
 Without multiplexing, server process can entertain only one client at a time, and can not entertain other client's request until it finishes with the current client.
 With multiplexing, server can entertain multiple connected clients simultaneously.
@@ -94,15 +99,18 @@ Server process has to maintain client handles (communication FDs) to carry out c
 In addition, server process has to maintain connection socket or master socket FD as well (M) to process new connection req from new client.
 Linux provides an inbuild data structure to maintain the set of sockets file descriptors.
 select() system call monitor all socket FDs present in fd_set
-</div>
 
 ![H1](../../assets/img/linux/select.png)
 
-### Example
+---
+
+#### Example
 
 <a href="https://github.com/ducndc/linux-system-programming/tree/main/networking" target="_blank">Code example of unix socket and network socket</a><br>
 
-## Message Queues
+---
+
+### Message Queues
 
 - Linux/Unix OS provides another mechanism called Message Queue for carrying out IPC
 - Processes running on same machine can exchange any data using message queues
@@ -115,7 +123,9 @@ select() system call monitor all socket FDs present in fd_set
 
 ![H1](../../assets/img/linux/msgQueue.jpeg)
 
-### Message queue creation
+---
+
+#### Message queue creation
 
 A process can create new msgQ or use an existing msgQ using below API
 mq_open(const char *name, int oflag);
@@ -128,7 +138,9 @@ mq_open(const char *name, int oflag, mode_t mode, struct mq_attr *attr);
 - - Maximum size of the msg which msgQ can hold, should be less than or equal to /proc/sys/fs/mqueue/msgsize_max
 if mq_open() succeeds, it returns a file (a handle) to msgQ. Using this handle, we perform all msgQ operations on msgQ throughout the program
 
-### Message queue closing
+---
+
+#### Message queue closing
 
 A process can close a msgQ using below API
 int mq_close(mqd_t msgQ);
@@ -142,7 +154,9 @@ int mq_close(mqd_t msgQ);
 - When reference_count = 0, kernel; cleanups/destroys that kernel resource
 - Remember, kernel resource could be anything, it could be socket FD, msgQ FD etc
 
-### Enqueue a message
+---
+
+#### Enqueue a message
 
 A sending process can place a message in a message queue using below API
 int mq_send(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);
@@ -152,7 +166,9 @@ int mq_send(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);
 - Message are placed in the queue in the decreasing order of message priority, with the older messages for a priority coming before newer messages
 - If the queue is full, mq_send blocks till there is space on the queue, unless the O_NONBLOCK flag is enabled for the message queue, in which case mq_send returns immediately with errno set to EAGAIN
 
-### Dequeue a message
+---
+
+#### Dequeue a message
 
 A receiving process can dequeue a message in a message queue using below API
 int mq_receive(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);
@@ -163,7 +179,9 @@ int mq_receive(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio)
 - The default behavior of mq_receive is to block if there is no message in the queue. However, if the O_NONBLOCK flag is enabled for the queue, and the queue is empty, mq_receive returns immediately with errno set to EAGAIN
 - On success, mq_receive returns the number of bytes receoved in the buffer pointed by msg_ptr
 
-### Destroying a message queue
+---
+
+#### Destroying a message queue
 
 A creating process can destroy a message queue using below API
 int mq_unlink(const char *msgQ_name);
@@ -172,7 +190,9 @@ int mq_unlink(const char *msgQ_name);
 - Return -1 if it fails, 0 on success
 - Postpone if other processes are using msgQ
 
-### Using a message queue
+---
+
+#### Using a message queue
 
 - A message queue IPC mechanism usually supports N:1 communication paradigm, meaning there can be N senders but 1 receiver per message queue
 - Multiple senders can open the same msgQ using msgQ name, and enque their msgs in the same queue
@@ -182,13 +202,19 @@ int mq_unlink(const char *msgQ_name);
 - Client can dequeue msgs from more than one msg queues
 - No limitation on server processes
 
-### Example
+---
+
+#### Example
 
 <a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC" target="_blank">Code example of message queue</a><br>
 
-## Shared Memory
+---
 
-### Memory mapping
+### Shared Memory
+
+---
+
+#### Memory mapping
 Virtual memory, physical memory and secondary memory setup
 1. Not all programs needs secondary storages, but most non-trivial applications do
 2. Memory mapping is used to change the secondary storage of the program to some other source, say some hardware device memory or some particular file on disk
@@ -197,38 +223,38 @@ Virtual memory, physical memory and secondary memory setup
 
 ![H1](../../assets/img/linux/mem.png)
 
-### Using external data source as shared memory
+---
+
+#### Using external data source as shared memory
 
 - Virtual pages of both the processes maps to same physical pages loaded in RAM
 - Physical pages in turn are read/written to extenal memory
 - Rule: a process never can access any address outside of its VAS is never violated
 - Any modification made by process A in its shared VM, shall be seen by process B
 
-### Using RAM itself as data source
+---
+
+#### Using RAM itself as data source
 
 ![H1](../../assets/img/linux/sharedMemory.png)
 
-### mmap()
+---
+
+#### mmap()
 
 void *mmap(void addr[.length], size_t length, int prot, int flags, int fd, off_t offset);
 
-<div style="text-align: justify; text-indent: 2em;">
 mmap() creates a new mapping in the virtual address space of the calling process. The starting address for the new mapping is specified in addr. The length argument specifies the length of the mapping (which must be greater than 0).
-</div>
 
-<div style="text-align: justify; text-indent: 2em;">
 If addr is NULL, then the kernel chooses the (page-aligned) address at which to create the mapping; this is the most portable method of creating a new mapping. If addr is not NULL, then the kernel takes it as a hint about where to place the mapping; on Linux, the kernel will pick a nearby page boundary (but always above or equal to the value specified by /proc/sys/vm/mmap_min_addr) and attempt to create the mapping there. If another mapping already exists there, the kernel picks a new address that may or may not depend on the hint. The address of the new mapping is returned as the result of the call.
-</div>
 
-<div style="text-align: justify; text-indent: 2em;">
 The contents of a file mapping (as opposed to an anonymous mapping; see MAP_ANONYMOUS below), are initialized using length bytes starting at offset offset in the file (or other object) referred to by the file descriptor fd. offset must be a multiple of the page size as returned by sysconf(_SC_PAGE_SIZE). 
-</div>
 
-<div style="text-align: justify; text-indent: 2em;">
 After the mmap() call has returned, the file descriptor, fd, can be closed immediately without invalidating the mapping.
-</div>
 
-### Design constraints for using shared memory as IPC
+---
+
+#### Design constraints for using shared memory as IPC
 
 Shared memory approach of IPC is used in a scenario where:
 - Exactly one processes is responsible to update the shared memory (publisher process)
@@ -244,11 +270,15 @@ When publisher process update the shared memory:
 - After receiving this notification, subscribers can read the update shared memory and update their internal data structures, if any
 - The notification is just a small message, and can be sent out using other IPC mechanisms, such as Unix domain sockets or msg queues
 
-### Example
+---
+
+#### Example
 
 <a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC" target="_blank">Code example of shared memory</a><br>
 
-## Signals
+---
+
+### Signals
 
 A system message sent from one process to another, not usually used to transfer data but instead used to remotely command the partnered process.
 When a process receives a signal. Either of the three things can happen:
@@ -256,15 +286,15 @@ When a process receives a signal. Either of the three things can happen:
 2. Customized
 3. Ignore
 
-<div style="text-align: justify; text-indent: 2em;">
 A signal handler routine is a special function which is invoked when the process receives a signal.
 We need to register the routine against the type of signal (that is, process needs to invoke the function F when signal S is received).
 Signal handler routine are executed at the highest priority, preemting the normal execution flow of the process.
-</div>
 
 ![H1](../../assets/img/linux/signal.png)
 
-### Well known signals in linux
+---
+
+#### Well known signals in linux
 
 1. SIGINT - interrupt (i.e., Ctrl-c)
 2. SIGUSR1 and SIGUSR2 - user defined signals
@@ -274,16 +304,22 @@ Signal handler routine are executed at the highest priority, preemting the norma
 6. SIGSEGV - segmentation fault, raised by the kernel to the process when illegal memory is referenced
 7. SIGCHILD - whenever a child terminates, this signal is sent to the parent. Upon receiving this signal, parent should execute wait() system call to read child status. Need to understand fork() to understand this signal
 
-### Three ways of generating signals in linux
+---
+
+#### Three ways of generating signals in linux
 
 1. Raising a signal from OS to a process
 2. Sending a signal from process A to itself (using raise())
 3. Sending signal from process A to process B (using kill())
 
-### Example
+---
+
+#### Example
 
 <a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC" target="_blank">Code example of signal</a><br>
 
-## References
+---
+
+### References
 
 [1] Linux Inter Process Communication (IPC) from Scratch in C

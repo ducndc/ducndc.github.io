@@ -37675,7 +37675,8 @@ Please report this to https://github.com/markedjs/marked.`, e3) {
           ...(node2.description ?? []).map((line2) => ({ text: line2, cssClass: "c4-descr" }))
         ].filter((section) => section.text);
         const wrapWidth = node2.width ? Math.max(node2.width - 2 * (node2.padding ?? 0), MIN_WRAP_WIDTH) : getConfig2().flowchart?.wrappingWidth ?? 200;
-        const width3 = config3.wrap ? wrapWidth : Number.POSITIVE_INFINITY;
+        const shouldWrap = config3.c4?.wrap ?? true;
+        const width3 = shouldWrap ? wrapWidth : Number.POSITIVE_INFINITY;
         const rendered = await Promise.all(
           sections6.map(async (section) => {
             const sectionEl = labelEl.append("g").attr("class", section.cssClass);
@@ -52261,31 +52262,31 @@ You have to call mermaid.initialize.`
       extension = /* @__PURE__ */ __name((elem, type3, id41) => {
         log.trace("Making markers for ", id41);
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-extensionStart").attr("class", "marker extension " + type3).attr("refX", 18).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").attr("d", "M 1,7 L18,13 V 1 Z");
-        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-extensionEnd").attr("class", "marker extension " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").append("path").attr("d", "M 1,1 V 13 L18,7 Z");
+        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-extensionEnd").attr("class", "marker extension " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").attr("d", "M 1,1 V 13 L18,7 Z");
         elem.append("marker").attr("id", id41 + "_" + type3 + "-extensionStart-margin").attr("class", "marker extension " + type3).attr("refX", 18).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").attr("viewBox", "0 0 20 14").append("polygon").attr("points", "10,7 18,13 18,1").style("stroke-width", 2).style("stroke-dasharray", "0");
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-extensionEnd-margin").attr("class", "marker extension " + type3).attr("refX", 9).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").attr("viewBox", "0 0 20 14").append("polygon").attr("points", "10,1 10,13 18,7").style("stroke-width", 2).style("stroke-dasharray", "0");
       }, "extension");
       composition = /* @__PURE__ */ __name((elem, type3, id41) => {
-        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-compositionStart").attr("class", "marker composition " + type3).attr("refX", 18).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").append("path").attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
-        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-compositionEnd").attr("class", "marker composition " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").append("path").attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
+        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-compositionStart").attr("class", "marker composition " + type3).attr("refX", 18).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
+        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-compositionEnd").attr("class", "marker composition " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-compositionStart-margin").attr("class", "marker composition " + type3).attr("refX", 15).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").style("stroke-width", 0).attr("viewBox", "0 0 15 15").attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-compositionEnd-margin").attr("class", "marker composition " + type3).attr("refX", 3.5).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").style("stroke-width", 0).attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
       }, "composition");
       aggregation = /* @__PURE__ */ __name((elem, type3, id41) => {
-        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-aggregationStart").attr("class", "marker aggregation " + type3).attr("refX", 18).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").append("path").attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
-        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-aggregationEnd").attr("class", "marker aggregation " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").append("path").attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
+        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-aggregationStart").attr("class", "marker aggregation " + type3).attr("refX", 18).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
+        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-aggregationEnd").attr("class", "marker aggregation " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-aggregationStart-margin").attr("class", "marker aggregation " + type3).attr("refX", 15).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").style("stroke-width", 2).attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-aggregationEnd-margin").attr("class", "marker aggregation " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").style("stroke-width", 2).attr("d", "M 18,7 L9,13 L1,7 L9,1 Z");
       }, "aggregation");
       dependency = /* @__PURE__ */ __name((elem, type3, id41) => {
-        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-dependencyStart").attr("class", "marker dependency " + type3).attr("refX", 6).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").append("path").attr("d", "M 5,7 L9,13 L1,7 L9,1 Z");
-        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-dependencyEnd").attr("class", "marker dependency " + type3).attr("refX", 13).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").append("path").attr("d", "M 18,7 L9,13 L14,7 L9,1 Z");
+        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-dependencyStart").attr("class", "marker dependency " + type3).attr("refX", 6).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").attr("d", "M 5,7 L9,13 L1,7 L9,1 Z");
+        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-dependencyEnd").attr("class", "marker dependency " + type3).attr("refX", 13).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").attr("d", "M 18,7 L9,13 L14,7 L9,1 Z");
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-dependencyStart-margin").attr("class", "marker dependency " + type3).attr("refX", 4).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").style("stroke-width", 0).attr("d", "M 5,7 L9,13 L1,7 L9,1 Z");
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-dependencyEnd-margin").attr("class", "marker dependency " + type3).attr("refX", 16).attr("refY", 7).attr("markerWidth", 20).attr("markerHeight", 28).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("path").style("stroke-width", 0).attr("d", "M 18,7 L9,13 L14,7 L9,1 Z");
       }, "dependency");
       lollipop = /* @__PURE__ */ __name((elem, type3, id41) => {
-        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-lollipopStart").attr("class", "marker lollipop " + type3).attr("refX", 13).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").append("circle").attr("fill", "transparent").attr("cx", 7).attr("cy", 7).attr("r", 6);
-        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-lollipopEnd").attr("class", "marker lollipop " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").append("circle").attr("fill", "transparent").attr("cx", 7).attr("cy", 7).attr("r", 6);
+        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-lollipopStart").attr("class", "marker lollipop " + type3).attr("refX", 13).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("circle").attr("fill", "transparent").attr("cx", 7).attr("cy", 7).attr("r", 6);
+        elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-lollipopEnd").attr("class", "marker lollipop " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("circle").attr("fill", "transparent").attr("cx", 7).attr("cy", 7).attr("r", 6);
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-lollipopStart-margin").attr("class", "marker lollipop " + type3).attr("refX", 13).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("circle").attr("fill", "transparent").attr("cx", 7).attr("cy", 7).attr("r", 6).attr("stroke-width", 2);
         elem.append("defs").append("marker").attr("id", id41 + "_" + type3 + "-lollipopEnd-margin").attr("class", "marker lollipop " + type3).attr("refX", 1).attr("refY", 7).attr("markerWidth", 190).attr("markerHeight", 240).attr("orient", "auto").attr("markerUnits", "userSpaceOnUse").append("circle").attr("fill", "transparent").attr("cx", 7).attr("cy", 7).attr("r", 6).attr("stroke-width", 2);
       }, "lollipop");
@@ -60871,7 +60872,7 @@ You have to call mermaid.initialize.`
   });
 
   // src/rendering-util/createGraph.ts
-  function createLayoutElementGroups(element3, { edgePathsClass = "edges edgePath" } = {}) {
+  function createLayoutElementGroups(element3, { edgePathsClass = "edges edgePaths" } = {}) {
     const rootGroups = element3.insert("g").attr("class", "root");
     const clusters = rootGroups.insert("g").attr("class", "clusters");
     const edgePaths = rootGroups.insert("g").attr("class", edgePathsClass);
@@ -61354,7 +61355,12 @@ You have to call mermaid.initialize.`
     const measureLayoutFn = measureLayout ?? defaultMeasureLayout;
     return /* @__PURE__ */ __name(async function render10(data4Layout, svg2, helpers, options2) {
       const element3 = svg2.select("g");
-      markers_default(element3, data4Layout.markers, data4Layout.type, data4Layout.diagramId);
+      (helpers?.insertMarkers ?? markers_default)(
+        element3,
+        data4Layout.markers,
+        data4Layout.type,
+        data4Layout.diagramId
+      );
       clearLayoutRenderState();
       const renderContext = {
         element: element3,
@@ -108102,7 +108108,7 @@ You have to call mermaid.initialize.`
     fill: ${options2.arrowheadColor};
   }
 
-  .edgePath .path {
+  .edgePaths .path {
     stroke: ${options2.lineColor};
     stroke-width: ${options2.strokeWidth ?? 2}px;
   }
@@ -148627,7 +148633,7 @@ ${content}`;
     "src/diagrams/info/infoDb.ts"() {
       "use strict";
       DEFAULT_INFO_DB = {
-        version: "11.17.0" + (true ? "" : "-tiny")
+        version: "11.17.2" + (true ? "" : "-tiny")
       };
       getVersion = /* @__PURE__ */ __name(() => DEFAULT_INFO_DB.version, "getVersion");
       db2 = {
@@ -164383,7 +164389,7 @@ g.stateGroup line {
     fill: ${options2.arrowheadColor};
   }
 
-  .edgePath .path {
+  .edgePaths .path {
     stroke: ${options2.lineColor};
     stroke-width: 1.5px;
   }
@@ -172734,7 +172740,7 @@ ${prefix}${Math.round(value2 * 100) / 100}${suffix}`;
     fill: ${options2.arrowheadColor};
   }
 
-  .edgePath .path {
+  .edgePaths .path {
     stroke: ${options2.lineColor};
     stroke-width: 2.0px;
   }
@@ -192801,15 +192807,15 @@ ${prefix}${Math.round(value2 * 100) / 100}${suffix}`;
     svg2.insertBefore(style1, firstChild);
     try {
       if (false) {
-        await profiler5.span("draw", () => diag.renderer.draw(text4, id41, "11.17.0", diag));
+        await profiler5.span("draw", () => diag.renderer.draw(text4, id41, "11.17.2", diag));
       } else {
-        await diag.renderer.draw(text4, id41, "11.17.0", diag);
+        await diag.renderer.draw(text4, id41, "11.17.2", diag);
       }
     } catch (e3) {
       if (config3.suppressErrorRendering) {
         removeTempElements();
       } else {
-        errorRenderer_default.draw(text4, id41, "11.17.0");
+        errorRenderer_default.draw(text4, id41, "11.17.2");
       }
       throw e3;
     }

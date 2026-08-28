@@ -5,19 +5,15 @@ pubDate: 'December 10 2022'
 heroImage: '../../assets/oom.png'
 ---
 
-<div style="text-align: justify; text-indent: 2em;">
+
 It has one simple task, check if there is enough available memory to satisfy, verify that the system is truely out of memory and if so, select a process to kill
-</div>
 
-## Checking Available Memory
 
-<div style="text-align: justify; text-indent: 2em;">
+### Checking Available Memory
+
 For certain operations, such as expaning the heap with brk() or remapping an address space with mremap(), the system will check if there is enough available memory to satisfy a request. Note that this is separate to the out_of_memory() path that is covered in the next section. This path is used to avoid the system being in a state of OOM if at all possible.
-</div>
 
-<div style="text-align: justify; text-indent: 2em;">
 When checking available memory, the number of required pages is passed as a parameter to vm_enough_memory(). Unless the system administrator has specified that the system should overcommit memory, the mount of available memory will be checked. To determine how many pages are potentially available, Linux sums up the following bits of data:
-</div>
 
 - Total page cache as page cache is easily reclaimed 
 - Total free pages because they are already available
@@ -26,21 +22,17 @@ When checking available memory, the number of required pages is passed as a para
 - Total pages used by the dentry cache as they are easily reclaimed 
 - Total pages used by the inode cache as they are easily reclaimed
 
-<div style="text-align: justify; text-indent: 2em;">
 If the total number of pages added here is sufficient for the request, vm_enough_memory() returns true to the caller. If false is returned, the caller knows that the memory is not available and usually decides to return -ENOMEM to userspace.
-</div>
 
-## Determining OOM Status
+---
 
-<div style="text-align: justify; text-indent: 2em;">
+### Determining OOM Status
+
 When the machine is low on memory, old page frames will be reclaimed but despite reclaiming pages is may find that it was unable to free enough pages to satisfy a request even when scanning at highest priority. If it does fail to free page frames, out_of_memory() is called to see if the system is out of memory and needs to kill a process.
-</div>
 
-![H1](/assets/img/linux/oom.png)
+![H1](../../assets/img/linux/oom.png)
 
-<div style="text-align: justify; text-indent: 2em;">
 Unfortunately, it is possible that the system is not out memory and simply needs to wait for IO to complete or for pages to be swapped to backing storage. This is unfortunate, not because the system has memory, but because the function is being called unnecessarily opening the possibly of processes being unnecessarily killed. Before deciding to kill a process, it goes through the following checklist.
-</div>
 
 - Is there enough swap space left (nr_swap_pages > 0) ? If yes, not OOM 
 - Has it been more than 5 seconds since the last failure? If yes, not OOM 
@@ -48,26 +40,27 @@ Unfortunately, it is possible that the system is not out memory and simply needs
 - If there hasn't been 10 failures at least in the last 5 seconds, we're not OOM 
 - Has a process been killed within the last 5 seconds? If yes, not OOM
 
-<div style="text-align: justify; text-indent: 2em;">
 It is only if the above tests are passed that oom_kill() is called to select a process to kill.
-</div>
 
-## Selecting a Process
+---
 
-<div style="text-align: justify; text-indent: 2em;">
+### Selecting a Process
+
+
 The function select_bad_process() is responsible for choosing a process to kill. It decides by stepping through each running task and calculating how suitable it is for killing with the function badness(). The badness is calculated as follows, note that the square roots are integer approximations calculated with int_sqrt();
-</div>
 
-<div style="text-align: justify; text-indent: 2em;">
+
+
 badness_for_task = total_vm_for_task / (sqrt(cpu_time_in_seconds) *
 sqrt(sqrt(cpu_time_in_minutes)))
-</div>
 
-<div style="text-align: justify; text-indent: 2em;">
+
+
 This has been chosen to select a process that is using a large amount of memory but is not that long lived. Processes which have been running a long time are unlikely to be the cause of memory shortage so this calculation is likely to select a process that uses a lot of memory but has not been running long. If the process is a root process or has CAP_SYS_ADMIN capabilities, the points are divided by four as it is assumed that root privilege processes are well behaved. Similarly, if it has CAP_SYS_RAWIO capabilities (access to raw devices) privileges, the points are further divided by 4 as it is undesirable to kill a process that has direct access to hardware.
-</div>
 
-## Flow of Processing 
+---
+
+### Flow of Processing 
 
 1. User process → malloc(), new, mmap(), fork()
 2. __alloc_pages() -> __alloc_pages_nodemask()
@@ -79,7 +72,9 @@ This has been chosen to select a process that is using a large amount of memory 
 8. SIGKILL → Victim process
 9. Memory freed → System continues
 
-### __alloc_pages()
+---
+
+#### __alloc_pages()
 
 ```c
 static inline struct page *
@@ -158,7 +153,9 @@ out:
 EXPORT_SYMBOL(__alloc_pages_nodemask);
 ```
 
-### __alloc_pages_slowpath()
+---
+
+#### __alloc_pages_slowpath()
 
 ```c
 static inline struct page *
@@ -422,7 +419,9 @@ got_pg:
 }
 ```
 
-### __alloc_pages_may_oom()
+---
+
+#### __alloc_pages_may_oom()
 
 ```c
 static inline struct page *
@@ -512,7 +511,9 @@ out:
 }
 ```
 
-### out_of_memory()
+---
+
+#### out_of_memory()
 
 ```c
 /**
@@ -598,7 +599,9 @@ bool out_of_memory(struct oom_control *oc)
 }
 ```
 
-### select_bad_process()
+---
+
+#### select_bad_process()
 
 ```c
 /*
@@ -623,7 +626,9 @@ static void select_bad_process(struct oom_control *oc)
 }
 ```
 
-### oom_evaluate_task()
+---
+
+#### oom_evaluate_task()
 
 ```c
 static int oom_evaluate_task(struct task_struct *task, void *arg)
@@ -679,7 +684,9 @@ abort:
 }
 ```
 
-### oom_badness()
+---
+
+#### oom_badness()
 
 ```c
 /**
@@ -733,7 +740,9 @@ long oom_badness(struct task_struct *p, unsigned long totalpages)
 
 ```
 
-### oom_kill_process()
+---
+
+#### oom_kill_process()
 
 ```c
 static void oom_kill_process(struct oom_control *oc, const char *message)
