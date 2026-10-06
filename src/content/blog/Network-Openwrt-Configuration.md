@@ -5,13 +5,11 @@ pubDate: 'Jun 30 2026'
 heroImage: '../../assets/AP_Sys.png'
 ---
 
-# Network Configuration in OpenWrt
-
 *From UCI to netifd, from bridge/VLAN/DSA to firewall and Wi-Fi: how a single `option` line in `/etc/config/network` becomes packets moving through the kernel.*
 
 ---
 
-## 0. Conventions and Important Caveats
+### Conventions and Important Caveats
 
 This article targets engineers who already know basic Linux networking. The goal is to explain **architecture**, **configuration model**, **runtime behavior**, and **troubleshooting methodology**, not to be a click-through tutorial.
 
@@ -38,9 +36,13 @@ Examples in this article use DSA-style names (`lan1`..`lan4`, `wan`) because tha
 
 ---
 
-## 1. Introduction
+### Introduction
 
-### 1.1 How OpenWrt differs from closed router firmware
+---
+
+#### How OpenWrt differs from closed router firmware
+
+---
 
 Closed firmware is typically a web UI bolted onto a monolithic daemon and a few kernel modules. Config lives in an NVRAM blob or a binary file, and "WAN/LAN" are hard-coded concepts.
 
@@ -52,7 +54,11 @@ OpenWrt is different. It is a **Linux distribution** for embedded devices, and e
 
 The consequence: "WAN" and "LAN" are nothing special at the kernel level. They are just logical interface names that the firewall zones, DHCP, and the default route happen to attach to.
 
-### 1.2 UCI and `/etc/config/*`
+---
+
+#### UCI and `/etc/config/*`
+
+---
 
 UCI (Unified Configuration Interface) is a text config store, one file per subsystem:
 
@@ -77,7 +83,11 @@ uci commit network             # write to /etc/config/network
 
 `uci set` only writes to a **staging area** (`/tmp/.uci`). `uci commit` writes the file. **Commit is not apply.** You must reload the relevant service, otherwise the runtime does not change.
 
-### 1.3 Configuration vs runtime state
+---
+
+#### Configuration vs runtime state
+
+---
 
 This is the most common source of confusion when debugging:
 
@@ -90,7 +100,11 @@ This is the most common source of confusion when debugging:
 
 Runtime can **differ from config** because: a reload hasn't happened, the link isn't up, DHCP hasn't answered, a proto handler failed, or a script/hotplug intervened. Many routes/IPs you see in `ip route` are **not** in `/etc/config/network` because DHCP/PD/PPP generated them.
 
-### 1.4 Mental model
+---
+
+#### Mental model
+
+---
 
 ```text
 Configuration        /etc/config/{network,wireless,firewall,dhcp}
@@ -108,9 +122,13 @@ When something breaks, ask in this order: *Is the config right → does the serv
 
 ---
 
-## 2. OpenWrt Network Architecture
+### OpenWrt Network Architecture
 
-### 2.1 The layers
+---
+
+#### The layers
+
+---
 
 ```text
 Applications / Services    (ssh, uhttpd, ntpd, VPN daemons)
@@ -129,8 +147,9 @@ Ethernet / Wi-Fi           (MAC: DSA/switch, mac80211/cfg80211)
           ↓
 Hardware / Driver          (SoC MAC, switch chip, radio)
 ```
-
-### 2.2 Who does what
+---
+#### Who does what
+---
 
 | Component | Role | Reads | Writes |
 |---|---|---|---|
@@ -166,7 +185,11 @@ Two things to remember:
 1. **netifd is the center.** It is both the config interpreter and the state machine. `ubus call network.interface dump` is the source of truth for *what netifd thinks*, while `ip` is the source of truth for *what the kernel has*.
 2. **fw4 and dnsmasq/odhcpd do not discover topology on their own.** They depend on *logical interface names* and information supplied by netifd. Changing an interface without reloading firewall/dhcp is a classic source of bugs.
 
-### 2.3 Apply semantics
+---
+
+#### Apply semantics
+
+---
 
 ```sh
 /etc/init.d/network reload     # netifd computes a diff, changes only what changed
@@ -182,7 +205,9 @@ ubus call network reload       # equivalent to reload
 
 ---
 
-## 3. Important OpenWrt Configuration Files
+### Important OpenWrt Configuration Files
+
+---
 
 | File | Purpose | Main components |
 |---|---|---|
@@ -191,7 +216,11 @@ ubus call network reload       # equivalent to reload
 | `/etc/config/firewall` | Security/NAT | `defaults`, `zone`, `forwarding`, `rule`, `redirect` |
 | `/etc/config/dhcp` | DHCP/DNS/IPv6 RA | `dnsmasq`, `dhcp` (per interface), `host`, `odhcpd` |
 
-### 3.1 The files reference each other by *name*
+---
+
+#### The files reference each other by *name*
+
+---
 
 ```text
 SSID "Guest"
@@ -217,13 +246,19 @@ This chain runs on the **logical interface name** (`guest`), not the device name
 
 Misspelling an interface name, or renaming it without fixing all three places, is a very common mistake. The SSID still comes up, but clients get no DHCP or no Internet.
 
-### 3.2 Other files you will meet
+---
+
+#### Other files you will meet
+
+---
 
 `/etc/config/system` (hostname, timezone, LEDs), `/etc/config/uhttpd`, `/etc/config/dropbear`, `/etc/config/rpcd`, `/etc/config/mwan3` `[package-dependent]`, `/etc/config/sqm` `[package-dependent]`.
 
 ---
 
-## 4. The netifd Object Model
+### The netifd Object Model
+
+---
 
 Before the syntax, you need to understand that netifd manages two different kinds of objects.
 
@@ -239,9 +274,13 @@ Interface state (`ubus call network.interface.lan status`): `up`, `pending`, `av
 
 ---
 
-## 5. `/etc/config/network`
+### `/etc/config/network`
 
-### 5.1 Device vs Interface
+---
+
+#### Device vs Interface
+
+---
 
 ```text
 config device    ──►  Layer 2  (the "pipe": bridge, VLAN, port settings)
@@ -311,7 +350,11 @@ config interface 'lan' (device br-lan, static 192.168.1.1/24)
 
 Verify with `ip -d link show br-lan`, `ip addr show br-lan`, `ubus call network.interface.lan status`.
 
-### 5.2 Protocol types
+---
+
+#### Protocol types
+
+---
 
 | `proto` | Run by | Use when |
 |---|---|---|
@@ -378,7 +421,11 @@ config interface 'repeater_bridge'
 
 See section 14 for when to use it and its drawbacks.
 
-### 5.3 Bridge
+---
+
+#### Bridge
+
+---
 
 **A Linux bridge is a software L2 switch** (if a DSA switch chip offloads it, the actual forwarding is done by hardware). Concepts to know:
 
@@ -419,7 +466,11 @@ config device
 
 > **Pitfall:** Two ports of the same bridge connected to the same downstream switch create an **L2 loop** and a broadcast storm. Enable STP or design a loop-free topology. Wi-Fi mesh and wired backhaul at the same time is a common example (section 15).
 
-### 5.4 A complete sample config (DSA)
+---
+
+#### A complete sample config (DSA)
+
+---
 
 ```uci
 config interface 'loopback'
@@ -456,9 +507,13 @@ config interface 'wan6'
 
 ---
 
-## 6. VLAN and DSA
+### VLAN and DSA
 
-### 6.1 802.1Q in 60 seconds
+---
+
+#### 802.1Q in 60 seconds
+
+---
 
 - 802.1Q inserts a 4-byte tag (TPID `0x8100`, PCP, DEI, **12-bit VID**) into the Ethernet frame.
 - **Tagged**: the frame carries the VID tag on the wire. **Untagged**: the frame has no tag; the switch assigns a VLAN to it according to the port's **PVID**.
@@ -466,7 +521,11 @@ config interface 'wan6'
 - **Trunk port**: carries several tagged VLANs (usually plus a native/untagged VLAN).
 - **A VLAN is a separate broadcast domain.** Communication between VLANs requires L3 (a router).
 
-### 6.2 Two worlds: `swconfig` (legacy) vs DSA (modern)
+---
+
+#### Two worlds: `swconfig` (legacy) vs DSA (modern)
+
+---
 
 ```text
 Legacy (swconfig)                       Modern (DSA)
@@ -520,7 +579,11 @@ config interface 'lan'
 
 `[platform-dependent]` On some modern SoCs (some Qualcomm IPQ60xx/IPQ807x lines using SSDK/NSS, or firmware built on a vendor SDK), the switch/bridge offload model is **not upstream-standard DSA**. VLAN configuration and hardware offload may differ. Check your target's documentation.
 
-### 6.3 DSA: the configuration model
+---
+
+#### DSA: the configuration model
+
+---
 
 In DSA every user port is a netdev. VLANs are configured **on the bridge**, and the kernel/driver pushes them down to the switch chip via switchdev.
 
@@ -576,7 +639,11 @@ OpenWrt lan4 ---------------------------- Managed Switch
                                        access port   access port
 ```
 
-### 6.4 Attaching an L3 interface to a VLAN
+---
+
+#### Attaching an L3 interface to a VLAN
+
+---
 
 Create the interface on `br-lan.<vid>` (the VLAN sub-interface name of a VLAN-aware bridge):
 
@@ -596,7 +663,11 @@ The model: **bridge-vlan = L2 membership; the interface on `br-lan.N` = the L3 g
 
 `[version-dependent]` Sub-interface names like `br-lan.10` and netifd's automatic placement of wlan into a VLAN (sections 9, 10) are supported from the DSA era (21.02+). Confirm with `bridge vlan show` after applying.
 
-### 6.5 VLANs on swconfig vs DSA: a quick comparison for one use case
+---
+
+#### VLANs on swconfig vs DSA: a quick comparison for one use case
+
+---
 
 *"Access port VLAN 10, trunk VLAN 10+20."*
 
@@ -605,9 +676,13 @@ The model: **bridge-vlan = L2 membership; the interface on `br-lan.N` = the L3 g
 
 ---
 
-## 7. Routing
+### Routing
 
-### 7.1 Mental model
+---
+
+#### Mental model
+
+---
 
 Every IP packet the router handles goes through a **routing decision** in the kernel (FIB). On OpenWrt:
 
@@ -615,7 +690,11 @@ Every IP packet the router handles goes through a **routing decision** in the ke
 - Default routes have a **metric**; the lower metric wins.
 - There can be **multiple routing tables**; `ip rule` decides which table a packet uses (policy routing).
 
-### 7.2 Default route and metric
+---
+
+#### Default route and metric
+
+---
 
 ```uci
 config interface 'wan'
@@ -631,7 +710,11 @@ config interface 'wan2'
 
 Both default routes exist; the metric-10 route is used, and the metric-20 route is a backup *only when the first route disappears from the FIB* (e.g. link down). If the link stays up but the upstream is dead, the route remains and there is **no failover**. See section 17.
 
-### 7.3 Static route
+---
+
+#### Static route
+
+---
 
 ```uci
 config route
@@ -643,7 +726,11 @@ config route
 
 Use it when another L3 router inside the LAN has additional subnets behind it. `gateway` must be inside the `interface`'s subnet (or use `option onlink '1'`). Other options: `table`, `type` (`unicast`/`blackhole`/`unreachable`/`prohibit`), `source`, `mtu`. For IPv6 use `config route6`.
 
-### 7.4 Policy-based routing
+---
+
+#### Policy-based routing
+
+---
 
 `ip rule` selects a table by source, ingress interface, fwmark…
 
@@ -673,7 +760,11 @@ Typical use cases: push the IoT VLAN through a VPN/second WAN, or send guests ou
 
 > **Note:** A policy route whose target table has no default route makes traffic **fall through to the next rule**, or get dropped, depending on the rules. Verify step by step with `ip route get`.
 
-### 7.5 Debug
+---
+
+#### Debug
+
+---
 
 ```sh
 ip route                                  # main table
@@ -688,11 +779,17 @@ ubus call network.interface.wan status    # routes managed by netifd
 
 ---
 
-## 8. WAN Configurations
+### WAN Configurations
+
+---
 
 WAN device name `[platform-dependent]`: it can be `wan` (DSA), `eth1`, `eth0.2` (swconfig), or a `lanX` used as WAN on devices with a single switch port.
 
-### 8.1 DHCP WAN
+---
+
+#### DHCP WAN
+
+---
 
 ```uci
 config interface 'wan'
@@ -704,7 +801,11 @@ config interface 'wan6'
         option proto 'dhcpv6'
 ```
 
-### 8.2 Static WAN
+---
+
+#### Static WAN
+
+---
 
 ```uci
 config interface 'wan'
@@ -715,7 +816,11 @@ config interface 'wan'
         list dns '203.0.113.53'
 ```
 
-### 8.3 PPPoE
+---
+
+#### PPPoE
+
+---
 
 ```uci
 config interface 'wan'
@@ -734,7 +839,11 @@ Technical points:
 - The 8-byte overhead makes the effective MTU 1492 (on a 1500-MTU link). Without MSS clamping (`mtu_fix '1'` on the wan zone) you get the symptom of *some websites hanging* due to a PMTU blackhole.
 - Credentials are plaintext in `/etc/config/network`; be careful when sharing configs/backups.
 
-### 8.4 PPPoE over VLAN
+---
+
+#### PPPoE over VLAN
+
+---
 
 Many carriers (especially FTTH) require PPPoE to run inside a specific VLAN ID.
 
@@ -779,9 +888,13 @@ config interface 'wan'
 
 ---
 
-## 9. `/etc/config/wireless`
+### `/etc/config/wireless`
 
-### 9.1 `wifi-device`: the radio
+---
+
+#### `wifi-device`: the radio
+
+---
 
 ```uci
 config wifi-device 'radio0'
@@ -813,7 +926,11 @@ Notes:
 - **DFS** (5 GHz, channels 52-144) requires CAC (several minutes when choosing a channel) and radar detection; ACS may pick a DFS channel and the AP is "silent" during CAC.
 - Multiple radios may exist: `radio0` (2.4), `radio1` (5)… Names and ordering are `[platform-dependent]`.
 
-### 9.2 `wifi-iface`: the logical BSS/interface
+---
+
+#### `wifi-iface`: the logical BSS/interface
+
+---
 
 ```uci
 config wifi-iface 'default_radio0'
@@ -855,7 +972,11 @@ Other important AP options: `isolate '1'` (client isolation, blocks L2 between c
 
 `network` can list multiple interfaces (`list network 'a' 'b'`) but normally each SSID has one network.
 
-### 9.3 From config to hostapd
+---
+
+#### From config to hostapd
+
+---
 
 ```text
 wifi-device + wifi-iface
@@ -869,7 +990,9 @@ See the config actually in use with `cat /var/run/hostapd-phy0.conf`. This is th
 
 ---
 
-## 10. Multi-SSID
+### Multi-SSID
+
+---
 
 ```text
           OpenWrt
@@ -880,7 +1003,11 @@ See the config actually in use with `cat /var/run/hostapd-phy0.conf`. This is th
  VLAN10    VLAN20    VLAN30
 ```
 
-### 10.1 The mapping chain (must be understood clearly)
+---
+
+#### The mapping chain (must be understood clearly)
+
+---
 
 ```text
 SSID
@@ -906,7 +1033,11 @@ Each arrow is **a place where things can go wrong**:
 | VLAN → L3 | No IP on `br-lan.N` or no DHCP pool | Associates, no IP |
 | L3 → firewall zone | Interface not in any zone | Has an IP but no Internet / can't reach the router |
 
-### 10.2 A complete example (DSA, one radio per band)
+---
+
+#### A complete example (DSA, one radio per band)
+
+---
 
 Plan: VLAN 10 Main `192.168.10.0/24`, VLAN 20 IoT `192.168.20.0/24`, VLAN 30 Guest `192.168.30.0/24`.
 
@@ -988,7 +1119,11 @@ config wifi-iface 'guest_2g'
 
 `/etc/config/dhcp`: one pool per interface (see section 19). `/etc/config/firewall`: one zone per interface (sections 11, 18).
 
-### 10.3 Practical limits
+---
+
+#### Practical limits
+
+---
 
 - **The number of BSSes per radio is limited** `[driver-dependent]` (typically 8-16 depending on driver/chip). Each SSID is a separate beacon sent at the basic rate, so **many SSIDs increase airtime overhead** (especially on 2.4 GHz). Don't create too many SSIDs.
 - An IoT SSID on 2.4 GHz and a main SSID on 5 GHz is usually a sensible split.
@@ -996,7 +1131,9 @@ config wifi-iface 'guest_2g'
 
 ---
 
-## 11. Guest Wi-Fi
+### Guest Wi-Fi
+
+---
 
 ```text
 Guest Wi-Fi
@@ -1012,7 +1149,11 @@ Guest Wi-Fi
  Internet  LAN
 ```
 
-### 11.1 Two ways to build L2
+---
+
+#### Two ways to build L2
+
+---
 
 **A. Guest exists only on this AP (simple, no VLAN):** a dedicated bridge with no Ethernet ports.
 
@@ -1032,7 +1173,11 @@ config interface 'guest'
 
 **B. Guest must travel over a trunk to a switch/another AP:** use a VLAN (sections 6, 10): `br-lan.30` + `bridge-vlan 30` with a `t` port toward the trunk.
 
-### 11.2 DHCP + Firewall
+---
+
+#### DHCP + Firewall
+
+---
 
 ```uci
 # /etc/config/dhcp
@@ -1087,7 +1232,11 @@ Explanation:
 - NAT: the `wan` zone has `masq '1'`, so everything forwarded out to `wan` (including from guest) is SNATed; no separate masquerade is needed for guest.
 - The router still has an IP in the guest subnet and its LAN IP. A packet from guest to `192.168.10.1` (the router's own LAN IP) is **input traffic**, so the guest zone's `input` policy applies, not forward.
 
-### 11.3 Isolation: three different layers
+---
+
+#### Isolation: three different layers
+
+---
 
 | Layer | Mechanism | What it blocks |
 |---|---|---|
@@ -1101,7 +1250,9 @@ Explanation:
 
 ---
 
-## 12. Dumb AP
+### Dumb AP
+
+---
 
 ```text
 Main Router (NAT, DHCP, DNS, firewall)
@@ -1113,7 +1264,11 @@ Main Router (NAT, DHCP, DNS, firewall)
 LAN     Wi-Fi
 ```
 
-### 12.1 Concept
+---
+
+#### Concept
+
+---
 
 A Dumb AP turns OpenWrt into an **L2 bridge + radio**:
 
@@ -1123,7 +1278,11 @@ A Dumb AP turns OpenWrt into an **L2 bridge + radio**:
 - **A management IP** to reach the AP (static or via DHCP reservation).
 - No routing between networks.
 
-### 12.2 Configuration
+---
+
+#### Configuration
+
+---
 
 `/etc/config/network`
 
@@ -1166,7 +1325,11 @@ Disable unused services:
 
 `/etc/config/wireless`: `option network 'lan'`, and `encryption` matching the main router. For seamless roaming across several APs, use the same SSID/key/`mobility_domain` on all APs, enable 802.11r/k/v, and plan channels.
 
-### 12.3 Pitfalls specific to this setup
+---
+
+#### Pitfalls specific to this setup
+
+---
 
 - **Duplicate/in-pool IP:** assigning a static management IP that collides with the main router's DHCP pool is a common mistake. Use a DHCP reservation or an IP outside the pool.
 - **Disabling the firewall means no input filtering** on the AP. Acceptable only if the AP sits behind a trusted router; if the AP is exposed to an untrusted network, keep a minimal firewall.
@@ -1176,7 +1339,9 @@ Disable unused services:
 
 ---
 
-## 13. Standard NAT Router
+### Standard NAT Router
+
+---
 
 ```text
 Internet
@@ -1190,7 +1355,11 @@ OpenWrt  (firewall + NAT)
  LAN (br-lan, 192.168.1.0/24, DHCP server)
 ```
 
-### 13.1 Config
+---
+
+#### Config
+
+---
 
 `/etc/config/network`: use the sample in section 5.4.
 
@@ -1251,7 +1420,11 @@ config dhcp 'wan'
         option ignore '1'
 ```
 
-### 13.2 Traffic flow
+---
+
+#### Traffic flow
+
+---
 
 ```text
 Client (192.168.1.50)
@@ -1268,7 +1441,11 @@ WAN → Internet
 
 Key point: **return traffic needs no separate rule**, thanks to conntrack (`ct state established,related accept`). Only *initiating* (NEW) packets go through policy checks.
 
-### 13.3 Verification
+---
+
+#### Verification
+
+---
 
 ```sh
 ip route                       # default via <gw> dev wan
@@ -1279,7 +1456,9 @@ logread -e dnsmasq             # DHCP request/offer
 
 ---
 
-## 14. Wi-Fi Client / Routed Client
+### Wi-Fi Client / Routed Client
+
+---
 
 ```text
 Upstream AP (192.168.0.0/24)
@@ -1291,7 +1470,11 @@ Upstream AP (192.168.0.0/24)
  Ethernet LAN (192.168.50.0/24)
 ```
 
-### 14.1 Routed client (common, stable)
+---
+
+#### Routed client (common, stable)
+
+---
 
 OpenWrt connects upstream as a STA and **routes + NATs** from its own LAN to the upstream. The STA interface is OpenWrt's *WAN*:
 
@@ -1317,7 +1500,11 @@ config interface 'lan'
 
 Firewall: add `wwan` to the `wan` zone (`list network 'wwan'`) to get masquerading and the right policy. **The LAN subnet must differ from the upstream subnet** (overlap breaks routing). This is the simplest and most reliable way to "repeat" Wi-Fi because it avoids the limitations of 802.11 3-address mode.
 
-### 14.2 Distinguishing the models (they are not the same thing)
+---
+
+#### Distinguishing the models (they are not the same thing)
+
+---
 
 | Model | L2/L3 | Mechanism | Notes |
 |---|---|---|---|
@@ -1331,7 +1518,9 @@ Why the distinction matters: **an ordinary 802.11 STA (3-address mode) cannot br
 
 ---
 
-## 15. Mesh / EasyMesh / Wireless Backhaul
+### Mesh / EasyMesh / Wireless Backhaul
+
+---
 
 This section covers **architecture** only. `[version-dependent]` / `[package-dependent]` Not every OpenWrt release has the same UCI syntax or the same packages.
 
@@ -1345,7 +1534,11 @@ This section covers **architecture** only. `[version-dependent]` / `[package-dep
        STA <--- Wi-Fi --> Backhaul
 ```
 
-### 15.1 Concepts to distinguish
+---
+
+#### Concepts to distinguish
+
+---
 
 | Concept | Nature | Components |
 |---|---|---|
@@ -1356,7 +1549,11 @@ This section covers **architecture** only. `[version-dependent]` / `[package-dep
 | **EasyMesh / Wi-Fi Multi-AP** | **Wi-Fi Alliance spec** for controller–agent, steering, and backhaul management via IEEE 1905.1 | prplMesh, or vendor implementations (MediaTek, Qualcomm SDK…) |
 | **Ethernet backhaul** | Cable between APs | bridge/VLAN/STP |
 
-### 15.2 802.11s (configuration level)
+---
+
+#### 802.11s (configuration level)
+
+---
 
 ```uci
 config wifi-iface 'mesh0'
@@ -1371,7 +1568,11 @@ config wifi-iface 'mesh0'
 
 Requires a `wpad` build with mesh support. 802.11s L2 forwarding combined with a bridge can create loops if an additional Ethernet path exists; plan STP or use a routing protocol instead of relying on HWMP.
 
-### 15.3 EasyMesh / Multi-AP
+---
+
+#### EasyMesh / Multi-AP
+
+---
 
 - It is a **controller + agent architecture**: the controller manages policy, and agents on each AP configure radios, report, and support steering.
 - The **control plane (IEEE 1905.1, CMDU, topology discovery)** is a layer *above* Wi-Fi/Ethernet. It is **not** provided by hostapd alone.
@@ -1383,7 +1584,11 @@ Don't confuse:
 - **802.11r/k/v + `usteer` / `dawn`**: improves roaming and steering between *independent* APs with the same SSID. **This is not EasyMesh.**
 - **Marketing "Mesh Wi-Fi"** is often a mix: AP mode + dedicated backhaul + a vendor controller.
 
-### 15.4 Choosing a backhaul
+---
+
+#### Choosing a backhaul
+
+---
 
 | Backhaul | Pros | Cons |
 |---|---|---|
@@ -1393,9 +1598,13 @@ Don't confuse:
 
 ---
 
-## 16. IPv6
+### IPv6
 
-### 16.1 Components
+---
+
+#### Components
+
+---
 
 | Mechanism | Role |
 |---|---|
@@ -1417,7 +1626,11 @@ LAN (RA + SLAAC / DHCPv6)
 IPv6 clients
 ```
 
-### 16.2 Config
+---
+
+#### Config
+
+---
 
 ```uci
 # /etc/config/network
@@ -1452,7 +1665,11 @@ Explanation:
 - If the ISP gives only a single `/64` (no PD), you need **NDP proxy / RA relay** (`ra 'relay'`, `ndp 'relay'` on the *master* interface) `[ISP-dependent]`; you can't route multiple subnets.
 - ISPs differ on IPv6 support and delivery (which PD size, over PPPoE or DHCPv6). Check with `ubus call network.interface.wan6 status` and look at `ipv6-prefix`.
 
-### 16.3 IPv6 firewall
+---
+
+#### IPv6 firewall
+
+---
 
 IPv6 has **no NAT** (by default). Every client has a global address, so **the firewall is the only barrier**:
 
@@ -1460,7 +1677,11 @@ IPv6 has **no NAT** (by default). Every client has a global address, so **the fi
 - The default rules allow **ICMPv6** (mandatory: Neighbor Discovery, **Packet Too Big** for PMTUD, RA), DHCPv6 replies, and MLD. **Don't block ICMPv6 wholesale**: blocking PTB causes MTU blackholes.
 - To expose a service from outside to an internal IPv6 host, use a `config rule` (allow) with `family 'ipv6'`; don't use `redirect`/DNAT.
 
-### 16.4 Debug
+---
+
+#### Debug
+
+---
 
 ```sh
 ip -6 addr
@@ -1475,7 +1696,9 @@ Common sign: wan6 has an `ipv6-prefix` but the LAN has no global address → che
 
 ---
 
-## 17. Multi-WAN
+### Multi-WAN
+
+---
 
 ```text
           ISP1
@@ -1489,7 +1712,11 @@ Common sign: wan6 has an `ipv6-prefix` but the LAN has no global address → che
           ISP2
 ```
 
-### 17.1 Three levels
+---
+
+#### Three levels
+
+---
 
 1. **Crude failover with metrics**: two default routes with different metrics. The route is removed when the *link/interface* goes down. It does not detect upstream failures.
 2. **Failover with health checks**: test real reachability (ping/HTTP to an external address) and demote the route on failure. Usually done with `mwan3` `[package-dependent]`.
@@ -1498,7 +1725,11 @@ Common sign: wan6 has an `ipv6-prefix` but the LAN has no global address → che
 > **Interface UP does not mean Internet connectivity is healthy.**
 > `ip link` is UP, the DHCP lease is valid, the gateway answers ARP, yet the ISP may have lost its path to the Internet (broken BNG, dead DNS, upstream routing failure). Only an *end-to-end* health check detects that. Test several targets (not just one IP), both by IP and by DNS.
 
-### 17.2 Metric failover
+---
+
+#### Metric failover
+
+---
 
 ```uci
 config interface 'wan1'
@@ -1512,7 +1743,11 @@ config interface 'wan2'
         option metric '20'
 ```
 
-### 17.3 mwan3 (concepts)
+---
+
+#### mwan3 (concepts)
+
+---
 
 `[package-dependent]` The `mwan3` package has its own mechanism (iptables/ipset/ip rule, fwmark). Behavior and backend (iptables vs nftables) **depend on the package version and OpenWrt release**; check the documentation of the installed package.
 
@@ -1541,8 +1776,11 @@ config rule 'default_rule'
         option dest_ip '0.0.0.0/0'
         option use_policy 'failover'
 ```
+---
 
-### 17.4 Things to watch
+#### Things to watch
+
+---
 
 - **Firewall**: both WANs should be in the `wan` zone (or in dedicated zones with `masq`) to get NAT.
 - **Reply path**: return packets must leave via the same WAN the request arrived on. Policy routing + conntrack/marks handle this.
@@ -1552,9 +1790,13 @@ config rule 'default_rule'
 
 ---
 
-## 18. Firewall and NAT
+### Firewall and NAT
 
-### 18.1 fw4 architecture (nftables)
+---
+
+#### fw4 architecture (nftables)
+
+---
 
 `[version-dependent]` From 22.03 the default is **fw4 + nftables**. Earlier releases use **fw3 + iptables**. UCI syntax is almost the same, but the actual ruleset differs. Every `nft ...` in this article applies to fw4 only.
 
@@ -1576,7 +1818,11 @@ fw4 generates the table `inet fw4` (IPv4 + IPv6 together):
 
 Dispatch: each main chain jumps into per-zone chains based on the **ingress/egress device name** (`iifname "br-lan" jump input_lan`…). A zone's `network` is a *logical interface name*; fw4 resolves it to real devices through netifd at load time. Therefore **changing a device/VLAN without reloading the firewall** can leave the ruleset pointing at the wrong place.
 
-### 18.2 Zone
+---
+
+#### Zone
+
+---
 
 ```uci
 config zone
@@ -1598,7 +1844,11 @@ config zone
 
 A zone's **`forward`** is forwarding *within the same zone*, not between different zones. Between different zones you need `config forwarding`.
 
-### 18.3 Forwarding
+---
+
+#### Forwarding
+
+---
 
 ```uci
 config forwarding
@@ -1608,7 +1858,11 @@ config forwarding
 
 This allows **one direction only**: from `lan` to `wan`. The reverse (wan→lan) is not allowed, except for replies belonging to existing connections (conntrack) and port forwards.
 
-### 18.4 NAT
+---
+
+#### NAT
+
+---
 
 ```uci
 config zone
@@ -1624,7 +1878,11 @@ config zone
 
 `masq '1'` creates rules in the `srcnat_wan` chain (postrouting hook): packets **leaving** a device in the wan zone get their source address rewritten to that interface's address. You can restrict sources/destinations with `masq_src` / `masq_dest`. `masq6` is for IPv6 (NPT/masquerade, rarely used).
 
-### 18.5 Port forwarding
+---
+
+#### Port forwarding
+
+---
 
 ```uci
 config redirect
@@ -1656,7 +1914,11 @@ Notes:
 - **NAT reflection / hairpin**: LAN clients reaching `WAN_IP:8080` need reflection (`option reflection '1'`, usually on by default). Hairpin flows require SNAT. Split-horizon DNS is the cleaner solution.
 - IPv6 doesn't use DNAT; use a `config rule` with `family 'ipv6'`.
 
-### 18.6 Flow offloading
+---
+
+#### Flow offloading
+
+---
 
 ```uci
 config defaults
@@ -1668,9 +1930,13 @@ It raises throughput by bypassing part of netfilter for established flows. Featu
 
 ---
 
-## 19. DHCP / DNS / IPv6 RA
+### DHCP / DNS / IPv6 RA
 
-### 19.1 Who serves what
+---
+
+#### Who serves what
+
+---
 
 | Service | Default | Notes |
 |---|---|---|
@@ -1680,7 +1946,11 @@ It raises throughput by bypassing part of netfilter for established flows. Featu
 
 Both servers read `/etc/config/dhcp`, and **each `config dhcp` section is tied to one logical interface** via `option interface`.
 
-### 19.2 DHCPv4 pool
+---
+
+#### DHCPv4 pool
+
+---
 
 ```uci
 config dhcp 'lan'
@@ -1703,14 +1973,22 @@ config host
         option ip '192.168.1.100'
 ```
 
-### 19.3 DNS
+---
+
+#### DNS
+
+---
 
 - By default dnsmasq listens on every interface (unless restricted); the router is also the resolver for clients.
 - Upstream DNS comes from the WAN's `peerdns` (a resolv file generated by netifd: `/tmp/resolv.conf.d/resolv.conf.auto`), or `list server '…'` in `config dnsmasq`; `option noresolv '1'` ignores the resolv file.
 - `rebind_protection '1'` blocks answers where a public domain resolves to a private address (DNS rebinding protection). If you host internal services under a public domain, whitelist it with `list rebind_domain`.
 - Guest/IoT firewall zones must **allow UDP/TCP 53 to the router** if clients use the router as DNS (see section 11).
 
-### 19.4 IPv6 (odhcpd)
+---
+
+#### IPv6 (odhcpd)
+
+---
 
 ```uci
 config dhcp 'lan'
@@ -1724,7 +2002,11 @@ config dhcp 'lan'
 
 The `ra`/`dhcpv6` modes: `server`, `relay`, `hybrid`, `disabled`. `ndp 'relay'` covers the no-PD case. `ra_default`, `ra_preference`, `ra_maxinterval` control default-router advertisement.
 
-### 19.5 Verification
+---
+
+#### Verification
+
+---
 
 ```sh
 cat /tmp/dhcp.leases                       # dnsmasq DHCPv4 leases
@@ -1735,9 +2017,13 @@ tcpdump -ni br-lan icmp6                   # RA/NS/NA
 
 ---
 
-## 20. Network Debugging
+### Network Debugging
 
-### 20.1 Methodology
+---
+
+#### Methodology
+
+---
 
 ```text
 1. Define the scope:  one client? one VLAN? one SSID? everything? IPv6 only?
@@ -1752,7 +2038,11 @@ tcpdump -ni br-lan icmp6                   # RA/NS/NA
 
 Four questions for every incident: *Is the link up? → Is it in the right VLAN/bridge? → Are IP/routes correct? → Does the firewall/NAT let it through?*
 
-### 20.2 Layer 1/2
+---
+
+#### Layer 1/2
+
+---
 
 ```sh
 ip -br link                       # link state, MAC
@@ -1783,7 +2073,11 @@ br-lan     10
 - `br-lan` appearing in the list means the router has an L3 interface on that VLAN (`local`).
 - If a client gets no DHCP: check that the port has the right `PVID` + `Untagged` for the VLAN, and that `br-lan.<vid>` has members.
 
-### 20.3 Layer 3
+---
+
+#### Layer 3
+
+---
 
 ```sh
 ip addr
@@ -1798,7 +2092,11 @@ ip -6 addr; ip -6 route; ip -6 neigh
 
 An `ip neigh` entry in `FAILED`/`INCOMPLETE` for the gateway means L2 isn't working yet (wrong VLAN, loop, wrong port), even if the L3 config looks right.
 
-### 20.4 Firewall / NAT
+---
+
+#### Firewall / NAT
+
+---
 
 ```sh
 nft list ruleset                  # everything (fw4)
@@ -1828,7 +2126,11 @@ Common mix-ups to check:
 - Missing allow rules for DHCP/DNS on zones with `input REJECT`.
 - Forgetting `masq '1'` on the wan zone.
 
-### 20.5 OpenWrt runtime (ubus / netifd)
+---
+
+#### OpenWrt runtime (ubus / netifd)
+
+---
 
 ```sh
 ubus list | grep -E 'network|hostapd'
@@ -1853,7 +2155,11 @@ ip / bridge / nft       # KERNEL: what actually exists
 
 If `uci` is right but `ubus` lacks the object → netifd didn't parse/apply it (syntax error, wrong option, missing package). If `ubus` is right but the kernel is wrong → the problem is at the kernel/driver layer (bridge-vlan can't be offloaded, DSA limitation).
 
-### 20.6 Wi-Fi
+---
+
+#### Wi-Fi
+
+---
 
 ```sh
 iw dev                                         # wlan netdev list, phy, type (AP/managed/mesh), channel, txpower
@@ -1886,7 +2192,11 @@ Symptoms and where to investigate:
 | Low speed / poor roaming | `iw dev wlan0 station dump` (bitrate, signal), channel/htmode, DFS, 2.4 GHz HT40, `cell_density`, 802.11r/k/v |
 | Fails only on 2.4 or 5 GHz | the corresponding `radio`, `band`, `channel`, `country`, driver/firmware log (`dmesg`) |
 
-### 20.7 Packet capture
+---
+
+#### Packet capture
+
+---
 
 ```sh
 tcpdump -ni br-lan.30 -e vlan                  # see VLAN tags
@@ -1899,7 +2209,9 @@ Bisect technique: ping from the client → capture on the `wlan`, `br-lan.N`, `w
 
 ---
 
-## 21. Engineering Pitfalls / Common Mistakes
+### Engineering Pitfalls / Common Mistakes
+
+---
 
 1. **Copying a swconfig config onto a DSA device** (or vice versa). The two models are completely different (section 6).
 2. **Assuming port/interface names are universal.** `wan`, `lan1`, `eth0.2` depend on the target. Read `/etc/board.json` and `ip link`.
@@ -1924,7 +2236,9 @@ Bisect technique: ping from the client → capture on the `wlan`, `br-lan.N`, `w
 
 ---
 
-## 22. Cheat Sheet: "Change X, Remember to Touch Y"
+### Cheat Sheet: "Change X, Remember to Touch Y"
+
+---
 
 | You change | Remember to check / reload |
 |---|---|
@@ -1946,7 +2260,9 @@ bridge vlan; ip -br addr; nft list ruleset | head
 
 ---
 
-## 23. Summary
+### Summary
+
+---
 
 - OpenWrt is **a set of daemons that turn declarative config into Linux kernel state**. UCI is not the runtime.
 - `device` = L2; `interface` = L3/proto; **the logical interface name is the "glue"** between network, wireless, dhcp, and firewall.
