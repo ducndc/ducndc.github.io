@@ -33,7 +33,7 @@ EasyMesh defines a common set of capabilities that every conformant multi-AP imp
 
 ---
 
-### prplMesh Architecture Analysis
+### Architecture Analysis
 
 Below is a detailed analysis of the architecture, traversing:
 
@@ -204,7 +204,7 @@ external entity to configure the agent and to receive statistics and events from
 
 ---
 
-### BeeRocks Inter/Outer Communication (IPC)
+### Inter/Outer Communication (IPC)
 <div style="text-align: justify; text-indent: 2em;">
 The figure below shows all internal module IPC communication of the Multi-AP stack and BeeRocks when
 EasyMesh mode is deployed:
@@ -241,7 +241,7 @@ prplMesh utilizes distinct IPC mechanisms suited to each communication boundary:
 
 ---
 
-### BeeRocks Controller
+### Controller
 
 <div style="text-align: justify; text-indent: 2em;">
 The BeeRocks controller retains its current architecture with respect to module and task structure, and
@@ -261,7 +261,7 @@ implementation.
 
 ---
 
-### BeeRocks Agent
+### Agent
 
 <div style="text-align: justify; text-indent: 2em;">
 Similar to the BeeRocks controller, the agent integrates the new BeeRocks Transport Library (BTL), which
@@ -274,7 +274,7 @@ independent of the controller, aligning with the requirement for separate packag
 
 ---
 
-### BeeRocks Flows
+### Flows
 
 ---
 
