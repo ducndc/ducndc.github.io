@@ -3,6 +3,7 @@ title: 'Network Configuration in OpenWrt'
 description: 'Network Configuration in OpenWrt'
 pubDate: 'Jun 30 2026'
 heroImage: '../../assets/AP_Sys.png'
+category: 'OpenWrt'
 ---
 
 *From UCI to netifd, from bridge/VLAN/DSA to firewall and Wi-Fi: how a single `option` line in `/etc/config/network` becomes packets moving through the kernel.*

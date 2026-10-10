@@ -3,6 +3,7 @@ title: '802.11r Fast Roaming'
 description: '802.11r Fast Roaming'
 pubDate: 'Aug 8 2026'
 heroImage: '../../assets/prplmesh.png'
+category: 'Wi-Fi'
 ---
 
 ### Overview

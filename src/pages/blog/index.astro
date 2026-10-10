@@ -10,14 +10,16 @@ const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-const postsByYear = posts.reduce((acc, post) => {
-	const year = new Date(post.data.pubDate).getFullYear();
-	if (!acc[year]) acc[year] = [];
-	acc[year].push(post);
+const postsByCategory = posts.reduce<Record<string, typeof posts>>((acc, post) => {
+	const category = post.data.category;
+	(acc[category] ??= []).push(post);
 	return acc;
-}, {} as Record<number, typeof posts>);
+}, {});
 
-const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
+// Sắp xếp chủ đề theo bảng chữ cái tiếng Việt
+const categories = Object.keys(postsByCategory).sort((a, b) =>
+	a.localeCompare(b, 'vi'),
+);
 ---
 
 <!doctype html>
@@ -62,6 +64,11 @@ const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
 				margin-bottom: 0.75rem;
 				padding-bottom: 0.4rem;
 				border-bottom: 1px solid rgba(0,0,0,0.08);
+			}
+
+			.count {
+				font-weight: 400;
+				opacity: 0.6;
 			}
 
 			.posts-list {
@@ -115,11 +122,13 @@ const years = Object.keys(postsByYear).map(Number).sort((a, b) => b - a);
 	<body>
 		<Header />
 		<main class="blog-layout">
-			{years.map((year) => (
+			{categories.map((category) => (
 				<div class="year-section">
-					<h2 class="year-heading">{year}</h2>
+					<h2 class="year-heading">
+						{category} <span class="count">({postsByCategory[category].length})</span>
+					</h2>
 					<ul class="posts-list">
-						{postsByYear[year].map((post) => (
+						{postsByCategory[category].map((post) => (
 							<li class="post-item">
 								<a href={`/blog/${post.id}/`}>
 									<span class="post-title">{post.data.title}</span>

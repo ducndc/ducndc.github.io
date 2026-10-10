@@ -14,6 +14,8 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			// Chủ đề của bài viết; bài nào chưa gắn sẽ vào nhóm "Khác"
+			category: z.string().default('Others'),
 		}),
 });
 

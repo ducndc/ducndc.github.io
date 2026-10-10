@@ -3,6 +3,7 @@ title: 'GNU Debugger'
 description: 'GNU Debugger'
 pubDate: 'August 17 2023'
 heroImage: '../../assets/gdb.jpg'
+category: 'Programming & Tools'
 ---
 
 <div style="text-align: justify; text-indent: 2em;">

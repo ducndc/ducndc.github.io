@@ -3,6 +3,7 @@ title: 'Logging and Log Management'
 description: 'Logging and Log Management'
 pubDate: 'July 24 2025'
 heroImage: '../../assets/logging.jpg'
+category: 'Programming & Tools'
 ---
 
 # Log Management Guide

@@ -3,6 +3,7 @@ title: 'Wi-Fi 7 (802.11be)'
 description: 'Wi-Fi 7 (802.11be)'
 pubDate: 'August 13 2025'
 heroImage: '../../assets/wifi-7.jpg'
+category: 'Wi-Fi'
 ---
 
 ## Overview of Wi-Fi 7 (IEEE 802.11be)

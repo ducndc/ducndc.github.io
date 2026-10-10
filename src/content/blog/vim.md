@@ -3,6 +3,7 @@ title: 'Vi & Vim: A Practical Guide'
 description: 'A comprehensive reference for editing text efficiently with vi and Vim'
 pubDate: 'July 07 2022'
 heroImage: '../../assets/vim_image.jpeg'
+category: 'Programming & Tools'
 ---
 
 `vi` is a terminal text editor available on virtually every Unix system. When you open a file, vi copies it into a buffer, lets you edit it, and writes it back on save. Vim (Vi IMproved) extends vi with syntax highlighting, plugins, GUI support, and much more.

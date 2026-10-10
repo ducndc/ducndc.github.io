@@ -3,6 +3,7 @@ title: 'Cloudy Sky on Samu Mountain Peak'
 description: 'Cloudy Sky on Samu Mountain Peak'
 pubDate: 'December 06 2025'
 heroImage: '../../assets/samu.jpg'
+category: 'Personal'
 ---
 
 <div style="text-align: justify; text-indent: 2em;">

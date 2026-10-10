@@ -3,6 +3,7 @@ title: 'Linux Network Stack'
 description: 'Linux Network Stack'
 pubDate: 'Jun 14 2026'
 heroImage: '../../assets/networkstack.png'
+category: 'Linux Networking'
 ---
 
 ## Mục Lục

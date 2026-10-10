@@ -3,6 +3,7 @@ title: 'Hostapd Architecture'
 description: 'IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/WPA3/EAP/RADIUS Authenticator'
 pubDate: 'Aug 21 2026'
 heroImage: '../../assets/prplmesh.png'
+category: 'Wi-Fi'
 ---
 
 ### Overview

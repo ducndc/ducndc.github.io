@@ -3,6 +3,7 @@ title: 'Linux Netfilter and Traffic Control'
 description: 'Linux Netfilter and Traffic Control'
 pubDate: 'December 18 2025'
 heroImage: '../../assets/linuxx.jpg'
+category: 'Linux Networking'
 ---
 
 ## Overview

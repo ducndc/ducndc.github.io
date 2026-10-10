@@ -3,6 +3,7 @@ title: 'WiFi Overview'
 description: 'WiFi Overview'
 pubDate: 'May 14 2023'
 heroImage: '../../assets/wifi.jpg'
+category: 'Wi-Fi'
 ---
 
 ## 802.11 Frame Types
