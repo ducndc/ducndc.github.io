@@ -3,6 +3,7 @@ title: 'The Engineering Bookshelf'
 description: 'A curated collection of essential books on Linux, Embedded Systems, and Telecommunications.'
 pubDate: 'Mar 28 2026'
 heroImage: '../../assets/book-list.jpg'
+category: 'Personal'
 ---
 
 ### Index

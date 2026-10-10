@@ -3,6 +3,7 @@ title: 'Out Of Memory'
 description: 'Out Of Memory'
 pubDate: 'December 10 2022'
 heroImage: '../../assets/oom.png'
+category: 'Embedded Linux'
 ---
 
 

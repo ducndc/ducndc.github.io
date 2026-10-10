@@ -3,6 +3,7 @@ title: 'Bootloader trong hệ thống nhúng Linux'
 description: 'Bootloader trong hệ thống nhúng Linux'
 pubDate: 'Jun 14 2026'
 heroImage: '../../assets/bootloader.png'
+category: 'Embedded Linux'
 ---
 
 ## Mục Lục

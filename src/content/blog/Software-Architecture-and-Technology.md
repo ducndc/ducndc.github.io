@@ -3,6 +3,7 @@ title: 'Software Architecture and Technology of Large Scale Systems'
 description: 'Software Architecture and Technology of Large Scale Systems'
 pubDate: 'July 18 2026'
 heroImage: '../../assets/SysDesign.png'
+category: 'Software Architecture'
 ---
 
 ## Developer To Architect

@@ -3,6 +3,7 @@ title: 'Co-Channel Interference'
 description: 'o-Channel Interference'
 pubDate: 'May 08 2025'
 heroImage: '../../assets/AP_Sys.png'
+category: 'Wi-Fi'
 ---
 
 ## Mechanism of Interference at PHY and MAC Layers

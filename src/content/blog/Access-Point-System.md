@@ -3,6 +3,7 @@ title: 'Access Point System'
 description: 'Designing an Access Point System: What You Need to Know'
 pubDate: 'May 08 2025'
 heroImage: '../../assets/AP_Sys.png'
+category: 'System Design'
 ---
 
 Designing a complete hardware/software system goes far beyond writing code. For a product like a Wi-Fi Access Point (AP), the required knowledge spans hardware, embedded software, networking protocols, security, testing, and manufacturing — each area deeply intertwined with the others. This post breaks down each domain and explains why it matters when building a production-grade AP.

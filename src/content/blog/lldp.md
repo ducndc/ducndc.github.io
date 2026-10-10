@@ -3,6 +3,7 @@ title: 'Link Layer Discovery Protocol (LLDP)'
 description: 'Link Layer Discovery Protocol (LLDP)'
 pubDate: 'July 14 2025'
 heroImage: '../../assets/lldp.jpg'
+category: 'Network Protocols'
 ---
 
 ## Overview

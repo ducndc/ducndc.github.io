@@ -3,6 +3,7 @@ title: 'Build Package in OpenWrt'
 description: 'Build Package in OpenWrt'
 pubDate: 'Jun 30 2026'
 heroImage: '../../assets/AP_Sys.png'
+category: 'OpenWrt'
 ---
 
 ## Adding and Building Packages/Feeds in OpenWrt

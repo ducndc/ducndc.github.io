@@ -3,6 +3,7 @@ title: 'C and Rust'
 description: 'C and Rust'
 pubDate: 'August 8 2025'
 heroImage: '../../assets/Rust-vs-C-.png'
+category: 'Programming & Tools'
 ---
 
 ## The process of compiling a C program
