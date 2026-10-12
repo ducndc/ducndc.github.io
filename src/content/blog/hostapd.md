@@ -8,6 +8,8 @@ category: 'Wi-Fi'
 
 ### Overview
 
+---
+
 **`hostapd`** (Host Access Point Daemon) is the industry-standard user-space daemon for managing wireless Access Points (APs) and IEEE 802.11 / IEEE 802.1X / WPA / WPA2 / WPA3 authentication and key management services on Linux and UNIX-like systems.
 
 While modern wireless drivers and the Linux kernel (via `mac80211` / `cfg80211`) handle high-speed data path processing and real-time PHY/MAC layer frame transmission/reception, **`hostapd`** implements the upper-layer control plane, management plane, authentication state machines, and regulatory policy logic:
@@ -23,11 +25,15 @@ While modern wireless drivers and the Linux kernel (via `mac80211` / `cfg80211`)
 
 ### High-Level Architectural Diagram
 
+---
+
 ![Alt text](../../assets/technology/hostapd/hostapd_architecture.png)
 
 ---
 
 ### Core Data Structure Hierarchy
+
+---
 
 The in-memory object model in `hostapd` follows a strict hierarchical design from daemon-wide global state down to individual connected stations:
 
@@ -62,7 +68,11 @@ The in-memory object model in `hostapd` follows a strict hierarchical design fro
         └── struct dl_list links (List of affiliated hostapd_data BSS links across radios)
 ```
 
+---
+
 ### Key Data Structures in Source Code
+
+---
 
 1. **[`struct hapd_interfaces`](hostapd-2.12/src/ap/hostapd.h#L50-L108)**:
    * Holds the list of physical radio interfaces (`struct hostapd_iface **iface`).
@@ -92,7 +102,11 @@ The in-memory object model in `hostapd` follows a strict hierarchical design fro
 
 ### Architectural Subsystem Deep Dive
 
+---
+
 #### Event Loop & Concurrency Model (`eloop`)
+
+---
 
 `hostapd` is engineered as a single-threaded, non-blocking, asynchronous event-driven daemon centered around **[`src/utils/eloop.c`](hostapd-2.12/src/utils/eloop.c)**.
 
@@ -107,6 +121,8 @@ The in-memory object model in `hostapd` follows a strict hierarchical design fro
 
 #### Configuration Subsystem
 
+---
+
 Configuration processing is handled by **[`hostapd/config_file.c`](hostapd-2.12/hostapd/config_file.c)** and **[`src/ap/ap_config.c`](hostapd-2.12/src/ap/ap_config.c)**:
 
 * **Two-Level Configuration Hierarchy**:
@@ -118,6 +134,8 @@ Configuration processing is handled by **[`hostapd/config_file.c`](hostapd-2.12/
 ---
 
 #### Driver Abstraction Layer & Kernel Interfacing
+
+---
 
 `hostapd` is completely decoupled from driver-specific APIs via a unified Driver Abstraction Layer:
 
@@ -133,6 +151,8 @@ Configuration processing is handled by **[`hostapd/config_file.c`](hostapd-2.12/
 ---
 
 #### Station Lifecycle & AP MLME Engine
+
+---
 
 The station management state machine is governed by **[`src/ap/ieee802_11.c`](hostapd-2.12/src/ap/ieee802_11.c)** and **[`src/ap/sta_info.c`](hostapd-2.12/src/ap/sta_info.c)**:
 
@@ -151,9 +171,16 @@ The station management state machine is governed by **[`src/ap/ieee802_11.c`](ho
 
 #### Security, Key Management & Authentication Subsystems
 
+---
+
 ![Alt text](../../assets/technology/hostapd/dpp.png)
 
+---
+
 #### Detailed Security Flows:
+
+---
+
 1. **WPA/WPA2/WPA3 4-Way Handshake**:
    * **Msg 1 (AP ➔ STA)**: AP generates `ANonce` and transmits to STA with Key Replay Counter.
    * **Msg 2 (STA ➔ AP)**: STA generates `SNonce`, calculates `PTK = PRF-X(PMK, "Pairwise key expansion", Min(AA,SPA) || Max(AA,SPA) || Min(ANonce,SNonce) || Max(ANonce,SNonce))`, and sends `SNonce` + MIC + RSN IE.
@@ -168,6 +195,8 @@ The station management state machine is governed by **[`src/ap/ieee802_11.c`](ho
 ---
 
 #### Radio Spectrum, DFS & Advanced PHY Features
+
+---
 
 * **Automatic Channel Selection ([`src/ap/acs.c`](hostapd-2.12/src/ap/acs.c))**:
   * Evaluates channel interference, noise floor, spectral survey statistics (`EVENT_GET_SURVEY`), and adjacent-channel overlapping BSS (OBSS) metrics to dynamically pick optimal 2.4 GHz, 5 GHz, or 6 GHz channels.
@@ -185,6 +214,8 @@ The station management state machine is governed by **[`src/ap/ieee802_11.c`](ho
 
 #### Control Interface & IPC Architecture
 
+---
+
 `hostapd` provides a rich remote management and IPC framework implemented in **[`hostapd/ctrl_iface.c`](hostapd-2.12/hostapd/ctrl_iface.c)** and **[`src/ap/ctrl_iface_ap.c`](hostapd-2.12/src/ap/ctrl_iface_ap.c)**:
 
 ![Alt text](../../assets/technology/hostapd/cli.png)
@@ -199,7 +230,11 @@ The station management state machine is governed by **[`src/ap/ieee802_11.c`](ho
 
 ### End-to-End Operational Sequences
 
+---
+
 #### Station Association & WPA2/WPA3 4-Way Handshake Flow
+
+---
 
 ![Alt text](../../assets/technology/hostapd/sequence.png)
 
@@ -207,11 +242,15 @@ The station management state machine is governed by **[`src/ap/ieee802_11.c`](ho
 
 ### DFS Radar Detection & Channel Switch Announcement (CSA) Flow
 
+---
+
 ![Alt text](../../assets/technology/hostapd/dfs.png)
 
 ---
 
-## Source Tree Organization Reference Table
+### Source Tree Organization Reference Table
+
+---
 
 | Directory / File | Key Architectural Role | Primary Components & APIs |
 | :--- | :--- | :--- |
@@ -240,7 +279,9 @@ The station management state machine is governed by **[`src/ap/ieee802_11.c`](ho
 
 ---
 
-## Summary & Architectural Strengths
+### Summary & Architectural Strengths
+
+---
 
 1. **Clean Separation of Concerns**: High-frequency data plane encryption and transmission reside inside the kernel (`mac80211`/firmware), while complex management state machines and policy decisions reside in user space (`hostapd`).
 2. **Deterministic Concurrency**: The asynchronous, single-threaded `eloop` design completely eliminates concurrency deadlocks and multi-threading race conditions while handling thousands of simultaneous stations.
