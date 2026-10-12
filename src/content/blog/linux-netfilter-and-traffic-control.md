@@ -6,28 +6,35 @@ heroImage: '../../assets/linuxx.jpg'
 category: 'Linux Networking'
 ---
 
-## Overview
+### Overview
 
-<div style="text-align: justify; text-indent: 2em;">
+---
+
+
 Netfilter is a framework inside the Linux kernel which offers flexibility for various networking-related operations to be implemented in form of customized handlers. Netfilter offers various options for packet filtering, network address translation, and port translation.
 Its components:
-</div>
+
 
 ![H1](../../assets/img/linux/Netfilter-components.svg)
 
-<div style="text-align: justify; text-indent: 2em;">
+
 And the flow of network packets through the Netfilter:
-</div>
+
 
 ![H1](../../assets/img/linux/Netfilter-packet-flow.svg)
 
-## Netfilter Hooks in the Linux Kernel
+---
 
-### Netfilter places
+### Netfilter Hooks in the Linux Kernel
 
-<div style="text-align: justify; text-indent: 2em;">
+---
+
+#### Netfilter places
+
+---
+
 As can be seen from the network packet sending and receiving flow diagram above, the hook function of Nefilter can be registered in many different places. It is defined as follows:
-</div>
+
 
 ```c
 enum nf_inet_hooks {
@@ -45,11 +52,14 @@ enum nf_inet_hooks {
 - NF_INET_LOCAL_OUT: all outgoing packets created in the local computer pass this hook in the function ip_build_and_send_pkt().
 - NF_INET_POST_ROUTING: this hook in the ipfinishoutput() function before they leave the computer.
 
-### Register the hooks
+---
 
-<div style="text-align: justify; text-indent: 2em;">
+#### Register the hooks
+
+---
+
 The kernel provides the following functions to register and unregister functions.
-</div>
+
 
 ```c
 int nf_register_hook(struct nf_hook_ops *reg);
@@ -58,9 +68,9 @@ int nf_register_hooks(struct nf_hook_ops *reg, unsigned int n);
 void nf_unregister_hooks(struct nf_hook_ops *reg, unsigned int n);
 ```
 
-<div style="text-align: justify; text-indent: 2em;">
+
 Among them, nf_hook_ops is structured as follows:
-</div>
+
 
 ```c
 struct nf_hook_ops
@@ -76,11 +86,15 @@ struct nf_hook_ops
         int priority;
 };
 ```
-### hook functions
 
-<div style="text-align: justify; text-indent: 2em;">
+---
+
+#### hook functions
+
+---
+
 The hook function is specified by nf_hookfn *hook and its function declaration is as follows:
-</div>
+
 
 ```c
 typedef unsigned int nf_hookfn(unsigned int hooknum,
@@ -90,9 +104,9 @@ typedef unsigned int nf_hookfn(unsigned int hooknum,
                                int (*okfn)(struct sk_buff *));
 ```
 
-<div style="text-align: justify; text-indent: 2em;">
+
 It returns one of the following results:
-</div>
+
 
 ```c
 // <linux/netfilter.h>
@@ -104,11 +118,15 @@ It returns one of the following results:
 #define NF_STOP 5
 #define NF_MAX_VERDICT NF_STOP
 ```
-## pf
 
-<div style="text-align: justify; text-indent: 2em;">
+---
+
+### Protocol Family (pf)
+
+---
+
 pf (protocol family) is the identifier of the protocol family.
-</div>
+
 
 ```c
 enum {
@@ -121,11 +139,15 @@ enum {
         NFPROTO_NUMPROTO,
 };
 ```
-## hooknum
 
-<div style="text-align: justify; text-indent: 2em;">
+---
+
+### Hooknum
+
+---
+
 This is the hook identifier. All valid identifiers for each protocol family are defined in a header file, for example <linux/netfilter_ipv4.h>:
-</div>
+
 
 ```c
 /* IP Hooks */
@@ -142,11 +164,14 @@ This is the hook identifier. All valid identifiers for each protocol family are 
 #define NF_IP_NUMHOOKS          5
 ```
 
-### priority
+---
 
-<div style="text-align: justify; text-indent: 2em;">
+### Priority
+
+---
+
 This is the priority of the hook. All valid identifiers for each protocol family are defined in a header file, for example <linux/netfilter_ipv4.h>
-</div>
+
 
 ```c
 enum nf_ip_hook_priorities {
@@ -177,11 +202,14 @@ enum {
 
 ```
 
-## Netfilter hooks example
+---
 
-<div style="text-align: justify; text-indent: 2em;">
+### Netfilter hooks example
+
+---
+
 Register a hook function at NF_INET_LOCAL_IN to print the source MAC address, destination and IP address of the packet. Download the source packet.
-</div>
+
 
 ```c
 #include <linux/module.h>
@@ -261,6 +289,10 @@ module_init(init_nf_test);
 module_exit(exit_nf_test);
 ```
 
-## References
+---
+
+### References
+
+---
 
 1. https://wiki.dreamrunner.org/public_html/Linux/Networks/netfilter.html

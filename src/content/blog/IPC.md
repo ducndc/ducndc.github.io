@@ -8,6 +8,8 @@ category: 'Embedded Linux'
 
 ### What is IPC and Why we need it?
 
+---
+
 IPC is a mechanism using which two or more process running on the same machine exchange their personal data with each other. 
 Communication between processes running on different machine are not termed as IPC. Processes running on same machine, often need to exchange data with oter in order to implement some functionality. Linux OS provides serveral mechanisms using which user space processes can carry out communication with each other, each mechanism has its own pros and cons
 
@@ -16,6 +18,8 @@ User space <==> Netlink Skts / IOCTLS / Device files / System calls <==> Kernel 
 ---
 
 ### IPC Techniques
+
+---
 
 1. Unix Domain sockets
 2. Network Sockets
@@ -30,6 +34,8 @@ User space <==> Netlink Skts / IOCTLS / Device files / System calls <==> Kernel 
 
 ### Sockets
 
+---
+
 Unix/Linux like OS provide Socket Interface to carry out communication betwwen various types of entities.
 The Socket Interface are a bunch of Socket programming releated API
 
@@ -40,6 +46,8 @@ Two types:
 ---
 
 #### Sockets Steps and related API
+
+---
 
 1. Remove the socket, if already exits
 2. Create a Unix socket using socket()
@@ -60,6 +68,8 @@ Two types:
 
 #### Sockets Message Types
 
+---
+
 Messages exchange between the client and the server processes can be categorized into two types:
 - Connection Initiation Request Messages (CIR)
 - Service Request Messages (SRM)
@@ -67,6 +77,8 @@ Messages exchange between the client and the server processes can be categorized
 ---
 
 #### State Machine of Socket based Client Server Communication
+
+---
 
 1. When server boots up, it create a connection socket (also called "master socket file descriptor" using socket()), M = socket()
 2. M is the mother of all client handles. M gives birth to all client handles. Client handles are also called "data_sockets"
@@ -85,6 +97,8 @@ accept() is used only for connection oriented communication, not for connection 
 
 #### Unix Domain Sockets
 
+---
+
 Using UNIX Domain Sockets, you can setup STREAM of DATAGRAM based communication
 - STREAM : When large files need to be moved or copied from one location to another, eg: copying a movies, continuous flow of bytes
 - DATAGRAM : When small units of data needs to be moved from one process to another within a system
@@ -92,6 +106,8 @@ Using UNIX Domain Sockets, you can setup STREAM of DATAGRAM based communication
 ---
 
 #### Multiplexing
+
+---
 
 Multiplexing is a machanism through which the server process can monitor multiple clients at the same time.
 Without multiplexing, server process can entertain only one client at a time, and can not entertain other client's request until it finishes with the current client.
@@ -107,11 +123,15 @@ select() system call monitor all socket FDs present in fd_set
 
 #### Example
 
+---
+
 <a href="https://github.com/ducndc/linux-system-programming/tree/main/networking" target="_blank">Code example of unix socket and network socket</a><br>
 
 ---
 
 ### Message Queues
+
+---
 
 - Linux/Unix OS provides another mechanism called Message Queue for carrying out IPC
 - Processes running on same machine can exchange any data using message queues
@@ -128,6 +148,8 @@ select() system call monitor all socket FDs present in fd_set
 
 #### Message queue creation
 
+---
+
 A process can create new msgQ or use an existing msgQ using below API
 mq_open(const char *name, int oflag);
 mq_open(const char *name, int oflag, mode_t mode, struct mq_attr *attr);
@@ -142,6 +164,8 @@ if mq_open() succeeds, it returns a file (a handle) to msgQ. Using this handle, 
 ---
 
 #### Message queue closing
+
+---
 
 A process can close a msgQ using below API
 int mq_close(mqd_t msgQ);
@@ -159,6 +183,8 @@ int mq_close(mqd_t msgQ);
 
 #### Enqueue a message
 
+---
+
 A sending process can place a message in a message queue using below API
 int mq_send(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);
 - mq_send is for sending a message to the queue referenced by the descriptor msgQ
@@ -170,6 +196,8 @@ int mq_send(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);
 ---
 
 #### Dequeue a message
+
+---
 
 A receiving process can dequeue a message in a message queue using below API
 int mq_receive(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);
@@ -184,6 +212,8 @@ int mq_receive(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio)
 
 #### Destroying a message queue
 
+---
+
 A creating process can destroy a message queue using below API
 int mq_unlink(const char *msgQ_name);
 - mq_unlink destroys the msgQ (release the kernel resource)
@@ -194,6 +224,8 @@ int mq_unlink(const char *msgQ_name);
 ---
 
 #### Using a message queue
+
+---
 
 - A message queue IPC mechanism usually supports N:1 communication paradigm, meaning there can be N senders but 1 receiver per message queue
 - Multiple senders can open the same msgQ using msgQ name, and enque their msgs in the same queue
@@ -207,6 +239,8 @@ int mq_unlink(const char *msgQ_name);
 
 #### Example
 
+---
+
 <a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC" target="_blank">Code example of message queue</a><br>
 
 ---
@@ -216,6 +250,9 @@ int mq_unlink(const char *msgQ_name);
 ---
 
 #### Memory mapping
+
+---
+
 Virtual memory, physical memory and secondary memory setup
 1. Not all programs needs secondary storages, but most non-trivial applications do
 2. Memory mapping is used to change the secondary storage of the program to some other source, say some hardware device memory or some particular file on disk
@@ -228,6 +265,8 @@ Virtual memory, physical memory and secondary memory setup
 
 #### Using external data source as shared memory
 
+---
+
 - Virtual pages of both the processes maps to same physical pages loaded in RAM
 - Physical pages in turn are read/written to extenal memory
 - Rule: a process never can access any address outside of its VAS is never violated
@@ -237,11 +276,15 @@ Virtual memory, physical memory and secondary memory setup
 
 #### Using RAM itself as data source
 
+---
+
 ![H1](../../assets/img/linux/sharedMemory.png)
 
 ---
 
 #### mmap()
+
+---
 
 void *mmap(void addr[.length], size_t length, int prot, int flags, int fd, off_t offset);
 
@@ -256,6 +299,8 @@ After the mmap() call has returned, the file descriptor, fd, can be closed immed
 ---
 
 #### Design constraints for using shared memory as IPC
+
+---
 
 Shared memory approach of IPC is used in a scenario where:
 - Exactly one processes is responsible to update the shared memory (publisher process)
@@ -275,11 +320,15 @@ When publisher process update the shared memory:
 
 #### Example
 
+---
+
 <a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC" target="_blank">Code example of shared memory</a><br>
 
 ---
 
 ### Signals
+
+---
 
 A system message sent from one process to another, not usually used to transfer data but instead used to remotely command the partnered process.
 When a process receives a signal. Either of the three things can happen:
@@ -297,6 +346,8 @@ Signal handler routine are executed at the highest priority, preemting the norma
 
 #### Well known signals in linux
 
+---
+
 1. SIGINT - interrupt (i.e., Ctrl-c)
 2. SIGUSR1 and SIGUSR2 - user defined signals
 3. SIGKILL - sent to process from kernel when kill -9 is invoked on pid, this signal cannot be caught by the process
@@ -309,6 +360,8 @@ Signal handler routine are executed at the highest priority, preemting the norma
 
 #### Three ways of generating signals in linux
 
+---
+
 1. Raising a signal from OS to a process
 2. Sending a signal from process A to itself (using raise())
 3. Sending signal from process A to process B (using kill())
@@ -317,10 +370,14 @@ Signal handler routine are executed at the highest priority, preemting the norma
 
 #### Example
 
+---
+
 <a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC" target="_blank">Code example of signal</a><br>
 
 ---
 
 ### References
+
+---
 
 [1] Linux Inter Process Communication (IPC) from Scratch in C

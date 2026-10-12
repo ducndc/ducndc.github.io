@@ -9,8 +9,11 @@ category: 'Embedded Linux'
 
 It has one simple task, check if there is enough available memory to satisfy, verify that the system is truely out of memory and if so, select a process to kill
 
+---
 
 ### Checking Available Memory
+
+---
 
 For certain operations, such as expaning the heap with brk() or remapping an address space with mremap(), the system will check if there is enough available memory to satisfy a request. Note that this is separate to the out_of_memory() path that is covered in the next section. This path is used to avoid the system being in a state of OOM if at all possible.
 
@@ -28,6 +31,8 @@ If the total number of pages added here is sufficient for the request, vm_enough
 ---
 
 ### Determining OOM Status
+
+---
 
 When the machine is low on memory, old page frames will be reclaimed but despite reclaiming pages is may find that it was unable to free enough pages to satisfy a request even when scanning at highest priority. If it does fail to free page frames, out_of_memory() is called to see if the system is out of memory and needs to kill a process.
 
@@ -47,6 +52,7 @@ It is only if the above tests are passed that oom_kill() is called to select a p
 
 ### Selecting a Process
 
+---
 
 The function select_bad_process() is responsible for choosing a process to kill. It decides by stepping through each running task and calculating how suitable it is for killing with the function badness(). The badness is calculated as follows, note that the square roots are integer approximations calculated with int_sqrt();
 
@@ -63,6 +69,8 @@ This has been chosen to select a process that is using a large amount of memory 
 
 ### Flow of Processing 
 
+---
+
 1. User process → malloc(), new, mmap(), fork()
 2. __alloc_pages() -> __alloc_pages_nodemask()
 3. __alloc_pages_slowpath() -> __alloc_pages_may_oom()
@@ -76,6 +84,8 @@ This has been chosen to select a process that is using a large amount of memory 
 ---
 
 #### __alloc_pages()
+
+---
 
 ```c
 static inline struct page *
@@ -157,6 +167,8 @@ EXPORT_SYMBOL(__alloc_pages_nodemask);
 ---
 
 #### __alloc_pages_slowpath()
+
+---
 
 ```c
 static inline struct page *
@@ -424,6 +436,8 @@ got_pg:
 
 #### __alloc_pages_may_oom()
 
+---
+
 ```c
 static inline struct page *
 __alloc_pages_may_oom(gfp_t gfp_mask, unsigned int order,
@@ -516,6 +530,8 @@ out:
 
 #### out_of_memory()
 
+---
+
 ```c
 /**
  * out_of_memory - kill the "best" process when we run out of memory
@@ -604,6 +620,8 @@ bool out_of_memory(struct oom_control *oc)
 
 #### select_bad_process()
 
+---
+
 ```c
 /*
  * Simple selection loop. We choose the process with the highest number of
@@ -630,6 +648,8 @@ static void select_bad_process(struct oom_control *oc)
 ---
 
 #### oom_evaluate_task()
+
+---
 
 ```c
 static int oom_evaluate_task(struct task_struct *task, void *arg)
@@ -689,6 +709,8 @@ abort:
 
 #### oom_badness()
 
+---
+
 ```c
 /**
  * oom_badness - heuristic function to determine which candidate task to kill
@@ -744,6 +766,8 @@ long oom_badness(struct task_struct *p, unsigned long totalpages)
 ---
 
 #### oom_kill_process()
+
+---
 
 ```c
 static void oom_kill_process(struct oom_control *oc, const char *message)
