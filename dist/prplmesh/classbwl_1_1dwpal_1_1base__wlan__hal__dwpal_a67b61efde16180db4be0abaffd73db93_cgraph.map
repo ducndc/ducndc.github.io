@@ -1,0 +1,40 @@
+<map id="bwl::dwpal::base_wlan_hal_dwpal::refresh_vaps_info" name="bwl::dwpal::base_wlan_hal_dwpal::refresh_vaps_info">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,305,204,345"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1utils.html#a8a7b156a1d975b5262c94d0dfa8927bb" title=" " alt="" coords="501,141,654,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,302,505,183,507,188,165,307"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a963ee9c8c2864035d84567c8d253c111" title=" " alt="" coords="252,333,443,373"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="205,334,239,338,238,343,204,339"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1utils.html#ab79525da353f8d66afd69095bbf7f56e" title="This function will return the default prefix separator character for wireless VAP interface names." alt="" coords="723,237,897,277"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="618,178,713,222,732,230,731,235,711,227,616,183"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1utils.html#a865f0165212ff57d0c23421af76d582b" title="This function will return the prefix string in the argument interface name following one of these pat..." alt="" coords="726,45,894,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="616,138,711,94,731,87,732,92,713,99,618,143"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1utils.html#a60f589dbc54e6e64b04466f89239bbc7" title="This function will check if the interface name prefix is allowed. The check can de done by." alt="" coords="731,109,889,149"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="654,148,717,139,717,144,655,153"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1string__utils.html#adc10d3f8a693da93fc162414173fa6be" title=" " alt="" coords="956,177,1103,217"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="590,139,610,112,638,81,672,52,711,30,765,11,811,3,857,9,909,30,947,57,977,92,1001,129,1017,163,1013,165,996,132,973,95,943,61,907,35,855,14,811,8,766,16,713,35,675,57,642,85,614,115,594,142"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1string__utils.html#aea97ffe1489d4608c5035b257deaaadc" title=" " alt="" coords="737,173,883,213"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="655,169,723,178,722,183,654,174"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1string__utils.html#ad6a5e6fda086252e48c5122fd2552d9d" title="trim whitespace in place from the head and tail of a string." alt="" coords="1151,177,1297,217"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1103,194,1137,194,1137,199,1103,199"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1string__utils.html#a03316c7e6197ba5b20b09ae807d36681" title="trim whitespace in place from the head of a string." alt="" coords="1345,145,1492,185"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1297,182,1331,176,1332,182,1298,187"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1string__utils.html#aa8c0f4131490f9f0f50b0d643ca4eccc" title="trim whitespace in place from the tail of a string." alt="" coords="1345,209,1492,249"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1298,206,1332,212,1331,217,1297,211"/>
+<area shape="rect" id="Node000012" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a0feaa359383114c27ff76915782e4d48" title=" " alt="" coords="712,453,908,493"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="385,371,435,396,491,418,597,444,699,460,698,465,596,449,490,423,432,401,382,375"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1utils.html#a66bf2ee3685193942287adfcb4ab1fd7" title=" " alt="" coords="495,289,659,344"/>
+<area shape="poly" id="edge15_Node000011_Node000014" title=" " alt="" coords="443,335,482,329,482,334,444,340"/>
+<area shape="rect" id="Node000016" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a5f4d275933dd405d7e7530c760333e97" title=" " alt="" coords="491,369,664,409"/>
+<area shape="poly" id="edge18_Node000011_Node000016" title=" " alt="" coords="444,365,478,370,477,376,443,370"/>
+<area shape="poly" id="edge12_Node000012_Node000012" title=" " alt="" coords="769,453,767,443,773,434,788,428,810,426,836,429,850,436,847,441,834,434,810,431,789,433,776,438,772,444,774,452"/>
+<area shape="rect" id="Node000013" href="$classbwl_1_1KeyValueParser.html#aa6b73c9c987d8bbf823d9c031b8de822" title=" " alt="" coords="958,453,1101,493"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="908,470,944,470,944,475,908,475"/>
+<area shape="poly" id="edge14_Node000013_Node000013" title=" " alt="" coords="993,453,990,443,996,434,1009,428,1029,426,1052,429,1065,436,1062,441,1051,434,1029,431,1011,433,1000,438,996,444,998,452"/>
+<area shape="poly" id="edge17_Node000014_Node000003" title=" " alt="" coords="659,293,718,278,719,283,660,298"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1utils.html#a796ed68247e8977a50f0ca63bf542e03" title="This function will return the default prefix string for wireless interface names." alt="" coords="733,301,887,341"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="660,315,720,317,720,322,660,321"/>
+<area shape="poly" id="edge19_Node000016_Node000012" title=" " alt="" coords="635,406,742,445,740,450,633,411"/>
+<area shape="rect" id="Node000017" href="$classbwl_1_1KeyValueParser.html#a68126638ea65e5275cf403bbbc5e2087" title=" " alt="" coords="739,365,881,405"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="664,385,725,384,725,389,664,390"/>
+<area shape="poly" id="edge21_Node000017_Node000006" title=" " alt="" coords="880,365,906,351,939,323,967,290,1009,228,1013,231,971,293,943,326,910,355,883,370"/>
+</map>

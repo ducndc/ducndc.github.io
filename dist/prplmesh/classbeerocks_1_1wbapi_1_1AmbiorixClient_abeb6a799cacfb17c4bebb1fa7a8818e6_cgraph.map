@@ -1,0 +1,9 @@
+<map id="beerocks::wbapi::AmbiorixClient::init_event_loop" name="beerocks::wbapi::AmbiorixClient::init_event_loop">
+<area shape="rect" id="Node000001" title="Initialize event handlers for Ambiorix fd in the event loop." alt="" coords="5,85,181,125"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#a44d82ac0b81002879afd97b56e58b7d6" title=": fetch created ambiorix bus connection per file descriptor" alt="" coords="229,5,405,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,82,218,62,220,67,157,87"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#aeea708c22960b810e3d974875471d6fc" title="get the amxb file descriptor. Use this function to add the file descriptor to your event loop." alt="" coords="229,85,405,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,102,215,102,215,107,182,107"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#afc17bdf3d36234281315b46abe6f4abd" title=": get single instance" alt="" coords="229,149,405,204"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="157,122,220,143,218,148,155,127"/>
+</map>

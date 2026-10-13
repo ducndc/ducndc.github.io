@@ -1,0 +1,32 @@
+<map id="beerocks::ChannelSelectionTask::create_cac_status_report_tlv" name="beerocks::ChannelSelectionTask::create_cac_status_report_tlv">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,302,191,357"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CacStatusDatabase.html#a228fafc182a9dc04951ccbb8c15d6c08" title="Fills in CAC Status Report TLV by given radio." alt="" coords="239,184,440,224"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,299,287,228,289,233,153,304"/>
+<area shape="rect" id="Node000013" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="240,309,439,349"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="191,327,227,327,227,332,191,332"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="258,374,421,399"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="192,349,273,368,271,373,190,354"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1CacStatusDatabase.html#a941aef71d16c8d4bdfdbf0c2133fcd10" title="Get a list of all channels that have an active CAC ongoing of a given radio mac." alt="" coords="490,5,691,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="354,182,408,120,445,85,487,55,498,49,501,53,489,60,448,89,412,124,358,186"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1CacStatusDatabase.html#a1043fb115d2d65f84b5bae6036e1c216" title="Get a list of all CAC&#45;able channels (Available of Usable) of a given radio mac." alt="" coords="490,69,691,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="376,181,487,126,519,112,521,117,489,130,378,186"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1WifiChannel.html#ac35559bb3c4aaa27a28278469e1aefcb" title="Get the freq type object." alt="" coords="751,151,906,191"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="418,181,488,169,619,162,738,163,738,169,619,167,488,175,419,187"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1CacStatusDatabase.html#a759cfc10709a608ed2726b947d5ee2db" title="Get a list of all channels that cannot be occupied (radar was detected) of a given radio mac." alt="" coords="488,184,693,224"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="440,201,474,201,474,207,440,207"/>
+<area shape="rect" id="Node000007" href="$classson_1_1wireless__utils.html#aa54d97d210e1f56b022e58e3947e91c1" title=" " alt="" coords="525,248,656,288"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="419,221,512,245,511,251,418,227"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1CacStatusDatabase.html#a43bac674be8bd04b01f40834a444df94" title="Update all collected channel information by given radio." alt="" coords="490,312,691,352"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="369,222,423,260,489,298,506,305,503,310,487,302,420,264,366,227"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="672,310,692,298,708,281,716,264,724,246,739,226,777,196,780,200,743,230,729,249,721,267,712,284,695,302,675,314"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="741,240,916,280"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="657,309,748,281,750,287,658,314"/>
+<area shape="rect" id="Node000010" href="$classson_1_1wireless__utils.html#a078f6f46bf99ac53d10ce191a06be7a7" title="get operating class number by channel and channel bandwidth" alt="" coords="755,305,902,359"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="691,329,742,329,742,335,691,335"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1WifiChannel.html#a536aa8a3003f3ab04e0a56f9f2b3cd23" title="check if the channel is an empty" alt="" coords="751,384,906,424"/>
+<area shape="poly" id="edge12_Node000008_Node000012" title=" " alt="" coords="658,350,750,377,748,383,657,355"/>
+<area shape="rect" id="Node000011" href="$classson_1_1wireless__utils.html#a9ca3466505a1ccda48a6a6a428bb9e74" title="Get the center channel of the channel." alt="" coords="964,312,1128,352"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="902,329,950,329,950,335,902,335"/>
+<area shape="rect" id="Node000014" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="521,377,661,402"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="424,347,524,371,523,376,423,352"/>
+</map>

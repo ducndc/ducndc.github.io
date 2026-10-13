@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Chung Duc Nguyen Dang" href="https://ducndc.github.io/rss.xml"><meta name="generator" content="Astro v5.17.2"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://ducndc.github.io/blog/ipc/"><!-- Primary Meta Tags --><title>Inter-Process Communication</title><meta name="title" content="Inter-Process Communication"><meta name="description" content="Inter-Process Communication"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://ducndc.github.io/blog/ipc/"><meta property="og:title" content="Inter-Process Communication"><meta property="og:description" content="Inter-Process Communication"><meta property="og:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://ducndc.github.io/blog/ipc/"><meta property="twitter:title" content="Inter-Process Communication"><meta property="twitter:description" content="Inter-Process Communication"><meta property="twitter:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Times New Roman,Times,serif;margin:0;padding:0;text-align:justify;text-justify:inter-word;background:linear-gradient(180deg,#f3f6f8 0,#fff 560px) no-repeat;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;color:rgb(var(--black));line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}p{margin-top:0;margin-bottom:1em;line-height:1.7}.prose p{margin-top:0;margin-bottom:1.2em;line-height:1.7}a,a:hover{color:var(--accent)}ul,ol{margin-top:.5em;margin-bottom:1em;padding-left:1.5em}li{line-height:1.5;margin-bottom:.2em}li p,.prose li p{margin-top:0;margin-bottom:0;line-height:1.5}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%;border-collapse:collapse}img{display:block;max-width:100%;height:auto;margin:1.5rem auto}.prose img{display:block;max-width:100%;height:auto;margin:2rem auto}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px;font-family:monospace}pre{padding:1.5em;border-radius:8px;overflow-x:auto}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:1.5em 0;font-size:1.1em}hr{border:none;border-top:1px solid rgb(var(--gray-light));margin:2em 0}@media(max-width:720px){body{font-size:18px}main{padding:1em}.prose p{line-height:1.65}li{line-height:1.5}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media(max-width:720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}
+</style>
+<link rel="stylesheet" href="/_astro/about.DsEPMAAl.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Chung Duc Nguyen Dang</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/blog" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  </div> </nav> </header>  <main class="layout" data-astro-cid-bvzihdzo> <!-- TOC --> <aside class="toc" data-astro-cid-bvzihdzo> <div class="toc-title" data-astro-cid-bvzihdzo>Table of Contents</div> <nav id="toc" data-astro-cid-bvzihdzo></nav> </aside> <!-- Content --> <article class="content" data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="/_astro/ipc.BflOe87d_ZBUhLd.webp" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="800"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2022-08-16T17:00:00.000Z"> Aug 17, 2022 </time>  </div> <h1 data-astro-cid-bvzihdzo>Inter-Process Communication</h1> <hr data-astro-cid-bvzihdzo> </div>  <h3 id="what-is-ipc-and-why-we-need-it">What is IPC and Why we need it?</h3>
+<hr>
+<p>IPC is a mechanism using which two or more process running on the same machine exchange their personal data with each other.
+Communication between processes running on different machine are not termed as IPC. Processes running on same machine, often need to exchange data with oter in order to implement some functionality. Linux OS provides serveral mechanisms using which user space processes can carry out communication with each other, each mechanism has its own pros and cons</p>
+<p>User space &#x3C;==> Netlink Skts / IOCTLS / Device files / System calls &#x3C;==> Kernel &#x3C;==> Device drivers &#x3C;==> Hardware</p>
+<hr>
+<h3 id="ipc-techniques">IPC Techniques</h3>
+<hr>
+<ol>
+<li>Unix Domain sockets</li>
+<li>Network Sockets</li>
+<li>Message Queues</li>
+<li>Shared Memory</li>
+<li>Pipes (Not used in the industry)</li>
+<li>Signal</li>
+</ol>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="896" height="750" src="/_astro/ipc.CfhVxTxe_1ib0f6.webp" ></p>
+<hr>
+<h3 id="sockets">Sockets</h3>
+<hr>
+<p>Unix/Linux like OS provide Socket Interface to carry out communication betwwen various types of entities.
+The Socket Interface are a bunch of Socket programming releated API</p>
+<p>Two types:</p>
+<ul>
+<li>Unix Domain Sockets: IPC between processes running on the same system</li>
+<li>Network Sockets: Communication between processes running on different physical machines over the network</li>
+</ul>
+<hr>
+<h4 id="sockets-steps-and-related-api">Sockets Steps and related API</h4>
+<hr>
+<ol>
+<li>Remove the socket, if already exits</li>
+<li>Create a Unix socket using socket()</li>
+<li>Specify the socket name</li>
+<li>Bind the socket using bind()</li>
+<li>listen()</li>
+<li>accept()</li>
+<li>Read the data recvd on socket using recvfrom()</li>
+<li>Send back the result using sendto()</li>
+<li>Close the data socket</li>
+<li>Close the connection socket</li>
+<li>Remove the socket</li>
+<li>Exit</li>
+</ol>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1647" height="2340" src="/_astro/sockets.DOUt3hlr_ZwdWXq.webp" ></p>
+<hr>
+<h4 id="sockets-message-types">Sockets Message Types</h4>
+<hr>
+<p>Messages exchange between the client and the server processes can be categorized into two types:</p>
+<ul>
+<li>Connection Initiation Request Messages (CIR)</li>
+<li>Service Request Messages (SRM)</li>
+</ul>
+<hr>
+<h4 id="state-machine-of-socket-based-client-server-communication">State Machine of Socket based Client Server Communication</h4>
+<hr>
+<ol>
+<li>When server boots up, it create a connection socket (also called “master socket file descriptor” using socket()), M = socket()</li>
+<li>M is the mother of all client handles. M gives birth to all client handles. Client handles are also called “data_sockets”</li>
+<li>Once client handles are created for each client. Server carries out communication (actual date exchange) with the client using client handle (and not M)</li>
+<li>Server has to maintain the database of connected client handles or data sockets</li>
+<li>M is only used to create new client handles, M is not used for data exchange with already connected client</li>
+<li>accept() is the system call used on server side to create client handles</li>
+<li>In linux terminology, handles are called as “file descriptors” which are just positive interger numbers. Client handles are called “communication file descriptors” or “data sockets” and M is called “Master socket file descriptor” or “Connection socket”</li>
+</ol>
+<p>When the server receives new connetion initiation request msg from new client, this request goes on Master socket mainteined by server. Master socket is activated
+When server receives connection initial request from client, server invokes the accept() to establish the didirectional communication
+Return value of accept system call is client handle or communication file descriptor
+accept() is used only for connection oriented communication, not for connection less connection</p>
+<hr>
+<h4 id="unix-domain-sockets">Unix Domain Sockets</h4>
+<hr>
+<p>Using UNIX Domain Sockets, you can setup STREAM of DATAGRAM based communication</p>
+<ul>
+<li>STREAM : When large files need to be moved or copied from one location to another, eg: copying a movies, continuous flow of bytes</li>
+<li>DATAGRAM : When small units of data needs to be moved from one process to another within a system</li>
+</ul>
+<hr>
+<h4 id="multiplexing">Multiplexing</h4>
+<hr>
+<p>Multiplexing is a machanism through which the server process can monitor multiple clients at the same time.
+Without multiplexing, server process can entertain only one client at a time, and can not entertain other client’s request until it finishes with the current client.
+With multiplexing, server can entertain multiple connected clients simultaneously.
+Server process has to maintain client handles (communication FDs) to carry out communication (data exchange) with connected clients.
+In addition, server process has to maintain connection socket or master socket FD as well (M) to process new connection req from new client.
+Linux provides an inbuild data structure to maintain the set of sockets file descriptors.
+select() system call monitor all socket FDs present in fd_set</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="517" height="592" src="/_astro/select.BP8H4P5L_Z2mJNQO.webp" ></p>
+<hr>
+<h4 id="example">Example</h4>
+<hr>
+<p><a href="https://github.com/ducndc/linux-system-programming/tree/main/networking" target="_blank">Code example of unix socket and network socket</a><br></p>
+<hr>
+<h3 id="message-queues">Message Queues</h3>
+<hr>
+<ul>
+<li>Linux/Unix OS provides another mechanism called Message Queue for carrying out IPC</li>
+<li>Processes running on same machine can exchange any data using message queues</li>
+<li>Process can create a new message queue or can use an existing msgQ which was created by another process</li>
+<li>A message queue is identified uniquely by the ID, no two msgQ can have same ID</li>
+<li>Message queue resides and manage by the kernel/OS</li>
+<li>Sending process A can post the data to the message queue, receiving process B reads the data from msg Q</li>
+<li>Process which creates a msgQ is termed as owner or creator of msgQ</li>
+<li>MsgQ as a kernel resource</li>
+</ul>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1280" height="585" src="/_astro/msgQueue.BX7lS6oL_Z1V6i7k.webp" ></p>
+<hr>
+<h4 id="message-queue-creation">Message queue creation</h4>
+<hr>
+<p>A process can create new msgQ or use an existing msgQ using below API
+mq_open(const char *name, int oflag);
+mq_open(const char *name, int oflag, mode_t mode, struct mq_attr *attr);</p>
+<ul>
+<li>name - Name of msg Q, eg “/server-msg-q”</li>
+<li>oflag - Operational flags</li>
+<li>mode - Permissions set by the owning process on the queue, usually 0660</li>
+<li>attr - Specify various atrributes of the msgQ being created</li>
+<li>
+<ul>
+<li>Like maximum size the msgQ can grow, should be less than or equal to /proc/sys/fs/mqueue/msg_max</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Maximum size of the msg which msgQ can hold, should be less than or equal to /proc/sys/fs/mqueue/msgsize_max
+if mq_open() succeeds, it returns a file (a handle) to msgQ. Using this handle, we perform all msgQ operations on msgQ throughout the program</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="message-queue-closing">Message queue closing</h4>
+<hr>
+<p>A process can close a msgQ using below API
+int mq_close(mqd_t msgQ);</p>
+<ul>
+<li>After closing the msgQ, the process cannot use the msgQ unless it open it again using mq_open()</li>
+<li>Operating system removes and destroy the msgQ if all processes using the msgQ have closed it</li>
+<li>OS maintains information regarding how many process are using same msgQ (invoked mq_open()). This concept is called reference counting</li>
+<li>msgQ is a kernel reqource which is being used by application process. For kernel resource, kernel keeps track how many user space processes are using that particular resource</li>
+<li>When a kernel resource (msgQ in our exemple) is created for the first time by application process, reference_count = 1</li>
+<li>If other process also invoke open() on existing kernel resource (mq_open() in our case), kernel increments reference_count by 1</li>
+<li>When a processes invoke close() in existing kernel resource (mq_close() in our case), kernel decrements reference_count by 1</li>
+<li>When reference_count = 0, kernel; cleanups/destroys that kernel resource</li>
+<li>Remember, kernel resource could be anything, it could be socket FD, msgQ FD etc</li>
+</ul>
+<hr>
+<h4 id="enqueue-a-message">Enqueue a message</h4>
+<hr>
+<p>A sending process can place a message in a message queue using below API
+int mq_send(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);</p>
+<ul>
+<li>mq_send is for sending a message to the queue referenced by the descriptor msgQ</li>
+<li>The msg_ptr points to the message buffer, msg_len is the size of the message, which should be less than or equal to the message size for the queue</li>
+<li>msg_prio is the message priority, which is a non-negative number specifying the priority of the message</li>
+<li>Message are placed in the queue in the decreasing order of message priority, with the older messages for a priority coming before newer messages</li>
+<li>If the queue is full, mq_send blocks till there is space on the queue, unless the O_NONBLOCK flag is enabled for the message queue, in which case mq_send returns immediately with errno set to EAGAIN</li>
+</ul>
+<hr>
+<h4 id="dequeue-a-message">Dequeue a message</h4>
+<hr>
+<p>A receiving process can dequeue a message in a message queue using below API
+int mq_receive(mqd_t msgQ, char *msg_ptr, size_t msg_len, unsigned int msg_prio);</p>
+<ul>
+<li>mq_receive is for retrieving a message from the queue referenced by the descriptor msgQ</li>
+<li>The msg_ptr points to the empty message buffer, msg_len is the size of the buffer in bytes</li>
+<li>The oldest msg of the highest priority is deleted from the queue and passed to the process in the buffer pointed by msg_ptr</li>
+<li>If the pointer msg_prio is not null, the priority of the received message is stored in the interger pointed by it</li>
+<li>The default behavior of mq_receive is to block if there is no message in the queue. However, if the O_NONBLOCK flag is enabled for the queue, and the queue is empty, mq_receive returns immediately with errno set to EAGAIN</li>
+<li>On success, mq_receive returns the number of bytes receoved in the buffer pointed by msg_ptr</li>
+</ul>
+<hr>
+<h4 id="destroying-a-message-queue">Destroying a message queue</h4>
+<hr>
+<p>A creating process can destroy a message queue using below API
+int mq_unlink(const char *msgQ_name);</p>
+<ul>
+<li>mq_unlink destroys the msgQ (release the kernel resource)</li>
+<li>Should be called when the process has invoked mq_close() on msgQ</li>
+<li>Return -1 if it fails, 0 on success</li>
+<li>Postpone if other processes are using msgQ</li>
+</ul>
+<hr>
+<h4 id="using-a-message-queue">Using a message queue</h4>
+<hr>
+<ul>
+<li>A message queue IPC mechanism usually supports N:1 communication paradigm, meaning there can be N senders but 1 receiver per message queue</li>
+<li>Multiple senders can open the same msgQ using msgQ name, and enque their msgs in the same queue</li>
+<li>Receiver process can dequeue the messages from the message queue that was placed by different sender processes</li>
+<li>However, receiving process can dequeue message from different message queues at the same time (multiplexing using slect())</li>
+<li>A msg queue can support only one client process</li>
+<li>Client can dequeue msgs from more than one msg queues</li>
+<li>No limitation on server processes</li>
+</ul>
+<hr>
+<h4 id="example-1">Example</h4>
+<hr>
+<p><a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC" target="_blank">Code example of message queue</a><br></p>
+<hr>
+<h3 id="shared-memory">Shared Memory</h3>
+<hr>
+<h4 id="memory-mapping">Memory mapping</h4>
+<hr>
+<p>Virtual memory, physical memory and secondary memory setup</p>
+<ol>
+<li>Not all programs needs secondary storages, but most non-trivial applications do</li>
+<li>Memory mapping is used to change the secondary storage of the program to some other source, say some hardware device memory or some particular file on disk</li>
+<li>Your application is not even aware of physical memory, let alone secondary storages</li>
+<li>So, your same notepad application shall run seamlessly even if we change secondary storage source to printer/camera device memory</li>
+</ol>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1462" height="730" src="/_astro/mem.DOtHvXWi_2bU3KD.webp" ></p>
+<hr>
+<h4 id="using-external-data-source-as-shared-memory">Using external data source as shared memory</h4>
+<hr>
+<ul>
+<li>Virtual pages of both the processes maps to same physical pages loaded in RAM</li>
+<li>Physical pages in turn are read/written to extenal memory</li>
+<li>Rule: a process never can access any address outside of its VAS is never violated</li>
+<li>Any modification made by process A in its shared VM, shall be seen by process B</li>
+</ul>
+<hr>
+<h4 id="using-ram-itself-as-data-source">Using RAM itself as data source</h4>
+<hr>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="950" height="490" src="/_astro/sharedMemory.Dqdj4qa1_Z15UxSU.webp" ></p>
+<hr>
+<h4 id="mmap">mmap()</h4>
+<hr>
+<p>void *mmap(void addr[.length], size_t length, int prot, int flags, int fd, off_t offset);</p>
+<p>mmap() creates a new mapping in the virtual address space of the calling process. The starting address for the new mapping is specified in addr. The length argument specifies the length of the mapping (which must be greater than 0).</p>
+<p>If addr is NULL, then the kernel chooses the (page-aligned) address at which to create the mapping; this is the most portable method of creating a new mapping. If addr is not NULL, then the kernel takes it as a hint about where to place the mapping; on Linux, the kernel will pick a nearby page boundary (but always above or equal to the value specified by /proc/sys/vm/mmap_min_addr) and attempt to create the mapping there. If another mapping already exists there, the kernel picks a new address that may or may not depend on the hint. The address of the new mapping is returned as the result of the call.</p>
+<p>The contents of a file mapping (as opposed to an anonymous mapping; see MAP_ANONYMOUS below), are initialized using length bytes starting at offset offset in the file (or other object) referred to by the file descriptor fd. offset must be a multiple of the page size as returned by sysconf(_SC_PAGE_SIZE).</p>
+<p>After the mmap() call has returned, the file descriptor, fd, can be closed immediately without invalidating the mapping.</p>
+<hr>
+<h4 id="design-constraints-for-using-shared-memory-as-ipc">Design constraints for using shared memory as IPC</h4>
+<hr>
+<p>Shared memory approach of IPC is used in a scenario where:</p>
+<ul>
+<li>Exactly one processes is responsible to update the shared memory (publisher process)</li>
+<li>Rest of the processes only read the shared memory (subscriber processes)</li>
+<li>The frequency of updating the shared memory by publisher process should not be very high</li>
+<li>If multiple processes attempts to update the shared memory at the same time, then it leads to write-wite conflict</li>
+<li>We need to handle this situation using mutual exclusion based synchronization</li>
+<li>Synchronization comes at the cost of performance, because we put the threads to sleep (in addition to their natural CPU preemption) in order to prevent concurrent access to critical section</li>
+</ul>
+<p>When publisher process update the shared memory:</p>
+<ul>
+<li>The subscribers would not know about this update</li>
+<li>Therefore, after updating the shared memory, publisher needs to send a notification to all publishers which states that “shared memory has been updated”</li>
+<li>After receiving this notification, subscribers can read the update shared memory and update their internal data structures, if any</li>
+<li>The notification is just a small message, and can be sent out using other IPC mechanisms, such as Unix domain sockets or msg queues</li>
+</ul>
+<hr>
+<h4 id="example-2">Example</h4>
+<hr>
+<p><a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC" target="_blank">Code example of shared memory</a><br></p>
+<hr>
+<h3 id="signals">Signals</h3>
+<hr>
+<p>A system message sent from one process to another, not usually used to transfer data but instead used to remotely command the partnered process.
+When a process receives a signal. Either of the three things can happen:</p>
+<ol>
+<li>Default</li>
+<li>Customized</li>
+<li>Ignore</li>
+</ol>
+<p>A signal handler routine is a special function which is invoked when the process receives a signal.
+We need to register the routine against the type of signal (that is, process needs to invoke the function F when signal S is received).
+Signal handler routine are executed at the highest priority, preemting the normal execution flow of the process.</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="615" height="492" src="/_astro/signal.BXBAtZLD_Z8TXLV.webp" ></p>
+<hr>
+<h4 id="well-known-signals-in-linux">Well known signals in linux</h4>
+<hr>
+<ol>
+<li>SIGINT - interrupt (i.e., Ctrl-c)</li>
+<li>SIGUSR1 and SIGUSR2 - user defined signals</li>
+<li>SIGKILL - sent to process from kernel when kill -9 is invoked on pid, this signal cannot be caught by the process</li>
+<li>SIGABRT - raised by abort() by the process itself, cannot be blocked, the process is terminated</li>
+<li>SIGTERM - raised when kill is invoked, can be caught by process to execute user defined action</li>
+<li>SIGSEGV - segmentation fault, raised by the kernel to the process when illegal memory is referenced</li>
+<li>SIGCHILD - whenever a child terminates, this signal is sent to the parent. Upon receiving this signal, parent should execute wait() system call to read child status. Need to understand fork() to understand this signal</li>
+</ol>
+<hr>
+<h4 id="three-ways-of-generating-signals-in-linux">Three ways of generating signals in linux</h4>
+<hr>
+<ol>
+<li>Raising a signal from OS to a process</li>
+<li>Sending a signal from process A to itself (using raise())</li>
+<li>Sending signal from process A to process B (using kill())</li>
+</ol>
+<hr>
+<h4 id="example-3">Example</h4>
+<hr>
+<p><a href="https://github.com/ducndc/linux-system-programming/tree/main/linux-programming/IPC" target="_blank">Code example of signal</a><br></p>
+<hr>
+<h3 id="references">References</h3>
+<hr>
+<p>[1] Linux Inter Process Communication (IPC) from Scratch in C</p>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2026 Chung Duc Nguyen Dang. All rights reserved.
+</footer>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const c=document.getElementById("toc"),r=Array.from(document.querySelectorAll(".prose h2, .prose h3"));if(!c||r.length===0)return;r.forEach(t=>{const e=t.textContent.trim(),o=e.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-");t.id=o;const n=document.createElement("a");n.href="#"+o,n.textContent=e,t.tagName==="H3"&&n.classList.add("h3"),c.appendChild(n)});const s=Array.from(document.querySelectorAll(".toc a"));s.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=document.querySelector(t.getAttribute("href"));if(!o)return;const d=o.getBoundingClientRect().top+window.scrollY+-80;window.scrollTo({top:d,behavior:"smooth"})})});let i=null;const l=t=>{i!==t&&(i=t,s.forEach(e=>{e.classList.toggle("active",e.getAttribute("href")==="#"+t)}))},a=new IntersectionObserver(t=>{const e=t.filter(o=>o.isIntersecting).sort((o,n)=>o.boundingClientRect.top-n.boundingClientRect.top);e.length>0&&l(e[0].target.id)},{rootMargin:"-30% 0px -60% 0px",threshold:[0,1]});r.forEach(t=>a.observe(t))});</script> </body> </html>

@@ -1,0 +1,61 @@
+<map id="beerocks::PlatformManager::restart_arp_monitor" name="beerocks::PlatformManager::restart_arp_monitor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,312,188,352"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1PlatformManager.html#a7c6d7acfed15c442bde711e7ce869f8f" title=" " alt="" coords="236,312,419,352"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,338,222,338,222,344,188,343"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1PlatformManager.html#a1fa99f83da2ef07d0adf0c8a779ee426" title=" " alt="" coords="467,568,649,608"/>
+<area shape="poly" id="edge33_Node000001_Node000025" title=" " alt="" coords="128,350,271,444,367,501,468,554,483,561,481,565,466,558,365,506,268,448,125,354"/>
+<area shape="poly" id="edge30_Node000002_Node000001" title=" " alt="" coords="236,326,201,326,201,320,236,321"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1bpl.html#ac240c41688c3c181b46e7b8bc18c5b73" title=" " alt="" coords="495,120,621,160"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="339,310,389,242,424,204,465,170,481,161,484,165,468,174,428,207,393,246,343,313"/>
+<area shape="rect" id="Node000004" href="$namespacebeerocks_1_1bpl.html#a3eab6bb6dcfe068dfb90e3dd53c59263" title=" " alt="" coords="483,184,633,224"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="352,310,403,272,465,234,480,227,482,232,468,238,406,276,355,314"/>
+<area shape="rect" id="Node000005" href="$namespacebeerocks_1_1bpl.html#a15f028b04ec61dacf3d743a3f02414c9" title=" " alt="" coords="495,248,621,288"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="399,309,481,286,482,292,401,314"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1PlatformManager.html#a2d9b1732c969dfb48ca892ca4fa70970" title="Clean old ARP table entries." alt="" coords="467,312,649,352"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="419,329,453,329,453,335,419,335"/>
+<area shape="rect" id="Node000007" href="$namespacebeerocks.html#acde3fc1f6702726e73faf2a5724f93ba" title=" " alt="" coords="469,376,647,416"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="401,350,473,370,472,375,399,355"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1net_1_1network__utils.html#a7454a35f579bcdb11040f17d2c6b655a" title=" " alt="" coords="473,5,643,45"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="331,311,347,262,374,196,413,125,437,92,465,62,481,50,484,54,468,66,441,95,417,128,379,198,352,264,336,313"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1PlatformManager.html#a7d78660942fb72c10a22189e35d74944" title=" " alt="" coords="467,504,649,544"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="343,351,393,418,428,457,468,490,477,495,474,500,465,494,424,460,389,422,339,354"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1net_1_1network__utils.html#a1ae11c13554b52cf21bf707bc2f7bc15" title=" " alt="" coords="713,191,868,231"/>
+<area shape="poly" id="edge29_Node000002_Node000012" title=" " alt="" coords="331,311,346,266,373,208,391,179,412,151,437,126,465,106,514,85,556,81,599,89,650,106,683,120,713,138,762,179,759,183,710,143,680,124,648,110,598,94,556,86,515,90,468,110,440,130,416,154,395,182,377,211,351,268,336,313"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1PlatformManager.html#a2011f54f59a232d800d1cdfd6d3be83d" title=" " alt="" coords="467,440,649,480"/>
+<area shape="poly" id="edge21_Node000002_Node000021" title=" " alt="" coords="355,350,406,388,468,426,482,432,480,437,465,430,403,392,352,354"/>
+<area shape="poly" id="edge31_Node000002_Node000025" title=" " alt="" coords="345,351,421,468,434,494,441,515,450,534,468,554,475,559,471,563,465,558,446,537,436,517,429,496,416,471,340,354"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1string__utils.html#ac5ba735c54be1ae2bf849bf9c60257f6" title=" " alt="" coords="717,5,864,45"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="644,23,704,23,704,28,644,28"/>
+<area shape="rect" id="Node000011" href="$namespacebeerocks_1_1bpl.html#a7afd98c139a8f196493efd890fb89c93" title=" " alt="" coords="727,561,854,601"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="640,541,714,560,713,565,639,547"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="634,502,647,490,667,459,675,429,675,398,671,368,666,337,666,305,675,273,695,241,700,236,704,239,699,244,680,275,672,306,672,336,676,367,680,398,680,429,672,461,651,494,638,506"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1net_1_1network__utils.html#a4d0873cc0089fb32ab8fcdf18a8f4a6b" title="Gets the interface name corresponding to a particular index." alt="" coords="697,676,884,716"/>
+<area shape="poly" id="edge13_Node000010_Node000013" title=" " alt="" coords="634,542,651,554,663,568,670,582,676,610,681,636,688,649,699,662,704,666,701,671,695,666,684,652,676,638,671,611,665,584,659,571,648,558,631,546"/>
+<area shape="rect" id="Node000014" href="$namespacetlvf.html#ab4136497857f196351d18298e6d19099" title="Copy a MAC address from an array into a sMacAddr object." alt="" coords="719,511,862,537"/>
+<area shape="poly" id="edge14_Node000010_Node000014" title=" " alt="" coords="650,521,706,521,706,527,650,527"/>
+<area shape="rect" id="Node000015" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="725,626,856,651"/>
+<area shape="poly" id="edge15_Node000010_Node000015" title=" " alt="" coords="629,542,651,554,666,569,675,584,684,598,699,611,714,619,711,624,696,616,680,601,671,586,662,572,648,558,627,546"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1PlatformManager.html#a445697af1e0f2ce526acd1b2b0c0ad07" title=" " alt="" coords="697,383,884,423"/>
+<area shape="poly" id="edge17_Node000010_Node000017" title=" " alt="" coords="627,502,648,490,662,476,671,462,680,447,696,433,705,427,708,431,699,437,684,451,676,465,667,479,651,494,629,506"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1net_1_1network__utils.html#a9384c968c05a490e2bfba619a59c8d65" title=" " alt="" coords="699,447,882,487"/>
+<area shape="poly" id="edge19_Node000010_Node000019" title=" " alt="" coords="639,501,695,487,696,493,640,507"/>
+<area shape="poly" id="edge12_Node000012_Node000012" title=" " alt="" coords="747,191,745,181,752,172,767,166,791,164,818,167,832,174,830,179,816,172,791,169,768,171,755,176,750,182,752,190"/>
+<area shape="rect" id="Node000016" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="950,626,1097,651"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="856,636,936,636,936,641,856,641"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1PlatformManager.html#a97863aa22ac7d69bc830c732b9c4251e" title=" " alt="" coords="932,383,1115,423"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="884,400,918,400,918,405,884,405"/>
+<area shape="rect" id="Node000020" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a257b5dfca4a855c44bbe9a463fc83c5b" title=" " alt="" coords="986,454,1061,479"/>
+<area shape="poly" id="edge20_Node000019_Node000020" title=" " alt="" coords="882,464,972,464,972,469,882,469"/>
+<area shape="poly" id="edge25_Node000021_Node000012" title=" " alt="" coords="633,438,647,426,663,403,670,381,671,335,671,289,679,265,695,241,700,236,704,240,699,244,683,267,676,290,676,335,676,382,668,406,651,430,637,442"/>
+<area shape="poly" id="edge26_Node000021_Node000014" title=" " alt="" coords="631,477,698,496,731,505,729,510,697,501,630,483"/>
+<area shape="poly" id="edge27_Node000021_Node000017" title=" " alt="" coords="639,437,695,423,696,429,640,443"/>
+<area shape="poly" id="edge28_Node000021_Node000019" title=" " alt="" coords="650,460,686,461,685,466,649,465"/>
+<area shape="rect" id="Node000022" href="$namespacebeerocks_1_1bpl.html#a783b3000c055014ca0ccc99fce5bb22d" title=" " alt="" coords="711,255,871,295"/>
+<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="632,438,647,426,659,411,666,397,671,367,675,336,683,320,695,305,700,301,704,305,699,309,687,323,681,338,676,368,671,398,664,414,651,430,635,442"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1PlatformManager.html#ae1e89d6d14e1861e6e54218cd4e9886d" title=" " alt="" coords="699,319,882,359"/>
+<area shape="poly" id="edge23_Node000021_Node000023" title=" " alt="" coords="627,438,648,426,662,412,671,398,680,383,696,369,705,363,708,367,699,373,684,387,676,401,667,415,651,430,629,442"/>
+<area shape="rect" id="Node000024" href="$namespacebeerocks_1_1bpl.html#a89cdfc34fd1a27519bed81359da1a4d9" title=" " alt="" coords="960,319,1087,359"/>
+<area shape="poly" id="edge24_Node000023_Node000024" title=" " alt="" coords="882,336,946,336,946,341,882,341"/>
+<area shape="rect" id="Node000026" href="$namespacebeerocks_1_1bpl.html#a286b71dfeb3a812335e813bacafe3293" title=" " alt="" coords="727,740,854,780"/>
+<area shape="poly" id="edge32_Node000025_Node000026" title=" " alt="" coords="576,606,627,665,661,697,699,726,716,735,713,740,696,730,657,702,623,669,572,610"/>
+</map>

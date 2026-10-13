@@ -1,0 +1,11 @@
+<map id="bwl::nl80211::wpa_ctrl_socket_event::add_event_fd" name="bwl::nl80211::wpa_ctrl_socket_event::add_event_fd">
+<area shape="rect" id="Node000001" title="Adds wpa_ctrl event socket to monitored event queues list. If the file descriptor value is new (not f..." alt="" coords="657,37,851,77"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#aafc4beb21390283c406e97fea99af776" title="Opens wpa_ctrl event socket and add the new file descriptor to event monitoring FDs queue." alt="" coords="457,37,609,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="644,60,610,60,610,55,644,55"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#afbd96f8a915bea6677281a6ae5806133" title="Opens and attach event socket to hostapd/wpa_supplicant deamon." alt="" coords="248,37,409,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="443,60,409,60,409,55,443,55"/>
+<area shape="rect" id="Node000004" href="$classdevice_1_1serial_1_1SerialDevice.html#a27e698b9464330b6878cfcf4946561bc" title=" " alt="" coords="14,5,191,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="234,47,191,41,192,35,235,41"/>
+<area shape="rect" id="Node000005" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a90819258a767d0bbc4132ae895b3d083" title=" " alt="" coords="5,69,200,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="235,73,201,78,200,73,234,68"/>
+</map>

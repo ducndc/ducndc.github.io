@@ -1,0 +1,22 @@
+<map id="son::wireless_utils::get_subset_20MHz_channels" name="son::wireless_utils::get_subset_20MHz_channels">
+<area shape="rect" id="Node000001" title="Retrieve the subset of 20MHz channels of the given channel &amp; bandwidth." alt="" coords="751,95,953,135"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelScanTask.html#a263b981f2b87820d7e26526041e04fc3" title="Handles 1905 channel scan request message." alt="" coords="243,5,448,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="800,91,753,70,702,53,637,41,571,32,448,26,448,21,571,27,638,35,703,48,755,65,802,86"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelScanTask.html#ae7338c97218b0c13d4c6ccdb5741deba" title=" " alt="" coords="496,63,703,103"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="737,103,703,98,703,93,737,97"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ChannelScanTask.html#a94f915cbe358b529fb5ce316c3868dcb" title="Store the given result in the agent DB." alt="" coords="505,127,694,167"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="737,132,694,137,694,132,736,127"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ChannelScanTask.html#a5cb9158053651798de1bebd469a8bdff" title="Send a Trigger Scan Request CMDU to the monitor." alt="" coords="505,191,694,231"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="796,143,704,181,669,193,667,188,702,176,794,138"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ChannelScanTask.html#a0313f2336162a0ea45324002d446ea64" title="Handles incoming messages." alt="" coords="5,63,195,103"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,51,187,65,186,60,245,46"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="482,85,195,85,195,80,482,80"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ChannelScanTask.html#ae0e6081315b9e7389903488459ff92df" title="Handles Vendor Specific messages." alt="" coords="251,120,440,160"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="497,108,435,123,434,117,496,103"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="245,119,186,105,187,100,246,114"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="491,146,440,145,440,140,491,141"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1ChannelScanTask.html#a855a12099cf3741eee405197c70bd5d9" title="Find the next pending Radio Scan and send a Trigger Scan request to the monitor." alt="" coords="251,191,440,231"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="491,213,440,213,440,208,491,208"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1ChannelScanTask.html#ad2818ef22c645aa1533475f6a25fc91a" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="5,191,195,231"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="237,213,195,213,195,208,237,208"/>
+</map>

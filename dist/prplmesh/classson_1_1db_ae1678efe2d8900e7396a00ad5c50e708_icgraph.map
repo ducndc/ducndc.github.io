@@ -1,0 +1,9 @@
+<map id="son::db::dm_add_association_event" name="son::db::dm_add_association_event">
+<area shape="rect" id="Node000001" title="Adds to data model an instance of object AssociationEventData." alt="" coords="792,5,984,45"/>
+<area shape="rect" id="Node000002" href="$classson_1_1client__association__task.html#a21bad6727ec10fefdb454ff65078b592" title="Adds AssociationEventData data model object." alt="" coords="499,5,744,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="778,28,744,28,744,23,778,23"/>
+<area shape="rect" id="Node000003" href="$classson_1_1client__association__task.html#a9df333a4420dbd560d82d553a4d01624" title="If STA associate first time send Client Capability Query message. Save mac address and timestamp of a..." alt="" coords="259,5,451,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="485,28,451,28,451,23,485,23"/>
+<area shape="rect" id="Node000004" href="$classson_1_1client__association__task.html#a40fe0c16babdf211684f389cde7034fd" title="Handle ieee1905 message." alt="" coords="5,5,211,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="245,28,211,28,211,23,245,23"/>
+</map>

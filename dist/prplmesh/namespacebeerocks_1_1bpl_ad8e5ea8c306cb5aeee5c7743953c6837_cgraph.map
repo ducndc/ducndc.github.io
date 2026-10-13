@@ -1,0 +1,51 @@
+<map id="beerocks::bpl::bpl_cfg_get_wireless_settings" name="beerocks::bpl::bpl_cfg_get_wireless_settings">
+<area shape="rect" id="Node000001" title="Reads wireless settings (SSIDs and WiFi credentials) for all fronthaul interfaces." alt="" coords="5,352,185,392"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#ac50331772f39bcdf6b8c04d68c9d1375" title="Converts a string&#45;based bandwidth (Ref TR181 Device.WiFi.Radio.{i}.SupportedFrequencyBands: 2...." alt="" coords="247,44,411,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,351,113,300,138,231,177,158,202,124,232,94,237,89,241,94,235,98,207,127,182,161,143,233,118,301,104,352"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1bpl.html#a7c6c6345517250775ad8a2ad5f0ffbf1" title=" " alt="" coords="239,173,419,227"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,350,162,296,196,265,232,238,242,232,245,236,235,242,199,269,166,299,115,354"/>
+<area shape="rect" id="Node000008" href="$namespacebeerocks_1_1bpl.html#a38414d0ddd49ca2ecb581023ac01428f" title=" " alt="" coords="234,252,425,292"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="133,349,232,302,251,294,253,299,234,306,135,354"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a714ae6775bbeddf3d784987cf0fc4424" title="Template method reads child typed value (with possible conversion)" alt="" coords="241,316,417,356"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="185,356,227,349,228,354,186,361"/>
+<area shape="rect" id="Node000013" href="$namespacebeerocks_1_1bpl.html#a93378e26cd013005f0e2f6cd24c114a2" title=" " alt="" coords="233,108,425,148"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="102,351,120,311,147,259,185,205,232,158,239,153,242,157,235,162,189,208,152,262,124,313,107,353"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aa0db55a4edda99dfff997c429d96d039" title="return path of AccessPoint template object." alt="" coords="492,504,651,544"/>
+<area shape="poly" id="edge20_Node000001_Node000015" title=" " alt="" coords="129,390,177,418,234,444,297,465,361,483,479,507,478,513,359,488,295,470,232,449,175,423,126,394"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a0c9413724e2f45a0a6768cbe487d5deb" title="return search path of AccessPoint object instance by interface name." alt="" coords="250,511,409,566"/>
+<area shape="poly" id="edge22_Node000001_Node000017" title=" " alt="" coords="118,390,169,438,235,490,256,502,253,507,232,494,165,442,114,394"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a1868579fef0719a36256f5248275e475" title="return search path of SSID object instance by interface name." alt="" coords="248,381,411,435"/>
+<area shape="poly" id="edge24_Node000001_Node000018" title=" " alt="" coords="186,383,235,391,234,396,185,388"/>
+<area shape="rect" id="Node000020" href="$classson_1_1wireless__utils.html#af898c03cc1be2677f89e1469b7a46182" title=" " alt="" coords="239,591,420,631"/>
+<area shape="poly" id="edge27_Node000001_Node000020" title=" " alt="" coords="107,391,125,430,153,480,190,532,235,577,242,582,239,586,232,581,185,535,148,483,120,433,102,393"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a6a9d21bb0298bc920964b82ac6a7ec50" title="Convert custom_alias &#45;&gt; vap_type." alt="" coords="250,655,409,710"/>
+<area shape="poly" id="edge28_Node000001_Node000021" title=" " alt="" coords="104,391,119,441,146,507,184,578,208,611,235,641,240,645,237,649,231,645,204,615,179,581,141,510,114,443,99,393"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1bpl_1_1BplConfigService.html#a1fc3d84d90f02eccb91bfa46df26dc33" title="Get backend client for common&#45;bus DM access." alt="" coords="489,248,654,288"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="420,223,487,242,485,247,419,228"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a30d7f388719c3ebbb6a33bdebfd97fb7" title="get content, with provided depth, of all objects matching path in map of Ambiorix variant objects,..." alt="" coords="483,184,659,224"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="419,199,469,200,469,205,419,204"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1bpl_1_1BplConfigService.html#a522e236e6b81712d60a5551c5630cd73" title="Get singleton service instance." alt="" coords="489,69,654,109"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="400,170,424,158,447,138,472,119,486,112,488,117,475,124,451,142,427,162,403,175"/>
+<area shape="rect" id="Node000007" href="$namespacebeerocks_1_1bpl.html#ad81c05f745bc5b4e3dc80b3a39c0304b" title=" " alt="" coords="473,134,669,159"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="419,178,499,160,500,165,420,183"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="425,268,475,267,475,272,425,273"/>
+<area shape="poly" id="edge10_Node000008_Node000006" title=" " alt="" coords="405,250,424,237,435,223,442,209,447,179,452,150,459,134,471,119,477,115,480,119,475,123,463,137,457,151,452,180,447,210,440,225,427,241,409,254"/>
+<area shape="poly" id="edge11_Node000008_Node000007" title=" " alt="" coords="401,250,424,237,439,220,447,204,455,187,472,170,484,162,487,167,475,174,459,190,451,206,443,223,427,241,404,254"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#aa86ae2cd6c1807233fc9b3272e6a400b" title="read and return content tree of first object matching requested path." alt="" coords="483,312,659,352"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="412,290,477,306,476,311,410,295"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a1a5545dffedd09421ede59773e0a9c29" title="Finds a variant child, matching a provided key name into a composite variant." alt="" coords="483,376,659,416"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="412,354,477,370,476,375,410,359"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a6ac03e859bbafcb4e6e464aa2d5cbb70" title="Factory method: creating smart pointer for AmbiorixVariant object referencing an external amx variant..." alt="" coords="717,376,893,416"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="659,393,704,393,704,399,659,399"/>
+<area shape="poly" id="edge16_Node000013_Node000004" title=" " alt="" coords="407,146,427,158,444,177,452,197,459,216,475,234,482,239,479,243,472,238,455,219,447,199,439,180,424,162,405,150"/>
+<area shape="poly" id="edge18_Node000013_Node000006" title=" " alt="" coords="425,110,474,102,475,107,426,115"/>
+<area shape="poly" id="edge19_Node000013_Node000007" title=" " alt="" coords="426,133,460,135,460,141,425,138"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a12a0350a7f7c462b12b7b6915ed3cc80" title="read and return object parameter content." alt="" coords="483,5,659,45"/>
+<area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="399,105,424,94,448,75,472,55,486,48,488,53,475,60,451,79,427,98,401,110"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="726,472,885,512"/>
+<area shape="poly" id="edge21_Node000015_Node000016" title=" " alt="" coords="651,511,712,502,712,507,651,516"/>
+<area shape="poly" id="edge23_Node000017_Node000015" title=" " alt="" coords="409,531,478,527,478,532,409,537"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a67644832bb5a4d9164dc7bd994b9d51f" title="return path of SSID template object." alt="" coords="490,440,653,480"/>
+<area shape="poly" id="edge25_Node000018_Node000019" title=" " alt="" coords="412,423,477,437,476,442,410,428"/>
+<area shape="poly" id="edge26_Node000019_Node000016" title=" " alt="" coords="653,468,713,477,712,482,653,474"/>
+</map>

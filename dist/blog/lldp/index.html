@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Chung Duc Nguyen Dang" href="https://ducndc.github.io/rss.xml"><meta name="generator" content="Astro v5.17.2"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://ducndc.github.io/blog/lldp/"><!-- Primary Meta Tags --><title>Link Layer Discovery Protocol (LLDP)</title><meta name="title" content="Link Layer Discovery Protocol (LLDP)"><meta name="description" content="Link Layer Discovery Protocol (LLDP)"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://ducndc.github.io/blog/lldp/"><meta property="og:title" content="Link Layer Discovery Protocol (LLDP)"><meta property="og:description" content="Link Layer Discovery Protocol (LLDP)"><meta property="og:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://ducndc.github.io/blog/lldp/"><meta property="twitter:title" content="Link Layer Discovery Protocol (LLDP)"><meta property="twitter:description" content="Link Layer Discovery Protocol (LLDP)"><meta property="twitter:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Times New Roman,Times,serif;margin:0;padding:0;text-align:justify;text-justify:inter-word;background:linear-gradient(180deg,#f3f6f8 0,#fff 560px) no-repeat;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;color:rgb(var(--black));line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}p{margin-top:0;margin-bottom:1em;line-height:1.7}.prose p{margin-top:0;margin-bottom:1.2em;line-height:1.7}a,a:hover{color:var(--accent)}ul,ol{margin-top:.5em;margin-bottom:1em;padding-left:1.5em}li{line-height:1.5;margin-bottom:.2em}li p,.prose li p{margin-top:0;margin-bottom:0;line-height:1.5}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%;border-collapse:collapse}img{display:block;max-width:100%;height:auto;margin:1.5rem auto}.prose img{display:block;max-width:100%;height:auto;margin:2rem auto}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px;font-family:monospace}pre{padding:1.5em;border-radius:8px;overflow-x:auto}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:1.5em 0;font-size:1.1em}hr{border:none;border-top:1px solid rgb(var(--gray-light));margin:2em 0}@media(max-width:720px){body{font-size:18px}main{padding:1em}.prose p{line-height:1.65}li{line-height:1.5}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media(max-width:720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}
+</style>
+<link rel="stylesheet" href="/_astro/about.DsEPMAAl.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Chung Duc Nguyen Dang</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/blog" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  </div> </nav> </header>  <main class="layout" data-astro-cid-bvzihdzo> <!-- TOC --> <aside class="toc" data-astro-cid-bvzihdzo> <div class="toc-title" data-astro-cid-bvzihdzo>Table of Contents</div> <nav id="toc" data-astro-cid-bvzihdzo></nav> </aside> <!-- Content --> <article class="content" data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="/_astro/lldp.CkuzDMCu_r7rRn.webp" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="800"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2025-07-13T17:00:00.000Z"> Jul 14, 2025 </time>  </div> <h1 data-astro-cid-bvzihdzo>Link Layer Discovery Protocol (LLDP)</h1> <hr data-astro-cid-bvzihdzo> </div>  <h3 id="overview">Overview</h3>
+<hr>
+<p>There is a need for a standardized way of representing the physical network
+connections pertaining to a given management domain. A standardized discovery
+mechanism is also required to increase the likelihood of multi-vendor
+interoperability of such physical topology management information.</p>
+<hr>
+<h3 id="link-layer-discovery-protocol">Link Layer Discovery Protocol</h3>
+<hr>
+<p>The Link Layer Discovery Protocol (LLDP) is a media independent protocol
+intended to be run on all IEEE 802 devices, allowing a LLDP agent to learn
+higher layer management reachability and connection endpoint information from
+adjacent devices.
+<br>
+LLDP runs on all 802 media. Additionally the protocol runs over the data-link
+layer only, allowing two systems running different network layer protocols to
+learn about each other.
+<br>
+Each device configured with an active LLDP Agent sends periodic messages to the
+Slow Protocols multicast MAC address as specificed by Std 802.3, 2000 Edition
+Annex 43B. The device sends the periodic messages on all physical interfaces
+enabled for LLDP transmission, and listens for LLDP messages on the same set on
+interfaces. Each LLDP message contains information identifying the source port
+as a connection endpoint identifier. It also contains at least one network
+address which can be used by an NMS to reach a management agent on the device
+(via the indicated source port). Each LLDP message contains a configurable
+time-to-live value, which tells the recipient LLDP agent when to discard each
+element of learned topology information.</p>
+<hr>
+<h4 id="frame-encapsulation">Frame Encapsulation</h4>
+<hr>
+<p>An LLDP PDU is encapsulated within an 802 frame that cooresponds to frame
+formatted to meet the requirements of an 802 Slow Protocol as defined by Std
+802.3, 2000 Edition, Annex 43B. The format is shown in the following figure:</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1343" height="526" src="/_astro/FrameEncapsulation.6EcCp42N_Z2c9Vkn.webp" ></p>
+<hr>
+<h5 id="slow-protocols-multicast-da">Slow Protocols Multicast DA</h5>
+<hr>
+<p>The Slow Protocols Multicast destination address is 01-80-C2-00-00-02.
+This address is within the range reserved by ISO/IEC 15802-3 (MAC Bridges)
+for link-constrained protocols and will not be forwarded by conformant MAC
+bridges.</p>
+<hr>
+<h5 id="station-sa">Station SA</h5>
+<hr>
+<p>The source MAC address of the sending station</p>
+<hr>
+<h5 id="slow-protocols-type">Slow Protocols Type</h5>
+<hr>
+<p>The Slow Protocols Type field encoding of the Length/Type field is 88-09</p>
+<hr>
+<h5 id="subtype">Subtype</h5>
+<hr>
+<p>The Slow Protocols Subtype field is TBD. All reserved fields shall be set to zero.</p>
+<hr>
+<h4 id="lldp-message-format">LLDP Message Format</h4>
+<hr>
+<p>The basic LLDP protocol data unit consists of a header, followed by a variable
+number of Type-Length-Value (TLV) attributes. A single LLDP PDU is transmitted
+in a single 802 media frame.</p>
+<hr>
+<h5 id="lldp-header-format">LLDP Header Format</h5>
+<hr>
+<p>The LLDP header is a 4 byte header, in network byte order, containing 3 fields,
+as shown in figure.</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1343" height="220" src="/_astro/LLDPFormat.YSqNprSh_ZA37OE.webp" ></p>
+<hr>
+<h5 id="version">Version</h5>
+<hr>
+<p>The LLDP protocol version number, set to 0x01 for this version of the
+protocol.</p>
+<hr>
+<h5 id="flags">Flags</h5>
+<hr>
+<p>The LLDP flags field provide for future header extensions and keep the
+header word-aligned for easier processing. No flag definition bits are
+defined at this time. This field must be set to zero in all version 1 LLDP
+messages.</p>
+<hr>
+<h5 id="time-to-live">Time to Live</h5>
+<hr>
+<p>The number of seconds the information in this LLDP message should be
+regarded as valid by the recipient. Agents of the PTOPO MIB must not
+return MIB information based on expired LLDP messages. The valid range is
+0 to 65535 for this field.</p>
+<hr>
+<h4 id="tlv-format">TLV Format</h4>
+<hr>
+<p>Following the LLDP header are a variable number of TLVs, depending on
+implementation and maximum message size.
+<br>
+A 2 byte type field identifies the specific TLV, and a 2 byte length, in octets,
+indicates the length of the value field contained in the TLV. A TLV shall
+always start on a 4 octet boundary. Pad octets are placed at the end of the
+previous TLV in order to align the next TLV. These pad octets are not counted
+in the length field of the TLV.</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1343" height="433" src="/_astro/tlv_lldp.Dd9IRoOS_12AtJG.webp" ></p>
+<hr>
+<h5 id="type">Type</h5>
+<hr>
+<p>The integer value identifying the type of information contained in
+the value field.</p>
+<hr>
+<h5 id="length">Length</h5>
+<hr>
+<p>The length, in octets, of the value field to follow.</p>
+<hr>
+<h5 id="value">Value</h5>
+<hr>
+<p>A variable-length octet-string containing the instance-specific
+information for this TLV.</p>
+<hr>
+<h4 id="standard-tlv-definitions">Standard TLV Definitions</h4>
+<hr>
+<p>The mandatory LLDP TLVs allow for a LLDP agent to support the PTOPO MIB
+for connections terminating on the local chassis. Optional TLVs allow for
+vendor specific extensions.
+The following table summarizes the TLVs defined in this document.</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1343" height="471" src="/_astro/tlv_sum.C0ogxAix_1OVQj5.webp" ></p>
+<hr>
+<h5 id="chassis-id">Chassis ID</h5>
+<hr>
+<p>The Chassis ID is a mandatory TLV which identifies the chassis component
+of the endpoint identifier associated with the transmitting LLDP agent.</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1343" height="299" src="/_astro/chassid.wP3GNcF1_9MBrI.webp" ></p>
+<p>The Chassis ID fields are defined as follows:
+<br>
+Chassis ID Type: This field identifies the format and source of the chassis
+identifier string. It is an enumerator defined by the
+PtopoChassisIdType object from RFC2922
+<br>
+Chassis ID String: The binary string containing the actual chassis identifier for this
+device. The source of this field is defined by PtopoChassisId from
+RFC2922.</p>
+<hr>
+<h5 id="port-id">Port ID</h5>
+<hr>
+<p>The Port ID is a mandatory TLV which identifies the port component of the
+endpoint identifier associated with the transmitting LLDP agent. If the
+specified port is an IEEE 802.3 Repeater port, then this TLV is optional.</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1343" height="299" src="/_astro/port_id.D0DdslcE_vs6Ak.webp" ></p>
+<p>The Port ID fields are defined as follows:
+<br>
+Port ID Type: This field identifies the format and source of the port identifier
+string. It is an enumerator defined by the PtopoPortIdType object
+from RFC2922
+<br>
+Port ID String: The binary string containing the actual port identifier for the port
+which this LLDP PDU was transmitted. The source and format of this
+field is defined by PtopoPortId from RFC2922.</p>
+<hr>
+<h4 id="management-address">Management Address</h4>
+<hr>
+<p>The Management Address is a mandatory TLV which identifies a network
+address associated with the local LLDP agent, which can be used to reach
+the agent on the port identified in the Port ID TLV. The value field of
+this TLV has the following record format:</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1343" height="520" src="/_astro/ManagementAddressTLVFormat.BdcMpzQJ_Z1ir6Oo.webp" ></p>
+<p>The Management Address fields are defined as follows:
+<br>
+IANA Address Family: The enumerated value for the network address type identified in this
+TLV. This enumeration is defined in the “Assigned Numbers” RFC
+[RFC3232] and the ianaAddressFamilyNumbers object.
+<br>
+Address Length: The number of octets contained in the address string to follow.
+<br>
+Address: The binary string containing the network management address for this
+TLV.</p>
+<hr>
+<h4 id="vendor-specific">Vendor-Specific</h4>
+<hr>
+<p>This TLV is available to allow vendors to support their own extended
+attributes not suitable for general usage. The information conveyed in
+the TLV MUST not affect the operation of the LLDP protocol.
+<br>
+LLDP agents not equipped to interpret the vendor-specific information sent
+by other LLDP agents MUST ignore it (although it may be reported). LLPD agents which do not receive desired vendor-specific information SHOULD
+make an attempt to operate without it, although they may do so (and report
+they are doing so) in a degraded mode.
+<br>
+A summary of the Vendor-Specific TLV format is shown below. The fields are
+transmitted from left to right.</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="1343" height="372" src="/_astro/VendorID.BHnkUZ2D_b8rCE.webp" ></p>
+<p>Vendor-Id: The high-order octet is 0 and the low-order 3 octets are the SMI Network
+Management Private Enterprise Code of the Vendor in network byte order, as
+defined in the “Assigned Numbers” RFC [RFC3232].
+<br>
+String: The String field is one or more octets. The actual format of the
+information is site or application specific, and a robust implementation
+SHOULD support the field as undistinguished octets. Multiple
+subattributes MAY be encoded within a single Vendor-Specific TLV, although
+they do not have to be.</p>
+<hr>
+<h3 id="protocol-operation">Protocol Operation</h3>
+<hr>
+<p>An active LLDP Agent must perform the following tasks:</p>
+<ul>
+<li>transmit LLDP messages</li>
+<li>process received LLDP messages</li>
+<li>maintain an instance of the LLDP MIB</li>
+<li>maintain an instance of the PTOPO MIB</li>
+<li>maintain appropriate ifEntry and/or entPhysicalEntry instances</li>
+<li>implement ifAlias and/or entPhysicalAlias MIB objects</li>
+</ul>
+<hr>
+<h4 id="protocol-initialization">Protocol Initialization</h4>
+<hr>
+<p>Upon system reinitialization, the following tasks are performed by the LLDP
+agent:
+<br>
+Non-volatile configuration for the LLDP MIB is retrieved if applicable,
+otherwise appropriate default values are assigned to all LLDP
+configuration variables.
+<br>
+If LLDPAdminStatus is equal to ‘disabled(2)’, then LLDP initialization is
+terminated (until such time that the LLDPAdminStatus object is set to
+‘enabled(1)’), otherwise continue.
+<br>
+Internal (implementation-specific) data structures are initialized such
+that appropriate local physical topology information and LLDP transmission
+parameters are set.</p>
+<hr>
+<h4 id="message-encoding">Message Encoding</h4>
+<hr>
+<p>This section does not assume a particular buffering strategy, and such details
+are omitted.</p>
+<hr>
+<h5 id="header-fields">Header Fields</h5>
+<hr>
+<p>The version field is set to one (0x01). The flags field is set to zero (0x00).
+The time-to-live field is set to the value obtained by the following
+formula:
+<br>
+TTL = min(65535, (LLDPMessageTxInterval * LLDPMessageTxHoldMultiplier))</p>
+<hr>
+<h5 id="tlvs">TLVs</h5>
+<hr>
+<p>Each message must contain one instance of each of the mandatory LLDP TLV
+elements. Additional TLV data elements may be added as maximum frame size
+permits.
+<br>
+The mandatory TLVs include: Chassis ID, Port ID (optional for repeaters)
+and Management Address.</p>
+<hr>
+<h4 id="message-transmission">Message Transmission</h4>
+<hr>
+<p>LLDP agents must follow the rules for Slow Protocols transmission as defined by
+Std 802.3, 2000 Edition, Annex 43B. In addition to these rules, an active LLDP
+agent must transmit a LLDP message out each appropriate port, once each message
+interval, as determined by the LLDPMessageTxInterval MIB object, subject to the
+restriction of transmission rules for Slow Protocols. Messages transmitted on
+repeater devices may be sent for each repeater backplane, once per message
+interval. Actual transmission intervals should be jittered to prevent
+synchronization effects.</p>
+<p>Note that the agent must suppress the transmission of multiple LLDP messages
+during a single message interval, in the event message transmission cannot be
+restricted to a single port, but rather a group of ports (e.g., a repeater
+device).</p>
+<p>In this case, a single port in the port group should be selected (in an
+implementation-specific manner) to represent the port group. Note that an agent
+is encouraged to represent port groups as ‘backplanes’, in the entPhysicalTable
+of the Entity MIB, rather than individual ports in either the Entity MIB or
+Interfaces MIB.</p>
+<p>Regarding the transmission of a single LLDP message, for the indicated physical
+interface contained in the local system:</p>
+<p>The LLDP agent checks for the existence of a LLDPSuppressEntry for the
+port. If an entry exists then this port is skipped, otherwise continue.</p>
+<p>The LLDP message is encapsulated as appropriate for the port.</p>
+<p>The MAC header is filled in with appropriate SA and DA and EtherType
+fields as defined above.</p>
+<p>The frame is transmitted or passed to a lower layer for transmission.</p>
+<p>The LLDPStatsOutPkts counter is incremented for the indicated local port.</p>
+<hr>
+<h4 id="message-forwarding">Message Forwarding</h4>
+<hr>
+<p>As indicated by the operation of Slow Protocols, LLDP agents should not forward
+LLDP messages received on any port. However, some devices, such as repeaters,
+cannot examine each frame received on an interface or port. Such a device will
+allow LLDP messages to be retransmitted on one or more local ports, and will
+transmit its own LLDP messages on those ports as well. These agents are termed
+‘forwarding’ LLDP agents.</p>
+<p>LLDP agents located on devices which examine each frame before retransmitting it
+(e.g., routers and bridges), are expected to process received LLDP messages and
+not retransmit them on any local port. These agents are termed ‘non-forwarding’
+LLDP agents.</p>
+<p>An NMS may find physical topology information about the same physical port,
+represented by several LLDP agents. This may occur for one of several reasons,
+including a mixture of forwarding and non-forwarding LLDP agents within a
+network.</p>
+<hr>
+<h4 id="received-message-processing">Received Message Processing</h4>
+<hr>
+<p>An active LLDP agent must process LLDP messages received on each appropriate
+port, as such messages arrive. Before LLDP specific receive rules are executed,
+the frame is subject to the receive processing rules of Slow Protocols defined
+in Std 802.3, 2000 Edition, Annex 43B.</p>
+<p>The following sections refer to the reception of a single LLDP message, for the
+indicated physical interface contained in the local system:</p>
+<hr>
+<h5 id="header-fields-1">Header Fields</h5>
+<hr>
+<p>The LLDP message and the chassis/port indices associated with the receiving port
+are retrieved.</p>
+<p>The LLDP version and flags field are checked. The version should equal one
+(0x01) and the flags should equal zero (0x00). If not, the LLDPStatsInErrors
+counter for the receiving port is incremented and processing is terminated;
+otherwise continue.</p>
+<hr>
+<h5 id="tlvs-1">TLVs</h5>
+<hr>
+<p>The TLV portion of the message is decoded. If this portion of the LLDP message
+is not properly encoded, as defined above, then the LLDPStatsInErrors counter for the receiving port is incremented, and processing is terminated; otherwise
+continue.</p>
+<p>The list of TLV elements is examined. The agent must skip and ignore PDU data
+elements unknown to the agent. If any of the mandatory data elements are
+missing, then the LLDPStatsInErrors counter for the receiving port is
+incremented, and processing is terminated; otherwise continue.</p>
+<p>The LLDPStatsInGoodPkts counter is incremented for the receiving port.</p>
+<hr>
+<h4 id="ptopo-mib-update">PTOPO MIB Update</h4>
+<hr>
+<p>If the time-to-live field in the LLDP message header is zero then execute this
+interface shutdown procedure, described below. Processing of the LLDP message
+is now complete.</p>
+<p>If the time-to-live field is non-zero, then the appropriate ptopoConnEntry is
+found or created, based on the data elements included in the LLDP message. If
+the indicated entry is dynamic (i.e., ptopoConnIsStatic is true), then the
+current sysUpTime value is stored in the ptopoConnLastVerifyTime field for the
+entry.</p>
+<p>If a ptopoConnEntry of one type was replaced with an entry of a different type,
+then the ptopoConnTabReplaces counter is incremented.</p>
+<p>If any ptopoConnEntry was added or deleted, or if information other than the
+ptopoConnLastVerifyTime changed for any entry due to the processing of this LLDP
+message, then the ptopoLastChangeTime object is set with the current sysUpTime,
+and a ptopoConfigChange trap event is generated.</p>
+<hr>
+<h4 id="interface-shutdown-procedure">Interface Shutdown Procedure</h4>
+<hr>
+<p>A special procedure exists for the case in which a LLDP agent knows a particular
+port is about to become non-operational.</p>
+<p>Note that the LLDPSuppressTable has precedence over these procedures, and they
+are only executed if the indicated interface is not specified in the
+LLDPSuppressTable.</p>
+<p>If any entries are deleted as a result of these procedures, the
+ptopoConnTabDeletes counter is incremented for each deleted entry.</p>
+<hr>
+<h4 id="lldp-shutdown-transmission">LLDP Shutdown Transmission</h4>
+<hr>
+<p>In the event an interface, currently configured with LLDP message transmission
+enabled, either becomes disabled for LLDP activity, or the interface is
+administratively disabled, a final LLDP message is transmitted with a time to
+live value of zero (before the interface is disabled).</p>
+<p>In the event the LLDPOperStatus is transitioning to the disabled state, then
+this shutdown procedure should be executed for all local interfaces.</p>
+<hr>
+<h4 id="lldp-shutdown-reception">LLDP Shutdown Reception</h4>
+<hr>
+<p>After reception of a valid LLDP message with a time-to-live value equal to zero,
+the LLDP Agent must remove all information in the PTOPO MIB learned from the
+particular LLDP agent, which is associated with the indicated remote connection
+endpoint.</p>
+<hr>
+<h3 id="references">References</h3>
+<hr>
+<p>[1] <a href="https://www.ieee802.org/1/files/public/docs2002/lldp-protocol-00.pdf">https://www.ieee802.org/1/files/public/docs2002/lldp-protocol-00.pdf</a></p>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2026 Chung Duc Nguyen Dang. All rights reserved.
+</footer>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const c=document.getElementById("toc"),r=Array.from(document.querySelectorAll(".prose h2, .prose h3"));if(!c||r.length===0)return;r.forEach(t=>{const e=t.textContent.trim(),o=e.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-");t.id=o;const n=document.createElement("a");n.href="#"+o,n.textContent=e,t.tagName==="H3"&&n.classList.add("h3"),c.appendChild(n)});const s=Array.from(document.querySelectorAll(".toc a"));s.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=document.querySelector(t.getAttribute("href"));if(!o)return;const d=o.getBoundingClientRect().top+window.scrollY+-80;window.scrollTo({top:d,behavior:"smooth"})})});let i=null;const l=t=>{i!==t&&(i=t,s.forEach(e=>{e.classList.toggle("active",e.getAttribute("href")==="#"+t)}))},a=new IntersectionObserver(t=>{const e=t.filter(o=>o.isIntersecting).sort((o,n)=>o.boundingClientRect.top-n.boundingClientRect.top);e.length>0&&l(e[0].target.id)},{rootMargin:"-30% 0px -60% 0px",threshold:[0,1]});r.forEach(t=>a.observe(t))});</script> </body> </html>

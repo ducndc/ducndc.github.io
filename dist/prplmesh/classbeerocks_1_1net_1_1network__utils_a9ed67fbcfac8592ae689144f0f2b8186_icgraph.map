@@ -1,0 +1,108 @@
+<map id="beerocks::net::network_utils::linux_iface_get_mac" name="beerocks::net::network_utils::linux_iface_get_mac">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1549,606,1729,646"/>
+<area shape="rect" id="Node000002" href="$classairties_1_1tlvf__airties__utils.html#ac375fe57784c648e30c8bfd7c366ec75" title=" " alt="" coords="1309,5,1487,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1631,592,1614,477,1586,322,1567,244,1547,173,1524,115,1499,74,1485,62,1489,58,1503,71,1529,112,1552,171,1573,243,1591,321,1619,476,1636,591"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1TopologyTask.html#ac7da3f97f7ebe52b13d12408b627ff75" title="Add and fill device information tlv." alt="" coords="1304,263,1492,303"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1630,593,1616,534,1592,460,1575,421,1554,383,1529,348,1500,317,1483,306,1486,301,1503,313,1533,345,1558,380,1579,418,1597,458,1622,532,1635,592"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1BackhaulManager.html#a64532b8428a9a17e31946dcf92900344" title=" " alt="" coords="1305,149,1491,189"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1634,593,1626,515,1604,413,1587,358,1564,305,1535,254,1499,209,1474,191,1478,187,1503,205,1540,251,1569,302,1592,357,1609,412,1631,514,1639,592"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1net_1_1network__utils.html#a83a619974184ece7f6b0b2748e75f770" title=" " alt="" coords="1321,85,1475,125"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1636,592,1633,503,1626,444,1615,381,1598,316,1574,252,1541,192,1500,139,1474,121,1477,117,1503,135,1546,189,1579,250,1603,314,1620,380,1631,444,1638,502,1642,592"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a0805d78df62071cfdd3ad89bddc67963" title="Handle events, which are being send from containing thread." alt="" coords="505,162,708,202"/>
+<area shape="poly" id="edge21_Node000001_Node000012" title=" " alt="" coords="1634,593,1627,519,1607,426,1589,377,1566,331,1537,289,1500,254,1484,245,1458,238,1382,224,1281,213,1164,204,916,192,708,186,708,181,916,187,1164,199,1281,208,1383,219,1459,233,1486,240,1503,249,1541,285,1571,328,1594,375,1612,424,1632,519,1640,592"/>
+<area shape="rect" id="Node000013" href="$classbwl_1_1dummy_1_1base__wlan__hal__dummy.html#af1c7199ae11a940f1a27ab57f04143cb" title=" " alt="" coords="1303,327,1493,367"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1626,594,1609,546,1583,489,1546,431,1524,405,1500,381,1481,370,1484,365,1503,377,1528,401,1551,428,1587,486,1614,544,1631,592"/>
+<area shape="rect" id="Node000015" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#aa980ae98d298d2d808244e890e0fddb8" title=" " alt="" coords="1308,391,1488,431"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="1620,595,1600,560,1572,520,1539,480,1500,446,1479,434,1481,429,1503,441,1543,476,1577,516,1604,557,1624,592"/>
+<area shape="rect" id="Node000016" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a4d5a6de395d981520778408ef713590d" title=" " alt="" coords="1311,455,1485,495"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1609,598,1560,553,1500,510,1474,498,1477,493,1503,505,1564,548,1612,594"/>
+<area shape="rect" id="Node000019" href="$classbwl_1_1dummy_1_1sta__wlan__hal__dummy.html#a839925195b6fc6fa6d33eb4d843d9b9b" title=" " alt="" coords="1309,520,1487,575"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="1564,604,1482,577,1483,572,1565,599"/>
+<area shape="rect" id="Node000020" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#acf4a6c07cd0af28b1a781f4bc67acf6a" title=" " alt="" coords="1314,599,1482,653"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="1536,629,1482,629,1482,623,1536,623"/>
+<area shape="rect" id="Node000021" href="$classbwl_1_1nl80211_1_1sta__wlan__hal__nl80211.html#a8a34eaaf68baa790c29166bde8fff9b8" title=" " alt="" coords="1309,677,1487,732"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="1565,653,1483,680,1482,675,1564,648"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1TopologyTask.html#ab78d9672cf6cbc285891adeb251a3b5d" title="Handles 1905 Topology Discovery message." alt="" coords="1047,598,1233,638"/>
+<area shape="poly" id="edge22_Node000001_Node000022" title=" " alt="" coords="1616,658,1568,706,1536,729,1502,746,1445,764,1398,770,1350,764,1294,746,1277,737,1267,726,1245,701,1167,640,1170,636,1248,697,1271,723,1281,733,1296,741,1352,759,1398,765,1444,759,1500,741,1534,724,1564,702,1612,655"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1net_1_1network__utils.html#a33df92609d8353b9455e87d82b833232" title="Gets the interface name of the network interface with given MAC address." alt="" coords="1305,807,1491,847"/>
+<area shape="poly" id="edge24_Node000001_Node000023" title=" " alt="" coords="1621,659,1572,725,1539,760,1503,791,1468,810,1466,805,1500,786,1536,756,1568,722,1616,656"/>
+<area shape="rect" id="Node000047" href="$classson_1_1Monitor.html#a1993b07cce52eb885cf0a0b27401a34e" title=" " alt="" coords="1325,872,1471,897"/>
+<area shape="poly" id="edge44_Node000001_Node000047" title=" " alt="" coords="1630,660,1613,706,1586,761,1550,815,1528,840,1503,862,1472,877,1469,872,1500,857,1524,836,1546,812,1582,758,1608,704,1625,658"/>
+<area shape="rect" id="Node000048" href="$classbwl_1_1dwpal_1_1ap__wlan__hal__dwpal.html#abf5a7ad49dba44a0a53b7027ef7e271b" title=" " alt="" coords="1327,921,1469,976"/>
+<area shape="poly" id="edge45_Node000001_Node000048" title=" " alt="" coords="1633,660,1617,714,1591,781,1554,850,1530,882,1503,911,1470,932,1467,927,1500,907,1526,878,1549,847,1586,778,1612,712,1628,658"/>
+<area shape="rect" id="Node000049" href="$classbwl_1_1dwpal_1_1ap__wlan__hal__dwpal.html#ad73b135f75aac997fb6253ad09bcc777" title=" " alt="" coords="1327,1000,1469,1055"/>
+<area shape="poly" id="edge46_Node000001_Node000049" title=" " alt="" coords="1637,660,1625,728,1602,815,1584,862,1562,908,1535,951,1503,989,1470,1011,1467,1007,1500,985,1531,948,1558,905,1579,860,1597,814,1620,727,1632,659"/>
+<area shape="rect" id="Node000050" href="$classbwl_1_1dummy_1_1base__wlan__hal__dummy.html#adba1f8ec4adcc7c3c526edd0bc67da1a" title=" " alt="" coords="1295,1079,1501,1119"/>
+<area shape="poly" id="edge47_Node000001_Node000050" title=" " alt="" coords="1640,660,1634,742,1614,851,1596,909,1573,966,1542,1020,1503,1068,1486,1081,1482,1077,1499,1064,1538,1017,1568,964,1591,907,1608,850,1628,741,1635,660"/>
+<area shape="rect" id="Node000053" href="$classbeerocks_1_1TopologyTask.html#a9304a99715f7dc450510e5cc35bbb339" title=" " alt="" coords="1309,1143,1487,1183"/>
+<area shape="poly" id="edge50_Node000001_Node000053" title=" " alt="" coords="1636,661,1618,767,1589,909,1571,979,1550,1044,1528,1097,1503,1133,1488,1145,1485,1141,1499,1130,1523,1094,1545,1042,1566,978,1584,907,1613,766,1630,660"/>
+<area shape="rect" id="Node000055" href="$classson_1_1Monitor.html#a75c0ce78e893e4932bd591b127750a47" title=" " alt="" coords="1327,1207,1469,1247"/>
+<area shape="poly" id="edge52_Node000001_Node000055" title=" " alt="" coords="1637,660,1621,779,1593,940,1575,1021,1554,1094,1530,1155,1503,1197,1488,1210,1470,1218,1468,1214,1485,1205,1499,1194,1525,1153,1549,1093,1570,1019,1588,939,1616,779,1632,660"/>
+<area shape="rect" id="Node000003" href="$classMultiVendorAirties.html#a41a0ca0eb967a2a817d2deca7042c497" title=" " alt="" coords="1072,13,1208,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1295,35,1208,35,1208,30,1295,30"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1TopologyTask.html#a60a4e6ffc0a8793d606f20a36de81606" title="Handles 1905 Topology Query message." alt="" coords="1059,263,1221,303"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1290,286,1222,286,1222,281,1290,281"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1TopologyTask.html#a2c75b5c339449510a43209a2e90fcee8" title="Handle CMDU message." alt="" coords="789,407,952,447"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1050,311,1035,318,958,364,897,409,894,405,955,359,1032,313,1048,306"/>
+<area shape="rect" id="Node000009" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="1115,156,1165,181"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1308,130,1247,146,1166,166,1165,160,1246,141,1307,125"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1ApAutoConfigurationTask.html#acac857cb125f8b47cf8715889f8008d6" title=" " alt="" coords="1033,77,1247,132"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="1307,107,1247,107,1247,102,1307,102"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aec7c837c390bb5fa3bd9237f3c5498ec" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="769,117,972,157"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="1020,122,973,127,972,122,1020,116"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="756,159,708,167,708,162,755,154"/>
+<area shape="rect" id="Node000014" href="$classbwl_1_1dummy_1_1ap__wlan__hal__dummy.html#aa81a9b6ef85a60011923d971b802479d" title="Send a 802.11v steer request (BSS Transition) to a connected station." alt="" coords="1047,327,1233,367"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="1290,350,1234,350,1234,345,1290,345"/>
+<area shape="rect" id="Node000017" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a37d8ec7e528bc25f2067973546989a51" title=" " alt="" coords="1065,408,1215,463"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="1297,462,1215,450,1216,444,1298,457"/>
+<area shape="rect" id="Node000018" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#aa98ae87bad032300c7199d6cba3e9c23" title=" " alt="" coords="1055,487,1225,541"/>
+<area shape="poly" id="edge17_Node000016_Node000018" title=" " alt="" coords="1297,493,1226,504,1225,499,1297,488"/>
+<area shape="poly" id="edge23_Node000022_Node000006" title=" " alt="" coords="1091,593,1032,555,956,499,895,450,898,446,959,495,1035,550,1094,589"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1TrafficSeparationTask.html#a8146b1b7a10195e5ca3a3087808ddab7" title="Resolve one exact WDS trunk from current DB state." alt="" coords="1044,807,1236,847"/>
+<area shape="poly" id="edge25_Node000023_Node000024" title=" " alt="" coords="1291,830,1236,830,1236,825,1291,825"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1TrafficSeparationTask.html#a3fc5b13efde04c86992206aace57d457" title="Re&#45;add exact FH/WDS ports from the current DB snapshot." alt="" coords="515,861,698,916"/>
+<area shape="poly" id="edge43_Node000023_Node000027" title=" " alt="" coords="1301,853,1247,862,1097,877,946,886,698,892,698,887,946,881,1096,872,1246,857,1301,848"/>
+<area shape="rect" id="Node000036" href="$classbeerocks_1_1ServicePrioritizationTask.html#a1f826aa7e6ed7de96a1fdc300782393c" title=" " alt="" coords="1041,711,1239,751"/>
+<area shape="poly" id="edge35_Node000023_Node000036" title=" " alt="" coords="1330,805,1194,754,1196,749,1331,800"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1TrafficSeparationTask.html#a9bf1ca12f5a30d57b90ddb7c75d276ee" title="Add one WDS iface (e.g. wlan1.2.sta1)." alt="" coords="774,807,967,847"/>
+<area shape="poly" id="edge26_Node000024_Node000025" title=" " alt="" coords="1030,830,967,830,967,825,1030,825"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1TrafficSeparationTask.html#a518ae2ffe549324475d317744d31fdd1" title="Handle task events (like other prplMesh tasks)." alt="" coords="515,746,698,786"/>
+<area shape="poly" id="edge27_Node000025_Node000026" title=" " alt="" coords="770,807,693,789,694,783,771,802"/>
+<area shape="poly" id="edge28_Node000025_Node000027" title=" " alt="" coords="771,853,699,870,698,865,770,848"/>
+<area shape="rect" id="Node000035" href="$classbeerocks_1_1TrafficSeparationTask.html#a5813e2c4fb2e06981290a1b7d725d708" title="Retry pending WDS iface additions after transient readiness failures." alt="" coords="248,803,457,843"/>
+<area shape="poly" id="edge33_Node000025_Node000035" title=" " alt="" coords="760,829,458,827,458,821,760,824"/>
+<area shape="rect" id="Node000028" href="$classbeerocks_1_1TrafficSeparationTask.html#ac4609e76597eae084c1f91e62d9b679b" title="Refresh config and reapply TS on currently managed ports." alt="" coords="261,869,444,909"/>
+<area shape="poly" id="edge29_Node000027_Node000028" title=" " alt="" coords="502,891,444,891,444,886,502,886"/>
+<area shape="rect" id="Node000029" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a6399bf8470ea43f321f449fa87feafd6" title=" " alt="" coords="5,867,200,907"/>
+<area shape="poly" id="edge30_Node000028_Node000029" title=" " alt="" coords="247,891,200,891,200,885,247,885"/>
+<area shape="rect" id="Node000033" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a7a180880e96a912857dc4318d3cf202a" title=" " alt="" coords="5,931,200,971"/>
+<area shape="poly" id="edge31_Node000028_Node000033" title=" " alt="" coords="260,915,184,934,182,929,259,909"/>
+<area shape="rect" id="Node000034" href="$classbeerocks_1_1TrafficSeparationTask.html#a28e752a84a54d229bae728f9d44b70f2" title="Periodic task hook (executed by the task scheduler)." alt="" coords="11,803,194,843"/>
+<area shape="poly" id="edge32_Node000028_Node000034" title=" " alt="" coords="262,868,179,846,180,841,263,863"/>
+<area shape="poly" id="edge34_Node000035_Node000034" title=" " alt="" coords="234,826,194,826,194,821,234,821"/>
+<area shape="rect" id="Node000037" href="$classbeerocks_1_1ServicePrioritizationTask.html#ae2e99bf8e69f4d4851d19c2f4a0a23f0" title=" " alt="" coords="771,743,970,783"/>
+<area shape="poly" id="edge36_Node000036_Node000037" title=" " alt="" coords="1027,747,971,754,970,749,1027,742"/>
+<area shape="rect" id="Node000045" href="$classbeerocks_1_1ServicePrioritizationTask.html#a7b5df85fc8510b1d1a40be405aed6114" title=" " alt="" coords="756,615,985,655"/>
+<area shape="poly" id="edge39_Node000036_Node000045" title=" " alt="" coords="1081,708,984,670,947,658,949,653,986,665,1083,703"/>
+<area shape="rect" id="Node000046" href="$classbeerocks_1_1ServicePrioritizationTask.html#af020a5d3ab6b0585f40f4d5d9ccd9d48" title=" " alt="" coords="771,679,970,719"/>
+<area shape="poly" id="edge41_Node000036_Node000046" title=" " alt="" coords="1027,721,970,714,971,708,1027,715"/>
+<area shape="rect" id="Node000038" href="$classbeerocks_1_1ServicePrioritizationTask.html#aec7e243086895d0391886903e7dd296a" title=" " alt="" coords="507,679,706,719"/>
+<area shape="poly" id="edge37_Node000037_Node000038" title=" " alt="" coords="774,743,689,722,690,717,775,737"/>
+<area shape="rect" id="Node000039" href="$classbeerocks_1_1ServicePrioritizationTask.html#a7e2e62b9c3b2d4aff9130236d0d10c91" title=" " alt="" coords="253,679,452,719"/>
+<area shape="poly" id="edge38_Node000038_Node000039" title=" " alt="" coords="493,702,452,702,452,697,493,697"/>
+<area shape="poly" id="edge40_Node000045_Node000038" title=" " alt="" coords="775,661,690,682,689,677,774,656"/>
+<area shape="poly" id="edge42_Node000046_Node000038" title=" " alt="" coords="758,702,706,702,706,697,758,697"/>
+<area shape="rect" id="Node000051" href="$classbwl_1_1dummy_1_1base__wlan__hal__dummy.html#a387ab79a568fd72d585d7ef306228721" title=" " alt="" coords="1059,1079,1221,1119"/>
+<area shape="poly" id="edge48_Node000050_Node000051" title=" " alt="" coords="1281,1102,1222,1102,1222,1097,1281,1097"/>
+<area shape="rect" id="Node000052" href="$classbwl_1_1dummy_1_1ap__wlan__hal__dummy.html#ae0f5270363d5d9e696287ea6fd15ea14" title=" " alt="" coords="796,1079,945,1119"/>
+<area shape="poly" id="edge49_Node000051_Node000052" title=" " alt="" coords="1045,1102,946,1102,946,1097,1045,1097"/>
+<area shape="rect" id="Node000054" href="$classbeerocks_1_1TopologyTask.html#a17d02c8e9d749d9642d232a0708a2ee0" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="1059,1143,1221,1183"/>
+<area shape="poly" id="edge51_Node000053_Node000054" title=" " alt="" coords="1296,1166,1221,1166,1221,1161,1296,1161"/>
+<area shape="rect" id="Node000056" href="$classson_1_1Monitor.html#a7631b6ff0b511166fd087a955f886b14" title=" " alt="" coords="1061,1207,1219,1247"/>
+<area shape="poly" id="edge53_Node000055_Node000056" title=" " alt="" coords="1314,1230,1220,1230,1220,1225,1314,1225"/>
+<area shape="rect" id="Node000058" href="$classson_1_1Monitor.html#a784e91bfaecb3f5be16c968cd54a8e15" title="Runs the Finite State Machine of the AP manager." alt="" coords="1053,1272,1227,1297"/>
+<area shape="poly" id="edge55_Node000055_Node000058" title=" " alt="" coords="1315,1248,1198,1275,1197,1269,1313,1243"/>
+<area shape="rect" id="Node000057" href="$classson_1_1Monitor.html#a31556e249d1b23d3f1c78ce35a50db92" title="Initialize monitor." alt="" coords="789,1243,952,1268"/>
+<area shape="poly" id="edge54_Node000056_Node000057" title=" " alt="" coords="1047,1240,952,1250,952,1244,1047,1234"/>
+<area shape="poly" id="edge56_Node000058_Node000057" title=" " alt="" coords="1039,1276,952,1267,952,1261,1039,1271"/>
+</map>

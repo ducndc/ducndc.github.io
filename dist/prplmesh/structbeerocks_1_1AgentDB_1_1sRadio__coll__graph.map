@@ -1,0 +1,20 @@
+<map id="beerocks::AgentDB::sRadio" name="beerocks::AgentDB::sRadio">
+<area shape="rect" id="Node000001" title=" " alt="" coords="563,197,707,237"/>
+<area shape="rect" id="Node000002" href="$structbeerocks_1_1AgentDB_1_1sRadio_1_1sFront.html" title=" " alt="" coords="219,5,363,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="377,32,459,52,501,68,540,90,569,114,593,143,626,196,621,198,589,146,565,118,537,94,499,73,458,57,376,37"/>
+<area shape="rect" id="Node000003" href="$structsMacAddr.html" title=" " alt="" coords="5,45,87,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,48,219,32,219,37,100,53"/>
+<area shape="rect" id="Node000004" href="$structbeerocks_1_1AgentDB_1_1sRadio_1_1sBack.html" title=" " alt="" coords="219,69,363,109"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="101,65,111,67,219,80,219,85,110,72,100,70"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="378,102,458,122,540,152,577,173,609,195,606,199,574,177,538,157,456,127,376,107"/>
+<area shape="rect" id="Node000005" href="$structbeerocks_1_1AgentDB_1_1sRadio_1_1sStatus.html" title=" " alt="" coords="219,133,363,173"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="378,165,539,195,563,200,562,205,538,200,377,170"/>
+<area shape="rect" id="Node000006" href="$structbeerocks_1_1AgentDB_1_1sRadio_1_1sCacCapabilities.html" title=" " alt="" coords="206,197,377,237"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="391,215,562,215,562,220,391,220"/>
+<area shape="rect" id="Node000007" href="$structson_1_1wireless__utils_1_1sSpatialReuseParams.html" title=" " alt="" coords="211,261,371,301"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="384,263,538,235,562,230,563,235,539,240,385,268"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1WifiChannel.html" title="A WifiChannel represents a channel of 2.4GHz, 5GHz or 6GHz band, which comprise of a channel number,..." alt="" coords="214,326,369,351"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="381,323,459,306,538,279,575,258,608,235,611,240,578,263,540,284,460,311,382,329"/>
+<area shape="rect" id="Node000009" href="$structbeerocks_1_1AgentDB_1_1sRadio_1_1sMloModesSupport.html" title=" " alt="" coords="200,377,383,417"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="396,395,469,383,504,371,537,354,567,328,592,296,623,236,628,239,596,299,571,332,540,358,506,376,470,388,397,401"/>
+</map>

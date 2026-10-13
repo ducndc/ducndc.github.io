@@ -1,0 +1,12 @@
+<map id="beerocks::nbapi::AmbiorixImpl::set" name="beerocks::nbapi::AmbiorixImpl::set">
+<area shape="rect" id="Node000001" title="Set the value to the object variable." alt="" coords="5,39,179,79"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a138056a1f6a2227a59f43cef266ff4e5" title="Apply transaction." alt="" coords="448,5,621,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,50,434,30,435,35,179,55"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a018e61ad3adf4598a848667c20692ac7" title="Prepare transaction to the ubus." alt="" coords="227,67,400,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,67,214,71,213,77,179,72"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1nbapi_1_1Amxrt.html#a34fa51e8a7fb9f1d214db48abcef512c" title="Gets the runtime data model storage." alt="" coords="669,37,827,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="622,36,656,41,656,46,621,41"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a39340932b8e240fceaa8b760d80e3461" title="Find object by relative path." alt="" coords="448,69,621,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="400,85,434,85,434,91,400,90"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="621,74,656,68,656,74,622,79"/>
+</map>

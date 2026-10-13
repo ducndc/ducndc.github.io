@@ -1,0 +1,22 @@
+<map id="beerocks::ServicePrioritizationTask::gather_iface_details" name="beerocks::ServicePrioritizationTask::gather_iface_details">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,77,204,117"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="264,27,427,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,75,278,53,279,58,190,80"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1network__utils.html#a57666a2cd1ba948bc17259e97d62b9c4" title="Get list of BSS interfaces." alt="" coords="268,77,423,117"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,95,254,95,254,100,204,100"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1network__utils.html#a33df92609d8353b9455e87d82b833232" title="Gets the interface name of the network interface with given MAC address." alt="" coords="252,149,439,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="173,115,265,143,264,148,172,120"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1network__utils.html#afb3f2a54bf1096ca51513e1f370bd2c5" title="Get list of linux interfaces." alt="" coords="491,5,663,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="410,75,498,47,499,52,411,80"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1network__utils.html#ac33179916a7a42897fe851c1090f0bf9" title=" " alt="" coords="499,70,654,125"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="423,95,486,95,486,100,423,100"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1network__utils.html#a9ed67fbcfac8592ae689144f0f2b8186" title=" " alt="" coords="487,149,667,189"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="439,167,473,167,473,172,439,172"/>
+<area shape="rect" id="Node000009" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="723,214,853,239"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="426,187,487,199,604,213,709,220,709,226,603,218,486,204,425,192"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1string__utils.html#ac5ba735c54be1ae2bf849bf9c60257f6" title=" " alt="" coords="715,149,861,189"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="667,167,701,167,701,172,667,172"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="652,187,727,208,726,213,650,192"/>
+<area shape="rect" id="Node000010" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="909,214,1056,239"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="854,224,896,224,896,229,854,229"/>
+</map>

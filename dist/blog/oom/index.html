@@ -1,0 +1,738 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Chung Duc Nguyen Dang" href="https://ducndc.github.io/rss.xml"><meta name="generator" content="Astro v5.17.2"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://ducndc.github.io/blog/oom/"><!-- Primary Meta Tags --><title>Out Of Memory</title><meta name="title" content="Out Of Memory"><meta name="description" content="Out Of Memory"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://ducndc.github.io/blog/oom/"><meta property="og:title" content="Out Of Memory"><meta property="og:description" content="Out Of Memory"><meta property="og:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://ducndc.github.io/blog/oom/"><meta property="twitter:title" content="Out Of Memory"><meta property="twitter:description" content="Out Of Memory"><meta property="twitter:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Times New Roman,Times,serif;margin:0;padding:0;text-align:justify;text-justify:inter-word;background:linear-gradient(180deg,#f3f6f8 0,#fff 560px) no-repeat;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;color:rgb(var(--black));line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}p{margin-top:0;margin-bottom:1em;line-height:1.7}.prose p{margin-top:0;margin-bottom:1.2em;line-height:1.7}a,a:hover{color:var(--accent)}ul,ol{margin-top:.5em;margin-bottom:1em;padding-left:1.5em}li{line-height:1.5;margin-bottom:.2em}li p,.prose li p{margin-top:0;margin-bottom:0;line-height:1.5}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%;border-collapse:collapse}img{display:block;max-width:100%;height:auto;margin:1.5rem auto}.prose img{display:block;max-width:100%;height:auto;margin:2rem auto}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px;font-family:monospace}pre{padding:1.5em;border-radius:8px;overflow-x:auto}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:1.5em 0;font-size:1.1em}hr{border:none;border-top:1px solid rgb(var(--gray-light));margin:2em 0}@media(max-width:720px){body{font-size:18px}main{padding:1em}.prose p{line-height:1.65}li{line-height:1.5}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media(max-width:720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}
+</style>
+<link rel="stylesheet" href="/_astro/about.DsEPMAAl.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Chung Duc Nguyen Dang</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/blog" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  </div> </nav> </header>  <main class="layout" data-astro-cid-bvzihdzo> <!-- TOC --> <aside class="toc" data-astro-cid-bvzihdzo> <div class="toc-title" data-astro-cid-bvzihdzo>Table of Contents</div> <nav id="toc" data-astro-cid-bvzihdzo></nav> </aside> <!-- Content --> <article class="content" data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="/_astro/oom.DKlnQ9FR_Z2uCeQW.webp" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="800"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2022-12-09T17:00:00.000Z"> Dec 10, 2022 </time>  </div> <h1 data-astro-cid-bvzihdzo>Out Of Memory</h1> <hr data-astro-cid-bvzihdzo> </div>  <p>It has one simple task, check if there is enough available memory to satisfy, verify that the system is truely out of memory and if so, select a process to kill</p>
+<hr>
+<h3 id="checking-available-memory">Checking Available Memory</h3>
+<hr>
+<p>For certain operations, such as expaning the heap with brk() or remapping an address space with mremap(), the system will check if there is enough available memory to satisfy a request. Note that this is separate to the out_of_memory() path that is covered in the next section. This path is used to avoid the system being in a state of OOM if at all possible.</p>
+<p>When checking available memory, the number of required pages is passed as a parameter to vm_enough_memory(). Unless the system administrator has specified that the system should overcommit memory, the mount of available memory will be checked. To determine how many pages are potentially available, Linux sums up the following bits of data:</p>
+<ul>
+<li>Total page cache as page cache is easily reclaimed</li>
+<li>Total free pages because they are already available</li>
+<li>Total free swap pages as userspace pages may be paged out</li>
+<li>Total pages managed by swapper_space although this double-counts the free swap pages. This is balanced by the fact that slots are sometimes reserved but not used</li>
+<li>Total pages used by the dentry cache as they are easily reclaimed</li>
+<li>Total pages used by the inode cache as they are easily reclaimed</li>
+</ul>
+<p>If the total number of pages added here is sufficient for the request, vm_enough_memory() returns true to the caller. If false is returned, the caller knows that the memory is not available and usually decides to return -ENOMEM to userspace.</p>
+<hr>
+<h3 id="determining-oom-status">Determining OOM Status</h3>
+<hr>
+<p>When the machine is low on memory, old page frames will be reclaimed but despite reclaiming pages is may find that it was unable to free enough pages to satisfy a request even when scanning at highest priority. If it does fail to free page frames, out_of_memory() is called to see if the system is out of memory and needs to kill a process.</p>
+<p><img alt="H1" loading="lazy" decoding="async" fetchpriority="auto" width="316" height="404" src="/_astro/oom.DpFVNNlH_Z2qlVTb.webp" ></p>
+<p>Unfortunately, it is possible that the system is not out memory and simply needs to wait for IO to complete or for pages to be swapped to backing storage. This is unfortunate, not because the system has memory, but because the function is being called unnecessarily opening the possibly of processes being unnecessarily killed. Before deciding to kill a process, it goes through the following checklist.</p>
+<ul>
+<li>Is there enough swap space left (nr_swap_pages > 0) ? If yes, not OOM</li>
+<li>Has it been more than 5 seconds since the last failure? If yes, not OOM</li>
+<li>Have we failed within the last second? If no, not OOM</li>
+<li>If there hasn’t been 10 failures at least in the last 5 seconds, we’re not OOM</li>
+<li>Has a process been killed within the last 5 seconds? If yes, not OOM</li>
+</ul>
+<p>It is only if the above tests are passed that oom_kill() is called to select a process to kill.</p>
+<hr>
+<h3 id="selecting-a-process">Selecting a Process</h3>
+<hr>
+<p>The function select_bad_process() is responsible for choosing a process to kill. It decides by stepping through each running task and calculating how suitable it is for killing with the function badness(). The badness is calculated as follows, note that the square roots are integer approximations calculated with int_sqrt();</p>
+<p>badness_for_task = total_vm_for_task / (sqrt(cpu_time_in_seconds) *
+sqrt(sqrt(cpu_time_in_minutes)))</p>
+<p>This has been chosen to select a process that is using a large amount of memory but is not that long lived. Processes which have been running a long time are unlikely to be the cause of memory shortage so this calculation is likely to select a process that uses a lot of memory but has not been running long. If the process is a root process or has CAP_SYS_ADMIN capabilities, the points are divided by four as it is assumed that root privilege processes are well behaved. Similarly, if it has CAP_SYS_RAWIO capabilities (access to raw devices) privileges, the points are further divided by 4 as it is undesirable to kill a process that has direct access to hardware.</p>
+<hr>
+<h3 id="flow-of-processing">Flow of Processing</h3>
+<hr>
+<ol>
+<li>User process → malloc(), new, mmap(), fork()</li>
+<li>__alloc_pages() -> __alloc_pages_nodemask()</li>
+<li>__alloc_pages_slowpath() -> __alloc_pages_may_oom()</li>
+<li>out_of_memory()</li>
+<li>select_bad_process() -> oom_evaluate_task()</li>
+<li>oom_badness()</li>
+<li>oom_kill_process()</li>
+<li>SIGKILL → Victim process</li>
+<li>Memory freed → System continues</li>
+</ol>
+<hr>
+<h4 id="__alloc_pages">__alloc_pages()</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#F97583">static</span><span style="color:#F97583"> inline</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> page </span><span style="color:#F97583">*</span></span>
+<span class="line"><span style="color:#B392F0">__alloc_pages</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">gfp_t</span><span style="color:#FFAB70"> gfp_mask</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">unsigned</span><span style="color:#F97583"> int</span><span style="color:#FFAB70"> order</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">int</span><span style="color:#FFAB70"> preferred_nid</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#B392F0"> __alloc_pages_nodemask</span><span style="color:#E1E4E8">(gfp_mask, order, preferred_nid, </span><span style="color:#79B8FF">NULL</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#6A737D">/*</span></span>
+<span class="line"><span style="color:#6A737D"> * This is the 'heart' of the zoned buddy allocator.</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#F97583">struct</span><span style="color:#E1E4E8"> page </span><span style="color:#F97583">*</span></span>
+<span class="line"><span style="color:#B392F0">__alloc_pages_nodemask</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">gfp_t</span><span style="color:#FFAB70"> gfp_mask</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">unsigned</span><span style="color:#F97583"> int</span><span style="color:#FFAB70"> order</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">int</span><span style="color:#FFAB70"> preferred_nid</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#79B8FF">							nodemask_t</span><span style="color:#F97583"> *</span><span style="color:#FFAB70">nodemask</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">	struct</span><span style="color:#E1E4E8"> page </span><span style="color:#F97583">*</span><span style="color:#E1E4E8">page;</span></span>
+<span class="line"><span style="color:#F97583">	unsigned</span><span style="color:#F97583"> int</span><span style="color:#E1E4E8"> alloc_flags </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ALLOC_WMARK_LOW;</span></span>
+<span class="line"><span style="color:#79B8FF">	gfp_t</span><span style="color:#E1E4E8"> alloc_mask;</span><span style="color:#6A737D"> /* The gfp_t that was actually used for allocation */</span></span>
+<span class="line"><span style="color:#F97583">	struct</span><span style="color:#E1E4E8"> alloc_context ac </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> { };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * There are several places where we assume that the order value is sane</span></span>
+<span class="line"><span style="color:#6A737D">	 * so bail out early if the request is out of bound.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">unlikely</span><span style="color:#E1E4E8">(order </span><span style="color:#F97583">>=</span><span style="color:#E1E4E8"> MAX_ORDER)) {</span></span>
+<span class="line"><span style="color:#B392F0">		WARN_ON_ONCE</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">(gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_NOWARN));</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#79B8FF"> NULL</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	gfp_mask </span><span style="color:#F97583">&#x26;=</span><span style="color:#E1E4E8"> gfp_allowed_mask;</span></span>
+<span class="line"><span style="color:#E1E4E8">	alloc_mask </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> gfp_mask;</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#B392F0">prepare_alloc_pages</span><span style="color:#E1E4E8">(gfp_mask, order, preferred_nid, nodemask, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">ac, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">alloc_mask, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">alloc_flags))</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#79B8FF"> NULL</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Forbid the first pass from falling back to types that fragment</span></span>
+<span class="line"><span style="color:#6A737D">	 * memory until all local zones are considered.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	alloc_flags </span><span style="color:#F97583">|=</span><span style="color:#B392F0"> alloc_flags_nofragment</span><span style="color:#E1E4E8">(ac.preferred_zoneref->zone, gfp_mask);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* First allocation attempt */</span></span>
+<span class="line"><span style="color:#E1E4E8">	page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> get_page_from_freelist</span><span style="color:#E1E4E8">(alloc_mask, order, alloc_flags, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">ac);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">likely</span><span style="color:#E1E4E8">(page))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> out;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Apply scoped allocation constraints. This is mainly about GFP_NOFS</span></span>
+<span class="line"><span style="color:#6A737D">	 * resp. GFP_NOIO which has to be inherited for all allocation requests</span></span>
+<span class="line"><span style="color:#6A737D">	 * from a particular context which has been marked by</span></span>
+<span class="line"><span style="color:#6A737D">	 * memalloc_no{fs,io}_{save,restore}.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	alloc_mask </span><span style="color:#F97583">=</span><span style="color:#B392F0"> current_gfp_context</span><span style="color:#E1E4E8">(gfp_mask);</span></span>
+<span class="line"><span style="color:#E1E4E8">	ac.spread_dirty_pages </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Restore the original nodemask if it was potentially replaced with</span></span>
+<span class="line"><span style="color:#6A737D">	 * &#x26;cpuset_current_mems_allowed to optimize the fast-path attempt.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	ac.nodemask </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> nodemask;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> __alloc_pages_slowpath</span><span style="color:#E1E4E8">(alloc_mask, order, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">ac);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">out:</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">memcg_kmem_enabled</span><span style="color:#E1E4E8">() </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_ACCOUNT) </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> page </span><span style="color:#F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color:#B392F0">	    unlikely</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">__memcg_kmem_charge_page</span><span style="color:#E1E4E8">(page, gfp_mask, order) </span><span style="color:#F97583">!=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">)) {</span></span>
+<span class="line"><span style="color:#B392F0">		__free_pages</span><span style="color:#E1E4E8">(page, order);</span></span>
+<span class="line"><span style="color:#E1E4E8">		page </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> NULL</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">	trace_mm_page_alloc</span><span style="color:#E1E4E8">(page, order, alloc_mask, ac.migratetype);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#E1E4E8"> page;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#B392F0">EXPORT_SYMBOL</span><span style="color:#E1E4E8">(__alloc_pages_nodemask);</span></span></code></pre>
+<hr>
+<h4 id="__alloc_pages_slowpath">__alloc_pages_slowpath()</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#F97583">static</span><span style="color:#F97583"> inline</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> page </span><span style="color:#F97583">*</span></span>
+<span class="line"><span style="color:#B392F0">__alloc_pages_slowpath</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">gfp_t</span><span style="color:#FFAB70"> gfp_mask</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">unsigned</span><span style="color:#F97583"> int</span><span style="color:#FFAB70"> order</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#F97583">						struct</span><span style="color:#E1E4E8"> alloc_context </span><span style="color:#F97583">*</span><span style="color:#FFAB70">ac</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">	bool</span><span style="color:#E1E4E8"> can_direct_reclaim </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_DIRECT_RECLAIM;</span></span>
+<span class="line"><span style="color:#F97583">	const</span><span style="color:#F97583"> bool</span><span style="color:#E1E4E8"> costly_order </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> order </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> PAGE_ALLOC_COSTLY_ORDER;</span></span>
+<span class="line"><span style="color:#F97583">	struct</span><span style="color:#E1E4E8"> page </span><span style="color:#F97583">*</span><span style="color:#E1E4E8">page </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> NULL</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">	unsigned</span><span style="color:#F97583"> int</span><span style="color:#E1E4E8"> alloc_flags;</span></span>
+<span class="line"><span style="color:#F97583">	unsigned</span><span style="color:#F97583"> long</span><span style="color:#E1E4E8"> did_some_progress;</span></span>
+<span class="line"><span style="color:#F97583">	enum</span><span style="color:#E1E4E8"> compact_priority compact_priority;</span></span>
+<span class="line"><span style="color:#F97583">	enum</span><span style="color:#E1E4E8"> compact_result compact_result;</span></span>
+<span class="line"><span style="color:#F97583">	int</span><span style="color:#E1E4E8"> compaction_retries;</span></span>
+<span class="line"><span style="color:#F97583">	int</span><span style="color:#E1E4E8"> no_progress_loops;</span></span>
+<span class="line"><span style="color:#F97583">	unsigned</span><span style="color:#F97583"> int</span><span style="color:#E1E4E8"> cpuset_mems_cookie;</span></span>
+<span class="line"><span style="color:#F97583">	int</span><span style="color:#E1E4E8"> reserve_flags;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * We also sanity check to catch abuse of atomic reserves being used by</span></span>
+<span class="line"><span style="color:#6A737D">	 * callers that are not in atomic context.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">WARN_ON_ONCE</span><span style="color:#E1E4E8">((gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> (__GFP_ATOMIC</span><span style="color:#F97583">|</span><span style="color:#E1E4E8">__GFP_DIRECT_RECLAIM)) </span><span style="color:#F97583">==</span></span>
+<span class="line"><span style="color:#E1E4E8">				(__GFP_ATOMIC</span><span style="color:#F97583">|</span><span style="color:#E1E4E8">__GFP_DIRECT_RECLAIM)))</span></span>
+<span class="line"><span style="color:#E1E4E8">		gfp_mask </span><span style="color:#F97583">&#x26;=</span><span style="color:#F97583"> ~</span><span style="color:#E1E4E8">__GFP_ATOMIC;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">retry_cpuset:</span></span>
+<span class="line"><span style="color:#E1E4E8">	compaction_retries </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	no_progress_loops </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	compact_priority </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> DEF_COMPACT_PRIORITY;</span></span>
+<span class="line"><span style="color:#E1E4E8">	cpuset_mems_cookie </span><span style="color:#F97583">=</span><span style="color:#B392F0"> read_mems_allowed_begin</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * The fast path uses conservative alloc_flags to succeed only until</span></span>
+<span class="line"><span style="color:#6A737D">	 * kswapd needs to be woken up, and to avoid the cost of setting up</span></span>
+<span class="line"><span style="color:#6A737D">	 * alloc_flags precisely. So we do that now.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	alloc_flags </span><span style="color:#F97583">=</span><span style="color:#B392F0"> gfp_to_alloc_flags</span><span style="color:#E1E4E8">(gfp_mask);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * We need to recalculate the starting point for the zonelist iterator</span></span>
+<span class="line"><span style="color:#6A737D">	 * because we might have used different nodemask in the fast path, or</span></span>
+<span class="line"><span style="color:#6A737D">	 * there was a cpuset modification and we are retrying - otherwise we</span></span>
+<span class="line"><span style="color:#6A737D">	 * could end up iterating over non-eligible zones endlessly.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	ac->preferred_zoneref </span><span style="color:#F97583">=</span><span style="color:#B392F0"> first_zones_zonelist</span><span style="color:#E1E4E8">(ac->zonelist,</span></span>
+<span class="line"><span style="color:#E1E4E8">					ac->highest_zoneidx, ac->nodemask);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">ac->preferred_zoneref->zone)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> nopage;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (alloc_flags </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> ALLOC_KSWAPD)</span></span>
+<span class="line"><span style="color:#B392F0">		wake_all_kswapds</span><span style="color:#E1E4E8">(order, gfp_mask, ac);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * The adjusted alloc_flags might result in immediate success, so try</span></span>
+<span class="line"><span style="color:#6A737D">	 * that first</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> get_page_from_freelist</span><span style="color:#E1E4E8">(gfp_mask, order, alloc_flags, ac);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (page)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> got_pg;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * For costly allocations, try direct compaction first, as it's likely</span></span>
+<span class="line"><span style="color:#6A737D">	 * that we have enough base pages and don't need to reclaim. For non-</span></span>
+<span class="line"><span style="color:#6A737D">	 * movable high-order allocations, do that as well, as compaction will</span></span>
+<span class="line"><span style="color:#6A737D">	 * try prevent permanent fragmentation by migrating from blocks of the</span></span>
+<span class="line"><span style="color:#6A737D">	 * same migratetype.</span></span>
+<span class="line"><span style="color:#6A737D">	 * Don't try this for allocations that are allowed to ignore</span></span>
+<span class="line"><span style="color:#6A737D">	 * watermarks, as the ALLOC_NO_WATERMARKS attempt didn't yet happen.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (can_direct_reclaim </span><span style="color:#F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color:#E1E4E8">			(costly_order </span><span style="color:#F97583">||</span></span>
+<span class="line"><span style="color:#E1E4E8">			   (order </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> &#x26;&#x26;</span><span style="color:#E1E4E8"> ac->migratetype </span><span style="color:#F97583">!=</span><span style="color:#E1E4E8"> MIGRATE_MOVABLE))</span></span>
+<span class="line"><span style="color:#F97583">			&#x26;&#x26;</span><span style="color:#F97583"> !</span><span style="color:#B392F0">gfp_pfmemalloc_allowed</span><span style="color:#E1E4E8">(gfp_mask)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">		page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> __alloc_pages_direct_compact</span><span style="color:#E1E4E8">(gfp_mask, order,</span></span>
+<span class="line"><span style="color:#E1E4E8">						alloc_flags, ac,</span></span>
+<span class="line"><span style="color:#E1E4E8">						INIT_COMPACT_PRIORITY,</span></span>
+<span class="line"><span style="color:#F97583">						&#x26;</span><span style="color:#E1E4E8">compact_result);</span></span>
+<span class="line"><span style="color:#F97583">		if</span><span style="color:#E1E4E8"> (page)</span></span>
+<span class="line"><span style="color:#F97583">			goto</span><span style="color:#E1E4E8"> got_pg;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">		/*</span></span>
+<span class="line"><span style="color:#6A737D">		 * Checks for costly allocations with __GFP_NORETRY, which</span></span>
+<span class="line"><span style="color:#6A737D">		 * includes some THP page fault allocations</span></span>
+<span class="line"><span style="color:#6A737D">		 */</span></span>
+<span class="line"><span style="color:#F97583">		if</span><span style="color:#E1E4E8"> (costly_order </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> (gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_NORETRY)) {</span></span>
+<span class="line"><span style="color:#6A737D">			/*</span></span>
+<span class="line"><span style="color:#6A737D">			 * If allocating entire pageblock(s) and compaction</span></span>
+<span class="line"><span style="color:#6A737D">			 * failed because all zones are below low watermarks</span></span>
+<span class="line"><span style="color:#6A737D">			 * or is prohibited because it recently failed at this</span></span>
+<span class="line"><span style="color:#6A737D">			 * order, fail immediately unless the allocator has</span></span>
+<span class="line"><span style="color:#6A737D">			 * requested compaction and reclaim retry.</span></span>
+<span class="line"><span style="color:#6A737D">			 *</span></span>
+<span class="line"><span style="color:#6A737D">			 * Reclaim is</span></span>
+<span class="line"><span style="color:#6A737D">			 *  - potentially very expensive because zones are far</span></span>
+<span class="line"><span style="color:#6A737D">			 *    below their low watermarks or this is part of very</span></span>
+<span class="line"><span style="color:#6A737D">			 *    bursty high order allocations,</span></span>
+<span class="line"><span style="color:#6A737D">			 *  - not guaranteed to help because isolate_freepages()</span></span>
+<span class="line"><span style="color:#6A737D">			 *    may not iterate over freed pages as part of its</span></span>
+<span class="line"><span style="color:#6A737D">			 *    linear scan, and</span></span>
+<span class="line"><span style="color:#6A737D">			 *  - unlikely to make entire pageblocks free on its</span></span>
+<span class="line"><span style="color:#6A737D">			 *    own.</span></span>
+<span class="line"><span style="color:#6A737D">			 */</span></span>
+<span class="line"><span style="color:#F97583">			if</span><span style="color:#E1E4E8"> (compact_result </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> COMPACT_SKIPPED </span><span style="color:#F97583">||</span></span>
+<span class="line"><span style="color:#E1E4E8">			    compact_result </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> COMPACT_DEFERRED)</span></span>
+<span class="line"><span style="color:#F97583">				goto</span><span style="color:#E1E4E8"> nopage;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">			/*</span></span>
+<span class="line"><span style="color:#6A737D">			 * Looks like reclaim/compaction is worth trying, but</span></span>
+<span class="line"><span style="color:#6A737D">			 * sync compaction could be very expensive, so keep</span></span>
+<span class="line"><span style="color:#6A737D">			 * using async compaction.</span></span>
+<span class="line"><span style="color:#6A737D">			 */</span></span>
+<span class="line"><span style="color:#E1E4E8">			compact_priority </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> INIT_COMPACT_PRIORITY;</span></span>
+<span class="line"><span style="color:#E1E4E8">		}</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">retry:</span></span>
+<span class="line"><span style="color:#6A737D">	/* Ensure kswapd doesn't accidentally go to sleep as long as we loop */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (alloc_flags </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> ALLOC_KSWAPD)</span></span>
+<span class="line"><span style="color:#B392F0">		wake_all_kswapds</span><span style="color:#E1E4E8">(order, gfp_mask, ac);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	reserve_flags </span><span style="color:#F97583">=</span><span style="color:#B392F0"> __gfp_pfmemalloc_flags</span><span style="color:#E1E4E8">(gfp_mask);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (reserve_flags)</span></span>
+<span class="line"><span style="color:#E1E4E8">		alloc_flags </span><span style="color:#F97583">=</span><span style="color:#B392F0"> current_alloc_flags</span><span style="color:#E1E4E8">(gfp_mask, reserve_flags);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Reset the nodemask and zonelist iterators if memory policies can be</span></span>
+<span class="line"><span style="color:#6A737D">	 * ignored. These allocations are high priority and system rather than</span></span>
+<span class="line"><span style="color:#6A737D">	 * user oriented.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">(alloc_flags </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> ALLOC_CPUSET) </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> reserve_flags) {</span></span>
+<span class="line"><span style="color:#E1E4E8">		ac->nodemask </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> NULL</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">		ac->preferred_zoneref </span><span style="color:#F97583">=</span><span style="color:#B392F0"> first_zones_zonelist</span><span style="color:#E1E4E8">(ac->zonelist,</span></span>
+<span class="line"><span style="color:#E1E4E8">					ac->highest_zoneidx, ac->nodemask);</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Attempt with potentially adjusted zonelist and alloc_flags */</span></span>
+<span class="line"><span style="color:#E1E4E8">	page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> get_page_from_freelist</span><span style="color:#E1E4E8">(gfp_mask, order, alloc_flags, ac);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (page)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> got_pg;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Caller is not willing to reclaim, we can't balance anything */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">can_direct_reclaim)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> nopage;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Avoid recursion of direct reclaim */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (current->flags </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> PF_MEMALLOC)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> nopage;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Try direct reclaim and then allocating */</span></span>
+<span class="line"><span style="color:#E1E4E8">	page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> __alloc_pages_direct_reclaim</span><span style="color:#E1E4E8">(gfp_mask, order, alloc_flags, ac,</span></span>
+<span class="line"><span style="color:#F97583">							&#x26;</span><span style="color:#E1E4E8">did_some_progress);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (page)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> got_pg;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Try direct compaction and then allocating */</span></span>
+<span class="line"><span style="color:#E1E4E8">	page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> __alloc_pages_direct_compact</span><span style="color:#E1E4E8">(gfp_mask, order, alloc_flags, ac,</span></span>
+<span class="line"><span style="color:#E1E4E8">					compact_priority, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">compact_result);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (page)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> got_pg;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Do not loop if specifically requested */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_NORETRY)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> nopage;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Do not retry costly high order allocations unless they are</span></span>
+<span class="line"><span style="color:#6A737D">	 * __GFP_RETRY_MAYFAIL</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (costly_order </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">(gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_RETRY_MAYFAIL))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> nopage;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">should_reclaim_retry</span><span style="color:#E1E4E8">(gfp_mask, order, ac, alloc_flags,</span></span>
+<span class="line"><span style="color:#E1E4E8">				 did_some_progress </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">no_progress_loops))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> retry;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * It doesn't make any sense to retry for the compaction if the order-0</span></span>
+<span class="line"><span style="color:#6A737D">	 * reclaim is not able to make any progress because the current</span></span>
+<span class="line"><span style="color:#6A737D">	 * implementation of the compaction depends on the sufficient amount</span></span>
+<span class="line"><span style="color:#6A737D">	 * of free memory (see __compaction_suitable)</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (did_some_progress </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 0</span><span style="color:#F97583"> &#x26;&#x26;</span></span>
+<span class="line"><span style="color:#B392F0">			should_compact_retry</span><span style="color:#E1E4E8">(ac, order, alloc_flags,</span></span>
+<span class="line"><span style="color:#E1E4E8">				compact_result, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">compact_priority,</span></span>
+<span class="line"><span style="color:#F97583">				&#x26;</span><span style="color:#E1E4E8">compaction_retries))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> retry;</span></span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Deal with possible cpuset update races before we start OOM killing */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">check_retry_cpuset</span><span style="color:#E1E4E8">(cpuset_mems_cookie, ac))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> retry_cpuset;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Reclaim has failed us, start killing things */</span></span>
+<span class="line"><span style="color:#E1E4E8">	page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> __alloc_pages_may_oom</span><span style="color:#E1E4E8">(gfp_mask, order, ac, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">did_some_progress);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (page)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> got_pg;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Avoid allocations with no watermarks from looping endlessly */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">tsk_is_oom_victim</span><span style="color:#E1E4E8">(current) </span><span style="color:#F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color:#E1E4E8">	    (alloc_flags </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> ALLOC_OOM </span><span style="color:#F97583">||</span></span>
+<span class="line"><span style="color:#E1E4E8">	     (gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_NOMEMALLOC)))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> nopage;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Retry as long as the OOM killer is making progress */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (did_some_progress) {</span></span>
+<span class="line"><span style="color:#E1E4E8">		no_progress_loops </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> retry;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">nopage:</span></span>
+<span class="line"><span style="color:#6A737D">	/* Deal with possible cpuset update races before we fail */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">check_retry_cpuset</span><span style="color:#E1E4E8">(cpuset_mems_cookie, ac))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> retry_cpuset;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Make sure that __GFP_NOFAIL request doesn't leak out and make sure</span></span>
+<span class="line"><span style="color:#6A737D">	 * we always retry</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_NOFAIL) {</span></span>
+<span class="line"><span style="color:#6A737D">		/*</span></span>
+<span class="line"><span style="color:#6A737D">		 * All existing users of the __GFP_NOFAIL are blockable, so warn</span></span>
+<span class="line"><span style="color:#6A737D">		 * of any new users that actually require GFP_NOWAIT</span></span>
+<span class="line"><span style="color:#6A737D">		 */</span></span>
+<span class="line"><span style="color:#F97583">		if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">WARN_ON_ONCE</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">can_direct_reclaim))</span></span>
+<span class="line"><span style="color:#F97583">			goto</span><span style="color:#E1E4E8"> fail;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">		/*</span></span>
+<span class="line"><span style="color:#6A737D">		 * PF_MEMALLOC request from this context is rather bizarre</span></span>
+<span class="line"><span style="color:#6A737D">		 * because we cannot reclaim anything and only can loop waiting</span></span>
+<span class="line"><span style="color:#6A737D">		 * for somebody to do a work for us</span></span>
+<span class="line"><span style="color:#6A737D">		 */</span></span>
+<span class="line"><span style="color:#B392F0">		WARN_ON_ONCE</span><span style="color:#E1E4E8">(current->flags </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> PF_MEMALLOC);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">		/*</span></span>
+<span class="line"><span style="color:#6A737D">		 * non failing costly orders are a hard requirement which we</span></span>
+<span class="line"><span style="color:#6A737D">		 * are not prepared for much so let's warn about these users</span></span>
+<span class="line"><span style="color:#6A737D">		 * so that we can identify them and convert them to something</span></span>
+<span class="line"><span style="color:#6A737D">		 * else.</span></span>
+<span class="line"><span style="color:#6A737D">		 */</span></span>
+<span class="line"><span style="color:#B392F0">		WARN_ON_ONCE</span><span style="color:#E1E4E8">(order </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> PAGE_ALLOC_COSTLY_ORDER);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">		/*</span></span>
+<span class="line"><span style="color:#6A737D">		 * Help non-failing allocations by giving them access to memory</span></span>
+<span class="line"><span style="color:#6A737D">		 * reserves but do not use ALLOC_NO_WATERMARKS because this</span></span>
+<span class="line"><span style="color:#6A737D">		 * could deplete whole memory reserves which would just make</span></span>
+<span class="line"><span style="color:#6A737D">		 * the situation worse</span></span>
+<span class="line"><span style="color:#6A737D">		 */</span></span>
+<span class="line"><span style="color:#E1E4E8">		page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> __alloc_pages_cpuset_fallback</span><span style="color:#E1E4E8">(gfp_mask, order, ALLOC_HARDER, ac);</span></span>
+<span class="line"><span style="color:#F97583">		if</span><span style="color:#E1E4E8"> (page)</span></span>
+<span class="line"><span style="color:#F97583">			goto</span><span style="color:#E1E4E8"> got_pg;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">		cond_resched</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> retry;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"><span style="color:#E1E4E8">fail:</span></span>
+<span class="line"><span style="color:#B392F0">	warn_alloc</span><span style="color:#E1E4E8">(gfp_mask, ac->nodemask,</span></span>
+<span class="line"><span style="color:#9ECBFF">			"page allocation failure: order:</span><span style="color:#79B8FF">%u</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, order);</span></span>
+<span class="line"><span style="color:#E1E4E8">got_pg:</span></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#E1E4E8"> page;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h4 id="__alloc_pages_may_oom">__alloc_pages_may_oom()</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#F97583">static</span><span style="color:#F97583"> inline</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> page </span><span style="color:#F97583">*</span></span>
+<span class="line"><span style="color:#B392F0">__alloc_pages_may_oom</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">gfp_t</span><span style="color:#FFAB70"> gfp_mask</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">unsigned</span><span style="color:#F97583"> int</span><span style="color:#FFAB70"> order</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#F97583">	const</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> alloc_context </span><span style="color:#F97583">*</span><span style="color:#FFAB70">ac</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">unsigned</span><span style="color:#F97583"> long</span><span style="color:#F97583"> *</span><span style="color:#FFAB70">did_some_progress</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">	struct</span><span style="color:#E1E4E8"> oom_control oc </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">		.zonelist </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ac->zonelist,</span></span>
+<span class="line"><span style="color:#E1E4E8">		.nodemask </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> ac->nodemask,</span></span>
+<span class="line"><span style="color:#E1E4E8">		.memcg </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> NULL</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">		.gfp_mask </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> gfp_mask,</span></span>
+<span class="line"><span style="color:#E1E4E8">		.order </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> order,</span></span>
+<span class="line"><span style="color:#E1E4E8">	};</span></span>
+<span class="line"><span style="color:#F97583">	struct</span><span style="color:#E1E4E8"> page </span><span style="color:#F97583">*</span><span style="color:#E1E4E8">page;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	*</span><span style="color:#E1E4E8">did_some_progress </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Acquire the oom lock.  If that fails, somebody else is</span></span>
+<span class="line"><span style="color:#6A737D">	 * making progress for us.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#B392F0">mutex_trylock</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">oom_lock)) {</span></span>
+<span class="line"><span style="color:#F97583">		*</span><span style="color:#E1E4E8">did_some_progress </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">		schedule_timeout_uninterruptible</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#79B8FF"> NULL</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Go through the zonelist yet one more time, keep very high watermark</span></span>
+<span class="line"><span style="color:#6A737D">	 * here, this is only to catch a parallel oom killing, we must fail if</span></span>
+<span class="line"><span style="color:#6A737D">	 * we're still under heavy pressure. But make sure that this reclaim</span></span>
+<span class="line"><span style="color:#6A737D">	 * attempt shall not depend on __GFP_DIRECT_RECLAIM &#x26;&#x26; !__GFP_NORETRY</span></span>
+<span class="line"><span style="color:#6A737D">	 * allocation which will never fail due to oom_lock already held.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> get_page_from_freelist</span><span style="color:#E1E4E8">((gfp_mask </span><span style="color:#F97583">|</span><span style="color:#E1E4E8"> __GFP_HARDWALL) </span><span style="color:#F97583">&#x26;</span></span>
+<span class="line"><span style="color:#F97583">				      ~</span><span style="color:#E1E4E8">__GFP_DIRECT_RECLAIM, order,</span></span>
+<span class="line"><span style="color:#E1E4E8">				      ALLOC_WMARK_HIGH</span><span style="color:#F97583">|</span><span style="color:#E1E4E8">ALLOC_CPUSET, ac);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (page)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> out;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Coredumps can quickly deplete all memory reserves */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (current->flags </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> PF_DUMPCORE)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> out;</span></span>
+<span class="line"><span style="color:#6A737D">	/* The OOM killer will not help higher order allocs */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (order </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> PAGE_ALLOC_COSTLY_ORDER)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> out;</span></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * We have already exhausted all our reclaim opportunities without any</span></span>
+<span class="line"><span style="color:#6A737D">	 * success so it is time to admit defeat. We will skip the OOM killer</span></span>
+<span class="line"><span style="color:#6A737D">	 * because it is very likely that the caller has a more reasonable</span></span>
+<span class="line"><span style="color:#6A737D">	 * fallback than shooting a random task.</span></span>
+<span class="line"><span style="color:#6A737D">	 *</span></span>
+<span class="line"><span style="color:#6A737D">	 * The OOM killer may not free memory on a specific node.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> (__GFP_RETRY_MAYFAIL </span><span style="color:#F97583">|</span><span style="color:#E1E4E8"> __GFP_THISNODE))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> out;</span></span>
+<span class="line"><span style="color:#6A737D">	/* The OOM killer does not needlessly kill tasks for lowmem */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (ac->highest_zoneidx </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> ZONE_NORMAL)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> out;</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">pm_suspended_storage</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> out;</span></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * XXX: GFP_NOFS allocations should rather fail than rely on</span></span>
+<span class="line"><span style="color:#6A737D">	 * other request to make a forward progress.</span></span>
+<span class="line"><span style="color:#6A737D">	 * We are in an unfortunate situation where out_of_memory cannot</span></span>
+<span class="line"><span style="color:#6A737D">	 * do much for this context but let's try it to at least get</span></span>
+<span class="line"><span style="color:#6A737D">	 * access to memory reserved if the current task is killed (see</span></span>
+<span class="line"><span style="color:#6A737D">	 * out_of_memory). Once filesystems are ready to handle allocation</span></span>
+<span class="line"><span style="color:#6A737D">	 * failures more gracefully we should just bail out here.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Exhausted what can be done so it's blame time */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">out_of_memory</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">oc) </span><span style="color:#F97583">||</span><span style="color:#B392F0"> WARN_ON_ONCE</span><span style="color:#E1E4E8">(gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_NOFAIL)) {</span></span>
+<span class="line"><span style="color:#F97583">		*</span><span style="color:#E1E4E8">did_some_progress </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">		/*</span></span>
+<span class="line"><span style="color:#6A737D">		 * Help non-failing allocations by giving them access to memory</span></span>
+<span class="line"><span style="color:#6A737D">		 * reserves</span></span>
+<span class="line"><span style="color:#6A737D">		 */</span></span>
+<span class="line"><span style="color:#F97583">		if</span><span style="color:#E1E4E8"> (gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_NOFAIL)</span></span>
+<span class="line"><span style="color:#E1E4E8">			page </span><span style="color:#F97583">=</span><span style="color:#B392F0"> __alloc_pages_cpuset_fallback</span><span style="color:#E1E4E8">(gfp_mask, order,</span></span>
+<span class="line"><span style="color:#E1E4E8">					ALLOC_NO_WATERMARKS, ac);</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"><span style="color:#E1E4E8">out:</span></span>
+<span class="line"><span style="color:#B392F0">	mutex_unlock</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">oom_lock);</span></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#E1E4E8"> page;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h4 id="out_of_memory">out_of_memory()</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * out_of_memory - kill the "best" process when we run out of memory</span></span>
+<span class="line"><span style="color:#6A737D"> * </span><span style="color:#F97583">@oc:</span><span style="color:#6A737D"> pointer to struct oom_control</span></span>
+<span class="line"><span style="color:#6A737D"> *</span></span>
+<span class="line"><span style="color:#6A737D"> * If we run out of memory, we have the choice between either</span></span>
+<span class="line"><span style="color:#6A737D"> * killing a random task (bad), letting the system crash (worse)</span></span>
+<span class="line"><span style="color:#6A737D"> * OR try to be smart about which process to kill. Note that we</span></span>
+<span class="line"><span style="color:#6A737D"> * don't have to be perfect here, we just have to be good.</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#F97583">bool</span><span style="color:#B392F0"> out_of_memory</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">struct</span><span style="color:#E1E4E8"> oom_control </span><span style="color:#F97583">*</span><span style="color:#FFAB70">oc</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">	unsigned</span><span style="color:#F97583"> long</span><span style="color:#E1E4E8"> freed </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (oom_killer_disabled)</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#79B8FF"> false</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#B392F0">is_memcg_oom</span><span style="color:#E1E4E8">(oc)) {</span></span>
+<span class="line"><span style="color:#B392F0">		blocking_notifier_call_chain</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">oom_notify_list, </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">freed);</span></span>
+<span class="line"><span style="color:#F97583">		if</span><span style="color:#E1E4E8"> (freed </span><span style="color:#F97583">></span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#6A737D">			/* Got some memory back in the last second. */</span></span>
+<span class="line"><span style="color:#F97583">			return</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * If current has a pending SIGKILL or is exiting, then automatically</span></span>
+<span class="line"><span style="color:#6A737D">	 * select it.  The goal is to allow it to allocate so that it may</span></span>
+<span class="line"><span style="color:#6A737D">	 * quickly exit and free its memory.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">task_will_free_mem</span><span style="color:#E1E4E8">(current)) {</span></span>
+<span class="line"><span style="color:#B392F0">		mark_oom_victim</span><span style="color:#E1E4E8">(current);</span></span>
+<span class="line"><span style="color:#B392F0">		wake_oom_reaper</span><span style="color:#E1E4E8">(current);</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * The OOM killer does not compensate for IO-less reclaim.</span></span>
+<span class="line"><span style="color:#6A737D">	 * pagefault_out_of_memory lost its gfp context so we have to</span></span>
+<span class="line"><span style="color:#6A737D">	 * make sure exclude 0 mask - all other users should have at least</span></span>
+<span class="line"><span style="color:#6A737D">	 * ___GFP_DIRECT_RECLAIM to get here. But mem_cgroup_oom() has to</span></span>
+<span class="line"><span style="color:#6A737D">	 * invoke the OOM killer even if it is a GFP_NOFS allocation.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (oc->gfp_mask </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#F97583"> !</span><span style="color:#E1E4E8">(oc->gfp_mask </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8"> __GFP_FS) </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#F97583"> !</span><span style="color:#B392F0">is_memcg_oom</span><span style="color:#E1E4E8">(oc))</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Check if there were limitations on the allocation (only relevant for</span></span>
+<span class="line"><span style="color:#6A737D">	 * NUMA and memcg) that may require different handling.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	oc->constraint </span><span style="color:#F97583">=</span><span style="color:#B392F0"> constrained_alloc</span><span style="color:#E1E4E8">(oc);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (oc->constraint </span><span style="color:#F97583">!=</span><span style="color:#E1E4E8"> CONSTRAINT_MEMORY_POLICY)</span></span>
+<span class="line"><span style="color:#E1E4E8">		oc->nodemask </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> NULL</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">	check_panic_on_oom</span><span style="color:#E1E4E8">(oc);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#B392F0">is_memcg_oom</span><span style="color:#E1E4E8">(oc) </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> sysctl_oom_kill_allocating_task </span><span style="color:#F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color:#E1E4E8">	    current->mm </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#F97583"> !</span><span style="color:#B392F0">oom_unkillable_task</span><span style="color:#E1E4E8">(current) </span><span style="color:#F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color:#B392F0">	    oom_cpuset_eligible</span><span style="color:#E1E4E8">(current, oc) </span><span style="color:#F97583">&#x26;&#x26;</span></span>
+<span class="line"><span style="color:#E1E4E8">	    current->signal->oom_score_adj </span><span style="color:#F97583">!=</span><span style="color:#E1E4E8"> OOM_SCORE_ADJ_MIN) {</span></span>
+<span class="line"><span style="color:#B392F0">		get_task_struct</span><span style="color:#E1E4E8">(current);</span></span>
+<span class="line"><span style="color:#E1E4E8">		oc->chosen </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> current;</span></span>
+<span class="line"><span style="color:#B392F0">		oom_kill_process</span><span style="color:#E1E4E8">(oc, </span><span style="color:#9ECBFF">"Out of memory (oom_kill_allocating_task)"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#79B8FF"> true</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">	select_bad_process</span><span style="color:#E1E4E8">(oc);</span></span>
+<span class="line"><span style="color:#6A737D">	/* Found nothing?!?! */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">oc->chosen) {</span></span>
+<span class="line"><span style="color:#B392F0">		dump_header</span><span style="color:#E1E4E8">(oc, </span><span style="color:#79B8FF">NULL</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#B392F0">		pr_warn</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Out of memory and no killable processes...</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#6A737D">		/*</span></span>
+<span class="line"><span style="color:#6A737D">		 * If we got here due to an actual allocation at the</span></span>
+<span class="line"><span style="color:#6A737D">		 * system level, we cannot survive this and will enter</span></span>
+<span class="line"><span style="color:#6A737D">		 * an endless loop in the allocator. Bail out now.</span></span>
+<span class="line"><span style="color:#6A737D">		 */</span></span>
+<span class="line"><span style="color:#F97583">		if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#B392F0">is_sysrq_oom</span><span style="color:#E1E4E8">(oc) </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#F97583"> !</span><span style="color:#B392F0">is_memcg_oom</span><span style="color:#E1E4E8">(oc))</span></span>
+<span class="line"><span style="color:#B392F0">			panic</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"System is deadlocked on memory</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (oc->chosen </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#E1E4E8"> oc->chosen </span><span style="color:#F97583">!=</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">void</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">-</span><span style="color:#79B8FF">1</span><span style="color:#F97583">UL</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#B392F0">		oom_kill_process</span><span style="color:#E1E4E8">(oc, </span><span style="color:#F97583">!</span><span style="color:#B392F0">is_memcg_oom</span><span style="color:#E1E4E8">(oc) </span><span style="color:#F97583">?</span><span style="color:#9ECBFF"> "Out of memory"</span><span style="color:#F97583"> :</span></span>
+<span class="line"><span style="color:#9ECBFF">				 "Memory cgroup out of memory"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#F97583"> !!</span><span style="color:#E1E4E8">oc->chosen;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h4 id="select_bad_process">select_bad_process()</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#6A737D">/*</span></span>
+<span class="line"><span style="color:#6A737D"> * Simple selection loop. We choose the process with the highest number of</span></span>
+<span class="line"><span style="color:#6A737D"> * 'points'. In case scan was aborted, oc->chosen is set to -1.</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#F97583">static</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> select_bad_process</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">struct</span><span style="color:#E1E4E8"> oom_control </span><span style="color:#F97583">*</span><span style="color:#FFAB70">oc</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#E1E4E8">	oc->chosen_points </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> LONG_MIN;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">is_memcg_oom</span><span style="color:#E1E4E8">(oc))</span></span>
+<span class="line"><span style="color:#B392F0">		mem_cgroup_scan_tasks</span><span style="color:#E1E4E8">(oc->memcg, oom_evaluate_task, oc);</span></span>
+<span class="line"><span style="color:#F97583">	else</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">		struct</span><span style="color:#E1E4E8"> task_struct </span><span style="color:#F97583">*</span><span style="color:#E1E4E8">p;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">		rcu_read_lock</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">		for_each_process</span><span style="color:#E1E4E8">(p)</span></span>
+<span class="line"><span style="color:#F97583">			if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">oom_evaluate_task</span><span style="color:#E1E4E8">(p, oc))</span></span>
+<span class="line"><span style="color:#F97583">				break</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">		rcu_read_unlock</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h4 id="oom_evaluate_task">oom_evaluate_task()</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#F97583">static</span><span style="color:#F97583"> int</span><span style="color:#B392F0"> oom_evaluate_task</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">struct</span><span style="color:#E1E4E8"> task_struct </span><span style="color:#F97583">*</span><span style="color:#FFAB70">task</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">void</span><span style="color:#F97583"> *</span><span style="color:#FFAB70">arg</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">	struct</span><span style="color:#E1E4E8"> oom_control </span><span style="color:#F97583">*</span><span style="color:#E1E4E8">oc </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> arg;</span></span>
+<span class="line"><span style="color:#F97583">	long</span><span style="color:#E1E4E8"> points;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">oom_unkillable_task</span><span style="color:#E1E4E8">(task))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> next;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* p may not have freeable memory in nodemask */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#B392F0">is_memcg_oom</span><span style="color:#E1E4E8">(oc) </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#F97583"> !</span><span style="color:#B392F0">oom_cpuset_eligible</span><span style="color:#E1E4E8">(task, oc))</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> next;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * This task already has access to memory reserves and is being killed.</span></span>
+<span class="line"><span style="color:#6A737D">	 * Don't allow any other task to have access to the reserves unless</span></span>
+<span class="line"><span style="color:#6A737D">	 * the task has MMF_OOM_SKIP because chances that it would release</span></span>
+<span class="line"><span style="color:#6A737D">	 * any memory is quite low.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#B392F0">is_sysrq_oom</span><span style="color:#E1E4E8">(oc) </span><span style="color:#F97583">&#x26;&#x26;</span><span style="color:#B392F0"> tsk_is_oom_victim</span><span style="color:#E1E4E8">(task)) {</span></span>
+<span class="line"><span style="color:#F97583">		if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">test_bit</span><span style="color:#E1E4E8">(MMF_OOM_SKIP, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">task->signal->oom_mm->flags))</span></span>
+<span class="line"><span style="color:#F97583">			goto</span><span style="color:#E1E4E8"> next;</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> abort;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * If task is allocating a lot of memory and has been marked to be</span></span>
+<span class="line"><span style="color:#6A737D">	 * killed first if it triggers an oom, then select it.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">oom_task_origin</span><span style="color:#E1E4E8">(task)) {</span></span>
+<span class="line"><span style="color:#E1E4E8">		points </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> LONG_MAX;</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> select;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	points </span><span style="color:#F97583">=</span><span style="color:#B392F0"> oom_badness</span><span style="color:#E1E4E8">(task, oc->totalpages);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (points </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> LONG_MIN </span><span style="color:#F97583">||</span><span style="color:#E1E4E8"> points </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> oc->chosen_points)</span></span>
+<span class="line"><span style="color:#F97583">		goto</span><span style="color:#E1E4E8"> next;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">select:</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (oc->chosen)</span></span>
+<span class="line"><span style="color:#B392F0">		put_task_struct</span><span style="color:#E1E4E8">(oc->chosen);</span></span>
+<span class="line"><span style="color:#B392F0">	get_task_struct</span><span style="color:#E1E4E8">(task);</span></span>
+<span class="line"><span style="color:#E1E4E8">	oc->chosen </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> task;</span></span>
+<span class="line"><span style="color:#E1E4E8">	oc->chosen_points </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> points;</span></span>
+<span class="line"><span style="color:#E1E4E8">next:</span></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">abort:</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (oc->chosen)</span></span>
+<span class="line"><span style="color:#B392F0">		put_task_struct</span><span style="color:#E1E4E8">(oc->chosen);</span></span>
+<span class="line"><span style="color:#E1E4E8">	oc->chosen </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">void</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8">)</span><span style="color:#F97583">-</span><span style="color:#79B8FF">1</span><span style="color:#F97583">UL</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h4 id="oom_badness">oom_badness()</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#6A737D">/**</span></span>
+<span class="line"><span style="color:#6A737D"> * oom_badness - heuristic function to determine which candidate task to kill</span></span>
+<span class="line"><span style="color:#6A737D"> * </span><span style="color:#F97583">@p</span><span style="color:#6A737D">: task struct of which task we should calculate</span></span>
+<span class="line"><span style="color:#6A737D"> * </span><span style="color:#F97583">@totalpages:</span><span style="color:#6A737D"> total present RAM allowed for page allocation</span></span>
+<span class="line"><span style="color:#6A737D"> *</span></span>
+<span class="line"><span style="color:#6A737D"> * The heuristic for determining which task to kill is made to be as simple and</span></span>
+<span class="line"><span style="color:#6A737D"> * predictable as possible.  The goal is to return the highest value for the</span></span>
+<span class="line"><span style="color:#6A737D"> * task consuming the most memory to avoid subsequent oom failures.</span></span>
+<span class="line"><span style="color:#6A737D"> */</span></span>
+<span class="line"><span style="color:#F97583">long</span><span style="color:#B392F0"> oom_badness</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">struct</span><span style="color:#E1E4E8"> task_struct </span><span style="color:#F97583">*</span><span style="color:#FFAB70">p</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">unsigned</span><span style="color:#F97583"> long</span><span style="color:#FFAB70"> totalpages</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">	long</span><span style="color:#E1E4E8"> points;</span></span>
+<span class="line"><span style="color:#F97583">	long</span><span style="color:#E1E4E8"> adj;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">oom_unkillable_task</span><span style="color:#E1E4E8">(p))</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#E1E4E8"> LONG_MIN;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">	p </span><span style="color:#F97583">=</span><span style="color:#B392F0"> find_lock_task_mm</span><span style="color:#E1E4E8">(p);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">p)</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#E1E4E8"> LONG_MIN;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Do not even consider tasks which are explicitly marked oom</span></span>
+<span class="line"><span style="color:#6A737D">	 * unkillable or have been already oom reaped or the are in</span></span>
+<span class="line"><span style="color:#6A737D">	 * the middle of vfork</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	adj </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">long</span><span style="color:#E1E4E8">)p->signal->oom_score_adj;</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (adj </span><span style="color:#F97583">==</span><span style="color:#E1E4E8"> OOM_SCORE_ADJ_MIN </span><span style="color:#F97583">||</span></span>
+<span class="line"><span style="color:#B392F0">			test_bit</span><span style="color:#E1E4E8">(MMF_OOM_SKIP, </span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">p->mm->flags) </span><span style="color:#F97583">||</span></span>
+<span class="line"><span style="color:#B392F0">			in_vfork</span><span style="color:#E1E4E8">(p)) {</span></span>
+<span class="line"><span style="color:#B392F0">		task_unlock</span><span style="color:#E1E4E8">(p);</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#E1E4E8"> LONG_MIN;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * The baseline for the badness score is the proportion of RAM that each</span></span>
+<span class="line"><span style="color:#6A737D">	 * task's rss, pagetable and swap space use.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	points </span><span style="color:#F97583">=</span><span style="color:#B392F0"> get_mm_rss</span><span style="color:#E1E4E8">(p->mm) </span><span style="color:#F97583">+</span><span style="color:#B392F0"> get_mm_counter</span><span style="color:#E1E4E8">(p->mm, MM_SWAPENTS) </span><span style="color:#F97583">+</span></span>
+<span class="line"><span style="color:#B392F0">		mm_pgtables_bytes</span><span style="color:#E1E4E8">(p->mm) </span><span style="color:#F97583">/</span><span style="color:#E1E4E8"> PAGE_SIZE;</span></span>
+<span class="line"><span style="color:#B392F0">	task_unlock</span><span style="color:#E1E4E8">(p);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/* Normalize to oom_score_adj units */</span></span>
+<span class="line"><span style="color:#E1E4E8">	adj </span><span style="color:#F97583">*=</span><span style="color:#E1E4E8"> totalpages </span><span style="color:#F97583">/</span><span style="color:#79B8FF"> 1000</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	points </span><span style="color:#F97583">+=</span><span style="color:#E1E4E8"> adj;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	return</span><span style="color:#E1E4E8"> points;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<hr>
+<h4 id="oom_kill_process">oom_kill_process()</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#F97583">static</span><span style="color:#F97583"> void</span><span style="color:#B392F0"> oom_kill_process</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">struct</span><span style="color:#E1E4E8"> oom_control </span><span style="color:#F97583">*</span><span style="color:#FFAB70">oc</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">const</span><span style="color:#F97583"> char</span><span style="color:#F97583"> *</span><span style="color:#FFAB70">message</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#F97583">	struct</span><span style="color:#E1E4E8"> task_struct </span><span style="color:#F97583">*</span><span style="color:#E1E4E8">victim </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> oc->chosen;</span></span>
+<span class="line"><span style="color:#F97583">	struct</span><span style="color:#E1E4E8"> mem_cgroup </span><span style="color:#F97583">*</span><span style="color:#E1E4E8">oom_group;</span></span>
+<span class="line"><span style="color:#F97583">	static</span><span style="color:#B392F0"> DEFINE_RATELIMIT_STATE</span><span style="color:#E1E4E8">(oom_rs, DEFAULT_RATELIMIT_INTERVAL,</span></span>
+<span class="line"><span style="color:#E1E4E8">					      DEFAULT_RATELIMIT_BURST);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * If the task is already exiting, don't alarm the sysadmin or kill</span></span>
+<span class="line"><span style="color:#6A737D">	 * its children or threads, just give it access to memory reserves</span></span>
+<span class="line"><span style="color:#6A737D">	 * so it can die quickly</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#B392F0">	task_lock</span><span style="color:#E1E4E8">(victim);</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">task_will_free_mem</span><span style="color:#E1E4E8">(victim)) {</span></span>
+<span class="line"><span style="color:#B392F0">		mark_oom_victim</span><span style="color:#E1E4E8">(victim);</span></span>
+<span class="line"><span style="color:#B392F0">		wake_oom_reaper</span><span style="color:#E1E4E8">(victim);</span></span>
+<span class="line"><span style="color:#B392F0">		task_unlock</span><span style="color:#E1E4E8">(victim);</span></span>
+<span class="line"><span style="color:#B392F0">		put_task_struct</span><span style="color:#E1E4E8">(victim);</span></span>
+<span class="line"><span style="color:#F97583">		return</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"><span style="color:#B392F0">	task_unlock</span><span style="color:#E1E4E8">(victim);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">__ratelimit</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">&#x26;</span><span style="color:#E1E4E8">oom_rs))</span></span>
+<span class="line"><span style="color:#B392F0">		dump_header</span><span style="color:#E1E4E8">(oc, victim);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * Do we need to kill the entire memory cgroup?</span></span>
+<span class="line"><span style="color:#6A737D">	 * Or even one of the ancestor memory cgroups?</span></span>
+<span class="line"><span style="color:#6A737D">	 * Check this out before killing the victim task.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#E1E4E8">	oom_group </span><span style="color:#F97583">=</span><span style="color:#B392F0"> mem_cgroup_get_oom_group</span><span style="color:#E1E4E8">(victim, oc->memcg);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">	__oom_kill_process</span><span style="color:#E1E4E8">(victim, message);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">	/*</span></span>
+<span class="line"><span style="color:#6A737D">	 * If necessary, kill all tasks in the selected memory cgroup.</span></span>
+<span class="line"><span style="color:#6A737D">	 */</span></span>
+<span class="line"><span style="color:#F97583">	if</span><span style="color:#E1E4E8"> (oom_group) {</span></span>
+<span class="line"><span style="color:#B392F0">		mem_cgroup_print_oom_group</span><span style="color:#E1E4E8">(oom_group);</span></span>
+<span class="line"><span style="color:#B392F0">		mem_cgroup_scan_tasks</span><span style="color:#E1E4E8">(oom_group, oom_kill_memcg_member,</span></span>
+<span class="line"><span style="color:#E1E4E8">				      (</span><span style="color:#F97583">void*</span><span style="color:#E1E4E8">)message);</span></span>
+<span class="line"><span style="color:#B392F0">		mem_cgroup_put</span><span style="color:#E1E4E8">(oom_group);</span></span>
+<span class="line"><span style="color:#E1E4E8">	}</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2026 Chung Duc Nguyen Dang. All rights reserved.
+</footer>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const c=document.getElementById("toc"),r=Array.from(document.querySelectorAll(".prose h2, .prose h3"));if(!c||r.length===0)return;r.forEach(t=>{const e=t.textContent.trim(),o=e.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-");t.id=o;const n=document.createElement("a");n.href="#"+o,n.textContent=e,t.tagName==="H3"&&n.classList.add("h3"),c.appendChild(n)});const s=Array.from(document.querySelectorAll(".toc a"));s.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=document.querySelector(t.getAttribute("href"));if(!o)return;const d=o.getBoundingClientRect().top+window.scrollY+-80;window.scrollTo({top:d,behavior:"smooth"})})});let i=null;const l=t=>{i!==t&&(i=t,s.forEach(e=>{e.classList.toggle("active",e.getAttribute("href")==="#"+t)}))},a=new IntersectionObserver(t=>{const e=t.filter(o=>o.isIntersecting).sort((o,n)=>o.boundingClientRect.top-n.boundingClientRect.top);e.length>0&&l(e[0].target.id)},{rootMargin:"-30% 0px -60% 0px",threshold:[0,1]});r.forEach(t=>a.observe(t))});</script> </body> </html>

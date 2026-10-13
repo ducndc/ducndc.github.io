@@ -1,0 +1,122 @@
+<map id="son::Controller::handle_cmdu_1905_autoconfiguration_WSC" name="son::Controller::handle_cmdu_1905_autoconfiguration_WSC">
+<area shape="rect" id="Node000001" title="Parse AP&#45;Autoconfiguration WSC which should include one AP Radio Basic Capabilities TLV and one WSC T..." alt="" coords="5,1341,247,1381"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#aed597803e4cd9046315489d5fefa682b" title="Store a BSS configured on the given radio. will create a copy of bss_info." alt="" coords="313,5,475,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,1341,126,1107,132,924,143,721,163,515,193,324,213,239,236,165,262,103,293,56,300,48,304,52,297,59,267,105,241,167,218,241,199,325,169,515,149,721,137,924,131,1107,130,1341"/>
+<area shape="rect" id="Node000003" href="$classson_1_1agent__monitoring__task.html#a8ec4a3feb1b12b12bc082f423f129858" title=" " alt="" coords="305,309,483,363"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,1341,146,1225,181,1036,230,809,259,691,292,577,332,466,371,375,376,377,337,468,297,578,265,692,235,810,186,1037,152,1226,133,1341"/>
+<area shape="rect" id="Node000004" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="553,769,752,809"/>
+<area shape="poly" id="edge20_Node000001_Node000004" title=" " alt="" coords="129,1340,146,1275,178,1182,200,1130,226,1079,257,1030,293,985,324,954,359,926,434,877,510,839,576,812,578,817,512,844,437,882,362,930,328,958,297,988,261,1033,231,1081,204,1133,183,1183,151,1276,134,1342"/>
+<area shape="rect" id="Node000010" href="$classson_1_1db.html#a15c051a43484a6f7f5cfb3669be90800" title=" " alt="" coords="588,46,717,71"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="125,1341,128,1124,134,956,147,771,167,584,197,411,216,335,238,268,264,212,293,170,316,149,338,137,361,131,384,129,434,129,462,126,492,119,540,99,604,74,606,79,542,104,494,124,463,132,435,135,384,135,362,136,340,142,319,154,297,174,268,215,243,270,221,336,202,412,173,585,152,772,140,957,133,1124,130,1341"/>
+<area shape="rect" id="Node000012" href="$classson_1_1agent__monitoring__task.html#addc9965ecd32ba3e51e2266949982f53" title=" " alt="" coords="299,590,489,645"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="126,1341,136,1238,163,1078,185,987,213,893,248,800,292,712,316,680,344,652,347,656,320,683,297,715,253,802,218,894,190,988,168,1080,142,1239,131,1341"/>
+<area shape="rect" id="Node000019" href="$classson_1_1db.html#aa454ccbc5271798aa7f3a1ac9e5ad4b1" title=" " alt="" coords="579,705,726,745"/>
+<area shape="poly" id="edge49_Node000001_Node000019" title=" " alt="" coords="127,1340,140,1262,169,1146,191,1082,218,1017,252,955,293,898,321,868,354,842,425,798,498,765,565,743,567,748,500,770,427,803,357,846,325,872,297,902,256,958,223,1020,196,1084,174,1148,145,1263,132,1341"/>
+<area shape="rect" id="Node000021" href="$classson_1_1Controller.html#a0b4634133dc3d3b2f411fd5b0ea60854" title="add WSC M2/M8 TLV to the current CMDU" alt="" coords="307,1069,481,1109"/>
+<area shape="poly" id="edge21_Node000001_Node000021" title=" " alt="" coords="134,1340,156,1295,190,1236,237,1174,264,1146,293,1121,304,1113,307,1118,296,1125,267,1150,241,1178,195,1239,161,1298,138,1342"/>
+<area shape="rect" id="Node000058" href="$classson_1_1Controller.html#a5db8351cb35bd0c93471fa1e491a80a7" title=" " alt="" coords="307,999,481,1039"/>
+<area shape="poly" id="edge36_Node000001_Node000058" title=" " alt="" coords="131,1340,150,1285,183,1209,230,1127,260,1089,293,1055,310,1043,313,1047,296,1059,264,1093,234,1130,187,1211,155,1287,136,1342"/>
+<area shape="rect" id="Node000060" href="$namespacebeerocks_1_1bpl.html#ad43870fa71f04d320eab746bd047dfa5" title="Reads flag that specifies if traffic separation is enabled." alt="" coords="309,1134,479,1189"/>
+<area shape="poly" id="edge45_Node000001_Node000060" title=" " alt="" coords="142,1339,204,1272,247,1234,293,1199,303,1193,306,1198,296,1204,250,1238,208,1276,146,1343"/>
+<area shape="rect" id="Node000061" href="$classson_1_1db.html#ac3c6e06e4409ae207b58c05fbf79a8be" title="Clear the list of BSSs configured on a given radio." alt="" coords="310,1213,478,1253"/>
+<area shape="poly" id="edge46_Node000001_Node000061" title=" " alt="" coords="156,1339,219,1301,294,1263,311,1256,313,1260,296,1268,221,1306,159,1344"/>
+<area shape="rect" id="Node000064" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="295,1277,493,1317"/>
+<area shape="poly" id="edge47_Node000001_Node000064" title=" " alt="" coords="210,1339,296,1318,297,1323,211,1344"/>
+<area shape="rect" id="Node000066" href="$classson_1_1db.html#a506502d84a89ead198ccf8d63d279a33" title="Sets Device datamodel board info parameters." alt="" coords="311,1341,477,1381"/>
+<area shape="poly" id="edge48_Node000001_Node000066" title=" " alt="" coords="247,1359,297,1359,297,1364,247,1364"/>
+<area shape="rect" id="Node000067" href="$classson_1_1db.html#ab4ae43c08c0353a6fcb7974c3461e8f8" title="Get the list of BSS configured on a given radio." alt="" coords="315,1405,473,1445"/>
+<area shape="poly" id="edge50_Node000001_Node000067" title=" " alt="" coords="211,1379,302,1401,300,1406,210,1384"/>
+<area shape="rect" id="Node000068" href="$classieee1905__1_1_1CmduMessageRx.html#ad1db8fee42b3e3a1aaf8312a139b72f3" title=" " alt="" coords="552,1663,753,1703"/>
+<area shape="poly" id="edge51_Node000001_Node000068" title=" " alt="" coords="144,1380,206,1449,248,1487,296,1519,324,1531,349,1538,397,1540,443,1545,468,1554,495,1570,512,1590,520,1610,527,1630,543,1649,550,1654,547,1658,540,1653,522,1633,515,1612,508,1592,492,1574,466,1558,442,1550,396,1546,349,1543,322,1537,293,1524,245,1491,202,1452,141,1383"/>
+<area shape="rect" id="Node000070" href="$classieee1905__1_1_1CmduMessage.html#a358caf51a92d3596ae4377707b1f871d" title=" " alt="" coords="302,1728,486,1768"/>
+<area shape="poly" id="edge52_Node000001_Node000070" title=" " alt="" coords="134,1381,149,1445,179,1535,201,1583,228,1631,259,1675,296,1714,302,1718,299,1723,293,1718,255,1679,223,1634,196,1585,174,1537,144,1447,128,1382"/>
+<area shape="rect" id="Node000075" href="$classson_1_1Controller.html#a7cdc4c7849264bf156d5021f361bfb38" title=" " alt="" coords="317,184,471,224"/>
+<area shape="poly" id="edge53_Node000001_Node000075" title=" " alt="" coords="126,1341,142,1149,174,841,197,676,225,521,256,390,274,337,292,295,318,259,350,230,353,234,322,263,297,297,279,339,261,392,230,523,203,677,180,842,147,1150,131,1341"/>
+<area shape="rect" id="Node000174" href="$classson_1_1Controller.html#a8aad8258962e2d932bb7060c862cd4c0" title=" " alt="" coords="317,69,471,109"/>
+<area shape="poly" id="edge56_Node000001_Node000174" title=" " alt="" coords="125,1341,129,1118,137,946,150,755,171,561,200,381,219,301,240,231,265,172,293,126,304,115,308,118,297,130,269,174,245,232,224,302,205,382,176,562,155,755,142,946,134,1119,130,1341"/>
+<area shape="rect" id="Node000177" href="$classson_1_1Controller.html#a35b772d11d01bf46cd9bc2c6783e2b75" title="Handles Tlv of Profile&#45;2 AP Capability (tlvProfile2ApCapability)." alt="" coords="307,1584,481,1624"/>
+<area shape="poly" id="edge58_Node000001_Node000177" title=" " alt="" coords="141,1380,166,1418,201,1467,245,1518,296,1563,317,1576,314,1580,293,1567,241,1522,197,1471,161,1421,137,1383"/>
+<area shape="rect" id="Node000181" href="$classson_1_1Controller.html#a40aea16acfa24f6eb69c34f2fb9921de" title="Extracts ESP value from est_service_info_field and set it to specified with @param_name NBAPI EstServ..." alt="" coords="315,1649,473,1703"/>
+<area shape="poly" id="edge60_Node000001_Node000181" title=" " alt="" coords="137,1381,158,1431,191,1499,238,1571,266,1604,296,1634,305,1640,302,1645,293,1638,262,1608,234,1574,187,1501,153,1433,132,1383"/>
+<area shape="rect" id="Node000184" href="$classson_1_1son__actions.html#ade2c9a529353f043907c19021c0f4bfe" title="Check if the operating classes of radio_basic_caps matches any of the operating classes in bss_info_c..." alt="" coords="304,1792,484,1832"/>
+<area shape="poly" id="edge62_Node000001_Node000184" title=" " alt="" coords="132,1381,144,1456,172,1562,193,1620,221,1677,255,1731,297,1778,301,1782,298,1786,293,1782,251,1734,216,1680,188,1622,167,1564,139,1457,127,1382"/>
+<area shape="rect" id="Node000187" href="$classson_1_1db.html#adf4fde9b4d05f5fe9385ea7f3b1cb07e" title=" " alt="" coords="317,1856,471,1896"/>
+<area shape="poly" id="edge63_Node000001_Node000187" title=" " alt="" coords="131,1381,139,1465,149,1524,164,1589,185,1657,214,1724,250,1787,297,1842,306,1850,303,1854,293,1846,246,1790,209,1726,180,1659,159,1590,144,1525,134,1466,126,1382"/>
+<area shape="rect" id="Node000188" href="$classWSC_1_1m1.html#a7bd44ab8e0b6599d92383ac3e3f7110d" title=" " alt="" coords="334,1921,454,1946"/>
+<area shape="poly" id="edge64_Node000001_Node000188" title=" " alt="" coords="130,1382,134,1476,141,1543,154,1618,175,1695,204,1772,244,1844,269,1876,296,1906,322,1922,319,1926,293,1910,265,1880,240,1847,199,1774,170,1697,149,1619,136,1544,128,1477,124,1382"/>
+<area shape="rect" id="Node000189" href="$classbeerocks_1_1message__com.html#ac2e9fed1a6dcd6b7befad0df2f1ff1f1" title=" " alt="" coords="307,1469,481,1509"/>
+<area shape="poly" id="edge65_Node000001_Node000189" title=" " alt="" coords="159,1379,221,1417,296,1455,313,1462,311,1467,294,1460,219,1421,156,1384"/>
+<area shape="rect" id="Node000191" href="$classwfa__map_1_1tlvApRadioIdentifier.html#a17a36ac18c9131c9baa10d83243fc74d" title=" " alt="" coords="295,1971,493,2011"/>
+<area shape="poly" id="edge67_Node000001_Node000191" title=" " alt="" coords="129,1382,132,1483,138,1555,151,1636,171,1722,201,1807,242,1886,268,1923,297,1957,300,1960,297,1964,293,1960,263,1926,238,1889,196,1809,166,1723,145,1637,133,1556,126,1483,124,1382"/>
+<area shape="rect" id="Node000192" href="$classson_1_1db.html#a0847249f4d8905088d1d5ed34847b9e0" title=" " alt="" coords="313,2035,475,2075"/>
+<area shape="poly" id="edge68_Node000001_Node000192" title=" " alt="" coords="132,1381,151,1510,185,1703,208,1803,235,1894,264,1970,280,1999,297,2021,303,2027,300,2031,293,2024,276,2002,259,1972,230,1896,203,1804,180,1704,145,1511,127,1382"/>
+<area shape="rect" id="Node000193" href="$classson_1_1db.html#a22bd4a79309872655571cf9bdc9f8fb9" title=" " alt="" coords="329,2099,459,2139"/>
+<area shape="poly" id="edge69_Node000001_Node000193" title=" " alt="" coords="132,1381,148,1521,181,1733,204,1843,231,1945,262,2028,279,2061,297,2085,318,2101,315,2105,293,2089,274,2063,257,2031,226,1946,199,1844,176,1734,143,1522,127,1382"/>
+<area shape="rect" id="Node000194" href="$classson_1_1db.html#a47e9c897dd89208289b39e6531ec1ebf" title=" " alt="" coords="315,2163,473,2203"/>
+<area shape="poly" id="edge70_Node000001_Node000194" title=" " alt="" coords="132,1381,146,1531,178,1763,200,1884,227,1995,260,2087,277,2122,297,2149,305,2157,302,2161,293,2152,273,2125,255,2089,222,1996,195,1885,172,1763,141,1532,126,1382"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="410,362,451,456,496,577,506,630,508,674,516,714,526,734,543,756,547,759,543,763,539,759,522,737,511,716,503,675,501,631,491,578,446,458,405,364"/>
+<area shape="rect" id="Node000006" href="$namespacebeerocks_1_1bpl.html#ad9c1a99cbd59bc03c178752f36abb14a" title="Reads VLAN ID for private/home SSIDs used by Traffic Separation." alt="" coords="575,339,730,394"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="484,344,562,353,561,359,483,349"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a989e3f1e4fb67b2b48b9a6d9e7674885" title="Sets the default 802.1Q settings for EasyMesh service prioritization." alt="" coords="571,147,734,187"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="420,307,482,244,540,196,557,188,559,193,543,201,486,248,423,310"/>
+<area shape="rect" id="Node000008" href="$classson_1_1db.html#ad0cebb12b343a983f18792bce385ccbf" title="Get default 802.1Q settings for agent." alt="" coords="584,211,721,251"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="443,306,540,260,570,250,572,255,542,265,445,311"/>
+<area shape="rect" id="Node000009" href="$classwfa__map_1_1tlvProfile2Default802dotQSettings.html#a99109e8e78a40e939afbfa267675aa70" title=" " alt="" coords="541,275,764,315"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="483,319,527,312,528,317,484,324"/>
+<area shape="rect" id="Node000005" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="841,439,981,465"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="745,767,762,755,793,724,820,688,842,650,861,610,888,535,902,477,908,479,893,537,866,612,847,652,824,691,797,728,766,759,747,772"/>
+<area shape="rect" id="Node000011" href="$classson_1_1db.html#afc24441eee5ec6024eabac3ed6e33867" title="add instance of data element &#39;radio&#39;" alt="" coords="834,39,989,79"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="718,56,820,56,820,61,718,61"/>
+<area shape="poly" id="edge12_Node000012_Node000004" title=" " alt="" coords="419,643,472,700,506,730,543,755,555,762,553,766,540,760,502,734,468,704,415,647"/>
+<area shape="poly" id="edge14_Node000012_Node000006" title=" " alt="" coords="405,589,425,548,455,498,493,447,540,403,562,390,564,394,543,407,497,451,460,501,430,550,410,591"/>
+<area shape="rect" id="Node000013" href="$namespacebeerocks_1_1bpl.html#ab9851f88e4722703a7f97ae69cf8c0a0" title="Reads VLAN ID for guest SSIDs used by Traffic Separation." alt="" coords="575,418,730,473"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="418,588,471,535,504,508,540,483,561,472,564,477,543,488,508,512,475,539,422,592"/>
+<area shape="rect" id="Node000014" href="$classwfa__map_1_1tlvProfile2TrafficSeparationPolicy.html#aae2ce348bb420a62b807c6bcb52eeeee" title=" " alt="" coords="563,626,742,681"/>
+<area shape="poly" id="edge15_Node000012_Node000014" title=" " alt="" coords="490,628,550,636,549,642,489,633"/>
+<area shape="rect" id="Node000018" href="$classson_1_1db.html#ac58c355159889bc88275bcf7deba4beb" title="Sets Service Set Identifier (SSID) to VLAN ID (VID) mapping for EasyMesh traffic separation." alt="" coords="572,497,733,537"/>
+<area shape="poly" id="edge17_Node000012_Node000018" title=" " alt="" coords="448,588,540,547,563,539,564,544,542,552,450,592"/>
+<area shape="poly" id="edge18_Node000012_Node000019" title=" " alt="" coords="445,642,542,690,567,699,565,704,540,694,442,647"/>
+<area shape="rect" id="Node000020" href="$classson_1_1db.html#a002ced5436948109edb3ffda1bb86ca4" title="Get traffic separation policy for agent." alt="" coords="567,561,738,601"/>
+<area shape="poly" id="edge19_Node000012_Node000020" title=" " alt="" coords="489,601,553,592,554,598,490,607"/>
+<area shape="rect" id="Node000017" href="$classBaseClass.html#a37dde0700f9595f82dd24aaee7218b41" title=" " alt="" coords="812,827,1011,867"/>
+<area shape="poly" id="edge16_Node000014_Node000017" title=" " alt="" coords="743,679,765,691,803,720,837,752,890,814,886,817,833,756,799,724,763,696,740,683"/>
+<area shape="poly" id="edge22_Node000021_Node000004" title=" " alt="" coords="466,1067,491,1049,512,1019,519,990,524,958,539,921,579,864,620,817,624,821,583,868,544,924,530,959,525,991,517,1021,495,1053,469,1071"/>
+<area shape="poly" id="edge34_Node000021_Node000017" title=" " alt="" coords="476,1107,495,1121,508,1137,514,1153,518,1185,522,1215,529,1228,543,1240,601,1272,628,1280,654,1283,680,1281,707,1274,734,1260,762,1241,782,1222,793,1202,798,1182,800,1161,799,1114,802,1087,809,1058,851,959,890,878,895,881,856,961,815,1060,807,1088,805,1114,805,1161,804,1183,798,1204,786,1225,766,1245,737,1265,709,1278,681,1287,654,1289,627,1286,599,1277,540,1245,525,1232,517,1217,512,1186,509,1154,503,1139,491,1125,473,1112"/>
+<area shape="rect" id="Node000022" href="$classson_1_1Controller.html#a1c5bf6640122c8208c6f6fcb513c3c0a" title="Encrypt the config data using AES and add to the WSC M2/M8 TLV The encrypted data length is the confi..." alt="" coords="553,1127,752,1167"/>
+<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="482,1106,549,1121,548,1126,481,1111"/>
+<area shape="rect" id="Node000032" href="$classson_1_1Controller.html#acbb79c9b3e8d581fb636bc053fb03e80" title="autoconfig global authenticator attribute calculation" alt="" coords="565,1191,740,1231"/>
+<area shape="poly" id="edge24_Node000021_Node000032" title=" " alt="" coords="470,1107,495,1120,510,1135,519,1149,528,1163,543,1177,554,1183,552,1188,540,1181,524,1167,515,1152,506,1138,492,1125,467,1112"/>
+<area shape="rect" id="Node000035" href="$classson_1_1Controller.html#ac601e69162471dd25e94525b9d758b86" title="Calculate keys and update M2/M8 attributes." alt="" coords="565,1063,740,1103"/>
+<area shape="poly" id="edge25_Node000021_Node000035" title=" " alt="" coords="482,1084,551,1083,552,1088,482,1090"/>
+<area shape="rect" id="Node000037" href="$classWSC_1_1m1.html#afdb6758b041657cb6f600c4e06e35e7b" title=" " alt="" coords="839,1070,984,1095"/>
+<area shape="poly" id="edge35_Node000021_Node000037" title=" " alt="" coords="478,1107,495,1121,510,1142,517,1165,517,1208,516,1229,518,1249,526,1267,543,1285,571,1303,598,1316,624,1322,649,1323,675,1320,702,1312,763,1284,789,1268,812,1247,851,1199,880,1149,898,1107,903,1110,884,1152,855,1202,816,1251,792,1272,765,1289,704,1317,676,1325,649,1329,623,1327,596,1321,569,1308,540,1289,522,1270,513,1250,511,1229,512,1208,512,1165,506,1145,491,1125,475,1111"/>
+<area shape="rect" id="Node000046" href="$classWSC_1_1EncryptedSettingsPayload.html#a3d879e799b71c4448e51a94bca6c28ca" title=" " alt="" coords="545,935,761,975"/>
+<area shape="poly" id="edge27_Node000021_Node000046" title=" " alt="" coords="460,1067,492,1049,506,1033,515,1017,523,1001,540,985,549,979,552,983,543,989,528,1004,519,1019,511,1036,495,1053,463,1071"/>
+<area shape="rect" id="Node000047" href="$classWSC_1_1m2.html#a5ecaeb58f123fbb6c4e1fac20be404b1" title=" " alt="" coords="591,1357,715,1382"/>
+<area shape="poly" id="edge28_Node000021_Node000047" title=" " alt="" coords="479,1107,495,1121,514,1149,522,1176,522,1204,519,1231,517,1257,517,1284,525,1309,543,1336,559,1348,578,1357,576,1362,557,1353,539,1339,520,1312,512,1284,511,1257,514,1230,517,1204,516,1177,509,1151,491,1124,475,1111"/>
+<area shape="rect" id="Node000051" href="$classieee1905__1_1_1tlvEndOfMessage.html#a967a933ec6d52cb7abd9817fb456e206" title=" " alt="" coords="553,999,753,1039"/>
+<area shape="poly" id="edge29_Node000021_Node000051" title=" " alt="" coords="467,1067,565,1040,566,1045,469,1072"/>
+<area shape="rect" id="Node000052" href="$namespacebeerocks_1_1bpl.html#a5a5885de72ca88d908af4fbf4f3a09e2" title="Get a string identifying the manufacturer." alt="" coords="589,1407,716,1447"/>
+<area shape="poly" id="edge30_Node000021_Node000052" title=" " alt="" coords="480,1107,495,1121,517,1156,526,1191,525,1226,519,1260,514,1293,513,1326,521,1359,543,1393,559,1405,577,1414,575,1419,556,1410,539,1396,517,1362,508,1327,509,1293,514,1259,519,1225,520,1192,513,1158,491,1124,476,1111"/>
+<area shape="rect" id="Node000053" href="$namespacebeerocks_1_1bpl.html#a3cdcef8ff8cb745161fb88278361730a" title="Get a string identifying the model name." alt="" coords="589,1471,716,1511"/>
+<area shape="poly" id="edge31_Node000021_Node000053" title=" " alt="" coords="480,1108,495,1121,511,1143,522,1165,530,1208,527,1250,519,1292,511,1333,508,1374,517,1415,528,1436,543,1457,559,1470,577,1479,575,1484,556,1474,539,1460,523,1439,512,1417,503,1375,505,1333,514,1291,522,1250,525,1208,516,1167,506,1146,491,1124,477,1112"/>
+<area shape="rect" id="Node000054" href="$namespacebeerocks_1_1bpl.html#a534515ea43f6a81f062ae35a0f23de44" title="Get a string identifying the model number." alt="" coords="589,1535,716,1575"/>
+<area shape="poly" id="edge32_Node000021_Node000054" title=" " alt="" coords="480,1107,495,1121,513,1147,526,1173,532,1199,535,1225,530,1275,519,1324,508,1373,503,1422,506,1446,513,1471,525,1496,543,1521,559,1534,577,1543,575,1548,556,1538,539,1524,521,1499,508,1473,501,1447,498,1422,502,1372,514,1323,525,1274,529,1225,527,1200,521,1175,509,1150,491,1124,477,1111"/>
+<area shape="rect" id="Node000055" href="$namespacebeerocks_1_1bpl.html#a3db8c66209a41eb676ee37943bcfa0bf" title="Get a string identifying the particular device that is unique for the indicated model and manufacture..." alt="" coords="589,1599,716,1639"/>
+<area shape="poly" id="edge33_Node000021_Node000055" title=" " alt="" coords="480,1107,495,1121,516,1152,530,1182,537,1212,539,1241,533,1299,519,1356,504,1413,499,1470,501,1498,509,1527,523,1556,543,1585,559,1598,577,1607,575,1612,556,1603,539,1588,518,1558,504,1529,496,1499,493,1470,499,1412,513,1355,528,1298,534,1241,532,1212,525,1183,511,1154,491,1124,477,1111"/>
+<area shape="poly" id="edge26_Node000035_Node000037" title=" " alt="" coords="740,1080,825,1080,825,1085,740,1085"/>
+<area shape="poly" id="edge37_Node000058_Node000004" title=" " alt="" coords="409,997,491,892,512,857,523,841,540,826,561,813,564,818,543,830,527,845,517,859,496,895,414,1000"/>
+<area shape="poly" id="edge43_Node000058_Node000017" title=" " alt="" coords="410,996,463,941,500,913,540,890,604,867,672,852,738,844,798,841,799,846,738,850,673,858,606,872,542,894,503,917,467,945,414,1000"/>
+<area shape="poly" id="edge38_Node000058_Node000022" title=" " alt="" coords="461,1036,495,1055,510,1070,519,1085,528,1099,543,1113,553,1118,550,1123,540,1117,524,1102,515,1088,506,1074,492,1059,459,1041"/>
+<area shape="poly" id="edge39_Node000058_Node000032" title=" " alt="" coords="469,1037,495,1055,508,1071,515,1087,519,1118,524,1148,531,1162,543,1177,554,1185,551,1190,540,1181,526,1165,519,1150,514,1119,510,1089,503,1074,491,1059,466,1041"/>
+<area shape="poly" id="edge40_Node000058_Node000035" title=" " alt="" coords="476,1036,559,1057,558,1062,475,1041"/>
+<area shape="poly" id="edge44_Node000058_Node000037" title=" " alt="" coords="415,996,469,955,504,935,540,920,603,902,654,894,705,899,765,920,810,948,848,985,878,1023,899,1057,894,1060,873,1027,844,989,807,952,763,925,704,904,654,900,604,908,542,925,506,940,472,960,419,1001"/>
+<area shape="poly" id="edge41_Node000058_Node000046" title=" " alt="" coords="475,996,558,975,559,981,476,1001"/>
+<area shape="poly" id="edge42_Node000058_Node000051" title=" " alt="" coords="482,1016,539,1016,539,1021,482,1021"/>
+<area shape="poly" id="edge55_Node000075_Node000005" title=" " alt="" coords="451,182,492,163,515,146,525,139,540,132,604,113,657,102,682,101,708,106,736,116,765,132,801,162,831,198,855,238,874,280,898,362,910,425,905,426,893,363,869,282,850,240,827,201,798,166,763,137,733,121,707,111,682,107,657,107,605,118,542,137,528,143,518,150,495,168,453,186"/>
+<area shape="poly" id="edge54_Node000075_Node000010" title=" " alt="" coords="461,182,492,163,507,145,514,126,523,107,540,89,574,71,576,76,543,93,527,110,519,128,512,148,495,167,464,186"/>
+<area shape="poly" id="edge57_Node000174_Node000010" title=" " alt="" coords="470,78,574,65,574,71,471,83"/>
+<area shape="poly" id="edge59_Node000177_Node000068" title=" " alt="" coords="458,1622,542,1648,569,1656,567,1661,541,1653,456,1627"/>
+<area shape="poly" id="edge61_Node000181_Node000068" title=" " alt="" coords="473,1675,538,1677,538,1682,473,1681"/>
+<area shape="poly" id="edge66_Node000189_Node000068" title=" " alt="" coords="469,1507,495,1526,508,1542,515,1558,519,1590,524,1620,531,1634,543,1649,548,1653,545,1657,539,1653,526,1637,519,1621,514,1590,510,1560,503,1545,491,1530,466,1512"/>
+</map>

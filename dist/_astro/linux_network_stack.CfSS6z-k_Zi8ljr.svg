@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1060" viewBox="0 0 1200 1060" role="img" aria-labelledby="title desc">
+  <title id="title">Linux Kernel Network Stack Architecture</title>
+  <desc id="desc">Layered diagram showing user space, system call interface, kernel network stack, and network hardware and driver.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#101b2d"/>
+    </linearGradient>
+    <linearGradient id="head" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#173a5e"/>
+      <stop offset="1" stop-color="#14506a"/>
+    </linearGradient>
+    <style>
+      text { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #e7eef8; }
+      .outer { fill: #111c2e; stroke: #4c6481; stroke-width: 2; }
+      .section-title { font-size: 24px; font-weight: 700; letter-spacing: .5px; }
+      .subtitle { font-size: 16px; fill: #b9c9dc; }
+      .layer { fill: #17283e; stroke: #54708f; stroke-width: 1.5; }
+      .layer-text { font-size: 19px; font-weight: 600; }
+      .detail { font-size: 17px; fill: #b9c9dc; }
+      .mono { font-family: "JetBrains Mono", "DejaVu Sans Mono", monospace; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="1060" rx="22" fill="url(#bg)"/>
+  <g opacity=".18" stroke="#5b7da2" stroke-width="1">
+    <path d="M40 40H1160 M40 80H1160 M40 120H1160 M40 160H1160 M40 200H1160 M40 240H1160 M40 280H1160 M40 320H1160 M40 360H1160 M40 400H1160 M40 440H1160 M40 480H1160 M40 520H1160 M40 560H1160 M40 600H1160 M40 640H1160 M40 680H1160 M40 720H1160 M40 760H1160 M40 800H1160 M40 840H1160 M40 880H1160 M40 920H1160 M40 960H1160 M40 1000H1160"/>
+    <path d="M40 40V1020 M80 40V1020 M120 40V1020 M160 40V1020 M200 40V1020 M240 40V1020 M280 40V1020 M320 40V1020 M360 40V1020 M400 40V1020 M440 40V1020 M480 40V1020 M520 40V1020 M560 40V1020 M600 40V1020 M640 40V1020 M680 40V1020 M720 40V1020 M760 40V1020 M800 40V1020 M840 40V1020 M880 40V1020 M920 40V1020 M960 40V1020 M1000 40V1020 M1040 40V1020 M1080 40V1020 M1120 40V1020 M1160 40V1020"/>
+  </g>
+
+  <!-- User space -->
+  <rect class="outer" x="70" y="35" width="1060" height="135" rx="12"/>
+  <path d="M82 35H1118Q1130 35 1130 47V82H70V47Q70 35 82 35Z" fill="url(#head)"/>
+  <text x="600" y="66" text-anchor="middle" class="section-title">User Space</text>
+  <text x="600" y="119" text-anchor="middle" class="layer-text">Application</text>
+  <text x="600" y="146" text-anchor="middle" class="detail mono">(nginx, curl, python…)</text>
+
+  <!-- syscall interface -->
+  <rect class="outer" x="70" y="190" width="1060" height="105" rx="12"/>
+  <path d="M82 190H1118Q1130 190 1130 202V237H70V202Q70 190 82 190Z" fill="url(#head)"/>
+  <text x="600" y="221" text-anchor="middle" class="section-title">System Call Interface</text>
+  <text x="600" y="270" text-anchor="middle" class="detail mono">socket() · bind() · connect() · send() · recv() · …</text>
+
+  <!-- Kernel stack -->
+  <rect class="outer" x="70" y="315" width="1060" height="570" rx="14"/>
+  <path d="M84 315H1116Q1130 315 1130 329V367H70V329Q70 315 84 315Z" fill="url(#head)"/>
+  <text x="600" y="349" text-anchor="middle" class="section-title">Kernel Space — Network Stack</text>
+
+  <g>
+    <rect class="layer" x="115" y="385" width="970" height="54" rx="7"/>
+    <text x="600" y="418" text-anchor="middle" class="layer-text">Socket Layer <tspan class="detail">(BSD Socket / POSIX API)</tspan></text>
+
+    <rect class="layer" x="115" y="448" width="970" height="54" rx="7"/>
+    <text x="600" y="481" text-anchor="middle" class="layer-text">Transport Layer <tspan class="detail mono">TCP  │  UDP  │  SCTP  │  DCCP</tspan></text>
+
+    <rect class="layer" x="115" y="511" width="970" height="54" rx="7"/>
+    <text x="600" y="544" text-anchor="middle" class="layer-text">Network Layer <tspan class="detail mono">IPv4  │  IPv6  │  ICMP</tspan></text>
+
+    <rect class="layer" x="115" y="574" width="970" height="54" rx="7"/>
+    <text x="600" y="607" text-anchor="middle" class="layer-text">Netfilter <tspan class="detail">/</tspan> <tspan class="detail mono">iptables  │  nftables</tspan></text>
+
+    <rect class="layer" x="115" y="637" width="970" height="54" rx="7"/>
+    <text x="600" y="670" text-anchor="middle" class="layer-text">Routing Subsystem <tspan class="detail mono">FIB  │  Neighbour Cache</tspan></text>
+
+    <rect class="layer" x="115" y="700" width="970" height="54" rx="7"/>
+    <text x="600" y="733" text-anchor="middle" class="layer-text">Traffic Control <tspan class="detail mono">qdisc  │  class  │  filter</tspan></text>
+
+    <rect class="layer" x="115" y="763" width="970" height="54" rx="7"/>
+    <text x="600" y="796" text-anchor="middle" class="layer-text">Link Layer <tspan class="detail mono">Ethernet  │  VLAN  │  Bridge</tspan></text>
+
+    <rect class="layer" x="115" y="826" width="970" height="43" rx="7"/>
+    <text x="600" y="854" text-anchor="middle" class="layer-text">Network Device Layer <tspan class="detail mono">(netdev / NAPI)</tspan></text>
+  </g>
+
+  <!-- Hardware -->
+  <rect class="outer" x="70" y="905" width="1060" height="120" rx="12"/>
+  <path d="M82 905H1118Q1130 905 1130 917V952H70V917Q70 905 82 905Z" fill="url(#head)"/>
+  <text x="600" y="937" text-anchor="middle" class="section-title">Hardware / Driver</text>
+  <text x="600" y="979" text-anchor="middle" class="layer-text">NIC Driver <tspan class="detail mono">(e1000, ixgbe, mlx5…)</tspan></text>
+  <text x="600" y="1007" text-anchor="middle" class="detail">Physical Network Interface Card</text>
+
+  <!-- directional flow -->
+  <g fill="none" stroke="#55c2df" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M600 171V184 M592 177L600 185L608 177"/>
+    <path d="M600 296V309 M592 302L600 310L608 302"/>
+    <path d="M600 887V899 M592 893L600 901L608 893"/>
+  </g>
+</svg>

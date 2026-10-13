@@ -1,0 +1,94 @@
+<map id="bwl::dwpal::base_wlan_hal_dwpal::dwpal_send_cmd" name="bwl::dwpal::base_wlan_hal_dwpal::dwpal_send_cmd">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1479,812,1675,852"/>
+<area shape="poly" id="edge9_Node000001_Node000001" title=" " alt="" coords="1620,800,1605,793,1577,791,1552,793,1537,797,1531,803,1534,811,1529,812,1526,802,1534,793,1551,787,1577,785,1606,788,1623,795"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a17781b3a3b1a01f1b65544cd5a7642ec" title=" " alt="" coords="980,5,1149,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1571,798,1560,647,1535,433,1517,325,1493,226,1464,146,1447,115,1429,93,1399,69,1366,50,1330,36,1293,27,1218,18,1150,18,1150,13,1218,13,1294,22,1332,31,1369,45,1402,64,1433,89,1451,112,1468,144,1498,225,1522,324,1541,433,1565,646,1576,798"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#abdcd461a9456b2e20c3325f9437ef10d" title=" " alt="" coords="731,296,890,336"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1568,799,1551,687,1522,540,1503,466,1481,400,1456,347,1429,313,1397,290,1362,271,1326,257,1288,247,1209,237,1129,239,1051,249,978,264,864,298,863,293,977,259,1050,243,1128,233,1209,232,1289,242,1328,252,1365,266,1400,285,1433,309,1460,344,1485,398,1508,465,1527,538,1556,686,1574,798"/>
+<area shape="rect" id="Node000008" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a3bff4f14a47a24262b2caae2f02e1832" title=" " alt="" coords="1221,437,1417,477"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="1568,799,1555,734,1530,651,1511,607,1489,565,1461,526,1429,491,1412,480,1415,475,1432,487,1465,522,1493,562,1516,605,1535,649,1560,732,1573,798"/>
+<area shape="rect" id="Node000009" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#aa181124c107a34c2a17cfd9fbcaea69b" title=" " alt="" coords="1221,501,1417,541"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1565,799,1548,746,1521,680,1481,613,1457,582,1429,555,1411,544,1414,539,1432,551,1461,578,1486,610,1525,677,1553,744,1570,798"/>
+<area shape="rect" id="Node000010" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a704dd52a1b6bb2f7817b67dc16ba567d" title=" " alt="" coords="971,69,1158,109"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1571,799,1558,657,1533,459,1514,359,1490,268,1462,194,1446,167,1429,146,1400,124,1368,106,1334,94,1298,85,1225,77,1158,79,1158,74,1225,72,1299,80,1335,89,1370,101,1403,119,1433,142,1450,164,1467,192,1495,267,1519,358,1538,458,1564,656,1576,798"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1dwpal_1_1mon__wlan__hal__dwpal.html#aadd59e03f131b8f055899ed1c7b2fab3" title="Generates connected events for already connected clients." alt="" coords="1229,566,1409,621"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1557,800,1536,762,1507,718,1471,674,1429,635,1408,623,1411,618,1432,631,1475,670,1511,715,1540,760,1562,798"/>
+<area shape="rect" id="Node000012" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a9ae45fc466b522e77c13bb0703906d67" title=" " alt="" coords="1224,645,1415,685"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1548,803,1497,750,1464,723,1429,700,1404,688,1406,683,1432,695,1468,719,1500,746,1552,800"/>
+<area shape="rect" id="Node000013" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#adda39a398cc7b3cf5efff232b0321c02" title=" " alt="" coords="1245,710,1393,765"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1508,810,1393,767,1394,762,1510,805"/>
+<area shape="rect" id="Node000014" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a5f4d275933dd405d7e7530c760333e97" title=" " alt="" coords="1233,840,1406,880"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="1465,847,1406,853,1406,848,1465,841"/>
+<area shape="rect" id="Node000015" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a963ee9c8c2864035d84567c8d253c111" title=" " alt="" coords="969,840,1160,880"/>
+<area shape="poly" id="edge38_Node000001_Node000015" title=" " alt="" coords="1465,826,1341,824,1208,831,1141,843,1140,837,1208,825,1341,818,1465,821"/>
+<area shape="rect" id="Node000017" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#ac0c04bd714db4d41f3f297e4bf74c1be" title=" " alt="" coords="453,868,652,908"/>
+<area shape="poly" id="edge37_Node000001_Node000017" title=" " alt="" coords="1528,860,1482,880,1431,895,1325,912,1215,922,1106,927,999,927,804,918,652,904,653,898,804,913,999,922,1106,922,1215,917,1324,906,1430,889,1480,875,1526,855"/>
+<area shape="rect" id="Node000020" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#ad5960b0bbe485f9174a8777053189c17" title=" " alt="" coords="1235,955,1403,995"/>
+<area shape="poly" id="edge22_Node000001_Node000020" title=" " alt="" coords="1543,863,1492,901,1432,938,1389,957,1387,952,1429,934,1489,897,1540,859"/>
+<area shape="rect" id="Node000021" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a6a06408a17bc80b2700fda6ca0bb8b54" title=" " alt="" coords="1242,1019,1397,1059"/>
+<area shape="poly" id="edge23_Node000001_Node000021" title=" " alt="" coords="1559,865,1508,938,1473,976,1432,1009,1398,1025,1396,1021,1429,1004,1469,972,1504,934,1555,862"/>
+<area shape="rect" id="Node000022" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a0c1293afb975ee5283a8cf6c6608a7e0" title=" " alt="" coords="1238,323,1401,363"/>
+<area shape="poly" id="edge24_Node000001_Node000022" title=" " alt="" coords="1572,799,1564,716,1542,605,1524,545,1499,487,1468,432,1429,383,1400,363,1403,359,1432,379,1472,429,1504,484,1529,543,1547,603,1569,715,1577,798"/>
+<area shape="rect" id="Node000024" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a1a862acf2087e5ea245954c9c1e271c2" title=" " alt="" coords="739,205,883,245"/>
+<area shape="poly" id="edge39_Node000001_Node000024" title=" " alt="" coords="1569,799,1554,677,1526,512,1507,430,1484,355,1458,295,1444,273,1429,257,1412,245,1389,235,1331,221,1260,212,1181,208,1019,212,883,221,883,216,1018,206,1181,203,1261,207,1332,215,1391,230,1414,240,1432,253,1448,270,1463,293,1489,353,1512,428,1531,511,1559,676,1575,798"/>
+<area shape="rect" id="Node000028" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#ab57973bcbb5e36baf9e1bb527bc97a2f" title=" " alt="" coords="1238,1083,1401,1123"/>
+<area shape="poly" id="edge36_Node000001_Node000028" title=" " alt="" coords="1567,866,1548,912,1519,968,1481,1024,1458,1050,1432,1073,1402,1089,1400,1085,1429,1068,1454,1046,1477,1021,1515,965,1543,910,1562,864"/>
+<area shape="rect" id="Node000029" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a8e517d7b351508d54c8223972bd986e0" title=" " alt="" coords="1244,1147,1395,1187"/>
+<area shape="poly" id="edge40_Node000001_Node000029" title=" " alt="" coords="1571,866,1556,924,1529,997,1511,1035,1489,1072,1463,1107,1432,1137,1415,1148,1396,1157,1394,1152,1412,1144,1429,1133,1459,1103,1484,1069,1506,1033,1524,995,1551,923,1566,865"/>
+<area shape="rect" id="Node000030" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a7848beede2401ff43a927e23233d69ae" title=" " alt="" coords="1242,1211,1397,1251"/>
+<area shape="poly" id="edge41_Node000001_Node000030" title=" " alt="" coords="1575,866,1563,936,1538,1026,1519,1073,1496,1119,1467,1163,1432,1201,1416,1212,1398,1221,1396,1216,1414,1208,1429,1197,1463,1159,1491,1117,1515,1071,1533,1024,1557,934,1569,865"/>
+<area shape="rect" id="Node000031" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a80b2caebdc576bf9b9acaf5245747edb" title=" " alt="" coords="1224,1275,1415,1315"/>
+<area shape="poly" id="edge42_Node000001_Node000031" title=" " alt="" coords="1577,866,1569,946,1547,1053,1528,1111,1503,1166,1472,1219,1432,1265,1416,1277,1413,1272,1429,1261,1468,1216,1499,1164,1523,1109,1541,1052,1563,946,1571,865"/>
+<area shape="rect" id="Node000032" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a890d2bdc00e9af1c45f2a392fb47ea27" title=" " alt="" coords="981,133,1148,173"/>
+<area shape="poly" id="edge43_Node000001_Node000032" title=" " alt="" coords="1570,799,1557,665,1530,482,1511,389,1488,305,1461,238,1445,213,1429,194,1399,172,1365,156,1329,144,1291,138,1216,134,1148,140,1148,135,1216,129,1292,132,1330,139,1367,151,1401,167,1432,190,1450,209,1465,236,1493,304,1516,388,1535,481,1562,664,1575,798"/>
+<area shape="rect" id="Node000034" href="$classbwl_1_1dwpal_1_1mon__wlan__hal__dwpal.html#a12b4a747260c2f5b43d6ffe9a34fa518" title=" " alt="" coords="1238,1339,1401,1394"/>
+<area shape="poly" id="edge47_Node000001_Node000034" title=" " alt="" coords="1578,866,1572,956,1565,1015,1552,1079,1534,1146,1509,1211,1475,1273,1433,1329,1402,1350,1399,1346,1429,1325,1471,1270,1504,1209,1529,1144,1547,1078,1559,1014,1567,956,1573,866"/>
+<area shape="rect" id="Node000035" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a94f845cfb30a5905f2cc6b63bcda30b3" title=" " alt="" coords="1229,1419,1409,1459"/>
+<area shape="poly" id="edge48_Node000001_Node000035" title=" " alt="" coords="1574,866,1557,986,1527,1148,1508,1230,1486,1305,1461,1366,1433,1409,1411,1424,1408,1420,1429,1405,1456,1364,1481,1303,1503,1229,1522,1147,1552,985,1569,865"/>
+<area shape="rect" id="Node000036" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#ac9b4359d54ff18e52c87341cd003d6c6" title="Update the interface connection status map." alt="" coords="980,627,1149,682"/>
+<area shape="poly" id="edge49_Node000001_Node000036" title=" " alt="" coords="1573,798,1567,718,1559,668,1546,615,1528,561,1503,511,1470,465,1429,427,1372,395,1345,387,1318,384,1292,386,1265,394,1238,408,1210,427,1191,447,1182,467,1180,489,1182,511,1183,559,1177,585,1162,610,1140,629,1136,625,1158,606,1172,583,1178,559,1176,512,1175,488,1177,466,1187,444,1206,423,1235,403,1264,389,1291,381,1318,379,1346,382,1374,390,1432,423,1474,461,1508,508,1533,559,1551,613,1564,667,1572,718,1578,798"/>
+<area shape="rect" id="Node000037" href="$classbwl_1_1dwpal_1_1mon__wlan__hal__dwpal.html#acb596586ba970fae92e3d5f4f808c100" title=" " alt="" coords="1217,1483,1422,1523"/>
+<area shape="poly" id="edge51_Node000001_Node000037" title=" " alt="" coords="1575,866,1560,998,1531,1180,1512,1272,1489,1356,1463,1425,1448,1452,1433,1473,1418,1484,1415,1480,1429,1469,1444,1449,1458,1423,1484,1354,1507,1271,1526,1179,1554,997,1570,865"/>
+<area shape="rect" id="Node000038" href="$classbwl_1_1dwpal_1_1mon__wlan__hal__dwpal.html#a1db4068d99ed4a785dd81a2fe88136e5" title=" " alt="" coords="1208,1547,1431,1587"/>
+<area shape="poly" id="edge52_Node000001_Node000038" title=" " alt="" coords="1576,866,1562,1010,1535,1210,1516,1313,1493,1406,1465,1483,1450,1513,1433,1536,1418,1549,1415,1544,1429,1533,1445,1511,1460,1481,1488,1405,1511,1312,1530,1210,1557,1009,1570,866"/>
+<area shape="rect" id="Node000039" href="$classbwl_1_1dwpal_1_1mon__wlan__hal__dwpal.html#a0b1712012f1dcd79769c800756f1ab71" title=" " alt="" coords="1220,1611,1419,1651"/>
+<area shape="poly" id="edge53_Node000001_Node000039" title=" " alt="" coords="1576,866,1565,1021,1539,1241,1521,1354,1497,1457,1468,1542,1451,1575,1433,1600,1418,1613,1415,1609,1429,1597,1446,1572,1463,1540,1492,1456,1515,1353,1534,1240,1559,1021,1571,866"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#ab6afc9d3478bb21684cb51063fcfbdd1" title=" " alt="" coords="481,101,625,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="967,43,701,89,625,106,624,101,699,84,966,37"/>
+<area shape="rect" id="Node000004" href="$classdevice_1_1serial_1_1SerialDevice.html#a27e698b9464330b6878cfcf4946561bc" title=" " alt="" coords="219,133,397,173"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="467,135,397,144,396,139,466,130"/>
+<area shape="rect" id="Node000005" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a90819258a767d0bbc4132ae895b3d083" title=" " alt="" coords="211,69,405,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="466,113,405,105,406,99,467,107"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="752,292,698,260,626,199,571,143,574,140,629,195,702,255,755,287"/>
+<area shape="rect" id="Node000007" href="$classdevice_1_1serial_1_1SerialDevice.html#a86412c3938993f5fa486643d11ebcf87" title=" " alt="" coords="464,296,641,336"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="717,319,642,319,642,313,717,313"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="958,99,625,120,625,114,957,93"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="1218,863,1160,863,1160,857,1218,857"/>
+<area shape="rect" id="Node000016" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a67b61efde16180db4be0abaffd73db93" title=" " alt="" coords="711,840,910,880"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="955,863,910,863,910,857,955,857"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="698,875,653,880,652,875,697,870"/>
+<area shape="rect" id="Node000018" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a6079a3a0da436092502a1270c3aecb9a" title=" " alt="" coords="230,868,386,908"/>
+<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="439,891,386,891,386,885,439,885"/>
+<area shape="rect" id="Node000019" href="$classbwl_1_1dwpal_1_1base__wlan__hal__dwpal.html#a69e1b7902b73a397de3800fdbbacd85a" title=" " alt="" coords="5,861,163,915"/>
+<area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="216,891,163,891,163,885,216,885"/>
+<area shape="poly" id="edge25_Node000022_Node000006" title=" " alt="" coords="1225,367,1167,377,1103,383,1035,384,969,377,907,360,853,339,855,334,909,355,970,372,1036,379,1102,378,1167,372,1224,362"/>
+<area shape="rect" id="Node000023" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#aa53a6860a61e1124a50d8b73f382c7cb" title=" " alt="" coords="979,323,1151,363"/>
+<area shape="poly" id="edge26_Node000022_Node000023" title=" " alt="" coords="1224,345,1151,345,1151,340,1224,340"/>
+<area shape="rect" id="Node000025" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#ae8e1478642ff8f95fd5ea5d1a750ab8b" title=" " alt="" coords="700,468,921,508"/>
+<area shape="poly" id="edge30_Node000022_Node000025" title=" " alt="" coords="1236,369,883,470,881,465,1235,364"/>
+<area shape="rect" id="Node000026" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a9559daffb65a0ca5f880818b04ebf23f" title=" " alt="" coords="700,569,921,609"/>
+<area shape="poly" id="edge31_Node000022_Node000026" title=" " alt="" coords="1228,372,1210,387,1195,410,1189,432,1190,478,1191,501,1189,523,1180,545,1162,566,1144,576,1121,584,1061,594,991,598,921,597,921,592,991,592,1060,588,1120,579,1142,571,1158,562,1176,542,1184,522,1186,501,1185,478,1184,431,1190,407,1206,384,1225,368"/>
+<area shape="rect" id="Node000027" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#adc5eb880f5d14ed0b25f32e1207595f6" title=" " alt="" coords="976,512,1153,552"/>
+<area shape="poly" id="edge32_Node000022_Node000027" title=" " alt="" coords="1227,371,1210,383,1193,404,1185,425,1178,447,1162,471,1135,495,1106,514,1103,510,1132,491,1158,468,1173,445,1180,423,1188,401,1206,379,1224,367"/>
+<area shape="poly" id="edge27_Node000023_Node000006" title=" " alt="" coords="965,335,890,327,890,322,966,330"/>
+<area shape="poly" id="edge28_Node000023_Node000023" title=" " alt="" coords="1108,311,1093,304,1065,301,1040,303,1025,308,1020,314,1023,321,1018,323,1015,313,1022,304,1039,298,1065,296,1094,299,1110,306"/>
+<area shape="poly" id="edge29_Node000023_Node000024" title=" " alt="" coords="1007,319,854,248,856,243,1009,314"/>
+<area shape="poly" id="edge33_Node000027_Node000025" title=" " alt="" coords="962,517,921,510,922,505,963,512"/>
+<area shape="poly" id="edge34_Node000027_Node000026" title=" " alt="" coords="963,558,901,572,899,567,962,552"/>
+<area shape="poly" id="edge35_Node000027_Node000027" title=" " alt="" coords="1108,500,1093,493,1065,491,1040,493,1025,497,1020,503,1023,511,1018,512,1015,502,1022,493,1039,487,1065,485,1094,488,1110,495"/>
+<area shape="poly" id="edge44_Node000032_Node000024" title=" " alt="" coords="981,180,883,208,881,203,980,175"/>
+<area shape="rect" id="Node000033" href="$classbwl_1_1dwpal_1_1sta__wlan__hal__dwpal.html#a39505cc030d795b3587bbd1f93167ba4" title=" " alt="" coords="727,126,894,181"/>
+<area shape="poly" id="edge45_Node000032_Node000033" title=" " alt="" coords="967,156,894,156,894,151,967,151"/>
+<area shape="poly" id="edge46_Node000033_Node000003" title=" " alt="" coords="713,144,625,133,625,128,714,139"/>
+<area shape="poly" id="edge50_Node000036_Node000026" title=" " alt="" coords="966,632,888,612,890,607,967,627"/>
+</map>

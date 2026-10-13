@@ -1,0 +1,65 @@
+<map id="framework/platform/wbapi/include/ambiorix_event.h" name="framework/platform/wbapi/include/ambiorix_event.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="679,5,837,60"/>
+<area shape="rect" id="Node000002" href="$ambiorix__connection_8h.html" title=" " alt="" coords="679,108,837,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="761,74,761,108,755,108,755,74"/>
+<area shape="rect" id="Node000003" href="$nl80211__client__whm_8h.html" title=" " alt="" coords="166,218,353,258"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="666,158,353,221,352,215,665,153"/>
+<area shape="rect" id="Node000006" href="$ambiorix__connection_8cpp.html" title=" " alt="" coords="1059,218,1267,258"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="851,157,1088,215,1087,221,850,162"/>
+<area shape="rect" id="Node000007" href="$ambiorix__client_8h.html" title=" " alt="" coords="876,211,1035,265"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="822,166,905,208,903,213,820,171"/>
+<area shape="rect" id="Node000030" href="$ambiorix__connection__manager_8h.html" title=" " alt="" coords="476,211,635,265"/>
+<area shape="poly" id="edge29_Node000002_Node000030" title=" " alt="" coords="694,171,609,213,607,208,692,166"/>
+<area shape="rect" id="Node000004" href="$nl80211__client__factory__whm_8cpp.html" title=" " alt="" coords="5,313,159,368"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="215,267,130,316,127,311,213,263"/>
+<area shape="rect" id="Node000005" href="$nl80211__client__whm_8cpp.html" title=" " alt="" coords="183,313,336,368"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="262,272,262,313,257,313,257,272"/>
+<area shape="rect" id="Node000008" href="$base__wlan__hal__whm_8h.html" title=" " alt="" coords="768,321,959,361"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="924,277,883,322,879,318,920,274"/>
+<area shape="rect" id="Node000016" href="$wifi__manager_8h.html" title=" " alt="" coords="983,321,1114,361"/>
+<area shape="poly" id="edge15_Node000007_Node000016" title=" " alt="" coords="991,274,1033,318,1029,322,987,277"/>
+<area shape="rect" id="Node000018" href="$bpl__cfg__backend__dm_8cpp.html" title=" " alt="" coords="1139,313,1273,368"/>
+<area shape="poly" id="edge17_Node000007_Node000018" title=" " alt="" coords="1034,268,1142,311,1140,316,1032,273"/>
+<area shape="rect" id="Node000019" href="$bpl__cfg__service__helper_8h.html" title=" " alt="" coords="1480,313,1615,368"/>
+<area shape="poly" id="edge18_Node000007_Node000019" title=" " alt="" coords="1049,263,1171,286,1290,305,1480,329,1479,335,1289,310,1170,291,1048,268"/>
+<area shape="rect" id="Node000026" href="$ambiorix__client_8cpp.html" title=" " alt="" coords="567,321,743,361"/>
+<area shape="poly" id="edge25_Node000007_Node000026" title=" " alt="" coords="865,272,713,323,711,318,863,267"/>
+<area shape="rect" id="Node000027" href="$airties__utils_8h.html" title=" " alt="" coords="2137,321,2297,361"/>
+<area shape="poly" id="edge26_Node000007_Node000027" title=" " alt="" coords="1049,262,1249,280,1560,301,2137,333,2136,338,1560,306,1249,286,1048,268"/>
+<area shape="rect" id="Node000009" href="$ap__wlan__hal__whm_8h.html" title=" " alt="" coords="138,423,314,463"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="778,366,756,371,635,387,541,394,446,401,326,419,293,426,292,421,326,413,446,396,540,389,635,382,755,365,777,361"/>
+<area shape="rect" id="Node000011" href="$base__wlan__hal__whm_8cpp.html" title=" " alt="" coords="339,423,543,463"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="773,367,756,371,521,426,520,421,755,365,772,361"/>
+<area shape="rect" id="Node000012" href="$mon__wlan__hal__whm_8h.html" title=" " alt="" coords="567,423,754,463"/>
+<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="814,369,700,426,697,421,812,364"/>
+<area shape="rect" id="Node000014" href="$sta__wlan__hal__whm_8h.html" title=" " alt="" coords="779,423,959,463"/>
+<area shape="poly" id="edge13_Node000008_Node000014" title=" " alt="" coords="868,374,870,423,865,423,862,375"/>
+<area shape="rect" id="Node000010" href="$ap__wlan__hal__whm_8cpp.html" title=" " alt="" coords="131,519,321,559"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="229,477,229,519,223,519,223,477"/>
+<area shape="rect" id="Node000013" href="$mon__wlan__hal__whm_8cpp.html" title=" " alt="" coords="552,519,753,559"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="661,477,657,519,652,518,655,477"/>
+<area shape="rect" id="Node000015" href="$sta__wlan__hal__whm_8cpp.html" title=" " alt="" coords="778,519,973,559"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="874,477,877,518,871,519,868,477"/>
+<area shape="rect" id="Node000017" href="$wifi__manager_8cpp.html" title=" " alt="" coords="983,423,1114,463"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="1051,375,1051,423,1046,423,1046,375"/>
+<area shape="rect" id="Node000020" href="$dm_2bpl__cfg_8cpp.html" title=" " alt="" coords="1139,423,1297,463"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="1468,369,1281,426,1279,421,1466,364"/>
+<area shape="rect" id="Node000021" href="$bpl__cfg__agent_8cpp.html" title=" " alt="" coords="1321,416,1456,471"/>
+<area shape="poly" id="edge20_Node000019_Node000021" title=" " alt="" coords="1496,377,1432,418,1429,414,1493,373"/>
+<area shape="rect" id="Node000022" href="$bpl__cfg__controller_8cpp.html" title=" " alt="" coords="1480,416,1615,471"/>
+<area shape="poly" id="edge21_Node000019_Node000022" title=" " alt="" coords="1550,382,1550,416,1545,416,1545,382"/>
+<area shape="rect" id="Node000023" href="$bpl__cfg__device__info_8cpp.html" title=" " alt="" coords="1639,416,1773,471"/>
+<area shape="poly" id="edge22_Node000019_Node000023" title=" " alt="" coords="1601,373,1666,414,1663,418,1598,377"/>
+<area shape="rect" id="Node000024" href="$bpl__cfg__process__manager_8cpp.html" title=" " alt="" coords="1797,416,1953,471"/>
+<area shape="poly" id="edge23_Node000019_Node000024" title=" " alt="" coords="1628,364,1798,416,1796,421,1627,369"/>
+<area shape="rect" id="Node000025" href="$dm_2bpl__cfg__wifi_8cpp.html" title=" " alt="" coords="1977,416,2112,471"/>
+<area shape="poly" id="edge24_Node000019_Node000025" title=" " alt="" coords="1629,350,1785,376,1965,413,1978,417,1977,422,1964,419,1784,381,1628,356"/>
+<area shape="rect" id="Node000028" href="$airties__utils_8cpp.html" title=" " alt="" coords="2137,423,2297,463"/>
+<area shape="poly" id="edge27_Node000027_Node000028" title=" " alt="" coords="2219,375,2219,423,2214,423,2214,375"/>
+<area shape="rect" id="Node000029" href="$common__utility_8cpp.html" title=" " alt="" coords="2321,423,2496,463"/>
+<area shape="poly" id="edge28_Node000027_Node000029" title=" " alt="" coords="2266,365,2374,421,2371,426,2263,369"/>
+<area shape="poly" id="edge30_Node000030_Node000005" title=" " alt="" coords="466,272,337,316,336,311,464,267"/>
+<area shape="poly" id="edge31_Node000030_Node000026" title=" " alt="" coords="593,273,638,318,634,322,589,277"/>
+<area shape="rect" id="Node000031" href="$ambiorix__connection__manager_8cpp.html" title=" " alt="" coords="360,313,543,368"/>
+<area shape="poly" id="edge32_Node000030_Node000031" title=" " alt="" coords="520,277,480,315,477,311,516,273"/>
+</map>

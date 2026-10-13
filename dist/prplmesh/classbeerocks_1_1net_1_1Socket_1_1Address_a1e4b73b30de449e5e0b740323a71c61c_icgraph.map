@@ -1,0 +1,25 @@
+<map id="beerocks::net::Socket::Address::sockaddr" name="beerocks::net::Socket::Address::sockaddr">
+<area shape="rect" id="Node000001" title="Returns address of sockaddr structure." alt="" coords="512,293,663,333"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1ServerSocketAbstractImpl.html#af3923be521bb243456584cdfd84b4964" title="Accepts an incoming connection request." alt="" coords="262,29,450,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="575,281,560,236,537,183,505,129,485,105,462,83,444,72,447,67,466,79,489,101,509,126,542,181,565,234,580,279"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1ServerSocketAbstractImpl.html#a3caa0989cb5b4acb69935d0ae7b1e355" title="Binds address to the socket." alt="" coords="262,117,450,157"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="565,283,522,226,494,196,463,172,440,160,443,155,465,167,498,193,526,222,569,280"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1ClientSocketAbstractImpl.html#ad0090e85f7df32cc7bf8d36bfbef3c76" title="Binds address to the socket." alt="" coords="264,205,448,245"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="533,290,463,260,429,248,430,243,465,255,535,285"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1ClientSocketAbstractImpl.html#a4967ac457553c28acbdce233aece9a1b" title="Connects to a server socket." alt="" coords="264,293,448,333"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="498,316,448,316,448,311,498,311"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1net_1_1SocketConnectionImpl.html#a2ffc67b8d3e731b4ba7d6b3808045df5" title="Receives data through the socket connection." alt="" coords="248,357,464,397"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="502,340,430,360,428,355,501,334"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1net_1_1SocketConnectionImpl.html#aa4a10d02c031d74ef51e9ec80904e2be" title="Sends data through the socket connection." alt="" coords="248,421,464,461"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="557,345,515,380,465,412,438,424,436,419,463,407,512,375,554,341"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1net_1_1Socket_1_1Address.html#a16aea59ea71af985e1df19b519002fdc" title="Returns address of sockaddr structure." alt="" coords="281,485,431,525"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="572,347,529,412,500,446,465,476,433,492,431,487,463,471,496,443,525,409,567,344"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="395,18,381,11,356,8,334,10,321,15,316,21,318,28,313,30,311,20,317,10,333,5,356,3,383,6,397,13"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="395,106,381,99,356,96,334,98,321,103,316,109,318,116,313,118,311,108,317,98,333,93,356,91,383,94,397,101"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="395,194,381,187,356,184,334,186,321,191,316,197,318,204,313,206,311,196,317,186,333,181,356,179,383,182,397,189"/>
+<area shape="poly" id="edge9_Node000005_Node000005" title=" " alt="" coords="395,282,381,275,356,272,334,274,321,279,316,285,318,292,313,294,311,284,317,274,333,269,356,267,383,270,397,277"/>
+<area shape="rect" id="Node000006" href="$classdevice_1_1serial_1_1SerialDevice.html#a27e698b9464330b6878cfcf4946561bc" title=" " alt="" coords="14,261,191,301"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="250,303,191,295,192,290,251,297"/>
+<area shape="rect" id="Node000007" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a90819258a767d0bbc4132ae895b3d083" title=" " alt="" coords="5,325,200,365"/>
+<area shape="poly" id="edge10_Node000005_Node000007" title=" " alt="" coords="251,329,200,336,200,330,250,324"/>
+</map>

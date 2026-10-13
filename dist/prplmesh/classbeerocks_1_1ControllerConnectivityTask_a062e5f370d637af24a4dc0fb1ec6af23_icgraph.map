@@ -1,0 +1,7 @@
+<map id="beerocks::ControllerConnectivityTask::send_hle_to_controller" name="beerocks::ControllerConnectivityTask::send_hle_to_controller">
+<area shape="rect" id="Node000001" title="Sends Higher Layer Data CMDU to controller." alt="" coords="525,5,737,45"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ControllerConnectivityTask.html#af0bc2559ff3a95cf0a902f1d9881880a" title="Checks heartbeat status to send or not heartbeat messages." alt="" coords="265,5,477,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="512,28,478,28,478,23,512,23"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ControllerConnectivityTask.html#ad1b38800df222224ca6fd38cca1a0fc2" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="5,5,217,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="252,28,218,28,218,23,252,23"/>
+</map>

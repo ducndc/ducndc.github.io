@@ -1,0 +1,11 @@
+<map id="el::base::utils::OS::getBashOutput" name="el::base::utils::OS::getBashOutput">
+<area shape="rect" id="Node000001" title="Runs command on terminal and returns the output." alt="" coords="407,69,533,109"/>
+<area shape="rect" id="Node000002" href="$classel_1_1base_1_1utils_1_1OS.html#a34bf91e851eed1d4264cd594bb621b78" title="Gets environment variable. This is cross&#45;platform and CRT safe (for VC++)" alt="" coords="192,69,359,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="393,92,359,92,359,87,393,87"/>
+<area shape="rect" id="Node000003" href="$classel_1_1base_1_1utils_1_1OS.html#a18f3550076801780816d659339ec1eef" title="Gets current host name or computer name." alt="" coords="11,5,138,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="198,68,137,48,139,43,200,63"/>
+<area shape="rect" id="Node000004" href="$classel_1_1base_1_1utils_1_1OS.html#a85801f331f58c0cd186c8f6a05dfb7dd" title="Gets current username." alt="" coords="11,69,138,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="178,92,138,92,138,87,178,87"/>
+<area shape="rect" id="Node000005" href="$classel_1_1base_1_1utils_1_1OS.html#accd095c4a86d2c2c4aebe57122fdca16" title="Whether or not terminal supports colors." alt="" coords="5,133,144,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="200,116,139,136,137,131,198,111"/>
+</map>

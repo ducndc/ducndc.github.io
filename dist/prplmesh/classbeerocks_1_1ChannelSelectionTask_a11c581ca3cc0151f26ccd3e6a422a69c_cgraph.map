@@ -1,0 +1,116 @@
+<map id="beerocks::ChannelSelectionTask::handle_vs_dfs_cac_completed_notification" name="beerocks::ChannelSelectionTask::handle_vs_dfs_cac_completed_notification">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,671,191,725"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1beerocks__header.html#a1bd46582d8b9cf054a8be6157afa460a" title=" " alt="" coords="294,119,430,159"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,670,118,563,147,415,166,340,187,271,211,215,237,176,257,160,280,150,282,154,260,165,241,180,216,218,192,273,171,341,153,416,123,564,106,671"/>
+<area shape="rect" id="Node000003" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="1118,5,1258,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,669,163,586,198,538,237,492,342,390,438,311,529,250,620,202,717,162,823,125,1085,41,1115,32,1117,37,1086,46,825,130,719,167,623,207,532,255,441,316,345,394,241,496,202,541,167,589,116,672"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelSelectionTask.html#ab0159d596299f9d2a4445fc2e6bc264f" title=" " alt="" coords="533,678,779,718"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,695,520,695,520,701,191,701"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="851,569,1013,595"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="190,683,238,677,509,648,627,635,778,613,862,595,863,600,779,618,628,641,509,654,239,682,191,688"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1ChannelSelectionTask.html#a2c837bc47b25b5ba03fd984a877120d0" title=" " alt="" coords="269,821,455,876"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="132,723,182,762,240,800,268,813,266,818,237,804,179,766,129,728"/>
+<area shape="rect" id="Node000012" href="$classieee1905__1_1_1CmduMessage.html#a358caf51a92d3596ae4377707b1f871d" title=" " alt="" coords="840,918,1024,958"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="192,719,457,790,779,886,828,903,852,911,850,916,826,909,778,891,455,795,190,724"/>
+<area shape="rect" id="Node000018" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="297,900,427,925"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="114,724,133,762,161,806,197,850,240,886,261,897,284,904,283,909,259,902,237,891,193,854,156,809,128,764,109,727"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1ChannelSelectionTask.html#ad6aaa1324ee633b1100c2912b63bc818" title=" " alt="" coords="239,506,485,546"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="140,668,317,552,320,556,143,673"/>
+<area shape="rect" id="Node000046" href="$classbeerocks_1_1TaskPool.html#a883953a528d54eeb8c351bf214db89f9" title="Send an &#39;event&#39; defined on a specific task &#39;task_type&#39;." alt="" coords="293,950,431,990"/>
+<area shape="poly" id="edge68_Node000001_Node000046" title=" " alt="" coords="110,724,127,771,154,828,192,887,215,913,240,936,260,948,281,956,279,961,257,952,237,940,211,917,187,890,149,831,122,773,105,726"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a401201edcd0385af6a1d5dca6a62952c" title="Get list of all possible beacon channels for a give center channel and bandwidth on the 5G or 6G band..." alt="" coords="1120,777,1256,832"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="757,715,1107,786,1106,791,756,721"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="740,675,777,657,792,644,800,631,809,617,825,604,837,597,840,602,828,608,813,621,805,634,796,648,780,662,742,680"/>
+<area shape="rect" id="Node000009" href="$classson_1_1wireless__utils.html#ac7d7bb75d799bf38c516cbdd1300d243" title=" " alt="" coords="1109,633,1267,688"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="779,687,1095,664,1095,670,779,692"/>
+<area shape="rect" id="Node000010" href="$classson_1_1wireless__utils.html#a23eca76fb7a6f97322af76197c4db29c" title=" " alt="" coords="1119,713,1257,753"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="779,703,1105,725,1105,730,779,709"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1utils.html#a444f7dfcd73d9155f17df02aa712c2cd" title=" " alt="" coords="1347,562,1505,602"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1255,782,1289,763,1327,728,1359,688,1406,613,1411,616,1364,691,1331,731,1292,767,1257,787"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="1339,498,1513,538"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1255,787,1273,776,1289,763,1306,736,1313,710,1314,684,1312,657,1309,631,1310,604,1318,576,1337,548,1340,545,1344,549,1341,552,1323,578,1316,605,1315,631,1317,657,1319,683,1319,711,1311,738,1293,766,1276,781,1258,791"/>
+<area shape="rect" id="Node000013" href="$classieee1905__1_1_1CmduMessage.html#adc10ea7cfba25c0f58359cb954a5d69c" title=" " alt="" coords="1096,857,1280,897"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="1016,915,1090,897,1092,902,1017,921"/>
+<area shape="rect" id="Node000015" href="$classieee1905__1_1_1CmduMessage.html#af54c8bd541643a03b9567fc61eef25f9" title=" " alt="" coords="1096,971,1280,1011"/>
+<area shape="poly" id="edge15_Node000012_Node000015" title=" " alt="" coords="1025,954,1083,967,1082,972,1024,960"/>
+<area shape="rect" id="Node000017" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="1151,921,1225,947"/>
+<area shape="poly" id="edge17_Node000012_Node000017" title=" " alt="" coords="1024,934,1137,932,1137,937,1024,939"/>
+<area shape="rect" id="Node000014" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="1357,864,1495,889"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="1280,874,1343,874,1343,879,1280,879"/>
+<area shape="rect" id="Node000016" href="$classClassList.html#aea43ae47ce1af363533f665105410639" title=" " alt="" coords="1349,979,1503,1004"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="1280,989,1335,989,1335,994,1280,994"/>
+<area shape="rect" id="Node000019" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="583,900,729,925"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="428,910,569,910,569,915,428,915"/>
+<area shape="poly" id="edge62_Node000020_Node000008" title=" " alt="" coords="486,526,627,534,779,549,864,564,863,569,778,554,626,539,485,532"/>
+<area shape="rect" id="Node000021" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="557,563,755,603"/>
+<area shape="poly" id="edge21_Node000020_Node000021" title=" " alt="" coords="466,543,544,559,543,564,465,549"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1ChannelSelectionTask.html#a5ee5e099faafb20c19ee3701630d680e" title=" " alt="" coords="560,369,752,424"/>
+<area shape="poly" id="edge23_Node000020_Node000023" title=" " alt="" coords="396,503,459,469,532,434,552,426,554,431,534,439,461,474,399,508"/>
+<area shape="rect" id="Node000032" href="$classbeerocks_1_1ChannelSelectionTask.html#a61d51d70880103e04d454d163d179dbc" title=" " alt="" coords="563,291,749,345"/>
+<area shape="poly" id="edge35_Node000020_Node000032" title=" " alt="" coords="376,504,439,431,483,390,532,354,549,345,552,350,535,359,486,394,443,435,380,507"/>
+<area shape="rect" id="Node000039" href="$classbeerocks_1_1ChannelSelectionTask.html#aa51e06829a2ee6c1cbf8cc0fcafb7698" title=" " alt="" coords="539,449,773,489"/>
+<area shape="poly" id="edge49_Node000020_Node000039" title=" " alt="" coords="465,503,539,489,540,494,466,509"/>
+<area shape="rect" id="Node000044" href="$classbeerocks_1_1BackhaulManager.html#a049468d32cd506ad907d6bddbbe738bb" title="Sends CMDU to transport for dispatching." alt="" coords="563,742,749,782"/>
+<area shape="poly" id="edge63_Node000020_Node000044" title=" " alt="" coords="377,545,401,584,436,634,481,685,535,728,552,737,549,742,532,732,478,689,432,637,396,587,372,548"/>
+<area shape="rect" id="Node000022" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="875,619,989,644"/>
+<area shape="poly" id="edge22_Node000021_Node000022" title=" " alt="" coords="756,598,862,617,861,622,755,603"/>
+<area shape="poly" id="edge34_Node000023_Node000008" title=" " alt="" coords="754,416,780,435,793,450,800,466,805,497,809,527,816,541,828,555,840,563,837,567,825,559,812,544,804,528,799,498,795,467,789,453,777,439,751,421"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1CacStatusDatabase.html#a8cb8243aa0db1cdbf8fbc08cd130833d" title="Fills in CAC Completion Report TLV by given radio." alt="" coords="827,377,1037,417"/>
+<area shape="poly" id="edge24_Node000023_Node000024" title=" " alt="" coords="752,394,812,394,812,399,752,399"/>
+<area shape="rect" id="Node000031" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="833,234,1031,274"/>
+<area shape="poly" id="edge32_Node000023_Node000031" title=" " alt="" coords="751,370,777,355,792,338,800,320,808,302,825,284,834,278,837,283,828,288,813,305,805,322,797,341,780,359,754,374"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1CacStatusDatabase.html#a0464a8ee34c1828d2e7784ad5a1aa785" title="Get the completion status object of a given radio." alt="" coords="1087,426,1289,466"/>
+<area shape="poly" id="edge25_Node000024_Node000025" title=" " alt="" coords="1037,414,1074,421,1073,427,1036,419"/>
+<area shape="poly" id="edge26_Node000025_Node000007" title=" " alt="" coords="1256,464,1347,491,1345,497,1254,469"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1WifiChannel.html#ac35559bb3c4aaa27a28278469e1aefcb" title="Get the freq type object." alt="" coords="1349,210,1503,250"/>
+<area shape="poly" id="edge27_Node000025_Node000026" title=" " alt="" coords="1274,424,1289,412,1303,394,1310,376,1312,338,1315,300,1322,280,1337,260,1341,256,1344,260,1341,264,1327,282,1320,301,1318,339,1315,377,1307,397,1293,416,1277,428"/>
+<area shape="rect" id="Node000027" href="$classson_1_1wireless__utils.html#a078f6f46bf99ac53d10ce191a06be7a7" title="get operating class number by channel and channel bandwidth" alt="" coords="1353,275,1499,329"/>
+<area shape="poly" id="edge28_Node000025_Node000027" title=" " alt="" coords="1270,424,1289,412,1305,395,1313,378,1321,359,1337,340,1343,335,1347,339,1341,344,1325,362,1318,380,1309,398,1292,416,1272,428"/>
+<area shape="rect" id="Node000029" href="$classson_1_1wireless__utils.html#a0f3158e1775db68715ae38aa66fc28ce" title="Calculates the list of overlapping 5GHz channels and bandwidths for the given source channel." alt="" coords="1355,419,1497,473"/>
+<area shape="poly" id="edge30_Node000025_Node000029" title=" " alt="" coords="1289,443,1341,443,1341,449,1289,449"/>
+<area shape="rect" id="Node000030" href="$classbeerocks_1_1WifiChannel.html#a536aa8a3003f3ab04e0a56f9f2b3cd23" title="check if the channel is an empty" alt="" coords="1349,354,1503,394"/>
+<area shape="poly" id="edge31_Node000025_Node000030" title=" " alt="" coords="1254,423,1345,395,1347,401,1256,428"/>
+<area shape="rect" id="Node000028" href="$classson_1_1wireless__utils.html#a9ca3466505a1ccda48a6a6a428bb9e74" title="Get the center channel of the channel." alt="" coords="1561,282,1725,322"/>
+<area shape="poly" id="edge29_Node000027_Node000028" title=" " alt="" coords="1499,299,1548,299,1548,305,1499,305"/>
+<area shape="poly" id="edge33_Node000031_Node000003" title=" " alt="" coords="1011,232,1035,213,1050,192,1057,171,1057,128,1059,85,1067,63,1084,41,1104,28,1107,32,1087,45,1071,66,1064,86,1063,128,1062,172,1055,195,1039,217,1014,236"/>
+<area shape="poly" id="edge48_Node000032_Node000008" title=" " alt="" coords="751,333,781,355,798,381,806,407,807,432,804,458,802,483,803,507,811,531,829,555,840,564,837,568,825,559,806,533,798,508,797,483,799,457,802,432,801,407,794,383,777,359,747,338"/>
+<area shape="poly" id="edge47_Node000032_Node000031" title=" " alt="" coords="748,294,831,275,832,280,749,299"/>
+<area shape="rect" id="Node000033" href="$classbeerocks_1_1CacStatusDatabase.html#a228fafc182a9dc04951ccbb8c15d6c08" title="Fills in CAC Status Report TLV by given radio." alt="" coords="831,298,1033,338"/>
+<area shape="poly" id="edge36_Node000032_Node000033" title=" " alt="" coords="749,315,818,315,818,321,749,321"/>
+<area shape="poly" id="edge39_Node000033_Node000026" title=" " alt="" coords="1015,296,1036,284,1050,268,1058,251,1066,234,1084,220,1115,207,1148,198,1216,191,1282,195,1341,204,1340,210,1282,200,1216,197,1149,203,1117,212,1087,224,1071,237,1063,253,1055,271,1039,288,1018,300"/>
+<area shape="rect" id="Node000034" href="$classbeerocks_1_1CacStatusDatabase.html#a941aef71d16c8d4bdfdbf0c2133fcd10" title="Get a list of all channels that have an active CAC ongoing of a given radio mac." alt="" coords="1087,298,1289,338"/>
+<area shape="poly" id="edge37_Node000033_Node000034" title=" " alt="" coords="1033,315,1074,315,1074,321,1033,321"/>
+<area shape="rect" id="Node000035" href="$classbeerocks_1_1CacStatusDatabase.html#a1043fb115d2d65f84b5bae6036e1c216" title="Get a list of all CAC&#45;able channels (Available of Usable) of a given radio mac." alt="" coords="1087,362,1289,402"/>
+<area shape="poly" id="edge38_Node000033_Node000035" title=" " alt="" coords="1013,335,1095,356,1094,361,1012,341"/>
+<area shape="rect" id="Node000036" href="$classbeerocks_1_1CacStatusDatabase.html#a759cfc10709a608ed2726b947d5ee2db" title="Get a list of all channels that cannot be occupied (radar was detected) of a given radio mac." alt="" coords="1085,55,1291,95"/>
+<area shape="poly" id="edge40_Node000033_Node000036" title=" " alt="" coords="1021,296,1035,284,1051,263,1058,241,1059,197,1059,152,1067,128,1083,106,1087,102,1091,106,1087,109,1072,131,1065,152,1064,197,1064,242,1056,265,1039,288,1024,300"/>
+<area shape="rect" id="Node000037" href="$classson_1_1wireless__utils.html#aa54d97d210e1f56b022e58e3947e91c1" title=" " alt="" coords="1123,119,1253,159"/>
+<area shape="poly" id="edge41_Node000033_Node000037" title=" " alt="" coords="1018,296,1036,284,1047,271,1054,259,1059,232,1065,204,1072,190,1084,176,1108,159,1111,163,1087,180,1076,193,1070,206,1064,233,1059,260,1051,274,1039,288,1021,300"/>
+<area shape="rect" id="Node000038" href="$classbeerocks_1_1CacStatusDatabase.html#a43bac674be8bd04b01f40834a444df94" title="Update all collected channel information by given radio." alt="" coords="1087,234,1289,274"/>
+<area shape="poly" id="edge42_Node000033_Node000038" title=" " alt="" coords="1012,295,1094,275,1095,280,1013,301"/>
+<area shape="poly" id="edge43_Node000038_Node000007" title=" " alt="" coords="1278,272,1293,284,1310,310,1319,335,1320,360,1318,385,1316,409,1317,434,1324,458,1341,483,1346,488,1342,492,1337,486,1320,460,1312,435,1311,409,1313,384,1315,360,1313,336,1306,312,1289,288,1274,276"/>
+<area shape="poly" id="edge44_Node000038_Node000026" title=" " alt="" coords="1289,241,1335,237,1335,242,1289,247"/>
+<area shape="poly" id="edge45_Node000038_Node000027" title=" " alt="" coords="1288,271,1340,282,1339,287,1287,277"/>
+<area shape="poly" id="edge46_Node000038_Node000030" title=" " alt="" coords="1269,272,1292,284,1308,298,1317,312,1326,325,1340,339,1351,346,1349,350,1337,343,1322,329,1313,314,1304,301,1289,288,1267,276"/>
+<area shape="poly" id="edge51_Node000039_Node000008" title=" " alt="" coords="741,486,780,505,795,518,805,531,814,543,828,554,844,562,842,567,825,559,810,547,800,534,791,522,777,510,738,491"/>
+<area shape="poly" id="edge50_Node000039_Node000031" title=" " alt="" coords="759,446,777,433,791,416,798,398,800,361,803,323,810,303,825,284,829,280,832,284,829,288,815,306,808,324,806,361,803,399,795,418,781,437,762,451"/>
+<area shape="rect" id="Node000040" href="$tlvf__utils_8cpp.html#a8bdd1ea1d2cb882972b5d7b759d18660" title="Get a list of permanent non operable channels for operating class." alt="" coords="861,505,1003,545"/>
+<area shape="poly" id="edge52_Node000039_Node000040" title=" " alt="" coords="756,486,849,505,848,510,755,491"/>
+<area shape="rect" id="Node000043" href="$classwfa__map_1_1tlvChannelPreference.html#a54ae481a91b6552f839119c2b3ae9992" title=" " alt="" coords="828,441,1036,481"/>
+<area shape="poly" id="edge61_Node000039_Node000043" title=" " alt="" coords="774,463,814,461,815,467,774,468"/>
+<area shape="poly" id="edge59_Node000040_Node000009" title=" " alt="" coords="1004,537,1039,554,1055,571,1064,587,1072,603,1087,619,1098,626,1095,630,1084,623,1068,606,1059,589,1051,574,1036,559,1002,542"/>
+<area shape="poly" id="edge60_Node000040_Node000010" title=" " alt="" coords="1004,534,1023,542,1039,555,1054,573,1061,591,1064,628,1067,663,1074,680,1087,697,1108,712,1105,716,1083,701,1069,683,1062,664,1059,628,1056,593,1049,576,1035,559,1020,547,1002,538"/>
+<area shape="rect" id="Node000041" href="$classson_1_1wireless__utils.html#a768d727978f743c838fd35e8a37f2be6" title="Get the center channel of the channel." alt="" coords="1117,490,1259,530"/>
+<area shape="poly" id="edge53_Node000040_Node000041" title=" " alt="" coords="1003,518,1103,512,1103,518,1003,523"/>
+<area shape="rect" id="Node000042" href="$classson_1_1wireless__utils.html#a1cbb62842c7103638ee87731445a3b88" title="Get a list of overlapping 5GHz/6GHz beacon channel for a given channel and bandwidth." alt="" coords="1103,555,1273,609"/>
+<area shape="poly" id="edge56_Node000040_Node000042" title=" " alt="" coords="1003,538,1090,557,1089,563,1002,543"/>
+<area shape="poly" id="edge54_Node000041_Node000006" title=" " alt="" coords="1256,528,1347,555,1345,561,1254,533"/>
+<area shape="poly" id="edge55_Node000041_Node000007" title=" " alt="" coords="1260,510,1325,512,1325,517,1260,515"/>
+<area shape="poly" id="edge57_Node000042_Node000006" title=" " alt="" coords="1274,579,1333,579,1333,585,1274,585"/>
+<area shape="poly" id="edge58_Node000042_Node000007" title=" " alt="" coords="1273,557,1337,539,1339,544,1274,562"/>
+<area shape="rect" id="Node000045" href="$classieee1905__1_1_1CmduMessage.html#a94ce761475d53857b8d5543fa9e4c0bd" title=" " alt="" coords="840,854,1024,894"/>
+<area shape="poly" id="edge64_Node000044_Node000045" title=" " alt="" coords="727,779,780,798,882,845,880,850,778,803,725,785"/>
+<area shape="poly" id="edge65_Node000045_Node000013" title=" " alt="" coords="1024,872,1082,873,1082,878,1024,878"/>
+<area shape="poly" id="edge66_Node000045_Node000015" title=" " alt="" coords="1015,892,1039,904,1054,917,1064,931,1072,944,1087,957,1097,963,1094,968,1084,961,1068,948,1059,934,1050,921,1036,908,1013,896"/>
+<area shape="poly" id="edge67_Node000045_Node000017" title=" " alt="" coords="1019,891,1137,920,1136,925,1017,897"/>
+</map>

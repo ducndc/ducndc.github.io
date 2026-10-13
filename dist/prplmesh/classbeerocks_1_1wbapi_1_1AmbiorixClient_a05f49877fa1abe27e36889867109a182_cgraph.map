@@ -1,0 +1,9 @@
+<map id="beerocks::wbapi::AmbiorixClient::init_signal_loop" name="beerocks::wbapi::AmbiorixClient::init_signal_loop">
+<area shape="rect" id="Node000001" title="Initialize event handlers for the ambiorix signals fd in the event loop." alt="" coords="5,91,181,131"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#a44d82ac0b81002879afd97b56e58b7d6" title=": fetch created ambiorix bus connection per file descriptor" alt="" coords="229,5,405,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,89,225,62,227,67,152,94"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#afc17bdf3d36234281315b46abe6f4abd" title=": get single instance" alt="" coords="229,84,405,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,109,215,109,215,114,182,114"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a39765009f5a0cf52cd06d6735e890ab7" title="get the amxp signal file descriptor." alt="" coords="229,163,405,203"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="157,129,242,157,241,162,155,134"/>
+</map>

@@ -1,0 +1,101 @@
+<map id="sVendorOUI::struct_swap" name="sVendorOUI::struct_swap">
+<area shape="rect" id="Node000001" title=" " alt="" coords="848,685,1021,710"/>
+<area shape="rect" id="Node000002" href="$classairties_1_1tlvAirtiesDeviceInfo.html#a8efd5c27bbdf8cc36405c07c9a17aaf0" title=" " alt="" coords="599,69,757,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="930,671,922,585,902,460,885,390,862,320,834,251,798,187,780,164,758,144,714,112,717,107,762,139,784,160,802,184,838,248,867,318,890,389,907,459,927,584,935,671"/>
+<area shape="rect" id="Node000007" href="$classairties_1_1tlvAirtiesDeviceMetrics.html#ae991dd62ff32bf4c9b620570043ce0cd" title=" " alt="" coords="599,197,757,237"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="927,672,914,605,889,513,851,411,827,361,798,315,779,292,757,272,713,240,716,235,761,268,783,289,802,312,831,359,856,409,895,511,919,604,932,671"/>
+<area shape="rect" id="Node000012" href="$classairties_1_1tlvAirtiesEthernetInterface.html#acd4d5d7bfe3e8ed1dbe1a9b24de550f3" title=" " alt="" coords="595,325,761,365"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="922,673,876,568,841,503,798,443,754,400,710,368,713,363,758,396,802,440,845,501,881,565,927,671"/>
+<area shape="rect" id="Node000017" href="$classairties_1_1tlvAirtiesEthernetStats.html#a1d5b53cbf006df0abd085cfad46d058a" title=" " alt="" coords="595,453,761,493"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="909,677,798,571,705,496,708,492,802,567,913,673"/>
+<area shape="rect" id="Node000022" href="$classairties_1_1tlvAirtiesMsgType.html#a74b8569c658a27ee2e4af5a3d56286b8" title=" " alt="" coords="593,581,763,621"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="886,682,732,624,734,619,888,677"/>
+<area shape="rect" id="Node000027" href="$classairties_1_1tlvAirtiesRadioCapability.html#a0cfcd8856c11821496b8d7fdfe4be1af" title=" " alt="" coords="599,677,757,717"/>
+<area shape="poly" id="edge26_Node000001_Node000027" title=" " alt="" coords="834,700,757,700,757,695,834,695"/>
+<area shape="rect" id="Node000032" href="$classairties_1_1tlvVersionReporting.html#adb77c9bc5f8b734ca81a884d2e3660a6" title=" " alt="" coords="589,773,767,813"/>
+<area shape="poly" id="edge31_Node000001_Node000032" title=" " alt="" coords="888,717,734,776,732,771,886,712"/>
+<area shape="rect" id="Node000037" href="$classieee1905__1_1_1tlvVendorSpecific.html#a46df5f5b2685ae94c5c6f0e50f446cc4" title=" " alt="" coords="579,901,777,941"/>
+<area shape="poly" id="edge36_Node000001_Node000037" title=" " alt="" coords="913,722,802,827,708,903,705,899,798,823,909,718"/>
+<area shape="rect" id="Node000042" href="$classvendor__example_1_1tlvVendorExample.html#a9beeea664e21b87d17e65cdea04ab2bf" title=" " alt="" coords="588,1029,768,1069"/>
+<area shape="poly" id="edge41_Node000001_Node000042" title=" " alt="" coords="927,724,881,829,845,894,802,955,758,998,713,1031,710,1027,754,994,798,952,841,891,876,827,922,722"/>
+<area shape="rect" id="Node000047" href="$classmulti__vendor_1_1tlvf__handler.html#aae476b51a05e40c4d777f1a97354d7f4" title="Safely read vendor&#45;specific data from TLV buffer with comprehensive bounds checking." alt="" coords="610,1110,746,1165"/>
+<area shape="poly" id="edge46_Node000001_Node000047" title=" " alt="" coords="934,724,924,794,902,888,885,940,863,991,836,1039,802,1083,777,1104,748,1120,745,1115,774,1100,798,1079,831,1036,858,988,880,938,897,887,919,793,929,723"/>
+<area shape="rect" id="Node000050" href="$structwfa__map_1_1tlvAkmSuiteCapabilities_1_1sBssAkmSuiteSelector.html#a6a8c800a396b216fd3d0eb8a8c240f11" title=" " alt="" coords="556,1221,800,1261"/>
+<area shape="poly" id="edge48_Node000001_Node000050" title=" " alt="" coords="936,724,930,807,911,926,894,991,871,1057,840,1120,802,1178,773,1204,739,1224,736,1219,770,1200,798,1174,836,1118,866,1055,889,990,905,925,924,807,930,723"/>
+<area shape="rect" id="Node000003" href="$classairties_1_1tlvAirtiesDeviceInfo.html#ac76b002956497de8bd6ea3eeead00229" title=" " alt="" coords="318,5,475,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="585,71,475,46,476,41,586,66"/>
+<area shape="rect" id="Node000004" href="$classairties_1_1tlvAirtiesDeviceInfo.html#af62d222ff97edd9147e1e7a49a52d9ab" title=" " alt="" coords="318,69,475,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="586,92,476,92,476,87,586,87"/>
+<area shape="rect" id="Node000005" href="$classairties_1_1tlvAirtiesDeviceInfo.html#a15cb0c9a94536a82e1886a0341e4c6a5" title=" " alt="" coords="38,8,205,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="304,72,204,49,206,44,305,66"/>
+<area shape="rect" id="Node000006" href="$classairties_1_1tlvAirtiesDeviceInfo.html#a229d1ba3e7336f67cfe48feb8f14a112" title=" " alt="" coords="38,72,205,112"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="304,93,205,94,205,89,304,88"/>
+<area shape="rect" id="Node000008" href="$classairties_1_1tlvAirtiesDeviceMetrics.html#a1c57b35952d20c2bd25bfd728ebc3bfd" title=" " alt="" coords="318,133,475,173"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="585,199,475,174,476,169,586,194"/>
+<area shape="rect" id="Node000009" href="$classairties_1_1tlvAirtiesDeviceMetrics.html#a7f0880dff760f060106ddaf0178c168b" title=" " alt="" coords="318,197,475,237"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="586,220,476,220,476,215,586,215"/>
+<area shape="rect" id="Node000010" href="$classairties_1_1tlvAirtiesDeviceMetrics.html#a86719c464e30ecf779b28d9f2a849b2b" title=" " alt="" coords="17,140,225,180"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="304,201,218,183,219,177,305,196"/>
+<area shape="rect" id="Node000011" href="$classairties_1_1tlvAirtiesDeviceMetrics.html#ad46aba7581199bfd6999a6292bccbdfd" title=" " alt="" coords="17,204,225,244"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="305,222,226,224,226,219,304,217"/>
+<area shape="rect" id="Node000013" href="$classairties_1_1tlvAirtiesEthernetInterface.html#a6bd965a36a33a9e5ae81aaaa839e18ba" title=" " alt="" coords="314,261,479,301"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="582,326,479,303,480,297,583,321"/>
+<area shape="rect" id="Node000014" href="$classairties_1_1tlvAirtiesEthernetInterface.html#a9857933811a78246e377f7caf234a218" title=" " alt="" coords="314,325,479,365"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="582,348,479,348,479,343,582,343"/>
+<area shape="rect" id="Node000015" href="$classairties_1_1tlvAirtiesEthernetInterface.html#adf4328084c7c019df4157d5d5b03b1c6" title=" " alt="" coords="5,276,237,316"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="300,331,233,319,234,313,301,326"/>
+<area shape="rect" id="Node000016" href="$classairties_1_1tlvAirtiesEthernetInterface.html#a888b8bb02449a239afdc97da2117be9e" title=" " alt="" coords="5,340,237,380"/>
+<area shape="poly" id="edge15_Node000014_Node000016" title=" " alt="" coords="300,353,238,356,237,351,300,348"/>
+<area shape="rect" id="Node000018" href="$classairties_1_1tlvAirtiesEthernetStats.html#a204e87f7ed4c447ae455cf3bbb4fcfb4" title=" " alt="" coords="314,389,479,429"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="582,454,479,431,480,425,583,449"/>
+<area shape="rect" id="Node000019" href="$classairties_1_1tlvAirtiesEthernetStats.html#ae60ed681f97859873c4e82ddc2f6cfdd" title=" " alt="" coords="314,453,479,493"/>
+<area shape="poly" id="edge18_Node000017_Node000019" title=" " alt="" coords="582,476,479,476,479,471,582,471"/>
+<area shape="rect" id="Node000020" href="$classairties_1_1tlvAirtiesEthernetStats.html#a67b46063049cc5b527dba24d905183a2" title=" " alt="" coords="25,420,217,460"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="300,464,217,454,218,449,301,459"/>
+<area shape="rect" id="Node000021" href="$classairties_1_1tlvAirtiesEthernetStats.html#acf313d1f8364cccec25aee7a7dc9dff7" title=" " alt="" coords="25,484,217,524"/>
+<area shape="poly" id="edge20_Node000019_Node000021" title=" " alt="" coords="301,487,218,496,217,491,300,481"/>
+<area shape="rect" id="Node000023" href="$classairties_1_1tlvAirtiesMsgType.html#a2bf16f5c6aae17e9274ebcb1f3253ceb" title=" " alt="" coords="312,517,481,557"/>
+<area shape="poly" id="edge22_Node000022_Node000023" title=" " alt="" coords="579,582,481,559,482,554,581,577"/>
+<area shape="rect" id="Node000024" href="$classairties_1_1tlvAirtiesMsgType.html#a44342ae48a495588a0dd8bdfd5a299fd" title=" " alt="" coords="312,581,481,621"/>
+<area shape="poly" id="edge23_Node000022_Node000024" title=" " alt="" coords="580,604,482,604,482,599,580,599"/>
+<area shape="rect" id="Node000025" href="$classairties_1_1tlvAirtiesMsgType.html#af19016c90c82934ef983d0bd1f5d2028" title=" " alt="" coords="37,580,206,620"/>
+<area shape="poly" id="edge24_Node000024_Node000025" title=" " alt="" coords="298,604,206,603,206,598,298,598"/>
+<area shape="rect" id="Node000026" href="$classairties_1_1tlvAirtiesMsgType.html#a3abb49c2fb52b4e3701b741aebd13901" title=" " alt="" coords="37,644,206,684"/>
+<area shape="poly" id="edge25_Node000024_Node000026" title=" " alt="" coords="299,626,207,647,206,642,298,621"/>
+<area shape="rect" id="Node000028" href="$classairties_1_1tlvAirtiesRadioCapability.html#a0d650e93c9bb4f95172a3fa66e3926f6" title=" " alt="" coords="321,645,472,685"/>
+<area shape="poly" id="edge27_Node000027_Node000028" title=" " alt="" coords="585,690,472,677,473,671,586,684"/>
+<area shape="rect" id="Node000029" href="$classairties_1_1tlvAirtiesRadioCapability.html#a53ab49beceb8ee96917c70088efc1279" title=" " alt="" coords="321,709,472,749"/>
+<area shape="poly" id="edge28_Node000027_Node000029" title=" " alt="" coords="586,710,473,723,472,718,585,705"/>
+<area shape="rect" id="Node000030" href="$classairties_1_1tlvAirtiesRadioCapability.html#ae9695f71a08543812b0dca7aeea3bd7a" title=" " alt="" coords="6,709,237,749"/>
+<area shape="poly" id="edge29_Node000029_Node000030" title=" " alt="" coords="307,732,237,732,237,727,307,727"/>
+<area shape="rect" id="Node000031" href="$classairties_1_1tlvAirtiesRadioCapability.html#a80d68b29c20cbc64f2f39f912e163805" title=" " alt="" coords="6,773,237,813"/>
+<area shape="poly" id="edge30_Node000029_Node000031" title=" " alt="" coords="309,752,208,776,207,771,308,747"/>
+<area shape="rect" id="Node000033" href="$classairties_1_1tlvVersionReporting.html#a7711e790c9c520f87ffb1bb2997ecb50" title=" " alt="" coords="307,773,486,813"/>
+<area shape="poly" id="edge32_Node000032_Node000033" title=" " alt="" coords="575,796,486,796,486,791,575,791"/>
+<area shape="rect" id="Node000034" href="$classairties_1_1tlvVersionReporting.html#aa02262ea1cf5f855d98bf62339b7b7cd" title=" " alt="" coords="307,837,486,877"/>
+<area shape="poly" id="edge33_Node000032_Node000034" title=" " alt="" coords="577,819,486,840,485,835,576,814"/>
+<area shape="rect" id="Node000035" href="$classairties_1_1tlvVersionReporting.html#a440d19f7bc3741c465f67961a5a8ecfd" title=" " alt="" coords="32,837,211,877"/>
+<area shape="poly" id="edge34_Node000034_Node000035" title=" " alt="" coords="294,860,211,860,211,855,294,855"/>
+<area shape="rect" id="Node000036" href="$classairties_1_1tlvVersionReporting.html#ab54f6c5f637f8863489e5af04ec91834" title=" " alt="" coords="32,901,211,941"/>
+<area shape="poly" id="edge35_Node000034_Node000036" title=" " alt="" coords="297,883,208,904,207,899,296,878"/>
+<area shape="rect" id="Node000038" href="$classieee1905__1_1_1tlvVendorSpecific.html#adeb2aa9c4737333546bf0577b7ee266e" title=" " alt="" coords="297,901,496,941"/>
+<area shape="poly" id="edge37_Node000037_Node000038" title=" " alt="" coords="565,924,496,924,496,919,565,919"/>
+<area shape="rect" id="Node000039" href="$classieee1905__1_1_1tlvVendorSpecific.html#a517833b450255310fdc842fa2c252c37" title=" " alt="" coords="297,965,496,1005"/>
+<area shape="poly" id="edge38_Node000037_Node000039" title=" " alt="" coords="577,947,486,968,485,963,576,942"/>
+<area shape="rect" id="Node000040" href="$classieee1905__1_1_1tlvVendorSpecific.html#a557722e7f0e5e20580854e4c1ae4d546" title=" " alt="" coords="22,965,221,1005"/>
+<area shape="poly" id="edge39_Node000039_Node000040" title=" " alt="" coords="284,988,221,988,221,983,284,983"/>
+<area shape="rect" id="Node000041" href="$classieee1905__1_1_1tlvVendorSpecific.html#af48ff792b64382b7a189617af0391437" title=" " alt="" coords="22,1029,221,1069"/>
+<area shape="poly" id="edge40_Node000039_Node000041" title=" " alt="" coords="297,1011,208,1032,207,1027,296,1006"/>
+<area shape="rect" id="Node000043" href="$classvendor__example_1_1tlvVendorExample.html#aedda8d1d88af560fe87f3316a2c535f3" title=" " alt="" coords="307,1029,487,1069"/>
+<area shape="poly" id="edge42_Node000042_Node000043" title=" " alt="" coords="574,1052,487,1052,487,1047,574,1047"/>
+<area shape="rect" id="Node000044" href="$classvendor__example_1_1tlvVendorExample.html#aa141a10b2f8b6bfe114c2a1f8a9fd16c" title=" " alt="" coords="307,1093,487,1133"/>
+<area shape="poly" id="edge43_Node000042_Node000044" title=" " alt="" coords="577,1075,486,1096,485,1091,576,1070"/>
+<area shape="rect" id="Node000045" href="$classvendor__example_1_1tlvVendorExample.html#aff8f7faea7b83b3ff36f6f916be9d95b" title=" " alt="" coords="28,1093,215,1133"/>
+<area shape="poly" id="edge44_Node000044_Node000045" title=" " alt="" coords="293,1116,215,1116,215,1111,293,1111"/>
+<area shape="rect" id="Node000046" href="$classvendor__example_1_1tlvVendorExample.html#a3fab1a642577e77cc2a58ef98d414f2b" title=" " alt="" coords="28,1157,215,1197"/>
+<area shape="poly" id="edge45_Node000044_Node000046" title=" " alt="" coords="297,1139,208,1160,207,1155,296,1134"/>
+<area shape="rect" id="Node000048" href="$classvendor__example_1_1tlvf__vendor__example__utils.html#a6c10ce9a3fb67965d132b85e96d78fdc" title="Parses a vendor&#45;specific TLV from the received message." alt="" coords="304,1158,489,1213"/>
+<area shape="poly" id="edge47_Node000047_Node000048" title=" " alt="" coords="597,1154,490,1172,489,1167,596,1149"/>
+<area shape="rect" id="Node000051" href="$classwfa__map_1_1tlvAkmSuiteCapabilities.html#a0d11d782f29793e92f82a2ff48ba751d" title=" " alt="" coords="285,1237,508,1277"/>
+<area shape="poly" id="edge49_Node000050_Node000051" title=" " alt="" coords="542,1252,509,1254,508,1248,542,1246"/>
+</map>

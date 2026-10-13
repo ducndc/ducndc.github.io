@@ -1,0 +1,2223 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Chung Duc Nguyen Dang" href="https://ducndc.github.io/rss.xml"><meta name="generator" content="Astro v5.17.2"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://ducndc.github.io/blog/network-openwrt-configuration/"><!-- Primary Meta Tags --><title>Network Configuration in OpenWrt</title><meta name="title" content="Network Configuration in OpenWrt"><meta name="description" content="Network Configuration in OpenWrt"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://ducndc.github.io/blog/network-openwrt-configuration/"><meta property="og:title" content="Network Configuration in OpenWrt"><meta property="og:description" content="Network Configuration in OpenWrt"><meta property="og:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://ducndc.github.io/blog/network-openwrt-configuration/"><meta property="twitter:title" content="Network Configuration in OpenWrt"><meta property="twitter:description" content="Network Configuration in OpenWrt"><meta property="twitter:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Times New Roman,Times,serif;margin:0;padding:0;text-align:justify;text-justify:inter-word;background:linear-gradient(180deg,#f3f6f8 0,#fff 560px) no-repeat;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;color:rgb(var(--black));line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}p{margin-top:0;margin-bottom:1em;line-height:1.7}.prose p{margin-top:0;margin-bottom:1.2em;line-height:1.7}a,a:hover{color:var(--accent)}ul,ol{margin-top:.5em;margin-bottom:1em;padding-left:1.5em}li{line-height:1.5;margin-bottom:.2em}li p,.prose li p{margin-top:0;margin-bottom:0;line-height:1.5}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%;border-collapse:collapse}img{display:block;max-width:100%;height:auto;margin:1.5rem auto}.prose img{display:block;max-width:100%;height:auto;margin:2rem auto}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px;font-family:monospace}pre{padding:1.5em;border-radius:8px;overflow-x:auto}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:1.5em 0;font-size:1.1em}hr{border:none;border-top:1px solid rgb(var(--gray-light));margin:2em 0}@media(max-width:720px){body{font-size:18px}main{padding:1em}.prose p{line-height:1.65}li{line-height:1.5}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media(max-width:720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}
+</style>
+<link rel="stylesheet" href="/_astro/about.DsEPMAAl.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Chung Duc Nguyen Dang</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/blog" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  </div> </nav> </header>  <main class="layout" data-astro-cid-bvzihdzo> <!-- TOC --> <aside class="toc" data-astro-cid-bvzihdzo> <div class="toc-title" data-astro-cid-bvzihdzo>Table of Contents</div> <nav id="toc" data-astro-cid-bvzihdzo></nav> </aside> <!-- Content --> <article class="content" data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="/_astro/AP_Sys.mMeP5y6f_Z2b9qc6.webp" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="800"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2026-06-29T17:00:00.000Z"> Jun 30, 2026 </time>  </div> <h1 data-astro-cid-bvzihdzo>Network Configuration in OpenWrt</h1> <hr data-astro-cid-bvzihdzo> </div>  <p><em>From UCI to netifd, from bridge/VLAN/DSA to firewall and Wi-Fi: how a single <code>option</code> line in <code>/etc/config/network</code> becomes packets moving through the kernel.</em></p>
+<hr>
+<h3 id="conventions-and-important-caveats">Conventions and Important Caveats</h3>
+<p>This article targets engineers who already know basic Linux networking. The goal is to explain <strong>architecture</strong>, <strong>configuration model</strong>, <strong>runtime behavior</strong>, and <strong>troubleshooting methodology</strong>, not to be a click-through tutorial.</p>
+<p>Statements that depend on the environment are tagged:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tag</th><th>Meaning</th></tr></thead><tbody><tr><td><code>[version-dependent]</code></td><td>Syntax/behavior differs between releases (19.07 / 21.02 / 22.03 / 23.05 / 24.10 / snapshot)</td></tr><tr><td><code>[platform-dependent]</code></td><td>Depends on the target/SoC (MediaTek, Qualcomm, Broadcom, Realtek…)</td></tr><tr><td><code>[driver-dependent]</code></td><td>Depends on the Wi-Fi/Ethernet driver (mt76, ath9k/ath10k/ath11k, vendor driver…)</td></tr><tr><td><code>[DSA-dependent]</code></td><td>True only for DSA devices, not for <code>swconfig</code></td></tr><tr><td><code>[package-dependent]</code></td><td>Depends on additionally installed packages (mwan3, relayd, prplMesh, wpad variant…)</td></tr></tbody></table>
+<blockquote>
+<p><strong>Interface names are not universal.</strong> <code>eth0</code>, <code>eth1</code>, <code>wan</code>, <code>lan1</code>…<code>lan4</code>, <code>br-lan</code>, <code>eth0.1</code> are only examples. They come from the device tree, the driver, and the target’s <code>/etc/board.json</code>. An MT7621 DSA router, an AR9344 swconfig router, and an IPQ807x using a vendor SSDK can have completely different port names and switch models. Always inspect the real device before copying a config:</p>
+</blockquote>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">cat</span><span style="color:#9ECBFF"> /etc/board.json</span><span style="color:#6A737D">            # network section generated by board_detect</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> system</span><span style="color:#9ECBFF"> board</span><span style="color:#6A737D">         # model, release, kernel</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -br</span><span style="color:#9ECBFF"> link</span><span style="color:#6A737D">                    # netdevs that actually exist</span></span>
+<span class="line"><span style="color:#B392F0">ls</span><span style="color:#9ECBFF"> /sys/class/net</span><span style="color:#6A737D">              # alternative</span></span></code></pre>
+<p>Examples in this article use DSA-style names (<code>lan1</code>..<code>lan4</code>, <code>wan</code>) because that is the modern model (since 21.02). Where a comparison is useful, there is a separate <code>swconfig</code> example.</p>
+<hr>
+<h3 id="introduction">Introduction</h3>
+<hr>
+<h4 id="how-openwrt-differs-from-closed-router-firmware">How OpenWrt differs from closed router firmware</h4>
+<hr>
+<p>Closed firmware is typically a web UI bolted onto a monolithic daemon and a few kernel modules. Config lives in an NVRAM blob or a binary file, and “WAN/LAN” are hard-coded concepts.</p>
+<p>OpenWrt is different. It is a <strong>Linux distribution</strong> for embedded devices, and everything you configure reduces to Linux primitives: <code>bridge</code>, <code>vlan</code>, <code>ip route</code>, <code>nftables</code>, <code>hostapd</code>. The OpenWrt layer does three things:</p>
+<ol>
+<li>Stores your intent as <strong>declarative config</strong> (UCI).</li>
+<li>Provides daemons (<code>netifd</code>, <code>fw4</code>, <code>dnsmasq</code>, <code>odhcpd</code>, <code>hostapd</code>) that <strong>translate intent into kernel state</strong>.</li>
+<li>Provides reload/hotplug mechanisms that <strong>converge</strong> runtime state toward the config when events occur (link up/down, DHCP lease, new prefix).</li>
+</ol>
+<p>The consequence: “WAN” and “LAN” are nothing special at the kernel level. They are just logical interface names that the firewall zones, DHCP, and the default route happen to attach to.</p>
+<hr>
+<h4 id="uci-and-etcconfig">UCI and <code>/etc/config/*</code></h4>
+<hr>
+<p>UCI (Unified Configuration Interface) is a text config store, one file per subsystem:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config &#x3C;section-type> '&#x3C;optional-name>'</span></span>
+<span class="line"><span>        option &#x3C;key> '&#x3C;value>'</span></span>
+<span class="line"><span>        list   &#x3C;key> '&#x3C;value>'</span></span></code></pre>
+<ul>
+<li><strong>Named sections</strong> (<code>config interface 'lan'</code>) and <strong>anonymous sections</strong> (<code>config device</code>). Anonymous sections are referenced via <code>@device[0]</code>.</li>
+<li><code>option</code> is a single value, <code>list</code> is a list.</li>
+<li>Declarative: you describe the <em>desired state</em>, not the <em>steps</em>.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">uci</span><span style="color:#9ECBFF"> show</span><span style="color:#9ECBFF"> network</span><span style="color:#6A737D">               # dump everything</span></span>
+<span class="line"><span style="color:#B392F0">uci</span><span style="color:#9ECBFF"> get</span><span style="color:#9ECBFF"> network.lan.ipaddr</span></span>
+<span class="line"><span style="color:#B392F0">uci</span><span style="color:#9ECBFF"> set</span><span style="color:#9ECBFF"> network.lan.ipaddr='192.168.10.1/24'</span></span>
+<span class="line"><span style="color:#B392F0">uci</span><span style="color:#9ECBFF"> changes</span><span style="color:#6A737D">                    # staged (not yet committed)</span></span>
+<span class="line"><span style="color:#B392F0">uci</span><span style="color:#9ECBFF"> commit</span><span style="color:#9ECBFF"> network</span><span style="color:#6A737D">             # write to /etc/config/network</span></span>
+<span class="line"><span style="color:#B392F0">/etc/init.d/network</span><span style="color:#9ECBFF"> reload</span><span style="color:#6A737D">     # ask netifd to apply</span></span></code></pre>
+<p><code>uci set</code> only writes to a <strong>staging area</strong> (<code>/tmp/.uci</code>). <code>uci commit</code> writes the file. <strong>Commit is not apply.</strong> You must reload the relevant service, otherwise the runtime does not change.</p>
+<hr>
+<h4 id="configuration-vs-runtime-state">Configuration vs runtime state</h4>
+<hr>
+<p>This is the most common source of confusion when debugging:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Configuration</th><th>Runtime state</th></tr></thead><tbody><tr><td>Lives in</td><td><code>/etc/config/*</code> (flash/overlay)</td><td>Kernel + RAM: netdevs, FDB, routes, nft ruleset, conntrack</td></tr><tr><td>Survives reboot</td><td>Yes</td><td>No</td></tr><tr><td>Written by</td><td>You / LuCI / scripts</td><td>netifd, kernel, odhcp6c, udhcpc…</td></tr><tr><td>Inspect with</td><td><code>uci show</code>, <code>cat</code></td><td><code>ip</code>, <code>bridge</code>, <code>nft</code>, <code>ubus</code></td></tr></tbody></table>
+<p>Runtime can <strong>differ from config</strong> because: a reload hasn’t happened, the link isn’t up, DHCP hasn’t answered, a proto handler failed, or a script/hotplug intervened. Many routes/IPs you see in <code>ip route</code> are <strong>not</strong> in <code>/etc/config/network</code> because DHCP/PD/PPP generated them.</p>
+<hr>
+<h4 id="mental-model">Mental model</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Configuration        /etc/config/{network,wireless,firewall,dhcp}</span></span>
+<span class="line"><span>      ↓</span></span>
+<span class="line"><span>UCI                  libuci, ubus "uci", LuCI (rpcd)</span></span>
+<span class="line"><span>      ↓</span></span>
+<span class="line"><span>OpenWrt services     procd → netifd, fw4, dnsmasq, odhcpd, hostapd</span></span>
+<span class="line"><span>      ↓</span></span>
+<span class="line"><span>Linux networking     netlink: link / addr / route / bridge vlan / nftables</span></span>
+<span class="line"><span>      ↓</span></span>
+<span class="line"><span>Runtime state        netdev, FDB, FIB, conntrack, station table</span></span></code></pre>
+<p>When something breaks, ask in this order: <em>Is the config right → does the service understand it correctly (ubus) → is the kernel right (ip/bridge/nft) → do packets actually flow correctly (tcpdump)</em>. Section 20 turns this methodology into a checklist.</p>
+<hr>
+<h3 id="openwrt-network-architecture">OpenWrt Network Architecture</h3>
+<hr>
+<h4 id="the-layers">The layers</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Applications / Services    (ssh, uhttpd, ntpd, VPN daemons)</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>DNS / DHCP / VPN / QoS     (dnsmasq, odhcpd, wireguard, sqm)</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>Firewall / nftables        (fw4 → table inet fw4)</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>L3 / IP interfaces         (address, prefix, neighbor)</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>Routing                    (FIB, ip rule, multiple tables)</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>L2 / Bridge / VLAN         (br-lan, 802.1Q, bridge vlan filtering)</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>Ethernet / Wi-Fi           (MAC: DSA/switch, mac80211/cfg80211)</span></span>
+<span class="line"><span>          ↓</span></span>
+<span class="line"><span>Hardware / Driver          (SoC MAC, switch chip, radio)</span></span></code></pre>
+<hr>
+<h4 id="who-does-what">Who does what</h4>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Component</th><th>Role</th><th>Reads</th><th>Writes</th></tr></thead><tbody><tr><td><strong>UCI</strong></td><td>Config store</td><td><code>/etc/config/*</code></td><td>—</td></tr><tr><td><strong>procd</strong></td><td>Init + process supervisor; respawn, triggers reload when config changes</td><td>init scripts</td><td>—</td></tr><tr><td><strong>netifd</strong></td><td>Network interface daemon: manages <em>devices</em> and <em>interfaces</em>, runs <em>proto handlers</em></td><td><code>/etc/config/network</code> (+ wireless)</td><td>netlink (link/addr/route), ubus objects</td></tr><tr><td><strong>proto handlers</strong></td><td><code>static</code>, <code>dhcp</code> (udhcpc), <code>dhcpv6</code> (odhcp6c), <code>pppoe</code> (pppd)…</td><td>invoked by netifd</td><td>report state back to netifd</td></tr><tr><td><strong>fw4</strong></td><td>Translates <code>/etc/config/firewall</code> into an nftables ruleset</td><td><code>/etc/config/firewall</code>, ubus network</td><td><code>nft</code> (table <code>inet fw4</code>)</td></tr><tr><td><strong>dnsmasq</strong></td><td>DNS forwarder/cache + DHCPv4 server (default)</td><td><code>/etc/config/dhcp</code></td><td>UDP 53/67</td></tr><tr><td><strong>odhcpd</strong></td><td>DHCPv6 server, Router Advertisement, NDP relay <code>[version-dependent]</code> can also do DHCPv4</td><td><code>/etc/config/dhcp</code></td><td>RA, DHCPv6</td></tr><tr><td><strong>hostapd / wpa_supplicant</strong></td><td>Controls AP/STA/mesh (auth, association, keys)</td><td>files generated by the netifd wireless handler</td><td>nl80211</td></tr><tr><td><strong>kernel</strong></td><td>bridge, 8021q, routing, netfilter, mac80211</td><td>netlink</td><td>—</td></tr><tr><td><strong>driver</strong></td><td>MAC/PHY, switch (DSA), radio</td><td>—</td><td>hardware</td></tr></tbody></table>
+<p>Main flow:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>/etc/config/network ──► netifd ──┬─► netlink: create br-lan, br-lan.10, assign IPs, routes</span></span>
+<span class="line"><span>                                 ├─► proto handler: udhcpc / odhcp6c / pppd</span></span>
+<span class="line"><span>                                 ├─► ubus: network.interface.*, network.device</span></span>
+<span class="line"><span>                                 └─► hotplug: /etc/hotplug.d/iface/ (ifup/ifdown)</span></span>
+<span class="line"><span>                                              │</span></span>
+<span class="line"><span>                                              ├─► fw4: reload zones when interfaces change</span></span>
+<span class="line"><span>                                              └─► your scripts</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/etc/config/wireless ─► netifd (wireless handler, e.g. mac80211.sh)</span></span>
+<span class="line"><span>                              └─► generates hostapd/wpa_supplicant config ─► nl80211 ─► driver</span></span>
+<span class="line"><span>                              └─► puts the wlan interface into the bridge according to `network`</span></span></code></pre>
+<p>Two things to remember:</p>
+<ol>
+<li><strong>netifd is the center.</strong> It is both the config interpreter and the state machine. <code>ubus call network.interface dump</code> is the source of truth for <em>what netifd thinks</em>, while <code>ip</code> is the source of truth for <em>what the kernel has</em>.</li>
+<li><strong>fw4 and dnsmasq/odhcpd do not discover topology on their own.</strong> They depend on <em>logical interface names</em> and information supplied by netifd. Changing an interface without reloading firewall/dhcp is a classic source of bugs.</li>
+</ol>
+<hr>
+<h4 id="apply-semantics">Apply semantics</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">/etc/init.d/network</span><span style="color:#9ECBFF"> reload</span><span style="color:#6A737D">     # netifd computes a diff, changes only what changed</span></span>
+<span class="line"><span style="color:#B392F0">/etc/init.d/network</span><span style="color:#9ECBFF"> restart</span><span style="color:#6A737D">    # full down/up, drops your SSH session if you're on the LAN</span></span>
+<span class="line"><span style="color:#B392F0">/etc/init.d/firewall</span><span style="color:#9ECBFF"> reload</span><span style="color:#6A737D">    # or: fw4 reload</span></span>
+<span class="line"><span style="color:#B392F0">/etc/init.d/dnsmasq</span><span style="color:#9ECBFF"> restart</span></span>
+<span class="line"><span style="color:#B392F0">wifi</span><span style="color:#9ECBFF"> reload</span><span style="color:#6A737D">                    # applies /etc/config/wireless</span></span>
+<span class="line"><span style="color:#B392F0">ifup</span><span style="color:#9ECBFF"> wan</span><span style="color:#9ECBFF"> /</span><span style="color:#9ECBFF"> ifdown</span><span style="color:#9ECBFF"> wan</span><span style="color:#6A737D">          # per interface</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network</span><span style="color:#9ECBFF"> reload</span><span style="color:#6A737D">       # equivalent to reload</span></span></code></pre>
+<p><code>[version-dependent]</code> Some changes (adding/removing <code>bridge-vlan</code>, changing <code>vlan_filtering</code>, adding a port to a running bridge) may need <code>restart</code> instead of <code>reload</code>. For changes that can cut off your own management session, use a rollback mechanism: LuCI uses <code>ubus call uci apply</code> with a rollback timer. When working by hand, back up <code>/etc/config</code> first and arm a job that restores it automatically.</p>
+<hr>
+<h3 id="important-openwrt-configuration-files">Important OpenWrt Configuration Files</h3>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>File</th><th>Purpose</th><th>Main components</th></tr></thead><tbody><tr><td><code>/etc/config/network</code></td><td>L2/L3 topology</td><td><code>device</code>, <code>interface</code>, <code>bridge-vlan</code>, <code>route</code>, <code>rule</code>, <code>switch*</code> (legacy)</td></tr><tr><td><code>/etc/config/wireless</code></td><td>Wi-Fi</td><td><code>wifi-device</code> (radio), <code>wifi-iface</code> (SSID/AP/STA/mesh), security</td></tr><tr><td><code>/etc/config/firewall</code></td><td>Security/NAT</td><td><code>defaults</code>, <code>zone</code>, <code>forwarding</code>, <code>rule</code>, <code>redirect</code></td></tr><tr><td><code>/etc/config/dhcp</code></td><td>DHCP/DNS/IPv6 RA</td><td><code>dnsmasq</code>, <code>dhcp</code> (per interface), <code>host</code>, <code>odhcpd</code></td></tr></tbody></table>
+<hr>
+<h4 id="the-files-reference-each-other-by-name">The files reference each other by <em>name</em></h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>SSID "Guest"</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>wifi-iface            (wireless:  option network 'guest')</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>network interface     (network:   config interface 'guest', option device 'br-lan.30')</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>device                (br-lan.30 = VLAN 30 on bridge br-lan)</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>VLAN 30 / 192.168.30.0/24</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>dhcp pool             (dhcp:      config dhcp 'guest', option interface 'guest')</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>firewall zone         (firewall:  config zone / list network 'guest')</span></span></code></pre>
+<p>This chain runs on the <strong>logical interface name</strong> (<code>guest</code>), not the device name (<code>br-lan.30</code>):</p>
+<ul>
+<li><code>wireless</code>: <code>option network 'guest'</code></li>
+<li><code>dhcp</code>: <code>option interface 'guest'</code></li>
+<li><code>firewall</code>: <code>list network 'guest'</code></li>
+</ul>
+<p>Misspelling an interface name, or renaming it without fixing all three places, is a very common mistake. The SSID still comes up, but clients get no DHCP or no Internet.</p>
+<hr>
+<h4 id="other-files-you-will-meet">Other files you will meet</h4>
+<hr>
+<p><code>/etc/config/system</code> (hostname, timezone, LEDs), <code>/etc/config/uhttpd</code>, <code>/etc/config/dropbear</code>, <code>/etc/config/rpcd</code>, <code>/etc/config/mwan3</code> <code>[package-dependent]</code>, <code>/etc/config/sqm</code> <code>[package-dependent]</code>.</p>
+<hr>
+<h3 id="the-netifd-object-model">The netifd Object Model</h3>
+<hr>
+<p>Before the syntax, you need to understand that netifd manages two different kinds of objects.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>device     ──►  L2 object: a netdev (eth, bridge, 8021q, macvlan, veth…)</span></span>
+<span class="line"><span>interface  ──►  L3/protocol object: address, gateway, DNS, routes, proto handler, zone</span></span></code></pre>
+<ul>
+<li>A <strong>device</strong> has a netdev lifecycle: create → configure (MAC, MTU, bridge member) → up.</li>
+<li>An <strong>interface</strong> is a <em>logical network</em>: it attaches to a device, runs a proto (<code>static</code>, <code>dhcp</code>…), and is the unit that firewall/DHCP/wireless reference.</li>
+</ul>
+<p>Interface state (<code>ubus call network.interface.lan status</code>): <code>up</code>, <code>pending</code>, <code>available</code>, <code>autostart</code>. If <code>up: false, pending: true</code>, it is usually because the link is down or the device doesn’t exist yet. Check layer 1/2 before suspecting the IP config.</p>
+<hr>
+<h3 id="etcconfignetwork"><code>/etc/config/network</code></h3>
+<hr>
+<h4 id="device-vs-interface">Device vs Interface</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>config device    ──►  Layer 2  (the "pipe": bridge, VLAN, port settings)</span></span>
+<span class="line"><span>config interface ──►  Layer 3 / protocol  (what is "plugged into the pipe": IP, routes, DHCP client…)</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config device</span></span>
+<span class="line"><span>        option name 'br-lan'</span></span>
+<span class="line"><span>        option type 'bridge'</span></span>
+<span class="line"><span>        list ports 'lan1'</span></span>
+<span class="line"><span>        list ports 'lan2'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'lan'</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.1.1/24'</span></span></code></pre>
+<p><strong>Why separate them?</strong></p>
+<ol>
+<li><strong>Different lifecycles.</strong> A bridge can exist and forward frames without an IP. An interface can flap (DHCP renew, PPP reconnect) without tearing down the bridge.</li>
+<li><strong>One device, several interfaces</strong> and vice versa, e.g. <code>wan</code> (IPv4 DHCP) and <code>wan6</code> (DHCPv6) on the same physical device.</li>
+<li><strong>Devices carry L2 properties</strong> (MTU, MAC, <code>igmp_snooping</code>, <code>stp</code>, <code>vlan_filtering</code>), while interfaces carry L3 properties (<code>ipaddr</code>, <code>gateway</code>, <code>metric</code>, <code>peerdns</code>). Merging the two is the origin of the old, hard-to-read syntax.</li>
+<li><strong>Firewall/DHCP/wireless need an “L3 handle”</strong> to reference. That handle is the <em>interface</em>, not the port.</li>
+</ol>
+<p><code>[version-dependent]</code> Before 21.02, bridges were declared <em>inside</em> the interface (<code>option type 'bridge'</code>, <code>option ifname 'eth0.1 eth0.2'</code>) and <code>ifname</code> was the main option name. From 21.02, <code>config device</code> + <code>option device</code> is the official approach; <code>ifname</code> on interfaces is deprecated but still accepted in some releases. Don’t mix the two syntaxes in one file.</p>
+<p><strong>The <code>@</code> device alias.</strong> <code>option device '@wan'</code> means <em>“use the current L3 device of interface wan”</em>. This matters for <code>wan6</code> when WAN is PPPoE (the real L3 device is <code>pppoe-wan</code>, not <code>wan</code>).</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'wan6'</span></span>
+<span class="line"><span>        option device '@wan'</span></span>
+<span class="line"><span>        option proto 'dhcpv6'</span></span></code></pre>
+<p><strong>Commonly used <code>config device</code> options:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Meaning</th></tr></thead><tbody><tr><td><code>name</code>, <code>type</code></td><td>Netdev name; <code>bridge</code>, <code>8021q</code>, <code>8021ad</code>, <code>macvlan</code>, <code>veth</code>…</td></tr><tr><td><code>ports</code> (list)</td><td>Bridge members</td></tr><tr><td><code>macaddr</code>, <code>mtu</code>, <code>txqueuelen</code></td><td>Netdev properties</td></tr><tr><td><code>stp</code>, <code>forward_delay</code>, <code>priority</code></td><td>Bridge STP</td></tr><tr><td><code>igmp_snooping</code>, <code>multicast</code>, <code>multicast_querier</code></td><td>Multicast <code>[version-dependent]</code> defaults differ</td></tr><tr><td><code>vlan_filtering</code></td><td>Enable VLAN-aware bridge (see section 6)</td></tr><tr><td><code>bridge_empty</code></td><td>Allow a bridge with no ports (for Wi-Fi-only bridges)</td></tr><tr><td><code>ipv6</code>, <code>acceptlocal</code>, <code>promisc</code></td><td>Flags</td></tr></tbody></table>
+<p><strong>Commonly used <code>config interface</code> options:</strong> <code>proto</code>, <code>device</code>, <code>ipaddr</code>, <code>gateway</code>, <code>dns</code>, <code>metric</code>, <code>peerdns</code>, <code>defaultroute</code>, <code>ip6assign</code>, <code>ip6hint</code>, <code>delegate</code>, <code>auto</code>, <code>disabled</code>, <code>ip4table</code>, <code>ip6table</code>, <code>force_link</code>, <code>mtu</code>.</p>
+<p><code>ipaddr</code> accepts CIDR (<code>192.168.1.1/24</code>) in recent releases. Older releases use separate <code>ipaddr</code> + <code>netmask</code> <code>[version-dependent]</code>.</p>
+<p><strong>Complete mapping: UCI → kernel</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>config device 'br-lan' (bridge, ports lan1 lan2)</span></span>
+<span class="line"><span>   → netifd: ip link add br-lan type bridge</span></span>
+<span class="line"><span>             ip link set lan1 master br-lan ; ip link set lan2 master br-lan</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'lan' (device br-lan, static 192.168.1.1/24)</span></span>
+<span class="line"><span>   → netifd: ip addr add 192.168.1.1/24 dev br-lan</span></span>
+<span class="line"><span>             ip route add 192.168.1.0/24 dev br-lan (proto kernel, auto-generated)</span></span>
+<span class="line"><span>   → ubus:   network.interface.lan {up, ipv4-address, route, dns-server…}</span></span>
+<span class="line"><span>   → hotplug: ifup lan → fw4 updates zones, dnsmasq/odhcpd rebind</span></span></code></pre>
+<p>Verify with <code>ip -d link show br-lan</code>, <code>ip addr show br-lan</code>, <code>ubus call network.interface.lan status</code>.</p>
+<hr>
+<h4 id="protocol-types">Protocol types</h4>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><code>proto</code></th><th>Run by</th><th>Use when</th></tr></thead><tbody><tr><td><code>static</code></td><td>netifd (built-in)</td><td>LAN, static WAN IP, management IP</td></tr><tr><td><code>dhcp</code></td><td>udhcpc (<code>dhcp.sh</code>)</td><td>WAN from an ISP/upstream router; AP mode managed via DHCP</td></tr><tr><td><code>dhcpv6</code></td><td>odhcp6c</td><td>IPv6 from the ISP: IA_NA, IA_PD, SLAAC</td></tr><tr><td><code>pppoe</code></td><td>pppd + <code>rp-pppoe.so</code></td><td>DSL/GPON/FTTH where the ISP requires PPPoE</td></tr><tr><td><code>none</code></td><td>—</td><td>L2-only interfaces: VLAN trunk, or a “network handle” for a wifi-iface that needs no IP</td></tr><tr><td><code>relay</code></td><td>relayd <code>[package-dependent]</code></td><td>Pseudo-bridge for Wi-Fi clients (relayd)</td></tr></tbody></table>
+<p><code>[package-dependent]</code> Other protos such as <code>wireguard</code>, <code>3g</code>/<code>qmi</code>/<code>mbim</code>/<code>ncm</code> (modems), <code>gre</code>, <code>vxlan</code>, <code>6in4</code>… are supplied by packages.</p>
+<p><strong>static</strong>: LAN or WAN with a fixed IP.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'wan'</span></span>
+<span class="line"><span>        option device 'wan'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '203.0.113.2/24'</span></span>
+<span class="line"><span>        option gateway '203.0.113.1'</span></span>
+<span class="line"><span>        list dns '203.0.113.53'</span></span></code></pre>
+<p><code>gateway</code> produces <code>default via 203.0.113.1 dev wan</code>. <code>dns</code> is written to the resolv file used by netifd/dnsmasq, but <code>peerdns</code> only applies to protos that produce DNS dynamically.</p>
+<p><strong>dhcp</strong>: the ordinary WAN.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'wan'</span></span>
+<span class="line"><span>        option device 'wan'</span></span>
+<span class="line"><span>        option proto 'dhcp'</span></span>
+<span class="line"><span>        option metric '10'</span></span>
+<span class="line"><span>        option peerdns '0'</span></span>
+<span class="line"><span>        list dns '1.1.1.1'</span></span>
+<span class="line"><span>        option hostname '*'          # don't send a hostname, or set a specific one</span></span>
+<span class="line"><span>        option clientid ''           # some ISPs require client-id/vendorid</span></span></code></pre>
+<p>From DHCP, netifd receives: IP, gateway (option 3), DNS (option 6), lease. The <code>default</code> route gets the interface’s <code>metric</code>. If the ISP requires <code>vendorid</code>, <code>sendopts</code>, or options 60/61, configure them here.</p>
+<p><strong>dhcpv6</strong>: see section 16.</p>
+<p><strong>pppoe</strong>: see section 8. The <code>ppp</code> interface creates the device <code>pppoe-wan</code>. Options such as <code>mtu</code>, <code>keepalive 'lcp-echo-failure lcp-echo-interval'</code>, <code>ipv6 'auto'</code>, <code>service</code>, <code>ac</code> are commonly used.</p>
+<p><strong>none</strong>: an “L3 handle” without L3.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'trunk'</span></span>
+<span class="line"><span>        option device 'lan4'</span></span>
+<span class="line"><span>        option proto 'none'</span></span></code></pre>
+<p>Use it when you need an interface name for firewall/wireless but L3 is handled elsewhere. For example a Wi-Fi AP bridged into a VLAN, or just to “bring up” a port.</p>
+<p><strong>relay</strong> <code>[package-dependent]</code>: an L3 pseudo-bridge for cases where a Wi-Fi STA can’t be bridged.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'repeater_bridge'</span></span>
+<span class="line"><span>        option proto 'relay'</span></span>
+<span class="line"><span>        option ipaddr '192.168.1.2'</span></span>
+<span class="line"><span>        list network 'lan'</span></span>
+<span class="line"><span>        list network 'wwan'</span></span></code></pre>
+<p>See section 14 for when to use it and its drawbacks.</p>
+<hr>
+<h4 id="bridge">Bridge</h4>
+<hr>
+<p><strong>A Linux bridge is a software L2 switch</strong> (if a DSA switch chip offloads it, the actual forwarding is done by hardware). Concepts to know:</p>
+<ul>
+<li><strong>Broadcast domain</strong>: all bridge ports (without VLAN filtering) share one broadcast domain. ARP, DHCP discover, and mDNS reach every port, including Wi-Fi.</li>
+<li><strong>MAC learning &#x26; FDB</strong>: the bridge learns <code>source MAC → port</code> from received frames and stores it in the FDB; frames with a known DA are unicast to the right port, while unknown DAs are flooded. <code>bridge fdb show</code> displays this table; entries have an ageing time (default 300 s).</li>
+<li><strong>Bridge ports</strong>: Ethernet netdevs, DSA user ports, wlan AP interfaces, wlan 4addr STAs, bonds, veths, VLAN sub-interfaces…</li>
+<li><strong>The bridge itself is a netdev</strong> (<code>br-lan</code>) and acts as the bridge’s “CPU port”. An IP on <code>br-lan</code> is the router’s own address, so traffic from a port to that IP goes into the <em>input</em> chain.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config device</span></span>
+<span class="line"><span>        option name 'br-lan'</span></span>
+<span class="line"><span>        option type 'bridge'</span></span>
+<span class="line"><span>        list ports 'lan1'</span></span>
+<span class="line"><span>        list ports 'lan2'</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>LAN1 ----\</span></span>
+<span class="line"><span>LAN2 -----+---- br-lan ---- (IP 192.168.1.1/24, router)</span></span>
+<span class="line"><span>Wi-Fi ----/</span></span></code></pre>
+<p>Wi-Fi does not appear in <code>list ports</code>: netifd <strong>automatically adds</strong> the wlan interface to whichever bridge the logical interface referenced by <code>option network</code> lives on (see section 9). Don’t manually put <code>wlan0</code> in <code>ports</code>.</p>
+<p>A few properties worth knowing:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config device</span></span>
+<span class="line"><span>        option name 'br-lan'</span></span>
+<span class="line"><span>        option type 'bridge'</span></span>
+<span class="line"><span>        list ports 'lan1'</span></span>
+<span class="line"><span>        list ports 'lan2'</span></span>
+<span class="line"><span>        list ports 'lan3'</span></span>
+<span class="line"><span>        option stp '1'               # only needed if loops are possible (multiple uplinks)</span></span>
+<span class="line"><span>        option igmp_snooping '1'     # avoid flooding multicast (IPTV, mDNS) to Wi-Fi</span></span>
+<span class="line"><span>        option macaddr '02:00:00:00:00:01'</span></span></code></pre>
+<blockquote>
+<p><strong>Pitfall:</strong> Two ports of the same bridge connected to the same downstream switch create an <strong>L2 loop</strong> and a broadcast storm. Enable STP or design a loop-free topology. Wi-Fi mesh and wired backhaul at the same time is a common example (section 15).</p>
+</blockquote>
+<hr>
+<h4 id="a-complete-sample-config-dsa">A complete sample config (DSA)</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'loopback'</span></span>
+<span class="line"><span>        option device 'lo'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '127.0.0.1/8'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config globals 'globals'</span></span>
+<span class="line"><span>        option ula_prefix 'fd12:3456:789a::/48'</span></span>
+<span class="line"><span>        option packet_steering '1'            # [platform-dependent] RPS/XPS</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config device</span></span>
+<span class="line"><span>        option name 'br-lan'</span></span>
+<span class="line"><span>        option type 'bridge'</span></span>
+<span class="line"><span>        list ports 'lan1'</span></span>
+<span class="line"><span>        list ports 'lan2'</span></span>
+<span class="line"><span>        list ports 'lan3'</span></span>
+<span class="line"><span>        list ports 'lan4'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'lan'</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.1.1/24'</span></span>
+<span class="line"><span>        option ip6assign '60'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'wan'</span></span>
+<span class="line"><span>        option device 'wan'</span></span>
+<span class="line"><span>        option proto 'dhcp'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'wan6'</span></span>
+<span class="line"><span>        option device '@wan'</span></span>
+<span class="line"><span>        option proto 'dhcpv6'</span></span></code></pre>
+<hr>
+<h3 id="vlan-and-dsa">VLAN and DSA</h3>
+<hr>
+<h4 id="8021q-in-60-seconds">802.1Q in 60 seconds</h4>
+<hr>
+<ul>
+<li>802.1Q inserts a 4-byte tag (TPID <code>0x8100</code>, PCP, DEI, <strong>12-bit VID</strong>) into the Ethernet frame.</li>
+<li><strong>Tagged</strong>: the frame carries the VID tag on the wire. <strong>Untagged</strong>: the frame has no tag; the switch assigns a VLAN to it according to the port’s <strong>PVID</strong>.</li>
+<li><strong>Access port</strong>: untagged, belongs to one VLAN; end devices don’t know VLANs exist.</li>
+<li><strong>Trunk port</strong>: carries several tagged VLANs (usually plus a native/untagged VLAN).</li>
+<li><strong>A VLAN is a separate broadcast domain.</strong> Communication between VLANs requires L3 (a router).</li>
+</ul>
+<hr>
+<h4 id="two-worlds-swconfig-legacy-vs-dsa-modern">Two worlds: <code>swconfig</code> (legacy) vs DSA (modern)</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Legacy (swconfig)                       Modern (DSA)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>SoC MAC (eth0) ──CPU port──► switch     SoC MAC = "conduit" (eth0, rarely used directly)</span></span>
+<span class="line"><span>                    │                         │</span></span>
+<span class="line"><span>              switch0 (chip)                  ▼</span></span>
+<span class="line"><span>              ├ ports 1..4 (no netdevs)       lan1..lan4, wan = real netdevs</span></span>
+<span class="line"><span>              └ VLAN table inside the chip</span></span>
+<span class="line"><span>                    │                   bridge  ──►  bridge-vlan  ──►  DSA offload</span></span>
+<span class="line"><span>         swconfig ──► eth0.1, eth0.2    (the kernel bridge is where VLANs are configured)</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th><code>swconfig</code></th><th>DSA</th></tr></thead><tbody><tr><td>Physical ports have their own netdev?</td><td><strong>No</strong> (only <code>eth0</code> + VLAN subifs <code>eth0.N</code>)</td><td><strong>Yes</strong> (<code>lan1</code>, <code>lan2</code>, <code>wan</code>…)</td></tr><tr><td>Where VLANs are configured</td><td><code>config switch</code> / <code>config switch_vlan</code></td><td><code>config bridge-vlan</code> on a VLAN-aware bridge</td></tr><tr><td>Port syntax</td><td>port numbers (<code>0 1 2 3 6t</code>), <code>t</code> = tagged (usually on the CPU port)</td><td>port names + flags (<code>lan1:u*</code>, <code>lan4:t</code>)</td></tr><tr><td>Kernel mechanism</td><td>out-of-tree/legacy switch API</td><td>bridge VLAN filtering + switchdev offload</td></tr><tr><td>Tools</td><td><code>swconfig dev switch0 show</code></td><td><code>bridge vlan</code>, <code>ip -d link</code></td></tr><tr><td>Release</td><td>common up to 19.07; some targets still use it later <code>[platform-dependent]</code></td><td>21.02 onward for many targets <code>[platform-dependent]</code></td></tr></tbody></table>
+<blockquote>
+<p><strong>Do not use swconfig syntax to explain a DSA device.</strong> If your <code>/etc/config/network</code> contains <code>config switch</code> / <code>config switch_vlan</code>, it is swconfig. If it contains <code>bridge-vlan</code> and ports named <code>lanX</code>, it is DSA. The two models are <strong>not interchangeable</strong>. Many old tutorials online are written for swconfig and will <strong>not work</strong> on DSA.</p>
+</blockquote>
+<p>A swconfig example to show the difference (older device, illustrative port numbers, <strong>do not</strong> copy to DSA):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># --- LEGACY swconfig, NOT for DSA ---</span></span>
+<span class="line"><span>config switch</span></span>
+<span class="line"><span>        option name 'switch0'</span></span>
+<span class="line"><span>        option reset '1'</span></span>
+<span class="line"><span>        option enable_vlan '1'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config switch_vlan</span></span>
+<span class="line"><span>        option device 'switch0'</span></span>
+<span class="line"><span>        option vlan '1'</span></span>
+<span class="line"><span>        option ports '1 2 3 4 0t'        # 0 = CPU port (tagged), 1-4 = LAN</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config switch_vlan</span></span>
+<span class="line"><span>        option device 'switch0'</span></span>
+<span class="line"><span>        option vlan '2'</span></span>
+<span class="line"><span>        option ports '5 0t'              # 5 = WAN</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'lan'</span></span>
+<span class="line"><span>        option device 'eth0.1'           # VLAN 1 on the CPU port</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.1.1/24'</span></span></code></pre>
+<p><code>[platform-dependent]</code> Port count, CPU port position, and the <code>t</code> flag depend entirely on the chip (RTL8366, AR8327, MT7530 in swconfig mode, B53…). Read <code>swconfig dev switch0 show</code> and <code>/etc/board.json</code>.</p>
+<p><code>[platform-dependent]</code> On some modern SoCs (some Qualcomm IPQ60xx/IPQ807x lines using SSDK/NSS, or firmware built on a vendor SDK), the switch/bridge offload model is <strong>not upstream-standard DSA</strong>. VLAN configuration and hardware offload may differ. Check your target’s documentation.</p>
+<hr>
+<h4 id="dsa-the-configuration-model">DSA: the configuration model</h4>
+<hr>
+<p>In DSA every user port is a netdev. VLANs are configured <strong>on the bridge</strong>, and the kernel/driver pushes them down to the switch chip via switchdev.</p>
+<ul>
+<li><strong>Conduit</strong> (formerly <em>master</em>): the netdev of the SoC MAC connected to the switch chip (e.g. <code>eth0</code>). It must be UP but you do <strong>not</strong> put an IP on it. <code>[platform-dependent]</code> Automatic bring-up is handled by OpenWrt init/netifd.</li>
+<li><strong>User ports</strong>: <code>lan1..lanN</code>, <code>wan</code>.</li>
+<li><strong>Bridge VLAN filtering</strong>: when enabled, the bridge is no longer a single broadcast domain; each frame is classified by VLAN (PVID/tag) and forwarded only to ports that are members of that VLAN.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config device</span></span>
+<span class="line"><span>        option name 'br-lan'</span></span>
+<span class="line"><span>        option type 'bridge'</span></span>
+<span class="line"><span>        option vlan_filtering '1'</span></span>
+<span class="line"><span>        list ports 'lan1'</span></span>
+<span class="line"><span>        list ports 'lan2'</span></span>
+<span class="line"><span>        list ports 'lan3'</span></span>
+<span class="line"><span>        list ports 'lan4'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config bridge-vlan</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option vlan '10'</span></span>
+<span class="line"><span>        list ports 'lan1:u*'</span></span>
+<span class="line"><span>        list ports 'lan4:t'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config bridge-vlan</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option vlan '20'</span></span>
+<span class="line"><span>        list ports 'lan4:t'</span></span></code></pre>
+<p><strong>Flag meanings:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Flag</th><th>Meaning</th><th>Details</th></tr></thead><tbody><tr><td><code>t</code></td><td><strong>Tagged</strong></td><td>Frames leaving this port carry the VID tag; frames entering must carry this VID tag to belong to the VLAN. Used for trunks.</td></tr><tr><td><code>u</code></td><td><strong>Untagged</strong> (egress untagged)</td><td>The tag is stripped on egress. Used for access ports.</td></tr><tr><td><code>*</code></td><td><strong>PVID</strong></td><td><em>Untagged ingress</em> frames on the port are assigned to this VLAN.</td></tr><tr><td><code>u*</code></td><td>Untagged + PVID</td><td>A complete access port: egress untagged, ingress untagged → this VLAN</td></tr><tr><td>(no flag)</td><td>Default</td><td><code>[version-dependent]</code> usually equivalent to untagged; state it explicitly to avoid ambiguity</td></tr></tbody></table>
+<p><code>u</code> without <code>*</code> means frames leave untagged, but untagged frames entering are not assigned to this VLAN. This is a very common <strong>one-way</strong> bug: the client receives the DHCP offer but its discover never arrives (or vice versa).</p>
+<p><strong>About VLAN 1:</strong> on a VLAN-filtering bridge, the bridge has a default VLAN (PVID 1) unless netifd/you configure otherwise. If you use VLAN 1 as the default LAN and add other VLANs, deliberately manage PVIDs so ports don’t end up in unintended VLANs. Check with <code>bridge vlan show</code>.</p>
+<p><strong>The <code>local</code> option of <code>bridge-vlan</code>:</strong> by default the bridge itself (CPU) is a member of the VLAN (<code>local '1'</code>), meaning the router can have an L3 interface on that VLAN. If the router only forwards this VLAN at L2 without needing an IP (a pass-through VLAN), you can set <code>option local '0'</code> <code>[version-dependent]</code>.</p>
+<p><strong>Topology:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>                      trunk (VLAN 10,20 tagged)</span></span>
+<span class="line"><span>OpenWrt lan4 ---------------------------- Managed Switch</span></span>
+<span class="line"><span>   |                                        /         \</span></span>
+<span class="line"><span> lan1 (VLAN10 untagged)                 VLAN10        VLAN20</span></span>
+<span class="line"><span>                                       access port   access port</span></span></code></pre>
+<hr>
+<h4 id="attaching-an-l3-interface-to-a-vlan">Attaching an L3 interface to a VLAN</h4>
+<hr>
+<p>Create the interface on <code>br-lan.&#x3C;vid></code> (the VLAN sub-interface name of a VLAN-aware bridge):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'main'</span></span>
+<span class="line"><span>        option device 'br-lan.10'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.10.1/24'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'iot'</span></span>
+<span class="line"><span>        option device 'br-lan.20'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.20.1/24'</span></span></code></pre>
+<p>The model: <strong>bridge-vlan = L2 membership; the interface on <code>br-lan.N</code> = the L3 gateway of that VLAN</strong>. If there is no <code>bridge-vlan</code> for VLAN N, <code>br-lan.N</code> has no members and traffic doesn’t flow.</p>
+<p><code>[version-dependent]</code> Sub-interface names like <code>br-lan.10</code> and netifd’s automatic placement of wlan into a VLAN (sections 9, 10) are supported from the DSA era (21.02+). Confirm with <code>bridge vlan show</code> after applying.</p>
+<hr>
+<h4 id="vlans-on-swconfig-vs-dsa-a-quick-comparison-for-one-use-case">VLANs on swconfig vs DSA: a quick comparison for one use case</h4>
+<hr>
+<p><em>“Access port VLAN 10, trunk VLAN 10+20.”</em></p>
+<ul>
+<li><strong>swconfig</strong>: two <code>switch_vlan</code> sections, the trunk port can be in both as tagged; the interfaces are <code>eth0.10</code>, <code>eth0.20</code> (VLAN subifs of the conduit).</li>
+<li><strong>DSA</strong>: one VLAN-aware bridge, two <code>bridge-vlan</code> sections; the interfaces are <code>br-lan.10</code>, <code>br-lan.20</code>.</li>
+</ul>
+<hr>
+<h3 id="routing">Routing</h3>
+<hr>
+<h4 id="mental-model-1">Mental model</h4>
+<hr>
+<p>Every IP packet the router handles goes through a <strong>routing decision</strong> in the kernel (FIB). On OpenWrt:</p>
+<ul>
+<li>netifd installs routes when an interface comes up: connected routes (<code>proto kernel</code>), default routes from <code>gateway</code> or DHCP/PPP, and <code>config route</code> entries.</li>
+<li>Default routes have a <strong>metric</strong>; the lower metric wins.</li>
+<li>There can be <strong>multiple routing tables</strong>; <code>ip rule</code> decides which table a packet uses (policy routing).</li>
+</ul>
+<hr>
+<h4 id="default-route-and-metric">Default route and metric</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'wan'</span></span>
+<span class="line"><span>        option device 'wan'</span></span>
+<span class="line"><span>        option proto 'dhcp'</span></span>
+<span class="line"><span>        option metric '10'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'wan2'</span></span>
+<span class="line"><span>        option device 'lan4'</span></span>
+<span class="line"><span>        option proto 'dhcp'</span></span>
+<span class="line"><span>        option metric '20'</span></span></code></pre>
+<p>Both default routes exist; the metric-10 route is used, and the metric-20 route is a backup <em>only when the first route disappears from the FIB</em> (e.g. link down). If the link stays up but the upstream is dead, the route remains and there is <strong>no failover</strong>. See section 17.</p>
+<hr>
+<h4 id="static-route">Static route</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config route</span></span>
+<span class="line"><span>        option interface 'lan'</span></span>
+<span class="line"><span>        option target '192.168.20.0/24'</span></span>
+<span class="line"><span>        option gateway '192.168.10.254'</span></span>
+<span class="line"><span>        option metric '5'</span></span></code></pre>
+<p>Use it when another L3 router inside the LAN has additional subnets behind it. <code>gateway</code> must be inside the <code>interface</code>’s subnet (or use <code>option onlink '1'</code>). Other options: <code>table</code>, <code>type</code> (<code>unicast</code>/<code>blackhole</code>/<code>unreachable</code>/<code>prohibit</code>), <code>source</code>, <code>mtu</code>. For IPv6 use <code>config route6</code>.</p>
+<hr>
+<h4 id="policy-based-routing">Policy-based routing</h4>
+<hr>
+<p><code>ip rule</code> selects a table by source, ingress interface, fwmark…</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config route</span></span>
+<span class="line"><span>        option interface 'wan'</span></span>
+<span class="line"><span>        option target '0.0.0.0/0'</span></span>
+<span class="line"><span>        option gateway '203.0.113.1'</span></span>
+<span class="line"><span>        option table '100'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config rule</span></span>
+<span class="line"><span>        option in 'iot'                  # logical interface name (iif)</span></span>
+<span class="line"><span>        option lookup '100'</span></span>
+<span class="line"><span>        option priority '1000'</span></span></code></pre>
+<p>Or by source subnet:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config rule</span></span>
+<span class="line"><span>        option src '192.168.20.0/24'</span></span>
+<span class="line"><span>        option lookup 'vpn'              # table name declared in /etc/iproute2/rt_tables</span></span>
+<span class="line"><span>        option priority '2000'</span></span></code></pre>
+<p>Typical use cases: push the IoT VLAN through a VPN/second WAN, or send guests out through a separate ISP. In addition, an interface has <code>ip4table</code> / <code>ip6table</code> so that routes generated by that interface are installed in its own table instead of <code>main</code>.</p>
+<blockquote>
+<p><strong>Note:</strong> A policy route whose target table has no default route makes traffic <strong>fall through to the next rule</strong>, or get dropped, depending on the rules. Verify step by step with <code>ip route get</code>.</p>
+</blockquote>
+<hr>
+<h4 id="debug">Debug</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> route</span><span style="color:#6A737D">                                  # main table</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> route</span><span style="color:#9ECBFF"> show</span><span style="color:#9ECBFF"> table</span><span style="color:#9ECBFF"> all</span><span style="color:#6A737D">                   # all tables (including local, 100, vpn…)</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> rule</span><span style="color:#6A737D">                                   # policy rules + priority</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> route</span><span style="color:#9ECBFF"> get</span><span style="color:#79B8FF"> 8.8.8.8</span><span style="color:#9ECBFF"> from</span><span style="color:#79B8FF"> 192.168.20.5</span><span style="color:#9ECBFF"> iif</span><span style="color:#9ECBFF"> br-lan.20</span><span style="color:#6A737D">   # simulate the decision</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -6</span><span style="color:#9ECBFF"> route</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network.interface.wan</span><span style="color:#9ECBFF"> status</span><span style="color:#6A737D">    # routes managed by netifd</span></span></code></pre>
+<p><code>ip route get</code> is the most powerful tool here: it tells you which route/table the kernel <strong>will</strong> pick for a specific flow, including policy rules.</p>
+<hr>
+<h3 id="wan-configurations">WAN Configurations</h3>
+<hr>
+<p>WAN device name <code>[platform-dependent]</code>: it can be <code>wan</code> (DSA), <code>eth1</code>, <code>eth0.2</code> (swconfig), or a <code>lanX</code> used as WAN on devices with a single switch port.</p>
+<hr>
+<h4 id="dhcp-wan">DHCP WAN</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'wan'</span></span>
+<span class="line"><span>        option device 'wan'</span></span>
+<span class="line"><span>        option proto 'dhcp'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'wan6'</span></span>
+<span class="line"><span>        option device '@wan'</span></span>
+<span class="line"><span>        option proto 'dhcpv6'</span></span></code></pre>
+<hr>
+<h4 id="static-wan">Static WAN</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'wan'</span></span>
+<span class="line"><span>        option device 'wan'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '203.0.113.2/24'</span></span>
+<span class="line"><span>        option gateway '203.0.113.1'</span></span>
+<span class="line"><span>        list dns '203.0.113.53'</span></span></code></pre>
+<hr>
+<h4 id="pppoe">PPPoE</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'wan'</span></span>
+<span class="line"><span>        option device 'wan'</span></span>
+<span class="line"><span>        option proto 'pppoe'</span></span>
+<span class="line"><span>        option username 'USERNAME'</span></span>
+<span class="line"><span>        option password 'PASSWORD'</span></span>
+<span class="line"><span>        option ipv6 'auto'</span></span>
+<span class="line"><span>        option keepalive '5 5'       # lcp-echo-failure lcp-echo-interval</span></span>
+<span class="line"><span>        option mtu '1492'            # PPPoE overhead is 8 bytes; depends on ISP/link</span></span></code></pre>
+<p>Technical points:</p>
+<ul>
+<li>PPPoE creates a new netdev (<code>pppoe-wan</code>) running on top of <code>wan</code>. <strong>The L3 device is <code>pppoe-wan</code></strong>, which is why <code>wan6</code> uses <code>@wan</code>, and the firewall uses the <em>interface name</em> <code>wan</code>, not <code>eth1</code>/<code>wan</code>.</li>
+<li>The 8-byte overhead makes the effective MTU 1492 (on a 1500-MTU link). Without MSS clamping (<code>mtu_fix '1'</code> on the wan zone) you get the symptom of <em>some websites hanging</em> due to a PMTU blackhole.</li>
+<li>Credentials are plaintext in <code>/etc/config/network</code>; be careful when sharing configs/backups.</li>
+</ul>
+<hr>
+<h4 id="pppoe-over-vlan">PPPoE over VLAN</h4>
+<hr>
+<p>Many carriers (especially FTTH) require PPPoE to run inside a specific VLAN ID.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Ethernet (wan)</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>VLAN (wan.&#x3C;vid>, 802.1Q)</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>PPPoE (pppoe-wan)</span></span>
+<span class="line"><span>   ↓</span></span>
+<span class="line"><span>WAN (interface 'wan')</span></span></code></pre>
+<p>Two ways to declare it, <strong>with device names being platform-dependent</strong>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Way 1: declare the VLAN device explicitly</span></span>
+<span class="line"><span>config device</span></span>
+<span class="line"><span>        option name 'wan.100'</span></span>
+<span class="line"><span>        option type '8021q'</span></span>
+<span class="line"><span>        option ifname 'wan'          # parent device [platform-dependent]</span></span>
+<span class="line"><span>        option vid '100'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'wan'</span></span>
+<span class="line"><span>        option device 'wan.100'</span></span>
+<span class="line"><span>        option proto 'pppoe'</span></span>
+<span class="line"><span>        option username 'USERNAME'</span></span>
+<span class="line"><span>        option password 'PASSWORD'</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Way 2: let netifd create the VLAN sub-interface from the "parent.vid" name</span></span>
+<span class="line"><span>config interface 'wan'</span></span>
+<span class="line"><span>        option device 'wan.100'</span></span>
+<span class="line"><span>        option proto 'pppoe'</span></span>
+<span class="line"><span>        ...</span></span></code></pre>
+<ul>
+<li><strong>DSA</strong>: the parent is the user port <code>wan</code> (or <code>lanX</code> if you use that port as WAN). The VLAN tag is added by 8021q on the <code>wan</code> netdev; no <code>bridge-vlan</code> is needed because <code>wan</code> is not in a bridge.</li>
+<li><strong>swconfig</strong>: the WAN VLAN is typically <code>eth0.2</code> (a switch VLAN), and PPPoE-VLAN needs another VLAN layer on top, e.g. <code>eth0.2</code> + vid 100 → <code>eth0.2.100</code>, or tagging configured at the switch level. The exact syntax <strong>depends on the chip</strong>.</li>
+<li><code>[platform-dependent]</code> Some SoCs can offload PPPoE/VLAN in hardware NAT. When flow offloading is enabled, re-check performance and behavior.</li>
+</ul>
+<hr>
+<h3 id="etcconfigwireless"><code>/etc/config/wireless</code></h3>
+<hr>
+<h4 id="wifi-device-the-radio"><code>wifi-device</code>: the radio</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config wifi-device 'radio0'</span></span>
+<span class="line"><span>        option type 'mac80211'</span></span>
+<span class="line"><span>        option path 'platform/soc/18000000.wifi'</span></span>
+<span class="line"><span>        option band '2g'</span></span>
+<span class="line"><span>        option channel 'auto'</span></span>
+<span class="line"><span>        option htmode 'HE40'</span></span>
+<span class="line"><span>        option country 'VN'</span></span>
+<span class="line"><span>        option txpower '20'</span></span>
+<span class="line"><span>        option cell_density '0'</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Technical explanation</th></tr></thead><tbody><tr><td><code>type</code></td><td>Wireless handler: <code>mac80211</code> for most upstream drivers; vendor SDKs may use other handlers <code>[platform-dependent]</code></td></tr><tr><td><code>path</code> / <code>macaddr</code></td><td>How netifd identifies the phy; <code>path</code> is stable per device tree/PCI path</td></tr><tr><td><code>band</code></td><td><code>2g</code>/<code>5g</code>/<code>6g</code>/<code>60g</code>. Since about 21.02. Older releases use <code>hwmode</code> (<code>11g</code>/<code>11a</code>) <code>[version-dependent]</code></td></tr><tr><td><code>channel</code></td><td>Channel number, or <code>auto</code> = ACS (Automatic Channel Selection) <code>[driver-dependent]</code>. Not every driver/phy supports ACS well; ACS on 5 GHz can be delayed by DFS CAC</td></tr><tr><td><code>htmode</code></td><td><code>HT20/HT40</code>, <code>VHT20/40/80/160</code>, <code>HE20/40/80/160</code>, <code>EHT…</code> depending on phy capability and release</td></tr><tr><td><code>country</code></td><td>Regulatory domain. <strong>Determines valid channels/power</strong>; setting it correctly is mandatory. Some drivers have a self-managed regdom</td></tr><tr><td><code>txpower</code></td><td>dBm; limited by regdom/EEPROM/driver <code>[driver-dependent]</code></td></tr><tr><td><code>cell_density</code></td><td>Adjusts basic rates; 0 = default, lower = better low-rate compatibility, higher = less airtime overhead <code>[version-dependent]</code></td></tr><tr><td><code>disabled</code></td><td>Disable the radio</td></tr></tbody></table>
+<p>Notes:</p>
+<ul>
+<li><strong>HE40 on 2.4 GHz</strong> is technically valid but usually poor in dense AP environments because of OBSS coexistence (HT40 on 2.4 GHz may fall back to 20 MHz when neighboring APs are detected). 20 MHz is recommended for 2.4 GHz.</li>
+<li><strong>DFS</strong> (5 GHz, channels 52-144) requires CAC (several minutes when choosing a channel) and radar detection; ACS may pick a DFS channel and the AP is “silent” during CAC.</li>
+<li>Multiple radios may exist: <code>radio0</code> (2.4), <code>radio1</code> (5)… Names and ordering are <code>[platform-dependent]</code>.</li>
+</ul>
+<hr>
+<h4 id="wifi-iface-the-logical-bssinterface"><code>wifi-iface</code>: the logical BSS/interface</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config wifi-iface 'default_radio0'</span></span>
+<span class="line"><span>        option device 'radio0'</span></span>
+<span class="line"><span>        option mode 'ap'</span></span>
+<span class="line"><span>        option ssid 'Home'</span></span>
+<span class="line"><span>        option network 'lan'</span></span>
+<span class="line"><span>        option encryption 'sae-mixed'</span></span>
+<span class="line"><span>        option key 'PASSWORD'</span></span>
+<span class="line"><span>        option ieee80211w '1'</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><code>mode</code></th><th>Meaning</th></tr></thead><tbody><tr><td><code>ap</code></td><td>Access Point (hostapd)</td></tr><tr><td><code>sta</code></td><td>Client connecting to another AP (wpa_supplicant)</td></tr><tr><td><code>adhoc</code></td><td>IBSS (legacy, rarely used)</td></tr><tr><td><code>mesh</code></td><td>802.11s mesh point <code>[package-dependent]</code> needs a wpad with mesh</td></tr><tr><td><code>monitor</code></td><td>Monitor mode (sniffer), no association</td></tr></tbody></table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th><code>encryption</code></th><th>Notes</th></tr></thead><tbody><tr><td><code>none</code></td><td>Open</td></tr><tr><td><code>psk2</code>, <code>psk2+ccmp</code></td><td>WPA2-PSK</td></tr><tr><td><code>sae</code></td><td>WPA3-Personal (SAE)</td></tr><tr><td><code>sae-mixed</code></td><td>WPA2/WPA3 transition mode</td></tr><tr><td><code>owe</code></td><td>Opportunistic Wireless Encryption</td></tr><tr><td><code>wpa2</code>/<code>wpa3</code></td><td>Enterprise (802.1X) requires <code>auth_server</code>…</td></tr></tbody></table>
+<p><code>[package-dependent]</code> <strong>SAE/OWE/mesh/Enterprise require the right <code>wpad</code> variant</strong> (<code>wpad-basic-*</code> or the fuller <code>wpad-mbedtls</code>/<code>wpad-openssl</code>). The old <code>wpad-mini</code> does not support WPA3. A mismatch between encryption and wpad variant leaves the SSID down and only shows an error in <code>logread</code>.</p>
+<p>Other important AP options: <code>isolate '1'</code> (client isolation, blocks L2 between clients of the same BSS), <code>hidden</code>, <code>wmm</code>, <code>ieee80211r</code> + <code>mobility_domain</code> (802.11r FT), <code>ieee80211k</code>, <code>bss_transition</code> (802.11v), <code>multicast_to_unicast</code>, <code>dtim_period</code>, <code>macfilter</code>, <code>max_inactivity</code>, <code>wds</code> (4addr). <code>[version-dependent]</code> / <code>[driver-dependent]</code> Availability differs by release and driver.</p>
+<p><strong><code>network</code> is the critical link:</strong> <code>option network 'lan'</code> names the <em>logical interface</em> this BSS belongs to. netifd will:</p>
+<ol>
+<li>Find that interface’s device (e.g. <code>br-lan</code>),</li>
+<li>Create the wlan netdev (e.g. <code>phy0-ap0</code>; the name is <code>[driver-dependent]</code>/<code>[version-dependent]</code>),</li>
+<li>Add the wlan netdev as a <strong>bridge port</strong>. If that interface’s device is <code>br-lan.20</code>, i.e. a VLAN on a VLAN-aware bridge, netifd places the wlan in the bridge with the corresponding VLAN <code>[version-dependent]</code>; verify with <code>bridge vlan show</code>.</li>
+</ol>
+<p><code>network</code> can list multiple interfaces (<code>list network 'a' 'b'</code>) but normally each SSID has one network.</p>
+<hr>
+<h4 id="from-config-to-hostapd">From config to hostapd</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>wifi-device + wifi-iface</span></span>
+<span class="line"><span>        ↓  (netifd wireless handler, e.g. mac80211.sh)</span></span>
+<span class="line"><span> /var/run/hostapd-phy0.conf  (and wpa_supplicant-*.conf)</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span> hostapd / wpa_supplicant  ──nl80211──►  mac80211/cfg80211 ──► driver ──► radio</span></span></code></pre>
+<p>See the config actually in use with <code>cat /var/run/hostapd-phy0.conf</code>. This is the quickest way to see which options really reach hostapd.</p>
+<hr>
+<h3 id="multi-ssid">Multi-SSID</h3>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>          OpenWrt</span></span>
+<span class="line"><span>             |</span></span>
+<span class="line"><span>   +---------+---------+</span></span>
+<span class="line"><span>   |         |         |</span></span>
+<span class="line"><span> Main       IoT      Guest</span></span>
+<span class="line"><span> VLAN10    VLAN20    VLAN30</span></span></code></pre>
+<hr>
+<h4 id="the-mapping-chain-must-be-understood-clearly">The mapping chain (must be understood clearly)</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>SSID</span></span>
+<span class="line"><span> ↓</span></span>
+<span class="line"><span>wifi-iface        (wireless: option network '&#x3C;name>')</span></span>
+<span class="line"><span> ↓</span></span>
+<span class="line"><span>network           (network: config interface '&#x3C;name>')</span></span>
+<span class="line"><span> ↓</span></span>
+<span class="line"><span>L3 interface      (IP, DHCP pool, routes)</span></span>
+<span class="line"><span> ↓</span></span>
+<span class="line"><span>VLAN              (device br-lan.&#x3C;vid> with bridge-vlan &#x3C;vid>)</span></span>
+<span class="line"><span> ↓</span></span>
+<span class="line"><span>firewall zone     (zone: list network '&#x3C;name>')</span></span></code></pre>
+<p>Each arrow is <strong>a place where things can go wrong</strong>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Arrow</th><th>Typical error</th><th>Symptom</th></tr></thead><tbody><tr><td>SSID → wifi-iface</td><td><code>disabled</code>, wrong <code>device</code>, radio not up</td><td>SSID not visible</td></tr><tr><td>wifi-iface → network</td><td>Wrong name, interface doesn’t exist</td><td>SSID visible but client can’t connect at L3 / lands in the wrong network</td></tr><tr><td>network → VLAN</td><td>Missing <code>bridge-vlan</code>, wrong <code>u*</code>/<code>t</code> flags</td><td>Client associates, gets no DHCP</td></tr><tr><td>VLAN → L3</td><td>No IP on <code>br-lan.N</code> or no DHCP pool</td><td>Associates, no IP</td></tr><tr><td>L3 → firewall zone</td><td>Interface not in any zone</td><td>Has an IP but no Internet / can’t reach the router</td></tr></tbody></table>
+<hr>
+<h4 id="a-complete-example-dsa-one-radio-per-band">A complete example (DSA, one radio per band)</h4>
+<hr>
+<p>Plan: VLAN 10 Main <code>192.168.10.0/24</code>, VLAN 20 IoT <code>192.168.20.0/24</code>, VLAN 30 Guest <code>192.168.30.0/24</code>.</p>
+<p><code>/etc/config/network</code></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config device</span></span>
+<span class="line"><span>        option name 'br-lan'</span></span>
+<span class="line"><span>        option type 'bridge'</span></span>
+<span class="line"><span>        option vlan_filtering '1'</span></span>
+<span class="line"><span>        list ports 'lan1'</span></span>
+<span class="line"><span>        list ports 'lan2'</span></span>
+<span class="line"><span>        list ports 'lan3'</span></span>
+<span class="line"><span>        list ports 'lan4'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config bridge-vlan</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option vlan '10'</span></span>
+<span class="line"><span>        list ports 'lan1:u*'</span></span>
+<span class="line"><span>        list ports 'lan2:u*'</span></span>
+<span class="line"><span>        list ports 'lan4:t'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config bridge-vlan</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option vlan '20'</span></span>
+<span class="line"><span>        list ports 'lan3:u*'</span></span>
+<span class="line"><span>        list ports 'lan4:t'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config bridge-vlan</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option vlan '30'</span></span>
+<span class="line"><span>        list ports 'lan4:t'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'main'</span></span>
+<span class="line"><span>        option device 'br-lan.10'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.10.1/24'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'iot'</span></span>
+<span class="line"><span>        option device 'br-lan.20'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.20.1/24'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'guest'</span></span>
+<span class="line"><span>        option device 'br-lan.30'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.30.1/24'</span></span></code></pre>
+<p><code>/etc/config/wireless</code> (abridged; repeat for <code>radio1</code>)</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config wifi-iface 'main_2g'</span></span>
+<span class="line"><span>        option device 'radio0'</span></span>
+<span class="line"><span>        option mode 'ap'</span></span>
+<span class="line"><span>        option ssid 'Main'</span></span>
+<span class="line"><span>        option network 'main'</span></span>
+<span class="line"><span>        option encryption 'sae-mixed'</span></span>
+<span class="line"><span>        option key 'MAIN_PASSWORD'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config wifi-iface 'iot_2g'</span></span>
+<span class="line"><span>        option device 'radio0'</span></span>
+<span class="line"><span>        option mode 'ap'</span></span>
+<span class="line"><span>        option ssid 'IoT'</span></span>
+<span class="line"><span>        option network 'iot'</span></span>
+<span class="line"><span>        option encryption 'psk2'          # many IoT devices don't support WPA3</span></span>
+<span class="line"><span>        option key 'IOT_PASSWORD'</span></span>
+<span class="line"><span>        option isolate '1'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config wifi-iface 'guest_2g'</span></span>
+<span class="line"><span>        option device 'radio0'</span></span>
+<span class="line"><span>        option mode 'ap'</span></span>
+<span class="line"><span>        option ssid 'Guest'</span></span>
+<span class="line"><span>        option network 'guest'</span></span>
+<span class="line"><span>        option encryption 'sae-mixed'</span></span>
+<span class="line"><span>        option key 'GUEST_PASSWORD'</span></span>
+<span class="line"><span>        option isolate '1'</span></span></code></pre>
+<p><code>/etc/config/dhcp</code>: one pool per interface (see section 19). <code>/etc/config/firewall</code>: one zone per interface (sections 11, 18).</p>
+<hr>
+<h4 id="practical-limits">Practical limits</h4>
+<hr>
+<ul>
+<li><strong>The number of BSSes per radio is limited</strong> <code>[driver-dependent]</code> (typically 8-16 depending on driver/chip). Each SSID is a separate beacon sent at the basic rate, so <strong>many SSIDs increase airtime overhead</strong> (especially on 2.4 GHz). Don’t create too many SSIDs.</li>
+<li>An IoT SSID on 2.4 GHz and a main SSID on 5 GHz is usually a sensible split.</li>
+<li>VLANs carried over the <code>lan4</code> trunk to a switch must be configured to <strong>match</strong> on the downstream switch (same VIDs, trunk port, native VLAN).</li>
+</ul>
+<hr>
+<h3 id="guest-wi-fi">Guest Wi-Fi</h3>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Guest Wi-Fi</span></span>
+<span class="line"><span>     |</span></span>
+<span class="line"><span> VLAN 30 (or a local bridge)</span></span>
+<span class="line"><span>     |</span></span>
+<span class="line"><span>192.168.30.0/24</span></span>
+<span class="line"><span>     |</span></span>
+<span class="line"><span> Firewall</span></span>
+<span class="line"><span>   /     \</span></span>
+<span class="line"><span> ALLOW   DROP</span></span>
+<span class="line"><span>   |       |</span></span>
+<span class="line"><span> Internet  LAN</span></span></code></pre>
+<hr>
+<h4 id="two-ways-to-build-l2">Two ways to build L2</h4>
+<hr>
+<p><strong>A. Guest exists only on this AP (simple, no VLAN):</strong> a dedicated bridge with no Ethernet ports.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config device</span></span>
+<span class="line"><span>        option name 'br-guest'</span></span>
+<span class="line"><span>        option type 'bridge'</span></span>
+<span class="line"><span>        option bridge_empty '1'            # bridge with no Ethernet ports, wifi will join it</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'guest'</span></span>
+<span class="line"><span>        option device 'br-guest'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.30.1/24'</span></span></code></pre>
+<p><code>bridge_empty '1'</code> lets the bridge exist even with no members yet; the Guest SSID’s wlan will be added to this bridge by netifd.</p>
+<p><strong>B. Guest must travel over a trunk to a switch/another AP:</strong> use a VLAN (sections 6, 10): <code>br-lan.30</code> + <code>bridge-vlan 30</code> with a <code>t</code> port toward the trunk.</p>
+<hr>
+<h4 id="dhcp--firewall">DHCP + Firewall</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># /etc/config/dhcp</span></span>
+<span class="line"><span>config dhcp 'guest'</span></span>
+<span class="line"><span>        option interface 'guest'</span></span>
+<span class="line"><span>        option start '100'</span></span>
+<span class="line"><span>        option limit '150'</span></span>
+<span class="line"><span>        option leasetime '1h'</span></span>
+<span class="line"><span>        list dhcp_option '6,1.1.1.1,9.9.9.9'    # public DNS, avoid the internal resolver if desired</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># /etc/config/firewall</span></span>
+<span class="line"><span>config zone</span></span>
+<span class="line"><span>        option name 'guest'</span></span>
+<span class="line"><span>        list network 'guest'</span></span>
+<span class="line"><span>        option input 'REJECT'</span></span>
+<span class="line"><span>        option output 'ACCEPT'</span></span>
+<span class="line"><span>        option forward 'REJECT'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config forwarding</span></span>
+<span class="line"><span>        option src 'guest'</span></span>
+<span class="line"><span>        option dest 'wan'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config rule</span></span>
+<span class="line"><span>        option name 'Guest-Allow-DHCP'</span></span>
+<span class="line"><span>        option src 'guest'</span></span>
+<span class="line"><span>        option proto 'udp'</span></span>
+<span class="line"><span>        option dest_port '67'</span></span>
+<span class="line"><span>        option target 'ACCEPT'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config rule</span></span>
+<span class="line"><span>        option name 'Guest-Allow-DNS'</span></span>
+<span class="line"><span>        option src 'guest'</span></span>
+<span class="line"><span>        option proto 'tcp udp'</span></span>
+<span class="line"><span>        option dest_port '53'</span></span>
+<span class="line"><span>        option target 'ACCEPT'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config rule</span></span>
+<span class="line"><span>        option name 'Guest-Block-LAN'</span></span>
+<span class="line"><span>        option src 'guest'</span></span>
+<span class="line"><span>        option dest 'lan'</span></span>
+<span class="line"><span>        option proto 'all'</span></span>
+<span class="line"><span>        option target 'REJECT'</span></span></code></pre>
+<p>Explanation:</p>
+<ul>
+<li><code>input REJECT</code>: guest clients cannot reach services on the router (LuCI, SSH, ping…) except what is whitelisted: DHCP (UDP 67) and DNS (53). <strong>Without these two rules, clients get no IP or can’t resolve names</strong>, because <code>dnsmasq</code> runs locally on the router and its traffic goes through the <em>input</em> chain.</li>
+<li><code>forward REJECT</code> + only <code>forwarding guest → wan</code>: guests can reach the Internet but have no path to <code>lan</code>.</li>
+<li>The <code>Guest-Block-LAN</code> rule is <em>defense in depth</em>: if someone later adds a forwarding by mistake, traffic to LAN is still explicitly blocked (explicit rules take precedence over the zone policy) <code>[version-dependent]</code> rule order within chains; check with <code>nft list ruleset</code>.</li>
+<li>NAT: the <code>wan</code> zone has <code>masq '1'</code>, so everything forwarded out to <code>wan</code> (including from guest) is SNATed; no separate masquerade is needed for guest.</li>
+<li>The router still has an IP in the guest subnet and its LAN IP. A packet from guest to <code>192.168.10.1</code> (the router’s own LAN IP) is <strong>input traffic</strong>, so the guest zone’s <code>input</code> policy applies, not forward.</li>
+</ul>
+<hr>
+<h4 id="isolation-three-different-layers">Isolation: three different layers</h4>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Layer</th><th>Mechanism</th><th>What it blocks</th></tr></thead><tbody><tr><td><strong>L2 / VLAN</strong></td><td>Dedicated VLAN or bridge</td><td>Separate broadcast domain; guest clients don’t <em>see</em> the LAN’s L2</td></tr><tr><td><strong>L3 / Subnet</strong></td><td>Dedicated subnet + router as gateway</td><td>Must go through the router to reach anything else</td></tr><tr><td><strong>Firewall</strong></td><td>Zone + forwarding + rules</td><td>Decides which traffic may <em>cross</em> the router, and which may reach <em>the router itself</em></td></tr><tr><td><strong>Client isolation</strong> (Wi-Fi)</td><td><code>option isolate '1'</code></td><td>Blocks client↔client within the same SSID/BSS (L2)</td></tr></tbody></table>
+<blockquote>
+<p><strong>VLAN separation alone is not equivalent to firewall isolation.</strong>
+A VLAN only separates broadcast domains. If the router (or an upstream router) has an L3 interface on both VLANs and the default forward policy is ACCEPT, the two VLANs <strong>can still talk to each other via L3</strong>. On the router, beyond the VLAN you also need a dedicated zone with appropriate <code>forward</code> and <code>input</code> policy. When the guest VLAN travels over a trunk to another router, isolation also depends on that router’s firewall configuration. A device that acts only as a switch/AP provides no L3 isolation on its own.</p>
+</blockquote>
+<hr>
+<h3 id="dumb-ap">Dumb AP</h3>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Main Router (NAT, DHCP, DNS, firewall)</span></span>
+<span class="line"><span>     |</span></span>
+<span class="line"><span> Ethernet</span></span>
+<span class="line"><span>     |</span></span>
+<span class="line"><span> OpenWrt  (Dumb AP: bridge + Wi-Fi only)</span></span>
+<span class="line"><span>  /     \</span></span>
+<span class="line"><span>LAN     Wi-Fi</span></span></code></pre>
+<hr>
+<h4 id="concept">Concept</h4>
+<hr>
+<p>A Dumb AP turns OpenWrt into an <strong>L2 bridge + radio</strong>:</p>
+<ul>
+<li><strong>No NAT</strong> (NAT is done at the main router; double NAT complicates port forwarding, multicast, and gaming).</li>
+<li><strong>No local DHCP server</strong>: clients get IPs from the main router (same broadcast domain thanks to the bridge).</li>
+<li><strong>All ports + wlan are in a single bridge.</strong></li>
+<li><strong>A management IP</strong> to reach the AP (static or via DHCP reservation).</li>
+<li>No routing between networks.</li>
+</ul>
+<hr>
+<h4 id="configuration">Configuration</h4>
+<hr>
+<p><code>/etc/config/network</code></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config device</span></span>
+<span class="line"><span>        option name 'br-lan'</span></span>
+<span class="line"><span>        option type 'bridge'</span></span>
+<span class="line"><span>        list ports 'lan1'</span></span>
+<span class="line"><span>        list ports 'lan2'</span></span>
+<span class="line"><span>        list ports 'lan3'</span></span>
+<span class="line"><span>        list ports 'lan4'</span></span>
+<span class="line"><span>        list ports 'wan'                 # the WAN port also becomes a bridge port; commonly used as the uplink</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'lan'</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.1.2/24'   # management IP, same subnet as the main router, outside its DHCP pool</span></span>
+<span class="line"><span>        option gateway '192.168.1.1'</span></span>
+<span class="line"><span>        list dns '192.168.1.1'</span></span>
+<span class="line"><span>        option delegate '0'              # don't delegate an IPv6 prefix</span></span></code></pre>
+<p>Remove the <code>wan</code> and <code>wan6</code> interfaces from the file (or set <code>option disabled '1'</code>). They are unnecessary and can cause conflicts.</p>
+<p><code>/etc/config/dhcp</code></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config dhcp 'lan'</span></span>
+<span class="line"><span>        option interface 'lan'</span></span>
+<span class="line"><span>        option ignore '1'                # don't serve DHCP</span></span></code></pre>
+<p>Disable unused services:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">/etc/init.d/dnsmasq</span><span style="color:#9ECBFF"> disable</span><span style="color:#E1E4E8"> &#x26;&#x26; </span><span style="color:#B392F0">/etc/init.d/dnsmasq</span><span style="color:#9ECBFF"> stop</span></span>
+<span class="line"><span style="color:#B392F0">/etc/init.d/odhcpd</span><span style="color:#9ECBFF">  disable</span><span style="color:#E1E4E8"> &#x26;&#x26; </span><span style="color:#B392F0">/etc/init.d/odhcpd</span><span style="color:#9ECBFF">  stop</span><span style="color:#6A737D">   # avoid rogue RA/DHCPv6</span></span>
+<span class="line"><span style="color:#B392F0">/etc/init.d/firewall</span><span style="color:#9ECBFF"> disable</span><span style="color:#E1E4E8"> &#x26;&#x26; </span><span style="color:#B392F0">/etc/init.d/firewall</span><span style="color:#9ECBFF"> stop</span><span style="color:#6A737D"> # no NAT/forwarding on the AP</span></span></code></pre>
+<p><code>/etc/config/wireless</code>: <code>option network 'lan'</code>, and <code>encryption</code> matching the main router. For seamless roaming across several APs, use the same SSID/key/<code>mobility_domain</code> on all APs, enable 802.11r/k/v, and plan channels.</p>
+<hr>
+<h4 id="pitfalls-specific-to-this-setup">Pitfalls specific to this setup</h4>
+<hr>
+<ul>
+<li><strong>Duplicate/in-pool IP:</strong> assigning a static management IP that collides with the main router’s DHCP pool is a common mistake. Use a DHCP reservation or an IP outside the pool.</li>
+<li><strong>Disabling the firewall means no input filtering</strong> on the AP. Acceptable only if the AP sits behind a trusted router; if the AP is exposed to an untrusted network, keep a minimal firewall.</li>
+<li><strong>Loops:</strong> plugging two AP ports into the same switch as the main router creates a loop. Enable <code>stp '1'</code> or avoid looped topologies.</li>
+<li><strong>Which port for the uplink?</strong> If you put <code>wan</code> in the bridge, plug the uplink into it; if you keep <code>wan</code> separate, the AP will not automatically bridge it.</li>
+<li><strong>IPv6/RA:</strong> if odhcpd is still running with <code>ra server</code>, the AP may emit wrong RAs and clients get the wrong gateway.</li>
+</ul>
+<hr>
+<h3 id="standard-nat-router">Standard NAT Router</h3>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Internet</span></span>
+<span class="line"><span>   |</span></span>
+<span class="line"><span> WAN (device 'wan', DHCP/PPPoE/static)</span></span>
+<span class="line"><span>   |</span></span>
+<span class="line"><span>OpenWrt  (firewall + NAT)</span></span>
+<span class="line"><span>   |</span></span>
+<span class="line"><span> NAT</span></span>
+<span class="line"><span>   |</span></span>
+<span class="line"><span> LAN (br-lan, 192.168.1.0/24, DHCP server)</span></span></code></pre>
+<hr>
+<h4 id="config">Config</h4>
+<hr>
+<p><code>/etc/config/network</code>: use the sample in section 5.4.</p>
+<p><code>/etc/config/firewall</code> (typical defaults)</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config defaults</span></span>
+<span class="line"><span>        option input 'REJECT'</span></span>
+<span class="line"><span>        option output 'ACCEPT'</span></span>
+<span class="line"><span>        option forward 'REJECT'</span></span>
+<span class="line"><span>        option synflood_protect '1'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config zone</span></span>
+<span class="line"><span>        option name 'lan'</span></span>
+<span class="line"><span>        list network 'lan'</span></span>
+<span class="line"><span>        option input 'ACCEPT'</span></span>
+<span class="line"><span>        option output 'ACCEPT'</span></span>
+<span class="line"><span>        option forward 'ACCEPT'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config zone</span></span>
+<span class="line"><span>        option name 'wan'</span></span>
+<span class="line"><span>        list network 'wan'</span></span>
+<span class="line"><span>        list network 'wan6'</span></span>
+<span class="line"><span>        option input 'REJECT'</span></span>
+<span class="line"><span>        option output 'ACCEPT'</span></span>
+<span class="line"><span>        option forward 'REJECT'</span></span>
+<span class="line"><span>        option masq '1'</span></span>
+<span class="line"><span>        option mtu_fix '1'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config forwarding</span></span>
+<span class="line"><span>        option src 'lan'</span></span>
+<span class="line"><span>        option dest 'wan'</span></span></code></pre>
+<p><code>/etc/config/dhcp</code></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config dnsmasq</span></span>
+<span class="line"><span>        option domainneeded '1'</span></span>
+<span class="line"><span>        option localise_queries '1'</span></span>
+<span class="line"><span>        option rebind_protection '1'</span></span>
+<span class="line"><span>        option local '/lan/'</span></span>
+<span class="line"><span>        option domain 'lan'</span></span>
+<span class="line"><span>        option expandhosts '1'</span></span>
+<span class="line"><span>        option authoritative '1'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config dhcp 'lan'</span></span>
+<span class="line"><span>        option interface 'lan'</span></span>
+<span class="line"><span>        option start '100'</span></span>
+<span class="line"><span>        option limit '150'</span></span>
+<span class="line"><span>        option leasetime '12h'</span></span>
+<span class="line"><span>        option dhcpv4 'server'</span></span>
+<span class="line"><span>        option dhcpv6 'server'</span></span>
+<span class="line"><span>        option ra 'server'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config dhcp 'wan'</span></span>
+<span class="line"><span>        option interface 'wan'</span></span>
+<span class="line"><span>        option ignore '1'</span></span></code></pre>
+<hr>
+<h4 id="traffic-flow">Traffic flow</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Client (192.168.1.50)</span></span>
+<span class="line"><span> ↓  dst 8.8.8.8 via gateway 192.168.1.1</span></span>
+<span class="line"><span>LAN (br-lan)</span></span>
+<span class="line"><span> ↓  netfilter prerouting → routing decision: not local → FORWARD</span></span>
+<span class="line"><span>Firewall forwarding   (forward_lan: zone lan → wan permitted by `config forwarding`)</span></span>
+<span class="line"><span> ↓  postrouting: srcnat_wan (masquerade: 192.168.1.50 → wan's IP)</span></span>
+<span class="line"><span>NAT                   (conntrack remembers the mapping to handle return packets)</span></span>
+<span class="line"><span> ↓</span></span>
+<span class="line"><span>WAN → Internet</span></span>
+<span class="line"><span> ↑  return packet: conntrack match → reverse NAT → forwarded to the client</span></span></code></pre>
+<p>Key point: <strong>return traffic needs no separate rule</strong>, thanks to conntrack (<code>ct state established,related accept</code>). Only <em>initiating</em> (NEW) packets go through policy checks.</p>
+<hr>
+<h4 id="verification">Verification</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> route</span><span style="color:#6A737D">                       # default via &#x3C;gw> dev wan</span></span>
+<span class="line"><span style="color:#B392F0">nft</span><span style="color:#9ECBFF"> list</span><span style="color:#9ECBFF"> ruleset</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> less</span><span style="color:#6A737D">        # table inet fw4</span></span>
+<span class="line"><span style="color:#B392F0">conntrack</span><span style="color:#79B8FF"> -L</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> head</span><span style="color:#6A737D">            # [package-dependent] needs conntrack-tools</span></span>
+<span class="line"><span style="color:#B392F0">logread</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> dnsmasq</span><span style="color:#6A737D">             # DHCP request/offer</span></span></code></pre>
+<hr>
+<h3 id="wi-fi-client--routed-client">Wi-Fi Client / Routed Client</h3>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Upstream AP (192.168.0.0/24)</span></span>
+<span class="line"><span>     |</span></span>
+<span class="line"><span>   Wi-Fi (STA link)</span></span>
+<span class="line"><span>     |</span></span>
+<span class="line"><span> OpenWrt   (WAN side = wlan STA, LAN side = Ethernet + own AP)</span></span>
+<span class="line"><span>     |</span></span>
+<span class="line"><span> Ethernet LAN (192.168.50.0/24)</span></span></code></pre>
+<hr>
+<h4 id="routed-client-common-stable">Routed client (common, stable)</h4>
+<hr>
+<p>OpenWrt connects upstream as a STA and <strong>routes + NATs</strong> from its own LAN to the upstream. The STA interface is OpenWrt’s <em>WAN</em>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># /etc/config/wireless</span></span>
+<span class="line"><span>config wifi-iface 'upstream'</span></span>
+<span class="line"><span>        option device 'radio1'</span></span>
+<span class="line"><span>        option mode 'sta'</span></span>
+<span class="line"><span>        option network 'wwan'</span></span>
+<span class="line"><span>        option ssid 'Upstream-SSID'</span></span>
+<span class="line"><span>        option encryption 'sae'</span></span>
+<span class="line"><span>        option key 'UPSTREAM_PASSWORD'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span># /etc/config/network</span></span>
+<span class="line"><span>config interface 'wwan'</span></span>
+<span class="line"><span>        option proto 'dhcp'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'lan'</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.50.1/24'</span></span></code></pre>
+<p>Firewall: add <code>wwan</code> to the <code>wan</code> zone (<code>list network 'wwan'</code>) to get masquerading and the right policy. <strong>The LAN subnet must differ from the upstream subnet</strong> (overlap breaks routing). This is the simplest and most reliable way to “repeat” Wi-Fi because it avoids the limitations of 802.11 3-address mode.</p>
+<hr>
+<h4 id="distinguishing-the-models-they-are-not-the-same-thing">Distinguishing the models (they are not the same thing)</h4>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Model</th><th>L2/L3</th><th>Mechanism</th><th>Notes</th></tr></thead><tbody><tr><td><strong>Routed client</strong></td><td>L3 (NAT)</td><td>STA as WAN; separate LAN</td><td>Double NAT; stable; clients behind it don’t see the upstream’s L2</td></tr><tr><td><strong>Repeater</strong></td><td>Usually L3, or L2 depending on implementation</td><td>STA + AP on the <em>same</em> radio or different radios</td><td>Same radio halves airtime; the AP must run on the same channel as the STA</td></tr><tr><td><strong>Relay (relayd)</strong></td><td>L3 pseudo-bridge</td><td><code>proto relay</code> + relayd</td><td>Not a real bridge; limited broadcast/multicast <code>[package-dependent]</code></td></tr><tr><td><strong>WDS (4addr)</strong></td><td>Real L2 bridge</td><td>4-address mode between AP and STA (<code>option wds '1'</code>)</td><td>Needs support on <strong>both ends</strong> <code>[driver-dependent]</code>; not every commercial AP supports it</td></tr><tr><td><strong>Mesh backhaul</strong></td><td>L2/L3 depending</td><td>802.11s or a dedicated backhaul STA</td><td>See section 15</td></tr></tbody></table>
+<p>Why the distinction matters: <strong>an ordinary 802.11 STA (3-address mode) cannot bridge multiple MACs behind it</strong>. The upstream AP only knows the STA’s MAC. So “transparent” L2 bridging over a Wi-Fi STA is only possible with WDS/4addr, or by hiding the MACs behind it (relayd, NAT, proxy ARP…).</p>
+<hr>
+<h3 id="mesh--easymesh--wireless-backhaul">Mesh / EasyMesh / Wireless Backhaul</h3>
+<hr>
+<p>This section covers <strong>architecture</strong> only. <code>[version-dependent]</code> / <code>[package-dependent]</code> Not every OpenWrt release has the same UCI syntax or the same packages.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>           Controller (gateway / main router)</span></span>
+<span class="line"><span>               |</span></span>
+<span class="line"><span>        +------+------+</span></span>
+<span class="line"><span>        |             |</span></span>
+<span class="line"><span>       AP1           AP2</span></span>
+<span class="line"><span>        |             |</span></span>
+<span class="line"><span>       STA &#x3C;--- Wi-Fi --> Backhaul</span></span></code></pre>
+<hr>
+<h4 id="concepts-to-distinguish">Concepts to distinguish</h4>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Concept</th><th>Nature</th><th>Components</th></tr></thead><tbody><tr><td><strong>AP mode</strong></td><td>Standalone AP, possibly with the same SSID</td><td>hostapd</td></tr><tr><td><strong>Wireless backhaul (dedicated STA/AP)</strong></td><td>A node acts as STA to its parent; often uses a dedicated backhaul SSID/BSS</td><td>wpa_supplicant + hostapd</td></tr><tr><td><strong>802.11s (mesh)</strong></td><td>IEEE standard: mesh point, <strong>HWMP</strong> path selection at L2</td><td><code>mode mesh</code>, <code>mesh_id</code>, <code>wpad</code> with mesh; <code>[package-dependent]</code></td></tr><tr><td><strong>Mesh + L3 routing protocol</strong></td><td>batman-adv / OLSR / babel running over the mesh link</td><td><code>batman-adv</code>, <code>babeld</code>…</td></tr><tr><td><strong>EasyMesh / Wi-Fi Multi-AP</strong></td><td><strong>Wi-Fi Alliance spec</strong> for controller–agent, steering, and backhaul management via IEEE 1905.1</td><td>prplMesh, or vendor implementations (MediaTek, Qualcomm SDK…)</td></tr><tr><td><strong>Ethernet backhaul</strong></td><td>Cable between APs</td><td>bridge/VLAN/STP</td></tr></tbody></table>
+<hr>
+<h4 id="80211s-configuration-level">802.11s (configuration level)</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config wifi-iface 'mesh0'</span></span>
+<span class="line"><span>        option device 'radio1'</span></span>
+<span class="line"><span>        option mode 'mesh'</span></span>
+<span class="line"><span>        option mesh_id 'mymesh'</span></span>
+<span class="line"><span>        option encryption 'sae'</span></span>
+<span class="line"><span>        option key 'MESH_PASSWORD'</span></span>
+<span class="line"><span>        option network 'lan'</span></span>
+<span class="line"><span>        option mesh_fwding '1'      # 1 = HWMP forwarding at L2; 0 when using L3/batman-adv</span></span></code></pre>
+<p>Requires a <code>wpad</code> build with mesh support. 802.11s L2 forwarding combined with a bridge can create loops if an additional Ethernet path exists; plan STP or use a routing protocol instead of relying on HWMP.</p>
+<hr>
+<h4 id="easymesh--multi-ap">EasyMesh / Multi-AP</h4>
+<hr>
+<ul>
+<li>It is a <strong>controller + agent architecture</strong>: the controller manages policy, and agents on each AP configure radios, report, and support steering.</li>
+<li>The <strong>control plane (IEEE 1905.1, CMDU, topology discovery)</strong> is a layer <em>above</em> Wi-Fi/Ethernet. It is <strong>not</strong> provided by hostapd alone.</li>
+<li>hostapd/wpa_supplicant supports Multi-AP flags at the data plane (backhaul BSS, backhaul STA, fronthaul BSS), but <strong>the UCI options to enable them, and whether a controller/agent exists at all, depend on release/package/vendor</strong> <code>[package-dependent]</code>.</li>
+<li>Many EasyMesh implementations on OpenWrt today are <strong>vendor SDKs</strong> (MediaTek, Qualcomm) or <strong>prplMesh</strong>. The UCI syntax is not standardized. Read the documentation and packages for your target.</li>
+</ul>
+<p>Don’t confuse:</p>
+<ul>
+<li><strong>802.11r/k/v + <code>usteer</code> / <code>dawn</code></strong>: improves roaming and steering between <em>independent</em> APs with the same SSID. <strong>This is not EasyMesh.</strong></li>
+<li><strong>Marketing “Mesh Wi-Fi”</strong> is often a mix: AP mode + dedicated backhaul + a vendor controller.</li>
+</ul>
+<hr>
+<h4 id="choosing-a-backhaul">Choosing a backhaul</h4>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Backhaul</th><th>Pros</th><th>Cons</th></tr></thead><tbody><tr><td>Ethernet</td><td>Most stable, best throughput/latency</td><td>Needs cabling</td></tr><tr><td>Dedicated Wi-Fi (separate radio)</td><td>Doesn’t compete for airtime with clients</td><td>Costs a radio</td></tr><tr><td>Shared Wi-Fi (same radio)</td><td>No cable needed</td><td>Airtime is split; throughput drops per hop</td></tr></tbody></table>
+<hr>
+<h3 id="ipv6">IPv6</h3>
+<hr>
+<h4 id="components">Components</h4>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Mechanism</th><th>Role</th></tr></thead><tbody><tr><td><strong>SLAAC</strong></td><td>Clients self-generate addresses from the prefix in the RA (<code>/64</code>)</td></tr><tr><td><strong>Router Advertisement (RA)</strong></td><td>Router advertises prefix, default router, M/O flags, DNS (RDNSS)</td></tr><tr><td><strong>DHCPv6 (IA_NA)</strong></td><td>Stateful address assignment (rarely used on residential WAN)</td></tr><tr><td><strong>DHCPv6-PD (IA_PD)</strong></td><td>The ISP <strong>delegates a prefix</strong> (e.g. <code>/56</code>, <code>/60</code>, <code>/64</code>) to the router</td></tr><tr><td><strong>Stateless DHCPv6</strong></td><td>Provides information only (DNS); addresses come from SLAAC</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>ISP</span></span>
+<span class="line"><span> |  DHCPv6-PD (e.g. 2001:db8:1234:5600::/56)</span></span>
+<span class="line"><span> |</span></span>
+<span class="line"><span>OpenWrt (odhcp6c on WAN, odhcpd on LAN)</span></span>
+<span class="line"><span> |  splits the prefix: ip6assign '60' → each LAN gets a child /64</span></span>
+<span class="line"><span> |</span></span>
+<span class="line"><span>LAN (RA + SLAAC / DHCPv6)</span></span>
+<span class="line"><span> |</span></span>
+<span class="line"><span>IPv6 clients</span></span></code></pre>
+<hr>
+<h4 id="config-1">Config</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># /etc/config/network</span></span>
+<span class="line"><span>config interface 'wan6'</span></span>
+<span class="line"><span>        option device '@wan'</span></span>
+<span class="line"><span>        option proto 'dhcpv6'</span></span>
+<span class="line"><span>        option reqaddress 'try'</span></span>
+<span class="line"><span>        option reqprefix 'auto'       # or the prefix length you want to request, e.g. '56'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'lan'</span></span>
+<span class="line"><span>        option device 'br-lan'</span></span>
+<span class="line"><span>        option proto 'static'</span></span>
+<span class="line"><span>        option ipaddr '192.168.1.1/24'</span></span>
+<span class="line"><span>        option ip6assign '64'         # assign a /64 from the delegated prefix to the LAN</span></span>
+<span class="line"><span>        # option ip6hint '10'         # pick a specific subnet ID within the prefix, useful with multiple VLANs</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># /etc/config/dhcp</span></span>
+<span class="line"><span>config dhcp 'lan'</span></span>
+<span class="line"><span>        option interface 'lan'</span></span>
+<span class="line"><span>        option ra 'server'</span></span>
+<span class="line"><span>        option dhcpv6 'server'</span></span>
+<span class="line"><span>        option ra_slaac '1'</span></span>
+<span class="line"><span>        list ra_flags 'other-config'</span></span></code></pre>
+<p>Explanation:</p>
+<ul>
+<li><code>ip6assign '64'</code>: the prefix size assigned to the interface; with several VLANs, each interface gets a different <code>/64</code> from the PD. The shorter the prefix the ISP delegates (e.g. <code>/56</code>), the more subnets you can have.</li>
+<li><code>ra_flags</code>: the <code>managed-config</code> (M) flag tells clients to use DHCPv6 for addresses; <code>other-config</code> (O) means only extra information. SLAAC still works through the A flag in the prefix option.</li>
+<li>If the ISP gives only a single <code>/64</code> (no PD), you need <strong>NDP proxy / RA relay</strong> (<code>ra 'relay'</code>, <code>ndp 'relay'</code> on the <em>master</em> interface) <code>[ISP-dependent]</code>; you can’t route multiple subnets.</li>
+<li>ISPs differ on IPv6 support and delivery (which PD size, over PPPoE or DHCPv6). Check with <code>ubus call network.interface.wan6 status</code> and look at <code>ipv6-prefix</code>.</li>
+</ul>
+<hr>
+<h4 id="ipv6-firewall">IPv6 firewall</h4>
+<hr>
+<p>IPv6 has <strong>no NAT</strong> (by default). Every client has a global address, so <strong>the firewall is the only barrier</strong>:</p>
+<ul>
+<li>The default <code>wan</code> zone has <code>input REJECT</code>, <code>forward REJECT</code>: new inbound connections are blocked.</li>
+<li>The default rules allow <strong>ICMPv6</strong> (mandatory: Neighbor Discovery, <strong>Packet Too Big</strong> for PMTUD, RA), DHCPv6 replies, and MLD. <strong>Don’t block ICMPv6 wholesale</strong>: blocking PTB causes MTU blackholes.</li>
+<li>To expose a service from outside to an internal IPv6 host, use a <code>config rule</code> (allow) with <code>family 'ipv6'</code>; don’t use <code>redirect</code>/DNAT.</li>
+</ul>
+<hr>
+<h4 id="debug-1">Debug</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -6</span><span style="color:#9ECBFF"> addr</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -6</span><span style="color:#9ECBFF"> route</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -6</span><span style="color:#9ECBFF"> neigh</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network.interface.wan6</span><span style="color:#9ECBFF"> status</span><span style="color:#6A737D">     # prefix delegation, DNS</span></span>
+<span class="line"><span style="color:#B392F0">logread</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> odhcp6c</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> odhcpd</span></span>
+<span class="line"><span style="color:#B392F0">tcpdump</span><span style="color:#79B8FF"> -ni</span><span style="color:#9ECBFF"> wan</span><span style="color:#9ECBFF"> icmp6</span><span style="color:#6A737D">                        # RA, NS/NA, PTB</span></span></code></pre>
+<p>Common sign: wan6 has an <code>ipv6-prefix</code> but the LAN has no global address → check <code>ip6assign</code>, <code>ra</code>/<code>dhcpv6</code> in <code>/etc/config/dhcp</code>, and the state of <code>odhcpd</code>.</p>
+<hr>
+<h3 id="multi-wan">Multi-WAN</h3>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>          ISP1</span></span>
+<span class="line"><span>            |</span></span>
+<span class="line"><span>          wan1  (metric 10)</span></span>
+<span class="line"><span>            \</span></span>
+<span class="line"><span>             OpenWrt</span></span>
+<span class="line"><span>            /</span></span>
+<span class="line"><span>          wan2  (metric 20)</span></span>
+<span class="line"><span>            |</span></span>
+<span class="line"><span>          ISP2</span></span></code></pre>
+<hr>
+<h4 id="three-levels">Three levels</h4>
+<hr>
+<ol>
+<li><strong>Crude failover with metrics</strong>: two default routes with different metrics. The route is removed when the <em>link/interface</em> goes down. It does not detect upstream failures.</li>
+<li><strong>Failover with health checks</strong>: test real reachability (ping/HTTP to an external address) and demote the route on failure. Usually done with <code>mwan3</code> <code>[package-dependent]</code>.</li>
+<li><strong>Load balancing / policy routing</strong>: split flows by weight, source, destination, port. Also <code>mwan3</code> or your own <code>ip rule</code> scripts.</li>
+</ol>
+<blockquote>
+<p><strong>Interface UP does not mean Internet connectivity is healthy.</strong>
+<code>ip link</code> is UP, the DHCP lease is valid, the gateway answers ARP, yet the ISP may have lost its path to the Internet (broken BNG, dead DNS, upstream routing failure). Only an <em>end-to-end</em> health check detects that. Test several targets (not just one IP), both by IP and by DNS.</p>
+</blockquote>
+<hr>
+<h4 id="metric-failover">Metric failover</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'wan1'</span></span>
+<span class="line"><span>        option device 'wan'</span></span>
+<span class="line"><span>        option proto 'dhcp'</span></span>
+<span class="line"><span>        option metric '10'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config interface 'wan2'</span></span>
+<span class="line"><span>        option device 'lan4'          # [platform-dependent] a port repurposed as the second WAN</span></span>
+<span class="line"><span>        option proto 'dhcp'</span></span>
+<span class="line"><span>        option metric '20'</span></span></code></pre>
+<hr>
+<h4 id="mwan3-concepts">mwan3 (concepts)</h4>
+<hr>
+<p><code>[package-dependent]</code> The <code>mwan3</code> package has its own mechanism (iptables/ipset/ip rule, fwmark). Behavior and backend (iptables vs nftables) <strong>depend on the package version and OpenWrt release</strong>; check the documentation of the installed package.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config interface 'wan1'</span></span>
+<span class="line"><span>        option enabled '1'</span></span>
+<span class="line"><span>        list track_ip '1.1.1.1'</span></span>
+<span class="line"><span>        list track_ip '8.8.8.8'</span></span>
+<span class="line"><span>        option reliability '1'</span></span>
+<span class="line"><span>        option count '1'</span></span>
+<span class="line"><span>        option timeout '2'</span></span>
+<span class="line"><span>        option interval '5'</span></span>
+<span class="line"><span>        option down '3'</span></span>
+<span class="line"><span>        option up '3'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config member 'wan1_m1'</span></span>
+<span class="line"><span>        option interface 'wan1'</span></span>
+<span class="line"><span>        option metric '1'</span></span>
+<span class="line"><span>        option weight '1'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config policy 'failover'</span></span>
+<span class="line"><span>        list use_member 'wan1_m1'</span></span>
+<span class="line"><span>        list use_member 'wan2_m2'</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>config rule 'default_rule'</span></span>
+<span class="line"><span>        option dest_ip '0.0.0.0/0'</span></span>
+<span class="line"><span>        option use_policy 'failover'</span></span></code></pre>
+<hr>
+<h4 id="things-to-watch">Things to watch</h4>
+<hr>
+<ul>
+<li><strong>Firewall</strong>: both WANs should be in the <code>wan</code> zone (or in dedicated zones with <code>masq</code>) to get NAT.</li>
+<li><strong>Reply path</strong>: return packets must leave via the same WAN the request arrived on. Policy routing + conntrack/marks handle this.</li>
+<li><strong>DNS</strong>: on failover, the upstream resolver (<code>peerdns</code>) may be unreachable via the remaining WAN.</li>
+<li><strong>Sessions break on failover</strong> (the source IP after NAT changes). Don’t promise “no interruption”.</li>
+<li>IPv6 multi-WAN is more complex (different prefixes, source-based routing) and needs its own design.</li>
+</ul>
+<hr>
+<h3 id="firewall-and-nat">Firewall and NAT</h3>
+<hr>
+<h4 id="fw4-architecture-nftables">fw4 architecture (nftables)</h4>
+<hr>
+<p><code>[version-dependent]</code> From 22.03 the default is <strong>fw4 + nftables</strong>. Earlier releases use <strong>fw3 + iptables</strong>. UCI syntax is almost the same, but the actual ruleset differs. Every <code>nft ...</code> in this article applies to fw4 only.</p>
+<p>fw4 generates the table <code>inet fw4</code> (IPv4 + IPv6 together):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>                     ┌──────────────── prerouting ────────────────┐</span></span>
+<span class="line"><span> packet in ──► raw/mangle ──► dstnat (DNAT / port forward) ────────┤</span></span>
+<span class="line"><span>                                                                   │</span></span>
+<span class="line"><span>                                           routing decision        │</span></span>
+<span class="line"><span>                                      ┌───────────┴────────────┐</span></span>
+<span class="line"><span>                                      ▼                        ▼</span></span>
+<span class="line"><span>                                    input                   forward ───► postrouting</span></span>
+<span class="line"><span>                                      │                        │       (srcnat: masq)</span></span>
+<span class="line"><span>                              local process                    │             │</span></span>
+<span class="line"><span>                                      │                        │             ▼</span></span>
+<span class="line"><span>                                      └────────► output ───────┴──────── packet out</span></span></code></pre>
+<p>Dispatch: each main chain jumps into per-zone chains based on the <strong>ingress/egress device name</strong> (<code>iifname "br-lan" jump input_lan</code>…). A zone’s <code>network</code> is a <em>logical interface name</em>; fw4 resolves it to real devices through netifd at load time. Therefore <strong>changing a device/VLAN without reloading the firewall</strong> can leave the ruleset pointing at the wrong place.</p>
+<hr>
+<h4 id="zone">Zone</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config zone</span></span>
+<span class="line"><span>        option name 'lan'</span></span>
+<span class="line"><span>        list network 'lan'</span></span>
+<span class="line"><span>        option input 'ACCEPT'</span></span>
+<span class="line"><span>        option output 'ACCEPT'</span></span>
+<span class="line"><span>        option forward 'ACCEPT'</span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Option</th><th>Meaning</th></tr></thead><tbody><tr><td><code>input</code></td><td>Policy for traffic from the zone <em>to the router itself</em></td></tr><tr><td><code>output</code></td><td>Policy for traffic from the router <em>out to</em> the zone</td></tr><tr><td><code>forward</code></td><td>Policy for traffic <em>between interfaces within the same zone</em></td></tr><tr><td><code>masq</code></td><td>SNAT/masquerade when traffic <strong>leaves</strong> through this zone</td></tr><tr><td><code>mtu_fix</code></td><td>MSS clamping</td></tr><tr><td><code>network</code></td><td>List of <em>logical interfaces</em> in the zone</td></tr></tbody></table>
+<p>A zone’s <strong><code>forward</code></strong> is forwarding <em>within the same zone</em>, not between different zones. Between different zones you need <code>config forwarding</code>.</p>
+<hr>
+<h4 id="forwarding">Forwarding</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config forwarding</span></span>
+<span class="line"><span>        option src 'lan'</span></span>
+<span class="line"><span>        option dest 'wan'</span></span></code></pre>
+<p>This allows <strong>one direction only</strong>: from <code>lan</code> to <code>wan</code>. The reverse (wan→lan) is not allowed, except for replies belonging to existing connections (conntrack) and port forwards.</p>
+<hr>
+<h4 id="nat">NAT</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config zone</span></span>
+<span class="line"><span>        option name 'wan'</span></span>
+<span class="line"><span>        list network 'wan'</span></span>
+<span class="line"><span>        list network 'wan6'</span></span>
+<span class="line"><span>        option input 'REJECT'</span></span>
+<span class="line"><span>        option output 'ACCEPT'</span></span>
+<span class="line"><span>        option forward 'REJECT'</span></span>
+<span class="line"><span>        option masq '1'</span></span>
+<span class="line"><span>        option mtu_fix '1'</span></span></code></pre>
+<p><code>masq '1'</code> creates rules in the <code>srcnat_wan</code> chain (postrouting hook): packets <strong>leaving</strong> a device in the wan zone get their source address rewritten to that interface’s address. You can restrict sources/destinations with <code>masq_src</code> / <code>masq_dest</code>. <code>masq6</code> is for IPv6 (NPT/masquerade, rarely used).</p>
+<hr>
+<h4 id="port-forwarding">Port forwarding</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config redirect</span></span>
+<span class="line"><span>        option name 'Web-to-NAS'</span></span>
+<span class="line"><span>        option src 'wan'</span></span>
+<span class="line"><span>        option dest 'lan'</span></span>
+<span class="line"><span>        option proto 'tcp'</span></span>
+<span class="line"><span>        option src_dport '8080'</span></span>
+<span class="line"><span>        option dest_ip '192.168.1.100'</span></span>
+<span class="line"><span>        option dest_port '80'</span></span>
+<span class="line"><span>        option target 'DNAT'</span></span></code></pre>
+<p><strong>Packet flow:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>Internet client ──► WAN_IP:8080</span></span>
+<span class="line"><span>  1. prerouting → dstnat_wan : DNAT  WAN_IP:8080 → 192.168.1.100:80 (conntrack stores the mapping)</span></span>
+<span class="line"><span>  2. routing decision: destination 192.168.1.100 is not local → FORWARD</span></span>
+<span class="line"><span>  3. forward chain : fw4 accepts DNATed packets (ct status dnat accept)</span></span>
+<span class="line"><span>                     (no separate `forwarding wan→lan` needed)</span></span>
+<span class="line"><span>  4. LAN host receives and replies → conntrack reverse-NAT → leaves via WAN with src WAN_IP:8080</span></span></code></pre>
+<p>Notes:</p>
+<ul>
+<li>DNAT changes the <strong>destination before the routing decision</strong>, so routing and the forward chain see the <em>translated</em> address.</li>
+<li>Port forward <strong>opens nothing</strong> if the internal service isn’t listening, or if the LAN server’s default gateway is not this router. The reply will take the wrong path (asymmetric routing).</li>
+<li><strong>NAT reflection / hairpin</strong>: LAN clients reaching <code>WAN_IP:8080</code> need reflection (<code>option reflection '1'</code>, usually on by default). Hairpin flows require SNAT. Split-horizon DNS is the cleaner solution.</li>
+<li>IPv6 doesn’t use DNAT; use a <code>config rule</code> with <code>family 'ipv6'</code>.</li>
+</ul>
+<hr>
+<h4 id="flow-offloading">Flow offloading</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config defaults</span></span>
+<span class="line"><span>        option flow_offloading '1'        # software flow offload (nft flowtable)</span></span>
+<span class="line"><span>        option flow_offloading_hw '1'     # [platform-dependent] hardware offload</span></span></code></pre>
+<p>It raises throughput by bypassing part of netfilter for established flows. Features that depend on the traffic passing through netfilter (SQM/QoS, some mangle rules, mwan3) may be bypassed or behave differently. Hardware offload is <code>[platform-dependent]</code>.</p>
+<hr>
+<h3 id="dhcp--dns--ipv6-ra">DHCP / DNS / IPv6 RA</h3>
+<hr>
+<h4 id="who-serves-what">Who serves what</h4>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Service</th><th>Default</th><th>Notes</th></tr></thead><tbody><tr><td><strong>dnsmasq</strong></td><td>DNS forwarder/cache + DHCPv4</td><td>Handles <code>config dnsmasq</code> and <code>config dhcp</code> (v4)</td></tr><tr><td><strong>odhcpd</strong></td><td>DHCPv6 + RA + NDP relay</td><td><code>[version-dependent]</code> can take over DHCPv4 with <code>dhcpv4 'server'</code> and dnsmasq DHCP disabled</td></tr><tr><td><strong>udhcpc / odhcp6c</strong></td><td>DHCP <em>client</em></td><td>Run by netifd proto handlers on the WAN side</td></tr></tbody></table>
+<p>Both servers read <code>/etc/config/dhcp</code>, and <strong>each <code>config dhcp</code> section is tied to one logical interface</strong> via <code>option interface</code>.</p>
+<hr>
+<h4 id="dhcpv4-pool">DHCPv4 pool</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config dhcp 'lan'</span></span>
+<span class="line"><span>        option interface 'lan'</span></span>
+<span class="line"><span>        option start '100'</span></span>
+<span class="line"><span>        option limit '150'</span></span>
+<span class="line"><span>        option leasetime '12h'</span></span>
+<span class="line"><span>        list dhcp_option '3,192.168.1.1'          # gateway</span></span>
+<span class="line"><span>        list dhcp_option '6,192.168.1.1'          # DNS</span></span></code></pre>
+<p>The pool is <code>192.168.1.100</code>–<code>192.168.1.249</code> (<code>start</code> + <code>limit - 1</code>). The pool is computed within the <code>interface</code>’s subnet; if the interface has no static IP, dnsmasq doesn’t serve it.</p>
+<p>Static lease:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config host</span></span>
+<span class="line"><span>        option name 'nas'</span></span>
+<span class="line"><span>        option mac 'AA:BB:CC:DD:EE:FF'</span></span>
+<span class="line"><span>        option ip '192.168.1.100'</span></span></code></pre>
+<hr>
+<h4 id="dns">DNS</h4>
+<hr>
+<ul>
+<li>By default dnsmasq listens on every interface (unless restricted); the router is also the resolver for clients.</li>
+<li>Upstream DNS comes from the WAN’s <code>peerdns</code> (a resolv file generated by netifd: <code>/tmp/resolv.conf.d/resolv.conf.auto</code>), or <code>list server '…'</code> in <code>config dnsmasq</code>; <code>option noresolv '1'</code> ignores the resolv file.</li>
+<li><code>rebind_protection '1'</code> blocks answers where a public domain resolves to a private address (DNS rebinding protection). If you host internal services under a public domain, whitelist it with <code>list rebind_domain</code>.</li>
+<li>Guest/IoT firewall zones must <strong>allow UDP/TCP 53 to the router</strong> if clients use the router as DNS (see section 11).</li>
+</ul>
+<hr>
+<h4 id="ipv6-odhcpd">IPv6 (odhcpd)</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>config dhcp 'lan'</span></span>
+<span class="line"><span>        option interface 'lan'</span></span>
+<span class="line"><span>        option ra 'server'              # send Router Advertisements</span></span>
+<span class="line"><span>        option dhcpv6 'server'          # or 'disabled' / 'relay' / 'hybrid'</span></span>
+<span class="line"><span>        option ra_slaac '1'</span></span>
+<span class="line"><span>        list ra_flags 'other-config'</span></span>
+<span class="line"><span>        option dhcpv4 'server'          # [version-dependent]</span></span></code></pre>
+<p>The <code>ra</code>/<code>dhcpv6</code> modes: <code>server</code>, <code>relay</code>, <code>hybrid</code>, <code>disabled</code>. <code>ndp 'relay'</code> covers the no-PD case. <code>ra_default</code>, <code>ra_preference</code>, <code>ra_maxinterval</code> control default-router advertisement.</p>
+<hr>
+<h4 id="verification-1">Verification</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">cat</span><span style="color:#9ECBFF"> /tmp/dhcp.leases</span><span style="color:#6A737D">                       # dnsmasq DHCPv4 leases</span></span>
+<span class="line"><span style="color:#B392F0">logread</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> dnsmasq</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> odhcpd</span></span>
+<span class="line"><span style="color:#B392F0">tcpdump</span><span style="color:#79B8FF"> -ni</span><span style="color:#9ECBFF"> br-lan</span><span style="color:#9ECBFF"> port</span><span style="color:#79B8FF"> 67</span><span style="color:#9ECBFF"> or</span><span style="color:#9ECBFF"> port</span><span style="color:#79B8FF"> 68</span><span style="color:#6A737D">      # DORA</span></span>
+<span class="line"><span style="color:#B392F0">tcpdump</span><span style="color:#79B8FF"> -ni</span><span style="color:#9ECBFF"> br-lan</span><span style="color:#9ECBFF"> icmp6</span><span style="color:#6A737D">                   # RA/NS/NA</span></span></code></pre>
+<hr>
+<h3 id="network-debugging">Network Debugging</h3>
+<hr>
+<h4 id="methodology">Methodology</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>1. Define the scope:  one client? one VLAN? one SSID? everything? IPv6 only?</span></span>
+<span class="line"><span>2. Go bottom-up (L1 → L7), or bisect at the router:</span></span>
+<span class="line"><span>      client ── [L1/L2] ── router ── [L3/route] ── [firewall/NAT] ── WAN ── Internet</span></span>
+<span class="line"><span>3. At each layer, compare 3 views:</span></span>
+<span class="line"><span>      Config (uci)  vs  netifd/ubus  vs  Kernel (ip/bridge/nft)</span></span>
+<span class="line"><span>4. Use tcpdump at several points to see where the packet "dies":</span></span>
+<span class="line"><span>      wlan → br-lan.X → br-lan → wan</span></span>
+<span class="line"><span>5. Change ONE thing at a time, and write it down.</span></span></code></pre>
+<p>Four questions for every incident: <em>Is the link up? → Is it in the right VLAN/bridge? → Are IP/routes correct? → Does the firewall/NAT let it through?</em></p>
+<hr>
+<h4 id="layer-12">Layer 1/2</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -br</span><span style="color:#9ECBFF"> link</span><span style="color:#6A737D">                       # link state, MAC</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -d</span><span style="color:#9ECBFF"> link</span><span style="color:#9ECBFF"> show</span><span style="color:#9ECBFF"> br-lan</span><span style="color:#6A737D">            # -d: details, shows vlan_filtering, stp</span></span>
+<span class="line"><span style="color:#B392F0">ethtool</span><span style="color:#9ECBFF"> lan1</span><span style="color:#6A737D">                      # speed, duplex, link detected  (needs ethtool)</span></span>
+<span class="line"><span style="color:#B392F0">bridge</span><span style="color:#9ECBFF"> link</span><span style="color:#6A737D">                       # which port belongs to which bridge, state (forwarding/blocking)</span></span>
+<span class="line"><span style="color:#B392F0">bridge</span><span style="color:#9ECBFF"> fdb</span><span style="color:#9ECBFF"> show</span><span style="color:#6A737D">                   # MAC → port learning table</span></span>
+<span class="line"><span style="color:#B392F0">bridge</span><span style="color:#9ECBFF"> fdb</span><span style="color:#9ECBFF"> show</span><span style="color:#9ECBFF"> br</span><span style="color:#9ECBFF"> br-lan</span></span>
+<span class="line"><span style="color:#B392F0">bridge</span><span style="color:#9ECBFF"> vlan</span><span style="color:#6A737D">                       # DSA: VLAN membership + PVID + flags per port</span></span>
+<span class="line"><span style="color:#B392F0">bridge</span><span style="color:#79B8FF"> -d</span><span style="color:#9ECBFF"> vlan</span><span style="color:#9ECBFF"> show</span></span>
+<span class="line"><span style="color:#B392F0">cat</span><span style="color:#9ECBFF"> /sys/class/net/br-lan/bridge/vlan_filtering</span></span>
+<span class="line"><span style="color:#B392F0">swconfig</span><span style="color:#9ECBFF"> dev</span><span style="color:#9ECBFF"> switch0</span><span style="color:#9ECBFF"> show</span><span style="color:#6A737D">         # [legacy swconfig only]</span></span>
+<span class="line"><span style="color:#B392F0">dmesg</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#79B8FF"> -iE</span><span style="color:#9ECBFF"> 'dsa|switch|link is'</span></span></code></pre>
+<p>How to read <code>bridge vlan</code>:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>port       vlan-id</span></span>
+<span class="line"><span>lan1       10 PVID Egress Untagged</span></span>
+<span class="line"><span>lan4       10</span></span>
+<span class="line"><span>           20</span></span>
+<span class="line"><span>br-lan     10</span></span>
+<span class="line"><span>           20</span></span></code></pre>
+<ul>
+<li><code>PVID</code> → the <code>*</code> flag; <code>Egress Untagged</code> → the <code>u</code> flag; nothing extra → tagged.</li>
+<li><code>br-lan</code> appearing in the list means the router has an L3 interface on that VLAN (<code>local</code>).</li>
+<li>If a client gets no DHCP: check that the port has the right <code>PVID</code> + <code>Untagged</code> for the VLAN, and that <code>br-lan.&#x3C;vid></code> has members.</li>
+</ul>
+<hr>
+<h4 id="layer-3">Layer 3</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> addr</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -br</span><span style="color:#9ECBFF"> addr</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> route</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> route</span><span style="color:#9ECBFF"> show</span><span style="color:#9ECBFF"> table</span><span style="color:#9ECBFF"> all</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> rule</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> route</span><span style="color:#9ECBFF"> get</span><span style="color:#79B8FF"> 8.8.8.8</span><span style="color:#9ECBFF"> from</span><span style="color:#79B8FF"> 192.168.20.5</span><span style="color:#9ECBFF"> iif</span><span style="color:#9ECBFF"> br-lan.20</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#9ECBFF"> neigh</span><span style="color:#6A737D">                          # ARP/NDP: REACHABLE/STALE/FAILED</span></span>
+<span class="line"><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -6</span><span style="color:#9ECBFF"> addr</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -6</span><span style="color:#9ECBFF"> route</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -6</span><span style="color:#9ECBFF"> neigh</span></span></code></pre>
+<p>An <code>ip neigh</code> entry in <code>FAILED</code>/<code>INCOMPLETE</code> for the gateway means L2 isn’t working yet (wrong VLAN, loop, wrong port), even if the L3 config looks right.</p>
+<hr>
+<h4 id="firewall--nat">Firewall / NAT</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">nft</span><span style="color:#9ECBFF"> list</span><span style="color:#9ECBFF"> ruleset</span><span style="color:#6A737D">                  # everything (fw4)</span></span>
+<span class="line"><span style="color:#B392F0">nft</span><span style="color:#9ECBFF"> list</span><span style="color:#9ECBFF"> table</span><span style="color:#9ECBFF"> inet</span><span style="color:#9ECBFF"> fw4</span></span>
+<span class="line"><span style="color:#B392F0">nft</span><span style="color:#9ECBFF"> list</span><span style="color:#9ECBFF"> chain</span><span style="color:#9ECBFF"> inet</span><span style="color:#9ECBFF"> fw4</span><span style="color:#9ECBFF"> input_guest</span></span>
+<span class="line"><span style="color:#B392F0">nft</span><span style="color:#9ECBFF"> list</span><span style="color:#9ECBFF"> chain</span><span style="color:#9ECBFF"> inet</span><span style="color:#9ECBFF"> fw4</span><span style="color:#9ECBFF"> forward_lan</span></span>
+<span class="line"><span style="color:#B392F0">nft</span><span style="color:#9ECBFF"> list</span><span style="color:#9ECBFF"> chain</span><span style="color:#9ECBFF"> inet</span><span style="color:#9ECBFF"> fw4</span><span style="color:#9ECBFF"> srcnat_wan</span></span>
+<span class="line"><span style="color:#B392F0">fw4</span><span style="color:#9ECBFF"> print</span><span style="color:#6A737D">                         # the ruleset fw4 WOULD generate from the current config (compare with runtime)</span></span>
+<span class="line"><span style="color:#B392F0">fw4</span><span style="color:#9ECBFF"> reload</span></span>
+<span class="line"><span style="color:#B392F0">conntrack</span><span style="color:#79B8FF"> -L</span><span style="color:#6A737D">                      # [package-dependent] connection table</span></span>
+<span class="line"><span style="color:#B392F0">conntrack</span><span style="color:#79B8FF"> -E</span><span style="color:#6A737D">                      # real-time events</span></span></code></pre>
+<p>Trace a packet through nftables (needs temporary config, use with care):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">nft</span><span style="color:#9ECBFF"> insert</span><span style="color:#9ECBFF"> rule</span><span style="color:#9ECBFF"> inet</span><span style="color:#9ECBFF"> fw4</span><span style="color:#9ECBFF"> prerouting_raw</span><span style="color:#9ECBFF"> meta</span><span style="color:#9ECBFF"> nftrace</span><span style="color:#9ECBFF"> set</span><span style="color:#79B8FF"> 1</span><span style="color:#6A737D">   # depends on the chain existing in your release</span></span>
+<span class="line"><span style="color:#B392F0">nft</span><span style="color:#9ECBFF"> monitor</span><span style="color:#9ECBFF"> trace</span></span></code></pre>
+<p><code>[version-dependent]</code> fw4’s internal chain names may differ between releases. Use <code>nft list ruleset</code> to confirm chain names before acting.</p>
+<p>Common mix-ups to check:</p>
+<ul>
+<li>Zone <code>list network</code> written with a device name instead of an interface name.</li>
+<li>Missing <code>forwarding</code> (e.g. guest→wan).</li>
+<li>Missing allow rules for DHCP/DNS on zones with <code>input REJECT</code>.</li>
+<li>Forgetting <code>masq '1'</code> on the wan zone.</li>
+</ul>
+<hr>
+<h4 id="openwrt-runtime-ubus--netifd">OpenWrt runtime (ubus / netifd)</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> list</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#79B8FF"> -E</span><span style="color:#9ECBFF"> 'network|hostapd'</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network.interface</span><span style="color:#9ECBFF"> dump</span><span style="color:#6A737D">            # all interfaces: up, device, address, routes, dns</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network.interface.lan</span><span style="color:#9ECBFF"> status</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network.device</span><span style="color:#9ECBFF"> status</span><span style="color:#6A737D">             # all devices: type, state, bridge members, VLAN</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network.device</span><span style="color:#9ECBFF"> status</span><span style="color:#9ECBFF"> '{"name":"br-lan"}'</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network.wireless</span><span style="color:#9ECBFF"> status</span><span style="color:#6A737D">           # radios &#x26; vifs: up, config, ifname, pending</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network</span><span style="color:#9ECBFF"> reload</span></span>
+<span class="line"><span style="color:#B392F0">ifstatus</span><span style="color:#9ECBFF"> wan</span><span style="color:#6A737D">                                # shortcut</span></span>
+<span class="line"><span style="color:#B392F0">logread</span><span style="color:#79B8FF"> -f</span><span style="color:#6A737D">                                  # follow netifd/hostapd/dnsmasq in real time</span></span>
+<span class="line"><span style="color:#B392F0">logread</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> netifd</span></span></code></pre>
+<p>How to cross-check:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>uci show network        # CONFIG: what you want</span></span>
+<span class="line"><span>ubus … network.*        # NETIFD: what netifd understood and did</span></span>
+<span class="line"><span>ip / bridge / nft       # KERNEL: what actually exists</span></span></code></pre>
+<p>If <code>uci</code> is right but <code>ubus</code> lacks the object → netifd didn’t parse/apply it (syntax error, wrong option, missing package). If <code>ubus</code> is right but the kernel is wrong → the problem is at the kernel/driver layer (bridge-vlan can’t be offloaded, DSA limitation).</p>
+<hr>
+<h4 id="wi-fi">Wi-Fi</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">iw</span><span style="color:#9ECBFF"> dev</span><span style="color:#6A737D">                                         # wlan netdev list, phy, type (AP/managed/mesh), channel, txpower</span></span>
+<span class="line"><span style="color:#B392F0">iw</span><span style="color:#9ECBFF"> dev</span><span style="color:#9ECBFF"> wlan0</span><span style="color:#9ECBFF"> info</span></span>
+<span class="line"><span style="color:#B392F0">iw</span><span style="color:#9ECBFF"> phy</span><span style="color:#6A737D">                                         # phy capabilities: bands, HT/VHT/HE, modes, concurrent interfaces</span></span>
+<span class="line"><span style="color:#B392F0">iw</span><span style="color:#9ECBFF"> phy</span><span style="color:#9ECBFF"> phy0</span><span style="color:#9ECBFF"> info</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> less</span><span style="color:#6A737D">                        # interface combinations (max number of BSSes)</span></span>
+<span class="line"><span style="color:#B392F0">iw</span><span style="color:#9ECBFF"> dev</span><span style="color:#9ECBFF"> wlan0</span><span style="color:#9ECBFF"> station</span><span style="color:#9ECBFF"> dump</span><span style="color:#6A737D">                      # clients: signal, tx/rx bitrate, inactive time</span></span>
+<span class="line"><span style="color:#B392F0">iw</span><span style="color:#9ECBFF"> dev</span><span style="color:#9ECBFF"> wlan0</span><span style="color:#9ECBFF"> scan</span><span style="color:#6A737D">                              # [needs an idle radio; affects the AP]</span></span>
+<span class="line"><span style="color:#B392F0">iw</span><span style="color:#9ECBFF"> reg</span><span style="color:#9ECBFF"> get</span><span style="color:#6A737D">                                     # regulatory domain currently applied</span></span>
+<span class="line"><span style="color:#B392F0">iwinfo</span><span style="color:#6A737D">                                         # (OpenWrt) summary: SSID, channel, signal, encryption</span></span>
+<span class="line"><span style="color:#B392F0">iwinfo</span><span style="color:#9ECBFF"> wlan0</span><span style="color:#9ECBFF"> assoclist</span></span>
+<span class="line"><span style="color:#B392F0">iwinfo</span><span style="color:#9ECBFF"> wlan0</span><span style="color:#9ECBFF"> freqlist</span></span>
+<span class="line"><span style="color:#B392F0">wifi</span><span style="color:#9ECBFF"> status</span><span style="color:#6A737D">                                    # equivalent to ubus network.wireless status, easier to read</span></span>
+<span class="line"><span style="color:#B392F0">hostapd_cli</span><span style="color:#79B8FF"> -i</span><span style="color:#9ECBFF"> wlan0</span><span style="color:#9ECBFF"> status</span><span style="color:#6A737D">                    # (if present) BSS status</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> hostapd.wlan0</span><span style="color:#9ECBFF"> get_clients</span><span style="color:#6A737D">            # [version-dependent] clients via ubus</span></span>
+<span class="line"><span style="color:#B392F0">cat</span><span style="color:#9ECBFF"> /var/run/hostapd-phy0.conf</span><span style="color:#6A737D">                 # the hostapd config actually generated</span></span>
+<span class="line"><span style="color:#B392F0">logread</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> hostapd</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> wpa_supplicant</span></span></code></pre>
+<blockquote>
+<p>Interface names (<code>wlan0</code>, <code>phy0-ap0</code>, <code>phy0-sta0</code>…) are <code>[version-dependent]</code> / <code>[driver-dependent]</code>. Use <code>iw dev</code> to learn the real names on your device.</p>
+</blockquote>
+<p>Symptoms and where to investigate:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Symptom</th><th>Check</th></tr></thead><tbody><tr><td>SSID doesn’t appear</td><td><code>wifi status</code>, <code>iw dev</code>, <code>logread -e hostapd</code>, <code>wpad</code> variant, <code>country</code>/DFS CAC, <code>disabled</code></td></tr><tr><td>Associates then gets kicked / 4-way handshake failure</td><td><code>encryption</code> vs <code>ieee80211w</code>, wrong PSK, <code>sae-mixed</code> with old clients, hostapd <code>logread</code></td></tr><tr><td>Link up, no IP</td><td><code>bridge vlan</code>, <code>bridge link</code>, the <code>network</code> option in <code>wifi-iface</code>, DHCP pool, firewall input</td></tr><tr><td>Has IP, no Internet</td><td><code>ip route</code>, forwarding/masq, DNS</td></tr><tr><td>Low speed / poor roaming</td><td><code>iw dev wlan0 station dump</code> (bitrate, signal), channel/htmode, DFS, 2.4 GHz HT40, <code>cell_density</code>, 802.11r/k/v</td></tr><tr><td>Fails only on 2.4 or 5 GHz</td><td>the corresponding <code>radio</code>, <code>band</code>, <code>channel</code>, <code>country</code>, driver/firmware log (<code>dmesg</code>)</td></tr></tbody></table>
+<hr>
+<h4 id="packet-capture">Packet capture</h4>
+<hr>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#B392F0">tcpdump</span><span style="color:#79B8FF"> -ni</span><span style="color:#9ECBFF"> br-lan.30</span><span style="color:#79B8FF"> -e</span><span style="color:#9ECBFF"> vlan</span><span style="color:#6A737D">                  # see VLAN tags</span></span>
+<span class="line"><span style="color:#B392F0">tcpdump</span><span style="color:#79B8FF"> -ni</span><span style="color:#9ECBFF"> phy0-ap0</span><span style="color:#9ECBFF"> port</span><span style="color:#79B8FF"> 67</span><span style="color:#9ECBFF"> or</span><span style="color:#9ECBFF"> port</span><span style="color:#79B8FF"> 68</span><span style="color:#6A737D">        # DHCP on the wlan</span></span>
+<span class="line"><span style="color:#B392F0">tcpdump</span><span style="color:#79B8FF"> -ni</span><span style="color:#9ECBFF"> wan</span><span style="color:#79B8FF"> -c</span><span style="color:#79B8FF"> 20</span><span style="color:#9ECBFF"> icmp</span></span>
+<span class="line"><span style="color:#B392F0">tcpdump</span><span style="color:#79B8FF"> -ni</span><span style="color:#9ECBFF"> br-lan</span><span style="color:#79B8FF"> -w</span><span style="color:#9ECBFF"> /tmp/cap.pcap</span><span style="color:#6A737D">            # save, then open in Wireshark</span></span></code></pre>
+<p>Bisect technique: ping from the client → capture on the <code>wlan</code>, <code>br-lan.N</code>, <code>wan</code>. The hop where the packet disappears tells you the fault lies between that hop and the next.</p>
+<hr>
+<h3 id="engineering-pitfalls--common-mistakes">Engineering Pitfalls / Common Mistakes</h3>
+<hr>
+<ol>
+<li><strong>Copying a swconfig config onto a DSA device</strong> (or vice versa). The two models are completely different (section 6).</li>
+<li><strong>Assuming port/interface names are universal.</strong> <code>wan</code>, <code>lan1</code>, <code>eth0.2</code> depend on the target. Read <code>/etc/board.json</code> and <code>ip link</code>.</li>
+<li><strong><code>uci commit</code> and assuming it’s applied.</strong> You must reload the service (<code>network</code>, <code>firewall</code>, <code>dnsmasq</code>, <code>wifi</code>).</li>
+<li><strong>Locking yourself out when editing network remotely.</strong> Always have a rollback/backup.</li>
+<li><strong>VLAN ≠ firewall isolation.</strong> You need a zone + forward policy (section 11).</li>
+<li><strong><code>u</code> without <code>*</code></strong> (or vice versa) → one-way traffic on an access port.</li>
+<li><strong>Zone <code>list network</code> using device names</strong> instead of logical interface names.</li>
+<li><strong>Missing DHCP/DNS allow rules for zones with <code>input REJECT</code>.</strong></li>
+<li><strong>Forgetting to disable dnsmasq/odhcpd/firewall on a Dumb AP</strong> → rogue DHCP, wrong RA, double NAT.</li>
+<li><strong>L2 loops</strong> when mixing multiple Ethernet uplinks with mesh/Wi-Fi without STP.</li>
+<li><strong>Subnet overlap</strong> (routed client, VPN, multiple VLANs) → ambiguous routing.</li>
+<li><strong>PPPoE MTU/MSS</strong>: forgetting <code>mtu_fix</code>, some sites hang.</li>
+<li><strong>Blocking ICMPv6 entirely</strong> → breaks ND and PMTUD.</li>
+<li><strong>Believing “interface up = Internet OK”</strong> in multi-WAN.</li>
+<li><strong>Too many SSIDs</strong> → airtime overhead; exceeding the driver’s BSS limit.</li>
+<li><strong>Regulatory/DFS</strong>: not setting <code>country</code>; ACS picks a DFS channel and the AP is silent for a few minutes.</li>
+<li><strong><code>wpad</code> variant doesn’t match</strong> <code>encryption</code> (SAE/OWE/mesh/Enterprise).</li>
+<li><strong>Confusing EasyMesh with 802.11r/k/v or 802.11s</strong>: three different things.</li>
+<li><strong>Flow offloading makes SQM/mangle/mwan3 not behave as expected.</strong></li>
+<li><strong>Trusting <code>ip route</code> to infer the config.</strong> Routes generated by DHCP/PPP/PD don’t appear in UCI.</li>
+</ol>
+<hr>
+<h3 id="cheat-sheet-change-x-remember-to-touch-y">Cheat Sheet: “Change X, Remember to Touch Y”</h3>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>You change</th><th>Remember to check / reload</th></tr></thead><tbody><tr><td>A logical interface name</td><td><code>wireless</code> (<code>network</code>), <code>dhcp</code> (<code>interface</code>), <code>firewall</code> (<code>list network</code>), <code>route</code>/<code>rule</code></td></tr><tr><td>Add a VLAN</td><td><code>bridge-vlan</code> (flags), interface on <code>br-lan.N</code>, <code>dhcp</code>, <code>firewall</code>, downstream switch</td></tr><tr><td>Add an SSID</td><td><code>wifi-iface</code> + <code>network</code>; BSS limit; firewall/dhcp for that interface</td></tr><tr><td>Change the WAN proto</td><td><code>wan6</code> (<code>@wan</code>), <code>wan</code> zone, MTU/MSS, DNS</td></tr><tr><td>Add a second WAN</td><td>metric, zone, health check (mwan3), reply path</td></tr><tr><td>Change the LAN subnet</td><td>DHCP pool, static leases, port forward <code>dest_ip</code>, routes, firewall subnets, VPN</td></tr></tbody></table>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sh"><code><span class="line"><span style="color:#6A737D"># A safe working loop</span></span>
+<span class="line"><span style="color:#B392F0">cp</span><span style="color:#79B8FF"> -a</span><span style="color:#9ECBFF"> /etc/config</span><span style="color:#9ECBFF"> /root/config.bak.</span><span style="color:#E1E4E8">$(</span><span style="color:#B392F0">date</span><span style="color:#9ECBFF"> +%s</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#B392F0">uci</span><span style="color:#9ECBFF"> set</span><span style="color:#9ECBFF"> ...</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">uci</span><span style="color:#9ECBFF"> commit</span><span style="color:#9ECBFF"> network</span></span>
+<span class="line"><span style="color:#B392F0">/etc/init.d/network</span><span style="color:#9ECBFF"> reload</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">wifi</span><span style="color:#9ECBFF"> reload</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">/etc/init.d/firewall</span><span style="color:#9ECBFF"> reload</span></span>
+<span class="line"><span style="color:#B392F0">ubus</span><span style="color:#9ECBFF"> call</span><span style="color:#9ECBFF"> network.interface</span><span style="color:#9ECBFF"> dump</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> head</span></span>
+<span class="line"><span style="color:#B392F0">bridge</span><span style="color:#9ECBFF"> vlan</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">ip</span><span style="color:#79B8FF"> -br</span><span style="color:#9ECBFF"> addr</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">nft</span><span style="color:#9ECBFF"> list</span><span style="color:#9ECBFF"> ruleset</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> head</span></span></code></pre>
+<hr>
+<h3 id="summary">Summary</h3>
+<hr>
+<ul>
+<li>OpenWrt is <strong>a set of daemons that turn declarative config into Linux kernel state</strong>. UCI is not the runtime.</li>
+<li><code>device</code> = L2; <code>interface</code> = L3/proto; <strong>the logical interface name is the “glue”</strong> between network, wireless, dhcp, and firewall.</li>
+<li><strong>DSA ≠ swconfig</strong>. DSA configures VLANs on the bridge (<code>bridge-vlan</code>, <code>t</code>, <code>u</code>, <code>*</code>); swconfig configures them inside the chip.</li>
+<li><strong>VLANs separate L2, the firewall separates L3.</strong> For isolation you need both (plus <code>isolate</code> when you need client↔client isolation).</li>
+<li>Debugging: <strong>config (uci) → netifd (ubus) → kernel (ip/bridge/nft) → packets (tcpdump)</strong>, bottom-up.</li>
+<li>Anything tied to port names, drivers, releases, or packages must be <strong>verified on the real device</strong>.</li>
+</ul>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2026 Chung Duc Nguyen Dang. All rights reserved.
+</footer>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const c=document.getElementById("toc"),r=Array.from(document.querySelectorAll(".prose h2, .prose h3"));if(!c||r.length===0)return;r.forEach(t=>{const e=t.textContent.trim(),o=e.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-");t.id=o;const n=document.createElement("a");n.href="#"+o,n.textContent=e,t.tagName==="H3"&&n.classList.add("h3"),c.appendChild(n)});const s=Array.from(document.querySelectorAll(".toc a"));s.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=document.querySelector(t.getAttribute("href"));if(!o)return;const d=o.getBoundingClientRect().top+window.scrollY+-80;window.scrollTo({top:d,behavior:"smooth"})})});let i=null;const l=t=>{i!==t&&(i=t,s.forEach(e=>{e.classList.toggle("active",e.getAttribute("href")==="#"+t)}))},a=new IntersectionObserver(t=>{const e=t.filter(o=>o.isIntersecting).sort((o,n)=>o.boundingClientRect.top-n.boundingClientRect.top);e.length>0&&l(e[0].target.id)},{rootMargin:"-30% 0px -60% 0px",threshold:[0,1]});r.forEach(t=>a.observe(t))});</script> </body> </html>

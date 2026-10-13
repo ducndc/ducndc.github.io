@@ -1,0 +1,7 @@
+<map id="son::dynamic_channel_selection_r2_task::is_scan_pending_for_any_idle_agent" name="son::dynamic_channel_selection_r2_task::is_scan_pending_for_any_idle_agent">
+<area shape="rect" id="Node000001" title="Check the scans queue for any pending requests in idle agents." alt="" coords="5,13,231,67"/>
+<area shape="rect" id="Node000002" href="$classson_1_1dynamic__channel__selection__r2__task.html#a7c90a5f5e9d971ed41bc026cce89d78c" title="Check if the agent has pending scans that can be triggered. Will return true only if the agent is in ..." alt="" coords="279,5,449,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,37,265,37,265,43,231,43"/>
+<area shape="rect" id="Node000003" href="$structson_1_1dynamic__channel__selection__r2__task_1_1sAgentScanStatus.html#a1560547ee47a442e8d6766190c49eb3e" title="Check the if the scan passed its interval duration." alt="" coords="497,5,708,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="450,37,484,37,484,43,450,43"/>
+</map>

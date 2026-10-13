@@ -1,0 +1,21 @@
+<map id="beerocks::timeout_op_chan_rep_on_chan_sel" name="beerocks::timeout_op_chan_rep_on_chan_sel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1236,78,1399,118"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelSelectionTask.html#aac3e6b8fb4932f6aa6ddb25525fee314" title=" " alt="" coords="989,71,1188,125"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1222,101,1188,101,1188,95,1222,95"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ChannelSelectionTask.html#a7d6483025a229705407c13db63a7afb8" title=" " alt="" coords="239,5,445,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="986,70,941,61,808,45,674,36,446,33,446,27,674,31,808,39,942,55,987,65"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ChannelSelectionTask.html#a091f082d789bbcd7b65af399108f887b" title="if channel selection context is waiting for a channel selection notification, consume the event and r..." alt="" coords="756,71,941,125"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="975,101,942,101,942,95,975,95"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1ChannelSelectionTask.html#a76c61d8b1a2051b98f90e5b90c048ef1" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="756,150,941,190"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="984,132,917,152,915,147,983,127"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelSelectionTask.html#a85b2df533a6c739eae4a108daeb29410" title="Handle CMDU message." alt="" coords="5,49,191,89"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="225,53,191,58,190,52,225,47"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ChannelSelectionTask.html#a591994b25a779fb4a1c09e631a2ecc2a" title=" " alt="" coords="508,71,693,125"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="742,101,693,101,693,95,742,95"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1ChannelSelectionTask.html#a7a537a832e1da18da953a6af812cec3a" title=" " alt="" coords="493,150,708,190"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="744,131,671,152,670,147,742,126"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ChannelSelectionTask.html#ab67214343b93cc468593dcbbaf5d2456" title="Handles Vendor Specific messages." alt="" coords="245,85,439,125"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="494,103,439,105,439,99,494,98"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="231,91,190,85,191,80,232,86"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="507,149,421,127,422,122,508,144"/>
+</map>

@@ -1,0 +1,27 @@
+<map id="beerocks::CmduServerImpl::CmduServerImpl" name="beerocks::CmduServerImpl::CmduServerImpl">
+<area shape="rect" id="Node000001" title="Class constructor." alt="" coords="5,69,187,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CmduServerImpl.html#afb70a8b819993b4bb929803979604da6" title="Handles the read event in the server socket, which corresponds to an incoming connection request from..." alt="" coords="235,69,416,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,87,221,87,221,92,187,92"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1CmduServerImpl.html#af8ee818377255bb10890276aaa53c067" title="Adds a new connection." alt="" coords="464,5,645,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,67,469,46,470,52,398,72"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1CmduServerImpl.html#a0a8f990506be83de8a7d5cf4a8e61c33" title="Handles the disconnect and error events in a client socket connected to the server socket." alt="" coords="464,69,645,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="416,87,450,87,450,92,416,92"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1CmduServerImpl.html#a782d50d534866f5a0ce4eba43e5e7381" title="Handles the read event in a client socket connected to the server socket." alt="" coords="464,133,645,173"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="398,107,470,127,469,132,397,112"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1CmduServer.html#a3fb59dbfb43225cbe6e4c79bae7de285" title="Notifies a client&#45;connected event." alt="" coords="701,5,867,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="646,23,687,23,687,28,646,28"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1CmduServerImpl.html#a0cd6444f2c383c6d7fff1cb1f0ac3cbc" title="Removes connection." alt="" coords="693,69,875,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="646,87,679,87,679,92,646,92"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1CmduServer.html#a5421205ef8bf13a03dd147397c656ece" title="Notifies a client&#45;disconnected event." alt="" coords="923,69,1107,109"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="875,87,909,87,909,92,875,92"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1CmduServer.html#a2e888c12406f8ad3d2678b84fb3ffcf7" title="Notifies a CMDU&#45;received event." alt="" coords="705,133,863,173"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="646,151,691,151,691,156,646,156"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1CmduPeer.html#aa5b680d017fca40378e6a4fa098083ca" title="Reads and handles received CMDU messages." alt="" coords="711,197,857,237"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="628,171,700,191,698,196,626,176"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1net_1_1Buffer.html#a4c70d268fe092fc5318af68d1ecebb8f" title="Returns the length of the buffer (number of bytes)." alt="" coords="943,133,1087,173"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="856,195,929,174,930,179,858,200"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1net_1_1Socket_1_1Connection.html#a625069bb809bd93da8f145a776825334" title="Receives data through the socket connection." alt="" coords="939,197,1090,237"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="857,215,925,215,925,220,857,220"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1net_1_1Socket_1_1Connection.html#a6ab08378af58ec338acd0a3ee61bcbda" title="Returns the underlying socket used by this connection." alt="" coords="939,261,1090,301"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="858,235,930,255,928,260,856,240"/>
+</map>

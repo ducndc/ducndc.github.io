@@ -1,0 +1,42 @@
+<map id="son::dynamic_channel_selection_r2_task::send_channel_preference_query" name="son::dynamic_channel_selection_r2_task::send_channel_preference_query">
+<area shape="rect" id="Node000001" title="Send a Channel Preference Query message to a given agent. aligned with the 1905.1 requirements,..." alt="" coords="5,195,187,249"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="235,85,433,125"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,192,279,128,281,133,154,197"/>
+<area shape="rect" id="Node000004" href="$classson_1_1son__actions.html#a4d57f77f9343433c6fdc6a2009e215bb" title=" " alt="" coords="255,234,413,274"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="187,232,242,239,241,244,187,237"/>
+<area shape="rect" id="Node000003" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="516,5,631,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,82,480,41,508,32,510,37,482,46,380,87"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1beerocks__header.html#a1bd46582d8b9cf054a8be6157afa460a" title=" " alt="" coords="505,55,641,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="349,232,402,170,439,135,480,105,492,98,494,103,483,110,443,140,406,174,353,235"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1message__com.html#a028861029a2c3f999d81c46c1792eebe" title=" " alt="" coords="489,119,657,159"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="366,232,418,201,480,169,497,162,499,167,482,174,421,205,368,236"/>
+<area shape="rect" id="Node000010" href="$classson_1_1db.html#a3e957d7858d4c86d1c75cce4a391ffaa" title=" " alt="" coords="485,184,661,209"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="412,233,505,210,507,215,413,238"/>
+<area shape="rect" id="Node000011" href="$classson_1_1db.html#af2ed84bacfd1b7408c3961a5bb694d88" title=" " alt="" coords="511,234,636,274"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="413,251,497,251,497,257,413,257"/>
+<area shape="rect" id="Node000012" href="$classieee1905__1_1_1CmduMessage.html#a94ce761475d53857b8d5543fa9e4c0bd" title=" " alt="" coords="481,298,665,338"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="410,272,486,292,484,297,409,277"/>
+<area shape="rect" id="Node000017" href="$classson_1_1db.html#a77630986a58efaa0443f06452d8c28c1" title=" " alt="" coords="502,363,645,388"/>
+<area shape="poly" id="edge17_Node000004_Node000017" title=" " alt="" coords="362,272,416,310,482,348,504,356,502,361,480,352,413,315,359,276"/>
+<area shape="rect" id="Node000019" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="501,412,646,437"/>
+<area shape="poly" id="edge19_Node000004_Node000019" title=" " alt="" coords="352,273,405,335,442,369,483,398,495,405,493,409,480,403,438,374,401,339,348,276"/>
+<area shape="rect" id="Node000020" href="$classson_1_1Controller.html#aa2ca2350953de40ad9eb1cb787e274a7" title="Sends given CMDU message to the broker server running in the transport process to be forwarded to ano..." alt="" coords="502,462,645,502"/>
+<area shape="poly" id="edge20_Node000004_Node000020" title=" " alt="" coords="348,273,368,310,398,357,437,406,483,448,491,453,488,457,480,452,433,409,394,360,363,313,343,276"/>
+<area shape="rect" id="Node000007" href="$classieee1905__1_1_1CmduMessage.html#a05ca2e3fc9b6628dd7eca553a8d68aad" title=" " alt="" coords="713,81,897,121"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="657,123,699,116,700,121,658,128"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1message__com.html#a2ac9090c0d8d3b371a7518031d80ad16" title=" " alt="" coords="721,145,889,185"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="658,146,708,151,708,157,657,151"/>
+<area shape="rect" id="Node000008" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="954,152,1091,177"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="875,118,967,146,965,151,873,123"/>
+<area shape="rect" id="Node000013" href="$classieee1905__1_1_1CmduMessage.html#adc10ea7cfba25c0f58359cb954a5d69c" title=" " alt="" coords="713,209,897,249"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="635,295,664,284,712,258,729,251,731,256,714,263,666,288,637,300"/>
+<area shape="rect" id="Node000014" href="$classieee1905__1_1_1CmduMessage.html#af54c8bd541643a03b9567fc61eef25f9" title=" " alt="" coords="713,273,897,313"/>
+<area shape="poly" id="edge14_Node000012_Node000014" title=" " alt="" coords="666,305,699,302,700,307,666,311"/>
+<area shape="rect" id="Node000016" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="768,337,843,363"/>
+<area shape="poly" id="edge16_Node000012_Node000016" title=" " alt="" coords="666,328,755,340,754,346,666,333"/>
+<area shape="poly" id="edge13_Node000013_Node000008" title=" " alt="" coords="873,206,965,179,967,184,875,211"/>
+<area shape="rect" id="Node000015" href="$classClassList.html#aea43ae47ce1af363533f665105410639" title=" " alt="" coords="945,280,1100,305"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="898,290,932,290,932,295,898,295"/>
+<area shape="rect" id="Node000018" href="$classson_1_1db.html#a12d3c2aabc63ee0fcdb1ca26f854f484" title="Get agent from its ALID." alt="" coords="740,387,871,412"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="645,380,727,389,726,394,644,385"/>
+</map>

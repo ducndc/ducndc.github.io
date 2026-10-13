@@ -1,0 +1,46 @@
+<map id="beerocks::wbapi::AmbiorixClient::subscribe_to_object_event" name="beerocks::wbapi::AmbiorixClient::subscribe_to_object_event">
+<area shape="rect" id="Node000001" title="subscribe for event for a given object." alt="" coords="737,385,956,425"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a557feb07d98d943decb5609e74ffa1ae" title=" " alt="" coords="281,5,439,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="836,372,819,313,790,240,770,202,747,166,719,133,688,104,659,86,629,70,563,49,498,38,439,34,439,28,499,33,565,44,631,65,662,81,691,100,723,129,751,163,774,200,794,238,824,311,841,370"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a8591266c89fb31da4a9790b1cfe0e274" title="Subscribe to AffiliatedSta Active changes for MLO link updates." alt="" coords="515,409,682,464"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="724,423,683,429,682,423,723,418"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a7cf841b9af96c8c1c82d5bed602661e6" title=" " alt="" coords="286,369,434,424"/>
+<area shape="poly" id="edge27_Node000001_Node000005" title=" " alt="" coords="723,400,689,399,434,398,434,393,689,394,724,395"/>
+<area shape="rect" id="Node000007" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#ad37c8aa6dffe5d0850393745406c8cbc" title="Subscribe to Ap event &quot;BSS&#45;TM&#45;RESP&quot; from pwhm." alt="" coords="280,84,440,139"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="834,372,815,320,786,257,744,194,718,167,688,144,659,129,628,117,563,103,499,100,440,102,440,97,499,94,564,98,630,112,661,124,691,140,721,163,748,191,790,254,820,318,839,371"/>
+<area shape="rect" id="Node000008" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a4632b404a142dc1fa68b10594a8d5dcb" title=" " alt="" coords="286,461,434,516"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="801,434,749,459,690,479,623,491,555,497,434,497,434,491,555,492,622,486,689,474,747,454,799,429"/>
+<area shape="rect" id="Node000009" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#ab4ce3b951958bd05c63dd4048ca6a2b7" title="Subscribe to Ap event &quot;MgmtActionFrameReceived&quot; from pwhm." alt="" coords="280,163,440,217"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="832,373,813,325,782,270,741,216,716,193,688,175,658,162,627,154,562,149,498,155,441,167,440,161,497,149,562,143,628,149,660,157,691,170,719,189,745,212,787,267,817,323,837,371"/>
+<area shape="rect" id="Node000010" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#acbfd69874183e808ae749cb4a9c57aaf" title="subscribe to WiFi.EndPoint.*.ConnectionStatus and IntfName dm object change" alt="" coords="526,619,671,673"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="830,439,774,522,735,568,691,609,673,621,670,617,688,605,731,565,770,519,825,436"/>
+<area shape="rect" id="Node000012" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a1153292393d2848fc3e86707fad91e83" title="subscribe to WiFi.EndPoint.*.WPS. pairingDone dm notification" alt="" coords="526,697,671,752"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="837,439,817,492,786,558,744,627,719,659,691,688,673,701,670,697,688,684,715,656,740,624,782,556,812,490,832,437"/>
+<area shape="rect" id="Node000013" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#abb6991612972ab5d6d09e02a408b50c1" title=" " alt="" coords="511,185,687,254"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="814,377,758,324,688,268,669,256,672,252,691,264,761,320,818,373"/>
+<area shape="rect" id="Node000014" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#ad2a0c269544768de11d92ea0e2dc82da" title=" " alt="" coords="525,279,673,333"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="782,382,667,336,669,331,784,377"/>
+<area shape="rect" id="Node000015" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#af15b0840155f8fa7feda07bb1335d123" title="subscribe to WiFi.Radio.XXXXX.NaStaMonitor.RssiEventing RssiUpdate dm notification" alt="" coords="513,776,684,831"/>
+<area shape="poly" id="edge22_Node000001_Node000015" title=" " alt="" coords="842,439,826,506,797,593,777,639,753,685,725,728,691,767,677,778,674,774,687,763,720,725,749,682,772,637,792,591,821,504,837,437"/>
+<area shape="rect" id="Node000017" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a8830f6f2f7aedbf4f8404bd61781233d" title="subscribe to WiFi.Radio. ScanComplete dm notification" alt="" coords="508,540,689,595"/>
+<area shape="poly" id="edge24_Node000001_Node000017" title=" " alt="" coords="812,435,756,478,691,523,657,542,655,537,688,518,753,474,809,431"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a274a3cc9852563ca2081f9f2c5ec2ff3" title=" " alt="" coords="23,235,195,275"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="270,68,262,73,216,113,177,159,124,237,119,234,173,155,213,110,258,69,267,63"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="501,423,434,412,435,406,502,418"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="297,365,144,278,147,273,300,360"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1whm_1_1mon__wlan__hal__whm.html#a886cad26ea4db4ce27b9d998342df23c" title=" " alt="" coords="5,469,212,509"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="274,431,165,471,163,466,272,426"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="272,147,261,152,192,196,136,237,133,233,189,191,259,148,269,142"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="285,456,258,437,215,397,176,352,121,277,125,274,180,349,219,393,262,433,288,452"/>
+<area shape="poly" id="edge11_Node000008_Node000006" title=" " alt="" coords="272,491,212,491,212,486,272,486"/>
+<area shape="poly" id="edge13_Node000009_Node000003" title=" " alt="" coords="267,217,187,238,186,233,266,212"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a2c0791cc3c4724b80c63d959ebf1ff4f" title=" " alt="" coords="260,626,460,666"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="512,649,460,649,460,643,512,643"/>
+<area shape="poly" id="edge17_Node000012_Node000011" title=" " alt="" coords="512,699,421,669,422,663,514,694"/>
+<area shape="poly" id="edge19_Node000013_Node000003" title=" " alt="" coords="497,229,195,252,195,246,497,224"/>
+<area shape="poly" id="edge21_Node000014_Node000003" title=" " alt="" coords="511,300,195,267,195,262,511,294"/>
+<area shape="rect" id="Node000016" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a16ba83b10a2fee80c51ffc4d9ab3f906" title="Measure the RSSI of an unassociated station. The result of the measurement should be sent as an inter..." alt="" coords="277,776,443,831"/>
+<area shape="poly" id="edge23_Node000015_Node000016" title=" " alt="" coords="499,806,444,806,444,801,499,801"/>
+<area shape="poly" id="edge25_Node000017_Node000006" title=" " alt="" coords="494,562,381,550,259,531,176,511,177,506,261,526,381,545,494,557"/>
+<area shape="poly" id="edge26_Node000017_Node000011" title=" " alt="" coords="503,602,422,628,421,623,501,597"/>
+</map>

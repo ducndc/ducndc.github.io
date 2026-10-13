@@ -1,0 +1,11 @@
+<map id="son::db::dm_add_assoc_event_sta_caps" name="son::db::dm_add_assoc_event_sta_caps">
+<area shape="rect" id="Node000001" title="Adds station capabilities sub&#45;objects into data model under instance of object AssociationEventData." alt="" coords="5,69,167,109"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#af130328d3c69b76af7b7b6569c119789" title="Sets value for parameters of optional sub&#45;object STA WiFi6Capabilities." alt="" coords="215,5,373,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,67,215,47,216,52,153,72"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a92fb9a50e7e882df959b3fa35e74aa84" title="Sets value for parameters of optional sub&#45;object STA HTCapabilities." alt="" coords="215,69,373,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,87,201,87,201,92,167,92"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#acec29b3c83437e1396515a07cc14a4c5" title="Sets value for parameters of optional sub&#45;object STA VHTCapabilities." alt="" coords="215,133,373,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="153,107,216,127,215,132,151,112"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a90131ac8ab4d119fb9cf3f1138e8d012" title="Calculate the vht MCS set (mask of 16bits) using the maximum supported MCS and number of Spatial stre..." alt="" coords="421,133,552,173"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="374,151,408,151,408,156,374,156"/>
+</map>

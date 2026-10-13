@@ -1,0 +1,16 @@
+<map id="beerocks::net::network_utils::tc_ensure_clsact_qdisc" name="beerocks::net::network_utils::tc_ensure_clsact_qdisc">
+<area shape="rect" id="Node000001" title="Add a clsact qdisc unless one already exists." alt="" coords="821,68,1020,108"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1bpl_1_1ServicePrioritizationUtils__tc.html#a5bee7ba82777f61913b4ec7dd9a0382c" title="Prepare the TC qdisc used by service&#45;prioritization filters." alt="" coords="549,32,773,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="808,75,773,70,774,65,808,70"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1network__utils.html#a3c2db6c61371be3f461169fe082564ff" title="Set or clear a simple VLAN packet filter rule per BSS interface." alt="" coords="583,97,739,151"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="808,106,740,116,739,111,807,101"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1bpl_1_1ServicePrioritizationUtils__tc.html#ace791df1384b4929932d7cee64dc63c5" title="Apply DSCP&#45;to&#45;PCP mapping on all listed interfaces." alt="" coords="5,5,229,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="558,32,501,24,360,18,230,21,229,15,360,12,502,19,559,27"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1bpl_1_1ServicePrioritizationUtils__tc.html#ab924a3436b5637dfae88fb013d02dd97" title="Apply the same PCP value on all listed interfaces." alt="" coords="277,33,501,73"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="536,55,501,55,501,50,536,50"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="264,43,229,39,230,34,264,38"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1AccessPortPlumbing8021q.html#af2758e9933f1033247bb61651173d35b" title="Apply plumbing for the access port (fronthaul)." alt="" coords="301,101,478,141"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="570,126,478,125,478,120,570,120"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1AccessPortPlumbing8021q.html#a770628b55da07fe91656439c6ec9374d" title="Rollback of the last applied configuration." alt="" coords="301,165,478,205"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="570,147,479,168,477,163,569,142"/>
+</map>

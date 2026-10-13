@@ -1,0 +1,26 @@
+<map id="son::db::get_channel_scan_interval_sec" name="son::db::get_channel_scan_interval_sec">
+<area shape="rect" id="Node000001" title="Get the channel scan interval sec object." alt="" coords="1147,138,1289,178"/>
+<area shape="rect" id="Node000002" href="$classson_1_1son__management.html#a83cffa6de5e1d1e1a7916b7ebaa9f9ef" title=" " alt="" coords="913,26,1069,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1179,132,1141,105,1098,80,1068,68,1070,63,1100,76,1144,100,1182,127"/>
+<area shape="rect" id="Node000009" href="$classson_1_1dynamic__channel__selection__r2__task.html#a98d880d58779caa3730dbf8335074865" title="Handle continuous scan request events. Add a radio scan request in the event to pending scan requests..." alt="" coords="883,91,1099,145"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1132,146,1098,140,1099,134,1133,140"/>
+<area shape="rect" id="Node000011" href="$classson_1_1dynamic__channel__selection__r2__task.html#adb82d4e94aec3ddbbf66b76ba7944854" title="Handle scan report events." alt="" coords="902,169,1079,224"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1133,175,1080,184,1079,179,1132,170"/>
+<area shape="rect" id="Node000012" href="$classson_1_1dynamic__channel__selection__task.html#ad5b0589c10fd76b87a9b09fa00a71c89" title=" " alt="" coords="915,249,1067,289"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="1182,189,1143,215,1100,239,1068,252,1066,247,1098,234,1140,210,1179,184"/>
+<area shape="rect" id="Node000003" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="631,33,823,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="899,49,823,49,823,43,899,43"/>
+<area shape="rect" id="Node000004" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="400,5,571,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="617,36,570,31,571,25,617,31"/>
+<area shape="rect" id="Node000005" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="409,55,562,95"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="618,62,562,69,562,63,617,57"/>
+<area shape="rect" id="Node000006" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,63,352,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="395,78,353,78,353,73,395,73"/>
+<area shape="rect" id="Node000007" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,37,109,63"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="197,67,109,56,110,51,197,62"/>
+<area shape="rect" id="Node000008" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,87,163,112"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="197,88,163,92,163,87,196,83"/>
+<area shape="rect" id="Node000010" href="$classson_1_1dynamic__channel__selection__r2__task.html#a90458658bc2339468c9c3c6e0c80de01" title=" " alt="" coords="619,137,835,177"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="870,138,835,144,834,138,869,133"/>
+<area shape="poly" id="edge11_Node000011_Node000010" title=" " alt="" coords="888,184,834,176,835,170,889,179"/>
+</map>

@@ -1,0 +1,57 @@
+<map id="beerocks::bpl::db_has_entry" name="beerocks::bpl::db_has_entry">
+<area shape="rect" id="Node000001" title="find if entry exists" alt="" coords="2132,264,2283,304"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#ad02556d72323e8efd01eceac0a9c8c47" title="Adds a client to the persistent db, if already exists, remove old entry and add a new one." alt="" coords="1539,232,1671,272"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2118,282,1671,258,1671,253,2118,277"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a35af38386867ab92f63281f88e256e3f" title="Updates the client values in the persistent db." alt="" coords="1331,259,1491,299"/>
+<area shape="poly" id="edge31_Node000001_Node000003" title=" " alt="" coords="2118,288,1859,289,1539,287,1491,285,1491,280,1539,281,1859,284,2118,283"/>
+<area shape="rect" id="Node000022" href="$classson_1_1db.html#a253307a80eb0361757e0030f3080d5a7" title="Clear client&#39;s persistent information." alt="" coords="1945,181,2084,221"/>
+<area shape="poly" id="edge24_Node000001_Node000022" title=" " alt="" coords="2147,261,2061,224,2063,219,2149,256"/>
+<area shape="rect" id="Node000024" href="$classson_1_1db.html#ac7ae2013bb405f1b6205b8e547d2dd14" title="Check if client exists in persistent db." alt="" coords="1135,476,1259,516"/>
+<area shape="poly" id="edge28_Node000001_Node000024" title=" " alt="" coords="2132,311,2064,329,1984,347,1897,360,1809,365,1604,365,1549,378,1454,408,1254,478,1252,473,1452,403,1547,373,1603,360,1809,360,1896,355,1983,341,2063,324,2130,305"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1525,266,1491,270,1491,265,1525,260"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#abd476e961bbd758287f3fb156370254d" title="Set the client&#39;s unfriendly status." alt="" coords="1132,412,1261,452"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1374,309,1333,346,1310,375,1300,388,1284,402,1263,414,1260,410,1281,398,1296,385,1306,372,1329,342,1371,305"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a7a199f518c192e3c0bb5379a6247acec" title="Set the client&#39;s time&#45;life delay." alt="" coords="1132,284,1261,324"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="1317,292,1262,299,1261,294,1317,287"/>
+<area shape="rect" id="Node000015" href="$classson_1_1db.html#a14a8064ece97961deb62084586f313cd" title="Set the client&#39;s initial&#45;radio." alt="" coords="1120,41,1273,81"/>
+<area shape="poly" id="edge14_Node000003_Node000015" title=" " alt="" coords="1380,250,1281,146,1217,83,1221,80,1285,142,1384,247"/>
+<area shape="rect" id="Node000019" href="$classson_1_1db.html#a40c035b472203e493c6d8ed04723c91c" title="Set the client&#39;s selected&#45;bands." alt="" coords="1111,348,1283,388"/>
+<area shape="poly" id="edge18_Node000003_Node000019" title=" " alt="" coords="1355,307,1284,338,1254,350,1252,345,1282,334,1353,302"/>
+<area shape="rect" id="Node000020" href="$classson_1_1db.html#a6f5e7c2b8a037fa680f3d252c5e7d171" title="Set the client&#39;s stay&#45;on&#45;initial&#45;radio." alt="" coords="1123,156,1271,196"/>
+<area shape="poly" id="edge20_Node000003_Node000020" title=" " alt="" coords="1363,254,1282,210,1253,198,1256,194,1284,206,1366,249"/>
+<area shape="rect" id="Node000021" href="$classson_1_1db.html#aba22d9fed634c561c9382837f2644f0e" title="Update client&#39;s persistent information with the runtime information." alt="" coords="1121,220,1272,260"/>
+<area shape="poly" id="edge22_Node000003_Node000021" title=" " alt="" coords="1317,264,1272,256,1273,251,1318,259"/>
+<area shape="rect" id="Node000005" href="$classson_1_1btm__request__task.html#a7142a159671a74703864a3f34124ec53" title=" " alt="" coords="883,412,1038,452"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1118,435,1038,435,1038,429,1118,429"/>
+<area shape="rect" id="Node000006" href="$classson_1_1client__steering__task.html#af2447481b375e5c3167a78b738fb7bb1" title=" " alt="" coords="893,476,1028,516"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="1119,456,1029,480,1027,475,1118,451"/>
+<area shape="rect" id="Node000008" href="$classson_1_1son__management.html#a83cffa6de5e1d1e1a7916b7ebaa9f9ef" title=" " alt="" coords="883,220,1039,260"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1118,286,1034,263,1036,257,1119,280"/>
+<area shape="rect" id="Node000009" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="619,227,811,253"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="869,243,811,243,811,237,869,237"/>
+<area shape="rect" id="Node000010" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="400,198,571,223"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="605,229,571,224,571,219,605,223"/>
+<area shape="rect" id="Node000011" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="409,248,562,288"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="606,256,562,261,562,256,605,251"/>
+<area shape="rect" id="Node000012" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,255,352,281"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="395,271,353,271,353,265,395,265"/>
+<area shape="rect" id="Node000013" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,230,109,255"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="197,260,109,248,110,243,197,255"/>
+<area shape="rect" id="Node000014" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,279,163,305"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="197,281,163,285,163,280,196,276"/>
+<area shape="rect" id="Node000016" href="$classson_1_1association__handling__task.html#a0753278c22b3f0162ff370955b3fd871" title=" " alt="" coords="859,41,1063,81"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="1106,64,1063,64,1063,59,1106,59"/>
+<area shape="rect" id="Node000017" href="$classson_1_1association__handling__task.html#ae015367f2500d023568c6deb830bda21" title=" " alt="" coords="629,70,801,125"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="845,81,801,87,800,82,845,76"/>
+<area shape="rect" id="Node000018" href="$classson_1_1association__handling__task.html#a534636e4e54df36ff4d83902d81803e3" title=" " alt="" coords="629,5,801,45"/>
+<area shape="poly" id="edge17_Node000016_Node000018" title=" " alt="" coords="845,47,800,41,801,35,845,42"/>
+<area shape="poly" id="edge19_Node000019_Node000008" title=" " alt="" coords="1123,345,1109,338,1043,300,988,262,991,258,1046,295,1112,334,1126,340"/>
+<area shape="poly" id="edge21_Node000020_Node000008" title=" " alt="" coords="1110,202,1036,223,1034,217,1108,197"/>
+<area shape="poly" id="edge23_Node000021_Node000008" title=" " alt="" coords="1107,243,1039,243,1039,237,1107,237"/>
+<area shape="poly" id="edge25_Node000022_Node000008" title=" " alt="" coords="1940,180,1870,160,1787,141,1697,127,1606,121,1409,121,1257,118,1192,125,1112,147,1076,162,1042,182,987,222,984,218,1039,177,1073,157,1110,141,1191,119,1257,113,1409,116,1606,116,1697,122,1788,136,1871,155,1941,175"/>
+<area shape="rect" id="Node000023" href="$classson_1_1db.html#a81f33453c70c67ba4994a941796bf1c2" title="Removes client with least timelife remaining from persistent db (with preference to disconnected clie..." alt="" coords="1719,181,1897,221"/>
+<area shape="poly" id="edge26_Node000022_Node000023" title=" " alt="" coords="1931,204,1898,204,1898,199,1931,199"/>
+<area shape="poly" id="edge27_Node000023_Node000002" title=" " alt="" coords="1715,227,1672,238,1671,233,1713,222"/>
+<area shape="poly" id="edge29_Node000024_Node000005" title=" " alt="" coords="1121,478,1035,455,1036,450,1122,473"/>
+<area shape="poly" id="edge30_Node000024_Node000006" title=" " alt="" coords="1121,499,1028,499,1028,493,1121,493"/>
+</map>

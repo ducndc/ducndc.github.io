@@ -1,0 +1,21 @@
+<map id="bwl::dwpal::ap_wlan_hal_dwpal::dwpald_attach" name="bwl::dwpal::ap_wlan_hal_dwpal::dwpald_attach">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,133,184,173"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1utils.html#a8a7b156a1d975b5262c94d0dfa8927bb" title=" " alt="" coords="232,133,385,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,151,218,151,218,156,184,156"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1utils.html#ab79525da353f8d66afd69095bbf7f56e" title="This function will return the default prefix separator character for wireless VAP interface names." alt="" coords="433,5,608,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="330,131,375,93,432,55,445,49,447,53,435,60,378,97,333,135"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1utils.html#a865f0165212ff57d0c23421af76d582b" title="This function will return the prefix string in the argument interface name following one of these pat..." alt="" coords="437,69,605,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="375,131,440,111,442,116,376,136"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1utils.html#a60f589dbc54e6e64b04466f89239bbc7" title="This function will check if the interface name prefix is allowed. The check can de done by." alt="" coords="441,133,600,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="386,151,428,151,428,156,386,156"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1string__utils.html#adc10d3f8a693da93fc162414173fa6be" title=" " alt="" coords="447,197,594,237"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="376,171,442,191,440,196,375,176"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1string__utils.html#aea97ffe1489d4608c5035b257deaaadc" title=" " alt="" coords="447,261,594,301"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="333,172,378,209,435,247,447,253,445,258,432,252,375,213,330,176"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1string__utils.html#ad6a5e6fda086252e48c5122fd2552d9d" title="trim whitespace in place from the head and tail of a string." alt="" coords="656,197,803,237"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="594,215,643,215,643,220,594,220"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1string__utils.html#a03316c7e6197ba5b20b09ae807d36681" title="trim whitespace in place from the head of a string." alt="" coords="851,165,997,205"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="802,203,836,197,837,202,803,208"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1string__utils.html#aa8c0f4131490f9f0f50b0d643ca4eccc" title="trim whitespace in place from the tail of a string." alt="" coords="851,229,997,269"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="803,227,837,232,836,238,802,232"/>
+</map>

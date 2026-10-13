@@ -1,0 +1,16 @@
+<map id="beerocks::slave_thread::task_pool_try_send_event" name="beerocks::slave_thread::task_pool_try_send_event">
+<area shape="rect" id="Node000001" title=" " alt="" coords="757,82,940,122"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a5e28c715b45c8268101af80597430819" title="Parse Multi&#45;AP Policy Configuration message." alt="" coords="256,5,459,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="774,81,709,65,579,47,459,38,459,33,579,42,710,59,775,75"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a87619354513e44f99020788b1498f55e" title=" " alt="" coords="507,75,709,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="743,105,710,105,710,99,743,99"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aec7c837c390bb5fa3bd9237f3c5498ec" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="507,154,709,194"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="769,129,676,156,675,151,767,123"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="5,49,208,89"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="243,52,209,57,208,51,242,47"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a22e39830c1aaacc84bc8aabfd5de1582" title="Handles Vendor Specific messages." alt="" coords="256,85,459,125"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="493,106,459,106,459,101,493,101"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="242,91,208,86,209,81,243,86"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a0805d78df62071cfdd3ad89bddc67963" title="Handle events, which are being send from containing thread." alt="" coords="256,154,459,194"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="493,177,459,177,459,171,493,171"/>
+</map>

@@ -1,0 +1,30 @@
+<map id="son::db::set_sta_capabilities" name="son::db::set_sta_capabilities">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,227,193,253"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a6cf0599dce84fa3528aa8c7f644bfa47" title="Add station &#39;WiFi6Capabilities&#39; data element, set values to its parameters." alt="" coords="250,5,391,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,226,154,147,193,98,240,55,247,50,250,54,243,59,197,102,159,150,110,228"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#af5e6849af57b22d0ee3d80cfe63fa366" title="Add station &#39;HTCapabilities&#39; data element, set values to its parameters." alt="" coords="250,69,391,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,225,165,175,201,146,240,119,251,113,253,118,243,124,204,150,168,179,115,229"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a587f7f7da29378336150b138138d1045" title="Add station &#39;VHTCapabilities&#39; data element, set values to its parameters." alt="" coords="250,133,391,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="132,225,255,176,257,181,134,230"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#adbac1a22db0baab7e56e16ad932a2896" title=" " alt="" coords="241,248,400,288"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="194,249,228,254,228,259,193,255"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="452,202,589,227"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="193,232,438,217,438,222,194,237"/>
+<area shape="rect" id="Node000008" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="448,309,593,334"/>
+<area shape="poly" id="edge15_Node000001_Node000008" title=" " alt="" coords="125,250,178,275,242,297,341,314,434,319,434,325,340,319,241,303,176,280,123,255"/>
+<area shape="rect" id="Node000011" href="$classson_1_1db.html#a71e4d46a9c17bba9db086749873288be" title=" " alt="" coords="244,363,397,389"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="117,251,171,294,243,342,272,356,270,361,240,346,168,298,114,255"/>
+<area shape="rect" id="Node000013" href="$classson_1_1db.html#a05ce186d1c2c7e3985e90e79f6e743ae" title=" " alt="" coords="244,413,397,438"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="111,252,160,322,198,363,243,399,253,405,250,410,240,404,195,367,156,325,106,255"/>
+<area shape="rect" id="Node000005" href="$classson_1_1wireless__utils.html#a90131ac8ab4d119fb9cf3f1138e8d012" title="Calculate the vht MCS set (mask of 16bits) using the maximum supported MCS and number of Spatial stre..." alt="" coords="455,133,586,173"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="392,151,441,151,441,156,392,156"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="395,245,458,228,460,234,397,251"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="397,285,460,302,458,308,395,291"/>
+<area shape="rect" id="Node000009" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="455,255,586,281"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="401,265,441,265,441,271,401,271"/>
+<area shape="rect" id="Node000010" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="641,255,788,281"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="586,265,627,265,627,271,586,271"/>
+<area shape="rect" id="Node000012" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="457,380,584,420"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="398,383,444,388,443,393,397,388"/>
+<area shape="poly" id="edge14_Node000013_Node000012" title=" " alt="" coords="397,413,443,407,444,412,398,418"/>
+</map>

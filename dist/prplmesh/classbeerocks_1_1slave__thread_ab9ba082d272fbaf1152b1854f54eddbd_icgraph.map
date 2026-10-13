@@ -1,0 +1,18 @@
+<map id="beerocks::slave_thread::forward_cmdu_to_controller" name="beerocks::slave_thread::forward_cmdu_to_controller">
+<area shape="rect" id="Node000001" title="Forwards given received CMDU message to the broker server for dispatching which eventually will be se..." alt="" coords="536,101,727,141"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#abe4d41e73e16f636e50d39e63345ad68" title=" " alt="" coords="261,5,488,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="577,98,487,60,451,48,453,43,489,55,579,93"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ProxyAgentDppTask.html#a8049055d9788930696e2e44a9b1ba1a5" title="Parse Chirp Notification Message." alt="" coords="273,69,476,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="522,110,476,105,476,99,523,105"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ProxyAgentDppTask.html#a847ec9847cce908db0084453ffc377e3" title="Parse Proxied Encap DPP Message." alt="" coords="273,133,476,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="523,138,476,143,476,138,522,132"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1VbssTask.html#a2615e75eeeb5a20a5d3fc7d542c4f621" title="Forward Virtual BSS Response messages to the Controller." alt="" coords="304,198,445,253"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="576,150,489,188,447,204,445,199,487,183,574,145"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ab2452024f7d97d1001a79ab2b61e84ce" title="Handle CMDU message." alt="" coords="5,5,213,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="248,28,214,28,214,23,248,23"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ProxyAgentDppTask.html#a01ad3c1d7443055094379608690a13ce" title="Handle CMDU message." alt="" coords="8,101,211,141"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="260,106,211,112,211,106,259,101"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="259,142,211,136,211,131,260,137"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1VbssTask.html#abf90c688856de83408d998bb224a693d" title="Handle CMDU message." alt="" coords="39,205,180,245"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="290,228,180,228,180,223,290,223"/>
+</map>

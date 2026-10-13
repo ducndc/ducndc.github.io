@@ -1,0 +1,24 @@
+<map id="beerocks::AgentDB::SafeDB" name="beerocks::AgentDB::SafeDB">
+<area shape="rect" id="Node000001" title=" " alt="" coords="824,216,968,256"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1AgentDB.html" title="AgentDB is a class used by all main Agent threads on the Agent process to store the Agent common data..." alt="" coords="603,223,739,249"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="752,233,824,233,824,239,752,239"/>
+<area shape="rect" id="Node000003" href="$structbeerocks_1_1AgentDB_1_1sDeviceConf.html" title=" " alt="" coords="325,61,469,101"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="484,85,533,98,580,119,609,143,634,172,665,222,661,225,630,175,606,147,577,124,531,103,482,91"/>
+<area shape="rect" id="Node000004" href="$structbeerocks_1_1AgentDB_1_1sDeviceConf_1_1sFrontRadio.html" title=" " alt="" coords="5,5,183,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="197,41,326,66,325,71,196,47"/>
+<area shape="rect" id="Node000005" href="$structbeerocks_1_1AgentDB_1_1sDeviceConf_1_1sBackRadio.html" title=" " alt="" coords="5,69,183,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="196,84,325,81,325,86,196,89"/>
+<area shape="rect" id="Node000006" href="$structbeerocks_1_1AgentDB_1_1sControllerInfo.html" title=" " alt="" coords="325,188,469,228"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="483,214,603,226,602,232,482,219"/>
+<area shape="rect" id="Node000007" href="$structsMacAddr.html" title=" " alt="" coords="53,221,135,246"/>
+<area shape="poly" id="edge12_Node000002_Node000007" title=" " alt="" coords="143,214,206,195,279,178,337,169,395,168,470,173,525,181,580,196,643,221,641,226,578,201,524,186,469,179,395,173,337,174,280,183,207,200,144,219"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="149,226,325,211,326,217,149,231"/>
+<area shape="rect" id="Node000009" href="$structbeerocks_1_1AgentDB_1_1sBridge.html" title=" " alt="" coords="325,252,469,292"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="149,238,326,260,325,266,149,243"/>
+<area shape="rect" id="Node000010" href="$structbeerocks_1_1AgentDB_1_1sBackhaul.html" title=" " alt="" coords="325,316,469,356"/>
+<area shape="poly" id="edge11_Node000010_Node000007" title=" " alt="" coords="128,251,165,273,208,292,267,310,325,323,324,328,266,316,206,297,163,278,125,256"/>
+<area shape="rect" id="Node000008" href="$structbeerocks_1_1AgentDB_1_1sStatus.html" title=" " alt="" coords="325,380,469,420"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="481,373,530,353,577,327,624,286,658,247,662,251,628,290,580,332,533,358,483,378"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="482,258,602,242,603,248,483,263"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="482,310,578,278,644,246,647,251,580,282,483,315"/>
+</map>

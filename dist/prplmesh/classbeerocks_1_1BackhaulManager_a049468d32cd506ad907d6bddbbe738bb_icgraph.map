@@ -1,0 +1,77 @@
+<map id="beerocks::BackhaulManager::send_cmdu_to_broker" name="beerocks::BackhaulManager::send_cmdu_to_broker">
+<area shape="rect" id="Node000001" title="Sends CMDU to transport for dispatching." alt="" coords="1556,472,1743,512"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelScanTask.html#a263b981f2b87820d7e26526041e04fc3" title="Handles 1905 channel scan request message." alt="" coords="1003,5,1209,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1645,459,1639,379,1631,329,1619,275,1601,221,1577,168,1546,120,1506,79,1474,57,1438,40,1400,27,1360,19,1281,11,1209,13,1209,8,1282,6,1361,13,1401,22,1440,35,1476,52,1510,75,1550,117,1582,166,1606,219,1624,274,1637,328,1644,379,1650,458"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelSelectionTask.html#a7d6483025a229705407c13db63a7afb8" title=" " alt="" coords="744,177,951,231"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1615,465,1566,423,1507,382,1437,346,1363,316,1288,290,1212,268,1069,236,950,217,951,212,1070,231,1213,263,1289,284,1365,311,1439,342,1509,378,1569,419,1619,461"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ChannelScanTask.html#ae7338c97218b0c13d4c6ccdb5741deba" title=" " alt="" coords="1003,133,1209,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1639,459,1623,406,1598,340,1559,275,1535,246,1506,221,1485,209,1456,199,1379,182,1293,170,1209,162,1210,157,1293,165,1380,177,1457,194,1487,204,1510,216,1539,242,1564,271,1602,338,1629,404,1644,458"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1TopologyTask.html#a60a4e6ffc0a8793d606f20a36de81606" title="Handles 1905 Topology Query message." alt="" coords="766,565,929,605"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="1556,518,1508,527,1348,549,1188,565,929,584,929,579,1187,560,1347,543,1508,521,1555,512"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1BackhaulManager.html#aa6c063c8d16d31092f6d14e06c5ec68d" title="Sends ACK CMDU to controller." alt="" coords="1291,788,1478,828"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1644,526,1628,581,1602,649,1563,719,1538,750,1510,778,1479,795,1477,791,1506,774,1534,747,1559,716,1597,647,1623,580,1639,525"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1ChannelSelectionTask.html#ad6aaa1324ee633b1100c2912b63bc818" title=" " alt="" coords="1261,472,1508,512"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="1542,495,1508,495,1508,489,1542,489"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1ChannelScanTask.html#a2e9e58a24a3cb4162315b62142dfb110" title="Send 1905 CHANNEL_SCAN_REPORT message back to the sender." alt="" coords="1290,90,1479,145"/>
+<area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="1640,459,1626,397,1600,320,1583,279,1561,238,1536,201,1506,167,1478,147,1481,143,1510,163,1540,198,1566,236,1587,276,1605,318,1631,396,1645,458"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1agent__ucc__listener.html#ad4a4b03aa978bc8f5561ddde1ce5d6e5" title="Send CMDU to destined Agent." alt="" coords="1311,853,1458,907"/>
+<area shape="poly" id="edge23_Node000001_Node000018" title=" " alt="" coords="1647,526,1634,592,1610,677,1592,721,1570,765,1542,806,1510,842,1486,859,1459,870,1457,865,1483,854,1506,838,1538,803,1565,762,1587,719,1605,675,1629,591,1641,525"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1ChannelSelectionTask.html#a857b33afc367a0ad3108f8ef2f3930c3" title=" " alt="" coords="1265,392,1504,432"/>
+<area shape="poly" id="edge24_Node000001_Node000019" title=" " alt="" coords="1568,471,1451,435,1453,430,1570,465"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1TopologyTask.html#a9304a99715f7dc450510e5cc35bbb339" title=" " alt="" coords="1296,724,1473,764"/>
+<area shape="poly" id="edge35_Node000001_Node000025" title=" " alt="" coords="1638,526,1620,569,1592,620,1555,671,1510,714,1475,732,1472,727,1506,710,1551,668,1587,617,1615,567,1634,524"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1TopologyTask.html#a6ed474bbefec93506691650fbe190de6" title=" " alt="" coords="1293,660,1477,700"/>
+<area shape="poly" id="edge37_Node000001_Node000027" title=" " alt="" coords="1613,523,1510,600,1418,662,1415,657,1506,595,1609,518"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ChannelScanTask.html#a0313f2336162a0ea45324002d446ea64" title="Handles incoming messages." alt="" coords="494,55,683,95"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="990,37,744,59,684,65,683,60,744,53,989,31"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ChannelSelectionTask.html#a85b2df533a6c739eae4a108daeb29410" title="Handle CMDU message." alt="" coords="5,288,191,328"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="731,223,191,298,191,293,730,217"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="1020,132,998,124,974,112,950,103,881,89,811,81,684,75,684,70,812,75,882,84,951,97,976,107,1000,119,1022,127"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ChannelScanTask.html#ae0e6081315b9e7389903488459ff92df" title="Handles Vendor Specific messages." alt="" coords="753,112,942,152"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="989,146,942,142,942,137,989,141"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="743,112,679,97,680,92,744,106"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1TopologyTask.html#a2c75b5c339449510a43209a2e90fcee8" title="Handle CMDU message." alt="" coords="507,629,670,669"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="753,611,671,632,669,627,752,606"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1coordinated__cac_1_1CoordinatedCacTask.html#ae3ca9e453bbfd64ce333518e5180339d" title="Handle CMDU message." alt="" coords="1016,875,1196,930"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1290,835,1262,844,1214,865,1183,878,1181,873,1212,860,1260,839,1289,830"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1ChannelSelectionTask.html#a65b820e8cf4c13421a28ce657eb2d23c" title=" " alt="" coords="1013,435,1199,490"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="1248,480,1199,475,1199,470,1248,475"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1ChannelSelectionTask.html#a11c581ca3cc0151f26ccd3e6a422a69c" title=" " alt="" coords="496,501,681,555"/>
+<area shape="poly" id="edge17_Node000012_Node000015" title=" " alt="" coords="1248,502,1213,504,681,527,681,522,1213,499,1247,497"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1ChannelSelectionTask.html#ab67214343b93cc468593dcbbaf5d2456" title="Handles Vendor Specific messages." alt="" coords="239,372,433,412"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="999,464,761,454,621,443,481,427,416,415,417,409,482,421,621,438,762,448,999,458"/>
+<area shape="poly" id="edge16_Node000014_Node000005" title=" " alt="" coords="264,370,155,331,157,326,266,365"/>
+<area shape="poly" id="edge18_Node000015_Node000014" title=" " alt="" coords="507,497,480,484,418,448,366,414,368,410,421,443,483,479,510,492"/>
+<area shape="poly" id="edge20_Node000016_Node000002" title=" " alt="" coords="1294,88,1213,60,1175,48,1176,43,1214,55,1296,83"/>
+<area shape="poly" id="edge21_Node000016_Node000006" title=" " alt="" coords="1277,134,1210,143,1209,137,1276,129"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1ChannelScanTask.html#ad2818ef22c645aa1533475f6a25fc91a" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="1011,69,1201,109"/>
+<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="1276,109,1200,101,1201,96,1277,104"/>
+<area shape="poly" id="edge25_Node000019_Node000013" title=" " alt="" coords="1261,437,1199,449,1198,443,1260,432"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1ChannelSelectionTask.html#a7a537a832e1da18da953a6af812cec3a" title=" " alt="" coords="481,372,696,412"/>
+<area shape="poly" id="edge26_Node000019_Node000020" title=" " alt="" coords="1252,411,696,397,696,392,1252,406"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1ChannelSelectionTask.html#aac3e6b8fb4932f6aa6ddb25525fee314" title=" " alt="" coords="1007,279,1205,334"/>
+<area shape="poly" id="edge28_Node000019_Node000021" title=" " alt="" coords="1317,390,1178,337,1180,332,1319,385"/>
+<area shape="poly" id="edge27_Node000020_Node000014" title=" " alt="" coords="468,395,434,395,434,389,468,389"/>
+<area shape="poly" id="edge29_Node000021_Node000004" title=" " alt="" coords="1026,277,950,245,921,234,923,229,952,240,1029,272"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1ChannelSelectionTask.html#a091f082d789bbcd7b65af399108f887b" title="if channel selection context is waiting for a channel selection notification, consume the event and r..." alt="" coords="755,255,940,310"/>
+<area shape="poly" id="edge30_Node000021_Node000022" title=" " alt="" coords="993,299,940,294,941,289,993,294"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1ChannelSelectionTask.html#a76c61d8b1a2051b98f90e5b90c048ef1" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="755,335,940,375"/>
+<area shape="poly" id="edge34_Node000021_Node000024" title=" " alt="" coords="994,330,941,340,940,335,993,325"/>
+<area shape="poly" id="edge33_Node000022_Node000020" title=" " alt="" coords="762,318,745,325,697,349,640,374,638,369,695,344,743,320,760,313"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1ChannelSelectionTask.html#a591994b25a779fb4a1c09e631a2ecc2a" title=" " alt="" coords="496,281,681,335"/>
+<area shape="poly" id="edge31_Node000022_Node000023" title=" " alt="" coords="741,296,682,302,681,296,741,290"/>
+<area shape="poly" id="edge32_Node000023_Node000014" title=" " alt="" coords="494,342,398,374,396,369,492,337"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1TopologyTask.html#a17d02c8e9d749d9642d232a0708a2ee0" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="1025,811,1187,851"/>
+<area shape="poly" id="edge36_Node000025_Node000026" title=" " alt="" coords="1291,770,1262,779,1163,813,1161,808,1261,773,1289,765"/>
+<area shape="poly" id="edge44_Node000027_Node000026" title=" " alt="" coords="1282,703,1263,714,1247,733,1239,752,1232,773,1215,794,1184,813,1181,808,1212,790,1227,771,1234,751,1242,730,1260,710,1279,698"/>
+<area shape="rect" id="Node000028" href="$classbeerocks_1_1TopologyTask.html#a0780b67fb70bc42f04d6656b2e4af62d" title="Handle events, which are being send from containing thread." alt="" coords="1025,696,1187,736"/>
+<area shape="poly" id="edge38_Node000027_Node000028" title=" " alt="" coords="1280,696,1188,708,1187,703,1279,691"/>
+<area shape="rect" id="Node000029" href="$classbeerocks_1_1TopologyTask.html#ab78d9672cf6cbc285891adeb251a3b5d" title="Handles 1905 Topology Discovery message." alt="" coords="754,723,941,763"/>
+<area shape="poly" id="edge39_Node000027_Node000029" title=" " alt="" coords="1281,707,1263,714,1249,723,1240,733,1230,743,1214,751,1144,767,1072,772,1002,770,940,763,941,758,1003,765,1072,767,1143,761,1212,745,1227,738,1236,729,1246,719,1260,710,1279,702"/>
+<area shape="rect" id="Node000030" href="$classbeerocks_1_1TopologyTask.html#a05adef496b0405f7c3938f95fa18084b" title="Handles Vendor Specific Topology Notification message." alt="" coords="999,617,1213,671"/>
+<area shape="poly" id="edge41_Node000027_Node000030" title=" " alt="" coords="1279,669,1213,660,1214,655,1280,664"/>
+<area shape="poly" id="edge40_Node000029_Node000009" title=" " alt="" coords="777,720,644,672,646,667,779,715"/>
+<area shape="rect" id="Node000031" href="$classbeerocks_1_1TopologyTask.html#acf09562b1a6321b78f21fd72826ae73f" title="Handles Vendor Specific messages." alt="" coords="764,629,931,669"/>
+<area shape="poly" id="edge42_Node000030_Node000031" title=" " alt="" coords="985,649,931,650,931,645,984,644"/>
+<area shape="poly" id="edge43_Node000031_Node000009" title=" " alt="" coords="750,652,670,652,670,647,750,647"/>
+</map>

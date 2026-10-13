@@ -1,0 +1,11 @@
+<map id="son::db::dm_remove_interface_element" name="son::db::dm_remove_interface_element">
+<area shape="rect" id="Node000001" title="Removes the interface of given MAC from Device&#39;s Data Model." alt="" coords="867,5,1008,45"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a04aa28f7153da05c715ca2895d483dc4" title="Removes the interface of given MAC of Interface Class and Device&#39;s Data Model." alt="" coords="645,13,819,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="853,28,819,28,819,23,853,23"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#ac79943ca36143bf3e95295f8d6030bbf" title="Updates the node interface mac list. Removes unused intarfaces from Device&#39;s Data model." alt="" coords="459,5,597,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="632,28,598,28,598,23,632,23"/>
+<area shape="rect" id="Node000004" href="$classson_1_1topology__task.html#a9b26422e119909ab5e38591de247795f" title="Handles 1905 Topology Response message." alt="" coords="227,5,411,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="445,28,411,28,411,23,445,23"/>
+<area shape="rect" id="Node000005" href="$classson_1_1topology__task.html#a33a4287ef785394e07d05d087fe54528" title="Handle ieee1905 message." alt="" coords="5,5,179,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="213,28,179,28,179,23,213,23"/>
+</map>

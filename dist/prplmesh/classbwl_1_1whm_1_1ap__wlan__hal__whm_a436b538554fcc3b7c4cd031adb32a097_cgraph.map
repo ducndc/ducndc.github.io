@@ -1,0 +1,11 @@
+<map id="bwl::whm::ap_wlan_hal_whm::start_wps_pbc" name="bwl::whm::ap_wlan_hal_whm::start_wps_pbc">
+<area shape="rect" id="Node000001" title="Start WPS PBC procedure on a given VAP." alt="" coords="5,41,164,81"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ae8c51f247ecc3e69f0660a46ae9981de" title="invokes a data model function." alt="" coords="212,5,388,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,45,198,40,199,45,165,51"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a0c9413724e2f45a0a6768cbe487d5deb" title="return search path of AccessPoint object instance by interface name." alt="" coords="221,70,379,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,72,207,79,207,84,164,77"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aa0db55a4edda99dfff997c429d96d039" title="return path of AccessPoint template object." alt="" coords="436,77,595,117"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="380,95,422,95,422,100,380,100"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="643,77,801,117"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="595,95,629,95,629,100,595,100"/>
+</map>

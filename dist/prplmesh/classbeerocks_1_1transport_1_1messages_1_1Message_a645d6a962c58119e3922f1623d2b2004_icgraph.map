@@ -1,0 +1,44 @@
+<map id="beerocks::transport::messages::Message::header" name="beerocks::transport::messages::Message::header">
+<area shape="rect" id="Node000001" title=" " alt="" coords="772,474,923,529"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1transport_1_1messages_1_1Message.html#a27ad5ed8e4e4c34815994e98c9281932" title=" " alt="" coords="530,280,706,320"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="808,466,722,385,645,322,648,318,726,381,811,462"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#a9e0fe354755d2ae9fda77a19a3737c9c" title="Publishes the message with the broker subscribers. Sends the message to all the clients that subscrib..." alt="" coords="313,306,464,361"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="758,472,463,363,465,358,760,467"/>
+<area shape="rect" id="Node000012" href="$namespacebeerocks_1_1transport_1_1messages.html#aac0d18048acb2c3c761637250b78c25d" title="Send internal message to a socket." alt="" coords="526,506,710,561"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="759,516,711,523,710,518,758,511"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1btl_1_1MessageSerializerStreamImpl.html#a3246790893643f83356c1bf68423c3fe" title="Serializes a transport message to a byte buffer." alt="" coords="512,585,724,625"/>
+<area shape="poly" id="edge21_Node000001_Node000021" title=" " alt="" coords="793,538,725,574,691,588,689,583,723,570,791,534"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1transport_1_1messages_1_1Message.html#a44fff6cafa3b8ba46d199a21f17a2db2" title=" " alt="" coords="313,227,464,282"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="516,283,464,272,465,267,517,277"/>
+<area shape="rect" id="Node000004" href="$namespacebeerocks_1_1transport_1_1messages.html#a5b117eb92f6c7d16a67ed16d51cf944a" title=" " alt="" coords="55,5,216,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="371,216,354,178,331,135,301,94,264,59,241,46,215,37,217,32,243,42,267,55,305,91,335,132,359,175,376,213"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1transport_1_1messages_1_1CmduXxMessage.html#aee91ca193ed7279fef32ab3e2e518406" title=" " alt="" coords="34,70,237,125"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="355,219,314,177,264,138,236,125,238,120,267,134,318,173,359,215"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1transport_1_1messages_1_1SubscribeMessage.html#addbb36a823f80c9e3e2a69ffa2c53d14" title=" " alt="" coords="31,149,240,203"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="300,228,265,217,228,206,230,201,266,212,301,223"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1transport_1_1messages_1_1CmduTxConfirmationMessage.html#a9c248b7bdf684c88b4e4405c76dd2e50" title=" " alt="" coords="24,227,247,282"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="300,257,247,257,247,252,300,252"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1transport_1_1messages_1_1InterfaceConfigurationRequestMessage.html#a2c772043331e9dc7966f82afd930fe71" title=" " alt="" coords="22,306,249,361"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="301,285,266,296,226,309,224,303,265,291,299,280"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1transport_1_1messages_1_1AlMacAddressConfigurationMessage.html#a9ef9f7d735ec4352a89c1ca37107591f" title=" " alt="" coords="5,385,265,439"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="318,292,315,295,300,315,293,335,285,354,267,374,247,387,244,382,264,370,280,352,288,333,295,313,311,292,315,288"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1transport_1_1messages_1_1VlanConfigurationRequestMessage.html#aa3ef226e51e1845fccc65217b2488b7e" title=" " alt="" coords="35,463,236,518"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="317,293,315,295,302,315,296,335,294,374,291,413,283,433,267,453,238,473,235,469,263,449,278,430,285,412,288,373,291,334,298,313,311,292,313,290"/>
+<area shape="poly" id="edge12_Node000012_Node000011" title=" " alt="" coords="580,497,462,375,444,363,447,359,466,371,584,494"/>
+<area shape="rect" id="Node000013" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#a3fac2ec27fe7bef37952fed06be35837" title=" " alt="" coords="316,385,461,425"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="564,501,463,440,438,428,441,423,465,435,567,496"/>
+<area shape="rect" id="Node000014" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#a8980812b1e78aa971494f7a7e9297ce7" title=" " alt="" coords="316,449,461,489"/>
+<area shape="poly" id="edge14_Node000012_Node000014" title=" " alt="" coords="512,506,460,492,462,487,513,501"/>
+<area shape="rect" id="Node000015" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#add00e3fe675e4d0fe263f2358c5e77a1" title=" " alt="" coords="316,513,461,553"/>
+<area shape="poly" id="edge15_Node000012_Node000015" title=" " alt="" coords="512,536,461,536,461,531,512,531"/>
+<area shape="rect" id="Node000016" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#afd8c0ea3202be1c377496acf016b8682" title=" " alt="" coords="316,577,461,617"/>
+<area shape="poly" id="edge16_Node000012_Node000016" title=" " alt="" coords="513,565,462,580,460,575,512,560"/>
+<area shape="rect" id="Node000017" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#a888fe4716d4553bdbce4c6097f5b2bf7" title=" " alt="" coords="316,641,461,681"/>
+<area shape="poly" id="edge17_Node000012_Node000017" title=" " alt="" coords="522,570,514,575,499,589,490,603,481,617,466,631,446,643,443,639,462,627,477,613,486,600,495,586,510,571,519,565"/>
+<area shape="rect" id="Node000018" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#aec9cce140e2a84e581a0ec70475b11d1" title=" " alt="" coords="316,705,461,745"/>
+<area shape="poly" id="edge18_Node000012_Node000018" title=" " alt="" coords="518,571,514,575,502,590,495,604,490,633,485,664,478,679,466,695,451,707,447,703,462,691,474,677,480,662,485,633,490,602,498,587,510,572,515,567"/>
+<area shape="rect" id="Node000019" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#ab35e9687d0b6e24c8facc75e13fe5639" title=" " alt="" coords="316,769,461,809"/>
+<area shape="poly" id="edge19_Node000012_Node000019" title=" " alt="" coords="518,571,514,575,498,598,491,620,490,665,489,711,482,735,466,759,452,771,449,767,462,756,477,732,484,710,485,665,486,619,494,595,510,572,514,568"/>
+<area shape="rect" id="Node000020" href="$namespacebeerocks_1_1transport_1_1broker_1_1tests.html#a6230cd634bb02d734b5a86039fc703a8" title=" " alt="" coords="316,833,461,873"/>
+<area shape="poly" id="edge20_Node000012_Node000020" title=" " alt="" coords="517,571,514,575,495,606,487,636,486,666,490,696,494,727,494,758,486,790,466,823,453,835,449,831,462,820,481,788,488,757,488,727,485,697,481,667,481,636,490,604,510,572,514,568"/>
+</map>

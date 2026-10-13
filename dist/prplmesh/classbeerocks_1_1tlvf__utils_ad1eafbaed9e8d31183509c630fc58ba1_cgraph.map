@@ -1,0 +1,27 @@
+<map id="beerocks::tlvf_utils::create_operating_channel_report" name="beerocks::tlvf_utils::create_operating_channel_report">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,262,184,317"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="236,5,435,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,261,120,216,146,161,183,104,205,78,230,55,238,50,241,54,234,59,209,82,187,107,151,163,124,218,107,263"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="248,69,423,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="109,260,157,190,191,152,230,119,241,113,243,118,234,124,195,156,161,193,113,263"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="254,134,417,159"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="118,260,167,213,198,189,231,168,247,161,249,166,233,173,201,193,170,217,122,264"/>
+<area shape="rect" id="Node000006" href="$classson_1_1wireless__utils.html#a078f6f46bf99ac53d10ce191a06be7a7" title="get operating class number by channel and channel bandwidth" alt="" coords="262,183,409,238"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="178,259,248,236,249,241,180,264"/>
+<area shape="rect" id="Node000008" href="$classson_1_1wireless__utils.html#a6bc7c9d6c145e2a5e328c9522b9e7380" title="Get a list of operating classes that are associated with the frequency type." alt="" coords="255,262,415,317"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="184,287,242,287,242,292,184,292"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1AgentDB.html#a662ffd73ff93ff8025a6276766949814" title="Get a pointer to the parent radio struct of given MAC address." alt="" coords="263,341,407,381"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="185,313,256,335,254,340,184,319"/>
+<area shape="rect" id="Node000010" href="$classson_1_1wireless__utils.html#afd8cfe5f9708a2d9c1e4503956c83619" title="Match channel number in the given operating class." alt="" coords="232,405,439,445"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="127,315,175,354,233,391,248,398,245,403,231,396,172,358,124,319"/>
+<area shape="rect" id="Node000012" href="$classson_1_1wireless__utils.html#ac7d7bb75d799bf38c516cbdd1300d243" title=" " alt="" coords="256,470,415,525"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="114,315,163,385,196,422,234,455,245,463,242,467,230,459,192,426,158,388,110,318"/>
+<area shape="rect" id="Node000013" href="$classwfa__map_1_1tlvOperatingChannelReport.html#a3b3f9e9bd622c80f45682615c3ed2284" title=" " alt="" coords="235,549,436,589"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="106,316,122,363,149,423,186,483,208,511,234,535,240,540,237,544,230,539,204,515,181,486,144,425,117,365,101,318"/>
+<area shape="rect" id="Node000003" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="499,13,639,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="435,23,485,23,485,28,435,28"/>
+<area shape="rect" id="Node000007" href="$classson_1_1wireless__utils.html#a9ca3466505a1ccda48a6a6a428bb9e74" title="Get the center channel of the channel." alt="" coords="487,191,651,231"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="409,208,473,208,473,213,409,213"/>
+<area shape="rect" id="Node000011" href="$classson_1_1wireless__utils.html#a8d99a3fb7cc8f914325695a89005bddf" title="convert operating class to channel set based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="499,398,638,453"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="439,423,485,423,485,428,439,428"/>
+</map>

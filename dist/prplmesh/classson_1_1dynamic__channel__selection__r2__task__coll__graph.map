@@ -1,0 +1,57 @@
+<map id="son::dynamic_channel_selection_r2_task" name="son::dynamic_channel_selection_r2_task">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1208,114,1360,154"/>
+<area shape="rect" id="Node000002" href="$classson_1_1task.html" title=" " alt="" coords="953,5,1029,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1039,33,1060,41,1168,82,1238,111,1236,116,1166,87,1058,46,1037,38"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="925,55,1057,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1071,89,1208,116,1207,121,1070,94"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html" title=" " alt="" coords="958,545,1023,571"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1004,532,1031,480,1056,417,1063,379,1063,348,1065,316,1081,280,1149,227,1253,152,1256,156,1152,231,1085,284,1071,318,1068,348,1068,380,1061,419,1036,482,1009,534"/>
+<area shape="rect" id="Node000017" href="$classson_1_1Controller.html" title=" " alt="" coords="1579,403,1685,428"/>
+<area shape="poly" id="edge20_Node000017_Node000004" title=" " alt="" coords="1037,551,1133,539,1262,518,1408,489,1554,449,1606,426,1608,431,1556,454,1409,494,1263,524,1134,544,1038,556"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1controller__ucc__listener.html" title=" " alt="" coords="1216,366,1352,406"/>
+<area shape="poly" id="edge27_Node000023_Node000004" title=" " alt="" coords="1013,533,1044,504,1081,474,1133,441,1190,416,1219,404,1221,409,1192,420,1136,446,1084,479,1048,508,1016,537"/>
+<area shape="rect" id="Node000005" href="$structson_1_1db_1_1sDppBootstrappingInfo.html" title=" " alt="" coords="509,481,715,507"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="719,506,899,535,959,548,957,553,898,541,718,511"/>
+<area shape="rect" id="Node000006" href="$structsMacAddr.html" title=" " alt="" coords="218,439,299,464"/>
+<area shape="poly" id="edge28_Node000004_Node000006" title=" " alt="" coords="313,442,423,433,572,431,654,437,738,448,820,466,900,492,944,516,977,543,974,547,941,521,898,496,819,471,737,453,653,442,572,437,424,438,313,447"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="314,455,509,479,508,484,313,460"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1mac__map.html" title=" " alt="" coords="538,531,686,585"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="700,555,958,555,958,561,700,561"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="173,509,344,578"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="358,545,538,552,538,558,358,550"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1mac__map.html" title=" " alt="" coords="538,609,686,664"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="699,617,898,575,957,562,958,568,899,581,700,622"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="173,602,344,671"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="358,634,538,634,538,639,358,639"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1mac__map.html" title=" " alt="" coords="519,688,705,743"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="717,692,807,666,853,648,897,628,941,598,975,569,978,573,944,603,900,632,855,653,809,671,719,697"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="160,695,357,765"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="371,723,519,717,519,722,372,728"/>
+<area shape="rect" id="Node000013" href="$structson_1_1db_1_1sDbMasterConfig.html" title=" " alt="" coords="525,767,699,792"/>
+<area shape="poly" id="edge12_Node000004_Node000013" title=" " alt="" coords="712,771,759,763,807,750,854,731,897,705,929,673,954,635,972,598,983,570,988,572,977,600,959,637,934,676,900,709,857,736,809,755,760,768,713,776"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1logging.html" title=" " alt="" coords="550,816,674,841"/>
+<area shape="poly" id="edge13_Node000004_Node000014" title=" " alt="" coords="688,835,739,835,794,829,848,814,874,802,897,787,921,763,940,735,955,704,967,673,981,614,986,571,991,571,986,614,972,674,960,707,945,738,925,766,900,791,876,807,850,819,795,835,739,841,688,840"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1log__levels.html" title=" " alt="" coords="188,816,329,841"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="343,826,550,826,550,831,343,831"/>
+<area shape="rect" id="Node000016" href="$structson_1_1db_1_1sDbMasterSettings.html" title=" " alt="" coords="519,865,705,891"/>
+<area shape="poly" id="edge15_Node000004_Node000016" title=" " alt="" coords="682,890,734,895,791,894,847,882,873,870,897,855,927,823,950,786,966,745,977,703,987,625,987,571,993,571,992,625,982,704,971,747,954,789,931,827,900,859,876,875,849,887,792,899,734,901,682,896"/>
+<area shape="poly" id="edge16_Node000004_Node000017" title=" " alt="" coords="1621,442,1595,481,1577,501,1556,516,1486,549,1410,570,1333,582,1256,587,1184,586,1119,581,1023,567,1024,562,1120,575,1184,580,1256,582,1332,577,1409,565,1484,544,1553,512,1573,497,1591,478,1616,439"/>
+<area shape="rect" id="Node000018" href="$classieee1905__1_1_1CmduMessageTx.html" title=" " alt="" coords="513,296,711,321"/>
+<area shape="poly" id="edge29_Node000001_Node000018" title=" " alt="" coords="654,288,838,218,958,180,1082,150,1146,140,1207,135,1208,140,1147,146,1083,155,959,185,839,223,656,293"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="726,310,1021,325,1378,351,1467,357,1507,362,1555,374,1585,386,1611,400,1609,405,1583,391,1554,379,1506,367,1467,362,1377,357,1020,330,725,316"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1beerocks__ucc__listener.html" title=" " alt="" coords="923,366,1059,406"/>
+<area shape="poly" id="edge26_Node000024_Node000018" title=" " alt="" coords="674,322,746,339,923,373,922,378,745,345,673,327"/>
+<area shape="rect" id="Node000019" href="$classieee1905__1_1_1CmduMessage.html" title=" " alt="" coords="167,296,351,321"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="364,306,512,306,512,311,364,311"/>
+<area shape="rect" id="Node000020" href="$classClassList.html" title=" " alt="" coords="5,296,83,321"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="97,306,167,306,167,311,97,311"/>
+<area shape="rect" id="Node000021" href="$classson_1_1task__pool.html" title=" " alt="" coords="937,213,1044,239"/>
+<area shape="poly" id="edge30_Node000001_Node000021" title=" " alt="" coords="1045,206,1218,152,1220,157,1046,212"/>
+<area shape="poly" id="edge21_Node000017_Node000021" title=" " alt="" coords="1058,233,1083,237,1156,243,1219,243,1330,236,1382,237,1435,245,1492,265,1556,298,1583,322,1604,350,1629,401,1624,404,1599,353,1579,325,1553,303,1490,270,1434,251,1381,242,1330,242,1220,248,1156,248,1082,242,1058,238"/>
+<area shape="rect" id="Node000022" href="$classson_1_1periodic__operation__pool.html" title=" " alt="" coords="1191,431,1377,456"/>
+<area shape="poly" id="edge22_Node000017_Node000022" title=" " alt="" coords="1391,443,1471,441,1554,433,1589,425,1590,431,1555,438,1472,446,1391,448"/>
+<area shape="poly" id="edge23_Node000017_Node000023" title=" " alt="" coords="1366,390,1579,408,1578,414,1366,396"/>
+<area shape="poly" id="edge24_Node000023_Node000024" title=" " alt="" coords="1072,383,1216,383,1216,389,1072,389"/>
+<area shape="rect" id="Node000025" href="$structbeerocks_1_1beerocks__ucc__listener_1_1CommandHandlers.html" title=" " alt="" coords="503,354,721,394"/>
+<area shape="poly" id="edge25_Node000024_Node000025" title=" " alt="" coords="735,384,745,385,822,386,899,385,922,384,923,390,899,390,822,391,745,390,735,389"/>
+</map>

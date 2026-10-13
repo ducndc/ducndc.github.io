@@ -1,0 +1,7 @@
+<map id="beerocks::CmduPeer::forward_cmdu" name="beerocks::CmduPeer::forward_cmdu">
+<area shape="rect" id="Node000001" title="Forwards a CMDU message that was sent by a remote process." alt="" coords="235,37,380,77"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CmduClientImpl.html#a6f341459423159bb6dc248b7a4922d73" title="Forwards a CMDU message to the connected server." alt="" coords="7,5,185,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,47,184,41,185,36,221,42"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1CmduServerImpl.html#a75949378076de03409556a5d63b838f9" title="Forwards a CMDU message that was sent by a remote process." alt="" coords="5,69,187,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,73,187,78,187,73,220,68"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="bwl::nl80211::wpa_ctrl_socket_event::close" name="bwl::nl80211::wpa_ctrl_socket_event::close">
+<area shape="rect" id="Node000001" title="Closes wpa_ctrl event socket and remove the relative file descriptor from event monitoring FDs queue." alt="" coords="225,13,377,53"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#ac60d9b281805d469409ce0df0facc454" title="Custom destructor of wpa_ctrl event socket object. It enforces socket disconnection." alt="" coords="5,5,177,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,35,178,35,178,30,212,30"/>
+</map>

@@ -1,0 +1,63 @@
+<map id="beerocks::bpl::BplConfigService::common_client" name="beerocks::bpl::BplConfigService::common_client">
+<area shape="rect" id="Node000001" title="Get backend client for common&#45;bus DM access." alt="" coords="1236,295,1401,335"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1bpl.html#a7c6c6345517250775ad8a2ad5f0ffbf1" title=" " alt="" coords="1002,324,1182,379"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1223,333,1183,340,1182,334,1222,328"/>
+<area shape="rect" id="Node000012" href="$namespacebeerocks_1_1bpl.html#a38414d0ddd49ca2ecb581023ac01428f" title=" " alt="" coords="997,259,1187,299"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1222,303,1187,297,1188,292,1223,297"/>
+<area shape="rect" id="Node000024" href="$namespacebeerocks_1_1bpl.html#a93378e26cd013005f0e2f6cd24c114a2" title=" " alt="" coords="996,195,1188,235"/>
+<area shape="poly" id="edge25_Node000001_Node000024" title=" " alt="" coords="1269,291,1187,250,1157,238,1158,233,1189,245,1272,286"/>
+<area shape="rect" id="Node000028" href="$namespacebeerocks_1_1bpl.html#a125fe5ec18f6ac33d8394adc023212c7" title=" " alt="" coords="1001,403,1183,443"/>
+<area shape="poly" id="edge31_Node000001_Node000028" title=" " alt="" coords="1277,345,1189,394,1160,406,1158,401,1187,389,1274,341"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1bpl.html#ad8e5ea8c306cb5aeee5c7743953c6837" title="Reads wireless settings (SSIDs and WiFi credentials) for all fronthaul interfaces." alt="" coords="768,291,948,331"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="988,336,948,329,949,324,989,331"/>
+<area shape="rect" id="Node000008" href="$namespacebeerocks_1_1bpl.html#a985ae50e8a870160f589bbd4b8436765" title=" " alt="" coords="781,420,935,475"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="1013,387,926,422,924,418,1011,382"/>
+<area shape="rect" id="Node000011" href="$namespacebeerocks_1_1bpl.html#a02c60e686b09fd0efdcc383baa2c819c" title=" " alt="" coords="795,499,921,539"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="1003,389,998,393,981,417,975,440,968,465,950,489,923,506,920,502,946,485,963,462,970,439,976,415,994,390,1000,385"/>
+<area shape="rect" id="Node000004" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="592,299,643,324"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="754,314,643,314,643,309,754,309"/>
+<area shape="rect" id="Node000005" href="$classprplmesh_1_1controller_1_1whm_1_1WifiManager.html#aab5ce4359dbd0903adc9aa16f70cecfd" title=" " alt="" coords="530,348,705,403"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="770,337,705,355,704,350,768,332"/>
+<area shape="rect" id="Node000006" href="$classprplmesh_1_1controller_1_1whm_1_1WifiManager.html#ab69cf69339860f6fd6e56385226f911b" title=" " alt="" coords="277,348,445,403"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="516,378,446,378,446,373,516,373"/>
+<area shape="rect" id="Node000007" href="$classprplmesh_1_1controller_1_1whm_1_1WifiManager.html#ad61000b255c708a3ca161a651d13c166" title=" " alt="" coords="5,348,208,403"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="263,378,208,378,208,373,263,373"/>
+<area shape="rect" id="Node000009" href="$namespacebeerocks_1_1bpl.html#abdc96a58695a78832d3793fb39c3fdd6" title=" " alt="" coords="553,427,681,467"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="766,450,682,450,682,445,766,445"/>
+<area shape="rect" id="Node000010" href="$beerocks__agent__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="592,492,643,517"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="768,472,644,501,643,496,766,466"/>
+<area shape="poly" id="edge19_Node000012_Node000003" title=" " alt="" coords="984,297,948,302,948,296,983,292"/>
+<area shape="rect" id="Node000013" href="$namespacebeerocks_1_1bpl.html#aec406fb66b75c97129cea9424a4d87f9" title="Get AirTies cloud credentials." alt="" coords="782,84,934,139"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="1000,254,994,249,976,225,969,201,963,177,946,153,930,141,933,137,950,150,967,175,974,199,981,223,998,245,1003,250"/>
+<area shape="rect" id="Node000017" href="$namespacebeerocks_1_1bpl.html#a67bb7baccda32bb49b349deefa196d86" title="Reads MLD configuration from Device.WiFi.APMLD.*.MLDConfig for a given mld_id." alt="" coords="773,355,943,395"/>
+<area shape="poly" id="edge16_Node000012_Node000017" title=" " alt="" coords="1016,307,997,315,973,330,949,346,922,358,920,353,947,341,971,326,995,310,1014,302"/>
+<area shape="rect" id="Node000018" href="$namespacebeerocks_1_1bpl.html#a8b1a3b72f1adad291614970620dd2859" title="Reads wireless network configuration for the given interface." alt="" coords="773,227,943,267"/>
+<area shape="poly" id="edge18_Node000012_Node000018" title=" " alt="" coords="983,267,943,262,943,256,984,262"/>
+<area shape="rect" id="Node000019" href="$namespacebeerocks_1_1bpl.html#a8dbd75d3169fd86e13151565c5e9f4f5" title=" " alt="" coords="795,163,921,203"/>
+<area shape="poly" id="edge20_Node000012_Node000019" title=" " alt="" coords="1010,257,995,250,970,234,947,218,920,206,922,201,949,213,973,229,997,245,1013,252"/>
+<area shape="rect" id="Node000014" href="$tlvf__airties__utils_8cpp.html#adc0c571878a60df235ee107a8393a6ca" title=" " alt="" coords="545,97,689,123"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="768,114,689,113,689,108,768,108"/>
+<area shape="rect" id="Node000015" href="$classairties_1_1tlvf__airties__utils.html#ae14efb724a05a1b2f871231eee555eba" title=" " alt="" coords="256,89,467,129"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="532,112,467,112,467,107,532,107"/>
+<area shape="rect" id="Node000016" href="$classMultiVendorAirties.html#a41a0ca0eb967a2a817d2deca7042c497" title=" " alt="" coords="39,55,175,95"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="242,96,174,87,175,82,242,90"/>
+<area shape="poly" id="edge17_Node000017_Node000005" title=" " alt="" coords="759,378,705,378,705,373,759,373"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1PlatformManager.html#a0f2852d2a8097ac6125322a0e47a04fb" title="Checks if WLAN parameters have changed." alt="" coords="515,158,720,198"/>
+<area shape="poly" id="edge21_Node000019_Node000020" title=" " alt="" coords="780,184,720,183,720,178,781,179"/>
+<area shape="rect" id="Node000023" href="$bpl__test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="592,223,643,248"/>
+<area shape="poly" id="edge24_Node000019_Node000023" title=" " alt="" coords="782,202,643,233,642,227,780,197"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1PlatformManager.html#aed887af7b8c18960779bc2384067c721" title="Starts platform manager." alt="" coords="270,158,453,198"/>
+<area shape="poly" id="edge22_Node000020_Node000021" title=" " alt="" coords="501,181,453,181,453,175,501,175"/>
+<area shape="rect" id="Node000022" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="28,165,185,191"/>
+<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="256,181,186,181,186,175,256,175"/>
+<area shape="poly" id="edge30_Node000024_Node000003" title=" " alt="" coords="1013,243,997,250,973,265,949,282,922,294,920,289,947,277,970,261,995,245,1010,238"/>
+<area shape="rect" id="Node000025" href="$namespacebeerocks_1_1bpl.html#a74b6b03fb438aba166c46dfa06ca966e" title="Get Wi&#45;Fi radio temperature by interface name." alt="" coords="791,5,925,60"/>
+<area shape="poly" id="edge26_Node000024_Node000025" title=" " alt="" coords="1065,187,1013,130,981,100,947,74,924,61,927,56,949,69,984,96,1017,126,1068,183"/>
+<area shape="rect" id="Node000026" href="$tlvf__airties__utils_8cpp.html#a55152d0820a42fe3ec901662c4c20dbf" title=" " alt="" coords="522,21,713,47"/>
+<area shape="poly" id="edge27_Node000025_Node000026" title=" " alt="" coords="777,36,713,36,713,31,777,30"/>
+<area shape="rect" id="Node000027" href="$classairties_1_1tlvf__airties__utils.html#ad9e33c34e758bdeb34becccdc19b54f3" title=" " alt="" coords="273,21,450,61"/>
+<area shape="poly" id="edge28_Node000026_Node000027" title=" " alt="" coords="508,40,450,41,450,36,508,34"/>
+<area shape="poly" id="edge29_Node000027_Node000016" title=" " alt="" coords="260,57,175,69,175,63,259,52"/>
+<area shape="poly" id="edge33_Node000028_Node000011" title=" " alt="" coords="1037,452,949,490,918,502,916,497,947,485,1034,447"/>
+<area shape="poly" id="edge32_Node000028_Node000017" title=" " alt="" coords="987,405,943,395,944,390,988,399"/>
+</map>
