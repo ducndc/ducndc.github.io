@@ -1,0 +1,34 @@
+<map id="wfa_map::tlvSpatialReuseReport::init" name="wfa_map::tlvSpatialReuseReport::init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,183,180,223"/>
+<area shape="rect" id="Node000002" href="$classBaseClass.html#a5c1871e2ca2e1915af1153a41225dc5c" title="Increments m_buff_ptr__ pointer while avoiding out&#45;of&#45;bounds accesses." alt="" coords="228,14,447,39"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,181,154,120,188,87,227,58,261,41,264,46,229,62,192,91,158,124,110,184"/>
+<area shape="rect" id="Node000003" href="$classBaseClass.html#a37dde0700f9595f82dd24aaee7218b41" title=" " alt="" coords="495,5,693,45"/>
+<area shape="poly" id="edge13_Node000001_Node000003" title=" " alt="" coords="114,181,164,141,227,104,273,88,337,72,480,43,481,48,338,77,274,94,229,109,167,146,118,185"/>
+<area shape="rect" id="Node000004" href="$classwfa__map_1_1tlvSpatialReuseReport.html#a8c73cf0b26139faa78137788d389c99a" title=" " alt="" coords="250,119,425,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="169,180,247,160,248,165,171,185"/>
+<area shape="rect" id="Node000013" href="$classwfa__map_1_1tlvSpatialReuseReport.html#af9fbeb7caa14e5c977a99ee59446da6b" title=" " alt="" coords="250,183,425,223"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="180,200,236,200,236,205,180,205"/>
+<area shape="rect" id="Node000014" href="$structsMacAddr.html#a8fa62336de553bad9d080e45633cb94e" title=" " alt="" coords="264,247,411,273"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="178,220,229,232,269,242,268,247,227,237,177,225"/>
+<area shape="rect" id="Node000015" href="$structwfa__map_1_1tlvSpatialReuseReport_1_1sFlags1.html#a249fcd012586d777c26521cd5693b83d" title=" " alt="" coords="247,297,427,337"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="123,220,171,252,229,283,247,290,245,295,227,288,169,257,120,225"/>
+<area shape="rect" id="Node000016" href="$structwfa__map_1_1tlvSpatialReuseReport_1_1sFlags2.html#a146af76b20e040754dee233fc035fd19" title=" " alt="" coords="247,361,427,401"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="109,221,157,284,191,318,229,347,240,353,238,358,227,352,188,322,153,287,105,225"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="447,23,481,23,481,29,447,29"/>
+<area shape="rect" id="Node000005" href="$structsMacAddr.html#a5c175ce1ce905a74f335e606139c76be" title=" " alt="" coords="514,70,674,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="424,117,521,96,522,101,426,122"/>
+<area shape="rect" id="Node000006" href="$structwfa__map_1_1tlvSpatialReuseReport_1_1sFlags1.html#a99978e5e05319d854587cc76fa323351" title=" " alt="" coords="497,120,691,160"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="425,136,483,137,483,142,425,142"/>
+<area shape="rect" id="Node000007" href="$structwfa__map_1_1tlvSpatialReuseReport_1_1sFlags2.html#ad57d1b745bf96457a17d51cd31af2f57" title=" " alt="" coords="497,184,691,224"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="417,156,503,178,501,183,416,161"/>
+<area shape="rect" id="Node000008" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#ad1b2d415442befaebf429eb28606b267" title=" " alt="" coords="555,249,633,274"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="426,156,448,169,465,185,473,202,481,219,496,234,518,245,542,252,540,257,516,250,493,238,477,222,468,205,460,188,445,173,424,161"/>
+<area shape="rect" id="Node000009" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="741,199,816,225"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="633,249,693,233,727,224,729,229,694,239,634,254"/>
+<area shape="rect" id="Node000010" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a257b5dfca4a855c44bbe9a463fc83c5b" title=" " alt="" coords="741,249,816,274"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="633,259,728,259,728,264,633,264"/>
+<area shape="rect" id="Node000011" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a7efdf705e4169e195766ef00794d6839" title=" " alt="" coords="741,298,816,323"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="634,269,729,295,727,300,633,274"/>
+<area shape="rect" id="Node000012" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a8441413dcd7cdc7a6696fd66d0fa2134" title=" " alt="" coords="864,298,917,323"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="816,308,850,308,850,313,816,313"/>
+</map>

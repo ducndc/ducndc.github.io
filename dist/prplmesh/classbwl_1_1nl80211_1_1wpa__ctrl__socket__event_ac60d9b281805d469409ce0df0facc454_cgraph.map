@@ -1,0 +1,18 @@
+<map id="bwl::nl80211::wpa_ctrl_socket_event::~wpa_ctrl_socket_event" name="bwl::nl80211::wpa_ctrl_socket_event::~wpa_ctrl_socket_event">
+<area shape="rect" id="Node000001" title="Custom destructor of wpa_ctrl event socket object. It enforces socket disconnection." alt="" coords="5,91,177,146"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a133c4403ab2cc3943128e25277ddf2d4" title="Closes wpa_ctrl event socket and remove the relative file descriptor from event monitoring FDs queue." alt="" coords="225,99,377,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,116,211,116,211,121,178,121"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a609ed83012c520db859b121211bd4e36" title="Detach and close event socket to hostapd/wpa_supplicant deamon." alt="" coords="425,99,604,139"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,116,412,116,412,121,378,121"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a667ccafc98eef9b87f79efbccf1a03bf" title="Close wpa_ctrl socket. It also cleans/frees the internal resources used by wpa_ctrl socket." alt="" coords="671,5,823,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="557,96,651,55,671,47,672,52,653,60,559,101"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a1c9be061f1bd48229c2faef46be35a41" title="Removes wpa_ctrl event socket from monitored event queues list." alt="" coords="652,69,841,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="604,105,638,100,639,106,604,110"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a78b2ce8b862fdaea6610ce25a239f722" title="Returns the current wpa_ctrl socket file descriptor." alt="" coords="889,95,1041,135"/>
+<area shape="poly" id="edge8_Node000003_Node000006" title=" " alt="" coords="604,118,841,119,875,117,876,123,841,124,604,124"/>
+<area shape="rect" id="Node000007" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a3e0a6e6247c6f2cc2e6c3930dd883c6c" title="Detach the wpa_ctrl socket (i.e unsubscribe client) to stop receiving events from hostapd/wpa_supplic..." alt="" coords="669,184,824,224"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="571,136,680,177,678,182,569,141"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="842,98,876,102,875,107,841,103"/>
+<area shape="rect" id="Node000008" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#aa417f17c66410dd74fdc08a24015500a" title="Returns the wpa_ctrl socket file path." alt="" coords="889,184,1041,224"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="824,201,876,201,876,207,824,207"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="beerocks::bpl::BplConfigBackendDm::init" name="beerocks::bpl::BplConfigBackendDm::init">
+<area shape="rect" id="Node000001" title="Connect the common WBAPI bus client." alt="" coords="5,53,171,93"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ad6b66a1b6aac6fc32498d5b208101c35" title="connect to an ambiorix backend: load backend, connect to the bus" alt="" coords="219,53,395,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,70,205,70,205,75,171,75"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#a1fa5bc085a004b323809c35377202e85" title=": get a connection to the uri" alt="" coords="443,5,619,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="394,54,429,48,430,53,395,60"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#afc17bdf3d36234281315b46abe6f4abd" title=": get single instance" alt="" coords="443,84,619,139"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="395,85,430,91,429,96,394,90"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#a9954842820cc20ee23eed131a5aa7cab" title=": create a new connection to the uri bus_uri" alt="" coords="667,13,849,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="619,30,653,30,653,35,619,35"/>
+</map>

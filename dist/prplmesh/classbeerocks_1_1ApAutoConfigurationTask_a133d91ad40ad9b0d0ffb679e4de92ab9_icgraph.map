@@ -1,0 +1,13 @@
+<map id="beerocks::ApAutoConfigurationTask::send_ap_bss_info_update_request" name="beerocks::ApAutoConfigurationTask::send_ap_bss_info_update_request">
+<area shape="rect" id="Node000001" title=" " alt="" coords="777,45,987,100"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aa85c6f665898794b2fbc04e85a6bdc3a" title="Wait until given radio radio_iface has completed the AP configuration. Perform the necessary actions ..." alt="" coords="517,5,719,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="763,57,719,51,720,45,764,52"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aa896d647bc56c4e4a4863e2bafd7c48f" title="Parse AP&#45;Autoconfiguration Renew message." alt="" coords="507,84,729,139"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="764,93,730,98,729,92,763,87"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aec7c837c390bb5fa3bd9237f3c5498ec" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="256,13,459,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="503,35,459,35,459,30,503,30"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a0805d78df62071cfdd3ad89bddc67963" title="Handle events, which are being send from containing thread." alt="" coords="5,13,208,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="242,35,208,35,208,30,242,30"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="256,91,459,131"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="493,114,459,114,459,109,493,109"/>
+</map>

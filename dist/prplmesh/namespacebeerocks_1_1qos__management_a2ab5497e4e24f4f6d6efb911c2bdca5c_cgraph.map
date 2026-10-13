@@ -1,0 +1,7 @@
+<map id="beerocks::qos_management::is_qos_management_descriptor_element" name="beerocks::qos_management::is_qos_management_descriptor_element">
+<area shape="rect" id="Node000001" title="Check whether the descriptor is an SCS or MSCS QoS management descriptor." alt="" coords="5,30,220,85"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1qos__management.html#afc034a67da9186989a91b2d70a4ee844" title="Check whether the descriptor starts with an MSCS extension element header." alt="" coords="268,5,464,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,41,254,37,255,42,221,46"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1qos__management.html#a07a3ccca88cbb1c81098c75889a8f5be" title="Check whether the descriptor starts with an SCS element header." alt="" coords="273,69,459,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,68,260,73,259,79,220,74"/>
+</map>

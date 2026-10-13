@@ -1,0 +1,57 @@
+<map id="beerocks::BackhaulManager::send_cmdu" name="beerocks::BackhaulManager::send_cmdu">
+<area shape="rect" id="Node000001" title="Sends given CMDU message through the specified socket connection." alt="" coords="821,383,1008,423"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelScanTask.html#a21c65538a29a9b8e96d1fcfcee970ba2" title="Abort the unfinished Radio Scans for the given request." alt="" coords="571,147,760,187"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="897,372,877,332,850,286,814,240,772,201,752,189,754,185,775,197,818,236,854,283,882,330,902,369"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1coordinated__cac_1_1CacFsm.html#a884b1323b30a39469e972ac8528dbf97" title=" " alt="" coords="286,21,466,61"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="909,369,899,300,877,213,859,169,836,126,807,88,772,57,735,36,695,22,653,13,610,9,526,12,453,24,452,19,526,7,610,4,653,8,696,17,737,31,775,53,811,85,841,124,864,167,882,212,905,299,914,369"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1switch__channel_1_1SwitchChannelFsm.html#ac4c159807732f0b2496992db86a8f213" title=" " alt="" coords="557,275,773,315"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="868,378,822,353,772,329,740,317,742,312,774,324,825,348,870,373"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1BackhaulManager.html#ab9d82ddd4a07988fbfcd36c61778d647" title=" " alt="" coords="572,419,759,459"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="808,421,759,428,758,423,807,416"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1BackhaulManager.html#a8069285f8d1e3d9f22b0b93cb813df05" title=" " alt="" coords="567,483,764,523"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="865,432,774,473,740,485,739,480,772,468,863,427"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1ChannelSelectionTask.html#a2ee95bc17c7ba502eb8a5f86940d7520" title=" " alt="" coords="249,540,503,580"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="893,436,843,490,811,516,774,537,707,559,637,572,568,577,504,576,504,571,568,571,637,566,706,554,772,532,808,512,840,486,889,432"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1BackhaulManager.html#a1375704cd4beaba335592f295bd477d4" title=" " alt="" coords="572,339,759,394"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="807,390,758,383,759,378,808,385"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1ChannelSelectionTask.html#a42b3d11c8b5f8588fc8811165b2aea13" title=" " alt="" coords="573,677,758,731"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="907,437,889,487,862,548,824,611,801,640,775,666,757,679,754,674,772,662,797,637,820,608,857,546,884,485,902,435"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1ChannelSelectionTask.html#adadf6965fa21c808191223a125b5b027" title=" " alt="" coords="573,598,758,653"/>
+<area shape="poly" id="edge22_Node000001_Node000020" title=" " alt="" coords="897,436,847,507,813,546,775,581,744,600,741,596,772,577,809,543,843,504,893,433"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1coordinated__cac_1_1CacFsm.html#a28bdc25b94cbdf3b8f10ea22b558b5d1" title=" " alt="" coords="559,67,771,122"/>
+<area shape="poly" id="edge24_Node000001_Node000021" title=" " alt="" coords="902,370,885,319,858,257,820,193,797,163,772,137,754,124,757,120,775,133,801,159,825,190,863,254,890,317,907,369"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1ChannelScanTask.html#a5cb9158053651798de1bebd469a8bdff" title="Send a Trigger Scan Request CMDU to the monitor." alt="" coords="571,211,760,251"/>
+<area shape="poly" id="edge26_Node000001_Node000022" title=" " alt="" coords="888,373,838,318,807,289,772,265,748,253,750,248,775,260,810,285,842,314,892,370"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1ChannelSelectionTask.html#a50a7f9f5b762d193fff20b2504bcf208" title=" " alt="" coords="573,756,758,796"/>
+<area shape="poly" id="edge29_Node000001_Node000024" title=" " alt="" coords="912,437,899,502,875,585,857,629,835,672,807,711,775,746,758,758,755,754,772,742,803,708,830,669,852,627,870,584,894,501,907,436"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ChannelScanTask.html#a263b981f2b87820d7e26526041e04fc3" title="Handles 1905 channel scan request message." alt="" coords="273,96,479,136"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="557,151,479,137,480,131,558,145"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ChannelScanTask.html#ad2818ef22c645aa1533475f6a25fc91a" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="5,185,195,225"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="557,177,195,202,195,196,557,171"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelScanTask.html#a0313f2336162a0ea45324002d446ea64" title="Handles incoming messages." alt="" coords="5,96,195,136"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="260,119,195,119,195,113,260,113"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1coordinated__cac_1_1CacFsm.html#a617680b7c5e9e9cc40462b7c7b167d7d" title=" " alt="" coords="17,21,183,61"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="272,44,184,44,184,39,272,39"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1switch__channel_1_1SwitchChannelFsm.html#a766c905cecadfbba325942b876aded67" title=" " alt="" coords="243,275,509,315"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="544,297,509,297,509,292,544,292"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1BackhaulManager.html#a0cb6b4726128cffe11769a61ea5f8393" title=" " alt="" coords="283,419,469,459"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="558,441,469,441,469,436,558,436"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1BackhaulManager.html#a4f103cf5912cc5907b012e16fa4450a4" title="Initialize backhaul manager." alt="" coords="7,385,193,425"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="269,429,193,419,194,414,270,423"/>
+<area shape="poly" id="edge13_Node000013_Node000011" title=" " alt="" coords="560,482,466,461,468,456,561,477"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1ChannelSelectionTask.html#a85b2df533a6c739eae4a108daeb29410" title="Handle CMDU message." alt="" coords="7,576,193,616"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="235,581,193,587,192,581,234,576"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1BackhaulManager.html#aefe88940183124d177f3278ccd57eeb3" title="Handles received CMDU message." alt="" coords="283,351,469,391"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="558,371,469,372,469,367,558,366"/>
+<area shape="poly" id="edge18_Node000017_Node000012" title=" " alt="" coords="270,387,194,396,193,391,269,381"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1ChannelSelectionTask.html#a7d6483025a229705407c13db63a7afb8" title=" " alt="" coords="273,605,479,659"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="559,680,479,660,480,655,560,675"/>
+<area shape="poly" id="edge21_Node000019_Node000015" title=" " alt="" coords="259,619,193,611,193,606,259,614"/>
+<area shape="poly" id="edge23_Node000020_Node000019" title=" " alt="" coords="559,631,479,632,479,627,559,625"/>
+<area shape="poly" id="edge25_Node000021_Node000006" title=" " alt="" coords="545,75,466,61,467,55,546,70"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1ChannelScanTask.html#a855a12099cf3741eee405197c70bd5d9" title="Find the next pending Radio Scan and send a Trigger Scan request to the monitor." alt="" coords="281,211,471,251"/>
+<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="557,233,471,233,471,228,557,228"/>
+<area shape="poly" id="edge28_Node000023_Node000005" title=" " alt="" coords="267,223,195,217,195,211,268,218"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1ChannelSelectionTask.html#a76c61d8b1a2051b98f90e5b90c048ef1" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="283,756,469,796"/>
+<area shape="poly" id="edge30_Node000024_Node000025" title=" " alt="" coords="559,779,469,779,469,773,559,773"/>
+</map>

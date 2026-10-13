@@ -1,0 +1,9 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,45,61,70"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1BridgeStateManagerImpl.html#a8315a9c52fa870179cc8dac8a0480b5d" title="Reads current state of a network bridge (i.e.: the list of network interfaces in the bridge)." alt="" coords="109,37,287,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,55,96,55,96,60,61,60"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1BridgeStateManagerImpl.html#a1f35729c534fb3b5ec23674589467b16" title="Gets last known bridge state." alt="" coords="335,5,512,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,42,321,37,322,42,287,47"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1BridgeStateManagerImpl.html#a000f2db3885d89f03baba169edf4bd8a" title="Sets last known bridge state." alt="" coords="335,69,512,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="287,67,322,72,321,77,286,73"/>
+</map>

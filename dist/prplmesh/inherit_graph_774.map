@@ -1,0 +1,49 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,55,137,95"/>
+<area shape="rect" id="Node000001" href="$classson_1_1channel__selection__task.html" title=" " alt="" coords="205,5,392,31"/>
+<area shape="poly" id="edge953_Node000000_Node000001" title=" " alt="" coords="150,50,185,41,238,28,239,33,186,46,151,55"/>
+<area shape="rect" id="Node000012" href="$classson_1_1dynamic__channel__selection__r2__task.html" title=" " alt="" coords="223,55,375,95"/>
+<area shape="poly" id="edge954_Node000000_Node000012" title=" " alt="" coords="151,73,223,73,223,78,151,78"/>
+<area shape="rect" id="Node000013" href="$classson_1_1dynamic__channel__selection__task.html" title=" " alt="" coords="223,119,375,159"/>
+<area shape="poly" id="edge955_Node000000_Node000013" title=" " alt="" coords="151,95,228,117,226,122,150,100"/>
+<area shape="rect" id="Node000002" href="$classson_1_1task.html" title=" " alt="" coords="33,561,109,587"/>
+<area shape="poly" id="edge962_Node000002_Node000001" title=" " alt="" coords="72,547,82,438,103,286,118,209,136,139,158,81,183,41,204,27,207,31,187,45,163,83,141,140,123,210,108,287,88,439,77,548"/>
+<area shape="poly" id="edge966_Node000002_Node000012" title=" " alt="" coords="73,547,86,450,108,318,123,251,141,190,161,140,183,106,201,92,221,82,224,87,204,96,187,109,166,142,146,192,129,252,114,319,91,451,78,548"/>
+<area shape="poly" id="edge967_Node000002_Node000013" title=" " alt="" coords="69,547,72,473,86,372,100,318,120,264,148,214,183,169,201,156,221,147,223,152,204,161,187,173,152,217,125,266,105,319,91,373,77,474,74,547"/>
+<area shape="rect" id="Node000003" href="$classson_1_1DhcpTask.html" title=" " alt="" coords="243,660,354,685"/>
+<area shape="poly" id="edge956_Node000002_Node000003" title=" " alt="" coords="101,593,140,621,186,646,244,663,242,668,184,651,137,626,97,598"/>
+<area shape="rect" id="Node000004" href="$classson_1_1LinkMetricsTask.html" title=" " alt="" coords="225,709,372,735"/>
+<area shape="poly" id="edge957_Node000002_Node000004" title=" " alt="" coords="90,597,130,648,156,674,187,696,226,711,224,716,184,700,153,678,126,651,86,600"/>
+<area shape="rect" id="Node000005" href="$classson_1_1agent__monitoring__task.html" title=" " alt="" coords="207,759,390,784"/>
+<area shape="poly" id="edge958_Node000002_Node000005" title=" " alt="" coords="84,598,99,632,121,672,151,712,187,745,208,756,206,761,184,750,147,716,117,675,94,635,79,601"/>
+<area shape="rect" id="Node000006" href="$classson_1_1association__handling__task.html" title=" " alt="" coords="197,808,401,833"/>
+<area shape="poly" id="edge959_Node000002_Node000006" title=" " alt="" coords="81,600,93,643,114,696,145,750,164,774,187,795,206,806,203,810,184,799,160,778,140,753,109,699,88,645,76,601"/>
+<area shape="rect" id="Node000007" href="$classson_1_1bml__task.html" title=" " alt="" coords="247,857,351,883"/>
+<area shape="poly" id="edge960_Node000002_Node000007" title=" " alt="" coords="78,600,87,652,107,718,121,753,139,787,161,817,187,844,215,859,247,867,246,872,214,864,184,848,157,821,134,789,116,755,102,720,82,653,73,601"/>
+<area shape="rect" id="Node000008" href="$classson_1_1btm__request__task.html" title=" " alt="" coords="221,907,376,932"/>
+<area shape="poly" id="edge961_Node000002_Node000008" title=" " alt="" coords="76,600,83,661,100,741,114,783,133,823,157,861,187,893,203,904,222,911,220,916,201,909,184,897,153,864,128,826,109,785,95,742,77,662,71,601"/>
+<area shape="rect" id="Node000009" href="$classson_1_1client__association__task.html" title=" " alt="" coords="205,956,392,981"/>
+<area shape="poly" id="edge963_Node000002_Node000009" title=" " alt="" coords="75,600,78,669,93,762,107,812,127,860,153,904,187,943,207,956,204,960,184,947,149,907,122,862,102,813,88,763,73,670,70,600"/>
+<area shape="rect" id="Node000010" href="$classson_1_1client__locating__task.html" title=" " alt="" coords="215,1005,382,1031"/>
+<area shape="poly" id="edge964_Node000002_Node000010" title=" " alt="" coords="79,600,92,688,116,807,148,920,167,963,187,992,216,1009,214,1014,184,996,162,966,143,922,110,808,87,689,73,600"/>
+<area shape="rect" id="Node000011" href="$classson_1_1client__steering__task.html" title=" " alt="" coords="215,1055,382,1080"/>
+<area shape="poly" id="edge965_Node000002_Node000011" title=" " alt="" coords="78,600,90,698,112,831,127,898,145,959,165,1009,187,1041,200,1051,216,1059,214,1063,198,1056,183,1045,160,1011,140,961,122,900,107,832,85,699,73,600"/>
+<area shape="rect" id="Node000014" href="$classson_1_1ire__network__optimization__task.html" title=" " alt="" coords="185,184,412,209"/>
+<area shape="poly" id="edge968_Node000002_Node000014" title=" " alt="" coords="70,547,75,481,90,392,105,345,124,299,150,256,184,219,200,207,203,212,187,223,155,259,129,301,110,347,96,393,80,482,75,548"/>
+<area shape="rect" id="Node000015" href="$classson_1_1load__balancer__task.html" title=" " alt="" coords="217,233,380,259"/>
+<area shape="poly" id="edge969_Node000002_Node000015" title=" " alt="" coords="72,548,79,490,97,415,112,375,131,336,154,300,184,269,216,251,219,256,187,273,159,304,135,339,117,377,103,416,85,491,77,548"/>
+<area shape="rect" id="Node000016" href="$classson_1_1network__health__check__task.html" title=" " alt="" coords="229,283,368,323"/>
+<area shape="poly" id="edge970_Node000002_Node000016" title=" " alt="" coords="75,547,87,501,108,443,139,384,160,357,184,333,205,320,228,311,230,316,207,324,187,337,164,361,144,387,113,445,92,502,80,548"/>
+<area shape="rect" id="Node000017" href="$classson_1_1optimal__path__task.html" title=" " alt="" coords="220,348,377,373"/>
+<area shape="poly" id="edge971_Node000002_Node000017" title=" " alt="" coords="78,547,93,510,115,466,145,421,184,384,219,367,221,372,187,388,149,425,119,469,97,512,83,549"/>
+<area shape="rect" id="Node000018" href="$classson_1_1pre__association__steering__task.html" title=" " alt="" coords="227,398,370,438"/>
+<area shape="poly" id="edge972_Node000002_Node000018" title=" " alt="" coords="86,549,126,498,153,471,184,448,226,429,228,434,187,452,157,475,130,501,90,552"/>
+<area shape="rect" id="Node000019" href="$classson_1_1service__prioritization__task.html" title=" " alt="" coords="197,463,400,488"/>
+<area shape="poly" id="edge973_Node000002_Node000019" title=" " alt="" coords="97,550,137,522,184,497,219,485,220,491,186,502,140,527,101,555"/>
+<area shape="rect" id="Node000020" href="$classson_1_1statistics__polling__task.html" title=" " alt="" coords="209,512,389,537"/>
+<area shape="poly" id="edge974_Node000002_Node000020" title=" " alt="" coords="123,560,185,546,237,535,238,540,186,551,124,565"/>
+<area shape="rect" id="Node000021" href="$classson_1_1topology__task.html" title=" " alt="" coords="233,561,365,587"/>
+<area shape="poly" id="edge975_Node000002_Node000021" title=" " alt="" coords="123,571,232,571,232,577,123,577"/>
+<area shape="rect" id="Node000022" href="$classvbss__task.html" title=" " alt="" coords="257,611,340,636"/>
+<area shape="poly" id="edge976_Node000002_Node000022" title=" " alt="" coords="124,583,186,597,257,612,256,617,185,602,123,588"/>
+</map>

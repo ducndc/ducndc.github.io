@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Chung Duc Nguyen Dang" href="https://ducndc.github.io/rss.xml"><meta name="generator" content="Astro v5.17.2"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://ducndc.github.io/blog/hostapd/"><!-- Primary Meta Tags --><title>Hostapd Architecture</title><meta name="title" content="Hostapd Architecture"><meta name="description" content="IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/WPA3/EAP/RADIUS Authenticator"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://ducndc.github.io/blog/hostapd/"><meta property="og:title" content="Hostapd Architecture"><meta property="og:description" content="IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/WPA3/EAP/RADIUS Authenticator"><meta property="og:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://ducndc.github.io/blog/hostapd/"><meta property="twitter:title" content="Hostapd Architecture"><meta property="twitter:description" content="IEEE 802.11 AP, IEEE 802.1X/WPA/WPA2/WPA3/EAP/RADIUS Authenticator"><meta property="twitter:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Times New Roman,Times,serif;margin:0;padding:0;text-align:justify;text-justify:inter-word;background:linear-gradient(180deg,#f3f6f8 0,#fff 560px) no-repeat;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;color:rgb(var(--black));line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}p{margin-top:0;margin-bottom:1em;line-height:1.7}.prose p{margin-top:0;margin-bottom:1.2em;line-height:1.7}a,a:hover{color:var(--accent)}ul,ol{margin-top:.5em;margin-bottom:1em;padding-left:1.5em}li{line-height:1.5;margin-bottom:.2em}li p,.prose li p{margin-top:0;margin-bottom:0;line-height:1.5}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%;border-collapse:collapse}img{display:block;max-width:100%;height:auto;margin:1.5rem auto}.prose img{display:block;max-width:100%;height:auto;margin:2rem auto}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px;font-family:monospace}pre{padding:1.5em;border-radius:8px;overflow-x:auto}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:1.5em 0;font-size:1.1em}hr{border:none;border-top:1px solid rgb(var(--gray-light));margin:2em 0}@media(max-width:720px){body{font-size:18px}main{padding:1em}.prose p{line-height:1.65}li{line-height:1.5}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media(max-width:720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}
+</style>
+<link rel="stylesheet" href="/_astro/about.DsEPMAAl.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Chung Duc Nguyen Dang</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/blog" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  </div> </nav> </header>  <main class="layout" data-astro-cid-bvzihdzo> <!-- TOC --> <aside class="toc" data-astro-cid-bvzihdzo> <div class="toc-title" data-astro-cid-bvzihdzo>Table of Contents</div> <nav id="toc" data-astro-cid-bvzihdzo></nav> </aside> <!-- Content --> <article class="content" data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="/_astro/prplmesh.DQxL3OUL_FtKed.webp" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="800"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2026-08-20T17:00:00.000Z"> Aug 21, 2026 </time>  </div> <h1 data-astro-cid-bvzihdzo>Hostapd Architecture</h1> <hr data-astro-cid-bvzihdzo> </div>  <h3 id="overview">Overview</h3>
+<hr>
+<p><strong><code>hostapd</code></strong> (Host Access Point Daemon) is the industry-standard user-space daemon for managing wireless Access Points (APs) and IEEE 802.11 / IEEE 802.1X / WPA / WPA2 / WPA3 authentication and key management services on Linux and UNIX-like systems.</p>
+<p>While modern wireless drivers and the Linux kernel (via <code>mac80211</code> / <code>cfg80211</code>) handle high-speed data path processing and real-time PHY/MAC layer frame transmission/reception, <strong><code>hostapd</code></strong> implements the upper-layer control plane, management plane, authentication state machines, and regulatory policy logic:</p>
+<ul>
+<li><strong>AP MLME (MAC Layer Management Entity)</strong>: Management frame handling (Beacons, Probe Requests/Responses, Authentication, Association, Disassociation, Deauthentication, Action frames).</li>
+<li><strong>Security &#x26; Key Management</strong>: WPA-Personal / WPA-Enterprise 4-Way Handshake, Group Key Handshake, SAE (WPA3-Personal), OWE, FILS, DPP (Easy Connect), PMKSA caching, and IEEE 802.11r Fast BSS Transition (FT).</li>
+<li><strong>IEEE 802.1X &#x26; RADIUS</strong>: Complete EAP authenticator, embedded RADIUS authentication &#x26; accounting client, built-in RADIUS server, and Dynamic Authorization Extensions (RADIUS DAS / RFC 5176 CoA / Disconnect-Request).</li>
+<li><strong>Radio &#x26; Spectrum Management</strong>: Automatic Channel Selection (ACS), Dynamic Frequency Selection (DFS / CAC / Radar handling), Automated Frequency Coordination (AFC for 6 GHz Standard Power), Channel Switch Announcements (CSA / ECSA), and BSS Color Change Announcements (CCA).</li>
+<li><strong>Advanced Multi-Generation Wi-Fi</strong>: Multi-BSSID support, 802.11n (HT), 802.11ac (VHT), 802.11ax (HE / Wi-Fi 6/6E), 802.11be (EHT / Wi-Fi 7 Multi-Link Operation - MLD/MLO), Passpoint / Hotspot 2.0 (HS2.0 / GAS / ANQP), and RRM / WNM / MBO (802.11k/v/u).</li>
+<li><strong>Extensible Control &#x26; IPC</strong>: UNIX domain socket and UDP socket-based control interfaces for <code>hostapd_cli</code>, orchestration daemons, and system network managers.</li>
+</ul>
+<hr>
+<h3 id="high-level-architectural-diagram">High-Level Architectural Diagram</h3>
+<hr>
+<p><img alt="Alt text" loading="lazy" decoding="async" fetchpriority="auto" width="4909" height="5260" src="/_astro/hostapd_architecture.CLSdS4yQ_248OLU.webp" ></p>
+<hr>
+<h3 id="core-data-structure-hierarchy">Core Data Structure Hierarchy</h3>
+<hr>
+<p>The in-memory object model in <code>hostapd</code> follows a strict hierarchical design from daemon-wide global state down to individual connected stations:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>[struct hapd_interfaces] (Daemon-level global manager)</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  ├── [struct hostapd_iface] (Per-Physical Radio / PHY context, e.g. phy0, wlan0)</span></span>
+<span class="line"><span>  │     ├── hw_features / current_mode (802.11a/b/g/n/ac/ax/be, channel capabilities)</span></span>
+<span class="line"><span>  │     ├── DFS / CAC state (HAPD_IFACE_DFS, HAPD_IFACE_ACS, HAPD_IFACE_ENABLED)</span></span>
+<span class="line"><span>  │     ├── struct hostapd_config *conf (PHY &#x26; radio-wide configuration)</span></span>
+<span class="line"><span>  │     │</span></span>
+<span class="line"><span>  │     └── [struct hostapd_data **bss] (Array of Virtual BSS / SSIDs on this Radio)</span></span>
+<span class="line"><span>  │           │</span></span>
+<span class="line"><span>  │           ├── struct hostapd_bss_config *conf (BSS-specific configuration: SSID, WPA flags)</span></span>
+<span class="line"><span>  │           ├── const struct wpa_driver_ops *driver &#x26; void *drv_priv</span></span>
+<span class="line"><span>  │           ├── struct wpa_authenticator *wpa_auth (WPA state machine context)</span></span>
+<span class="line"><span>  │           ├── struct eapol_authenticator *eapol_auth (802.1X context)</span></span>
+<span class="line"><span>  │           ├── struct radius_client_data *radius</span></span>
+<span class="line"><span>  │           ├── struct wps_context *wps / struct dpp_authentication *dpp_auth</span></span>
+<span class="line"><span>  │           │</span></span>
+<span class="line"><span>  │           └── [struct sta_info *sta_list] &#x26; [struct sta_info *sta_hash[256]]</span></span>
+<span class="line"><span>  │                 │</span></span>
+<span class="line"><span>  │                 ├── addr (MAC Address) &#x26; aid (Association ID: 1..2007)</span></span>
+<span class="line"><span>  │                 ├── flags (WLAN_STA_AUTH, WLAN_STA_ASSOC, WLAN_STA_AUTHORIZED, etc.)</span></span>
+<span class="line"><span>  │                 ├── struct wpa_state_machine *wpa_sm (Per-STA 4-way handshake state machine)</span></span>
+<span class="line"><span>  │                 ├── struct eapol_state_machine *eapol_sm (Per-STA 802.1X state machine)</span></span>
+<span class="line"><span>  │                 ├── struct sae_data *sae (WPA3-Personal SAE exchange state)</span></span>
+<span class="line"><span>  │                 └── vlan_id / vlan_desc (Dynamic VLAN assigned to this station)</span></span>
+<span class="line"><span>  │</span></span>
+<span class="line"><span>  └── [struct hostapd_mld] (802.11be Multi-Link Device coordinator)</span></span>
+<span class="line"><span>        ├── mld_addr (Common MLD MAC)</span></span>
+<span class="line"><span>        └── struct dl_list links (List of affiliated hostapd_data BSS links across radios)</span></span></code></pre>
+<hr>
+<h3 id="key-data-structures-in-source-code">Key Data Structures in Source Code</h3>
+<hr>
+<ol>
+<li>
+<p><strong><a href="hostapd-2.12/src/ap/hostapd.h#L50-L108"><code>struct hapd_interfaces</code></a></strong>:</p>
+<ul>
+<li>Holds the list of physical radio interfaces (<code>struct hostapd_iface **iface</code>).</li>
+<li>Manages the global control interface socket (<code>global_ctrl_sock</code>).</li>
+<li>Contains global MLD entries (<code>struct hostapd_mld **mld</code>) for Wi-Fi 7 Multi-Link Operation.</li>
+<li>Tracks global DPP contexts and process coordination.</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="hostapd-2.12/src/ap/hostapd.h#L576-L650"><code>struct hostapd_iface</code></a></strong>:</p>
+<ul>
+<li>Represents a physical wireless device (PHY/radio).</li>
+<li>Manages radio state (<code>HAPD_IFACE_UNINITIALIZED</code>, <code>HAPD_IFACE_ACS</code>, <code>HAPD_IFACE_HT_SCAN</code>, <code>HAPD_IFACE_DFS</code>, <code>HAPD_IFACE_ENABLED</code>).</li>
+<li>Contains the list of Virtual APs (<code>struct hostapd_data **bss</code>) hosted on this physical PHY.</li>
+<li>Stores hardware capabilities (<code>struct hostapd_hw_modes *hw_features</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="hostapd-2.12/src/ap/hostapd.h#L195-L534"><code>struct hostapd_data</code></a></strong>:</p>
+<ul>
+<li>Represents an individual BSS (Basic Service Set / SSID).</li>
+<li>Holds per-BSS security engines (<code>wpa_auth</code>, <code>eapol_auth</code>, <code>radius</code>, <code>wps</code>, <code>dpp</code>).</li>
+<li>Contains the station table: linked list <code>sta_list</code> and hash table <code>sta_hash[256]</code> for O(1) MAC address lookups.</li>
+<li>Manages AID (Association Identifier) bitfield bitmap <code>sta_aid[AID_WORDS]</code> (AIDs 1 through 2007).</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="hostapd-2.12/src/ap/sta_info.h#L107-L300"><code>struct sta_info</code></a></strong>:</p>
+<ul>
+<li>State container for an individual connected or connecting client station.</li>
+<li>Tracks IEEE 802.11 state flags (<code>WLAN_STA_AUTH</code>, <code>WLAN_STA_ASSOC</code>, <code>WLAN_STA_AUTHORIZED</code>, <code>WLAN_STA_MFP</code>, <code>WLAN_STA_WMM</code>, <code>WLAN_STA_HT</code>, <code>WLAN_STA_VHT</code>, <code>WLAN_STA_HE</code>, <code>WLAN_STA_EHT</code>).</li>
+<li>Embeds pointers to security state machines (<code>wpa_sm</code>, <code>eapol_sm</code>, <code>sae</code>).</li>
+<li>Tracks dynamic VLAN assignments, accounting session statistics, and inactivity poll timers.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="architectural-subsystem-deep-dive">Architectural Subsystem Deep Dive</h3>
+<hr>
+<h4 id="event-loop--concurrency-model-eloop">Event Loop &#x26; Concurrency Model (<code>eloop</code>)</h4>
+<hr>
+<p><code>hostapd</code> is engineered as a single-threaded, non-blocking, asynchronous event-driven daemon centered around <strong><a href="hostapd-2.12/src/utils/eloop.c"><code>src/utils/eloop.c</code></a></strong>.</p>
+<ul>
+<li><strong>I/O Multiplexing</strong>: Utilizes <code>epoll_wait()</code>, <code>poll()</code>, or <code>select()</code> to monitor file descriptors for incoming network packets, Netlink socket events, and control socket connections without blocking.</li>
+<li><strong>Timer Management</strong>: Implements scheduled delayed callbacks via <code>eloop_register_timeout(secs, usecs, handler, eloop_data, user_data)</code> and <code>eloop_cancel_timeout()</code>. These drive AP periodic tasks (<code>hostapd_periodic</code>), STA inactivity timeouts (<code>ap_handle_timer</code>), 4-way handshake retransmission timers, and DFS CAC timers.</li>
+<li><strong>Signal Dispatching</strong>: Handles asynchronous OS signals (<code>SIGINT</code>, <code>SIGTERM</code>, <code>SIGHUP</code>, <code>SIGUSR1</code>) through signalfd or self-pipe notification routines to ensure thread-safe and interrupt-safe shutdowns and configuration reloads.</li>
+<li><strong>No Locking Overhead</strong>: Because the entire state machine runs on a single event-driven thread, internal data structures (<code>sta_info</code>, <code>hostapd_data</code>) do not suffer from multi-threading mutex contention, race conditions, or deadlocks.</li>
+</ul>
+<p><img alt="Alt text" loading="lazy" decoding="async" fetchpriority="auto" width="2220" height="888" src="/_astro/eloop.IlakpLOv_Z27eLnj.webp" ></p>
+<hr>
+<h4 id="configuration-subsystem">Configuration Subsystem</h4>
+<hr>
+<p>Configuration processing is handled by <strong><a href="hostapd-2.12/hostapd/config_file.c"><code>hostapd/config_file.c</code></a></strong> and <strong><a href="hostapd-2.12/src/ap/ap_config.c"><code>src/ap/ap_config.c</code></a></strong>:</p>
+<ul>
+<li><strong>Two-Level Configuration Hierarchy</strong>:
+<ol>
+<li><strong>Interface/PHY Level (<code>struct hostapd_config</code>)</strong>: Channel, hardware mode (<code>hw_mode=a/b/g/n/ac/ax/be</code>), ACS parameters, country code, regulatory domain, DFS options.</li>
+<li><strong>BSS Level (<code>struct hostapd_bss_config</code>)</strong>: SSID, BSSID, authentication suites (<code>wpa=1/2/3</code>), WPA key management (<code>wpa_key_mgmt=WPA-PSK WPA-EAP SAE</code>), encryption ciphers (<code>rsn_pairwise=CCMP GCMP</code>), RADIUS server IPs/secrets, VLAN configurations, and WPS settings.</li>
+</ol>
+</li>
+<li><strong>Multi-BSSID &#x26; Multi-Interface Support</strong>: A single configuration file can define multiple physical radios (<code>interface=wlan0</code>, <code>interface=wlan1</code>) and multiple BSS definitions on each radio (<code>bss=wlan0_0</code>, <code>bss=wlan0_1</code>).</li>
+<li><strong>Dynamic Reloading</strong>: Supports runtime parameter updates via <code>SIGHUP</code> or <code>hostapd_cli reload</code> without restarting the daemon process.</li>
+</ul>
+<hr>
+<h4 id="driver-abstraction-layer--kernel-interfacing">Driver Abstraction Layer &#x26; Kernel Interfacing</h4>
+<hr>
+<p><code>hostapd</code> is completely decoupled from driver-specific APIs via a unified Driver Abstraction Layer:</p>
+<p><img alt="Alt text" loading="lazy" decoding="async" fetchpriority="auto" width="2791" height="1408" src="/_astro/nl.DKwMaLAA_Z1WJYDW.webp" ></p>
+<ol>
+<li><strong><a href="hostapd-2.12/src/drivers/driver.h#L1300-L2400"><code>struct wpa_driver_ops</code></a></strong>: Defines over 150 standardized driver primitives (<code>set_ap</code>, <code>sta_add</code>, <code>sta_remove</code>, <code>set_key</code>, <code>send_mlme</code>, <code>set_freq</code>, <code>send_action</code>, <code>set_acl</code>, <code>channel_switch</code>, etc.).</li>
+<li><strong><a href="hostapd-2.12/src/drivers/driver_nl80211.c"><code>driver_nl80211.c</code></a></strong>:
+<ul>
+<li>Interacts with the Linux <code>cfg80211</code> subsystem using Generic Netlink (<code>NETLINK_GENERIC</code>).</li>
+<li>Registers for frame filtering (Management frames: Probe Requests, Auth, Assoc, Action frames) and receives them over Netlink.</li>
+<li>Subscribes to multicast Netlink groups (<code>nl80211</code> events: radar detected, low ACK, STA state change, scan complete).</li>
+</ul>
+</li>
+<li><strong><a href="hostapd-2.12/src/ap/drv_callbacks.c"><code>drv_callbacks.c</code></a></strong>: Implements the central callback dispatcher <a href="hostapd-2.12/src/ap/drv_callbacks.c#L2613-L3011"><code>wpa_supplicant_event()</code></a> that translates kernel driver notifications (<code>EVENT_RX_MGMT</code>, <code>EVENT_ASSOC</code>, <code>EVENT_EAPOL_RX</code>, <code>EVENT_DFS_RADAR_DETECTED</code>, <code>EVENT_CH_SWITCH</code>) into internal <code>hostapd</code> core events.</li>
+</ol>
+<hr>
+<h4 id="station-lifecycle--ap-mlme-engine">Station Lifecycle &#x26; AP MLME Engine</h4>
+<hr>
+<p>The station management state machine is governed by <strong><a href="hostapd-2.12/src/ap/ieee802_11.c"><code>src/ap/ieee802_11.c</code></a></strong> and <strong><a href="hostapd-2.12/src/ap/sta_info.c"><code>src/ap/sta_info.c</code></a></strong>:</p>
+<p><img alt="Alt text" loading="lazy" decoding="async" fetchpriority="auto" width="2300" height="3000" src="/_astro/assoc.d7MKqO-O_G5NSX.webp" ></p>
+<ul>
+<li><strong>Management Frame Processing (<a href="hostapd-2.12/src/ap/ieee802_11.c#L8156-L8290"><code>ieee802_11_mgmt</code></a>)</strong>: Validates frame control, BSSID/DA matching, sequence numbers, and dispatches to specific handlers:
+<ul>
+<li><code>WLAN_FC_STYPE_PROBE_REQ</code> ➔ <code>handle_probe_req()</code></li>
+<li><code>WLAN_FC_STYPE_AUTH</code> ➔ <code>handle_auth()</code> (Open, Shared, SAE, FILS)</li>
+<li><code>WLAN_FC_STYPE_ASSOC_REQ</code> / <code>REASSOC_REQ</code> ➔ <code>handle_assoc()</code></li>
+<li><code>WLAN_FC_STYPE_DISASSOC</code> ➔ <code>handle_disassoc()</code></li>
+<li><code>WLAN_FC_STYPE_DEAUTH</code> ➔ <code>handle_deauth()</code></li>
+<li><code>WLAN_FC_STYPE_ACTION</code> ➔ <code>handle_action()</code> (WMM, Block ACK, RRM, WNM, Protected Dual, DPP, FST)</li>
+</ul>
+</li>
+<li><strong>Inactivity &#x26; Polling Engine</strong>: Uses <code>ap_handle_timer()</code> to periodically poll inactive stations with data nullfunc frames. If unacknowledged, stations are transitioned to disassociated/deauthenticated states and cleaned up from driver memory.</li>
+</ul>
+<hr>
+<h4 id="security-key-management--authentication-subsystems">Security, Key Management &#x26; Authentication Subsystems</h4>
+<hr>
+<p><img alt="Alt text" loading="lazy" decoding="async" fetchpriority="auto" width="2722" height="2112" src="/_astro/dpp.Bhn85nHk_Z3LrKM.webp" ></p>
+<hr>
+<h4 id="detailed-security-flows">Detailed Security Flows:</h4>
+<hr>
+<ol>
+<li><strong>WPA/WPA2/WPA3 4-Way Handshake</strong>:
+<ul>
+<li><strong>Msg 1 (AP ➔ STA)</strong>: AP generates <code>ANonce</code> and transmits to STA with Key Replay Counter.</li>
+<li><strong>Msg 2 (STA ➔ AP)</strong>: STA generates <code>SNonce</code>, calculates <code>PTK = PRF-X(PMK, "Pairwise key expansion", Min(AA,SPA) || Max(AA,SPA) || Min(ANonce,SNonce) || Max(ANonce,SNonce))</code>, and sends <code>SNonce</code> + MIC + RSN IE.</li>
+<li><strong>Msg 3 (AP ➔ STA)</strong>: AP verifies MIC, derives identical <code>PTK</code>, generates <code>GTK</code>/<code>IGTK</code>/<code>BIGTK</code>, sends encrypted group keys + MIC + install bit.</li>
+<li><strong>Msg 4 (STA ➔ AP)</strong>: STA confirms key installation with MIC. AP transitions station port to authorized (<code>hostapd_set_authorized</code>).</li>
+</ul>
+</li>
+<li><strong>SAE (WPA3-Personal Dragonfly Handshake)</strong>:
+<ul>
+<li>Eliminates dictionary attacks by using a password-authenticated key exchange based on zero-knowledge proofs (RFC 7664 / IEEE 802.11az/REVme).</li>
+<li>Implements anti-clogging tokens to defend against Denial-of-Service resource exhaustion attacks on elliptic curve math.</li>
+</ul>
+</li>
+<li><strong>802.11r Fast Transition (FT)</strong>:
+<ul>
+<li>Derives a two-tier key hierarchy: <code>PMK-R0</code> (held by Mobility Domain Controller) ➔ <code>PMK-R1</code> (held by individual APs) ➔ <code>PTK</code>. Allows sub-50ms roaming without performing a full 802.1X/EAP re-authentication.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="radio-spectrum-dfs--advanced-phy-features">Radio Spectrum, DFS &#x26; Advanced PHY Features</h4>
+<hr>
+<ul>
+<li><strong>Automatic Channel Selection (<a href="hostapd-2.12/src/ap/acs.c"><code>src/ap/acs.c</code></a>)</strong>:
+<ul>
+<li>Evaluates channel interference, noise floor, spectral survey statistics (<code>EVENT_GET_SURVEY</code>), and adjacent-channel overlapping BSS (OBSS) metrics to dynamically pick optimal 2.4 GHz, 5 GHz, or 6 GHz channels.</li>
+</ul>
+</li>
+<li><strong>Dynamic Frequency Selection (<a href="hostapd-2.12/src/ap/dfs.c"><code>src/ap/dfs.c</code></a>)</strong>:
+<ul>
+<li>Manages radar detection regulations in 5 GHz UNII-2 / UNII-2 Extended bands.</li>
+<li>Performs Channel Availability Check (CAC) before broadcasting beacons.</li>
+<li>When a radar pulse is detected (<code>EVENT_DFS_RADAR_DETECTED</code>), initiates Channel Switch Announcement (CSA / ECSA) to smoothly migrate connected stations to a non-radar channel without disconnections, placing the affected channel into a 30-minute Non-Occupancy Period (NOP).</li>
+</ul>
+</li>
+<li><strong>Automated Frequency Coordination (<a href="hostapd-2.12/src/ap/afc.c"><code>src/ap/afc.c</code></a>)</strong>:
+<ul>
+<li>Supports 6 GHz Standard Power APs by querying centralized AFC databases for allowed frequency ranges and Maximum Permissible EIRP powers based on geolocation.</li>
+</ul>
+</li>
+<li><strong>802.11be Multi-Link Operation (<a href="hostapd-2.12/src/ap/ieee802_11_eht.c"><code>src/ap/ieee802_11_eht.c</code></a>)</strong>:
+<ul>
+<li>Coordinates multi-radio APs under a single Multi-Link Device (MLD) MAC address.</li>
+<li>Affiliates individual <code>hostapd_data</code> instances across different frequency bands (2.4 GHz + 5 GHz + 6 GHz) under a unified <code>struct hostapd_mld</code> state machine.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="control-interface--ipc-architecture">Control Interface &#x26; IPC Architecture</h4>
+<hr>
+<p><code>hostapd</code> provides a rich remote management and IPC framework implemented in <strong><a href="hostapd-2.12/hostapd/ctrl_iface.c"><code>hostapd/ctrl_iface.c</code></a></strong> and <strong><a href="hostapd-2.12/src/ap/ctrl_iface_ap.c"><code>src/ap/ctrl_iface_ap.c</code></a></strong>:</p>
+<p><img alt="Alt text" loading="lazy" decoding="async" fetchpriority="auto" width="3487" height="870" src="/_astro/cli.DGV-43bL_Z3Clrt.webp" ></p>
+<ul>
+<li><strong>Control Interface Sockets</strong>:
+<ul>
+<li><strong>Per-Interface Sockets (<code>/var/run/hostapd/wlan0</code>)</strong>: Targets operations for a specific BSS (e.g. <code>STA</code>, <code>STATUS</code>, <code>DISASSOCIATE</code>, <code>GET_CONFIG</code>).</li>
+<li><strong>Global Socket (<code>/var/run/hostapd/global</code>)</strong>: Daemon-wide operations (e.g. <code>INTERFACE_ADD</code>, <code>INTERFACE_REMOVE</code>, <code>RELOAD</code>).</li>
+<li><strong>MLD Socket (<code>/var/run/hostapd/mld0</code>)</strong>: Wi-Fi 7 multi-link device coordination commands.</li>
+</ul>
+</li>
+<li><strong>Event Notification Bus</strong>: Clients send <code>ATTACH</code> to register for asynchronous event notifications (<code>AP-STA-CONNECTED</code>, <code>AP-STA-DISCONNECTED</code>, <code>WPS-PBC-ACTIVE</code>, <code>DFS-RADAR-DETECTED</code>, <code>EAP-SUCCESS</code>).</li>
+</ul>
+<hr>
+<h3 id="end-to-end-operational-sequences">End-to-End Operational Sequences</h3>
+<hr>
+<h4 id="station-association--wpa2wpa3-4-way-handshake-flow">Station Association &#x26; WPA2/WPA3 4-Way Handshake Flow</h4>
+<hr>
+<p><img alt="Alt text" loading="lazy" decoding="async" fetchpriority="auto" width="4009" height="5628" src="/_astro/sequence.DRU-1mBc_Z1QWNAh.webp" ></p>
+<hr>
+<h3 id="dfs-radar-detection--channel-switch-announcement-csa-flow">DFS Radar Detection &#x26; Channel Switch Announcement (CSA) Flow</h3>
+<hr>
+<p><img alt="Alt text" loading="lazy" decoding="async" fetchpriority="auto" width="3570" height="2448" src="/_astro/dfs.CPsQgW28_1cFsMf.webp" ></p>
+<hr>
+<h3 id="source-tree-organization-reference-table">Source Tree Organization Reference Table</h3>
+<hr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">Directory / File</th><th align="left">Key Architectural Role</th><th align="left">Primary Components &#x26; APIs</th></tr></thead><tbody><tr><td align="left"><strong><a href="hostapd-2.12/hostapd/main.c"><code>hostapd/main.c</code></a></strong></td><td align="left">Main Daemon Entry Point</td><td align="left"><code>main()</code>, argument parsing, daemonization, <code>hostapd_global_init()</code>, <code>hostapd_global_run()</code>.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/hostapd/config_file.c"><code>hostapd/config_file.c</code></a></strong></td><td align="left">Configuration File Parser</td><td align="left">Parses <code>hostapd.conf</code>, multi-BSS blocks, security modes, and rates.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/hostapd/ctrl_iface.c"><code>hostapd/ctrl_iface.c</code></a></strong></td><td align="left">Daemon IPC Server</td><td align="left">UNIX domain socket &#x26; UDP request handling, <code>hostapd_cli</code> command execution.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/hostapd.c"><code>src/ap/hostapd.c</code></a></strong></td><td align="left">AP Lifecycle Management</td><td align="left"><code>hostapd_setup_interface()</code>, <code>hostapd_enable_iface()</code>, <code>hostapd_reload_config()</code>.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/ieee802_11.c"><code>src/ap/ieee802_11.c</code></a></strong></td><td align="left">AP MLME &#x26; Frame Processing</td><td align="left"><code>ieee802_11_mgmt()</code>, <code>handle_auth()</code>, <code>handle_assoc()</code>, <code>handle_action()</code>.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/sta_info.c"><code>src/ap/sta_info.c</code></a></strong></td><td align="left">Station Table Manager</td><td align="left"><code>ap_get_sta()</code>, <code>ap_sta_add()</code>, <code>ap_sta_hash_add()</code>, AID allocation, inactivity timers.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/wpa_auth.c"><code>src/ap/wpa_auth.c</code></a></strong></td><td align="left">WPA/RSN Authenticator</td><td align="left">4-Way Handshake, Group Key Handshake, PTK/GTK/IGTK derivation.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/wpa_auth_ft.c"><code>src/ap/wpa_auth_ft.c</code></a></strong></td><td align="left">802.11r Fast Transition</td><td align="left">FT over-the-air, FT over-the-DS, R0KH / R1KH key exchange.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/beacon.c"><code>src/ap/beacon.c</code></a></strong></td><td align="left">Beacon Generator</td><td align="left">Information Elements (IE) construction, TIM bitmap, CSA/ECSA injection.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/dfs.c"><code>src/ap/dfs.c</code></a></strong></td><td align="left">Dynamic Frequency Selection</td><td align="left">Radar detection handling, CAC timers, Non-Occupancy Period (NOP) enforcement.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/acs.c"><code>src/ap/acs.c</code></a></strong></td><td align="left">Auto Channel Selection</td><td align="left">Spectrum scanning, survey data analysis, channel scoring algorithm.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/afc.c"><code>src/ap/afc.c</code></a></strong></td><td align="left">6 GHz Standard Power AFC</td><td align="left">Automated Frequency Coordination client for 6 GHz regulatory authorization.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/ieee802_11_eht.c"><code>src/ap/ieee802_11_eht.c</code></a></strong></td><td align="left">Wi-Fi 7 / 802.11be MLO</td><td align="left">Multi-Link Device (MLD) link management, EHT capabilities, partner link sync.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/vlan_init.c"><code>src/ap/vlan_init.c</code></a></strong></td><td align="left">Dynamic VLAN Subsystem</td><td align="left">802.1Q tagging, bridge interfaces, per-user dynamic VLAN assignment.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/drv_callbacks.c"><code>src/ap/drv_callbacks.c</code></a></strong></td><td align="left">Kernel Event Dispatcher</td><td align="left"><code>wpa_supplicant_event()</code> event router from driver to hostapd core.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/ap/ap_drv_ops.c"><code>src/ap/ap_drv_ops.c</code></a></strong></td><td align="left">AP Driver Operation Wrappers</td><td align="left">Common wrapper routing high-level AP requests to driver function pointers.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/drivers/driver_nl80211.c"><code>src/drivers/driver_nl80211.c</code></a></strong></td><td align="left">Linux nl80211 Driver Wrapper</td><td align="left">Generic Netlink (<code>nl80211</code>) communications, socket management, raw packet Tx/Rx.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/radius/"><code>src/radius/</code></a></strong></td><td align="left">RADIUS Client &#x26; Server</td><td align="left">RADIUS authentication, accounting, and Dynamic Authorization (DAS / CoA).</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/eapol_auth/"><code>src/eapol_auth/</code></a></strong></td><td align="left">802.1X Authenticator</td><td align="left">IEEE 802.1X Port Access Entity (PAE) state machine implementation.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/eap_server/"><code>src/eap_server/</code></a></strong></td><td align="left">Integrated EAP Server</td><td align="left">EAP-TLS, EAP-TTLS, EAP-PEAP, EAP-SIM, EAP-AKA, EAP-PWD, EAP-FAST.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/utils/eloop.c"><code>src/utils/eloop.c</code></a></strong></td><td align="left">Asynchronous Event Loop</td><td align="left">epoll/poll/select I/O multiplexing, timeouts, signal handling.</td></tr><tr><td align="left"><strong><a href="hostapd-2.12/src/utils/wpabuf.c"><code>src/utils/wpabuf.c</code></a></strong></td><td align="left">Resizable Buffer Library</td><td align="left">Safe dynamic byte buffer manipulation for frame creation and parsing.</td></tr></tbody></table>
+<hr>
+<h3 id="summary--architectural-strengths">Summary &#x26; Architectural Strengths</h3>
+<hr>
+<ol>
+<li><strong>Clean Separation of Concerns</strong>: High-frequency data plane encryption and transmission reside inside the kernel (<code>mac80211</code>/firmware), while complex management state machines and policy decisions reside in user space (<code>hostapd</code>).</li>
+<li><strong>Deterministic Concurrency</strong>: The asynchronous, single-threaded <code>eloop</code> design completely eliminates concurrency deadlocks and multi-threading race conditions while handling thousands of simultaneous stations.</li>
+<li><strong>Pluggable &#x26; Portable Architecture</strong>: Abstract driver interfaces (<code>wpa_driver_ops</code>) allow identical AP management logic to operate across Linux (<code>nl80211</code>), BSD, Windows, wired MACsec switches, or software simulation testbeds.</li>
+<li><strong>Comprehensive Standards Compliance</strong>: Implements the complete lifecycle of IEEE 802.11 standards from legacy 802.11a/b/g up to modern 802.11ax (Wi-Fi 6/6E) and 802.11be (Wi-Fi 7 Multi-Link Operation).</li>
+</ol>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2026 Chung Duc Nguyen Dang. All rights reserved.
+</footer>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const c=document.getElementById("toc"),r=Array.from(document.querySelectorAll(".prose h2, .prose h3"));if(!c||r.length===0)return;r.forEach(t=>{const e=t.textContent.trim(),o=e.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-");t.id=o;const n=document.createElement("a");n.href="#"+o,n.textContent=e,t.tagName==="H3"&&n.classList.add("h3"),c.appendChild(n)});const s=Array.from(document.querySelectorAll(".toc a"));s.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=document.querySelector(t.getAttribute("href"));if(!o)return;const d=o.getBoundingClientRect().top+window.scrollY+-80;window.scrollTo({top:d,behavior:"smooth"})})});let i=null;const l=t=>{i!==t&&(i=t,s.forEach(e=>{e.classList.toggle("active",e.getAttribute("href")==="#"+t)}))},a=new IntersectionObserver(t=>{const e=t.filter(o=>o.isIntersecting).sort((o,n)=>o.boundingClientRect.top-n.boundingClientRect.top);e.length>0&&l(e[0].target.id)},{rootMargin:"-30% 0px -60% 0px",threshold:[0,1]});r.forEach(t=>a.observe(t))});</script> </body> </html>

@@ -1,0 +1,124 @@
+<map id="son::Controller::handle_cmdu_1905_ap_capability_report" name="son::Controller::handle_cmdu_1905_ap_capability_report">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,418,184,473"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessage.html#a358caf51a92d3596ae4377707b1f871d" title=" " alt="" coords="232,92,416,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,416,299,142,304,145,117,419"/>
+<area shape="rect" id="Node000008" href="$classson_1_1Controller.html#a1c3f28c28843aa013194eb39d6f42af4" title=" " alt="" coords="247,731,401,771"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="119,471,302,718,297,721,114,475"/>
+<area shape="rect" id="Node000003" href="$classieee1905__1_1_1CmduMessage.html#adc10ea7cfba25c0f58359cb954a5d69c" title=" " alt="" coords="469,120,653,160"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="416,120,456,125,455,130,416,125"/>
+<area shape="rect" id="Node000005" href="$classieee1905__1_1_1CmduMessage.html#af54c8bd541643a03b9567fc61eef25f9" title=" " alt="" coords="469,5,653,45"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="374,89,463,55,484,47,486,52,465,60,375,94"/>
+<area shape="rect" id="Node000007" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="524,70,599,95"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="416,98,510,86,511,92,416,103"/>
+<area shape="rect" id="Node000004" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="971,289,1109,314"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="654,127,713,125,778,129,845,141,909,163,947,187,980,217,1026,276,1022,279,976,220,944,191,907,168,844,146,778,134,713,131,654,132"/>
+<area shape="rect" id="Node000006" href="$classClassList.html#aea43ae47ce1af363533f665105410639" title=" " alt="" coords="730,13,885,38"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="654,23,716,23,716,28,654,28"/>
+<area shape="rect" id="Node000009" href="$classson_1_1db.html#a15c051a43484a6f7f5cfb3669be90800" title=" " alt="" coords="497,185,626,210"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="325,730,341,624,370,471,389,392,410,320,435,261,462,221,482,207,485,211,466,225,440,264,415,322,394,394,375,472,346,625,331,731"/>
+<area shape="rect" id="Node000011" href="$classson_1_1Controller.html#a96c312a46eb0f6d28c9ea32cbe222a54" title="Parse the radio basic capabilities TLV and store the operating class in the database as supported cha..." alt="" coords="474,859,649,899"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="352,769,403,807,465,844,481,851,478,856,463,849,400,811,348,773"/>
+<area shape="rect" id="Node000029" href="$classson_1_1db.html#aa9728ad0b9cb34465fdfb47ae4fa2698" title="Removes optional subobjects: HTCapabilities, VHTCapabilities,WiFi6Capabilities in Radio DM." alt="" coords="464,1358,659,1383"/>
+<area shape="poly" id="edge18_Node000008_Node000029" title=" " alt="" coords="332,770,378,953,417,1081,466,1208,507,1284,545,1345,541,1348,502,1287,462,1210,412,1082,373,954,327,772"/>
+<area shape="rect" id="Node000030" href="$classson_1_1db.html#a1f8ab3c95a451263debcf2568374d70e" title="Remove Radio data model object." alt="" coords="491,923,632,963"/>
+<area shape="poly" id="edge20_Node000008_Node000030" title=" " alt="" coords="340,769,390,837,425,876,466,908,479,916,477,921,462,913,421,879,385,841,336,773"/>
+<area shape="rect" id="Node000032" href="$classieee1905__1_1_1CmduMessageRx.html#a9e40a53f37d6f1b7f2e2a064fff8f58c" title=" " alt="" coords="707,1645,908,1685"/>
+<area shape="poly" id="edge22_Node000008_Node000032" title=" " alt="" coords="328,771,331,939,338,1064,348,1201,365,1338,390,1463,405,1518,423,1565,443,1603,466,1631,481,1641,502,1649,558,1660,625,1665,693,1667,693,1672,625,1671,558,1665,500,1654,478,1646,462,1635,439,1606,418,1567,400,1519,385,1464,360,1339,343,1201,332,1064,326,939,323,771"/>
+<area shape="rect" id="Node000034" href="$classson_1_1son__actions.html#ad038a8593cc94d09b6b541c540fdb01d" title=" " alt="" coords="478,1157,645,1197"/>
+<area shape="poly" id="edge24_Node000008_Node000034" title=" " alt="" coords="339,769,545,1144,540,1146,334,772"/>
+<area shape="rect" id="Node000045" href="$classson_1_1Controller.html#ad333c0fbb24d29205b0a16539f736603" title="Get info from &#39;AP HT Capabilities&#39; TLV, set data to AP HTCapabilities data element from Controller Da..." alt="" coords="484,1517,639,1557"/>
+<area shape="poly" id="edge38_Node000008_Node000045" title=" " alt="" coords="330,771,340,870,363,1027,381,1117,404,1211,432,1305,466,1395,500,1455,536,1505,532,1508,495,1458,462,1397,427,1307,399,1213,376,1118,358,1028,334,871,324,771"/>
+<area shape="rect" id="Node000047" href="$classson_1_1Controller.html#a29020ceeeb034041f9a41047f684d559" title="Get info from &#39;AP VHT Capabilities&#39; TLV, set data to AP VHTCapabilities data element." alt="" coords="481,1581,642,1621"/>
+<area shape="poly" id="edge42_Node000008_Node000047" title=" " alt="" coords="329,771,337,926,359,1165,377,1291,400,1407,430,1503,447,1540,466,1568,472,1573,468,1577,462,1571,442,1542,425,1505,395,1408,371,1292,354,1166,332,926,323,771"/>
+<area shape="rect" id="Node000054" href="$classson_1_1Controller.html#a0f2e34ba79e3e12b1d9f4fa823e0fe32" title="Get info from &#39;AP WIFI6 Capabilities&#39; TLV, set data to AP WiFi6Capabilities data element." alt="" coords="476,1696,647,1736"/>
+<area shape="poly" id="edge46_Node000008_Node000054" title=" " alt="" coords="328,771,335,943,343,1072,355,1214,372,1357,396,1490,427,1600,446,1643,466,1676,477,1686,473,1690,462,1679,441,1645,422,1602,391,1491,367,1358,349,1215,337,1072,329,943,323,771"/>
+<area shape="rect" id="Node000059" href="$classson_1_1Controller.html#a11b977ffbe5ba8de240e809406829588" title="Get info from &#39;AP HE Capabilities&#39; TLV, set data to AP WiFi6Capabilities data element." alt="" coords="485,731,638,771"/>
+<area shape="poly" id="edge50_Node000008_Node000059" title=" " alt="" coords="401,748,471,748,471,753,401,753"/>
+<area shape="rect" id="Node000062" href="$classson_1_1Controller.html#abe0234d9413f3b819716dbba6e226f03" title="Handles TLV of Device Inventory (tlvDeviceInventory)." alt="" coords="485,795,638,835"/>
+<area shape="poly" id="edge54_Node000008_Node000062" title=" " alt="" coords="400,768,474,789,473,794,398,773"/>
+<area shape="rect" id="Node000064" href="$classson_1_1Controller.html#afdef9cd7860485ef4da5fe034fdc4089" title="Get info from &#39;EHT Operations&#39; TLV, set data to EHT Operatons data element." alt="" coords="485,235,638,275"/>
+<area shape="poly" id="edge57_Node000008_Node000064" title=" " alt="" coords="323,730,327,649,333,593,345,530,362,465,387,400,419,339,462,285,471,277,475,281,466,289,424,342,391,402,367,466,350,531,339,593,332,649,328,730"/>
+<area shape="rect" id="Node000077" href="$classson_1_1Controller.html#a35b772d11d01bf46cd9bc2c6783e2b75" title="Handles Tlv of Profile&#45;2 AP Capability (tlvProfile2ApCapability)." alt="" coords="474,299,649,339"/>
+<area shape="poly" id="edge60_Node000008_Node000077" title=" " alt="" coords="324,730,331,659,352,557,370,501,394,446,424,394,462,349,467,345,470,349,466,353,428,398,398,449,375,503,357,558,337,660,329,731"/>
+<area shape="rect" id="Node000081" href="$classson_1_1Controller.html#a40aea16acfa24f6eb69c34f2fb9921de" title="Extracts ESP value from est_service_info_field and set it to specified with @param_name NBAPI EstServ..." alt="" coords="483,507,640,562"/>
+<area shape="poly" id="edge63_Node000008_Node000081" title=" " alt="" coords="334,729,384,654,420,611,462,573,470,567,473,571,466,577,424,615,388,657,339,732"/>
+<area shape="rect" id="Node000084" href="$classson_1_1Controller.html#ae3cc1a2d21dfa8a4aef5d277a45c7a29" title="Handles TLV of CAC Capabilities (tlvProfile2CacCapabilities)." alt="" coords="465,587,657,627"/>
+<area shape="poly" id="edge65_Node000008_Node000084" title=" " alt="" coords="344,729,396,684,463,638,479,630,481,634,465,642,399,688,348,733"/>
+<area shape="rect" id="Node000087" href="$classson_1_1Controller.html#acc342891fad0d22309b0541e2336cd47" title="Handles TLV of Channel Scan Capabilities (tlvChannelScanCapabilities)." alt="" coords="485,651,638,706"/>
+<area shape="poly" id="edge67_Node000008_Node000087" title=" " alt="" coords="390,728,471,703,472,708,391,733"/>
+<area shape="rect" id="Node000095" href="$classson_1_1Controller.html#a9bbadd0a0787724f12ef82ff5459e3f5" title="Handles TLV of 1905 Layer Security (tlv1905LayerSecurityCapability)." alt="" coords="480,363,643,418"/>
+<area shape="poly" id="edge69_Node000008_Node000095" title=" " alt="" coords="326,730,339,672,364,592,382,549,404,506,431,465,462,429,467,424,471,428,466,433,435,468,409,508,387,551,369,594,344,673,331,731"/>
+<area shape="rect" id="Node000097" href="$classson_1_1Controller.html#a898e9f84707dc796d2ea03fb6b8226f3" title="Get info from &#39;WIFI7 Agent Capabilities&#39; TLV, set data to WiFi7 Agent Capabilities data element." alt="" coords="467,443,655,483"/>
+<area shape="poly" id="edge71_Node000008_Node000097" title=" " alt="" coords="328,730,344,682,371,619,410,552,435,521,462,494,471,488,474,492,466,498,439,525,415,555,376,621,349,684,333,731"/>
+<area shape="rect" id="Node000010" href="$classson_1_1db.html#afc24441eee5ec6024eabac3ed6e33867" title="add instance of data element &#39;radio&#39;" alt="" coords="730,177,885,217"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="627,195,716,195,716,200,627,200"/>
+<area shape="rect" id="Node000012" href="$classson_1_1db.html#a44a764e2c6ef137ce8431804055426f7" title="Add supported operating class to the database. Currently this function is a wrapper which converts th..." alt="" coords="715,685,899,725"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="640,856,657,845,668,832,675,819,680,792,686,765,693,751,705,737,712,731,716,735,709,741,697,753,691,766,685,793,680,821,673,835,660,849,643,861"/>
+<area shape="rect" id="Node000022" href="$classson_1_1wireless__utils.html#a8d99a3fb7cc8f914325695a89005bddf" title="convert operating class to channel set based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="971,650,1109,705"/>
+<area shape="poly" id="edge15_Node000011_Node000022" title=" " alt="" coords="642,856,657,845,672,823,678,802,677,757,675,734,677,712,686,691,705,671,734,654,765,642,797,635,831,632,897,636,957,648,956,653,896,641,831,637,798,640,766,647,736,659,708,675,691,694,683,713,681,734,682,756,683,802,676,826,661,848,646,861"/>
+<area shape="rect" id="Node000026" href="$classson_1_1db.html#a43a15076d611a579d55a61d768805e80" title=" " alt="" coords="735,750,880,805"/>
+<area shape="poly" id="edge14_Node000011_Node000026" title=" " alt="" coords="629,856,657,844,681,830,705,815,721,808,723,812,708,820,684,835,660,849,631,861"/>
+<area shape="rect" id="Node000028" href="$classson_1_1db.html#af09cf9220cc3b98f4532c2ebd59a8450" title="Removes all instances of hostap supported operating classes from the Data Model and database...." alt="" coords="708,1008,907,1048"/>
+<area shape="poly" id="edge16_Node000011_Node000028" title=" " alt="" coords="642,897,660,909,678,931,685,953,692,974,709,994,715,999,712,1003,705,998,687,976,680,954,673,933,657,913,639,901"/>
+<area shape="rect" id="Node000019" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="975,951,1105,977"/>
+<area shape="poly" id="edge12_Node000012_Node000019" title=" " alt="" coords="894,724,910,737,927,762,935,788,937,813,935,838,933,862,934,886,941,910,958,934,967,942,964,946,954,938,937,912,929,887,927,862,929,837,931,813,930,789,923,765,906,740,890,728"/>
+<area shape="poly" id="edge13_Node000012_Node000022" title=" " alt="" coords="899,692,957,685,957,690,900,697"/>
+<area shape="rect" id="Node000015" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="977,1460,1103,1500"/>
+<area shape="poly" id="edge17_Node000028_Node000015" title=" " alt="" coords="894,1046,910,1058,963,1218,1031,1446,1026,1447,957,1220,906,1062,891,1050"/>
+<area shape="poly" id="edge19_Node000029_Node000015" title=" " alt="" coords="582,1381,637,1415,671,1432,707,1445,773,1461,841,1471,963,1478,962,1484,841,1477,772,1467,706,1451,669,1437,634,1419,579,1386"/>
+<area shape="rect" id="Node000031" href="$classson_1_1db.html#a6db1e54425fbb798118e69c6de5b04b1" title="Get index and instance path from full data model path. Simplifies ambiorix/nbapi calls." alt="" coords="730,829,885,869"/>
+<area shape="poly" id="edge21_Node000030_Node000031" title=" " alt="" coords="626,920,658,908,706,886,738,872,740,877,708,890,660,913,627,925"/>
+<area shape="rect" id="Node000033" href="$classClassList.html#a8ae86a33e961882f333a6d6c4168d558" title="Get the list of classes of type T." alt="" coords="961,1653,1119,1678"/>
+<area shape="poly" id="edge23_Node000032_Node000033" title=" " alt="" coords="908,1663,947,1663,947,1668,908,1668"/>
+<area shape="poly" id="edge30_Node000034_Node000019" title=" " alt="" coords="645,1169,793,1152,860,1138,907,1122,946,1092,979,1056,1005,1019,1024,988,1028,990,1009,1022,983,1060,949,1096,909,1126,862,1143,793,1157,645,1174"/>
+<area shape="poly" id="edge27_Node000034_Node000015" title=" " alt="" coords="577,1196,647,1314,684,1372,708,1402,734,1418,758,1428,802,1435,850,1437,908,1445,963,1458,962,1464,908,1451,849,1442,802,1441,757,1433,732,1422,705,1406,680,1375,642,1317,572,1199"/>
+<area shape="rect" id="Node000035" href="$classson_1_1db.html#ae6ed3da5432f675e9049e63be86505c1" title=" " alt="" coords="738,1072,877,1112"/>
+<area shape="poly" id="edge25_Node000034_Node000035" title=" " alt="" coords="619,1155,735,1114,737,1119,621,1160"/>
+<area shape="rect" id="Node000036" href="$classson_1_1db.html#ad5cce2e7b28755f1d5f6b6df44a45818" title=" " alt="" coords="956,898,1124,923"/>
+<area shape="poly" id="edge26_Node000034_Node000036" title=" " alt="" coords="569,1156,629,1033,668,969,687,945,705,930,736,914,768,903,835,890,902,889,961,894,960,899,901,894,836,896,769,908,738,919,708,934,691,949,673,972,634,1036,574,1158"/>
+<area shape="rect" id="Node000037" href="$classson_1_1task__pool.html#a7043f48b413457c5345519150a57f889" title=" " alt="" coords="745,1187,870,1227"/>
+<area shape="poly" id="edge28_Node000034_Node000037" title=" " alt="" coords="645,1185,731,1195,731,1200,644,1190"/>
+<area shape="rect" id="Node000038" href="$classson_1_1task__pool.html#aec2e8de3733006e59c60eaa000818377" title=" " alt="" coords="726,1251,889,1277"/>
+<area shape="poly" id="edge29_Node000034_Node000038" title=" " alt="" coords="606,1195,708,1236,737,1245,736,1250,706,1241,604,1200"/>
+<area shape="rect" id="Node000039" href="$classson_1_1task__pool.html#a2ed2c02ac7513e109abdbf5e178bdc5e" title=" " alt="" coords="969,1148,1111,1188"/>
+<area shape="poly" id="edge31_Node000034_Node000039" title=" " alt="" coords="582,1196,635,1245,669,1269,708,1287,763,1304,808,1310,853,1305,907,1287,940,1270,969,1247,1015,1197,1019,1201,973,1250,943,1274,909,1292,854,1310,808,1315,762,1309,706,1292,667,1273,631,1249,578,1199"/>
+<area shape="rect" id="Node000040" href="$classson_1_1son__actions.html#a7ab83c1454e3141106704e7280d0ebcc" title=" " alt="" coords="734,944,881,984"/>
+<area shape="poly" id="edge32_Node000034_Node000040" title=" " alt="" coords="571,1156,592,1121,622,1077,660,1033,705,994,720,985,723,990,708,998,664,1036,626,1081,596,1124,576,1159"/>
+<area shape="rect" id="Node000044" href="$classson_1_1db.html#a3242e9907c3cce0806d37829aaeea97d" title=" " alt="" coords="744,1352,871,1392"/>
+<area shape="poly" id="edge36_Node000034_Node000044" title=" " alt="" coords="579,1196,631,1262,668,1299,708,1331,733,1345,730,1350,705,1336,664,1303,627,1265,575,1199"/>
+<area shape="poly" id="edge34_Node000040_Node000019" title=" " alt="" coords="881,961,961,961,961,967,881,967"/>
+<area shape="poly" id="edge33_Node000040_Node000036" title=" " alt="" coords="880,945,970,924,971,929,881,950"/>
+<area shape="poly" id="edge35_Node000040_Node000039" title=" " alt="" coords="882,979,910,994,947,1026,979,1064,1024,1134,1020,1137,975,1067,943,1030,906,998,880,984"/>
+<area shape="poly" id="edge37_Node000044_Node000015" title=" " alt="" coords="865,1390,909,1408,993,1451,990,1456,907,1413,863,1395"/>
+<area shape="poly" id="edge39_Node000045_Node000032" title=" " alt="" coords="640,1555,660,1567,676,1584,685,1600,693,1616,708,1631,717,1637,714,1641,705,1635,689,1619,680,1603,672,1587,657,1571,637,1560"/>
+<area shape="rect" id="Node000046" href="$classson_1_1db.html#a3cecebbe70eaaecbd0e8bcde37ae8ca9" title="add &#39;HTCapabilities&#39; data element, set values to its parameters. Example of full path to object: &quot;Dev..." alt="" coords="742,1517,873,1557"/>
+<area shape="poly" id="edge40_Node000045_Node000046" title=" " alt="" coords="639,1535,728,1535,728,1540,639,1540"/>
+<area shape="poly" id="edge41_Node000046_Node000015" title=" " alt="" coords="872,1519,963,1496,964,1501,873,1524"/>
+<area shape="poly" id="edge43_Node000047_Node000032" title=" " alt="" coords="640,1619,717,1639,716,1644,638,1624"/>
+<area shape="rect" id="Node000048" href="$classson_1_1db.html#a6c944062c32ebe16424575a26a716f50" title="Add &#39;VHTCapabilities&#39; data element, set values to its parameters. Example of full path to object: &quot;De..." alt="" coords="739,1581,876,1621"/>
+<area shape="poly" id="edge44_Node000047_Node000048" title=" " alt="" coords="642,1599,725,1599,725,1604,642,1604"/>
+<area shape="poly" id="edge45_Node000048_Node000015" title=" " alt="" coords="875,1580,907,1567,957,1538,1002,1506,1005,1511,960,1542,909,1572,878,1585"/>
+<area shape="poly" id="edge47_Node000054_Node000032" title=" " alt="" coords="646,1696,696,1686,697,1691,647,1701"/>
+<area shape="rect" id="Node000055" href="$classson_1_1db.html#a522c85f809dd878e67b794b0f62f8a7a" title="Add optional sub&#45;object of AP WIFI6 Capabilities data element, set values for its parameters." alt="" coords="734,1709,881,1749"/>
+<area shape="poly" id="edge48_Node000054_Node000055" title=" " alt="" coords="647,1718,720,1722,720,1727,647,1723"/>
+<area shape="poly" id="edge49_Node000055_Node000015" title=" " alt="" coords="879,1711,906,1695,934,1664,965,1614,1020,1511,1025,1514,970,1617,938,1667,910,1699,882,1715"/>
+<area shape="rect" id="Node000060" href="$classieee1905__1_1_1CmduMessageRx.html#ad1db8fee42b3e3a1aaf8312a139b72f3" title=" " alt="" coords="707,443,908,483"/>
+<area shape="poly" id="edge51_Node000059_Node000060" title=" " alt="" coords="637,732,657,717,675,689,683,662,683,634,680,607,677,579,677,550,685,522,705,493,708,490,712,493,709,496,690,524,683,551,682,579,685,606,688,634,688,663,680,691,661,720,640,736"/>
+<area shape="rect" id="Node000061" href="$classwfa__map_1_1tlvApCapability.html#a9aac102a27ab3a0e7e446b9eecd90760" title=" " alt="" coords="722,507,893,547"/>
+<area shape="poly" id="edge53_Node000059_Node000061" title=" " alt="" coords="637,731,657,717,671,697,678,678,680,638,682,598,689,577,705,557,709,553,712,557,709,560,694,580,687,599,685,639,683,679,676,700,661,721,640,736"/>
+<area shape="poly" id="edge52_Node000060_Node000004" title=" " alt="" coords="836,440,1007,320,1010,324,839,445"/>
+<area shape="poly" id="edge56_Node000062_Node000060" title=" " alt="" coords="636,797,657,781,679,745,687,710,686,674,680,639,674,603,673,567,681,530,705,493,708,490,712,493,709,496,686,532,678,567,679,603,685,638,691,674,692,710,684,747,661,784,640,801"/>
+<area shape="rect" id="Node000063" href="$classson_1_1db.html#a35f298a6d6f1b49d3fd8e4324f40aa1d" title="Sets Device datamodel info parameters." alt="" coords="725,571,890,611"/>
+<area shape="poly" id="edge55_Node000062_Node000063" title=" " alt="" coords="637,795,657,781,671,762,678,744,680,706,683,668,690,648,705,628,718,616,722,620,709,631,695,650,688,669,686,707,683,745,675,765,661,785,640,800"/>
+<area shape="poly" id="edge58_Node000064_Node000060" title=" " alt="" coords="640,273,660,285,677,300,687,315,709,349,780,431,776,434,705,352,683,318,673,303,657,289,637,277"/>
+<area shape="rect" id="Node000065" href="$classson_1_1db.html#a676e2e73d1cc718510e0c464e6c5c20f" title="Add optional sub&#45;object of EHT Operations data element, set values for its parameters." alt="" coords="716,242,899,267"/>
+<area shape="poly" id="edge59_Node000064_Node000065" title=" " alt="" coords="638,252,702,252,702,257,638,257"/>
+<area shape="poly" id="edge62_Node000077_Node000060" title=" " alt="" coords="633,336,660,348,723,389,776,431,772,435,720,393,657,353,631,341"/>
+<area shape="rect" id="Node000078" href="$classson_1_1db.html#a3e1f0caebf5d66bb250819cc195064a2" title="Sets AP capability parameters for corresponding device." alt="" coords="727,299,888,339"/>
+<area shape="poly" id="edge61_Node000077_Node000078" title=" " alt="" coords="649,316,713,316,713,321,649,321"/>
+<area shape="poly" id="edge64_Node000081_Node000060" title=" " alt="" coords="640,509,724,484,726,489,641,514"/>
+<area shape="poly" id="edge66_Node000084_Node000060" title=" " alt="" coords="638,584,657,573,673,554,680,534,688,513,705,493,713,487,716,492,708,497,692,516,685,536,678,556,660,577,641,589"/>
+<area shape="poly" id="edge68_Node000087_Node000060" title=" " alt="" coords="636,653,657,637,670,619,676,601,679,566,683,530,690,511,705,493,709,489,713,493,709,496,695,514,688,531,685,566,681,603,674,621,661,641,640,657"/>
+<area shape="poly" id="edge70_Node000095_Node000060" title=" " alt="" coords="643,412,726,436,725,441,642,417"/>
+<area shape="poly" id="edge72_Node000097_Node000060" title=" " alt="" coords="655,460,693,460,693,465,655,465"/>
+</map>

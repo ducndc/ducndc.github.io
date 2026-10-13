@@ -1,0 +1,45 @@
+<map id="beerocks::ChannelSelectionTask::zwdfs_fsm" name="beerocks::ChannelSelectionTask::zwdfs_fsm">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,405,191,445"/>
+<area shape="rect" id="Node000002" href="$classson_1_1wireless__utils.html#ae3508c67d6e27af6dab9dc810c6f1f75" title="Translate a channel number to its frequency value." alt="" coords="271,5,401,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,405,108,338,131,245,149,194,172,144,201,97,237,55,257,41,260,46,240,59,205,100,176,146,153,196,136,246,113,339,104,405"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1utils.html#aca8cc992ef86e1899a1fd5ae1f7e75a9" title="Returns the value for a given enum in the flag." alt="" coords="253,69,419,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,404,113,348,139,272,157,231,179,190,206,153,237,119,242,115,246,119,240,123,210,156,183,193,162,233,144,274,118,350,105,406"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1utils.html#a444f7dfcd73d9155f17df02aa712c2cd" title=" " alt="" coords="728,399,887,439"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="105,445,117,499,141,570,159,607,181,642,208,673,240,698,289,720,311,724,333,725,378,715,432,697,488,675,542,646,593,613,640,577,721,505,777,447,781,451,724,509,643,581,596,617,544,650,490,680,434,703,379,721,333,730,311,730,288,726,237,702,204,677,177,645,154,609,136,572,112,500,100,446"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="249,197,423,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="108,404,157,328,194,285,237,247,246,241,249,246,240,251,198,289,161,331,112,407"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1message__com.html#aca33ce73fa0075ee0b7f0c78984aa519" title=" " alt="" coords="252,133,420,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="103,404,120,359,147,300,186,238,210,209,237,183,244,178,247,183,240,187,214,212,190,241,152,302,125,361,108,406"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="499,470,662,495"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="178,443,239,455,368,469,486,477,486,482,367,475,238,460,177,448"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1BackhaulManager.html#a634f4550764f8a170612cce73ebd3861" title=" " alt="" coords="243,405,429,445"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="191,423,229,423,229,428,191,428"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1message__com.html#a028861029a2c3f999d81c46c1792eebe" title=" " alt="" coords="252,261,420,301"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="118,403,170,358,237,312,254,304,256,309,240,317,173,363,122,407"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1WifiChannel.html#ac35559bb3c4aaa27a28278469e1aefcb" title="Get the freq type object." alt="" coords="259,520,413,560"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="135,443,240,499,270,512,268,517,238,504,132,448"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1AgentDB.html#a22d57de5da0d73ec8d1a5f51c8959277" title="Get pointer to the radio data struct of a specific interface. The function can accepts either front o..." alt="" coords="264,584,408,624"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="115,444,166,506,201,540,240,570,252,577,250,581,237,574,198,544,162,509,111,447"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1ChannelSelectionTask.html#addb335343d67acbef0dd0eb503eb9fa1" title="Check if a Radio on a given band, or all band is doing background scan." alt="" coords="239,648,433,688"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="110,444,128,484,156,535,194,588,240,634,248,639,245,643,237,638,190,592,151,538,123,487,105,446"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1ChannelSelectionTask.html#a638510b9451f8e181d1dd77829be7afc" title=" " alt="" coords="243,326,429,381"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="164,403,231,382,233,387,166,408"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1BackhaulManager.html#a1429298b96ad16663983ba4b95111705" title="Sends given CMDU message through the specified socket connection." alt="" coords="243,763,429,803"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="105,445,118,502,143,582,161,625,183,667,209,707,240,742,256,754,252,758,237,746,205,710,179,670,156,627,138,584,113,504,100,446"/>
+<area shape="rect" id="Node000007" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="481,133,680,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="420,151,468,151,468,156,420,156"/>
+<area shape="rect" id="Node000008" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="750,141,865,166"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="680,151,736,151,736,156,680,156"/>
+<area shape="rect" id="Node000012" href="$classieee1905__1_1_1CmduMessage.html#a05ca2e3fc9b6628dd7eca553a8d68aad" title=" " alt="" coords="489,197,673,237"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="413,259,490,238,491,243,414,264"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1message__com.html#a2ac9090c0d8d3b371a7518031d80ad16" title=" " alt="" coords="497,261,665,301"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="420,279,483,279,483,284,420,284"/>
+<area shape="rect" id="Node000013" href="$classClassList.html#a76ee8302d92ab6038a1e9c536d4a93fd" title="Get the (first) Class object." alt="" coords="739,205,876,230"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="673,215,725,215,725,220,673,220"/>
+<area shape="poly" id="edge17_Node000017_Node000009" title=" " alt="" coords="409,646,432,634,472,604,508,569,561,505,565,508,512,572,475,608,435,638,412,650"/>
+<area shape="poly" id="edge19_Node000018_Node000004" title=" " alt="" coords="426,378,482,391,602,406,714,414,714,419,602,411,481,396,425,383"/>
+<area shape="poly" id="edge20_Node000018_Node000009" title=" " alt="" coords="412,379,435,391,459,413,483,435,534,462,532,467,480,440,456,417,432,396,410,383"/>
+<area shape="rect" id="Node000019" href="$classson_1_1wireless__utils.html#a4b5caa54f1fee15b2988835cb7b9c7f9" title="Get a list of overlapping 5GHz beacon channel for a given channel and bandwidth." alt="" coords="509,326,652,381"/>
+<area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="429,351,495,351,495,356,429,356"/>
+<area shape="poly" id="edge22_Node000019_Node000004" title=" " alt="" coords="653,371,725,392,724,397,652,376"/>
+</map>

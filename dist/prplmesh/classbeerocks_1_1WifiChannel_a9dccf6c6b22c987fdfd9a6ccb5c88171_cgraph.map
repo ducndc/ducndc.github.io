@@ -1,0 +1,32 @@
+<map id="beerocks::WifiChannel::WifiChannel" name="beerocks::WifiChannel::WifiChannel">
+<area shape="rect" id="Node000001" title="Construct a new Wifi Channel object." alt="" coords="5,224,160,264"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1WifiChannel.html#a3423ae7202f46fd5d07e17eb74097877" title=" " alt="" coords="209,71,363,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,222,148,178,206,130,229,115,232,120,210,134,151,182,105,226"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1WifiChannel.html#a1baaac0653b017dc0bd42c6336da667b" title=" " alt="" coords="422,133,577,173"/>
+<area shape="poly" id="edge14_Node000001_Node000005" title=" " alt="" coords="111,221,155,195,207,173,258,161,310,154,408,148,408,153,311,159,259,167,209,179,157,200,114,226"/>
+<area shape="rect" id="Node000010" href="$classson_1_1wireless__utils.html#ae3508c67d6e27af6dab9dc810c6f1f75" title="Translate a channel number to its frequency value." alt="" coords="221,188,351,228"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="160,228,207,219,207,225,161,233"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1WifiChannel.html#a735a7b7087b86db9f58d7b0c40b19609" title=" " alt="" coords="209,253,363,307"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="161,255,195,261,195,267,160,260"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1WifiChannel.html#ac8d3753ad87119b72c9117f8b9516434" title=" " alt="" coords="208,331,364,386"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="117,262,209,318,218,323,216,327,207,322,114,266"/>
+<area shape="rect" id="Node000015" href="$classson_1_1wireless__utils.html#a4a9475de64b16eec74c471a08b4db153" title="Get a frequency type based on a frequency." alt="" coords="221,411,351,451"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="98,263,142,328,174,364,210,397,217,402,214,406,206,401,170,368,138,331,93,266"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1utils.html#a444f7dfcd73d9155f17df02aa712c2cd" title=" " alt="" coords="420,5,579,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="351,68,420,47,421,52,353,73"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1utils.html#a339b7684465701120e15fe9975d5b6eb" title=" " alt="" coords="412,69,587,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="363,88,398,87,398,93,363,93"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="355,108,419,127,417,132,354,113"/>
+<area shape="rect" id="Node000006" href="$classson_1_1wireless__utils.html#acd4d60cd5293560522816065c4acd8de" title="Check if bandwidth is 320&#45;1 or 320&#45;2." alt="" coords="635,97,821,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="577,139,621,132,621,137,578,144"/>
+<area shape="rect" id="Node000009" href="$classson_1_1wireless__utils.html#ac7d7bb75d799bf38c516cbdd1300d243" title=" " alt="" coords="649,162,807,217"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="578,163,635,172,634,177,577,168"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1WifiChannel.html#a7639a0183d51e7d83bf66f4743002592" title="Get the bandwidth object." alt="" coords="869,65,1024,105"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="821,101,855,96,856,101,822,106"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1WifiChannel.html#ac35559bb3c4aaa27a28278469e1aefcb" title="Get the freq type object." alt="" coords="869,129,1024,169"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="822,128,856,133,855,139,821,134"/>
+<area shape="rect" id="Node000013" href="$classson_1_1wireless__utils.html#af75e9107c6fe9dc4365e99c69d5f4184" title="Obtains the channel number that corresponds to given frequency value." alt="" coords="434,307,565,347"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="364,344,420,336,421,341,365,350"/>
+<area shape="rect" id="Node000014" href="$classson_1_1wireless__utils.html#aa54d97d210e1f56b022e58e3947e91c1" title=" " alt="" coords="434,371,565,411"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="365,368,421,376,420,381,364,373"/>
+</map>

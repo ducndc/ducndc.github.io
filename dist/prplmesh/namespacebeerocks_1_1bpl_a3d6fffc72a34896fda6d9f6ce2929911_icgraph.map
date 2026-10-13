@@ -1,0 +1,14 @@
+<map id="beerocks::bpl::db_get_entries_by_type" name="beerocks::bpl::db_get_entries_by_type">
+<area shape="rect" id="Node000001" title="Get all entries by type as a nested map &lt;Entry&#45;name, &lt;Attrebute&#45;name, value&gt;&gt;." alt="" coords="609,37,756,77"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a15f73a2dfe0cdd36643f9cb92357ff6f" title="Load all clients from persistent db. Creates nodes for the clients in runtime&#45;db and set persistent p..." alt="" coords="400,5,561,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="595,46,561,41,562,35,596,41"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#ac15d4debe9369bb69092b5c1845bfa52" title="Get from persistent db all steer history event and register them on a system bus." alt="" coords="406,69,555,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="596,74,556,80,555,75,595,68"/>
+<area shape="rect" id="Node000003" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,45,352,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,43,353,49,352,43,386,38"/>
+<area shape="rect" id="Node000004" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,19,109,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="197,49,109,38,110,33,197,44"/>
+<area shape="rect" id="Node000005" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,69,163,94"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="197,70,163,74,163,69,196,65"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="392,78,352,71,353,66,393,73"/>
+</map>

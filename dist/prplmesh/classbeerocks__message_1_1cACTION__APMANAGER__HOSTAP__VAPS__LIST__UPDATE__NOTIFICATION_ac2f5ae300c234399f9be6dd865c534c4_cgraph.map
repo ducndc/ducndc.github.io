@@ -1,0 +1,34 @@
+<map id="beerocks_message::cACTION_APMANAGER_HOSTAP_VAPS_LIST_UPDATE_NOTIFICATION::init" name="beerocks_message::cACTION_APMANAGER_HOSTAP_VAPS_LIST_UPDATE_NOTIFICATION::init">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,167,249,222"/>
+<area shape="rect" id="Node000002" href="$classBaseClass.html#a5c1871e2ca2e1915af1153a41225dc5c" title="Increments m_buff_ptr__ pointer while avoiding out&#45;of&#45;bounds accesses." alt="" coords="297,13,516,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,165,216,110,255,80,296,55,333,40,335,45,299,60,258,85,219,114,157,169"/>
+<area shape="rect" id="Node000003" href="$classBaseClass.html#a37dde0700f9595f82dd24aaee7218b41" title=" " alt="" coords="568,5,767,45"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="169,165,228,130,296,99,409,70,554,42,555,47,410,75,298,104,230,135,171,169"/>
+<area shape="rect" id="Node000004" href="$classbeerocks__message_1_1cACTION__APMANAGER__HOSTAP__VAPS__LIST__UPDATE__NOTIFICATION.html#a19bb99b0926f8919c6940aa6dcaf8154" title=" " alt="" coords="297,113,516,183"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="249,172,284,166,284,171,250,177"/>
+<area shape="rect" id="Node000012" href="$classbeerocks__message_1_1cACTION__APMANAGER__HOSTAP__VAPS__LIST__UPDATE__NOTIFICATION.html#a4b7b0ae06093feeb2d36d14a9ddf4029" title=" " alt="" coords="297,207,516,276"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="250,212,284,218,284,223,249,218"/>
+<area shape="rect" id="Node000013" href="$structbeerocks__message_1_1sVapsList.html#a935ea2a8be00b0c88f09c218e6eb4994" title=" " alt="" coords="307,324,507,364"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="179,220,299,286,355,315,352,320,296,290,176,225"/>
+<area shape="rect" id="Node000014" href="$structbeerocks__message_1_1sVapTypesList.html#a40b06ce79f1a737f3402f4707c0575b3" title=" " alt="" coords="303,412,510,452"/>
+<area shape="poly" id="edge17_Node000001_Node000014" title=" " alt="" coords="151,220,213,294,254,336,299,374,347,403,344,408,296,378,251,340,209,298,147,224"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="516,23,554,23,554,28,516,28"/>
+<area shape="rect" id="Node000005" href="$structbeerocks__message_1_1sVapsList.html#a6e5452c227a68d251d1abf3bfe372b22" title=" " alt="" coords="567,93,767,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="516,131,553,126,554,131,517,136"/>
+<area shape="rect" id="Node000006" href="$structbeerocks__message_1_1sVapTypesList.html#aec7e0247b3a3d16ef270b5b3626e2381" title=" " alt="" coords="564,181,771,221"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="517,168,556,176,555,181,516,173"/>
+<area shape="rect" id="Node000007" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#ad1b2d415442befaebf429eb28606b267" title=" " alt="" coords="628,246,707,271"/>
+<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="496,181,518,192,541,213,565,231,615,248,613,253,563,236,538,217,514,197,493,185"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="632,94,630,84,636,75,648,69,667,67,689,70,701,77,699,81,688,75,667,72,650,74,639,79,635,85,637,92"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="632,182,630,172,636,163,648,157,667,155,689,158,701,165,699,169,688,163,667,160,650,162,639,167,635,173,637,180"/>
+<area shape="rect" id="Node000008" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="819,197,893,222"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="706,247,770,231,805,221,806,226,771,236,708,252"/>
+<area shape="rect" id="Node000009" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a257b5dfca4a855c44bbe9a463fc83c5b" title=" " alt="" coords="819,246,893,271"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="707,256,805,256,805,261,707,261"/>
+<area shape="rect" id="Node000010" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a7efdf705e4169e195766ef00794d6839" title=" " alt="" coords="819,295,893,321"/>
+<area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="707,266,806,292,805,298,706,271"/>
+<area shape="rect" id="Node000011" href="$common_2beerocks_2bcl_2include_2bcl_2network_2swap_8h.html#a8441413dcd7cdc7a6696fd66d0fa2134" title=" " alt="" coords="941,295,995,321"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="894,305,928,305,928,311,894,311"/>
+<area shape="poly" id="edge16_Node000013_Node000013" title=" " alt="" coords="359,324,356,314,364,305,381,299,407,297,437,300,453,307,451,312,435,305,407,303,382,305,366,309,361,315,364,323"/>
+<area shape="poly" id="edge18_Node000014_Node000014" title=" " alt="" coords="359,412,356,402,364,393,381,387,407,385,437,388,453,395,451,400,435,393,407,391,382,393,366,397,361,403,364,411"/>
+</map>

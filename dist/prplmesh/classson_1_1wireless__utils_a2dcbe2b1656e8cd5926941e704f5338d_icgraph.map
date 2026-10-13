@@ -1,0 +1,41 @@
+<map id="son::wireless_utils::channel_to_vht_center_freq" name="son::wireless_utils::channel_to_vht_center_freq">
+<area shape="rect" id="Node000001" title="Get the center frequency of a channel." alt="" coords="917,285,1108,325"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1cli__socket.html#aaea0c7912d210f1af946f88f8aa5f918" title=" " alt="" coords="702,5,845,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="998,273,980,225,953,168,915,110,893,83,868,59,844,45,846,40,871,55,897,79,919,106,957,165,985,223,1003,271"/>
+<area shape="rect" id="Node000006" href="$classson_1_1channel__selection__task.html#a4cde0620d3728c1eb77560b6383d7451" title=" " alt="" coords="682,69,865,139"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="986,276,935,215,903,182,868,153,850,141,853,137,871,149,906,178,939,211,990,272"/>
+<area shape="rect" id="Node000008" href="$classbwl_1_1whm_1_1mon__wlan__hal__whm.html#a8c12a9f6d0faa6d876e9da13f702e734" title=" " alt="" coords="689,163,858,218"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="963,281,868,232,843,221,845,216,870,227,966,276"/>
+<area shape="rect" id="Node000010" href="$classbwl_1_1nl80211_1_1base__wlan__hal__nl80211.html#a27183b5f2ef1f24db10749ff033c2b59" title=" " alt="" coords="683,242,863,297"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="903,292,863,285,864,280,904,286"/>
+<area shape="rect" id="Node000014" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a33628252edfd718743147269a8f1794c" title=" " alt="" coords="677,321,869,361"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="904,324,870,330,869,324,903,319"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1WifiChannel.html#a7646ab5b30dccdabf047ce4079f203d4" title="Set the bandwidth of the object." alt="" coords="696,385,851,425"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="962,334,870,376,839,388,837,383,868,371,959,329"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1WifiChannel.html#a13262f61bba41c5ecfb339fecafec443" title="Set a new channel." alt="" coords="696,449,851,489"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="988,338,937,389,905,416,871,440,847,452,844,447,868,435,902,412,933,385,984,334"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1WifiChannel.html#a908f2b6028c94c9e1396e5ff6e0018dd" title="Construct a new Wifi Channel object." alt="" coords="696,513,851,553"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="998,339,977,377,949,421,913,465,871,503,851,515,848,511,868,499,909,462,944,418,973,374,993,337"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1cli__socket.html#ab6e98bf4a9ccd7af7db277da1c8367d4" title=" " alt="" coords="439,5,618,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="688,28,618,28,618,23,688,23"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1cli__socket.html#af0126a4f272db0548a18b2d496606fc3" title=" " alt="" coords="196,5,380,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="425,28,380,28,380,23,425,23"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1cli__socket.html#a395b40b84d2df7a9cb164869c984e39f" title=" " alt="" coords="5,5,148,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="182,28,149,28,149,23,182,23"/>
+<area shape="rect" id="Node000007" href="$classson_1_1channel__selection__task.html#a004a9de117743823863b1f8e7aea758b" title=" " alt="" coords="451,77,606,117"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="668,104,606,102,606,97,668,98"/>
+<area shape="rect" id="Node000009" href="$classbwl_1_1whm_1_1mon__wlan__hal__whm.html#a1bcf7266e6ee571ce56a5eeef058962d" title=" " alt="" coords="444,142,613,197"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="674,185,613,179,614,174,675,179"/>
+<area shape="rect" id="Node000011" href="$classbwl_1_1nl80211_1_1base__wlan__hal__nl80211.html#a096999eb9e28fae7f9a6ff1dbc4c4805" title=" " alt="" coords="428,221,629,261"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="670,260,629,255,630,250,670,255"/>
+<area shape="rect" id="Node000013" href="$classbwl_1_1nl80211_1_1ap__wlan__hal__nl80211.html#a35545589650de5d318af390d053e7d7c" title=" " alt="" coords="453,286,604,341"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="670,291,605,302,604,297,669,285"/>
+<area shape="rect" id="Node000012" href="$classbwl_1_1nl80211_1_1base__wlan__hal__nl80211.html#a91c81fe19071b7fb1a131fe49f93a629" title=" " alt="" coords="204,214,372,269"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="414,244,372,244,372,239,414,239"/>
+<area shape="rect" id="Node000015" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#af0bbbb6fbd5fcfa3da29718285f13c2b" title=" " alt="" coords="455,365,603,405"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="664,364,603,375,602,369,663,358"/>
+<area shape="rect" id="Node000017" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a37d8ec7e528bc25f2067973546989a51" title=" " alt="" coords="453,430,604,485"/>
+<area shape="poly" id="edge16_Node000014_Node000017" title=" " alt="" coords="690,369,679,376,665,386,655,397,645,408,631,420,605,433,603,429,628,415,642,404,651,393,661,382,676,371,688,365"/>
+<area shape="rect" id="Node000016" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#ab53d194bfe3bcf5d9115b98471dacf17" title=" " alt="" coords="209,365,367,405"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="441,388,367,388,367,383,441,383"/>
+</map>

@@ -1,0 +1,25 @@
+<map id="devicemetrics_get_radio_info" name="devicemetrics_get_radio_info">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,251,196,277"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1bpl.html#a74b6b03fb438aba166c46dfa06ca966e" title="Get Wi&#45;Fi radio temperature by interface name." alt="" coords="258,173,393,227"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,249,244,220,246,225,147,254"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="244,251,407,277"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="196,261,230,261,230,267,196,267"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1AgentDB.html#aa4f0894f0479d5ef65000d8ebecb2e10" title="Get list of all radio objects on the database. This function shall be used in order to iterate over a..." alt="" coords="253,301,397,341"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="152,274,241,297,239,302,151,279"/>
+<area shape="rect" id="Node000003" href="$namespacebeerocks_1_1bpl.html#a93378e26cd013005f0e2f6cd24c114a2" title=" " alt="" coords="455,133,647,173"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="392,184,441,173,442,179,393,189"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a5ab2aadd20a396f13e48e0a68a398155" title="return search path of Radio object instance by Name." alt="" coords="467,219,634,274"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="393,211,454,224,453,229,392,216"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1bpl_1_1BplConfigService.html#a1fc3d84d90f02eccb91bfa46df26dc33" title="Get backend client for common&#45;bus DM access." alt="" coords="710,5,875,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="576,131,629,93,693,55,709,48,711,53,696,60,631,97,579,135"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a12a0350a7f7c462b12b7b6915ed3cc80" title="read and return object parameter content." alt="" coords="705,69,881,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="626,131,703,110,704,115,628,136"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1bpl_1_1BplConfigService.html#a522e236e6b81712d60a5551c5630cd73" title="Get singleton service instance." alt="" coords="710,133,875,173"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="647,151,696,151,696,156,647,156"/>
+<area shape="rect" id="Node000007" href="$namespacebeerocks_1_1bpl.html#ad81c05f745bc5b4e3dc80b3a39c0304b" title=" " alt="" coords="695,198,891,223"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="636,171,726,192,725,197,635,176"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a7f96ac72dd88efe1686ffadd5458f940" title="return path of Radio template object." alt="" coords="709,248,876,288"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="634,251,695,257,695,262,634,257"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="939,248,1097,288"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="876,265,925,265,925,271,876,271"/>
+</map>

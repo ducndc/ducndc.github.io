@@ -1,0 +1,9 @@
+<map id="beerocks::net::SocketConnectionImpl::receive" name="beerocks::net::SocketConnectionImpl::receive">
+<area shape="rect" id="Node000001" title="Receives data through the socket connection." alt="" coords="5,69,221,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1Buffer.html#a582583a6549f3ecc11fc58bf5a5d7aaa" title="Returns pointer to the raw data." alt="" coords="269,5,413,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,67,255,47,257,52,186,72"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1Buffer.html#a4c70d268fe092fc5318af68d1ecebb8f" title="Returns the length of the buffer (number of bytes)." alt="" coords="269,69,413,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="221,87,256,87,256,92,221,92"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1Buffer.html#a734407b8be14b1550e5c5ebcad7374ac" title="Returns the size of the buffer." alt="" coords="269,133,413,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="186,107,257,127,255,132,185,112"/>
+</map>

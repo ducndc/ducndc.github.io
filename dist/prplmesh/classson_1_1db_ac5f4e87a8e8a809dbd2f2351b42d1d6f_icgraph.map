@@ -1,0 +1,21 @@
+<map id="son::db::get_channel_scan_report" name="son::db::get_channel_scan_report">
+<area shape="rect" id="Node000001" title="Get the report records for a given radio using the scan&#39;s index." alt="" coords="1063,69,1205,109"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#ab335cbb782e43a001339782d405ef057" title="Get the report records for a given radio using its channel&#45;list as the key." alt="" coords="865,5,1008,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1058,68,998,48,1000,43,1060,63"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a927d49395eb5545635944761bd589322" title="Get the report records for a given radio using a given timestamp." alt="" coords="865,69,1008,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1049,92,1008,92,1008,87,1049,87"/>
+<area shape="rect" id="Node000004" href="$classson_1_1son__management.html#a83cffa6de5e1d1e1a7916b7ebaa9f9ef" title=" " alt="" coords="859,133,1015,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1060,116,1000,136,998,131,1058,111"/>
+<area shape="rect" id="Node000005" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="619,141,811,166"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="845,156,811,156,811,151,845,151"/>
+<area shape="rect" id="Node000006" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="400,111,571,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="605,142,571,138,571,132,605,137"/>
+<area shape="rect" id="Node000007" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="409,161,562,201"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="606,169,562,175,562,169,605,164"/>
+<area shape="rect" id="Node000008" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,169,352,194"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="395,184,353,184,353,179,395,179"/>
+<area shape="rect" id="Node000009" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,143,109,169"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="197,173,109,162,110,157,197,168"/>
+<area shape="rect" id="Node000010" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,193,163,218"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="197,194,163,198,163,193,196,189"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="prplmesh::controller::actions::remove_unassociated_station" name="prplmesh::controller::actions::remove_unassociated_station">
+<area shape="rect" id="Node000001" title="remove the unassociated station being monitored" alt="" coords="5,41,212,96"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a3e957d7858d4c86d1c75cce4a391ffaa" title=" " alt="" coords="260,5,436,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,44,273,31,275,36,213,49"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1network__utils.html#a640b4109482b5726ce59132dc5482c9c" title=" " alt="" coords="271,106,425,146"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,91,258,102,257,107,211,96"/>
+<area shape="rect" id="Node000004" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="484,60,629,85"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="212,67,470,69,470,75,212,72"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="425,104,493,86,494,91,426,109"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="491,113,622,139"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="425,123,478,123,478,129,425,129"/>
+<area shape="rect" id="Node000006" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="677,113,824,139"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="622,123,663,123,663,129,622,129"/>
+</map>

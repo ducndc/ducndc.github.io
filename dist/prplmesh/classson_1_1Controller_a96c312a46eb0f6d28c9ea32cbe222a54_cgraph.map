@@ -1,0 +1,43 @@
+<map id="son::Controller::autoconfig_wsc_parse_radio_caps" name="son::Controller::autoconfig_wsc_parse_radio_caps">
+<area shape="rect" id="Node000001" title="Parse the radio basic capabilities TLV and store the operating class in the database as supported cha..." alt="" coords="5,288,180,328"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a44a764e2c6ef137ce8431804055426f7" title="Add supported operating class to the database. Currently this function is a wrapper which converts th..." alt="" coords="235,384,419,424"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,326,266,376,264,381,142,331"/>
+<area shape="rect" id="Node000012" href="$classson_1_1wireless__utils.html#a8d99a3fb7cc8f914325695a89005bddf" title="convert operating class to channel set based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="485,714,623,769"/>
+<area shape="poly" id="edge20_Node000001_Node000012" title=" " alt="" coords="112,327,166,394,252,491,358,599,416,651,476,699,484,704,481,709,473,703,413,655,354,603,248,495,162,398,107,330"/>
+<area shape="rect" id="Node000016" href="$classson_1_1db.html#a43a15076d611a579d55a61d768805e80" title=" " alt="" coords="255,77,400,131"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="104,286,152,217,187,177,226,142,241,132,244,137,230,146,190,181,156,220,108,289"/>
+<area shape="rect" id="Node000018" href="$classson_1_1db.html#af09cf9220cc3b98f4532c2ebd59a8450" title="Removes all instances of hostap supported operating classes from the Data Model and database...." alt="" coords="228,156,427,196"/>
+<area shape="poly" id="edge21_Node000001_Node000018" title=" " alt="" coords="128,286,278,200,280,205,131,290"/>
+<area shape="rect" id="Node000003" href="$classson_1_1wireless__utils.html#ae3508c67d6e27af6dab9dc810c6f1f75" title="Translate a channel number to its frequency value." alt="" coords="489,248,619,288"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="352,382,406,341,473,298,485,291,488,296,476,302,409,345,355,386"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a801b922005faf75c58bd8ae6ee1dc6d3" title="Add instance of &#39;OperatingClasses&#39; data element, set values for its parameters." alt="" coords="484,456,624,496"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="392,422,478,449,476,454,390,427"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a5d1773668e08161c2454224fe14172e0" title=" " alt="" coords="481,120,627,160"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="334,383,353,339,383,283,423,223,447,195,473,170,479,165,483,169,476,174,451,199,427,226,387,285,358,342,339,385"/>
+<area shape="rect" id="Node000008" href="$classson_1_1wireless__utils.html#ac7d7bb75d799bf38c516cbdd1300d243" title=" " alt="" coords="475,377,633,431"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="420,401,461,401,461,407,420,407"/>
+<area shape="rect" id="Node000009" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="489,521,619,546"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="354,422,408,464,476,506,494,514,492,518,473,510,405,468,350,426"/>
+<area shape="rect" id="Node000011" href="$classson_1_1wireless__utils.html#a72ea0ed0fd09c2536d4f7815cf0aacb6" title="convert operating class to bandwidth based on Table E&#45;4 in the ieee 802.11 specification" alt="" coords="485,570,623,625"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="346,423,401,486,437,522,476,555,484,560,481,565,473,559,433,526,397,489,342,426"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="343,423,383,493,429,582,442,616,448,645,457,671,477,700,480,703,476,707,473,703,452,674,443,646,436,618,424,584,378,495,339,426"/>
+<area shape="rect" id="Node000013" href="$classson_1_1db.html#afd957f8a44302d4d811b16390fdfa4a0" title=" " alt="" coords="481,312,627,352"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="390,381,476,354,478,359,392,386"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1WifiChannel.html#a5df4fc1203a5bf5a9fb569e043daf557" title="Set the tx power." alt="" coords="477,649,631,689"/>
+<area shape="poly" id="edge15_Node000002_Node000014" title=" " alt="" coords="342,423,405,537,444,596,477,635,483,640,479,644,473,639,439,599,401,539,337,426"/>
+<area shape="rect" id="Node000015" href="$classson_1_1wireless__utils.html#a23eca76fb7a6f97322af76197c4db29c" title=" " alt="" coords="485,184,623,224"/>
+<area shape="poly" id="edge16_Node000002_Node000015" title=" " alt="" coords="339,382,393,311,430,270,473,234,481,229,484,233,476,238,434,274,397,314,344,385"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="691,216,818,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="613,454,632,441,669,400,699,353,723,307,739,268,744,270,728,310,704,356,673,403,635,445,616,458"/>
+<area shape="rect" id="Node000006" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="682,463,827,489"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="624,473,668,473,668,479,624,479"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="608,158,634,170,707,207,704,211,632,174,605,163"/>
+<area shape="rect" id="Node000010" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="681,521,828,546"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="620,531,668,531,668,536,620,536"/>
+<area shape="poly" id="edge14_Node000013_Node000005" title=" " alt="" coords="605,309,632,298,704,261,707,265,634,302,608,314"/>
+<area shape="poly" id="edge19_Node000016_Node000007" title=" " alt="" coords="401,113,468,124,467,129,400,118"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1utils.html#a444f7dfcd73d9155f17df02aa712c2cd" title=" " alt="" coords="475,5,633,45"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="399,76,482,47,484,52,401,81"/>
+<area shape="poly" id="edge22_Node000018_Node000005" title=" " alt="" coords="396,153,425,140,448,122,458,113,474,106,518,92,555,87,591,91,634,106,667,125,695,150,737,202,732,206,691,153,664,129,632,110,590,96,555,92,519,98,476,110,461,117,452,126,428,145,398,158"/>
+<area shape="poly" id="edge23_Node000018_Node000007" title=" " alt="" coords="426,158,467,151,468,156,427,163"/>
+</map>

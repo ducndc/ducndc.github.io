@@ -1,0 +1,28 @@
+<map id="son::wireless_utils::get_bandwidth_from_op_class" name="son::wireless_utils::get_bandwidth_from_op_class">
+<area shape="rect" id="Node000001" title="Get bandwith from the operating class (cannot distinguish between 320&#45;1 and 320&#45;2)" alt="" coords="1749,100,1896,155"/>
+<area shape="rect" id="Node000002" href="$classson_1_1wireless__utils.html#aa67aaf4bbc11739278ebdbcb7cb52585" title="Get bandwith from the operating class for applications that need to distinguish between 320&#45;1 and 320..." alt="" coords="1333,5,1495,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1747,97,1701,82,1594,58,1495,44,1496,38,1595,53,1702,77,1748,92"/>
+<area shape="rect" id="Node000003" href="$classson_1_1Controller.html#aa866ffaa899f70b3f741742d677926b9" title=" " alt="" coords="1077,71,1285,125"/>
+<area shape="poly" id="edge13_Node000001_Node000003" title=" " alt="" coords="1736,126,1285,105,1286,100,1736,121"/>
+<area shape="rect" id="Node000011" href="$classson_1_1db.html#a0109d9013ec19e74e9431bbc896dffb5" title="Get index of Current Operating Class profile in database for Operating Class bandwidth." alt="" coords="1543,135,1701,175"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1736,142,1702,147,1701,142,1736,137"/>
+<area shape="rect" id="Node000012" href="$classson_1_1db.html#a74824f5ee758e8898be86b5e0a3fc763" title="Create instances for each bandwidth possible for Radio.{i}.CurrentOperatingClasses and Backhaul...." alt="" coords="1335,135,1493,175"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1768,164,1736,179,1702,190,1644,198,1585,196,1530,189,1481,178,1482,173,1530,183,1586,191,1644,192,1701,185,1734,174,1766,159"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1320,62,1280,73,1278,68,1319,57"/>
+<area shape="rect" id="Node000004" href="$classson_1_1Controller.html#a143d4db51e884c7b84c146aca4f5fb4b" title=" " alt="" coords="859,78,1029,118"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1064,101,1030,101,1030,95,1064,95"/>
+<area shape="rect" id="Node000005" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="619,85,811,111"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="845,101,811,101,811,95,845,95"/>
+<area shape="rect" id="Node000006" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="400,56,571,81"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="605,87,571,82,571,77,605,81"/>
+<area shape="rect" id="Node000007" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="409,106,562,146"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="606,114,562,119,562,114,605,109"/>
+<area shape="rect" id="Node000008" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,113,352,139"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="395,129,353,129,353,123,395,123"/>
+<area shape="rect" id="Node000009" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,88,109,113"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="197,118,109,106,110,101,197,113"/>
+<area shape="rect" id="Node000010" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,137,163,163"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="197,139,163,143,163,138,196,134"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1529,158,1494,158,1494,153,1529,153"/>
+<area shape="poly" id="edge12_Node000012_Node000003" title=" " alt="" coords="1321,135,1285,126,1286,121,1322,130"/>
+</map>

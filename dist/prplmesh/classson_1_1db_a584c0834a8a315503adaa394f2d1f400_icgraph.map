@@ -1,0 +1,15 @@
+<map id="son::db::get_unassociated_stations" name="son::db::get_unassociated_stations">
+<area shape="rect" id="Node000001" title="Get unassociated stations being monitored." alt="" coords="523,71,697,111"/>
+<area shape="rect" id="Node000002" href="$classson_1_1LinkMetricsTask.html#a13acd305667f0abad3bc08dc41832e3e" title="Handles CMDU of 1905 Unassoc Sta Link Metrics Response." alt="" coords="248,11,475,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="509,72,474,65,476,60,510,67"/>
+<area shape="rect" id="Node000004" href="$classson_1_1Controller.html#a0c98f2b2e76d0eff6978ab7affbe1d13" title="sends a message of type UNASSOCIATED_STA_LINK_METRICS_QUERY_MESSAGE, it contains list/ddata of unasso..." alt="" coords="276,102,447,157"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="510,109,447,119,447,113,509,104"/>
+<area shape="rect" id="Node000003" href="$classson_1_1LinkMetricsTask.html#aa0e0ace61aeff3ad0674b8017242bf72" title="Handle ieee1905 message." alt="" coords="16,5,189,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,35,189,32,190,27,234,29"/>
+<area shape="rect" id="Node000005" href="$classson_1_1Controller.html#a2bfeab117a9480424ddbbfbb6cd948ba" title="add an unassociated station to be monitored" alt="" coords="27,69,179,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="262,117,178,104,179,98,263,111"/>
+<area shape="rect" id="Node000006" href="$classson_1_1Controller.html#a75275245540c9a9c3d191168445c65f2" title="get all stats from all connected agents and update the DM." alt="" coords="5,133,200,173"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="262,141,200,147,200,142,262,136"/>
+<area shape="rect" id="Node000007" href="$classson_1_1Controller.html#afff2b5cdefc8bdc795efaf552b6d7d1f" title="remove an unassociated station to be monitored" alt="" coords="23,197,182,237"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="270,164,201,188,165,200,164,195,199,183,268,159"/>
+</map>

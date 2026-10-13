@@ -1,0 +1,19 @@
+<map id="beerocks::wbapi::AmbiorixConnectionManager::get_instance" name="beerocks::wbapi::AmbiorixConnectionManager::get_instance">
+<area shape="rect" id="Node000001" title=": get single instance" alt="" coords="472,198,648,253"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ad6b66a1b6aac6fc32498d5b208101c35" title="connect to an ambiorix backend: load backend, connect to the bus" alt="" coords="248,141,424,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,199,406,184,408,179,459,194"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#abeb6a799cacfb17c4bebb1fa7a8818e6" title="Initialize event handlers for Ambiorix fd in the event loop." alt="" coords="248,205,424,245"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="458,228,424,228,424,223,458,223"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a05f49877fa1abe27e36889867109a182" title="Initialize event handlers for the ambiorix signals fd in the event loop." alt="" coords="248,269,424,309"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="459,257,408,272,406,267,458,252"/>
+<area shape="rect" id="Node000003" href="$classdevice_1_1serial_1_1SerialDevice.html#a27e698b9464330b6878cfcf4946561bc" title=" " alt="" coords="14,5,191,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,134,255,96,199,60,173,48,175,43,201,55,258,92,305,130"/>
+<area shape="rect" id="Node000004" href="$classairties_1_1AirtiesUtils.html#a9a116b76218dbc5a00896f9adc63e154" title=" " alt="" coords="38,69,167,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="256,140,167,112,168,107,258,135"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1whm_1_1base__wlan__hal__whm.html#a37d8ec7e528bc25f2067973546989a51" title=" " alt="" coords="27,134,178,189"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="234,164,178,164,178,159,234,159"/>
+<area shape="rect" id="Node000006" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a90819258a767d0bbc4132ae895b3d083" title=" " alt="" coords="5,213,200,253"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="258,188,169,216,168,211,257,183"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1bpl_1_1BplConfigBackendDm.html#a9c7211f3c581e8ce97934e6974d7418f" title="Connect the common WBAPI bus client." alt="" coords="20,277,185,317"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="257,190,250,195,234,213,227,231,218,249,202,267,182,280,179,275,198,263,214,246,222,228,230,210,246,191,254,186"/>
+</map>

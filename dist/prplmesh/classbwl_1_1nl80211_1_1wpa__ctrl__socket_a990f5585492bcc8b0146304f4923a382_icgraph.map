@@ -1,0 +1,15 @@
+<map id="bwl::nl80211::wpa_ctrl_socket::open" name="bwl::nl80211::wpa_ctrl_socket::open">
+<area shape="rect" id="Node000001" title="Open wpa_ctrl socket. Once successful, a new file descriptor is available for sending messages hostap..." alt="" coords="657,39,809,79"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__cmd.html#a3d8943d45be93af9bd08ba7719ebca13" title="Connect socket to hostapd/wpa_supplicant deamon. This implementation implies opening the socket." alt="" coords="251,5,406,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="644,54,406,34,407,29,644,49"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#aafc4beb21390283c406e97fea99af776" title="Opens wpa_ctrl event socket and add the new file descriptor to event monitoring FDs queue." alt="" coords="457,67,609,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="644,74,610,79,609,73,643,69"/>
+<area shape="rect" id="Node000003" href="$classdevice_1_1serial_1_1SerialDevice.html#a27e698b9464330b6878cfcf4946561bc" title=" " alt="" coords="14,5,191,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,28,191,28,191,23,237,23"/>
+<area shape="rect" id="Node000004" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a90819258a767d0bbc4132ae895b3d083" title=" " alt="" coords="5,69,200,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="245,52,175,72,173,67,243,47"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#afbd96f8a915bea6677281a6ae5806133" title="Opens and attach event socket to hostapd/wpa_supplicant deamon." alt="" coords="248,69,409,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="443,91,409,91,409,86,443,85"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="243,68,173,48,175,43,245,63"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="234,92,200,92,200,87,234,87"/>
+</map>

@@ -1,0 +1,1037 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Chung Duc Nguyen Dang" href="https://ducndc.github.io/rss.xml"><meta name="generator" content="Astro v5.17.2"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://ducndc.github.io/blog/bootloader/"><!-- Primary Meta Tags --><title>Bootloader trong hệ thống nhúng Linux</title><meta name="title" content="Bootloader trong hệ thống nhúng Linux"><meta name="description" content="Bootloader trong hệ thống nhúng Linux"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://ducndc.github.io/blog/bootloader/"><meta property="og:title" content="Bootloader trong hệ thống nhúng Linux"><meta property="og:description" content="Bootloader trong hệ thống nhúng Linux"><meta property="og:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://ducndc.github.io/blog/bootloader/"><meta property="twitter:title" content="Bootloader trong hệ thống nhúng Linux"><meta property="twitter:description" content="Bootloader trong hệ thống nhúng Linux"><meta property="twitter:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Times New Roman,Times,serif;margin:0;padding:0;text-align:justify;text-justify:inter-word;background:linear-gradient(180deg,#f3f6f8 0,#fff 560px) no-repeat;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;color:rgb(var(--black));line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}p{margin-top:0;margin-bottom:1em;line-height:1.7}.prose p{margin-top:0;margin-bottom:1.2em;line-height:1.7}a,a:hover{color:var(--accent)}ul,ol{margin-top:.5em;margin-bottom:1em;padding-left:1.5em}li{line-height:1.5;margin-bottom:.2em}li p,.prose li p{margin-top:0;margin-bottom:0;line-height:1.5}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%;border-collapse:collapse}img{display:block;max-width:100%;height:auto;margin:1.5rem auto}.prose img{display:block;max-width:100%;height:auto;margin:2rem auto}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px;font-family:monospace}pre{padding:1.5em;border-radius:8px;overflow-x:auto}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:1.5em 0;font-size:1.1em}hr{border:none;border-top:1px solid rgb(var(--gray-light));margin:2em 0}@media(max-width:720px){body{font-size:18px}main{padding:1em}.prose p{line-height:1.65}li{line-height:1.5}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media(max-width:720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}
+</style>
+<link rel="stylesheet" href="/_astro/about.DsEPMAAl.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Chung Duc Nguyen Dang</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/blog" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  </div> </nav> </header>  <main class="layout" data-astro-cid-bvzihdzo> <!-- TOC --> <aside class="toc" data-astro-cid-bvzihdzo> <div class="toc-title" data-astro-cid-bvzihdzo>Table of Contents</div> <nav id="toc" data-astro-cid-bvzihdzo></nav> </aside> <!-- Content --> <article class="content" data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="/_astro/bootloader.CKX7KJwW_Z1YqH9e.webp" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="800"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2026-06-13T17:00:00.000Z"> Jun 14, 2026 </time>  </div> <h1 data-astro-cid-bvzihdzo>Bootloader trong hệ thống nhúng Linux</h1> <hr data-astro-cid-bvzihdzo> </div>  <h2 id="mục-lục">Mục Lục</h2>
+<ol>
+<li><a href="#1-t%E1%BB%95ng-quan">Tổng Quan</a></li>
+<li><a href="#2-qu%C3%A1-tr%C3%ACnh-kh%E1%BB%9Fi-%C4%91%E1%BB%99ng-boot-process">Quá Trình Khởi Động (Boot Process)</a></li>
+<li><a href="#3-c%C3%A1c-lo%E1%BA%A1i-bootloader-ph%E1%BB%95-bi%E1%BA%BFn">Các Loại Bootloader Phổ Biến</a></li>
+<li><a href="#4-u-boot--universal-bootloader">U-Boot – Universal Bootloader</a></li>
+<li><a href="#5-barebox">Barebox</a></li>
+<li><a href="#6-grub-trong-embedded-linux">GRUB trong Embedded Linux</a></li>
+<li><a href="#7-c%E1%BA%A5u-tr%C3%BAc-b%E1%BB%99-nh%E1%BB%9B-v%C3%A0-ph%C3%A2n-v%C3%B9ng">Cấu Trúc Bộ Nhớ và Phân Vùng</a></li>
+<li><a href="#8-qu%C3%A1-tr%C3%ACnh-bi%C3%AAn-d%E1%BB%8Bch-v%C3%A0-c%E1%BA%A5u-h%C3%ACnh">Quá Trình Biên Dịch và Cấu Hình</a></li>
+<li><a href="#9-device-tree-dtb">Device Tree (DTB)</a></li>
+<li><a href="#10-b%E1%BA%A3o-m%E1%BA%ADt-bootloader">Bảo Mật Bootloader</a></li>
+<li><a href="#11-debug-v%C3%A0-troubleshooting">Debug và Troubleshooting</a></li>
+<li><a href="#12-t%C3%A0i-li%E1%BB%87u-tham-kh%E1%BA%A3o">Tài Liệu Tham Khảo</a></li>
+</ol>
+<hr>
+<h2 id="tổng-quan">Tổng Quan</h2>
+<h3 id="bootloader-là-gì">Bootloader là gì?</h3>
+<p>Bootloader (hay boot loader) là chương trình phần mềm đầu tiên được thực thi khi hệ thống nhúng được cấp nguồn hoặc reset. Nhiệm vụ chính của bootloader là <strong>khởi tạo phần cứng cơ bản</strong> và <strong>nạp kernel Linux</strong> vào RAM để thực thi.</p>
+<p>Trong hệ thống nhúng, bootloader đóng vai trò đặc biệt quan trọng vì:</p>
+<ul>
+<li>Phần cứng nhúng đa dạng, không có BIOS/UEFI chuẩn như PC</li>
+<li>Cần khởi tạo bộ nhớ DDR trước khi bất kỳ phần mềm nào có thể chạy</li>
+<li>Quản lý quá trình nạp kernel từ nhiều nguồn khác nhau (flash, SD card, mạng)</li>
+<li>Hỗ trợ môi trường phát triển và debug</li>
+</ul>
+<h3 id="vị-trí-trong-hệ-thống">Vị Trí trong Hệ Thống</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>+------------------+</span></span>
+<span class="line"><span>|   Power ON / Reset</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>         |</span></span>
+<span class="line"><span>         v</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>|   ROM Code (SoC) |  ← Chip nội bộ, không thể thay đổi</span></span>
+<span class="line"><span>|   (BootROM)      |</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>         |</span></span>
+<span class="line"><span>         v</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>|   SPL / MLO      |  ← Secondary Program Loader (First Stage)</span></span>
+<span class="line"><span>|   (First Stage)  |     Chạy từ SRAM nội bộ (~4-256 KB)</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>         |</span></span>
+<span class="line"><span>         v</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>|   U-Boot / Main  |  ← Second Stage Bootloader</span></span>
+<span class="line"><span>|   Bootloader     |     Chạy từ DDR RAM</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>         |</span></span>
+<span class="line"><span>         v</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>|   Linux Kernel   |  ← Hệ điều hành chính</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>         |</span></span>
+<span class="line"><span>         v</span></span>
+<span class="line"><span>+--------+---------+</span></span>
+<span class="line"><span>|   Root Filesystem|  ← User space</span></span>
+<span class="line"><span>+------------------+</span></span></code></pre>
+<hr>
+<h2 id="quá-trình-khởi-động-boot-process">Quá Trình Khởi Động (Boot Process)</h2>
+<h3 id="giai-đoạn-0-bootrom">Giai Đoạn 0: BootROM</h3>
+<p>Khi SoC được cấp nguồn, CPU bắt đầu thực thi code từ địa chỉ cố định trong <strong>ROM nội bộ</strong> (không thể thay đổi bởi người dùng).</p>
+<p>BootROM thực hiện:</p>
+<ul>
+<li>Reset CPU về trạng thái ban đầu</li>
+<li>Thiết lập clock cơ bản</li>
+<li>Phát hiện thiết bị boot (SD, eMMC, SPI Flash, USB,…)</li>
+<li>Nạp SPL/MLO vào SRAM nội bộ và chuyển quyền điều khiển</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>BootROM Address (ARM Cortex-A):</span></span>
+<span class="line"><span>- Reset Vector: 0x00000000 hoặc 0xFFFF0000 (tùy chế độ)</span></span>
+<span class="line"><span>- Exception Vector Table tại địa chỉ này</span></span></code></pre>
+<h3 id="giai-đoạn-1-spl-secondary-program-loader">Giai Đoạn 1: SPL (Secondary Program Loader)</h3>
+<p>SPL (hay MLO trên TI AM335x) là bootloader giai đoạn đầu, có kích thước rất nhỏ (thường &#x3C; 64KB để vừa SRAM).</p>
+<p><strong>Nhiệm vụ của SPL:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#6A737D">/* Luồng thực thi điển hình của SPL */</span></span>
+<span class="line"><span style="color:#F97583">void</span><span style="color:#B392F0"> board_init_f</span><span style="color:#E1E4E8">(ulong </span><span style="color:#FFAB70">dummy</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    /* 1. Khởi tạo UART để debug */</span></span>
+<span class="line"><span style="color:#B392F0">    preloader_console_init</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    /* 2. Cấu hình Power Management IC (PMIC) */</span></span>
+<span class="line"><span style="color:#B392F0">    pmic_init</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    /* 3. Khởi tạo DDR/SDRAM - quan trọng nhất */</span></span>
+<span class="line"><span style="color:#B392F0">    sdram_init</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    /* 4. Nạp U-Boot từ thiết bị lưu trữ vào DDR */</span></span>
+<span class="line"><span style="color:#B392F0">    spl_load_image</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p><strong>Kích thước SRAM điển hình theo SoC:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>SoC</th><th>SRAM Size</th><th>SPL Max Size</th></tr></thead><tbody><tr><td>TI AM335x</td><td>128 KB</td><td>64 KB (MLO)</td></tr><tr><td>NXP i.MX6</td><td>256 KB</td><td>68 KB (IVT Header)</td></tr><tr><td>Allwinner H3</td><td>32 KB</td><td>32 KB</td></tr><tr><td>Rockchip RK3399</td><td>200 KB</td><td>~100 KB</td></tr><tr><td>Raspberry Pi</td><td>GPU SRAM</td><td>Không giới hạn</td></tr></tbody></table>
+<h3 id="giai-đoạn-2-bootloader-chính-u-boot">Giai Đoạn 2: Bootloader Chính (U-Boot)</h3>
+<p>Sau khi DDR được khởi tạo, U-Boot chính được nạp và thực thi với không gian bộ nhớ đầy đủ.</p>
+<p><strong>Luồng thực thi U-Boot:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>board_init_r()</span></span>
+<span class="line"><span>    ├── board_early_init_r()      # Khởi tạo phần cứng sớm</span></span>
+<span class="line"><span>    ├── env_init()                 # Đọc biến môi trường</span></span>
+<span class="line"><span>    ├── serial_init()              # Khởi tạo UART</span></span>
+<span class="line"><span>    ├── console_init_r()           # Console đầy đủ</span></span>
+<span class="line"><span>    ├── interrupt_init()           # Bộ xử lý ngắt</span></span>
+<span class="line"><span>    ├── timer_init()               # Timer</span></span>
+<span class="line"><span>    ├── board_init()               # Board-specific init</span></span>
+<span class="line"><span>    ├── mmc_initialize()           # Khởi tạo MMC/SD</span></span>
+<span class="line"><span>    ├── net_init()                 # Khởi tạo mạng</span></span>
+<span class="line"><span>    └── main_loop()                # Vòng lặp chính (CLI hoặc autoboot)</span></span></code></pre>
+<h3 id="giai-đoạn-3-nạp-kernel">Giai Đoạn 3: Nạp Kernel</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Quy trình nạp kernel điển hình trong U-Boot</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 1. Đọc kernel image từ MMC</span></span>
+<span class="line"><span style="color:#B392F0">load</span><span style="color:#9ECBFF"> mmc</span><span style="color:#9ECBFF"> 0:1</span><span style="color:#E1E4E8"> ${kernel_addr_r} </span><span style="color:#9ECBFF">/boot/Image</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 2. Đọc Device Tree Blob</span></span>
+<span class="line"><span style="color:#B392F0">load</span><span style="color:#9ECBFF"> mmc</span><span style="color:#9ECBFF"> 0:1</span><span style="color:#E1E4E8"> ${fdt_addr_r} </span><span style="color:#9ECBFF">/boot/my-board.dtb</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 3. Đọc initramfs (nếu có)</span></span>
+<span class="line"><span style="color:#B392F0">load</span><span style="color:#9ECBFF"> mmc</span><span style="color:#9ECBFF"> 0:1</span><span style="color:#E1E4E8"> ${ramdisk_addr_r} </span><span style="color:#9ECBFF">/boot/initramfs.cpio.gz</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 4. Thiết lập bootargs</span></span>
+<span class="line"><span style="color:#B392F0">setenv</span><span style="color:#9ECBFF"> bootargs</span><span style="color:#9ECBFF"> "console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait rw"</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 5. Boot kernel</span></span>
+<span class="line"><span style="color:#B392F0">booti</span><span style="color:#E1E4E8"> ${kernel_addr_r} ${ramdisk_addr_r}</span><span style="color:#9ECBFF">:</span><span style="color:#E1E4E8">${filesize} ${fdt_addr_r}</span></span></code></pre>
+<hr>
+<h2 id="các-loại-bootloader-phổ-biến">Các Loại Bootloader Phổ Biến</h2>
+<h4 id="so-sánh-tổng-quan">So Sánh Tổng Quan</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Bootloader</th><th>Kiến Trúc Hỗ Trợ</th><th>Giao Thức</th><th>Use Case</th></tr></thead><tbody><tr><td><strong>U-Boot</strong></td><td>ARM, x86, MIPS, RISC-V, PowerPC</td><td>CLI, Script</td><td>Phổ biến nhất, đa nền tảng</td></tr><tr><td><strong>Barebox</strong></td><td>ARM, x86, MIPS</td><td>Shell-like</td><td>Thay thế U-Boot hiện đại</td></tr><tr><td><strong>GRUB2</strong></td><td>x86, ARM64, RISC-V</td><td>Scripting</td><td>x86 embedded, UEFI</td></tr><tr><td><strong>Coreboot</strong></td><td>x86, ARM</td><td>Payload-based</td><td>PC nhúng, Chromebook</td></tr><tr><td><strong>Das U-Boot</strong></td><td>Hầu hết kiến trúc</td><td>CLI</td><td>= U-Boot</td></tr><tr><td><strong>LILO</strong></td><td>x86</td><td>Đơn giản</td><td>Cũ, ít dùng</td></tr><tr><td><strong>RedBoot</strong></td><td>ARM, MIPS, x86</td><td>CLI</td><td>Cisco router cũ</td></tr><tr><td><strong>OpenWRT boot</strong></td><td>MIPS, ARM</td><td>Minimal</td><td>Router, IoT</td></tr></tbody></table>
+<h4 id="lựa-chọn-bootloader-theo-use-case">Lựa Chọn Bootloader theo Use Case</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Hệ thống nhúng ARM/RISC-V thông thường → U-Boot</span></span>
+<span class="line"><span>Hệ thống cần bảo mật cao (Secure Boot) → U-Boot + TF-A</span></span>
+<span class="line"><span>Phát triển hiện đại, cần shell linh hoạt → Barebox</span></span>
+<span class="line"><span>x86 Embedded (industrial PC) → GRUB2 hoặc Coreboot</span></span>
+<span class="line"><span>IoT thiết bị nhỏ, flash ít → Stripped U-Boot hoặc SPL only</span></span></code></pre>
+<hr>
+<h2 id="u-boot--universal-bootloader">U-Boot – Universal Bootloader</h2>
+<h4 id="kiến-trúc-u-boot">Kiến Trúc U-Boot</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>u-boot/</span></span>
+<span class="line"><span>├── arch/                    # Kiến trúc CPU (arm, x86, mips, riscv...)</span></span>
+<span class="line"><span>│   └── arm/</span></span>
+<span class="line"><span>│       ├── cpu/             # CPU-specific code</span></span>
+<span class="line"><span>│       ├── dts/             # Device Tree Sources</span></span>
+<span class="line"><span>│       └── mach-*/          # Machine/SoC specific</span></span>
+<span class="line"><span>├── board/                   # Board-specific code</span></span>
+<span class="line"><span>│   ├── raspberrypi/</span></span>
+<span class="line"><span>│   ├── ti/</span></span>
+<span class="line"><span>│   └── freescale/</span></span>
+<span class="line"><span>├── common/                  # Code dùng chung</span></span>
+<span class="line"><span>│   ├── cmd/                 # Lệnh CLI (cmd_mmc.c, cmd_net.c...)</span></span>
+<span class="line"><span>│   └── spl/                 # SPL framework</span></span>
+<span class="line"><span>├── drivers/                 # Device drivers</span></span>
+<span class="line"><span>│   ├── mmc/</span></span>
+<span class="line"><span>│   ├── net/</span></span>
+<span class="line"><span>│   ├── serial/</span></span>
+<span class="line"><span>│   └── usb/</span></span>
+<span class="line"><span>├── fs/                      # Filesystem (ext4, fat, ubifs...)</span></span>
+<span class="line"><span>├── include/                 # Header files</span></span>
+<span class="line"><span>├── lib/                     # Thư viện (crypto, lzma, zlib...)</span></span>
+<span class="line"><span>├── net/                     # Network stack (TFTP, DHCP, NFS...)</span></span>
+<span class="line"><span>└── tools/                   # mkimage, dts compiler...</span></span></code></pre>
+<h4 id="biến-môi-trường-u-boot">Biến Môi Trường U-Boot</h4>
+<p>Biến môi trường là cơ chế cấu hình linh hoạt của U-Boot, được lưu trong flash/eMMC.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Xem tất cả biến môi trường</span></span>
+<span class="line"><span style="color:#B392F0">printenv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Thiết lập biến</span></span>
+<span class="line"><span style="color:#B392F0">setenv</span><span style="color:#9ECBFF"> ipaddr</span><span style="color:#79B8FF"> 192.168.1.100</span></span>
+<span class="line"><span style="color:#B392F0">setenv</span><span style="color:#9ECBFF"> serverip</span><span style="color:#79B8FF"> 192.168.1.1</span></span>
+<span class="line"><span style="color:#B392F0">setenv</span><span style="color:#9ECBFF"> netmask</span><span style="color:#79B8FF"> 255.255.255.0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Lưu vào bộ nhớ không bay hơi</span></span>
+<span class="line"><span style="color:#B392F0">saveenv</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Biến môi trường quan trọng:</span></span>
+<span class="line"><span style="color:#6A737D"># bootdelay    - Thời gian chờ autoboot (giây), -1 = không autoboot</span></span>
+<span class="line"><span style="color:#6A737D"># bootcmd      - Lệnh boot mặc định</span></span>
+<span class="line"><span style="color:#6A737D"># bootargs     - Tham số truyền cho kernel</span></span>
+<span class="line"><span style="color:#6A737D"># ethaddr      - Địa chỉ MAC</span></span>
+<span class="line"><span style="color:#6A737D"># ipaddr       - IP tĩnh của board</span></span>
+<span class="line"><span style="color:#6A737D"># serverip     - IP của TFTP server</span></span></code></pre>
+<p><strong>Ví dụ cấu hình bootcmd:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Boot từ eMMC</span></span>
+<span class="line"><span style="color:#B392F0">setenv</span><span style="color:#9ECBFF"> bootcmd</span><span style="color:#9ECBFF"> 'mmc dev 0; \</span></span>
+<span class="line"><span style="color:#9ECBFF">    load mmc 0:1 ${kernel_addr_r} Image; \</span></span>
+<span class="line"><span style="color:#9ECBFF">    load mmc 0:1 ${fdt_addr_r} board.dtb; \</span></span>
+<span class="line"><span style="color:#9ECBFF">    booti ${kernel_addr_r} - ${fdt_addr_r}'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Boot từ network (TFTP)</span></span>
+<span class="line"><span style="color:#B392F0">setenv</span><span style="color:#9ECBFF"> bootcmd</span><span style="color:#9ECBFF"> 'dhcp; \</span></span>
+<span class="line"><span style="color:#9ECBFF">    tftp ${kernel_addr_r} Image; \</span></span>
+<span class="line"><span style="color:#9ECBFF">    tftp ${fdt_addr_r} board.dtb; \</span></span>
+<span class="line"><span style="color:#9ECBFF">    booti ${kernel_addr_r} - ${fdt_addr_r}'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Boot từ NFS</span></span>
+<span class="line"><span style="color:#B392F0">setenv</span><span style="color:#9ECBFF"> bootargs</span><span style="color:#9ECBFF"> 'console=ttyS0,115200 \</span></span>
+<span class="line"><span style="color:#9ECBFF">    root=/dev/nfs \</span></span>
+<span class="line"><span style="color:#9ECBFF">    nfsroot=192.168.1.1:/srv/nfs/rootfs,v3,tcp \</span></span>
+<span class="line"><span style="color:#9ECBFF">    ip=dhcp'</span></span></code></pre>
+<h4 id="scripting-trong-u-boot">Scripting trong U-Boot</h4>
+<p>U-Boot hỗ trợ script đơn giản với điều kiện và vòng lặp:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Script phức tạp hơn với điều kiện</span></span>
+<span class="line"><span style="color:#B392F0">setenv</span><span style="color:#9ECBFF"> boot_script</span><span style="color:#9ECBFF"> '</span></span>
+<span class="line"><span style="color:#9ECBFF">    echo "Detecting boot media...";</span></span>
+<span class="line"><span style="color:#9ECBFF">    if mmc dev 0; then</span></span>
+<span class="line"><span style="color:#9ECBFF">        echo "Booting from eMMC";</span></span>
+<span class="line"><span style="color:#9ECBFF">        run boot_emmc;</span></span>
+<span class="line"><span style="color:#9ECBFF">    elif mmc dev 1; then</span></span>
+<span class="line"><span style="color:#9ECBFF">        echo "Booting from SD card";</span></span>
+<span class="line"><span style="color:#9ECBFF">        run boot_sd;</span></span>
+<span class="line"><span style="color:#9ECBFF">    else</span></span>
+<span class="line"><span style="color:#9ECBFF">        echo "Fallback: Network boot";</span></span>
+<span class="line"><span style="color:#9ECBFF">        run boot_net;</span></span>
+<span class="line"><span style="color:#9ECBFF">    fi</span></span>
+<span class="line"><span style="color:#9ECBFF">'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Lưu script thành binary</span></span>
+<span class="line"><span style="color:#B392F0">mkimage</span><span style="color:#79B8FF"> -T</span><span style="color:#9ECBFF"> script</span><span style="color:#79B8FF"> -C</span><span style="color:#9ECBFF"> none</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> 'Boot Script'</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">    -d</span><span style="color:#9ECBFF"> boot.txt</span><span style="color:#9ECBFF"> boot.scr</span></span></code></pre>
+<h4 id="lệnh-u-boot-thường-dùng">Lệnh U-Boot Thường Dùng</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># ---- Thông tin hệ thống ----</span></span>
+<span class="line"><span style="color:#B392F0">bdinfo</span><span style="color:#6A737D">              # Board information</span></span>
+<span class="line"><span style="color:#B392F0">version</span><span style="color:#6A737D">             # U-Boot version</span></span>
+<span class="line"><span style="color:#B392F0">coninfo</span><span style="color:#6A737D">             # Console devices info</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># ---- Bộ nhớ ----</span></span>
+<span class="line"><span style="color:#B392F0">md.b</span><span style="color:#79B8FF"> 0x80000000</span><span style="color:#79B8FF"> 64</span><span style="color:#6A737D">  # Đọc memory (bytes), 64 bytes từ 0x80000000</span></span>
+<span class="line"><span style="color:#B392F0">mw.l</span><span style="color:#79B8FF"> 0x80000000</span><span style="color:#79B8FF"> 0</span><span style="color:#79B8FF"> 16</span><span style="color:#6A737D"> # Ghi memory (long), 16 words = 0</span></span>
+<span class="line"><span style="color:#B392F0">cp.b</span><span style="color:#9ECBFF"> src</span><span style="color:#9ECBFF"> dst</span><span style="color:#9ECBFF"> len</span><span style="color:#6A737D">    # Copy memory</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># ---- MMC/SD ----</span></span>
+<span class="line"><span style="color:#B392F0">mmc</span><span style="color:#9ECBFF"> list</span><span style="color:#6A737D">            # Liệt kê tất cả MMC devices</span></span>
+<span class="line"><span style="color:#B392F0">mmc</span><span style="color:#9ECBFF"> dev</span><span style="color:#79B8FF"> 0</span><span style="color:#6A737D">           # Chọn MMC device 0</span></span>
+<span class="line"><span style="color:#B392F0">mmc</span><span style="color:#9ECBFF"> info</span><span style="color:#6A737D">            # Thông tin MMC</span></span>
+<span class="line"><span style="color:#B392F0">mmc</span><span style="color:#9ECBFF"> read</span><span style="color:#9ECBFF"> addr</span><span style="color:#9ECBFF"> blk</span><span style="color:#9ECBFF"> cnt</span><span style="color:#6A737D"> # Đọc raw blocks</span></span>
+<span class="line"><span style="color:#B392F0">fatls</span><span style="color:#9ECBFF"> mmc</span><span style="color:#9ECBFF"> 0:1</span><span style="color:#6A737D">       # Liệt kê file trên FAT partition</span></span>
+<span class="line"><span style="color:#B392F0">ls</span><span style="color:#9ECBFF"> ext4</span><span style="color:#9ECBFF"> mmc</span><span style="color:#9ECBFF"> 0:2</span><span style="color:#9ECBFF"> /</span><span style="color:#6A737D">   # Liệt kê file trên ext4 partition</span></span>
+<span class="line"><span style="color:#B392F0">load</span><span style="color:#9ECBFF"> mmc</span><span style="color:#9ECBFF"> 0:1</span><span style="color:#9ECBFF"> addr</span><span style="color:#9ECBFF"> filename</span><span style="color:#6A737D">  # Load file từ partition</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># ---- Mạng ----</span></span>
+<span class="line"><span style="color:#B392F0">ping</span><span style="color:#79B8FF"> 192.168.1.1</span><span style="color:#6A737D">    # Ping</span></span>
+<span class="line"><span style="color:#B392F0">dhcp</span><span style="color:#6A737D">                # DHCP</span></span>
+<span class="line"><span style="color:#B392F0">tftp</span><span style="color:#9ECBFF"> addr</span><span style="color:#9ECBFF"> filename</span><span style="color:#6A737D">  # Download qua TFTP</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># ---- Flash (SPI/NAND/NOR) ----</span></span>
+<span class="line"><span style="color:#B392F0">sf</span><span style="color:#9ECBFF"> probe</span><span style="color:#6A737D">            # Khởi tạo SPI flash</span></span>
+<span class="line"><span style="color:#B392F0">sf</span><span style="color:#9ECBFF"> read</span><span style="color:#9ECBFF"> addr</span><span style="color:#9ECBFF"> offset</span><span style="color:#9ECBFF"> len</span><span style="color:#6A737D">   # Đọc từ SPI flash</span></span>
+<span class="line"><span style="color:#B392F0">sf</span><span style="color:#9ECBFF"> write</span><span style="color:#9ECBFF"> addr</span><span style="color:#9ECBFF"> offset</span><span style="color:#9ECBFF"> len</span><span style="color:#6A737D">  # Ghi vào SPI flash</span></span>
+<span class="line"><span style="color:#B392F0">sf</span><span style="color:#9ECBFF"> erase</span><span style="color:#9ECBFF"> offset</span><span style="color:#9ECBFF"> len</span><span style="color:#6A737D">       # Xóa SPI flash</span></span>
+<span class="line"><span style="color:#B392F0">nand</span><span style="color:#9ECBFF"> info</span><span style="color:#6A737D">           # Thông tin NAND flash</span></span>
+<span class="line"><span style="color:#B392F0">nand</span><span style="color:#9ECBFF"> read</span><span style="color:#9ECBFF"> addr</span><span style="color:#9ECBFF"> offset</span><span style="color:#9ECBFF"> len</span><span style="color:#6A737D"> # Đọc từ NAND</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># ---- USB ----</span></span>
+<span class="line"><span style="color:#B392F0">usb</span><span style="color:#9ECBFF"> start</span><span style="color:#6A737D">           # Khởi tạo USB</span></span>
+<span class="line"><span style="color:#B392F0">usb</span><span style="color:#9ECBFF"> info</span><span style="color:#6A737D">            # Thông tin USB devices</span></span>
+<span class="line"><span style="color:#B392F0">usb</span><span style="color:#9ECBFF"> storage</span><span style="color:#6A737D">         # Liệt kê USB storage</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># ---- Boot ----</span></span>
+<span class="line"><span style="color:#B392F0">booti</span><span style="color:#9ECBFF"> addr</span><span style="color:#9ECBFF"> -</span><span style="color:#9ECBFF"> fdtaddr</span><span style="color:#6A737D">  # Boot ARM64 Linux Image</span></span>
+<span class="line"><span style="color:#B392F0">bootz</span><span style="color:#9ECBFF"> addr</span><span style="color:#9ECBFF"> -</span><span style="color:#9ECBFF"> fdtaddr</span><span style="color:#6A737D">  # Boot ARM32 zImage</span></span>
+<span class="line"><span style="color:#B392F0">bootm</span><span style="color:#9ECBFF"> addr</span><span style="color:#6A737D">            # Boot uImage</span></span></code></pre>
+<h4 id="địa-chỉ-load-kernel-tiêu-chuẩn">Địa Chỉ Load Kernel Tiêu Chuẩn</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>ARM 32-bit (thường dùng):</span></span>
+<span class="line"><span>  kernel_addr_r  = 0x82000000</span></span>
+<span class="line"><span>  fdt_addr_r     = 0x88000000</span></span>
+<span class="line"><span>  ramdisk_addr_r = 0x88080000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>ARM 64-bit (AArch64):</span></span>
+<span class="line"><span>  kernel_addr_r  = 0x40200000</span></span>
+<span class="line"><span>  fdt_addr_r     = 0x40000000</span></span>
+<span class="line"><span>  ramdisk_addr_r = 0x44000000</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>RISC-V 64-bit:</span></span>
+<span class="line"><span>  kernel_addr_r  = 0x80200000</span></span>
+<span class="line"><span>  fdt_addr_r     = 0x80000000</span></span></code></pre>
+<hr>
+<h2 id="barebox">Barebox</h2>
+<h4 id="giới-thiệu">Giới Thiệu</h4>
+<p>Barebox là bootloader hiện đại, được phát triển như một “U-Boot thế hệ tiếp theo”. Barebox có giao diện shell giống Unix hơn và kiến trúc driver model tương tự Linux kernel.</p>
+<h4 id="tính-năng-nổi-bật">Tính Năng Nổi Bật</h4>
+<ul>
+<li><strong>Shell mạnh mẽ</strong>: hỗ trợ pipeline, biến, điều kiện đầy đủ</li>
+<li><strong>Device model</strong>: dùng lại model từ Linux kernel</li>
+<li><strong>DTS/DTB</strong>: hỗ trợ tốt Device Tree</li>
+<li><strong>Scripting</strong>: script shell linh hoạt hơn U-Boot</li>
+<li><strong>Debugging</strong>: hỗ trợ kprobes, ftrace (trên một số nền tảng)</li>
+</ul>
+<h4 id="ví-dụ-script-barebox">Ví Dụ Script Barebox</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/bin/env bash</span></span>
+<span class="line"><span style="color:#6A737D"># /env/boot/default - Barebox boot script</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Phát hiện và mount thiết bị</span></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-e</span><span style="color:#E1E4E8"> /dev/mmc0 ]; </span><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#B392F0">    mkdir</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> /mnt/mmc</span></span>
+<span class="line"><span style="color:#B392F0">    mount</span><span style="color:#9ECBFF"> /dev/mmc0.1</span><span style="color:#9ECBFF"> /mnt/mmc</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#E1E4E8">    kernel</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">/mnt/mmc/zImage</span></span>
+<span class="line"><span style="color:#E1E4E8">    fdt</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">/mnt/mmc/board.dtb</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> [ </span><span style="color:#F97583">-f</span><span style="color:#E1E4E8"> $kernel ] &#x26;&#x26; [ </span><span style="color:#F97583">-f</span><span style="color:#E1E4E8"> $fdt ]; </span><span style="color:#F97583">then</span></span>
+<span class="line"><span style="color:#B392F0">        bootm</span><span style="color:#79B8FF"> -f</span><span style="color:#E1E4E8"> $kernel </span><span style="color:#79B8FF">-o</span><span style="color:#E1E4E8"> $fdt </span><span style="color:#79B8FF">\</span></span>
+<span class="line"><span style="color:#79B8FF">              -a</span><span style="color:#9ECBFF"> "console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait"</span></span>
+<span class="line"><span style="color:#F97583">    fi</span></span>
+<span class="line"><span style="color:#F97583">fi</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Fallback: network boot</span></span>
+<span class="line"><span style="color:#B392F0">dhcp</span></span>
+<span class="line"><span style="color:#B392F0">tftp</span><span style="color:#E1E4E8"> $kernel </span><span style="color:#9ECBFF">/zImage</span></span>
+<span class="line"><span style="color:#B392F0">tftp</span><span style="color:#E1E4E8"> $fdt </span><span style="color:#9ECBFF">/board.dtb</span></span>
+<span class="line"><span style="color:#B392F0">bootm</span><span style="color:#79B8FF"> -f</span><span style="color:#E1E4E8"> $kernel </span><span style="color:#79B8FF">-o</span><span style="color:#E1E4E8"> $fdt</span></span></code></pre>
+<hr>
+<h2 id="grub-trong-embedded-linux">GRUB trong Embedded Linux</h2>
+<h4 id="khi-nào-dùng-grub-cho-embedded">Khi Nào Dùng GRUB cho Embedded</h4>
+<p>GRUB phù hợp với embedded x86/x86_64 như:</p>
+<ul>
+<li>Industrial PC (IPC)</li>
+<li>Thiết bị dùng Intel Atom, AMD Embedded</li>
+<li>Hệ thống có UEFI firmware</li>
+<li>Chromebook, mini PC</li>
+</ul>
+<h4 id="cấu-hình-grub-cho-embedded">Cấu Hình GRUB cho Embedded</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># /boot/grub/grub.cfg</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>set default=0</span></span>
+<span class="line"><span>set timeout=3</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>menuentry "Embedded Linux" {</span></span>
+<span class="line"><span>    linux /boot/vmlinuz console=ttyS0,115200 quiet root=/dev/sda2</span></span>
+<span class="line"><span>    initrd /boot/initramfs.img</span></span>
+<span class="line"><span>}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>menuentry "Recovery Mode" {</span></span>
+<span class="line"><span>    linux /boot/vmlinuz-recovery console=ttyS0,115200 \</span></span>
+<span class="line"><span>          root=/dev/sda3 init=/bin/sh</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<hr>
+<h2 id="cấu-trúc-bộ-nhớ-và-phân-vùng">Cấu Trúc Bộ Nhớ và Phân Vùng</h2>
+<h4 id="layout-emmcsd-card-điển-hình">Layout eMMC/SD Card Điển Hình</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌─────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                     eMMC/SD Card                        │</span></span>
+<span class="line"><span>├──────────┬──────────┬──────────┬───────────┬────────────┤</span></span>
+<span class="line"><span>│  Sector 0│  Sector 1│ Partition│ Partition │ Partition  │</span></span>
+<span class="line"><span>│  (MBR)   │ (U-Boot  │    1     │     2     │     3      │</span></span>
+<span class="line"><span>│          │  SPL)    │ /boot    │ rootfs    │  data      │</span></span>
+<span class="line"><span>│          │          │ FAT32    │  ext4     │  ext4      │</span></span>
+<span class="line"><span>│  512B    │ 512B-4MB │  64MB    │  512MB    │  Còn lại   │</span></span>
+<span class="line"><span>└──────────┴──────────┴──────────┴───────────┴────────────┘</span></span></code></pre>
+<p><strong>Vị trí SPL/U-Boot trên eMMC (TI AM335x làm ví dụ):</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Offset 0x000000 : MBR</span></span>
+<span class="line"><span>Offset 0x020000 : MLO (SPL) - 128KB, sector 256</span></span>
+<span class="line"><span>Offset 0x060000 : U-Boot binary</span></span>
+<span class="line"><span>Offset 0x260000 : U-Boot environment</span></span>
+<span class="line"><span>Offset 0x280000 : DTB</span></span>
+<span class="line"><span>Offset 0x300000 : Start of partition table</span></span></code></pre>
+<h4 id="layout-nand-flash">Layout NAND Flash</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>┌────────────────────────────────────────────────────────┐</span></span>
+<span class="line"><span>│                      NAND Flash                        │</span></span>
+<span class="line"><span>├────────┬─────────┬──────────┬────────────┬─────────────┤</span></span>
+<span class="line"><span>│ Block 0│ Block 1 │ Block 2-N│ Block N+1  │ Remaining   │</span></span>
+<span class="line"><span>│  SPL   │  SPL    │  U-Boot  │  Kernel    │ UBI volume  │</span></span>
+<span class="line"><span>│  (bk)  │  (bk)   │  (uImage)│  (uImage)  │ (rootfs)    │</span></span>
+<span class="line"><span>│ 128KB  │ 128KB   │  512KB   │   4MB      │             │</span></span>
+<span class="line"><span>└────────┴─────────┴──────────┴────────────┴─────────────┘</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>bk = backup copy (NAND có thể có bad block)</span></span>
+<span class="line"><span>UBI = Unsorted Block Image - filesystem layer cho NAND</span></span></code></pre>
+<h4 id="layout-spi-nor-flash">Layout SPI NOR Flash</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Địa chỉ    Kích thước  Nội dung</span></span>
+<span class="line"><span>0x000000    256 KB      U-Boot (SPL + main)</span></span>
+<span class="line"><span>0x040000    64  KB      U-Boot environment</span></span>
+<span class="line"><span>0x050000    64  KB      DTB</span></span>
+<span class="line"><span>0x060000    còn lại     Kernel + rootfs (squashfs/jffs2)</span></span></code></pre>
+<h4 id="thiết-lập-partition-table">Thiết Lập Partition Table</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Tạo partition table cho SD card trên host</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> fdisk</span><span style="color:#9ECBFF"> /dev/sdX</span><span style="color:#F97583"> &#x3C;&#x3C;</span><span style="color:#9ECBFF"> EOF</span></span>
+<span class="line"><span style="color:#9ECBFF">o        # Tạo MBR partition table mới</span></span>
+<span class="line"><span style="color:#9ECBFF">n p 1    # Partition 1 primary</span></span>
+<span class="line"><span style="color:#9ECBFF">         # First sector (default)</span></span>
+<span class="line"><span style="color:#9ECBFF">+64M     # Size 64MB</span></span>
+<span class="line"><span style="color:#9ECBFF">t 0b     # Type FAT32</span></span>
+<span class="line"><span style="color:#9ECBFF">n p 2    # Partition 2 primary</span></span>
+<span class="line"><span style="color:#9ECBFF">         # First sector (default)</span></span>
+<span class="line"><span style="color:#9ECBFF">+2G      # Size 2GB</span></span>
+<span class="line"><span style="color:#9ECBFF">n p 3    # Partition 3 primary</span></span>
+<span class="line"><span style="color:#9ECBFF">         # (remaining space)</span></span>
+<span class="line"><span style="color:#9ECBFF">w        # Ghi và thoát</span></span>
+<span class="line"><span style="color:#9ECBFF">EOF</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Format</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> mkfs.vfat</span><span style="color:#79B8FF"> -F</span><span style="color:#79B8FF"> 32</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> BOOT</span><span style="color:#9ECBFF"> /dev/sdX1</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> mkfs.ext4</span><span style="color:#79B8FF"> -L</span><span style="color:#9ECBFF"> rootfs</span><span style="color:#9ECBFF"> /dev/sdX2</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> mkfs.ext4</span><span style="color:#79B8FF"> -L</span><span style="color:#9ECBFF"> data</span><span style="color:#9ECBFF"> /dev/sdX3</span></span></code></pre>
+<hr>
+<h2 id="quá-trình-biên-dịch-và-cấu-hình">Quá Trình Biên Dịch và Cấu Hình</h2>
+<h4 id="thiết-lập-môi-trường-cross-compile">Thiết Lập Môi Trường Cross-Compile</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Cài đặt cross-compiler (Ubuntu/Debian)</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt-get</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> gcc-aarch64-linux-gnu</span><span style="color:#6A737D">    # ARM64</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt-get</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> gcc-arm-linux-gnueabihf</span><span style="color:#6A737D">  # ARM32 hard-float</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt-get</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> gcc-riscv64-linux-gnu</span><span style="color:#6A737D">    # RISC-V 64</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Thiết lập biến môi trường</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> CROSS_COMPILE</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">aarch64-linux-gnu-       </span><span style="color:#6A737D"># ARM64</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> ARCH</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">arm64</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Hoặc ARM32</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> CROSS_COMPILE</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">arm-linux-gnueabihf-</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> ARCH</span><span style="color:#F97583">=</span><span style="color:#E1E4E8">arm</span></span></code></pre>
+<h4 id="cấu-hình-u-boot">Cấu Hình U-Boot</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Clone source</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> clone</span><span style="color:#9ECBFF"> https://github.com/u-boot/u-boot.git</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> u-boot</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Xem danh sách defconfig cho board</span></span>
+<span class="line"><span style="color:#B392F0">ls</span><span style="color:#9ECBFF"> configs/</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#79B8FF"> -i</span><span style="color:#9ECBFF"> raspberrypi</span></span>
+<span class="line"><span style="color:#B392F0">ls</span><span style="color:#9ECBFF"> configs/</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> grep</span><span style="color:#79B8FF"> -i</span><span style="color:#9ECBFF"> imx6</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Chọn defconfig cho board của bạn</span></span>
+<span class="line"><span style="color:#B392F0">make</span><span style="color:#9ECBFF"> rpi_4_defconfig</span><span style="color:#6A737D">            # Raspberry Pi 4</span></span>
+<span class="line"><span style="color:#B392F0">make</span><span style="color:#9ECBFF"> mx6ull_14x14_evk_defconfig</span><span style="color:#6A737D"> # NXP i.MX6ULL EVK</span></span>
+<span class="line"><span style="color:#B392F0">make</span><span style="color:#9ECBFF"> am335x_evm_defconfig</span><span style="color:#6A737D">       # TI AM335x EVM</span></span>
+<span class="line"><span style="color:#B392F0">make</span><span style="color:#9ECBFF"> rock64-rk3328_defconfig</span><span style="color:#6A737D">    # Rock64 (RK3328)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Tùy chỉnh cấu hình (menuconfig)</span></span>
+<span class="line"><span style="color:#B392F0">make</span><span style="color:#9ECBFF"> menuconfig</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Quan trọng trong menuconfig:</span></span>
+<span class="line"><span style="color:#6A737D"># Boot media: MMC, SPI Flash, NAND, USB, Network</span></span>
+<span class="line"><span style="color:#6A737D"># SPL: Enable SPL, SPL size limits</span></span>
+<span class="line"><span style="color:#6A737D"># Environment: Storage location, size, offset</span></span>
+<span class="line"><span style="color:#6A737D"># Filesystem: FAT, ext2/4, UBIFS</span></span>
+<span class="line"><span style="color:#6A737D"># Network: DHCP, TFTP, NFS</span></span>
+<span class="line"><span style="color:#6A737D"># Security: Secure Boot, FIT signature</span></span></code></pre>
+<h4 id="biên-dịch-u-boot">Biên Dịch U-Boot</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Biên dịch toàn bộ</span></span>
+<span class="line"><span style="color:#B392F0">make</span><span style="color:#79B8FF"> -j$(</span><span style="color:#B392F0">nproc</span><span style="color:#79B8FF">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Output files:</span></span>
+<span class="line"><span style="color:#6A737D"># u-boot.bin        - U-Boot binary thuần</span></span>
+<span class="line"><span style="color:#6A737D"># u-boot.img        - U-Boot với header mkimage</span></span>
+<span class="line"><span style="color:#6A737D"># u-boot-dtb.bin    - U-Boot + DTB</span></span>
+<span class="line"><span style="color:#6A737D"># spl/u-boot-spl.bin - SPL binary</span></span>
+<span class="line"><span style="color:#6A737D"># MLO               - SPL cho TI (với header đặc biệt)</span></span>
+<span class="line"><span style="color:#6A737D"># u-boot.itb        - FIT image (SPL + U-Boot + DTB)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Chỉ biên dịch tools</span></span>
+<span class="line"><span style="color:#B392F0">make</span><span style="color:#9ECBFF"> tools</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Chỉ biên dịch dtbs</span></span>
+<span class="line"><span style="color:#B392F0">make</span><span style="color:#9ECBFF"> dtbs</span></span></code></pre>
+<h4 id="ghi-u-boot-vào-emmcsd">Ghi U-Boot vào eMMC/SD</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># ---- SD Card (từ host Linux) ----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Ghi SPL vào sector 1 (offset 512 bytes = 1 sector)</span></span>
+<span class="line"><span style="color:#6A737D"># (TI AM335x dùng sector 256)</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> dd</span><span style="color:#9ECBFF"> if=MLO</span><span style="color:#9ECBFF"> of=/dev/sdX</span><span style="color:#9ECBFF"> bs=</span><span style="color:#79B8FF">512</span><span style="color:#9ECBFF"> seek=</span><span style="color:#79B8FF">1</span><span style="color:#9ECBFF"> conv=notrunc,sync</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> dd</span><span style="color:#9ECBFF"> if=u-boot.img</span><span style="color:#9ECBFF"> of=/dev/sdX</span><span style="color:#9ECBFF"> bs=</span><span style="color:#79B8FF">512</span><span style="color:#9ECBFF"> seek=</span><span style="color:#79B8FF">96</span><span style="color:#9ECBFF"> conv=notrunc,sync</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Hoặc ghi trực tiếp (NXP i.MX6, offset 1KB)</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> dd</span><span style="color:#9ECBFF"> if=u-boot-dtb.imx</span><span style="color:#9ECBFF"> of=/dev/sdX</span><span style="color:#9ECBFF"> bs=1K</span><span style="color:#9ECBFF"> seek=</span><span style="color:#79B8FF">1</span><span style="color:#9ECBFF"> conv=notrunc,sync</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># ---- Từ U-Boot CLI (đang chạy) ----</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Load từ TFTP</span></span>
+<span class="line"><span style="color:#B392F0">tftp</span><span style="color:#E1E4E8"> ${loadaddr} </span><span style="color:#9ECBFF">u-boot.bin</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Ghi vào eMMC</span></span>
+<span class="line"><span style="color:#B392F0">mmc</span><span style="color:#9ECBFF"> dev</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#6A737D"># Ghi từ sector 2 (offset 1024 bytes), kích thước tính theo sectors</span></span>
+<span class="line"><span style="color:#B392F0">setexpr</span><span style="color:#9ECBFF"> sz</span><span style="color:#E1E4E8"> ${filesize} </span><span style="color:#9ECBFF">/</span><span style="color:#79B8FF"> 0x200</span></span>
+<span class="line"><span style="color:#B392F0">setexpr</span><span style="color:#9ECBFF"> sz</span><span style="color:#E1E4E8"> ${sz} </span><span style="color:#9ECBFF">+</span><span style="color:#79B8FF"> 1</span></span>
+<span class="line"><span style="color:#B392F0">mmc</span><span style="color:#9ECBFF"> write</span><span style="color:#E1E4E8"> ${loadaddr} </span><span style="color:#79B8FF">2</span><span style="color:#E1E4E8"> ${sz}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Ghi vào SPI flash</span></span>
+<span class="line"><span style="color:#B392F0">sf</span><span style="color:#9ECBFF"> probe</span><span style="color:#79B8FF"> 0</span></span>
+<span class="line"><span style="color:#B392F0">sf</span><span style="color:#9ECBFF"> erase</span><span style="color:#79B8FF"> 0</span><span style="color:#79B8FF"> 0x50000</span></span>
+<span class="line"><span style="color:#B392F0">sf</span><span style="color:#9ECBFF"> write</span><span style="color:#E1E4E8"> ${loadaddr} </span><span style="color:#79B8FF">0</span><span style="color:#E1E4E8"> ${filesize}</span></span></code></pre>
+<h4 id="tạo-custom-board-support">Tạo Custom Board Support</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#6A737D">/* board/mycompany/myboard/myboard.c */</span></span>
+<span class="line"><span style="color:#F97583">#include</span><span style="color:#9ECBFF"> &#x3C;common.h></span></span>
+<span class="line"><span style="color:#F97583">#include</span><span style="color:#9ECBFF"> &#x3C;init.h></span></span>
+<span class="line"><span style="color:#F97583">#include</span><span style="color:#9ECBFF"> &#x3C;asm/io.h></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* Cấu hình DDR */</span></span>
+<span class="line"><span style="color:#F97583">static</span><span style="color:#F97583"> const</span><span style="color:#F97583"> struct</span><span style="color:#E1E4E8"> mx6_ddr_sysinfo ddr_info </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    .dsize      </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">,</span><span style="color:#6A737D">  /* 32-bit data bus */</span></span>
+<span class="line"><span style="color:#E1E4E8">    .cs_density </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 32</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    .ncs        </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    .cs1_mirror </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    .rtt_wr     </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">,</span><span style="color:#6A737D">  /* DDR3_RTT_60_OHM */</span></span>
+<span class="line"><span style="color:#E1E4E8">    .rtt_nom    </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    .walat      </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    .ralat      </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    .mif3_mode  </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 3</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    .bi_on      </span><span style="color:#F97583">=</span><span style="color:#79B8FF"> 1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    .sde_to_rst </span><span style="color:#F97583">=</span><span style="color:#F97583"> 0x</span><span style="color:#79B8FF">10</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    .rst_to_cke </span><span style="color:#F97583">=</span><span style="color:#F97583"> 0x</span><span style="color:#79B8FF">23</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* Hàm bắt buộc: Thông tin board */</span></span>
+<span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> checkboard</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">void</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#B392F0">    puts</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"Board: MyBoard v1.0</span><span style="color:#79B8FF">\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* Hàm bắt buộc: Khởi tạo sớm */</span></span>
+<span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> board_early_init_f</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">void</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    /* Setup UART pads */</span></span>
+<span class="line"><span style="color:#B392F0">    setup_uart</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* Hàm bắt buộc: Khởi tạo chính */</span></span>
+<span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> board_init</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">void</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    /* Address of boot parameters */</span></span>
+<span class="line"><span style="color:#E1E4E8">    gd->bd->bi_boot_params </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> PHYS_SDRAM </span><span style="color:#F97583">+</span><span style="color:#F97583"> 0x</span><span style="color:#79B8FF">100</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#B392F0">    setup_i2c</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">    setup_usb</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#B392F0">    setup_spi</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">/* Thiết lập biến môi trường động */</span></span>
+<span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> board_late_init</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">void</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    /* Đọc serial number từ fuse / EEPROM */</span></span>
+<span class="line"><span style="color:#F97583">    char</span><span style="color:#FFAB70"> serial</span><span style="color:#E1E4E8">[</span><span style="color:#79B8FF">32</span><span style="color:#E1E4E8">];</span></span>
+<span class="line"><span style="color:#B392F0">    read_serial_number</span><span style="color:#E1E4E8">(serial);</span></span>
+<span class="line"><span style="color:#B392F0">    env_set</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"serial#"</span><span style="color:#E1E4E8">, serial);</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    /* Tự động phát hiện boot media */</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">is_recovery_button_pressed</span><span style="color:#E1E4E8">())</span></span>
+<span class="line"><span style="color:#B392F0">        env_set</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"bootcmd"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"run recovery_boot"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h2 id="device-tree-dtb">Device Tree (DTB)</h2>
+<h4 id="vai-trò-của-device-tree-trong-boot">Vai Trò của Device Tree trong Boot</h4>
+<p>Device Tree (DT) là cơ chế mô tả phần cứng để truyền từ bootloader sang kernel, giúp kernel nhận biết các thiết bị có mặt mà không cần hard-code vào kernel.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Bootloader đọc DTB file</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Bootloader có thể chỉnh sửa DTB (fixup) trong runtime</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Bootloader truyền DTB address cho kernel</span></span>
+<span class="line"><span>        ↓</span></span>
+<span class="line"><span>Kernel parse DTB để cấu hình driver</span></span></code></pre>
+<h4 id="ví-dụ-device-tree">Ví Dụ Device Tree</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/* arch/arm64/boot/dts/vendor/my-board.dts */</span></span>
+<span class="line"><span>/dts-v1/;</span></span>
+<span class="line"><span>#include "my-soc.dtsi"</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/ {</span></span>
+<span class="line"><span>    model = "MyCompany MyBoard v1.0";</span></span>
+<span class="line"><span>    compatible = "mycompany,myboard", "vendor,my-soc";</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /* Mô tả RAM */</span></span>
+<span class="line"><span>    memory@40000000 {</span></span>
+<span class="line"><span>        device_type = "memory";</span></span>
+<span class="line"><span>        reg = &#x3C;0x0 0x40000000 0x0 0x40000000>; /* 1GB từ 0x40000000 */</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    /* Cấu hình console mặc định */</span></span>
+<span class="line"><span>    chosen {</span></span>
+<span class="line"><span>        stdout-path = "serial0:115200n8";</span></span>
+<span class="line"><span>        /* bootargs có thể được set ở đây hoặc từ bootloader */</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/* Override UART0 từ dtsi */</span></span>
+<span class="line"><span>&#x26;uart0 {</span></span>
+<span class="line"><span>    status = "okay";</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/* Override I2C với PMIC */</span></span>
+<span class="line"><span>&#x26;i2c0 {</span></span>
+<span class="line"><span>    status = "okay";</span></span>
+<span class="line"><span>    clock-frequency = &#x3C;400000>;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    pmic@58 {</span></span>
+<span class="line"><span>        compatible = "dlg,da9063";</span></span>
+<span class="line"><span>        reg = &#x3C;0x58>;</span></span>
+<span class="line"><span>        interrupt-parent = &#x3C;&#x26;gpio1>;</span></span>
+<span class="line"><span>        interrupts = &#x3C;5 IRQ_TYPE_LEVEL_LOW>;</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span>};</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/* Ethernet */</span></span>
+<span class="line"><span>&#x26;ethernet0 {</span></span>
+<span class="line"><span>    status = "okay";</span></span>
+<span class="line"><span>    phy-mode = "rgmii-id";</span></span>
+<span class="line"><span>    phy-handle = &#x3C;&#x26;phy0>;</span></span>
+<span class="line"><span>    </span></span>
+<span class="line"><span>    mdio {</span></span>
+<span class="line"><span>        phy0: ethernet-phy@0 {</span></span>
+<span class="line"><span>            reg = &#x3C;0>;</span></span>
+<span class="line"><span>            reset-gpios = &#x3C;&#x26;gpio2 10 GPIO_ACTIVE_LOW>;</span></span>
+<span class="line"><span>        };</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span>};</span></span></code></pre>
+<h4 id="u-boot-dtb-fixup">U-Boot DTB Fixup</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#6A737D">/* Bootloader có thể sửa DTB trước khi truyền cho kernel */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> ft_board_setup</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">void</span><span style="color:#F97583"> *</span><span style="color:#FFAB70">blob</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">struct</span><span style="color:#E1E4E8"> bd_info </span><span style="color:#F97583">*</span><span style="color:#FFAB70">bd</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    /* Cập nhật địa chỉ RAM */</span></span>
+<span class="line"><span style="color:#B392F0">    fdt_fixup_memory</span><span style="color:#E1E4E8">(blob, (u64)PHYS_SDRAM, (u64)PHYS_SDRAM_SIZE);</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    /* Thêm serial number vào chosen node */</span></span>
+<span class="line"><span style="color:#F97583">    char</span><span style="color:#FFAB70"> serial</span><span style="color:#E1E4E8">[</span><span style="color:#79B8FF">32</span><span style="color:#E1E4E8">];</span></span>
+<span class="line"><span style="color:#B392F0">    read_serial_from_fuse</span><span style="color:#E1E4E8">(serial);</span></span>
+<span class="line"><span style="color:#B392F0">    fdt_setprop_string</span><span style="color:#E1E4E8">(blob, </span><span style="color:#B392F0">fdt_path_offset</span><span style="color:#E1E4E8">(blob, </span><span style="color:#9ECBFF">"/chosen"</span><span style="color:#E1E4E8">),</span></span>
+<span class="line"><span style="color:#9ECBFF">                       "serial-number"</span><span style="color:#E1E4E8">, serial);</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    /* Set MAC address từ environment */</span></span>
+<span class="line"><span style="color:#F97583">    char</span><span style="color:#F97583"> *</span><span style="color:#E1E4E8">mac </span><span style="color:#F97583">=</span><span style="color:#B392F0"> env_get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"ethaddr"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (mac) {</span></span>
+<span class="line"><span style="color:#E1E4E8">        u8 </span><span style="color:#FFAB70">mac_bytes</span><span style="color:#E1E4E8">[</span><span style="color:#79B8FF">6</span><span style="color:#E1E4E8">];</span></span>
+<span class="line"><span style="color:#B392F0">        string_to_enetaddr</span><span style="color:#E1E4E8">(mac, mac_bytes);</span></span>
+<span class="line"><span style="color:#B392F0">        fdt_fixup_ethernet</span><span style="color:#E1E4E8">(blob);</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h2 id="bảo-mật-bootloader">Bảo Mật Bootloader</h2>
+<h4 id="secure-boot-chain">Secure Boot Chain</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Secure Boot Chain (ARM TrustZone):</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>OTP/eFuse (Public Key Hash) ← Được lập trình 1 lần tại nhà máy</span></span>
+<span class="line"><span>        ↓ Verify</span></span>
+<span class="line"><span>BootROM (Immutable)</span></span>
+<span class="line"><span>        ↓ Verify signature</span></span>
+<span class="line"><span>ARM Trusted Firmware (ATF/TF-A)  ← BL1, BL2</span></span>
+<span class="line"><span>        ↓ Verify signature</span></span>
+<span class="line"><span>Secure Bootloader (OP-TEE / BL31)</span></span>
+<span class="line"><span>        ↓ Verify signature</span></span>
+<span class="line"><span>U-Boot (BL33)</span></span>
+<span class="line"><span>        ↓ Verify signature</span></span>
+<span class="line"><span>Linux Kernel (FIT image)</span></span></code></pre>
+<h4 id="fit-image-với-signature">FIT Image với Signature</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/* boot.its - FIT Image Tree Source */</span></span>
+<span class="line"><span>/dts-v1/;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>/ {</span></span>
+<span class="line"><span>    description = "Signed Boot Image";</span></span>
+<span class="line"><span>    #address-cells = &#x3C;1>;</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    images {</span></span>
+<span class="line"><span>        kernel@1 {</span></span>
+<span class="line"><span>            description = "Linux Kernel";</span></span>
+<span class="line"><span>            data = /incbin/("Image");</span></span>
+<span class="line"><span>            type = "kernel";</span></span>
+<span class="line"><span>            arch = "arm64";</span></span>
+<span class="line"><span>            os = "linux";</span></span>
+<span class="line"><span>            compression = "none";</span></span>
+<span class="line"><span>            load = &#x3C;0x40200000>;</span></span>
+<span class="line"><span>            entry = &#x3C;0x40200000>;</span></span>
+<span class="line"><span>            </span></span>
+<span class="line"><span>            hash@1 {</span></span>
+<span class="line"><span>                algo = "sha256";</span></span>
+<span class="line"><span>            };</span></span>
+<span class="line"><span>        };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>        fdt@1 {</span></span>
+<span class="line"><span>            description = "Device Tree";</span></span>
+<span class="line"><span>            data = /incbin/("my-board.dtb");</span></span>
+<span class="line"><span>            type = "flat_dt";</span></span>
+<span class="line"><span>            arch = "arm64";</span></span>
+<span class="line"><span>            compression = "none";</span></span>
+<span class="line"><span>            </span></span>
+<span class="line"><span>            hash@1 {</span></span>
+<span class="line"><span>                algo = "sha256";</span></span>
+<span class="line"><span>            };</span></span>
+<span class="line"><span>        };</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>    configurations {</span></span>
+<span class="line"><span>        default = "conf@1";</span></span>
+<span class="line"><span>        </span></span>
+<span class="line"><span>        conf@1 {</span></span>
+<span class="line"><span>            description = "Default Config";</span></span>
+<span class="line"><span>            kernel = "kernel@1";</span></span>
+<span class="line"><span>            fdt = "fdt@1";</span></span>
+<span class="line"><span>            </span></span>
+<span class="line"><span>            signature@1 {</span></span>
+<span class="line"><span>                algo = "sha256,rsa2048";</span></span>
+<span class="line"><span>                key-name-hint = "dev";</span></span>
+<span class="line"><span>                sign-images = "kernel", "fdt";</span></span>
+<span class="line"><span>            };</span></span>
+<span class="line"><span>        };</span></span>
+<span class="line"><span>    };</span></span>
+<span class="line"><span>};</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Tạo và ký FIT image</span></span>
+<span class="line"><span style="color:#B392F0">mkimage</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> boot.its</span><span style="color:#79B8FF"> -k</span><span style="color:#9ECBFF"> /path/to/keys</span><span style="color:#79B8FF"> -K</span><span style="color:#9ECBFF"> u-boot.dtb</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">        -r</span><span style="color:#79B8FF"> -o</span><span style="color:#9ECBFF"> boot.itb</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Keys được tạo bằng:</span></span>
+<span class="line"><span style="color:#B392F0">openssl</span><span style="color:#9ECBFF"> genrsa</span><span style="color:#79B8FF"> -F4</span><span style="color:#79B8FF"> -out</span><span style="color:#9ECBFF"> dev.key</span><span style="color:#79B8FF"> 2048</span></span>
+<span class="line"><span style="color:#B392F0">openssl</span><span style="color:#9ECBFF"> req</span><span style="color:#79B8FF"> -batch</span><span style="color:#79B8FF"> -new</span><span style="color:#79B8FF"> -x509</span><span style="color:#79B8FF"> -key</span><span style="color:#9ECBFF"> dev.key</span><span style="color:#79B8FF"> -out</span><span style="color:#9ECBFF"> dev.crt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Kiểm tra FIT image</span></span>
+<span class="line"><span style="color:#B392F0">dumpimage</span><span style="color:#79B8FF"> -l</span><span style="color:#9ECBFF"> boot.itb</span></span></code></pre>
+<h4 id="rollback-protection">Rollback Protection</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="c"><code><span class="line"><span style="color:#6A737D">/* Bảo vệ chống rollback bằng Anti-Rollback Counter (ARC)</span></span>
+<span class="line"><span style="color:#6A737D">   lưu trong eFuse / RPMB */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">#define</span><span style="color:#B392F0"> MIN_UBOOT_VERSION</span><span style="color:#79B8FF">  3</span><span style="color:#6A737D">   /* Phiên bản tối thiểu cho phép */</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">int</span><span style="color:#B392F0"> board_late_init</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">void</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#6A737D">    /* Đọc phiên bản hiện tại từ eFuse */</span></span>
+<span class="line"><span style="color:#F97583">    uint32_t</span><span style="color:#E1E4E8"> arc </span><span style="color:#F97583">=</span><span style="color:#B392F0"> read_anti_rollback_counter</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    /* Kiểm tra phiên bản image mới */</span></span>
+<span class="line"><span style="color:#F97583">    uint32_t</span><span style="color:#E1E4E8"> new_version </span><span style="color:#F97583">=</span><span style="color:#B392F0"> get_image_version</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (new_version </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8"> arc) {</span></span>
+<span class="line"><span style="color:#B392F0">        printf</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"ERROR: Anti-rollback check failed! "</span></span>
+<span class="line"><span style="color:#9ECBFF">               "Image v</span><span style="color:#79B8FF">%d</span><span style="color:#9ECBFF"> &#x3C; ARC v</span><span style="color:#79B8FF">%d\n</span><span style="color:#9ECBFF">"</span><span style="color:#E1E4E8">, new_version, arc);</span></span>
+<span class="line"><span style="color:#F97583">        return</span><span style="color:#F97583"> -</span><span style="color:#E1E4E8">EPERM;</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#6A737D">    /* Cập nhật ARC nếu phiên bản mới hơn */</span></span>
+<span class="line"><span style="color:#F97583">    if</span><span style="color:#E1E4E8"> (new_version </span><span style="color:#F97583">></span><span style="color:#E1E4E8"> arc)</span></span>
+<span class="line"><span style="color:#B392F0">        update_anti_rollback_counter</span><span style="color:#E1E4E8">(new_version);</span></span>
+<span class="line"><span style="color:#E1E4E8">    </span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h4 id="lock-down-u-boot">Lock Down U-Boot</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Trong U-Boot menuconfig: tắt các tính năng nguy hiểm</span></span>
+<span class="line"><span style="color:#E1E4E8">CONFIG_BOOTCOMMAND</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"run distro_bootcmd"</span><span style="color:#6A737D">  # Không cho phép thay đổi</span></span>
+<span class="line"><span style="color:#E1E4E8">CONFIG_BOOTDELAY</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">-2</span><span style="color:#6A737D">                       # Không có thời gian chờ</span></span>
+<span class="line"><span style="color:#E1E4E8">CONFIG_CMD_BOOTD</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">n</span><span style="color:#6A737D">                        # Tắt lệnh bootd</span></span>
+<span class="line"><span style="color:#E1E4E8">CONFIG_CMD_LOADS</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">n</span><span style="color:#6A737D">                        # Tắt nạp qua serial</span></span>
+<span class="line"><span style="color:#E1E4E8">CONFIG_ENV_IS_NOWHERE</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">y</span><span style="color:#6A737D">                   # Không lưu environment</span></span>
+<span class="line"><span style="color:#E1E4E8">CONFIG_DISABLE_CONSOLE</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">y</span><span style="color:#6A737D">                  # Tắt console (production)</span></span></code></pre>
+<hr>
+<h2 id="debug-và-troubleshooting">Debug và Troubleshooting</h2>
+<h4 id="output-console-điển-hình">Output Console Điển Hình</h4>
+<p>Khi boot thành công, console sẽ hiển thị:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>U-Boot SPL 2024.01 (Jan 15 2024 - 10:30:00 +0700)</span></span>
+<span class="line"><span>Trying to boot from MMC1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>U-Boot 2024.01 (Jan 15 2024 - 10:30:00 +0700)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>CPU:   Cortex-A53 @ 1200 MHz</span></span>
+<span class="line"><span>Model: MyCompany MyBoard v1.0</span></span>
+<span class="line"><span>DRAM:  1 GiB</span></span>
+<span class="line"><span>MMC:   mmc@fe310000: 0, mmc@fe320000: 1</span></span>
+<span class="line"><span>Loading Environment from FAT... OK</span></span>
+<span class="line"><span>Hit any key to stop autoboot:  3 2 1 0</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Loading kernel from FIT Image at 40000000 ...</span></span>
+<span class="line"><span>...</span></span>
+<span class="line"><span>Starting kernel ...</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]</span></span>
+<span class="line"><span>[    0.000000] Linux version 6.6.0 ...</span></span></code></pre>
+<h4 id="các-lỗi-thường-gặp">Các Lỗi Thường Gặp</h4>
+<p><strong>Lỗi 1: Không có output sau power-on</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Nguyên nhân có thể:</span></span>
+<span class="line"><span>- SPL không được ghi đúng offset</span></span>
+<span class="line"><span>- Clock/power chưa đúng</span></span>
+<span class="line"><span>- UART chưa được cấu hình</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Debug:</span></span>
+<span class="line"><span>- Kiểm tra JTAG/SWDIO output</span></span>
+<span class="line"><span>- Đo tín hiệu UART với oscilloscope</span></span>
+<span class="line"><span>- Kiểm tra PMIC power rails</span></span>
+<span class="line"><span>- Xác nhận SPL offset với datasheet SoC</span></span></code></pre>
+<p><strong>Lỗi 2: SPL chạy nhưng U-Boot không load được</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>SPL: Trying to boot from MMC</span></span>
+<span class="line"><span>SPL: mmc init failed with error: -5</span></span>
+<span class="line"><span>### ERROR ### Please RESET the board ###</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Nguyên nhân:</span></span>
+<span class="line"><span>- DDR initialization thất bại</span></span>
+<span class="line"><span>- SPL tìm U-Boot sai offset</span></span>
+<span class="line"><span>- eMMC/SD card bị lỗi</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Debug:</span></span>
+<span class="line"><span>U-Boot> md.l 0x80000000 4  # Kiểm tra DDR có accessible không</span></span>
+<span class="line"><span>U-Boot> mmc info            # Kiểm tra MMC</span></span>
+<span class="line"><span>U-Boot> mmc read 0x80000000 0x60 0x100  # Đọc sector 96 (offset U-Boot)</span></span></code></pre>
+<p><strong>Lỗi 3: U-Boot chạy nhưng không boot kernel</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Wrong Image Format for bootm command</span></span>
+<span class="line"><span>ERROR: can't get kernel image!</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Nguyên nhân:</span></span>
+<span class="line"><span>- Sai địa chỉ load kernel</span></span>
+<span class="line"><span>- Image format không khớp (Image vs zImage vs uImage)</span></span>
+<span class="line"><span>- DTB không tìm thấy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Debug:</span></span>
+<span class="line"><span>U-Boot> ls mmc 0:1          # Kiểm tra file có tồn tại</span></span>
+<span class="line"><span>U-Boot> load mmc 0:1 ${kernel_addr_r} Image</span></span>
+<span class="line"><span>U-Boot> iminfo ${kernel_addr_r}  # Xem thông tin image</span></span></code></pre>
+<p><strong>Lỗi 4: Kernel panic ngay sau boot</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>[    0.000000] Kernel panic - not syncing: VFS: </span></span>
+<span class="line"><span>               Unable to mount root fs on unknown-block(0,0)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Nguyên nhân: Root filesystem không tìm thấy</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Debug:</span></span>
+<span class="line"><span>U-Boot> setenv bootargs "... root=/dev/mmcblk0p2 rootwait debug"</span></span>
+<span class="line"><span># Thêm "debug" và "rootwait" vào bootargs</span></span>
+<span class="line"><span># Kiểm tra lại root= device node</span></span></code></pre>
+<h3 id="debug-qua-jtagopenocd">Debug qua JTAG/OpenOCD</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Kết nối OpenOCD với JTAG adapter</span></span>
+<span class="line"><span style="color:#B392F0">openocd</span><span style="color:#79B8FF"> -f</span><span style="color:#9ECBFF"> interface/jlink.cfg</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">        -f</span><span style="color:#9ECBFF"> target/imx6.cfg</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Từ telnet (port 4444)</span></span>
+<span class="line"><span style="color:#B392F0">telnet</span><span style="color:#9ECBFF"> localhost</span><span style="color:#79B8FF"> 4444</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Các lệnh debug</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> halt                    </span><span style="color:#6A737D"># Dừng CPU</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> targets                 </span><span style="color:#6A737D"># Liệt kê targets</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> cortex_a.cpu reg        </span><span style="color:#6A737D"># Đọc registers</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> mdw 0x80000000          </span><span style="color:#6A737D"># Đọc memory word</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> arm disassemble 0x80000000 20  </span><span style="color:#6A737D"># Disassemble</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> bp 0x80200000 4 hw      </span><span style="color:#6A737D"># Hardware breakpoint</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> resume                  </span><span style="color:#6A737D"># Tiếp tục chạy</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> step                    </span><span style="color:#6A737D"># Single step</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Load và debug U-Boot</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> load_image u-boot 0x80800000 bin</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> reg pc 0x80800000</span></span>
+<span class="line"><span style="color:#F97583">></span><span style="color:#E1E4E8"> resume</span></span></code></pre>
+<h3 id="sử-dụng-uart-debug-console">Sử Dụng UART Debug Console</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Kết nối UART từ host</span></span>
+<span class="line"><span style="color:#6A737D"># Cài minicom hoặc picocom</span></span>
+<span class="line"><span style="color:#B392F0">sudo</span><span style="color:#9ECBFF"> apt</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> picocom</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Kết nối (thường 115200 baud)</span></span>
+<span class="line"><span style="color:#B392F0">picocom</span><span style="color:#79B8FF"> -b</span><span style="color:#79B8FF"> 115200</span><span style="color:#9ECBFF"> /dev/ttyUSB0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Ghi log để phân tích</span></span>
+<span class="line"><span style="color:#B392F0">picocom</span><span style="color:#79B8FF"> -b</span><span style="color:#79B8FF"> 115200</span><span style="color:#9ECBFF"> /dev/ttyUSB0</span><span style="color:#79B8FF"> --logfile</span><span style="color:#9ECBFF"> boot.log</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Phân tích timing trong log</span></span>
+<span class="line"><span style="color:#B392F0">grep</span><span style="color:#79B8FF"> -E</span><span style="color:#9ECBFF"> "^\[.*\]"</span><span style="color:#9ECBFF"> boot.log</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> head</span><span style="color:#79B8FF"> -50</span><span style="color:#6A737D">  # Kernel timestamps</span></span></code></pre>
+<h3 id="checklist-debug-bootloader">Checklist Debug Bootloader</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>□ Power rails đúng điện áp chưa? (VDD_CORE, VDD_IO, VDD_DDR)</span></span>
+<span class="line"><span>□ Clock source có oscillating không? (đo bằng oscilloscope)</span></span>
+<span class="line"><span>□ BOOT_MODE pins đúng chưa? (BOOT từ eMMC/SD/SPI?)</span></span>
+<span class="line"><span>□ SPL được ghi đúng offset chưa? (xem datasheet SoC)</span></span>
+<span class="line"><span>□ DDR training logs có lỗi không?</span></span>
+<span class="line"><span>□ Environment variables có đúng không? (printenv)</span></span>
+<span class="line"><span>□ Kernel image tại đúng địa chỉ? (iminfo)</span></span>
+<span class="line"><span>□ DTB compatible string có khớp với kernel driver?</span></span>
+<span class="line"><span>□ bootargs có đúng root device không?</span></span>
+<span class="line"><span>□ Filesystem có corrupted không? (fsck.ext4)</span></span></code></pre>
+<hr>
+<h2 id="tài-liệu-tham-khảo">Tài Liệu Tham Khảo</h2>
+<h4 id="tài-liệu-chính-thức">Tài Liệu Chính Thức</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tài Liệu</th><th>Đường Dẫn</th></tr></thead><tbody><tr><td>U-Boot Documentation</td><td><a href="https://docs.u-boot.org">https://docs.u-boot.org</a></td></tr><tr><td>U-Boot Source</td><td><a href="https://github.com/u-boot/u-boot">https://github.com/u-boot/u-boot</a></td></tr><tr><td>Barebox Documentation</td><td><a href="https://www.barebox.org/doc">https://www.barebox.org/doc</a></td></tr><tr><td>Linux Device Tree</td><td><a href="https://devicetree.org">https://devicetree.org</a></td></tr><tr><td>ARM Trusted Firmware</td><td><a href="https://trustedfirmware-a.readthedocs.io">https://trustedfirmware-a.readthedocs.io</a></td></tr></tbody></table>
+<h4 id="tài-liệu-soc-cụ-thể">Tài Liệu SoC Cụ Thể</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>SoC</th><th>Tài Liệu</th></tr></thead><tbody><tr><td>NXP i.MX</td><td><a href="https://www.nxp.com/design/software/embedded-software/i-mx-software">https://www.nxp.com/design/software/embedded-software/i-mx-software</a></td></tr><tr><td>TI AM335x</td><td><a href="https://www.ti.com/product/AM3358">https://www.ti.com/product/AM3358</a></td></tr><tr><td>Rockchip</td><td><a href="https://opensource.rock-chips.com">https://opensource.rock-chips.com</a></td></tr><tr><td>Allwinner</td><td><a href="https://linux-sunxi.org">https://linux-sunxi.org</a></td></tr><tr><td>Broadcom (RPi)</td><td><a href="https://github.com/raspberrypi/firmware">https://github.com/raspberrypi/firmware</a></td></tr></tbody></table>
+<h4 id="sách-tham-khảo">Sách Tham Khảo</h4>
+<ul>
+<li>“Embedded Linux Development Using Yocto Project” - Otavio Salvador</li>
+<li>“Mastering Embedded Linux Programming” - Chris Simmonds</li>
+<li>“Building Embedded Linux Systems” - Karim Yaghmour</li>
+<li>“Linux Kernel Development” - Robert Love</li>
+</ul>
+<h4 id="cộng-đồng-và-hỗ-trợ">Cộng Đồng và Hỗ Trợ</h4>
+<ul>
+<li><strong>U-Boot Mailing List</strong>: <a href="mailto:u-boot@lists.denx.de">u-boot@lists.denx.de</a></li>
+<li><strong>Linux Kernel Mailing List</strong>: <a href="mailto:linux-kernel@vger.kernel.org">linux-kernel@vger.kernel.org</a></li>
+<li><strong>Embedded Linux Wiki</strong>: <a href="https://elinux.org">https://elinux.org</a></li>
+<li><strong>bootlin (Free Training)</strong>: <a href="https://bootlin.com/docs">https://bootlin.com/docs</a></li>
+</ul>
+<hr>
+<blockquote>
+<p><strong>Lưu ý</strong>: Tài liệu này mang tính tổng quan. Chi tiết cụ thể có thể khác nhau tùy theo SoC, board và phiên bản U-Boot. Luôn tham khảo datasheet của SoC và release notes của U-Boot phiên bản đang dùng.</p>
+</blockquote>
+<hr>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2026 Chung Duc Nguyen Dang. All rights reserved.
+</footer>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const c=document.getElementById("toc"),r=Array.from(document.querySelectorAll(".prose h2, .prose h3"));if(!c||r.length===0)return;r.forEach(t=>{const e=t.textContent.trim(),o=e.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-");t.id=o;const n=document.createElement("a");n.href="#"+o,n.textContent=e,t.tagName==="H3"&&n.classList.add("h3"),c.appendChild(n)});const s=Array.from(document.querySelectorAll(".toc a"));s.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=document.querySelector(t.getAttribute("href"));if(!o)return;const d=o.getBoundingClientRect().top+window.scrollY+-80;window.scrollTo({top:d,behavior:"smooth"})})});let i=null;const l=t=>{i!==t&&(i=t,s.forEach(e=>{e.classList.toggle("active",e.getAttribute("href")==="#"+t)}))},a=new IntersectionObserver(t=>{const e=t.filter(o=>o.isIntersecting).sort((o,n)=>o.boundingClientRect.top-n.boundingClientRect.top);e.length>0&&l(e[0].target.id)},{rootMargin:"-30% 0px -60% 0px",threshold:[0,1]});r.forEach(t=>a.observe(t))});</script> </body> </html>

@@ -1,0 +1,23 @@
+<map id="son::db::add_gateway" name="son::db::add_gateway">
+<area shape="rect" id="Node000001" title="add gateway node and Agent object." alt="" coords="5,121,156,146"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#aa83ac0caef414527b3c06f8b3022d48c" title="Adds instance to the datamodel for the unique MAC." alt="" coords="211,5,375,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,118,203,62,230,49,232,53,205,66,104,123"/>
+<area shape="rect" id="Node000003" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="455,61,585,86"/>
+<area shape="poly" id="edge11_Node000001_Node000003" title=" " alt="" coords="137,118,204,105,328,89,441,77,441,82,329,94,204,111,138,123"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a79be67bdd201772752ef02da022c3285" title="Sets agents (Device) datamodel ManufacturerOUI object." alt="" coords="204,121,383,146"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="156,131,190,131,190,136,156,136"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#a3fd8debfa692514c714743a9e063c42f" title="Set clients (device) multi ap capabilities." alt="" coords="213,171,374,211"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="129,143,206,164,205,170,128,149"/>
+<area shape="rect" id="Node000009" href="$classson_1_1db.html#ad0db0d755fe655743d535a83a95d33ab" title="Updates CollectionInterval of the all Devices (Agents)." alt="" coords="223,244,363,284"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="99,144,146,180,205,220,234,236,231,240,203,225,142,184,96,148"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="376,40,446,55,445,60,375,45"/>
+<area shape="rect" id="Node000004" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="657,86,804,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="586,78,644,86,643,91,585,84"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="383,124,643,103,644,108,383,129"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a12d3c2aabc63ee0fcdb1ca26f854f484" title="Get agent from its ALID." alt="" coords="455,162,585,187"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="374,182,440,178,441,183,374,188"/>
+<area shape="rect" id="Node000008" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="447,211,593,237"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="375,200,434,209,433,214,374,205"/>
+<area shape="rect" id="Node000010" href="$classson_1_1db.html#a6f11b72b5c6376e49674dc53a98b55d9" title=" " alt="" coords="431,261,609,301"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="364,267,417,271,417,276,363,272"/>
+</map>

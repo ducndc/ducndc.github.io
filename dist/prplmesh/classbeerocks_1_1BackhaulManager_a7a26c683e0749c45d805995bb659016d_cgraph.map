@@ -1,0 +1,27 @@
+<map id="beerocks::BackhaulManager::hal_event_handler" name="beerocks::BackhaulManager::hal_event_handler">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,248,192,288"/>
+<area shape="rect" id="Node000002" href="$classson_1_1wireless__utils.html#ac620e40a37139a5c40b7ede546b0b635" title=" " alt="" coords="308,20,439,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,247,128,212,157,168,194,123,238,83,265,67,294,56,296,61,268,72,242,87,198,126,161,171,132,214,113,249"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1network__utils.html#a729e1751e39459cdfb2fbb2d1067eb69" title=" " alt="" coords="296,98,451,153"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="120,246,172,203,239,162,282,144,284,149,241,166,175,208,124,250"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1net_1_1network__utils.html#ac33179916a7a42897fe851c1090f0bf9" title=" " alt="" coords="296,177,451,231"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="185,245,282,222,283,228,186,251"/>
+<area shape="rect" id="Node000009" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="301,255,446,281"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="192,265,287,265,287,271,192,271"/>
+<area shape="rect" id="Node000010" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="308,305,439,330"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="193,282,295,301,294,306,192,287"/>
+<area shape="rect" id="Node000012" href="$classbeerocks__message_1_1cACTION__BACKHAUL__CLIENT__RX__RSSI__MEASUREMENT__RESPONSE.html#a83cb520b54682b0e4a2a127d118f5b14" title=" " alt="" coords="240,354,507,409"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="134,286,184,313,241,340,259,347,257,352,239,345,181,318,132,290"/>
+<area shape="rect" id="Node000013" href="$classson_1_1wireless__utils.html#a4a9475de64b16eec74c471a08b4db153" title="Get a frequency type based on a frequency." alt="" coords="308,433,439,473"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="115,287,165,353,201,389,241,419,267,431,295,440,294,445,265,436,239,424,197,393,161,356,111,290"/>
+<area shape="rect" id="Node000003" href="$classson_1_1wireless__utils.html#ae13517219b7aa98c390266a192b4f818" title=" " alt="" coords="583,5,713,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="439,34,569,27,569,32,439,39"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1string__utils.html#ac5ba735c54be1ae2bf849bf9c60257f6" title=" " alt="" coords="575,69,721,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="450,113,561,98,561,103,451,118"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1network__utils.html#a7e48e261c845c8fa55dde2c6dcb903a6" title="Gets the interface index corresponding to a particular name." alt="" coords="555,133,741,173"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="451,131,541,140,541,145,451,136"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1network__utils.html#aaa4168b91575aa414e205c38deec6b27" title="Gets the bridge name hosting the provided interface." alt="" coords="571,198,725,253"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="452,143,508,162,556,183,572,190,570,195,554,188,506,166,450,148"/>
+<area shape="rect" id="Node000011" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="575,305,721,330"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="439,315,561,315,561,320,439,320"/>
+</map>

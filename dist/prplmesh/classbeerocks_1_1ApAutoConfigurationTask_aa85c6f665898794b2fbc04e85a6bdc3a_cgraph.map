@@ -1,0 +1,21 @@
+<map id="beerocks::ApAutoConfigurationTask::configuration_complete_wait_action" name="beerocks::ApAutoConfigurationTask::configuration_complete_wait_action">
+<area shape="rect" id="Node000001" title="Wait until given radio radio_iface has completed the AP configuration. Perform the necessary actions ..." alt="" coords="5,95,208,149"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="279,5,442,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,92,199,65,255,40,278,32,280,37,257,44,202,69,153,97"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1network__utils.html#ac33179916a7a42897fe851c1090f0bf9" title=" " alt="" coords="283,55,438,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,103,269,94,270,99,208,109"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1network__utils.html#aaa4168b91575aa414e205c38deec6b27" title="Gets the bridge name hosting the provided interface." alt="" coords="283,133,438,188"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,135,270,144,269,150,208,140"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a133d91ad40ad9b0d0ffb679e4de92ab9" title=" " alt="" coords="256,212,465,267"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="158,147,257,197,274,204,272,209,255,202,156,152"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1message__com.html#aca33ce73fa0075ee0b7f0c78984aa519" title=" " alt="" coords="513,155,681,195"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="462,209,509,196,510,202,463,214"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1slave__thread.html#a8c39a142418df7191fa4e423b43ae217" title=" " alt="" coords="519,219,676,259"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="466,237,505,237,505,242,466,242"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1slave__thread.html#a45a56addb54bad73fd898146a93f3279" title="Sends given CMDU message through the specified socket connection." alt="" coords="519,283,676,323"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="463,264,510,277,509,282,462,269"/>
+<area shape="rect" id="Node000007" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="729,155,928,195"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="682,173,716,173,716,178,682,178"/>
+<area shape="rect" id="Node000008" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="976,163,1091,188"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="928,173,962,173,962,178,928,178"/>
+</map>

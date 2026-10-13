@@ -1,0 +1,33 @@
+<map id="multi_vendor::tlvf_handler::add_vs_tlv" name="multi_vendor::tlvf_handler::add_vs_tlv">
+<area shape="rect" id="Node000001" title="Execute all registered handlers for the given message type." alt="" coords="797,199,940,239"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#abe4d41e73e16f636e50d39e63345ad68" title=" " alt="" coords="523,20,749,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="844,189,802,138,776,112,748,89,698,62,700,58,751,84,780,108,806,135,848,186"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1TopologyTask.html#a60a4e6ffc0a8793d606f20a36de81606" title="Handles 1905 Topology Query message." alt="" coords="555,99,717,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="807,195,682,141,684,136,809,190"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1CapabilityReportingTask.html#a7b00b32fa754ce14fc09180c85ec881e" title=" " alt="" coords="537,191,735,246"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="783,221,735,221,735,216,783,216"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1ApAutoConfigurationTask.html#af3f2015eb5e0ff04545a58e07edd9015" title=" " alt="" coords="529,270,743,325"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="797,246,718,272,717,267,795,241"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1ApAutoConfigurationTask.html#acac857cb125f8b47cf8715889f8008d6" title=" " alt="" coords="529,349,743,403"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="846,251,804,296,751,340,730,351,728,346,748,335,801,292,842,247"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ab2452024f7d97d1001a79ab2b61e84ce" title="Handle CMDU message." alt="" coords="261,5,469,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="509,36,469,34,469,28,509,30"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1TopologyTask.html#a2c75b5c339449510a43209a2e90fcee8" title="Handle CMDU message." alt="" coords="284,69,447,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="541,111,446,101,447,95,541,106"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1CapabilityReportingTask.html#a9acb331eed8a595e767c64ee983f0200" title=" " alt="" coords="267,134,464,189"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="523,198,464,185,465,180,524,192"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1CapabilityReportingTask.html#a95ab455be4b0b197194827083763e214" title=" " alt="" coords="259,213,471,267"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="524,230,472,234,471,229,523,225"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1CapabilityReportingTask.html#ac964d82b2215485effda1e3b9d1625b2" title=" " alt="" coords="256,292,475,332"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="541,253,524,260,476,281,437,294,435,289,474,276,522,255,539,248"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1CapabilityReportingTask.html#a88f1851388eaee3fe4cdd87b10266a0a" title="Handle events, which are being send from containing thread." alt="" coords="8,181,205,221"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="254,181,206,189,205,183,253,176"/>
+<area shape="poly" id="edge9_Node000009_Node000008" title=" " alt="" coords="245,225,205,219,206,213,246,220"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1CapabilityReportingTask.html#a6a8c641f2791e991564843ee929042bc" title="Handle CMDU message." alt="" coords="8,292,205,332"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="242,315,206,315,206,309,242,309"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aec7c837c390bb5fa3bd9237f3c5498ec" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="264,356,467,396"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="529,331,436,358,434,353,528,326"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a0805d78df62071cfdd3ad89bddc67963" title="Handle events, which are being send from containing thread." alt="" coords="5,356,208,396"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="250,379,208,379,208,373,250,373"/>
+<area shape="poly" id="edge16_Node000015_Node000013" title=" " alt="" coords="516,379,467,379,467,373,516,373"/>
+</map>

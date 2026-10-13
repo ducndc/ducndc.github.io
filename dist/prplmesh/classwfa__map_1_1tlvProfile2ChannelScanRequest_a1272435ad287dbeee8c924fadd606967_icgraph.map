@@ -1,0 +1,15 @@
+<map id="wfa_map::tlvProfile2ChannelScanRequest::perform_fresh_scan" name="wfa_map::tlvProfile2ChannelScanRequest::perform_fresh_scan">
+<area shape="rect" id="Node000001" title=" " alt="" coords="977,49,1201,89"/>
+<area shape="rect" id="Node000002" href="$classson_1_1dynamic__channel__selection__r2__task.html#a631f490342cab36a7f6cf0d647e36c7c" title="Create a channel scan request message, with empty radio_list." alt="" coords="711,5,929,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="964,55,929,50,930,45,964,49"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ChannelScanTask.html#a263b981f2b87820d7e26526041e04fc3" title="Handles 1905 channel scan request message." alt="" coords="717,85,923,125"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="964,88,923,94,922,88,963,83"/>
+<area shape="rect" id="Node000003" href="$classson_1_1dynamic__channel__selection__r2__task.html#a862c2ebfea88b34b4fd122ad34f7f469" title="Trigger pending scan request for the agent if it is idle." alt="" coords="443,5,663,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="697,35,663,35,663,30,697,30"/>
+<area shape="rect" id="Node000004" href="$classson_1_1dynamic__channel__selection__r2__task.html#a66becdad7668203e8450b30a8ac5f0be" title="Trigger pending scan requests for any idle agent." alt="" coords="220,5,395,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="429,35,395,35,395,30,429,30"/>
+<area shape="rect" id="Node000005" href="$classson_1_1dynamic__channel__selection__r2__task.html#a5ef741fa94eb56870d69d8eee97e49bc" title=" " alt="" coords="5,13,172,53"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="206,35,172,35,172,30,206,30"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ChannelScanTask.html#a0313f2336162a0ea45324002d446ea64" title="Handles incoming messages." alt="" coords="458,85,647,125"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="704,107,647,107,647,102,704,102"/>
+</map>

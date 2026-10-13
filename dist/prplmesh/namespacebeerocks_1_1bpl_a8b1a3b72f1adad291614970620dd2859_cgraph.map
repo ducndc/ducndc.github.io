@@ -1,0 +1,24 @@
+<map id="beerocks::bpl::bpl_cfg_get_wifi_credentials" name="beerocks::bpl::bpl_cfg_get_wifi_credentials">
+<area shape="rect" id="Node000001" title="Reads wireless network configuration for the given interface." alt="" coords="5,233,175,273"/>
+<area shape="rect" id="Node000002" href="$namespacebeerocks_1_1bpl.html#a38414d0ddd49ca2ecb581023ac01428f" title=" " alt="" coords="223,133,413,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,231,258,176,260,181,138,236"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a0c9413724e2f45a0a6768cbe487d5deb" title="return search path of AccessPoint object instance by interface name." alt="" coords="239,226,397,281"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="175,251,225,251,225,256,175,256"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a1868579fef0719a36256f5248275e475" title="return search path of SSID object instance by interface name." alt="" coords="237,305,399,359"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="150,271,226,298,224,303,148,276"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1bpl_1_1BplConfigService.html#a1fc3d84d90f02eccb91bfa46df26dc33" title="Get backend client for common&#45;bus DM access." alt="" coords="477,5,642,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="343,131,396,93,460,55,476,48,478,53,463,60,398,97,346,135"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#aa86ae2cd6c1807233fc9b3272e6a400b" title="read and return content tree of first object matching requested path." alt="" coords="471,69,647,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="394,131,470,110,471,115,395,136"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1bpl_1_1BplConfigService.html#a522e236e6b81712d60a5551c5630cd73" title="Get singleton service instance." alt="" coords="477,133,642,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="414,151,463,151,463,156,414,156"/>
+<area shape="rect" id="Node000006" href="$namespacebeerocks_1_1bpl.html#ad81c05f745bc5b4e3dc80b3a39c0304b" title=" " alt="" coords="461,198,657,223"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="403,171,493,192,491,197,402,176"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aa0db55a4edda99dfff997c429d96d039" title="return path of AccessPoint template object." alt="" coords="480,248,639,288"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="398,255,466,260,466,265,397,261"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="705,280,864,320"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="640,277,692,284,692,290,639,282"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a67644832bb5a4d9164dc7bd994b9d51f" title="return path of SSID template object." alt="" coords="478,312,641,352"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="399,329,464,329,464,335,399,335"/>
+<area shape="poly" id="edge11_Node000011_Node000009" title=" " alt="" coords="641,318,692,310,692,316,641,323"/>
+</map>

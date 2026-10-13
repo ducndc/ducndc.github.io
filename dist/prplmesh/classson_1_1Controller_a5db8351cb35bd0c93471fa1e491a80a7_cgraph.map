@@ -1,0 +1,79 @@
+<map id="son::Controller::autoconfig_wsc_add_m8" name="son::Controller::autoconfig_wsc_add_m8">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,745,180,785"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessageTx.html#a568926c406fd947f367f97af191f3247" title=" " alt="" coords="237,85,435,125"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,744,106,663,131,539,170,394,196,320,226,250,264,186,305,134,309,137,268,189,230,253,201,322,175,395,136,540,112,664,99,745"/>
+<area shape="rect" id="Node000004" href="$classson_1_1Controller.html#a1c5bf6640122c8208c6f6fcb513c3c0a" title="Encrypt the config data using AES and add to the WSC M2/M8 TLV The encrypted data length is the confi..." alt="" coords="237,263,435,303"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="97,744,142,603,180,509,226,417,265,359,304,312,309,315,269,362,230,419,184,511,147,605,102,745"/>
+<area shape="rect" id="Node000014" href="$classson_1_1Controller.html#acbb79c9b3e8d581fb636bc053fb03e80" title="autoconfig global authenticator attribute calculation" alt="" coords="249,430,423,470"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="107,743,309,479,313,483,112,746"/>
+<area shape="rect" id="Node000017" href="$classson_1_1Controller.html#ac601e69162471dd25e94525b9d758b86" title="Calculate keys and update M2/M8 attributes." alt="" coords="249,713,423,753"/>
+<area shape="poly" id="edge20_Node000001_Node000017" title=" " alt="" coords="180,751,235,743,235,749,181,756"/>
+<area shape="rect" id="Node000019" href="$classWSC_1_1m1.html#afdb6758b041657cb6f600c4e06e35e7b" title=" " alt="" coords="527,576,673,601"/>
+<area shape="poly" id="edge41_Node000001_Node000019" title=" " alt="" coords="132,742,227,698,358,650,491,611,527,602,528,607,493,617,359,655,229,703,134,747"/>
+<area shape="rect" id="Node000028" href="$classWSC_1_1EncryptedSettingsPayload.html#a3d879e799b71c4448e51a94bca6c28ca" title=" " alt="" coords="228,777,444,817"/>
+<area shape="poly" id="edge34_Node000001_Node000028" title=" " alt="" coords="181,773,215,778,214,783,180,779"/>
+<area shape="rect" id="Node000029" href="$classWSC_1_1m8.html#afe2edefda20ecab7e81e11a4c2c7d808" title=" " alt="" coords="274,841,398,867"/>
+<area shape="poly" id="edge35_Node000001_Node000029" title=" " alt="" coords="132,782,178,805,229,826,261,836,260,841,227,831,175,810,129,787"/>
+<area shape="rect" id="Node000033" href="$classieee1905__1_1_1tlvEndOfMessage.html#a967a933ec6d52cb7abd9817fb456e206" title=" " alt="" coords="236,891,436,931"/>
+<area shape="poly" id="edge39_Node000001_Node000033" title=" " alt="" coords="114,783,164,829,195,854,229,876,246,884,243,889,227,880,192,858,160,833,111,787"/>
+<area shape="rect" id="Node000034" href="$classBaseClass.html#a37dde0700f9595f82dd24aaee7218b41" title=" " alt="" coords="237,955,435,995"/>
+<area shape="poly" id="edge40_Node000001_Node000034" title=" " alt="" coords="106,784,125,818,152,861,188,904,230,941,238,947,235,951,226,945,184,908,148,864,120,821,101,786"/>
+<area shape="rect" id="Node000035" href="$namespaceson.html#ae13e35af5da9d59a115c419430f18ac0" title=" " alt="" coords="257,1019,415,1059"/>
+<area shape="poly" id="edge42_Node000001_Node000035" title=" " alt="" coords="102,784,117,830,143,889,180,952,203,980,230,1005,246,1016,243,1020,226,1009,199,984,176,955,138,892,112,831,97,786"/>
+<area shape="rect" id="Node000003" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="530,5,670,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="382,82,491,41,525,31,526,36,493,46,384,87"/>
+<area shape="rect" id="Node000005" href="$namespacemapf_1_1encryption.html#a3fb616c652b0ad9dd27a4b07f8027bf7" title="AES128&#45;CBC Encryption." alt="" coords="526,55,674,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="347,262,403,186,444,142,491,105,512,94,514,99,493,110,447,146,407,189,352,265"/>
+<area shape="rect" id="Node000006" href="$namespacemapf_1_1encryption.html#ace1da067c6bb45d2353f907be87d59e1" title="Create an initialization vector &#45; a random byte stream used for generating the WSC authkey and keywra..." alt="" coords="510,120,690,145"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="354,261,412,208,450,180,491,156,512,147,514,152,493,160,453,184,415,212,358,265"/>
+<area shape="rect" id="Node000007" href="$classClassList.html#a85c697e57f45fec5630d09477ff3a4ad" title=" " alt="" coords="510,299,690,324"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="436,291,497,298,496,303,435,296"/>
+<area shape="rect" id="Node000008" href="$classClassList.html#a214eeee361b851ea2044604a0a6ef239" title=" " alt="" coords="503,348,697,373"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="394,301,493,333,528,342,527,347,491,338,392,306"/>
+<area shape="rect" id="Node000009" href="$classWSC_1_1EncryptedSettingsPayload.html#a43c3c71fe5c7644e89422494991e137b" title=" " alt="" coords="492,170,708,210"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="384,261,491,219,514,212,516,217,493,225,386,266"/>
+<area shape="rect" id="Node000010" href="$classWSC_1_1EncryptedSettingsPayload.html#af44629f1404a5bb04805dba52970e4a9" title=" " alt="" coords="492,234,708,274"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="435,270,478,265,478,270,436,275"/>
+<area shape="rect" id="Node000011" href="$namespacemapf_1_1encryption.html#a4270b050c39ef64f716cbdbe12e70b1d" title="Compute KWA (Key Wrap Attribute) KWA = 1st 64 Bits of HMAC(authkey, DataToEncrypt) See section 7...." alt="" coords="525,398,675,438"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="365,301,422,342,493,382,513,391,511,396,491,387,419,346,362,306"/>
+<area shape="rect" id="Node000012" href="$classhmac__wrapper.html#a48e73760f7358263016147882f40e604" title=" " alt="" coords="765,484,916,509"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="671,436,709,447,793,477,791,482,707,453,670,441"/>
+<area shape="rect" id="Node000013" href="$classhmac__wrapper.html#ade31f184a40d5c04aa8eb55299c125c6" title=" " alt="" coords="763,408,918,433"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="675,416,750,417,750,422,675,421"/>
+<area shape="poly" id="edge12_Node000012_Node000012" title=" " alt="" coords="802,486,793,476,798,466,814,460,841,457,874,461,887,471,884,475,872,466,841,463,815,465,801,470,799,475,806,482"/>
+<area shape="poly" id="edge16_Node000014_Node000007" title=" " alt="" coords="357,428,414,380,451,354,491,333,509,326,511,331,493,338,454,359,418,384,360,432"/>
+<area shape="poly" id="edge17_Node000014_Node000008" title=" " alt="" coords="380,427,491,383,524,374,525,379,493,389,382,432"/>
+<area shape="poly" id="edge18_Node000014_Node000011" title=" " alt="" coords="423,437,510,426,511,431,424,442"/>
+<area shape="rect" id="Node000015" href="$classWSC_1_1cWscAttrAuthenticator.html#a052d1637992174013d87d490f52b7fb8" title=" " alt="" coords="503,462,697,502"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="424,458,489,466,489,471,423,463"/>
+<area shape="rect" id="Node000016" href="$classClassList.html#a9aaab6648b85a86c9fea88c6eb9a4944" title=" " alt="" coords="542,527,658,552"/>
+<area shape="poly" id="edge19_Node000014_Node000016" title=" " alt="" coords="382,468,493,511,529,522,528,527,491,517,380,473"/>
+<area shape="rect" id="Node000018" href="$classWSC_1_1m1.html#af67b1b698ca149e9ff547491dd781a13" title=" " alt="" coords="513,691,687,716"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="423,720,499,712,499,717,424,726"/>
+<area shape="poly" id="edge22_Node000017_Node000019" title=" " alt="" coords="372,710,442,663,456,649,465,636,475,624,491,612,513,601,515,606,493,616,478,628,469,639,460,652,446,667,375,715"/>
+<area shape="rect" id="Node000020" href="$classmapf_1_1encryption_1_1diffie__hellman.html#a0af1d97b7987f982f9c80255410c36a2" title="Get the nonce." alt="" coords="523,741,677,781"/>
+<area shape="poly" id="edge23_Node000017_Node000020" title=" " alt="" coords="424,739,510,748,509,754,423,745"/>
+<area shape="rect" id="Node000021" href="$classmapf_1_1encryption_1_1diffie__hellman.html#aad8ecd074d661f1508769d99ad5eb8c3" title="Get the length of nonce()." alt="" coords="521,805,679,845"/>
+<area shape="poly" id="edge24_Node000017_Node000021" title=" " alt="" coords="414,750,445,762,469,776,493,790,511,797,509,802,491,795,467,781,443,767,412,755"/>
+<area shape="rect" id="Node000022" href="$classWSC_1_1m1.html#a564146e5c7fe269259cd8e71e22319f9" title=" " alt="" coords="525,869,675,895"/>
+<area shape="poly" id="edge25_Node000017_Node000022" title=" " alt="" coords="425,750,446,763,464,786,470,810,477,833,494,855,513,866,510,870,490,859,472,836,465,812,459,789,442,767,422,754"/>
+<area shape="rect" id="Node000023" href="$classWSC_1_1m1.html#a78c1283ce5357e19312d2e7500bf61f0" title=" " alt="" coords="525,919,675,959"/>
+<area shape="poly" id="edge26_Node000017_Node000023" title=" " alt="" coords="425,748,446,763,460,781,468,799,471,835,474,870,481,887,494,904,513,918,510,922,490,908,476,890,469,871,465,835,462,800,456,783,442,767,422,752"/>
+<area shape="rect" id="Node000024" href="$namespacemapf_1_1encryption.html#af5ddf02651c034439b5ae3c6661ccf14" title="Calculate WPS secret authkey and KeyWrapKey based on remote and local public keys generated with diff..." alt="" coords="525,626,675,666"/>
+<area shape="poly" id="edge27_Node000017_Node000024" title=" " alt="" coords="391,710,491,675,516,668,517,673,493,681,393,715"/>
+<area shape="poly" id="edge31_Node000024_Node000012" title=" " alt="" coords="674,629,706,611,723,590,730,569,737,546,754,524,771,513,774,517,758,528,741,549,735,570,728,593,710,615,677,633"/>
+<area shape="poly" id="edge32_Node000024_Node000013" title=" " alt="" coords="674,631,692,622,706,611,721,591,728,571,729,530,731,488,738,467,754,446,762,438,766,442,758,449,743,469,736,489,735,530,733,572,726,593,710,615,694,627,677,636"/>
+<area shape="rect" id="Node000025" href="$classmapf_1_1encryption_1_1diffie__hellman.html#af08d5d3704954e47dbb3f74f20e550f4" title="Compute the shared secret key." alt="" coords="761,538,921,578"/>
+<area shape="poly" id="edge28_Node000024_Node000025" title=" " alt="" coords="670,623,707,610,755,588,772,581,774,585,757,592,709,615,672,628"/>
+<area shape="rect" id="Node000026" href="$classmapf_1_1encryption_1_1sha256.html#af67f7766d4fbc962f08f8556c566920e" title="Calculate and return the sha256 digest." alt="" coords="756,626,925,666"/>
+<area shape="poly" id="edge29_Node000024_Node000026" title=" " alt="" coords="675,643,742,643,742,649,675,649"/>
+<area shape="rect" id="Node000027" href="$classmapf_1_1encryption_1_1sha256.html#abf4dbb7363678f48e9e5540bb95a12e4" title=" " alt="" coords="756,690,925,730"/>
+<area shape="poly" id="edge33_Node000024_Node000027" title=" " alt="" coords="676,663,752,684,751,689,675,668"/>
+<area shape="poly" id="edge30_Node000026_Node000026" title=" " alt="" coords="796,626,793,616,800,607,816,601,841,599,869,602,884,609,882,614,867,607,841,605,817,607,804,611,798,617,801,625"/>
+<area shape="rect" id="Node000030" href="$classBaseClass.html#a0f3d62024097fc8c31d145bfb9612fef" title=" " alt="" coords="501,984,699,1009"/>
+<area shape="poly" id="edge36_Node000029_Node000030" title=" " alt="" coords="399,857,423,864,446,877,457,889,464,901,471,925,477,948,483,959,494,969,503,976,500,980,490,973,479,962,472,950,465,926,459,903,453,892,442,881,421,869,398,862"/>
+<area shape="rect" id="Node000031" href="$classieee1905__1_1_1tlvWsc.html#a6edd48fc44d964eafc4188ab846bfc1c" title=" " alt="" coords="531,1034,669,1074"/>
+<area shape="poly" id="edge37_Node000029_Node000031" title=" " alt="" coords="399,855,424,863,446,877,460,895,468,913,471,949,474,985,481,1002,494,1019,520,1036,517,1040,490,1023,476,1004,469,986,466,950,463,914,456,898,442,881,421,868,397,860"/>
+<area shape="rect" id="Node000032" href="$classieee1905__1_1_1tlvWsc.html#a086fade50c45099f5f4850b3a1a0baf8" title=" " alt="" coords="531,1098,669,1138"/>
+<area shape="poly" id="edge38_Node000029_Node000032" title=" " alt="" coords="399,854,424,862,446,877,465,903,473,930,474,956,471,982,469,1008,469,1034,477,1059,494,1084,520,1102,517,1106,490,1088,472,1061,464,1035,463,1008,466,982,469,956,468,931,460,906,442,881,422,867,398,859"/>
+</map>

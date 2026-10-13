@@ -1,0 +1,22 @@
+<map id="son::Controller::trigger_scan" name="son::Controller::trigger_scan">
+<area shape="rect" id="Node000001" title="Trigger channel scan initiated by NBAPI." alt="" coords="5,143,192,168"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a45eb23cb9f4ce377d6bfeec738575155" title=" " alt="" coords="240,5,391,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,140,253,65,256,69,124,145"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a9284ca2761bd4859b1a428f62a027703" title="Get the channel pool containing all the supported channels." alt="" coords="439,161,604,201"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,166,191,176,240,185,315,188,391,185,425,183,425,189,391,190,315,193,240,190,190,182,144,171"/>
+<area shape="rect" id="Node000006" href="$classson_1_1task__pool.html#a2ed2c02ac7513e109abdbf5e178bdc5e" title=" " alt="" coords="244,135,387,175"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="193,153,230,153,230,158,193,158"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a931e61308dcd3a02b7cfc08163d41e9b" title="Set the channel scan dwell time msec object." alt="" coords="652,118,817,158"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="144,140,190,129,240,121,346,113,454,113,638,125,638,130,453,119,346,119,240,126,191,134,145,145"/>
+<area shape="rect" id="Node000008" href="$classson_1_1db.html#afbe14e8154021d26e14723f451ea2163" title="Set the channel scan pool object." alt="" coords="244,250,387,290"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="124,166,241,229,264,241,262,246,239,234,122,170"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a5d1773668e08161c2454224fe14172e0" title=" " alt="" coords="662,197,807,237"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="605,192,649,200,648,205,604,197"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="865,197,992,237"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="808,214,852,214,852,219,808,219"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="786,156,867,189,865,194,784,161"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="387,272,439,274,546,276,629,275,712,266,817,246,851,238,853,243,818,251,713,271,629,280,546,282,439,279,387,277"/>
+<area shape="rect" id="Node000009" href="$classson_1_1db.html#af2fe11031acff8d19a4f0dea4f99b853" title="Validate the channel scan pool." alt="" coords="445,225,597,265"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="387,259,431,253,432,258,388,264"/>
+<area shape="poly" id="edge11_Node000009_Node000004" title=" " alt="" coords="597,232,648,225,649,231,598,237"/>
+</map>

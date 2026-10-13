@@ -1,0 +1,16 @@
+<map id="beerocks::nbapi::AmbiorixImpl::set_current_time" name="beerocks::nbapi::AmbiorixImpl::set_current_time">
+<area shape="rect" id="Node000001" title="Set current data and time in RFC 3339 format." alt="" coords="5,37,179,77"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a9fcf91a54ece8e7e8c86ae9bc5f1bdad" title="Get Date and Time in the Ambiorix data model format (RFC3339): &quot;2020&#45;08&#45;31T11:22:39Z&quot;." alt="" coords="227,5,443,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,43,213,39,213,44,179,49"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#aaa2139069dbd8f03062f780ea26ec4a7" title="Set the value to the object variable." alt="" coords="248,69,421,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,66,235,74,234,79,179,71"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a138056a1f6a2227a59f43cef266ff4e5" title="Apply transaction." alt="" coords="712,36,885,76"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="421,80,698,60,698,66,422,86"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a018e61ad3adf4598a848667c20692ac7" title="Prepare transaction to the ubus." alt="" coords="491,97,664,137"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="422,97,477,103,477,108,421,102"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1nbapi_1_1Amxrt.html#a34fa51e8a7fb9f1d214db48abcef512c" title="Gets the runtime data model storage." alt="" coords="933,68,1091,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="886,66,920,72,920,77,885,72"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a39340932b8e240fceaa8b760d80e3461" title="Find object by relative path." alt="" coords="712,100,885,140"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="664,116,698,116,698,121,664,121"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="885,104,920,99,920,104,886,110"/>
+</map>

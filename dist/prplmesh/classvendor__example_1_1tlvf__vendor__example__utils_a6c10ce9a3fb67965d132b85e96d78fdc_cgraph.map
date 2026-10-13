@@ -1,0 +1,25 @@
+<map id="vendor_example::tlvf_vendor_example_utils::parse_vendor_example_tlv" name="vendor_example::tlvf_vendor_example_utils::parse_vendor_example_tlv">
+<area shape="rect" id="Node000001" title="Parses a vendor&#45;specific TLV from the received message." alt="" coords="5,108,191,163"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessageRx.html#ad28c1bbf9f57dd19a44cb389399c4427" title=" " alt="" coords="239,39,440,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,105,261,81,263,86,186,110"/>
+<area shape="rect" id="Node000004" href="$classmulti__vendor_1_1tlvf__handler.html#aae476b51a05e40c4d777f1a97354d7f4" title="Safely read vendor&#45;specific data from TLV buffer with comprehensive bounds checking." alt="" coords="271,144,407,199"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,147,258,157,257,162,191,152"/>
+<area shape="rect" id="Node000003" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="519,5,659,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="440,40,505,29,505,34,441,45"/>
+<area shape="rect" id="Node000005" href="$classieee1905__1_1_1CmduMessage.html#a0160c49e715795eb7e05410ba6044ed4" title=" " alt="" coords="497,55,681,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="399,142,487,105,508,97,510,102,489,110,401,146"/>
+<area shape="rect" id="Node000007" href="$classieee1905__1_1_1CmduMessage.html#a891727be584a9281551c3b3c0b8b70dc" title=" " alt="" coords="497,119,681,159"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="407,160,483,150,484,155,408,165"/>
+<area shape="rect" id="Node000009" href="$classieee1905__1_1_1CmduMessageRx.html#acf551f9cff1193c0abaf9410e9a0862c" title=" " alt="" coords="488,183,689,223"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="408,177,475,186,474,191,407,183"/>
+<area shape="rect" id="Node000011" href="$structsVendorOUI.html#a4cf77c47bc4e72c4a3babca7cee73882" title=" " alt="" coords="502,248,675,273"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="399,196,489,233,518,242,517,247,487,238,397,201"/>
+<area shape="rect" id="Node000012" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="551,297,626,323"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="370,197,423,242,455,264,489,284,539,300,537,305,487,288,452,269,420,246,367,201"/>
+<area shape="rect" id="Node000006" href="$classClassList.html#a85c697e57f45fec5630d09477ff3a4ad" title=" " alt="" coords="737,63,917,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="681,73,724,73,724,78,681,78"/>
+<area shape="rect" id="Node000008" href="$classClassList.html#a592da5d93a935f503a3e8b0196811197" title=" " alt="" coords="737,119,917,159"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="681,137,724,137,724,142,681,142"/>
+<area shape="rect" id="Node000010" href="$classClassList.html#a95f0086b3f9843d81234007de30ad049" title="get previousely added class" alt="" coords="755,191,899,216"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="689,201,742,201,742,206,689,206"/>
+</map>

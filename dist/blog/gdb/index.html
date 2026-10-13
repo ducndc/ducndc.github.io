@@ -1,0 +1,601 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" href="/favicon.ico"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Chung Duc Nguyen Dang" href="https://ducndc.github.io/rss.xml"><meta name="generator" content="Astro v5.17.2"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://ducndc.github.io/blog/gdb/"><!-- Primary Meta Tags --><title>GNU Debugger</title><meta name="title" content="GNU Debugger"><meta name="description" content="GNU Debugger"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://ducndc.github.io/blog/gdb/"><meta property="og:title" content="GNU Debugger"><meta property="og:description" content="GNU Debugger"><meta property="og:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://ducndc.github.io/blog/gdb/"><meta property="twitter:title" content="GNU Debugger"><meta property="twitter:description" content="GNU Debugger"><meta property="twitter:image" content="https://ducndc.github.io/_astro/blog-placeholder-1.Bx0Zcyzv.jpg"><style>:root{--accent: #2337ff;--accent-dark: #000d8a;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Times New Roman,Times,serif;margin:0;padding:0;text-align:justify;text-justify:inter-word;background:linear-gradient(180deg,#f3f6f8 0,#fff 560px) no-repeat;background-color:#fff;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;color:rgb(var(--black));line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}p{margin-top:0;margin-bottom:1em;line-height:1.7}.prose p{margin-top:0;margin-bottom:1.2em;line-height:1.7}a,a:hover{color:var(--accent)}ul,ol{margin-top:.5em;margin-bottom:1em;padding-left:1.5em}li{line-height:1.5;margin-bottom:.2em}li p,.prose li p{margin-top:0;margin-bottom:0;line-height:1.5}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%;border-collapse:collapse}img{display:block;max-width:100%;height:auto;margin:1.5rem auto}.prose img{display:block;max-width:100%;height:auto;margin:2rem auto}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px;font-family:monospace}pre{padding:1.5em;border-radius:8px;overflow-x:auto}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:1.5em 0;font-size:1.1em}hr{border:none;border-top:1px solid rgb(var(--gray-light));margin:2em 0}@media(max-width:720px){body{font-size:18px}main{padding:1em}.prose p{line-height:1.65}li{line-height:1.5}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2],h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media(max-width:720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}
+</style>
+<link rel="stylesheet" href="/_astro/about.DsEPMAAl.css"></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>Chung Duc Nguyen Dang</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/blog" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Blog </a>  <a href="/about" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> About </a>  </div> </nav> </header>  <main class="layout" data-astro-cid-bvzihdzo> <!-- TOC --> <aside class="toc" data-astro-cid-bvzihdzo> <div class="toc-title" data-astro-cid-bvzihdzo>Table of Contents</div> <nav id="toc" data-astro-cid-bvzihdzo></nav> </aside> <!-- Content --> <article class="content" data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="/_astro/gdb.B6hzLawJ_Z23Gg3f.webp" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="800"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2023-08-16T17:00:00.000Z"> Aug 17, 2023 </time>  </div> <h1 data-astro-cid-bvzihdzo>GNU Debugger</h1> <hr data-astro-cid-bvzihdzo> </div>  <p>Debuggers are just tools that allow you to find the false assumption. Your program runs
+under the debugger’s control, allowing you to stop your program and examine memory to
+find the false assumption. It’s up to you to fully understand your code so you have a
+reasonable idea of which part of the code on which to focus.</p>
+<hr>
+<h3 id="starting-and-stopping-gdb">Starting and stopping GDB</h3>
+<hr>
+<p>To run your program under GDB’s control, type “gdb program_name” at the Linux prompt. Do not enter your program’s command line arguments. We’ll do
+that later.
+To exit GDB, type “quit” (abbreviated q) at the GDB prompt</p>
+<hr>
+<h3 id="gdb-commands">GDB commands</h3>
+<hr>
+<p>Commands entered at the GDB prompt may be abbreviated to the shortest unique
+completion. Several common commands may be abbreviated to a single character, even
+though other commands start with that same character.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Character</th><th>Command</th><th>Description</th></tr></thead><tbody><tr><td><strong>b</strong></td><td>breakpoint</td><td>Set a place where GDB stops executing your program</td></tr><tr><td><strong>c</strong></td><td>continue</td><td>Continue program execution</td></tr><tr><td><strong>l</strong></td><td>list</td><td>List source code</td></tr><tr><td><strong>n</strong></td><td>next</td><td>Execute the next line of code, then stop</td></tr><tr><td><strong>p</strong></td><td>print</td><td>Print the value of a variable or expression</td></tr><tr><td><strong>q</strong></td><td>quit</td><td>Quit GDB</td></tr><tr><td><strong>r</strong></td><td>run</td><td>Run your program from the beginning</td></tr><tr><td><strong>s</strong></td><td>step</td><td>Step to the next line of code</td></tr><tr><td><strong>x</strong></td><td>examine</td><td>Examine memory</td></tr></tbody></table>
+<p>Entering GDB commands allow “auto completion”. Enter TAB to complete your
+command. Arrow keys are available to see prior commands.</p>
+<hr>
+<h3 id="help">Help</h3>
+<hr>
+<p>GDB provides internal help for the user. Typing help at the command line prints a list of
+command categories. You can them type help category or help command for more
+specific help. The apropos command can be used to find commands.</p>
+<hr>
+<h3 id="basic-debugging">Basic Debugging</h3>
+<hr>
+<p>Use the run (abbreviated r) command to start your program under GDB. If your
+program requires command line arguments, provide them to the run command. E.g. the
+command “run 12 bob”</p>
+<p>begins executing your program, passing the command line arguments “12” and “bob” to
+main( ). Unix redirection may also be used with the run command. To get the user input
+from a file type the command “run &#x3C; filename”. You can use run to restart your program at any time within GDB.</p>
+<hr>
+<h3 id="breakpoints-and-watchpoints">Breakpoints and watchpoints</h3>
+<hr>
+<p>The principal purposes of using a debugger are so that you can stop your program before
+it terminates; or so that, if your program runs into trouble, you can investigate and find
+out why.</p>
+<p>Inside GDB, your program may stop for any of several reasons, such as a signal, a
+breakpoint, or reaching a new line after a GDB command such as step. You may then
+examine and change variables, set new breakpoints or remove old ones, and then
+continue execution. Usually, the messages shown by GDB provide ample explanation of
+the status of your program—but you can also explicitly request this information at any
+time.</p>
+<p>A breakpoint tells GDB to stop your program’s execution when a certain point is reached
+in your program. For each breakpoint, you can add conditions to control in finer detail
+whether your program stops. You can set breakpoints with the break command and its
+variants to specify the place where your program should stop by line number, function
+name or exact address in the program.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#F97583">break</span><span style="color:#9ECBFF"> line</span><span style="color:#9ECBFF"> number</span></span>
+<span class="line"><span style="color:#F97583">break</span><span style="color:#9ECBFF"> function</span><span style="color:#9ECBFF"> name</span></span>
+<span class="line"><span style="color:#F97583">break</span></span></code></pre>
+<p>To set a breakpoint, use the break (abbreviated b) command. The break
+command’s arguments may be a line number, a function name, or the address of
+an instruction. With no arguments, the break command sets a breakpoint at the
+next instruction to be executed.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#F97583">break</span><span style="color:#9ECBFF"> location</span><span style="color:#9ECBFF"> if</span><span style="color:#9ECBFF"> condition</span></span></code></pre>
+<p>A breakpoint may have an associated Boolean condition. GDB will stop your
+program’s execution at the breakpoint only if the Boolean condition is true
+where location is a line number, function name, etc.</p>
+<p>You can get information about all the breakpoints you’ve set using the info command</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">info</span><span style="color:#9ECBFF"> breakpoints</span></span></code></pre>
+<p>You can use a watchpoint to stop execution whenever the value of an expression changes,
+without having to predict a particular place where this may happen. (This is sometimes
+called a data breakpoint.) The expression may be as simple as the value of a single
+variable, or as complex as many variables combined by operators.</p>
+<p>Examples include:</p>
+<ul>
+<li>A reference to the value of a single variable.</li>
+<li>An address cast to an appropriate data type. For example, `*(int
+*)0x12345678’ will watch a 4-byte region at the specified address (assuming
+an int occupies 4 bytes).</li>
+<li>An arbitrarily complex expression, such as `a*b + c/d’. The expression can
+use any operators valid in the program’s native language</li>
+<li>You can set a watchpoint on an expression even if the expression can not be
+evaluated yet.</li>
+</ul>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">watch</span><span style="color:#9ECBFF"> expr</span></span></code></pre>
+<p>Set a watchpoint for an expression. GDB will break when the expression expr is
+written into by the program and its value changes. The simplest (and the most
+popular) use of this command is to watch the value of a single variable:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">watch</span><span style="color:#9ECBFF"> total</span></span></code></pre>
+<p>You can get information about all the watchpoints you’ve set using the info command
+info watchpoints</p>
+<hr>
+<h3 id="continuing-and-stepping">Continuing and stepping</h3>
+<hr>
+<p>Continuing means resuming program execution until your program completes normally.
+In contrast, stepping means executing just one more “step” of your program, where “step”
+may mean either one line of source code, or one machine instruction (depending on what
+particular command you use). Either when continuing or when stepping, your program
+may stop even sooner, due to a breakpoint or a signal.</p>
+<p>A typical technique for using stepping is to set a breakpoint at the beginning of the
+function or the section of your program where a problem is believed to lie, run your
+program until it stops at that breakpoint, and then step through the suspect area,
+examining the variables that are interesting, until you see the problem happen.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#F97583">continue</span><span style="color:#E1E4E8"> (abbreviated </span><span style="color:#9ECBFF">c</span><span style="color:#E1E4E8">)</span></span></code></pre>
+<p>The continue command resumes your program’s execution from the address at
+which it was stopped (probably a breakpoint), and runs your program to the next
+breakpoint or until your program exits normally.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">step</span><span style="color:#E1E4E8"> (abbreviated </span><span style="color:#9ECBFF">s</span><span style="color:#E1E4E8">)</span></span></code></pre>
+<p>The step command continues running your program until control reaches a
+different source line, then stops it and returns control to GDB. The step
+command only stops at the first instruction of a source line. The step command
+continues to stop if a function that has debugging information is called within the
+line. In other words, step steps inside any functions called within the line.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">step</span><span style="color:#9ECBFF"> count</span></span></code></pre>
+<p>Continue running as in step, but do so count times. If a breakpoint is reached, or
+a signal not related to stepping occurs before count steps, stepping stops right
+away.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">next</span><span style="color:#E1E4E8"> [count]</span></span></code></pre>
+<p>Continue to the next source line in the current (innermost) stack frame. This is
+similar to step, but function calls that appear within the line of code are
+executed without stopping. Execution stops when control reaches a different line
+of code at the original stack level that was executing when you gave the next
+command. This command is abbreviated n. The optional argument count is a
+repeat count, as for step.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">stepi</span></span>
+<span class="line"><span style="color:#B392F0">stepi</span><span style="color:#9ECBFF"> arg</span></span>
+<span class="line"><span style="color:#B392F0">si</span></span></code></pre>
+<p>Execute one machine instruction, then stop and return to the debugger.
+It is often useful to do `display/i $pc’ when stepping by machine
+instructions. This makes GDB automatically display the next instruction to be
+executed, each time your program stops. The argument arg is a repeat count, as
+in step.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">nexti</span></span>
+<span class="line"><span style="color:#B392F0">nexti</span><span style="color:#9ECBFF"> arg</span></span>
+<span class="line"><span style="color:#B392F0">ni</span></span></code></pre>
+<p>Execute one machine instruction, but if it is a function call, proceed until the
+function returns. The argument arg is a repeat count, as in next.</p>
+<hr>
+<h3 id="examining-the-stack">Examining the stack</h3>
+<hr>
+<p>When your program has stopped, the first thing you need to know is where it stopped and
+how it got there.</p>
+<p>Each time your program performs a function call, information about the call is generated.
+That information includes the location of the call in your program, the arguments of the
+call, and the local variables of the function being called. The information is saved in a
+block of data called a stack frame. The stack frames are allocated in a region of memory
+called the call stack.</p>
+<p>When your program stops, the GDB commands for examining the stack allow you to see
+all of this information.</p>
+<p>One of the stack frames is selected by GDB and many GDB commands refer implicitly to
+the selected frame. In particular, whenever you ask GDB for the value of a variable in
+your program, the value is found in the selected frame. By default, the current stack
+frame is used. The call stack is divided up into contiguous pieces called stack frames, or
+frames for short; each frame is the data associated with one call to one function. The
+frame contains the arguments given to the function, the function’s local variables, and the
+address at which the function is executing.</p>
+<p>When your program is started, the stack has only one frame, that of the function main.
+This is called the initial frame or the outermost frame. Each time a function is called, a
+new frame is made. Each time a function returns, the frame for that function invocation is
+eliminated. If a function is recursive, there can be many frames for the same function.
+The frame for the function in which execution is actually occurring is called the
+innermost frame. This is the most recently created of all the stack frames that still exist.</p>
+<p>Inside your program, stack frames are identified by their addresses. A stack frame
+consists of many bytes, each of which has its own address; each kind of computer has a
+convention for choosing one byte whose address serves as the address of the frame.
+Usually this address is kept in a register called the frame pointer register while execution
+is going on in that frame.</p>
+<p>GDB assigns numbers to all existing stack frames, starting with zero for the innermost
+frame, one for the frame that called it, and so on upward. These numbers do not really
+exist in your program; they are assigned by GDB to give you a way of designating stack
+frames in GDB commands.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">frame</span><span style="color:#9ECBFF"> arg</span></span></code></pre>
+<p>The frame command allows you to move from one stack frame to another, and to
+print the stack frame you select. arg may be either the address of the frame or the
+stack frame number. Without an argument, frame prints the current stack frame.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#E1E4E8">select-frame</span></span></code></pre>
+<p>The select-frame command allows you to move from one stack frame to
+another without printing the frame. This is the silent version of frame.</p>
+<hr>
+<h3 id="backtraces">Backtraces</h3>
+<hr>
+<p>A backtrace is a summary of how your program got where it is. It shows one line per
+frame, for many frames, starting with the currently executing frame (frame zero),
+followed by its caller (frame one), and on up the stack. The backtrace (or where)
+command prints information about the call stack.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">backtrace</span></span>
+<span class="line"><span style="color:#B392F0">bt</span></span></code></pre>
+<p>Print a backtrace of the entire stack: one line per frame for all frames in the stack.
+You can stop the backtrace at any time by typing the system interrupt character,
+normally Ctrl-c.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">backtrace</span><span style="color:#9ECBFF"> n</span></span>
+<span class="line"><span style="color:#B392F0">bt</span><span style="color:#9ECBFF"> n</span></span></code></pre>
+<p>Similar, but print only the innermost n frames.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">backtrace</span><span style="color:#9ECBFF"> full</span></span>
+<span class="line"><span style="color:#B392F0">bt</span><span style="color:#9ECBFF"> full</span></span>
+<span class="line"><span style="color:#B392F0">bt</span><span style="color:#9ECBFF"> full</span><span style="color:#9ECBFF"> n</span></span></code></pre>
+<p>Print the values of the local variables also. n specifies the number of frames to
+print, as described above.</p>
+<p>When your program terminates because of a “seg fault” or other failure, the operating
+system saves a copy of your program at the time of the termination. This copy is saved in
+a “core file” which is named core.pid, where pid is the process id number of your
+program when it was running (e.g. core.1357). By using GDB to look at the core file,
+(e.g. gdb core.1357), you can tell exactly where your program terminated — just use the
+backtrace command. You’ll see the entire list of stack frames. Stack frame #0 is where
+your program terminated — you’ll see the function name and line number</p>
+<hr>
+<h3 id="examining-source-code">Examining source code</h3>
+<hr>
+<p>DB can print parts of your program’s source, since the debugging information recorded in
+the program tells GDB what source files were used to build it. When your program stops,
+GDB spontaneously prints the line where it stopped. Likewise, when you select a stack
+frame, GDB prints the line where execution in that frame has stopped. You can print
+other portions of source files by explicit command.</p>
+<p>To print lines from a source file, use the list command (abbreviated l). By default, ten
+(10) lines are printed. Here are the forms of the list command most commonly used:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">list</span><span style="color:#9ECBFF"> linenum</span></span>
+<span class="line"><span style="color:#B392F0">list</span><span style="color:#9ECBFF"> filename:linenum</span></span></code></pre>
+<p>Print lines centered around line number linenum in the current source file.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">list</span><span style="color:#9ECBFF"> function</span></span>
+<span class="line"><span style="color:#B392F0">list</span><span style="color:#9ECBFF"> filename:function</span></span></code></pre>
+<p>Print lines centered around the beginning of function function.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">list</span></span></code></pre>
+<p>Print more lines. If the last lines printed were printed with a list command, this
+prints lines following the last lines printed; however, if the last line printed was a
+solitary line printed as part of displaying a stack frame prints lines centered
+around that line.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">list</span><span style="color:#9ECBFF"> -</span></span></code></pre>
+<p>Print lines just before the lines last printed.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">list</span><span style="color:#79B8FF"> *</span><span style="color:#9ECBFF">address</span></span></code></pre>
+<p>Specifies the program address address. This specifies a source line that contains
+address.</p>
+<p>By default, GDB prints ten (10) source lines with any of these forms of the list
+command. You can change this using set listsize:</p>
+<hr>
+<h3 id="examining-data">Examining Data</h3>
+<hr>
+<p>The usual way to examine data in your program is with the print command (abbreviated
+p). It evaluates and prints the value of an expression of the language in which your
+program is written.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#79B8FF">print</span><span style="color:#9ECBFF"> expr</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#9ECBFF"> /f</span><span style="color:#9ECBFF"> expr</span></span></code></pre>
+<p>expr is an expression (in the source language). By default the value of expr is
+printed in a format appropriate to its data type; you can choose a different format
+by specifying `/f’, where f is a letter specifying the format.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#79B8FF">print</span></span>
+<span class="line"><span style="color:#79B8FF">print</span><span style="color:#9ECBFF"> /f</span></span></code></pre>
+<p>If you omit expr, GDB displays the last value again. This allows you to
+conveniently inspect the same value in an alternative format.</p>
+<p>By default, GDB prints a value according to its data type. Sometimes this is not what you
+want. For example, you might want to print a number in hex, or a pointer in decimal. Or
+you might want to view data in memory at a certain address as a character string or as an
+instruction. To do these things, specify an output format when you print a value.</p>
+<p>The simplest use of output formats is to say how to print a value already computed. This
+is done by starting the arguments of the print command with a slash and a format letter.
+The format letters supported are:</p>
+<p>x — regard the bits of the value as an integer, and print the integer in hexadecimal.</p>
+<p>d — print as integer in signed decimal.</p>
+<p>u — print as integer in unsigned decimal.</p>
+<p>o — print as integer in octal.</p>
+<p>t — print as integer in binary. The letter `t’ stands for “two”.</p>
+<p>a — print as an address, both absolute in hexadecimal and as an offset from the nearest
+preceding symbol. You can use this format used to discover where (in what function) an
+unknown address is located:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#E1E4E8">(</span><span style="color:#B392F0">gdb</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">p/a</span><span style="color:#79B8FF"> 0x54320</span></span>
+<span class="line"><span style="color:#FFAB70">$3</span><span style="color:#E1E4E8"> = 0x54320 </span><span style="color:#F97583">&#x3C;</span><span style="color:#E1E4E8">_initialize_vx+</span><span style="color:#F97583">396></span></span></code></pre>
+<p>c — regard as an integer and print it as a character constant. This prints both the
+numerical value and its character representation. The character representation is replaced
+with the octal escape `\nnn’ for characters outside the 7-bit ASCII range. Without this
+format, GDB displays char, unsigned char, and signed char data as character
+constants. Single-byte members of vectors are displayed as integer data.</p>
+<p>f — regard the bits of the value as a floating point number and print using typical
+floating point syntax.</p>
+<p>s — regard as a string, if possible. With this format, pointers to single-byte data are
+displayed as null-terminated strings and arrays of single-byte data are displayed as fixedlength strings. Other values are displayed in their natural types. Without this format, GDB displays pointers to and arrays of char, unsigned char, and signed char as
+strings. Single-byte members of a vector are displayed as an integer array.</p>
+<p>r — print using the <code>raw' formatting. By default, GDB will use a type-specific prettyprinter. The </code>r’ format bypasses any pretty-printer which might exist for the value’s
+type.</p>
+<p>If you find that you want to print the value of an expression frequently (to see how it
+changes), you might want to add it to the automatic display list so that GDB prints its
+value each time your program stops. Each expression added to the list is given a number
+to identify it; to remove an expression from the list, you specify that number. The
+automatic display looks like this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">2:</span><span style="color:#9ECBFF"> foo</span><span style="color:#9ECBFF"> =</span><span style="color:#79B8FF"> 38</span></span>
+<span class="line"><span style="color:#B392F0">3:</span><span style="color:#9ECBFF"> bar[5]</span><span style="color:#9ECBFF"> =</span><span style="color:#E1E4E8"> (struct </span><span style="color:#9ECBFF">hack</span><span style="color:#79B8FF"> *</span><span style="color:#E1E4E8">) 0x3804</span></span></code></pre>
+<p>This display shows item numbers, expressions and their current values. As with displays
+you request manually using x or print, you can specify the output format you prefer; in
+fact, display decides whether to use print or x depending your format specification—it
+uses x if you specify either the <code>i' or </code>s’ format, or a unit size; otherwise it uses
+print.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">display</span><span style="color:#9ECBFF"> expr</span></span></code></pre>
+<p>Add the expression expr to the list of expressions to display each time your
+program stops.
+display does not repeat if you press RET again after using it.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">display/fmt</span><span style="color:#9ECBFF"> expr</span></span></code></pre>
+<p>For fmt specifying only a display format and not a size or count, add the
+expression expr to the auto-display list but arrange to display it each time in the
+specified format fmt. See Output Formats above.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">display/fmt</span><span style="color:#9ECBFF"> addr</span></span></code></pre>
+<p>For fmt <code>i' or </code>s’, or including a unit-size or a number of units, add the
+expression addr as a memory address to be examined each time your program
+stops. Examining means in effect doing `x/fmt addr’.</p>
+<p>For example, <code>display/i $pc' can be helpful, to see the machine instruction about to be executed each time execution stops (</code>$pc’ is a common name for the program
+counter; see the section on Registers below.</p>
+<hr>
+<h3 id="examining-memory">Examining Memory</h3>
+<hr>
+<p>You can use the command x (for “examine”) to examine memory in any of several
+formats, independently of your program’s data types.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">x/nfu</span><span style="color:#9ECBFF"> addr</span></span>
+<span class="line"><span style="color:#B392F0">x</span><span style="color:#9ECBFF"> addr</span></span>
+<span class="line"><span style="color:#B392F0">x</span></span></code></pre>
+<p>n, f, and u are all optional parameters that specify how much memory to display and how
+to format it; addr is an expression giving the address where you want to start displaying
+memory. If you use defaults for nfu, you need not type the slash `/’. Several commands
+set convenient defaults for addr.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">n,</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> repeat</span><span style="color:#9ECBFF"> count</span></span></code></pre>
+<p>The repeat count is a decimal integer; the default is 1. It specifies how much
+memory (counting by units u) to display.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">f,</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> display</span><span style="color:#9ECBFF"> format</span></span></code></pre>
+<p>The display format is one of the formats used by print (<code>x', </code>d’, <code>u', </code>o’,
+<code>t', </code>a’, <code>c', </code>f’, <code>s'), and in addition </code>i’ (for machine instructions). The
+default is `x’ (hexadecimal) initially. The default changes each time you use
+either x or print.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">u,</span><span style="color:#9ECBFF"> the</span><span style="color:#9ECBFF"> unit</span><span style="color:#9ECBFF"> size</span><span style="color:#E1E4E8"> </span></span></code></pre>
+<p>The unit size is any of</p>
+<p>b — bytes.</p>
+<p>h — halfwords (two bytes).</p>
+<p>w — words (four bytes). This is the initial default.</p>
+<p>g — giant words (eight bytes).</p>
+<p>Each time you specify a unit size with x, that size becomes the default unit the
+next time you use x. (For the <code>s' and </code>i’ formats, the unit size is ignored and is
+normally not written.)</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">addr,</span><span style="color:#9ECBFF"> starting</span><span style="color:#9ECBFF"> display</span><span style="color:#9ECBFF"> address</span></span></code></pre>
+<p>addr is the address where you want GDB to begin displaying memory. The
+expression need not have a pointer value (though it may); it is always interpreted
+as an integer address of a byte of memory. The default for addr is usually just
+after the last address examined—but several other commands also set the default address: info breakpoints (to the address of the last breakpoint listed), info
+line (to the starting address of a line), and print (if you use it to display a value
+from memory).</p>
+<p>For example, <code>x/3uh 0x54320' is a request to display three halfwords (h) of memory, formatted as unsigned decimal integers (</code>u’), starting at address 0x54320.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">disassemble</span></span>
+<span class="line"><span style="color:#B392F0">disassemble</span><span style="color:#9ECBFF"> /m</span></span>
+<span class="line"><span style="color:#B392F0">disassemble</span><span style="color:#9ECBFF"> /r</span></span></code></pre>
+<p>This specialized command dumps a range of memory as machine instructions. It
+can also print mixed source+disassembly by specifying the /m modifier and print
+the raw instructions in hex as well as in symbolic form by specifying the /r. The
+default memory range is the function surrounding the program counter of the
+selected frame. A single argument to this command is a program counter value;
+gdb dumps the function surrounding this value. When two arguments are given,
+they should be separated by a comma, possibly surrounded by whitespace. The
+arguments specify a range of addresses (first inclusive, second exclusive) to
+dump. In that case, the name of the function is also printed (since there could be
+several functions in the given range).</p>
+<p>The argument(s) can be any expression yielding a numeric value, such as
+<code>0x32c4', </code>&#x26;main+10’ or `$pc - 8’.</p>
+<p>If the range of memory being disassembled contains current program counter, the
+instruction at that location is shown with a => marker.</p>
+<p>Here is an example showing mixed source+assembly for Intel x86, when the program is
+stopped just after function prologue:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#E1E4E8">(</span><span style="color:#B392F0">gdb</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">disas</span><span style="color:#9ECBFF"> /m</span><span style="color:#9ECBFF"> main</span></span>
+<span class="line"><span style="color:#B392F0"> Dump</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> assembler</span><span style="color:#9ECBFF"> code</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> function</span><span style="color:#9ECBFF"> main:</span></span>
+<span class="line"><span style="color:#B392F0"> 5</span><span style="color:#9ECBFF"> {</span></span>
+<span class="line"><span style="color:#B392F0"> 0x08048330</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+</span><span style="color:#F97583">0></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> %ebp</span></span>
+<span class="line"><span style="color:#B392F0"> 0x08048331</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+</span><span style="color:#F97583">1></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> mov</span><span style="color:#9ECBFF"> %esp,%ebp</span></span>
+<span class="line"><span style="color:#B392F0"> 0x08048333</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+</span><span style="color:#F97583">3></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> sub</span><span style="color:#E1E4E8"> $0x8</span><span style="color:#9ECBFF">,%esp</span></span>
+<span class="line"><span style="color:#B392F0"> 0x08048336</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+</span><span style="color:#F97583">6></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> and</span><span style="color:#E1E4E8"> $0xfffffff0</span><span style="color:#9ECBFF">,%esp</span></span>
+<span class="line"><span style="color:#B392F0"> 0x08048339</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+</span><span style="color:#F97583">9></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> sub</span><span style="color:#E1E4E8"> $0x10</span><span style="color:#9ECBFF">,%esp</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0"> 6</span><span style="color:#9ECBFF"> printf</span><span style="color:#E1E4E8"> (</span><span style="color:#9ECBFF">"Hello.\n"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#9ECBFF"> =</span><span style="color:#E1E4E8">> </span><span style="color:#79B8FF">0x0804833c</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+1</span><span style="color:#F97583">2></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> movl</span><span style="color:#E1E4E8"> $0x8048440</span><span style="color:#9ECBFF">,</span><span style="color:#E1E4E8">(</span><span style="color:#B392F0">%esp</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#B392F0"> 0x08048343</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+1</span><span style="color:#F97583">9></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> call</span><span style="color:#79B8FF"> 0x8048284</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">puts@pl</span><span style="color:#E1E4E8">t</span><span style="color:#F97583">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0"> 7</span><span style="color:#9ECBFF"> return</span><span style="color:#79B8FF"> 0</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0"> 8</span><span style="color:#9ECBFF"> }</span></span>
+<span class="line"><span style="color:#B392F0"> 0x08048348</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+2</span><span style="color:#F97583">4></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> mov</span><span style="color:#E1E4E8"> $0x0</span><span style="color:#9ECBFF">,%eax</span></span>
+<span class="line"><span style="color:#B392F0"> 0x0804834d</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+2</span><span style="color:#F97583">9></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> leave</span></span>
+<span class="line"><span style="color:#B392F0"> 0x0804834e</span><span style="color:#F97583"> &#x3C;</span><span style="color:#9ECBFF">+3</span><span style="color:#F97583">0></span><span style="color:#9ECBFF">:</span><span style="color:#9ECBFF"> ret</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0"> End</span><span style="color:#9ECBFF"> of</span><span style="color:#9ECBFF"> assembler</span><span style="color:#9ECBFF"> du</span></span></code></pre>
+<p>Some architectures have more than one commonly-used set of instruction mnemonics or
+other syntax.</p>
+<p>For programs that were dynamically linked and use shared libraries, instructions that call
+functions or branch to locations in the shared libraries might show a seemingly bogus
+location—it’s actually a location of the relocation table. On some architectures, gdb might
+be able to resolve these to actual function names.</p>
+<hr>
+<h3 id="registers">Registers</h3>
+<hr>
+<p>Machine registers are where the computer performs arithmetic, performs logic, and tracks
+the position of instructions and the call stack.</p>
+<p>You can refer to machine register contents, in expressions, as variables with names
+starting with `$’. The names of registers are different for each machine; use info
+registers to see the names used on your machine.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">info</span><span style="color:#9ECBFF"> registers</span></span></code></pre>
+<p>Print the names and values of all registers except floating-point and vector
+registers (in the selected stack frame).</p>
+<p>GDB has four “standard” register names that are available (in expressions) on most
+machines—whenever they do not conflict with an architecture’s canonical mnemonics for
+registers. The register names <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>c</mi><mi>a</mi><mi>n</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">pc and </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal">c</span><span class="mord mathnormal">an</span><span class="mord mathnormal">d</span></span></span></span>sp are used for the program counter register and
+the stack pointer. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>p</mi><mi>i</mi><mi>s</mi><mi>u</mi><mi>s</mi><mi>e</mi><mi>d</mi><mi>f</mi><mi>o</mi><mi>r</mi><mi>a</mi><mi>r</mi><mi>e</mi><mi>g</mi><mi>i</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>h</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>s</mi><mi>a</mi><mi>p</mi><mi>o</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>r</mi><mi>t</mi><mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>c</mi><mi>u</mi><mi>r</mi><mi>r</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>s</mi><mi>t</mi><mi>a</mi><mi>c</mi><mi>k</mi><mi>f</mi><mi>r</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo separator="true">,</mo><mi>a</mi><mi>n</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">fp is used for a register that contains a pointer to the current stack
+frame, and </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mord mathnormal">p</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">u</span><span class="mord mathnormal">se</span><span class="mord mathnormal" style="margin-right:0.1076em;">df</span><span class="mord mathnormal" style="margin-right:0.0278em;">or</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mord mathnormal">i</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em;">er</span><span class="mord mathnormal">t</span><span class="mord mathnormal">ha</span><span class="mord mathnormal">t</span><span class="mord mathnormal">co</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">ain</span><span class="mord mathnormal">s</span><span class="mord mathnormal">a</span><span class="mord mathnormal">p</span><span class="mord mathnormal">o</span><span class="mord mathnormal">in</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em;">er</span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal">ec</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal">e</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.0315em;">k</span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal">am</span><span class="mord mathnormal">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">an</span><span class="mord mathnormal">d</span></span></span></span>ps is used for a register that contains the processor status. For example, you
+could print the program counter in hex with p/x <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi>c</mi><mi>o</mi><mi>r</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>i</mi><mi>n</mi><mi>s</mi><mi>t</mi><mi>r</mi><mi>u</mi><mi>c</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>o</mi><mi>b</mi><mi>e</mi><mi>e</mi><mi>x</mi><mi>e</mi><mi>c</mi><mi>u</mi><mi>t</mi><mi>e</mi><mi>d</mi><mi>n</mi><mi>e</mi><mi>x</mi><mi>t</mi><mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>x</mi><mi mathvariant="normal">/</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">pc or print the instruction to be executed next with x/i </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.0278em;">cor</span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal">in</span><span class="mord mathnormal">tt</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord mathnormal">in</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal">u</span><span class="mord mathnormal">c</span><span class="mord mathnormal">t</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal">b</span><span class="mord mathnormal">ee</span><span class="mord mathnormal">x</span><span class="mord mathnormal">ec</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mord mathnormal">d</span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.0269em;">tw</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mord mathnormal">h</span><span class="mord mathnormal">x</span><span class="mord">/</span><span class="mord mathnormal">i</span></span></span></span>pc or add four to the stack pointer(10) with  set $sp += 4</p>
+<hr>
+<h3 id="examining-the-symbol-table">Examining the symbol table</h3>
+<hr>
+<p>The commands described in this chapter allow you to inquire about the symbols (names
+of variables, functions and types) defined in your program. This information is inherent
+in the text of your program and does not change as your program executes. GDB finds it
+in your program’s symbol table.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">info</span><span style="color:#9ECBFF"> address</span><span style="color:#9ECBFF"> symbol</span></span></code></pre>
+<p>Describe where the data for symbol is stored. For a register variable, this says
+which register it is kept in. For a non-register local variable, this prints the stackframe offset at which the variable is always stored.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">info</span><span style="color:#9ECBFF"> symbol</span><span style="color:#9ECBFF"> addr</span></span></code></pre>
+<p>Print the name of a symbol which is stored at the address addr. If no symbol is
+stored exactly at addr, GDB prints the nearest symbol and an offset from it:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#E1E4E8">(</span><span style="color:#B392F0">gdb</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">info</span><span style="color:#9ECBFF"> symbol</span><span style="color:#79B8FF"> 0x54320</span></span>
+<span class="line"><span style="color:#B392F0">_initialize_vx</span><span style="color:#9ECBFF"> +</span><span style="color:#79B8FF"> 396</span><span style="color:#9ECBFF"> in</span><span style="color:#9ECBFF"> section</span><span style="color:#9ECBFF"> .text</span></span></code></pre>
+<p>This is the opposite of the info address command. You can use it to find out the
+name of a variable or a function given its address.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">info</span><span style="color:#9ECBFF"> functions</span></span></code></pre>
+<p>Prints a list of all function names</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">whatis</span><span style="color:#E1E4E8"> [arg]</span></span></code></pre>
+<p>Print the data type of arg, which can be either an expression or a data type. With
+no argument, print the data type of $, the last value in the value history. If arg is
+an expression, it is not actually evaluated, and any side-effecting operations (such
+as assignments or function calls) inside it do not take place. If arg is a type name,
+it may be the name of a type or typedef, or for C code it may have the form
+<code>struct struct-tag', </code>union union-tag’ or `enum enum-tag’.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">ptype</span><span style="color:#E1E4E8"> [arg]</span></span></code></pre>
+<p>ptype accepts the same arguments as whatis, but prints a detailed description of
+the type, instead of just the name of the type. For example, for this variable
+declaration:</p>
+<p>struct complex {double real; double imag;} v;</p>
+<p>the two commands give this output:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#E1E4E8">(</span><span style="color:#B392F0">gdb</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">whatis</span><span style="color:#9ECBFF"> v</span></span>
+<span class="line"><span style="color:#79B8FF">type</span><span style="color:#9ECBFF"> =</span><span style="color:#9ECBFF"> struct</span><span style="color:#9ECBFF"> complex</span></span>
+<span class="line"><span style="color:#E1E4E8">(</span><span style="color:#B392F0">gdb</span><span style="color:#E1E4E8">) </span><span style="color:#B392F0">ptype</span><span style="color:#9ECBFF"> v</span></span>
+<span class="line"><span style="color:#79B8FF">type</span><span style="color:#9ECBFF"> =</span><span style="color:#9ECBFF"> struct</span><span style="color:#9ECBFF"> complex</span><span style="color:#9ECBFF"> {</span></span>
+<span class="line"><span style="color:#B392F0"> double</span><span style="color:#9ECBFF"> real</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0"> double</span><span style="color:#9ECBFF"> imag</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h3 id="altering-execution">Altering Execution</h3>
+<hr>
+<p>Once you think you have found an error in your program, you might want to find out for
+certain whether correcting the apparent error would lead to correct results in the rest of
+the run. You can find the answer by experiment, using the GDB features for altering
+execution of the program.</p>
+<hr>
+<h4 id="changing-the-value-of-a-variable">Changing the value of a variable</h4>
+<hr>
+<p>To alter the value of a variable, evaluate an assignment expression.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#79B8FF">print</span><span style="color:#9ECBFF"> x=</span><span style="color:#79B8FF">4</span></span></code></pre>
+<p>stores the value 4 into the variable x, and then prints the value of the assignment
+expression (which is 4). If you are not interested in seeing the value of the assignment,
+use the set var command instead of the print command. set var is really the same as
+print except that the expression’s value is not printed and is not put in the value history</p>
+<hr>
+<h4 id="calling-a-function">Calling a function</h4>
+<hr>
+<p>At the gdb prompt, you may call a function and display its return value if any.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#79B8FF">print</span><span style="color:#9ECBFF"> expr</span></span></code></pre>
+<p>Evaluate the expression expr and display the resulting value. expr may include
+calls to functions in the program being debugged.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">call</span><span style="color:#9ECBFF"> expr</span></span></code></pre>
+<p>Evaluate the expression expr without displaying void returned values.
+You can use this variant of the print command if you want to execute a function
+from your program that does not return anything (a.k.a. a void function), but
+without cluttering the output with void returned values that GDB will otherwise
+print. If the result is not void, it is printed and saved in the value history.</p>
+<hr>
+<h3 id="miscellaneous">Miscellaneous</h3>
+<hr>
+<h4 id="saving-memory-to-a-file">Saving memory to a file</h4>
+<hr>
+<p>You can use the command dump copy data from memory to a file. The dump command
+write data to a file,</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">dump</span><span style="color:#E1E4E8"> [format] memory filename start_addr end_addr</span></span>
+<span class="line"><span style="color:#B392F0">dump</span><span style="color:#E1E4E8"> [format] value filename expr</span></span></code></pre>
+<p>Dump the contents of memory from start_addr to end_addr, or the value of expr,
+to filename in the given format.</p>
+<p>The format parameter may be any one of:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">binary</span></span>
+<span class="line"><span style="color:#B392F0">Raw</span><span style="color:#9ECBFF"> binary</span><span style="color:#9ECBFF"> form.</span></span>
+<span class="line"><span style="color:#B392F0">ihex</span></span>
+<span class="line"><span style="color:#B392F0">Intel</span><span style="color:#9ECBFF"> hex</span><span style="color:#9ECBFF"> format.</span></span>
+<span class="line"><span style="color:#B392F0">srec</span></span>
+<span class="line"><span style="color:#B392F0">Motorola</span><span style="color:#9ECBFF"> S-record</span><span style="color:#9ECBFF"> format.</span></span>
+<span class="line"><span style="color:#B392F0">tekhex</span></span>
+<span class="line"><span style="color:#B392F0">Tektronix</span><span style="color:#9ECBFF"> Hex</span><span style="color:#9ECBFF"> format.</span><span style="color:#E1E4E8"> </span></span></code></pre>
+<p>GDB uses the same definitions of these formats as the GNU binary utilities, like
+<code>objdump' and </code>objcopy’. If format is omitted, GDB dumps the data in raw
+binary form.</p>
+<hr>
+<h4 id="core-files">Core Files</h4>
+<hr>
+<p>When your program terminates abnormally (e.g. a segmentation fault), Linux creates a
+core file which is a binary image of your program at the time of execution. The name of
+your core files is core.pid, where pid is the numeric process-id of your program at the
+time it was executing. You can use GDB to investigate where your program terminated
+by starting GDB with the name of the core file (e.g. gdb core.2367), then doing a
+backtrace to show the call stack.</p>
+<hr>
+<h4 id="snapshots">Snapshots</h4>
+<hr>
+<p>On certain operating systems, GDB is able to save a snapshot of a program’s state, called
+a checkpoint, and come back to it later.</p>
+<p>Returning to a checkpoint effectively undoes everything that has happened in the
+program since the checkpoint was saved. This includes changes in memory, registers,
+and even (within some limits) system state. Effectively, it is like going back in time to the
+moment when the checkpoint was saved.</p>
+<p>Thus, if you’re stepping thru a program and you think you’re getting close to the point
+where things go wrong, you can save a checkpoint. Then, if you accidentally go too far
+and miss the critical statement, instead of having to restart your program from the
+beginning, you can just go back to the checkpoint and start again from there.</p>
+<p>This can be especially useful if it takes a lot of time or steps to reach the point where you
+think the bug occurs.</p>
+<p>To use the checkpoint/restart method of debugging:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">checkpoint</span></span></code></pre>
+<p>Save a snapshot of the debugged program’s current execution state. The
+checkpoint command takes no arguments, but each checkpoint is assigned a
+small integer id, similar to a breakpoint id.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">info</span><span style="color:#9ECBFF"> checkpoints</span></span></code></pre>
+<p>List the checkpoints that have been saved in the current debugging session. For
+each checkpoint, the following information will be listed:
+Checkpoint ID
+Process ID
+Code Address
+Source line, or label</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">restart</span><span style="color:#9ECBFF"> checkpoint-id</span></span></code></pre>
+<p>Restore the program state that was saved as checkpoint number checkpoint-id. All
+program variables, registers, stack frames etc. will be returned to the values that
+they had when the checkpoint was saved. In essence, gdb will “wind back the
+clock” to the point in time when the checkpoint was saved.</p>
+<p>Note that breakpoints, GDB variables, command history etc. are not affected by
+restoring a checkpoint. In general, a checkpoint only restores things that reside in
+the program being debugged, not in the debugger.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">delete</span><span style="color:#9ECBFF"> checkpoint</span><span style="color:#9ECBFF"> checkpoint-id</span></span></code></pre>
+<p>Delete the previously-saved checkpoint identified by checkpoint-id.</p>
+<hr>
+<h4 id="ddd">ddd</h4>
+<hr>
+<p>If you are working on a Linux workstation on campus, or some other PC/Mac that can
+render graphics, you can run the debugger named ddd (Data Display Debugger). This
+debugger is essentially just a graphical interface for GDB. You can point and click with
+your mouse, but the commands have the same names and do the same thing as the
+commands in GDB.</p>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2026 Chung Duc Nguyen Dang. All rights reserved.
+</footer>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const c=document.getElementById("toc"),r=Array.from(document.querySelectorAll(".prose h2, .prose h3"));if(!c||r.length===0)return;r.forEach(t=>{const e=t.textContent.trim(),o=e.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-");t.id=o;const n=document.createElement("a");n.href="#"+o,n.textContent=e,t.tagName==="H3"&&n.classList.add("h3"),c.appendChild(n)});const s=Array.from(document.querySelectorAll(".toc a"));s.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const o=document.querySelector(t.getAttribute("href"));if(!o)return;const d=o.getBoundingClientRect().top+window.scrollY+-80;window.scrollTo({top:d,behavior:"smooth"})})});let i=null;const l=t=>{i!==t&&(i=t,s.forEach(e=>{e.classList.toggle("active",e.getAttribute("href")==="#"+t)}))},a=new IntersectionObserver(t=>{const e=t.filter(o=>o.isIntersecting).sort((o,n)=>o.boundingClientRect.top-n.boundingClientRect.top);e.length>0&&l(e[0].target.id)},{rootMargin:"-30% 0px -60% 0px",threshold:[0,1]});r.forEach(t=>a.observe(t))});</script> </body> </html>

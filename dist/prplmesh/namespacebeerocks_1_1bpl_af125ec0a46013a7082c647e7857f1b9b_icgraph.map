@@ -1,0 +1,16 @@
+<map id="beerocks::bpl::cfg_set_link_metrics_request_interval" name="beerocks::bpl::cfg_set_link_metrics_request_interval">
+<area shape="rect" id="Node000001" title="Sets link metrics request interval configuration for periodic requests from agents." alt="" coords="805,77,980,132"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#a90fc5ee7ef1398b839aec8868399f5c2" title="Disable periodic link metrics requests by setting interval to zero." alt="" coords="591,53,757,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="791,93,757,87,758,82,792,87"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a42f40f8a116529429a62ead3b7d0dd79" title="Updates master configuration if a setting is changed through NBAPI." alt="" coords="595,117,753,157"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="792,122,754,128,753,122,791,117"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1controller__ucc__listener.html#a5a6e8da54a3263b47cfbd7eb2f54639f" title="Clear configuration on Controller database." alt="" coords="407,45,543,100"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="577,75,543,75,543,70,577,70"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1controller__ucc__listener.html#a1f3743bf87ac0f13f849d651ca3345df" title="Callback handler function for &quot;dev_reset_default&quot; WFA&#45;CA command." alt="" coords="213,5,359,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="392,58,358,51,359,45,394,53"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1controller__ucc__listener.html#a1455ac1323762c32fa9dd0b04e899e77" title="Callback handler function for &quot;dev_set_config&quot; WFA&#45;CA command." alt="" coords="213,84,359,139"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="394,92,359,99,358,94,392,87"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1controller__ucc__listener.html#a9b864cb3bbd13ec562f9ff59c03d5529" title=" " alt="" coords="5,45,165,100"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="200,52,166,59,165,54,199,47"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="199,97,165,91,166,85,200,92"/>
+</map>

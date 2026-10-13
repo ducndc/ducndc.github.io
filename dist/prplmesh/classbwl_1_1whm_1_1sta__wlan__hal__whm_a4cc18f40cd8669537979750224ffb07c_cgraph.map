@@ -1,0 +1,21 @@
+<map id="bwl::whm::sta_wlan_hal_whm::read_status" name="bwl::whm::sta_wlan_hal_whm::read_status">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,133,163,173"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#aa86ae2cd6c1807233fc9b3272e6a400b" title="read and return content tree of first object matching requested path." alt="" coords="211,5,387,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,131,152,93,209,55,222,49,225,53,212,60,155,98,109,135"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a9c53014f07cbb416bf29ebe304cd3fc4" title="get amxc var object id from the object path. eg: &quot;RootObj.TemplateObj.id&quot; or &quot;RootObj...." alt="" coords="219,69,378,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,131,217,111,219,116,153,136"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a12a0350a7f7c462b12b7b6915ed3cc80" title="read and return object parameter content." alt="" coords="211,133,387,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,151,197,151,197,156,163,156"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#afeccb522241e4efd8cccf4bd9160c786" title="return ssid instance path from ssid reference param of an upper layer object" alt="" coords="219,198,378,253"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="145,171,207,192,205,197,144,176"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a9704f3d3418137deacd61a21b8c1843a" title="resolve a search path, and retrieve first matching result." alt="" coords="211,277,387,317"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="105,172,151,217,212,263,223,269,220,274,209,268,148,221,102,176"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a714ae6775bbeddf3d784987cf0fc4424" title="Template method reads child typed value (with possible conversion)" alt="" coords="435,205,611,245"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="378,223,421,223,421,228,378,228"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a1a5545dffedd09421ede59773e0a9c29" title="Finds a variant child, matching a provided key name into a composite variant." alt="" coords="659,205,835,245"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="611,223,645,223,645,228,611,228"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a6ac03e859bbafcb4e6e464aa2d5cbb70" title="Factory method: creating smart pointer for AmbiorixVariant object referencing an external amx variant..." alt="" coords="883,205,1059,245"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="835,223,869,223,869,228,835,228"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a4e1a50159b84bf6084a38a466197358b" title="resolve a search path, and retrieve all matching results." alt="" coords="435,277,611,317"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="387,295,421,295,421,300,387,300"/>
+</map>

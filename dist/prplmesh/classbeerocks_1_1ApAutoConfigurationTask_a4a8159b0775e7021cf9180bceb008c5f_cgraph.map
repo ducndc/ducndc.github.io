@@ -1,0 +1,19 @@
+<map id="beerocks::ApAutoConfigurationTask::ap_autoconfiguration_wsc_calculate_keys" name="beerocks::ApAutoConfigurationTask::ap_autoconfiguration_wsc_calculate_keys">
+<area shape="rect" id="Node000001" title="Diffie&#45;Hellman public key exchange keys calculation class member params authkey and keywrapauth are c..." alt="" coords="5,139,208,194"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="256,125,419,150"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,151,242,147,243,152,208,156"/>
+<area shape="rect" id="Node000003" href="$namespacemapf_1_1encryption.html#af5ddf02651c034439b5ae3c6661ccf14" title="Calculate WPS secret authkey and KeyWrapKey based on remote and local public keys generated with diff..." alt="" coords="262,175,413,215"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,176,249,181,248,187,208,182"/>
+<area shape="rect" id="Node000004" href="$classmapf_1_1encryption_1_1diffie__hellman.html#af08d5d3704954e47dbb3f74f20e550f4" title="Compute the shared secret key." alt="" coords="471,5,631,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="399,172,417,159,434,134,440,109,446,82,453,69,465,55,470,51,474,55,469,59,458,72,451,84,445,110,439,136,421,163,402,177"/>
+<area shape="rect" id="Node000005" href="$classmapf_1_1encryption_1_1sha256.html#af67f7766d4fbc962f08f8556c566920e" title="Calculate and return the sha256 digest." alt="" coords="467,93,636,133"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="390,172,466,143,484,136,486,141,468,148,392,177"/>
+<area shape="rect" id="Node000006" href="$classhmac__wrapper.html#a48e73760f7358263016147882f40e604" title=" " alt="" coords="476,182,627,207"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="413,192,462,192,462,197,413,197"/>
+<area shape="rect" id="Node000007" href="$classhmac__wrapper.html#ade31f184a40d5c04aa8eb55299c125c6" title=" " alt="" coords="474,231,629,257"/>
+<area shape="poly" id="edge8_Node000003_Node000007" title=" " alt="" coords="414,209,483,226,481,231,413,215"/>
+<area shape="rect" id="Node000008" href="$classmapf_1_1encryption_1_1sha256.html#abf4dbb7363678f48e9e5540bb95a12e4" title=" " alt="" coords="467,281,636,321"/>
+<area shape="poly" id="edge9_Node000003_Node000008" title=" " alt="" coords="372,213,468,266,485,274,483,278,465,270,370,217"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="511,94,509,84,515,74,530,69,551,67,576,70,590,77,587,82,575,75,551,72,531,74,519,79,514,85,516,92"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="516,184,509,174,513,164,527,158,551,155,581,159,593,168,590,172,579,164,551,161,529,163,517,168,514,173,521,180"/>
+</map>

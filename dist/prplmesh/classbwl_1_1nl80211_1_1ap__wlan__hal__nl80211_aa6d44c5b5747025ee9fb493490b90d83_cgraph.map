@@ -1,0 +1,45 @@
+<map id="bwl::nl80211::ap_wlan_hal_nl80211::update_vap_credentials" name="bwl::nl80211::ap_wlan_hal_nl80211::update_vap_credentials">
+<area shape="rect" id="Node000001" title="Update wifi credentials." alt="" coords="5,337,156,391"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1string__utils.html#ab1c8dd31e460f69b001972c1b5385366" title="get a head and tail trimmed substring from provided string" alt="" coords="224,5,371,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,336,93,278,114,203,130,163,150,124,174,88,202,55,210,49,214,53,206,59,178,91,154,127,135,166,120,205,98,279,88,337"/>
+<area shape="rect" id="Node000003" href="$classprplmesh_1_1hostapd_1_1Configuration.html#acf480b3cbde2baec907616db87b9269e" title="disables vap by setting start_disabled to 1 and removing the &quot;ssid&quot; parameter." alt="" coords="209,69,385,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="87,336,102,291,126,235,159,177,179,150,202,126,218,114,221,118,206,130,183,154,163,180,130,238,107,293,92,337"/>
+<area shape="rect" id="Node000004" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a122f30d1d97793a2d35937075250c1e6" title="set key/value for the given vap" alt="" coords="450,62,618,117"/>
+<area shape="poly" id="edge13_Node000001_Node000004" title=" " alt="" coords="89,335,106,298,130,253,162,208,203,170,288,145,436,109,437,114,289,150,205,174,166,211,134,256,110,300,94,337"/>
+<area shape="rect" id="Node000006" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a296f3dd0326d98bc6a2b0be770e6af67" title="Find a VAP using the given BSSID." alt="" coords="221,185,374,239"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="108,334,151,296,202,256,223,244,226,248,206,261,155,300,112,338"/>
+<area shape="rect" id="Node000009" href="$classprplmesh_1_1hostapd_1_1Configuration.html#ae7e6df94d49bb58285a4675f6f3d8f55" title="get the value of the given key for the given vap" alt="" coords="439,269,629,309"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="124,334,162,315,203,300,259,289,317,282,425,280,425,285,317,288,260,294,205,305,164,320,127,339"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1net_1_1network__utils.html#af82de3497e2a355ade39ac0517031104" title=" " alt="" coords="217,315,378,355"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="156,351,202,345,203,350,157,356"/>
+<area shape="rect" id="Node000011" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="232,379,363,405"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="157,371,219,379,218,384,156,376"/>
+<area shape="rect" id="Node000013" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a4c2ae1523e94a2807a6b361a3e2ead48" title="stores the configuration" alt="" coords="229,429,366,469"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="145,389,205,414,227,422,225,427,203,418,143,394"/>
+<area shape="rect" id="Node000017" href="$classprplmesh_1_1hostapd_1_1Configuration.html#a5dd42b9a6030754a6ddae9c7f8b82522" title="Returns the configuration state." alt="" coords="224,494,371,549"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="107,390,151,435,206,479,215,485,213,490,202,484,147,439,103,393"/>
+<area shape="rect" id="Node000018" href="$classbwl_1_1nl80211_1_1base__wlan__hal__nl80211.html#ad0a2d247d2de4a2ff085316053894a8e" title=" " alt="" coords="215,597,379,651"/>
+<area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="97,390,140,471,171,517,206,559,238,587,235,591,202,563,166,520,135,473,92,393"/>
+<area shape="rect" id="Node000019" href="$classson_1_1wireless__utils.html#a8eddff82ca5a0150bc88f2f80375554f" title=" " alt="" coords="204,676,391,716"/>
+<area shape="poly" id="edge22_Node000001_Node000019" title=" " alt="" coords="88,391,99,447,120,520,136,558,155,596,178,631,206,662,210,666,207,670,202,666,174,634,150,599,131,561,115,522,94,448,83,392"/>
+<area shape="rect" id="Node000020" href="$classson_1_1wireless__utils.html#aad2ce8dc9d17c22d433d1e125c811eea" title=" " alt="" coords="214,740,381,780"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="86,391,93,458,112,548,128,596,148,643,174,687,206,726,210,730,207,734,202,730,169,690,143,645,123,598,107,549,88,459,81,392"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="386,87,436,87,436,92,386,92"/>
+<area shape="rect" id="Node000005" href="$classprplmesh_1_1hostapd_1_1Configuration.html#ac1a9a024a749f82edb3ab030a95f9e51" title="helper: get exiting vap" alt="" coords="677,169,831,209"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="602,114,630,127,701,161,699,165,628,132,600,119"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1string__utils.html#ade2e07ca435b0664821d1c67e559ed14" title=" " alt="" coords="442,141,626,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="374,193,428,181,429,186,375,198"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1string__utils.html#aea97ffe1489d4608c5035b257deaaadc" title=" " alt="" coords="461,205,607,245"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="375,214,447,218,447,223,374,219"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="598,267,628,255,707,214,709,219,630,260,600,272"/>
+<area shape="rect" id="Node000012" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="461,345,607,370"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="363,380,447,367,448,373,364,385"/>
+<area shape="rect" id="Node000014" href="$classmapf_1_1encryption_1_1sha256.html#af67f7766d4fbc962f08f8556c566920e" title="Calculate and return the sha256 digest." alt="" coords="449,419,619,459"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="366,444,435,440,436,446,366,449"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1string__utils.html#a711eb3f0775f9e2c954c754f484f3a4b" title=" " alt="" coords="461,483,607,523"/>
+<area shape="poly" id="edge17_Node000013_Node000015" title=" " alt="" coords="367,462,448,481,447,486,366,467"/>
+<area shape="rect" id="Node000016" href="$classmapf_1_1encryption_1_1sha256.html#abf4dbb7363678f48e9e5540bb95a12e4" title=" " alt="" coords="449,547,619,587"/>
+<area shape="poly" id="edge18_Node000013_Node000016" title=" " alt="" coords="368,466,392,479,408,493,417,507,426,520,440,533,450,538,447,543,437,537,422,523,412,510,404,496,389,484,365,471"/>
+<area shape="poly" id="edge16_Node000014_Node000014" title=" " alt="" coords="493,419,491,409,497,400,512,394,534,392,560,395,574,402,571,407,558,400,534,397,513,399,500,404,496,410,498,418"/>
+<area shape="poly" id="edge21_Node000018_Node000018" title=" " alt="" coords="255,597,255,586,263,578,277,572,297,570,322,573,336,581,333,586,320,578,297,575,278,577,266,582,260,588,260,597"/>
+</map>

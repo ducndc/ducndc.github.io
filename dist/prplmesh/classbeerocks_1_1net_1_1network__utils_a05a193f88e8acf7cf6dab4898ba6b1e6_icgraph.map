@@ -1,0 +1,9 @@
+<map id="beerocks::net::network_utils::linux_get_non_physical_bridge_interfaces" name="beerocks::net::network_utils::linux_get_non_physical_bridge_interfaces">
+<area shape="rect" id="Node000001" title="Retrieves the list of non&#45;physical interfaces (veth, dummy, etc.) that are attached to bridges on the..." alt="" coords="663,5,845,60"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1TopologyTask.html#ac7da3f97f7ebe52b13d12408b627ff75" title="Add and fill device information tlv." alt="" coords="427,13,615,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="649,35,615,35,615,30,649,30"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1TopologyTask.html#a60a4e6ffc0a8793d606f20a36de81606" title="Handles 1905 Topology Query message." alt="" coords="216,13,379,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="413,35,379,35,379,30,413,30"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1TopologyTask.html#a2c75b5c339449510a43209a2e90fcee8" title="Handle CMDU message." alt="" coords="5,13,168,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="202,35,168,35,168,30,202,30"/>
+</map>

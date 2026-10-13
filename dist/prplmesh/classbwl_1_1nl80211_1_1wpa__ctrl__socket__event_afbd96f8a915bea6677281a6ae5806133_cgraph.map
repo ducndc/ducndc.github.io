@@ -1,0 +1,16 @@
+<map id="bwl::nl80211::wpa_ctrl_socket_event::connect" name="bwl::nl80211::wpa_ctrl_socket_event::connect">
+<area shape="rect" id="Node000001" title="Opens and attach event socket to hostapd/wpa_supplicant deamon." alt="" coords="5,67,167,107"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#ac0835aab2f72abcdb0cd5f4992856231" title="Attach the wpa_ctrl socket (i.e subscribe client) to be notified with events from hostapd/wpa_supplic..." alt="" coords="215,20,367,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,66,200,58,202,63,168,71"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#aafc4beb21390283c406e97fea99af776" title="Opens wpa_ctrl event socket and add the new file descriptor to event monitoring FDs queue." alt="" coords="215,99,367,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,97,201,102,200,107,167,102"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#aa417f17c66410dd74fdc08a24015500a" title="Returns the wpa_ctrl socket file path." alt="" coords="435,5,587,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,32,421,29,422,34,367,38"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket__event.html#a90edb74ed0ac30bedbd230ed63e58aff" title="Adds wpa_ctrl event socket to monitored event queues list. If the file descriptor value is new (not f..." alt="" coords="415,69,608,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="367,106,401,101,401,107,367,111"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a78b2ce8b862fdaea6610ce25a239f722" title="Returns the current wpa_ctrl socket file descriptor." alt="" coords="656,99,808,139"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="367,118,415,119,608,119,642,118,642,123,608,124,415,124,367,123"/>
+<area shape="rect" id="Node000007" href="$classbwl_1_1nl80211_1_1wpa__ctrl__socket.html#a990f5585492bcc8b0146304f4923a382" title="Open wpa_ctrl socket. Once successful, a new file descriptor is available for sending messages hostap..." alt="" coords="435,184,587,224"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="344,136,447,177,445,181,342,141"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="609,100,642,104,642,109,608,105"/>
+</map>

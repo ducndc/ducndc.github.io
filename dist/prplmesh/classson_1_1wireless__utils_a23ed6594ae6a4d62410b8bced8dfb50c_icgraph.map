@@ -1,0 +1,21 @@
+<map id="son::wireless_utils::get_mcs_from_rate" name="son::wireless_utils::get_mcs_from_rate">
+<area shape="rect" id="Node000001" title=" " alt="" coords="911,91,1053,131"/>
+<area shape="rect" id="Node000002" href="$classson_1_1assoc__frame__utils.html#a8385943aa086fc7340aa8cdef78a1cb0" title="Set default mcs and default short GI from station&#39;s supported rates (by getting nearest reference val..." alt="" coords="704,84,863,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="897,114,863,114,863,109,897,109"/>
+<area shape="rect" id="Node000003" href="$classson_1_1assoc__frame__utils.html#a06b5b30b485eda49457ef2d71a001d7d" title=" " alt="" coords="489,5,656,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="696,82,645,63,647,58,698,77"/>
+<area shape="rect" id="Node000004" href="$classson_1_1assoc__frame__utils.html#a3829d687e68979bb867b496bd8fda8c1" title=" " alt="" coords="489,84,656,139"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="690,114,656,114,656,109,690,109"/>
+<area shape="rect" id="Node000005" href="$classson_1_1assoc__frame__utils.html#affa0af247b0ebc07b3e172ee3ecde847" title="Get station capabilities from provided assocReqFrame object." alt="" coords="489,163,656,217"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="698,146,647,165,645,160,696,141"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1nl80211_1_1ap__wlan__hal__nl80211.html#ad303cf8f211d86b5d5b190458e42143e" title="Manually add a station on a BSS." alt="" coords="263,54,437,94"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="497,158,488,152,464,129,440,108,416,96,419,92,443,104,467,126,491,148,500,153"/>
+<area shape="rect" id="Node000007" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#aa6a3382059fbd7cb242fcf0114355ffa" title="Generates connected events for already connected clients." alt="" coords="259,119,441,173"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="475,173,441,167,442,161,476,168"/>
+<area shape="rect" id="Node000008" href="$classson_1_1client__association__task.html#a7e100b24a0379453fa856bba2ad2fd14" title=" " alt="" coords="263,198,437,267"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="476,211,438,219,437,213,475,206"/>
+<area shape="rect" id="Node000010" href="$classbwl_1_1nl80211_1_1ap__wlan__hal__nl80211.html#ad45039842fbbb207ce586cb4a0f71fc5" title=" " alt="" coords="274,292,426,347"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="525,228,443,282,418,294,416,290,440,277,522,224"/>
+<area shape="rect" id="Node000009" href="$classson_1_1client__association__task.html#a40fe0c16babdf211684f389cde7034fd" title="Handle ieee1905 message." alt="" coords="5,213,211,253"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="249,235,211,235,211,230,249,230"/>
+</map>

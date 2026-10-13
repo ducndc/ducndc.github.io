@@ -1,0 +1,29 @@
+<map id="el::Configurations::setFromBase" name="el::Configurations::setFromBase">
+<area shape="rect" id="Node000001" title="Sets configuration based&#45;off an existing configurations." alt="" coords="891,107,1015,147"/>
+<area shape="rect" id="Node000002" href="$classel_1_1Logger.html#ad9db621dbf8977bf814dc7baea8dcee4" title="Configures the logger using specified configurations." alt="" coords="691,55,831,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="877,106,802,83,804,78,878,101"/>
+<area shape="rect" id="Node000006" href="$classel_1_1Configurations_1_1Parser.html#ab8e266318b9feaeee4d3169e4a7ca275" title="Parses configuration from file." alt="" coords="682,107,841,147"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="877,130,841,130,841,125,877,125"/>
+<area shape="rect" id="Node000009" href="$classel_1_1Configurations_1_1Parser.html#ae4efa4823ce108eb35bc69442155a037" title="Parse configurations from configuration string." alt="" coords="680,171,843,211"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="880,154,822,174,821,169,878,149"/>
+<area shape="rect" id="Node000003" href="$classel_1_1Logger.html#a9481f8356738e956ec9869f04d4ee732" title=" " alt="" coords="493,5,620,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="694,54,610,33,611,28,696,49"/>
+<area shape="rect" id="Node000004" href="$classel_1_1Logger.html#adfd57ab27fb398cc980a3edfab92927e" title="Reconfigures logger using existing configurations." alt="" coords="481,55,632,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="677,70,632,70,632,65,677,65"/>
+<area shape="rect" id="Node000005" href="$classel_1_1base_1_1Storage.html#a4932a8f8a55c3b00467cf2feed6acf59" title=" " alt="" coords="277,43,407,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="467,68,407,67,407,62,467,63"/>
+<area shape="rect" id="Node000007" href="$classel_1_1Configurations.html#aaa098126d64a5ee04a3944b1a65dcdca" title="Parses configuration from file." alt="" coords="495,107,619,147"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="669,130,619,130,619,125,669,125"/>
+<area shape="rect" id="Node000008" href="$classel_1_1Configurations.html#ae341bd647734d1180a5a138222d2f1ea" title="Constructor used to set configurations using configuration file." alt="" coords="280,107,404,147"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="481,130,404,130,404,125,481,125"/>
+<area shape="rect" id="Node000010" href="$classel_1_1Configurations.html#af262a41dff665a11889261137b62af4a" title="Parse configurations from configuration string." alt="" coords="495,199,619,239"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="667,207,619,214,618,208,666,202"/>
+<area shape="rect" id="Node000011" href="$classel_1_1Loggers.html#adedfcc17831fe3d3f14026c91e8df88c" title="Sets configurations from global configuration file." alt="" coords="253,171,431,211"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="481,212,431,206,431,200,482,207"/>
+<area shape="rect" id="Node000013" href="$classmapf_1_1Logger.html#a20eb8fb5d51c3ffce17042406aee66e8" title=" " alt="" coords="251,236,433,261"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="482,232,434,239,433,234,481,227"/>
+<area shape="rect" id="Node000014" href="$classmapf_1_1Logger.html#a7eb0c3c921ce8a27512065f849091c3e" title=" " alt="" coords="261,285,423,311"/>
+<area shape="poly" id="edge13_Node000010_Node000014" title=" " alt="" coords="502,248,434,275,394,288,392,283,432,270,500,243"/>
+<area shape="rect" id="Node000012" href="$classel_1_1Loggers.html#a44f58d08d3ccb502e639db1c61893194" title="Configures loggers using command line arg. Ensure you have already set command line args,..." alt="" coords="5,179,203,204"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="239,194,203,194,203,189,239,189"/>
+</map>

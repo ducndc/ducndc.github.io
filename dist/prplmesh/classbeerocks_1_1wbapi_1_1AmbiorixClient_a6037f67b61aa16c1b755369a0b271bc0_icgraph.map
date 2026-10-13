@@ -1,0 +1,50 @@
+<map id="beerocks::wbapi::AmbiorixClient::update_object" name="beerocks::wbapi::AmbiorixClient::update_object">
+<area shape="rect" id="Node000001" title="update a given object." alt="" coords="960,517,1136,557"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1whm_1_1mon__wlan__hal__whm.html#ab5b90d17ad2c3490d6c6d96f410a474b" title=" " alt="" coords="718,5,887,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1044,503,1039,418,1031,363,1020,304,1003,243,980,182,949,125,910,75,886,56,889,52,914,71,953,122,984,180,1008,241,1025,303,1037,362,1044,418,1049,503"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#acf17f54d60d7cfc48d5a9f0ebbd99f8c" title="Clears Blacklist." alt="" coords="723,85,882,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1043,503,1035,428,1014,330,997,278,974,227,946,180,910,139,881,120,884,116,914,135,950,177,979,225,1002,276,1019,329,1040,427,1048,503"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a557f3aadab0bd6970001a434bd6e2521" title="Disable the radio interface." alt="" coords="723,149,882,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1040,504,1029,440,1005,359,988,316,967,275,941,236,910,203,881,185,884,180,914,199,945,233,972,272,993,314,1011,357,1034,439,1046,503"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a6d317423c5a00ddef000bc9fd9913f53" title="Enable the radio interface." alt="" coords="723,213,882,253"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1037,504,1022,452,996,388,960,322,937,293,910,267,881,250,884,245,914,263,941,289,964,319,1001,385,1027,450,1042,503"/>
+<area shape="rect" id="Node000008" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a3c279216b680221a10b2ef07306ba576" title=" " alt="" coords="718,613,887,653"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="997,565,913,603,879,615,877,610,911,598,995,560"/>
+<area shape="rect" id="Node000013" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a9a906fc4036fd00d9bd4afdf37cb2682" title=" " alt="" coords="725,341,881,381"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1023,507,975,450,944,421,911,396,880,381,882,377,913,392,948,417,979,447,1027,504"/>
+<area shape="rect" id="Node000014" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a6d71dac08d7505623ab3dad068521a62" title="Set the AP channel." alt="" coords="723,277,882,317"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="1032,505,1013,465,987,418,952,371,910,331,881,315,883,310,914,327,956,367,991,415,1018,462,1036,502"/>
+<area shape="rect" id="Node000016" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#af1432a01cdb15b1d4d5f119ce344571a" title="Set Disabled subchannels." alt="" coords="693,485,912,525"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="946,526,912,522,913,516,947,521"/>
+<area shape="rect" id="Node000017" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a5f76cf4d35b34c8cdd92413f48c7011d" title="Set primary VLAN ID value on the Radio. The primary VLAN ID will be added into the Multi&#45;AP extention..." alt="" coords="712,549,893,589"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="947,553,894,559,893,554,946,547"/>
+<area shape="rect" id="Node000018" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a04b3d345d7ed46b7441d0695d7b3f7c2" title=" " alt="" coords="728,405,877,460"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="993,513,911,475,877,461,879,456,913,470,995,508"/>
+<area shape="rect" id="Node000019" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a0ee88f7927c28604224b581aa5801b55" title="Set Transmit Power Limit." alt="" coords="715,677,890,717"/>
+<area shape="poly" id="edge19_Node000001_Node000019" title=" " alt="" coords="1024,569,976,619,946,645,913,667,888,679,886,674,911,662,943,641,972,615,1020,566"/>
+<area shape="rect" id="Node000020" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a7369294c6b1982b2cc22f488cbe6dac8" title="Deny the station with the given MAC address from connecting to the AP." alt="" coords="723,741,882,781"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="1035,570,1015,608,988,651,954,694,914,731,884,747,881,742,910,726,951,690,984,648,1011,605,1030,568"/>
+<area shape="rect" id="Node000021" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a2c0791cc3c4724b80c63d959ebf1ff4f" title=" " alt="" coords="703,805,903,845"/>
+<area shape="poly" id="edge21_Node000001_Node000021" title=" " alt="" coords="1041,570,1025,620,999,681,962,742,940,770,914,795,895,807,892,802,910,791,936,766,958,739,994,678,1020,618,1036,569"/>
+<area shape="rect" id="Node000022" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a900a2fbda0f3d57f05602d102e64b49b" title=" " alt="" coords="715,869,890,909"/>
+<area shape="poly" id="edge22_Node000001_Node000022" title=" " alt="" coords="1045,571,1032,632,1008,710,991,750,970,790,944,826,914,859,892,873,889,869,910,855,940,823,965,787,986,748,1003,708,1027,631,1039,570"/>
+<area shape="rect" id="Node000023" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a3ac20098175d8b658e896a28fa1dff9e" title="Switch the AP to the given channel." alt="" coords="723,933,882,973"/>
+<area shape="poly" id="edge23_Node000001_Node000023" title=" " alt="" coords="1047,570,1039,643,1017,737,1000,788,977,837,949,882,914,923,883,942,881,937,910,919,945,879,973,834,995,786,1012,736,1033,642,1042,570"/>
+<area shape="rect" id="Node000024" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a172e53763e4e4b7900a00fa0098300d2" title="Update wifi credentials." alt="" coords="701,997,904,1037"/>
+<area shape="poly" id="edge24_Node000001_Node000024" title=" " alt="" coords="1049,571,1044,654,1037,708,1025,765,1008,825,985,883,954,938,914,987,898,999,895,994,910,983,949,935,980,881,1003,823,1020,764,1032,707,1039,653,1044,570"/>
+<area shape="rect" id="Node000006" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#af9a260d0d9088327c0f1a424118caaff" title="Set MBO Association Disallow parameter for BSSID." alt="" coords="435,141,645,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="715,212,613,183,615,178,717,206"/>
+<area shape="rect" id="Node000007" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#ae1a0c0548c4a80c4adbb0a37f6948abe" title="Set MBO Association Disallow parameter all available vaps." alt="" coords="444,205,636,260"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="710,235,636,235,636,230,710,230"/>
+<area shape="rect" id="Node000009" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#a258a0221422617720e42dd2b47efe33d" title=" " alt="" coords="465,513,615,553"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="715,611,692,603,582,555,584,550,694,598,717,606"/>
+<area shape="rect" id="Node000010" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#ac8632be27dd4918ed8d86ffaa1c063d4" title=" " alt="" coords="248,513,387,553"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="451,535,387,535,387,530,451,530"/>
+<area shape="rect" id="Node000011" href="$classdevice_1_1serial_1_1SerialDevice.html#a27e698b9464330b6878cfcf4946561bc" title=" " alt="" coords="14,481,191,521"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="234,523,191,517,192,511,235,518"/>
+<area shape="rect" id="Node000012" href="$classbeerocks__analyzer_1_1BeeRocksAnalyzer.html#a90819258a767d0bbc4132ae895b3d083" title=" " alt="" coords="5,545,200,585"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="235,548,201,553,200,547,234,542"/>
+<area shape="rect" id="Node000015" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a666a95e03019cdd00e30858a7c254910" title="cancel active cac if exsits." alt="" coords="461,285,619,325"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="710,302,620,305,620,300,710,297"/>
+<area shape="poly" id="edge18_Node000018_Node000009" title=" " alt="" coords="715,467,694,475,593,515,591,510,692,470,714,462"/>
+</map>

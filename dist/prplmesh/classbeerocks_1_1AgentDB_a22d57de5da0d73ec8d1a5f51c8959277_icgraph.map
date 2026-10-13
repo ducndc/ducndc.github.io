@@ -1,0 +1,15 @@
+<map id="beerocks::AgentDB::radio" name="beerocks::AgentDB::radio">
+<area shape="rect" id="Node000001" title="Get pointer to the radio data struct of a specific interface. The function can accepts either front o..." alt="" coords="823,69,967,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1AgentDB.html#a71a50df6493b27eae988ea94d5aee986" title="Add radio node to the database. At least one of the input arguments must not be empty...." alt="" coords="595,5,739,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="809,68,738,48,739,43,811,63"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a122efb1fc8ff0e7438370fe4f8356aee" title="Validate and normalize incoming BSS configuration for a given radio." alt="" coords="559,69,775,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="809,92,775,92,775,87,809,87"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ChannelSelectionTask.html#a50a7f9f5b762d193fff20b2504bcf208" title=" " alt="" coords="574,133,759,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="811,116,739,136,738,131,809,110"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a63e7e8c1cffc9f7b1bf8929f5b1ba266" title="Parse AP&#45;Autoconfiguration and apply configuration if M2/M8 is present." alt="" coords="256,69,511,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="545,92,511,92,511,87,545,87"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="5,69,208,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="242,92,208,92,208,87,242,87"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ChannelSelectionTask.html#a76c61d8b1a2051b98f90e5b90c048ef1" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="291,133,476,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="560,156,476,156,476,151,560,151"/>
+</map>

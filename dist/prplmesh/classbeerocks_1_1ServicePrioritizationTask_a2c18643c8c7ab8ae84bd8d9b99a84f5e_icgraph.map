@@ -1,0 +1,17 @@
+<map id="beerocks::ServicePrioritizationTask::send_service_prio_config" name="beerocks::ServicePrioritizationTask::send_service_prio_config">
+<area shape="rect" id="Node000001" title="Sends notification to HostAP/Driver about the current service prioritization config." alt="" coords="1076,101,1281,141"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ServicePrioritizationTask.html#aec7e243086895d0391886903e7dd296a" title=" " alt="" coords="829,101,1028,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1062,124,1028,124,1028,119,1062,119"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ServicePrioritizationTask.html#a7e2e62b9c3b2d4aff9130236d0d10c91" title=" " alt="" coords="546,69,745,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="815,111,744,103,745,98,816,106"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ServicePrioritizationTask.html#a1137988bf2924d503eb455159df06ec2" title=" " alt="" coords="509,133,781,173"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="816,137,782,141,781,135,815,131"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ServicePrioritizationTask.html#a8ebca74339d5ba7171bb7e1da622f3dd" title="Handle events, which are being send from containing thread." alt="" coords="257,5,456,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="540,69,447,48,448,43,541,64"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ServicePrioritizationTask.html#aacba0133addb53651c88e76e57ae9a86" title=" " alt="" coords="252,69,461,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="532,92,462,92,462,87,532,87"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ServicePrioritizationTask.html#a91e60881a7bef29731f794ef7f13043f" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="5,69,204,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="238,92,204,92,204,87,238,87"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1ServicePrioritizationTask.html#a596f45b7e89d646058fa9f92e529f15e" title="Handle CMDU message." alt="" coords="257,133,456,173"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="496,156,456,156,456,151,496,151"/>
+</map>

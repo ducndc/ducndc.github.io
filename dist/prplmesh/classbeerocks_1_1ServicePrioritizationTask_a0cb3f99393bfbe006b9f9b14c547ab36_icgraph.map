@@ -1,0 +1,11 @@
+<map id="beerocks::ServicePrioritizationTask::clear_scheduled_work" name="beerocks::ServicePrioritizationTask::clear_scheduled_work">
+<area shape="rect" id="Node000001" title=" " alt="" coords="499,69,697,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ServicePrioritizationTask.html#a08e73e7870d69d7e9af27285bf6303c9" title=" " alt="" coords="252,5,451,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="506,68,428,48,430,43,508,63"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ServicePrioritizationTask.html#a5e501646aa08afc24439f44c6a9fa09e" title=" " alt="" coords="252,69,451,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="485,92,451,92,451,87,485,87"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ServicePrioritizationTask.html#a91e60881a7bef29731f794ef7f13043f" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="252,133,451,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="508,115,430,136,428,131,506,110"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ServicePrioritizationTask.html#a8ebca74339d5ba7171bb7e1da622f3dd" title="Handle events, which are being send from containing thread." alt="" coords="5,69,204,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="238,92,204,92,204,87,238,87"/>
+</map>

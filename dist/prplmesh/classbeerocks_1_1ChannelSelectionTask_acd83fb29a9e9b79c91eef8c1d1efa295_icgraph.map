@@ -1,0 +1,24 @@
+<map id="beerocks::ChannelSelectionTask::zwdfs_in_process" name="beerocks::ChannelSelectionTask::zwdfs_in_process">
+<area shape="rect" id="Node000001" title=" " alt="" coords="977,175,1163,215"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1ChannelSelectionTask.html#a208b2cf3036d95107c020a7ec705d3a9" title="Abort ZWDFS flow in progress." alt="" coords="744,81,929,121"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1005,172,887,124,889,119,1007,167"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1ChannelSelectionTask.html#a7a537a832e1da18da953a6af812cec3a" title=" " alt="" coords="481,149,696,189"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="963,192,696,178,696,172,964,186"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1ChannelSelectionTask.html#a591994b25a779fb4a1c09e631a2ecc2a" title=" " alt="" coords="744,199,929,254"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="964,212,930,217,929,211,963,207"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1ChannelSelectionTask.html#a76c61d8b1a2051b98f90e5b90c048ef1" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="744,279,929,319"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="1022,224,930,269,900,281,898,276,928,264,1020,219"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ChannelSelectionTask.html#a3b90202a87851001d578c658cf9b7991" title=" " alt="" coords="483,5,694,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="758,80,695,60,656,48,658,43,697,55,760,75"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ChannelSelectionTask.html#ab109a52a1452ac197f6d9e117b6d1269" title=" " alt="" coords="493,70,685,125"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="730,102,685,102,685,96,730,97"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="751,128,663,152,661,147,749,122"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelSelectionTask.html#aec234a6a12d93ed5ca0dd91b4dd8be82" title="Handle events, which are being send from containing thread." alt="" coords="243,5,429,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="470,28,429,28,429,23,470,23"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1ChannelSelectionTask.html#ab67214343b93cc468593dcbbaf5d2456" title="Handles Vendor Specific messages." alt="" coords="239,149,433,189"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="480,131,408,152,406,147,479,126"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ChannelSelectionTask.html#a85b2df533a6c739eae4a108daeb29410" title="Handle CMDU message." alt="" coords="5,149,191,189"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="225,172,191,172,191,167,225,167"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="468,172,434,172,434,167,468,167"/>
+<area shape="poly" id="edge10_Node000009_Node000006" title=" " alt="" coords="730,226,610,218,481,204,417,192,418,187,482,199,611,213,731,221"/>
+</map>

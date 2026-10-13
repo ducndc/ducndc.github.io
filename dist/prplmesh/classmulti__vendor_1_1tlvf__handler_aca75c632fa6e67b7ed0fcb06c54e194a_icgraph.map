@@ -1,0 +1,46 @@
+<map id="multi_vendor::tlvf_handler::to_index" name="multi_vendor::tlvf_handler::to_index">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1016,396,1144,436"/>
+<area shape="rect" id="Node000002" href="$classmulti__vendor_1_1tlvf__handler.html#a2e376dde657cb08ef092592c74e0bea4" title="Execute all registered handlers for the given message type." alt="" coords="811,239,954,279"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1041,389,907,281,911,277,1044,385"/>
+<area shape="rect" id="Node000017" href="$classmulti__vendor_1_1tlvf__handler.html#a3a5cbc80c99b6ab28dc0eff8d84ee1b2" title="Execute all registered parsers for the given message type." alt="" coords="806,364,959,404"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="1002,406,959,399,960,394,1003,401"/>
+<area shape="rect" id="Node000018" href="$classmulti__vendor_1_1tlvf__handler.html#a189bad019531024f676676c50f85ae2a" title="Register a handler for a given IEEE 1905.1 message type." alt="" coords="797,428,968,468"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="1003,431,969,437,968,432,1002,426"/>
+<area shape="rect" id="Node000021" href="$classmulti__vendor_1_1tlvf__handler.html#a6dab05f4f9ec3ff739fca1e145ef56c3" title="Register a parser for vendor&#45;specific TLVs for a given IEEE 1905.1 message type." alt="" coords="800,492,965,532"/>
+<area shape="poly" id="edge22_Node000001_Node000021" title=" " alt="" coords="1036,446,969,482,942,494,939,489,967,478,1034,441"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#abe4d41e73e16f636e50d39e63345ad68" title=" " alt="" coords="523,5,749,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="861,228,814,159,782,121,748,87,717,65,684,48,687,43,720,61,751,83,786,118,818,156,865,225"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1TopologyTask.html#a60a4e6ffc0a8793d606f20a36de81606" title="Handles 1905 Topology Query message." alt="" coords="555,97,717,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="836,234,748,181,674,140,676,135,751,176,839,229"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1CapabilityReportingTask.html#a7b00b32fa754ce14fc09180c85ec881e" title=" " alt="" coords="537,191,735,246"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="797,247,735,237,735,232,798,242"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1ApAutoConfigurationTask.html#af3f2015eb5e0ff04545a58e07edd9015" title=" " alt="" coords="529,270,743,325"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="798,275,743,283,742,278,797,269"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1ApAutoConfigurationTask.html#acac857cb125f8b47cf8715889f8008d6" title=" " alt="" coords="529,349,743,403"/>
+<area shape="poly" id="edge16_Node000002_Node000016" title=" " alt="" coords="841,288,751,338,721,351,719,346,748,334,838,284"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1LinkMetricsCollectionTask.html#ab2452024f7d97d1001a79ab2b61e84ce" title="Handle CMDU message." alt="" coords="261,5,469,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="509,28,469,28,469,23,509,23"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1TopologyTask.html#a2c75b5c339449510a43209a2e90fcee8" title="Handle CMDU message." alt="" coords="284,69,447,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="541,110,446,100,447,95,541,105"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1CapabilityReportingTask.html#a9acb331eed8a595e767c64ee983f0200" title=" " alt="" coords="267,134,464,189"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="523,198,464,185,465,180,524,192"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1CapabilityReportingTask.html#a95ab455be4b0b197194827083763e214" title=" " alt="" coords="259,213,471,267"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="524,230,472,234,471,229,523,225"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1CapabilityReportingTask.html#ac964d82b2215485effda1e3b9d1625b2" title=" " alt="" coords="256,292,475,332"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="541,253,524,260,476,281,437,294,435,289,474,276,522,255,539,248"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1CapabilityReportingTask.html#a88f1851388eaee3fe4cdd87b10266a0a" title="Handle events, which are being send from containing thread." alt="" coords="8,181,205,221"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="254,181,206,189,205,183,253,176"/>
+<area shape="poly" id="edge10_Node000010_Node000009" title=" " alt="" coords="245,225,205,219,206,213,246,220"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1CapabilityReportingTask.html#a6a8c641f2791e991564843ee929042bc" title="Handle CMDU message." alt="" coords="8,292,205,332"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="242,315,206,315,206,309,242,309"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1ApAutoConfigurationTask.html#aec7c837c390bb5fa3bd9237f3c5498ec" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="264,356,467,396"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="529,331,436,358,434,353,528,326"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a0805d78df62071cfdd3ad89bddc67963" title="Handle events, which are being send from containing thread." alt="" coords="5,356,208,396"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="250,379,208,379,208,373,250,373"/>
+<area shape="poly" id="edge17_Node000016_Node000014" title=" " alt="" coords="516,379,467,379,467,373,516,373"/>
+<area shape="rect" id="Node000019" href="$classMultiVendorAirties.html#a41a0ca0eb967a2a817d2deca7042c497" title=" " alt="" coords="568,428,704,468"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="783,451,704,451,704,445,783,445"/>
+<area shape="rect" id="Node000020" href="$classMultiVendorExample.html#a3c1c05b3fc1f7e97f0d86fba50b03851" title=" " alt="" coords="561,492,711,532"/>
+<area shape="poly" id="edge21_Node000018_Node000020" title=" " alt="" coords="792,474,712,495,711,490,791,469"/>
+<area shape="poly" id="edge23_Node000021_Node000020" title=" " alt="" coords="786,515,711,515,711,509,786,509"/>
+</map>

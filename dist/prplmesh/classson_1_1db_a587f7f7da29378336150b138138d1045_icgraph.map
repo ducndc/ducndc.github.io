@@ -1,0 +1,13 @@
+<map id="son::db::dm_set_sta_vht_capabilities" name="son::db::dm_set_sta_vht_capabilities">
+<area shape="rect" id="Node000001" title="Add station &#39;VHTCapabilities&#39; data element, set values to its parameters." alt="" coords="737,60,879,100"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#ac72d78891bae91e8e344679617fdfdc0" title=" " alt="" coords="501,67,689,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="724,83,690,83,690,77,724,77"/>
+<area shape="rect" id="Node000003" href="$classson_1_1client__association__task.html#a7e100b24a0379453fa856bba2ad2fd14" title=" " alt="" coords="269,5,443,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="504,68,443,57,444,52,505,62"/>
+<area shape="rect" id="Node000005" href="$classson_1_1topology__task.html#ae8e33dbc575656ce92be5f924e535f48" title="Handles 1905 Topology Notification message." alt="" coords="259,99,453,139"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="503,98,454,106,453,100,502,92"/>
+<area shape="rect" id="Node000004" href="$classson_1_1client__association__task.html#a40fe0c16babdf211684f389cde7034fd" title="Handle ieee1905 message." alt="" coords="5,20,211,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="255,43,211,43,211,37,255,37"/>
+<area shape="rect" id="Node000006" href="$classson_1_1topology__task.html#a33a4287ef785394e07d05d087fe54528" title="Handle ieee1905 message." alt="" coords="21,99,195,139"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="245,121,195,121,195,116,245,116"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="bwl::whm::sta_wlan_hal_whm::subscribe_to_ep_events" name="bwl::whm::sta_wlan_hal_whm::subscribe_to_ep_events">
+<area shape="rect" id="Node000001" title="subscribe to WiFi.EndPoint.*.ConnectionStatus and IntfName dm object change" alt="" coords="5,126,151,181"/>
+<area shape="rect" id="Node000002" href="$classbwl_1_1base__wlan__hal.html#a23e4b6e82754f75aa36decfde1c4fc62" title=" " alt="" coords="240,5,376,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,124,147,88,197,55,226,43,228,48,200,60,150,92,109,128"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a12a0350a7f7c462b12b7b6915ed3cc80" title="read and return object parameter content." alt="" coords="220,69,396,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,131,221,111,223,116,152,136"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1whm_1_1sta__wlan__hal__whm.html#abcab9dfb5490470ec9775c1cd8cd864b" title="Process the event WiFi.EndPoint..ConnectionStatus and IntfName dm event." alt="" coords="211,133,405,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,151,197,151,197,156,151,156"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a1e2b0e0feb40677f7765eb23f85736d9" title="return path of EndPoint template object." alt="" coords="229,197,387,237"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="152,171,223,191,221,196,151,176"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a6cbc2838430438cb1ec01e0d47f0659f" title="subscribe for event for a given object." alt="" coords="199,261,417,301"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="109,179,150,214,200,247,214,254,212,259,197,252,147,218,105,183"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#ac19c40c9c4f61ac812d55f3bcbe4936e" title="methods to get Ambiorix variant value" alt="" coords="465,133,641,173"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="406,151,452,151,452,156,406,156"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="474,197,633,237"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="387,215,460,215,460,220,387,220"/>
+</map>

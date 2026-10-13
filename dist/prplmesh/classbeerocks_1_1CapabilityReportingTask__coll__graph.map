@@ -1,0 +1,36 @@
+<map id="beerocks::CapabilityReportingTask" name="beerocks::CapabilityReportingTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1193,81,1419,107"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1Task.html" title=" " alt="" coords="887,5,997,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1012,23,1088,33,1170,49,1270,79,1269,84,1169,54,1087,38,1011,28"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1slave__thread.html" title=" " alt="" coords="863,201,1021,227"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="994,194,1265,104,1267,109,995,200"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1EventLoopThread.html" title=" " alt="" coords="500,171,685,196"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="699,190,864,205,863,210,699,195"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1thread__base.html" title=" " alt="" coords="177,171,331,196"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="345,181,500,181,500,186,345,186"/>
+<area shape="rect" id="Node000006" href="$classieee1905__1_1_1CmduMessageTx.html" title=" " alt="" coords="493,56,692,81"/>
+<area shape="poly" id="edge15_Node000001_Node000006" title=" " alt="" coords="706,70,1193,87,1193,93,705,75"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="662,82,693,91,717,101,775,114,800,119,832,132,887,166,928,199,925,203,884,170,829,136,799,124,774,119,715,106,691,97,660,87"/>
+<area shape="rect" id="Node000007" href="$classieee1905__1_1_1CmduMessage.html" title=" " alt="" coords="162,56,346,81"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="360,66,493,66,493,71,360,71"/>
+<area shape="rect" id="Node000008" href="$classClassList.html" title=" " alt="" coords="5,56,83,81"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="97,66,162,66,162,71,97,71"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1TaskPool.html" title="The TaskPool is single instance tasks container which responsible to run each task and allow passing ..." alt="" coords="524,269,661,295"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="675,274,751,266,830,251,911,224,912,229,831,257,752,271,676,280"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1TaskPoolInterface.html" title="The TaskPoolInterface provides interface for adding tasks and sending messages between tasks." alt="" coords="160,269,348,295"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="362,279,524,279,524,285,362,285"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1slave__thread_1_1sSlaveState.html" title=" " alt="" coords="514,319,671,359"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="685,327,757,313,830,289,884,258,925,225,928,229,887,262,832,294,758,318,686,332"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1slave__thread_1_1cRadioManagers.html" title=" " alt="" coords="514,383,671,423"/>
+<area shape="poly" id="edge11_Node000003_Node000012" title=" " alt="" coords="685,391,758,373,795,359,829,341,852,321,880,288,929,225,934,228,884,292,856,324,832,346,797,364,760,378,686,396"/>
+<area shape="rect" id="Node000013" href="$structbeerocks_1_1slave__thread_1_1sAgentConfig.html" title=" " alt="" coords="514,106,671,146"/>
+<area shape="poly" id="edge12_Node000003_Node000013" title=" " alt="" coords="686,143,831,178,902,199,900,204,830,183,684,148"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1logging.html" title=" " alt="" coords="531,220,655,245"/>
+<area shape="poly" id="edge13_Node000003_Node000014" title=" " alt="" coords="668,231,830,226,863,223,864,228,831,231,668,236"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1log__levels.html" title=" " alt="" coords="183,220,325,245"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="338,230,530,230,530,235,338,235"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1CacCapabilitiesDatabase.html" title=" " alt="" coords="855,337,1029,377"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="982,326,1168,193,1286,105,1289,109,1171,197,985,331"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1CacCapabilities.html" title="Interface to query cac capabilities of an agent this is just the interface, implementation may get th..." alt="" coords="505,448,680,473"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="694,457,762,448,830,430,878,404,917,375,920,379,881,409,832,435,763,454,694,462"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="son::optimal_path_task::remove_all_client_non_selected_band_radios" name="son::optimal_path_task::remove_all_client_non_selected_band_radios">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,48,164,103"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="439,5,576,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,51,212,41,323,26,425,19,425,24,323,32,212,46,165,56"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a86d5e5a3d70e397738d27d4e2f0737ee" title="Check if the radio&#39;s band is on one of the selected bands." alt="" coords="212,55,391,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,73,198,73,198,78,164,78"/>
+<area shape="rect" id="Node000008" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="229,120,374,145"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="165,94,240,114,239,119,164,99"/>
+<area shape="poly" id="edge5_Node000003_Node000002" title=" " alt="" coords="373,53,447,32,448,37,375,58"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#ad61cae97fc8b06eb61b3882c251cee4c" title=" " alt="" coords="444,55,571,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="391,73,430,73,430,78,391,78"/>
+<area shape="rect" id="Node000006" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="442,120,573,145"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="375,93,448,114,447,119,373,98"/>
+<area shape="rect" id="Node000005" href="$classson_1_1db.html#a896dff718e9479d736f3f3ab8bc24bb1" title="Get radio with a specific Radio Unique Identifier (Radio UID)" alt="" coords="634,55,761,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="571,73,620,73,620,78,571,78"/>
+<area shape="rect" id="Node000007" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="624,120,771,145"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="573,130,610,130,610,135,573,135"/>
+</map>

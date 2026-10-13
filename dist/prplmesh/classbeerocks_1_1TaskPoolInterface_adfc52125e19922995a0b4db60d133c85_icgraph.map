@@ -1,0 +1,19 @@
+<map id="beerocks::TaskPoolInterface::send_event" name="beerocks::TaskPoolInterface::send_event">
+<area shape="rect" id="Node000001" title="Send an event to all registered tasks." alt="" coords="1040,32,1228,72"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1switch__channel_1_1SwitchChannelFsm.html#ac4c159807732f0b2496992db86a8f213" title=" " alt="" coords="535,7,751,47"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1063,31,992,15,930,9,867,8,751,15,751,10,867,3,930,4,992,10,1064,26"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1switch__channel_1_1SwitchChannelFsm.html#afb80284a9e6aac3e57a8aae6bb49b94f" title=" " alt="" coords="799,25,992,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1026,55,992,55,992,50,1026,50"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1coordinated__cac_1_1CacFsm.html#a429800d607205fb9cc27400ec4e6b916" title=" " alt="" coords="801,104,990,158"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="1061,79,980,106,978,101,1059,74"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1switch__channel_1_1SwitchChannelFsm.html#a766c905cecadfbba325942b876aded67" title=" " alt="" coords="220,7,487,47"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="521,30,487,30,487,24,521,24"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="785,44,751,40,751,35,785,39"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1coordinated__cac_1_1CacFsm.html#a884b1323b30a39469e972ac8528dbf97" title=" " alt="" coords="263,102,443,142"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="787,119,751,116,588,113,444,118,444,113,588,108,751,111,787,114"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1coordinated__cac_1_1CacFsm.html#a0e8dd87c4adda3bf8d3d16098ea36ea5" title=" " alt="" coords="557,125,729,180"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="787,143,729,148,728,142,787,137"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1coordinated__cac_1_1CacFsm.html#a617680b7c5e9e9cc40462b7c7b167d7d" title=" " alt="" coords="5,102,172,142"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="250,124,172,124,172,119,250,119"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="543,144,443,134,444,129,543,139"/>
+</map>

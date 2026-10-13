@@ -1,0 +1,19 @@
+<map id="beerocks::transport::broker::BrokerServer::socket_connected" name="beerocks::transport::broker::BrokerServer::socket_connected">
+<area shape="rect" id="Node000001" title="Handler method to accept incoming socket connections." alt="" coords="5,84,156,139"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#a536d51f93acafd3ee9be76ba4ae6f093" title="Handle incoming message." alt="" coords="205,44,356,99"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,94,191,87,192,92,157,99"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#af59dac913c1a226fc2d95502b82a8ac5" title="Handler method for socket disconnections." alt="" coords="204,123,357,177"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="157,123,191,130,190,135,156,128"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1transport_1_1broker_1_1BrokerServer.html#ad5c73e0980512c66c075a0d3d6ad9891" title="Handle broker subscribe/unsubscribe messages." alt="" coords="421,5,571,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="356,55,407,46,407,51,357,60"/>
+<area shape="rect" id="Node000006" href="$namespacebeerocks_1_1transport_1_1messages.html#ab917c07a89dcdefbdbb9f74f6141af1b" title="Read and parse internal transport message from a socket." alt="" coords="405,84,587,139"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="357,83,392,89,391,95,356,88"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1transport_1_1messages_1_1SubscribeMessage.html#a1159e2e75f02e02a4f6cecda4be24598" title=" " alt="" coords="635,5,844,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="572,30,621,30,621,35,572,35"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1transport_1_1messages_1_1Message.html#ae580136290ad2c77f6e899973cb16ba9" title=" " alt="" coords="892,5,1043,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="844,30,878,30,878,35,844,35"/>
+<area shape="rect" id="Node000007" href="$namespacebeerocks_1_1transport_1_1messages.html#a30d13cac782bea206ae4561e3ee2e309" title="Create a message of the given type with provided frame." alt="" coords="643,84,835,139"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="587,109,630,109,630,114,587,114"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1transport_1_1messages_1_1Message_1_1Frame.html#a20d4a19dc6bd149f1b434ff65dc27bd9" title=" " alt="" coords="664,163,815,217"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="582,136,651,159,650,164,580,141"/>
+</map>

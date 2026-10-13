@@ -1,0 +1,16 @@
+<map id="vbss::vbss_actions::destroy_vbss" name="vbss::vbss_actions::destroy_vbss">
+<area shape="rect" id="Node000001" title="Sends a request to destroy the current virtual BSS." alt="" coords="485,101,620,141"/>
+<area shape="rect" id="Node000002" href="$classvbss__task.html#a7c51fbd66defaf870ca5077b7913c523" title="Handles the &quot;Trigger Channel Switch Announcement Response&quot; which includes a Client Info TLV and a Tri..." alt="" coords="240,5,437,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="506,97,436,60,406,48,408,43,438,55,509,92"/>
+<area shape="rect" id="Node000004" href="$classvbss__task.html#a5b378420a6ed10c1fb108e234895fe1a" title="Send a VBSS Request with the VBSS Destruction TLV to the given agent." alt="" coords="257,133,420,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="472,136,421,144,420,139,471,131"/>
+<area shape="rect" id="Node000006" href="$classvbss__task.html#ac2fe81f4ebb0cac193419f29d1a256ab" title="Handles the VBSS Response which contains a single Virtual BSS Event TLV." alt="" coords="257,69,420,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="471,112,420,104,421,99,472,107"/>
+<area shape="rect" id="Node000007" href="$classson_1_1Controller.html#a493f123e6cc0e7e6354724eedcd78613" title="Triggers VBSS destruction for the given VBSSID on the given radio/agent." alt="" coords="263,197,414,237"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="509,151,438,188,408,200,406,195,436,183,506,146"/>
+<area shape="rect" id="Node000003" href="$classvbss__task.html#a4216939148df9db770e952402325e89d" title="Handle ieee1905 message." alt="" coords="5,37,192,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="227,43,193,48,192,42,226,38"/>
+<area shape="rect" id="Node000005" href="$classvbss__task.html#a4ad8cc387fc095261aa6cb0098fd7246" title=" " alt="" coords="15,141,182,166"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="243,156,182,156,182,151,243,151"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="243,79,192,72,192,67,244,74"/>
+</map>

@@ -1,0 +1,55 @@
+<map id="bwl::nl80211::ap_wlan_hal_nl80211::process_nl80211_event" name="bwl::nl80211::ap_wlan_hal_nl80211::process_nl80211_event">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,393,157,447"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1utils.html#a2eb19edb5b6ffec0e1522ef89c44dbab" title=" " alt="" coords="233,5,392,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,392,88,324,107,234,123,186,144,139,170,94,204,55,219,43,223,48,207,59,175,98,148,141,128,188,112,236,93,325,86,393"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1base__wlan__hal.html#a6a80ee83674ebc63bfeacb9ad177e8da" title=" " alt="" coords="239,70,386,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,392,97,339,119,270,154,199,177,165,204,135,225,120,228,124,207,139,181,168,159,201,124,272,102,340,90,393"/>
+<area shape="rect" id="Node000005" href="$classbwl_1_1nl80211_1_1ap__wlan__hal__nl80211.html#a4f6b52848067c0894d93b6ad3026a3a4" title=" " alt="" coords="205,149,420,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="88,391,103,349,127,297,160,245,181,220,204,199,210,194,214,199,207,203,185,224,165,248,132,300,108,351,93,393"/>
+<area shape="rect" id="Node000006" href="$classson_1_1wireless__utils.html#af75e9107c6fe9dc4365e99c69d5f4184" title="Obtains the channel number that corresponds to given frequency value." alt="" coords="247,213,378,253"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="95,391,138,327,169,292,204,263,233,248,235,253,207,268,172,296,143,330,100,394"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1utils.html#a8a7b156a1d975b5262c94d0dfa8927bb" title=" " alt="" coords="236,277,389,317"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="116,390,157,361,204,334,234,320,237,325,207,338,160,366,119,395"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1string__utils.html#adc10d3f8a693da93fc162414173fa6be" title=" " alt="" coords="482,401,629,441"/>
+<area shape="poly" id="edge26_Node000001_Node000011" title=" " alt="" coords="153,390,205,377,265,369,313,366,360,369,420,377,490,394,488,400,420,383,360,375,313,372,266,374,206,383,154,395"/>
+<area shape="rect" id="Node000016" href="$classson_1_1assoc__frame__utils.html#affa0af247b0ebc07b3e172ee3ecde847" title="Get station capabilities from provided assocReqFrame object." alt="" coords="229,393,396,447"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="158,417,215,417,215,423,158,423"/>
+<area shape="rect" id="Node000020" href="$classbwl_1_1base__wlan__hal.html#aed2b9c5395fdf065c00a912be550113b" title=" " alt="" coords="237,472,389,512"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="159,441,206,456,235,465,233,470,205,461,157,446"/>
+<area shape="rect" id="Node000021" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="240,537,385,562"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="110,446,153,485,207,522,227,530,225,535,204,526,149,490,106,450"/>
+<area shape="rect" id="Node000022" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="247,586,378,611"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="99,446,142,510,172,543,207,571,235,584,233,589,204,576,168,547,138,513,95,449"/>
+<area shape="rect" id="Node000024" href="$classassoc__frame_1_1AssocReqFrame.html#a2348264ff3fa1f3d674877e0ddf04f03" title=" " alt="" coords="211,636,414,676"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="95,447,111,486,135,533,167,580,207,621,217,627,213,632,204,625,163,583,130,535,106,488,90,449"/>
+<area shape="rect" id="Node000025" href="$classson_1_1wireless__utils.html#a2b6a4295af11c16e1aa9de87bd876389" title="Print station capabilities." alt="" coords="691,637,864,677"/>
+<area shape="poly" id="edge24_Node000001_Node000025" title=" " alt="" coords="88,447,98,501,119,568,135,602,154,634,178,662,207,686,242,700,291,707,350,709,416,707,554,693,677,674,677,679,554,698,416,712,350,715,291,713,241,705,204,690,174,666,150,637,130,604,114,570,93,502,83,448"/>
+<area shape="rect" id="Node000026" href="$classson_1_1wireless__utils.html#a4a9475de64b16eec74c471a08b4db153" title="Get a frequency type based on a frequency." alt="" coords="247,751,378,791"/>
+<area shape="poly" id="edge27_Node000001_Node000026" title=" " alt="" coords="88,447,99,505,120,581,136,621,155,661,179,697,207,730,236,749,233,754,204,734,175,701,151,663,131,623,115,583,94,506,83,448"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1string__utils.html#a0d691ea063971e5483f5ba31d742e12a" title="Convert a hex represented string into characters." alt="" coords="482,77,629,117"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="386,95,468,95,468,100,386,100"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1utils.html#ab79525da353f8d66afd69095bbf7f56e" title="This function will return the default prefix separator character for wireless VAP interface names." alt="" coords="468,145,643,185"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="388,279,418,263,434,247,442,231,450,213,466,195,474,190,477,194,470,199,455,216,447,233,438,250,422,267,391,284"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1utils.html#a865f0165212ff57d0c23421af76d582b" title="This function will return the prefix string in the argument interface name following one of these pat..." alt="" coords="471,209,639,249"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="384,275,470,250,471,256,385,280"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1utils.html#a60f589dbc54e6e64b04466f89239bbc7" title="This function will check if the interface name prefix is allowed. The check can de done by." alt="" coords="476,273,635,313"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="390,293,462,292,462,298,390,299"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="385,315,422,334,437,348,446,361,455,374,470,387,479,393,476,397,466,391,451,378,442,364,433,351,418,338,383,320"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1string__utils.html#aea97ffe1489d4608c5035b257deaaadc" title=" " alt="" coords="482,337,629,377"/>
+<area shape="poly" id="edge14_Node000007_Node000015" title=" " alt="" coords="391,314,469,333,468,339,389,319"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1string__utils.html#ad6a5e6fda086252e48c5122fd2552d9d" title="trim whitespace in place from the head and tail of a string." alt="" coords="704,401,851,441"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="629,419,690,419,690,424,629,424"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1string__utils.html#a03316c7e6197ba5b20b09ae807d36681" title="trim whitespace in place from the head of a string." alt="" coords="918,379,1065,419"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="851,411,904,405,905,410,851,416"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1string__utils.html#aa8c0f4131490f9f0f50b0d643ca4eccc" title="trim whitespace in place from the tail of a string." alt="" coords="918,443,1065,483"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="851,433,905,443,904,449,850,438"/>
+<area shape="rect" id="Node000017" href="$classson_1_1assoc__frame__utils.html#a8385943aa086fc7340aa8cdef78a1cb0" title="Set default mcs and default short GI from station&#39;s supported rates (by getting nearest reference val..." alt="" coords="476,477,635,531"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="393,445,464,470,462,475,392,450"/>
+<area shape="rect" id="Node000018" href="$classson_1_1wireless__utils.html#a23ed6594ae6a4d62410b8bced8dfb50c" title=" " alt="" coords="706,512,849,552"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="636,511,693,519,692,524,635,517"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1utils.html#a444f7dfcd73d9155f17df02aa712c2cd" title=" " alt="" coords="912,524,1071,564"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="849,533,898,536,898,541,849,539"/>
+<area shape="rect" id="Node000023" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="482,586,629,611"/>
+<area shape="poly" id="edge22_Node000022_Node000023" title=" " alt="" coords="378,596,468,596,468,601,378,601"/>
+<area shape="poly" id="edge25_Node000025_Node000019" title=" " alt="" coords="815,635,939,568,942,573,817,640"/>
+</map>

@@ -1,0 +1,62 @@
+<map id="son::db::set_sta_stay_on_initial_radio" name="son::db::set_sta_stay_on_initial_radio">
+<area shape="rect" id="Node000001" title="Set the client&#39;s stay&#45;on&#45;initial&#45;radio." alt="" coords="5,177,153,217"/>
+<area shape="rect" id="Node000002" href="$classprplmesh_1_1controller_1_1db_1_1Station.html#adc54d223935ea8f089ace8eaea19a291" title=" " alt="" coords="209,5,356,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,175,135,117,165,84,200,55,208,50,211,54,203,59,169,88,139,120,96,179"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#af568dec76bf497734a7466a1673cdddf" title=" " alt="" coords="201,69,364,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="113,175,200,126,225,113,227,118,203,130,115,180"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="413,134,558,159"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="153,183,201,176,399,153,399,158,202,181,154,188"/>
+<area shape="rect" id="Node000006" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="1291,185,1422,210"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="154,195,484,195,916,195,1278,195,1278,200,916,200,484,200,154,200"/>
+<area shape="rect" id="Node000008" href="$classson_1_1db.html#a95def19c25bb7354275ae73873f27096" title=" " alt="" coords="1061,279,1201,305"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="154,209,306,233,395,242,484,245,699,245,793,248,887,256,1048,276,1047,281,887,261,793,254,699,251,484,251,394,247,305,238,153,215"/>
+<area shape="rect" id="Node000010" href="$classson_1_1db.html#a3d5b803184de031349dfb8e2277a51c6" title="Get string representation of number of seconds in timestamp." alt="" coords="215,601,350,641"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="84,217,89,286,106,385,121,438,142,492,169,542,203,588,207,591,203,595,199,591,165,545,137,494,116,440,101,386,84,287,78,218"/>
+<area shape="rect" id="Node000011" href="$classson_1_1db.html#a35af38386867ab92f63281f88e256e3f" title="Updates the client values in the persistent db." alt="" coords="203,537,363,577"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="94,216,266,524,261,527,90,219"/>
+<area shape="rect" id="Node000004" href="$classson_1_1db.html#a848cb5e1d274b6c17a31b9081e0c3a2f" title="Get radio containing a BSS with a specific BSSID Searches all Agent objects for sRadio object contain..." alt="" coords="422,19,549,59"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="362,67,408,55,409,60,364,72"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="355,107,427,128,426,133,353,112"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="364,89,697,93,916,93,972,96,1029,102,1139,124,1237,152,1311,177,1309,182,1235,157,1138,130,1028,108,972,101,916,99,697,99,364,94"/>
+<area shape="rect" id="Node000007" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="1491,185,1637,210"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1422,195,1477,195,1477,200,1422,200"/>
+<area shape="rect" id="Node000009" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="1288,394,1425,419"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1189,302,1224,315,1283,349,1331,383,1328,388,1280,353,1222,320,1187,307"/>
+<area shape="rect" id="Node000012" href="$classson_1_1db.html#ad02556d72323e8efd01eceac0a9c8c47" title="Adds a client to the persistent db, if already exists, remove old entry and add a new one." alt="" coords="419,537,551,577"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="363,555,405,555,405,560,363,560"/>
+<area shape="rect" id="Node000015" href="$classson_1_1db.html#a9ec2b6f7ea8df38b769a555d9967a54b" title="Get string representation of node type." alt="" coords="1279,630,1434,655"/>
+<area shape="poly" id="edge37_Node000011_Node000015" title=" " alt="" coords="352,575,366,588,385,619,392,651,391,682,386,712,382,742,383,770,392,798,414,825,448,850,479,864,510,869,542,868,612,857,652,852,697,849,916,849,1006,843,1042,835,1075,824,1141,792,1221,747,1283,705,1331,663,1335,667,1286,709,1224,752,1143,797,1077,829,1044,840,1007,848,916,855,697,855,652,857,612,863,542,874,510,875,478,869,445,854,410,829,387,801,378,771,377,742,381,712,386,682,387,651,380,621,362,591,349,579"/>
+<area shape="rect" id="Node000016" href="$classson_1_1db.html#a680ac0309e2ec8eb6de3a3a75b065854" title="Get db entry from MAC address." alt="" coords="1069,329,1194,369"/>
+<area shape="poly" id="edge34_Node000011_Node000016" title=" " alt="" coords="314,535,439,462,521,421,606,386,669,364,719,350,837,333,894,330,952,330,1055,337,1055,342,951,335,894,335,838,339,720,355,670,369,608,390,523,426,442,467,317,539"/>
+<area shape="rect" id="Node000017" href="$namespacebeerocks_1_1bpl.html#a212d0b983373233e935e95e55ee45ade" title="find if entry exists" alt="" coords="1056,680,1207,720"/>
+<area shape="poly" id="edge35_Node000011_Node000017" title=" " alt="" coords="340,575,483,626,607,664,671,677,721,683,837,691,1042,697,1042,703,837,696,721,688,670,682,606,669,481,631,338,580"/>
+<area shape="rect" id="Node000023" href="$namespacebeerocks_1_1bpl.html#a580e4a160e36002d201460ebf1f6fce9" title="Set values in entry, append attributes and override existing." alt="" coords="412,775,559,815"/>
+<area shape="poly" id="edge36_Node000011_Node000023" title=" " alt="" coords="352,575,366,588,381,609,389,631,392,671,394,712,401,733,414,754,425,765,421,769,410,758,396,735,389,713,387,672,384,632,377,612,362,591,348,580"/>
+<area shape="rect" id="Node000013" href="$classson_1_1db.html#ae5ea53da80772db74801697e687aea11" title="Adds a client entry to persistent_db with configured parameters and increments clients counter." alt="" coords="607,565,789,605"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="552,563,593,569,592,574,551,569"/>
+<area shape="poly" id="edge33_Node000012_Node000015" title=" " alt="" coords="504,576,548,622,576,645,608,664,669,690,722,708,770,718,817,723,915,725,1040,729,1133,741,1172,740,1222,729,1253,717,1283,700,1330,663,1334,667,1286,704,1255,721,1223,735,1173,746,1132,746,1040,735,915,730,816,728,769,723,721,713,667,695,605,669,573,650,544,626,501,580"/>
+<area shape="poly" id="edge17_Node000012_Node000016" title=" " alt="" coords="500,535,543,486,573,459,605,436,661,408,721,387,782,370,844,358,959,346,1055,344,1055,349,960,351,844,364,783,375,723,392,664,413,608,441,576,463,547,489,504,539"/>
+<area shape="poly" id="edge19_Node000012_Node000017" title=" " alt="" coords="521,575,562,596,608,615,723,646,841,668,951,683,1042,692,1042,697,950,688,840,673,722,651,606,620,560,601,519,580"/>
+<area shape="rect" id="Node000018" href="$classson_1_1db.html#a81f33453c70c67ba4994a941796bf1c2" title="Removes client with least timelife remaining from persistent db (with preference to disconnected clie..." alt="" coords="609,451,787,491"/>
+<area shape="poly" id="edge20_Node000012_Node000018" title=" " alt="" coords="534,535,634,494,636,499,536,540"/>
+<area shape="rect" id="Node000020" href="$classson_1_1db.html#a06e969578f5af21b70e619bbf14728c6" title="Removes a client entry from persistent_db and decrements clients counter." alt="" coords="1040,508,1223,548"/>
+<area shape="poly" id="edge32_Node000012_Node000020" title=" " alt="" coords="552,552,1026,530,1027,535,552,557"/>
+<area shape="rect" id="Node000014" href="$namespacebeerocks_1_1bpl.html#a1827c43b3401e8f22a41fad87098e83a" title="Add new entry with initial value." alt="" coords="839,565,990,605"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="789,583,825,583,825,588,789,588"/>
+<area shape="poly" id="edge16_Node000013_Node000015" title=" " alt="" coords="775,603,838,615,953,627,1069,635,1266,640,1265,646,1068,640,952,633,837,620,774,608"/>
+<area shape="poly" id="edge18_Node000016_Node000006" title=" " alt="" coords="1193,328,1221,314,1254,291,1284,266,1333,218,1337,222,1288,270,1257,296,1224,318,1195,332"/>
+<area shape="rect" id="Node000019" href="$classson_1_1db.html#a253307a80eb0361757e0030f3080d5a7" title="Clear client&#39;s persistent information." alt="" coords="845,451,984,491"/>
+<area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="788,468,831,468,831,473,788,473"/>
+<area shape="rect" id="Node000022" href="$classson_1_1db.html#ac6a3e07c3b6cf311eedc11bd82061d97" title="Returns the preferred client to be removed." alt="" coords="837,387,992,427"/>
+<area shape="poly" id="edge29_Node000018_Node000022" title=" " alt="" coords="766,448,833,428,834,433,767,453"/>
+<area shape="poly" id="edge24_Node000019_Node000009" title=" " alt="" coords="984,458,1274,416,1275,421,985,463"/>
+<area shape="poly" id="edge28_Node000019_Node000015" title=" " alt="" coords="940,489,985,524,1041,558,1097,581,1156,600,1266,626,1265,631,1155,605,1096,586,1039,562,982,528,937,493"/>
+<area shape="poly" id="edge22_Node000019_Node000016" title=" " alt="" coords="966,448,991,436,1043,406,1089,375,1092,380,1045,411,993,441,968,453"/>
+<area shape="poly" id="edge23_Node000019_Node000017" title=" " alt="" coords="937,489,994,552,1042,605,1102,668,1098,672,1038,608,990,555,933,493"/>
+<area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="985,486,1043,502,1041,507,984,492"/>
+<area shape="poly" id="edge27_Node000020_Node000015" title=" " alt="" coords="1179,546,1224,567,1323,621,1321,626,1221,572,1177,551"/>
+<area shape="rect" id="Node000021" href="$namespacebeerocks_1_1bpl.html#a940044f9e67e50e0d32d632d7e1f5a2d" title="Remove entry by name." alt="" coords="1271,508,1443,548"/>
+<area shape="poly" id="edge26_Node000020_Node000021" title=" " alt="" coords="1223,525,1257,525,1257,531,1223,531"/>
+<area shape="poly" id="edge31_Node000022_Node000008" title=" " alt="" coords="937,384,982,349,1039,315,1059,306,1061,311,1041,320,985,354,940,389"/>
+<area shape="poly" id="edge30_Node000022_Node000009" title=" " alt="" coords="992,404,1274,404,1274,409,992,409"/>
+</map>

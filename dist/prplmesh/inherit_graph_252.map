@@ -1,0 +1,31 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classbeerocks_1_1Task.html" title=" " alt="" coords="5,327,116,352"/>
+<area shape="rect" id="Node000001" href="$classbeerocks_1_1ApAutoConfigurationTask.html" title=" " alt="" coords="169,5,399,31"/>
+<area shape="poly" id="edge762_Node000000_Node000001" title=" " alt="" coords="60,312,66,255,81,181,94,143,112,105,134,70,162,40,179,29,182,33,166,44,138,73,116,108,99,145,87,183,71,256,65,313"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CapabilityReportingTask.html" title=" " alt="" coords="171,55,397,80"/>
+<area shape="poly" id="edge763_Node000000_Node000002" title=" " alt="" coords="62,312,71,264,88,203,118,142,138,114,162,89,180,78,183,82,166,93,142,117,122,144,93,205,76,265,67,313"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1ChannelScanTask.html" title=" " alt="" coords="189,104,379,129"/>
+<area shape="poly" id="edge764_Node000000_Node000003" title=" " alt="" coords="65,313,77,273,96,226,124,179,142,157,162,138,188,125,190,129,166,143,146,161,128,182,101,228,82,275,70,314"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ChannelSelectionTask.html" title=" " alt="" coords="177,153,391,179"/>
+<area shape="poly" id="edge765_Node000000_Node000004" title=" " alt="" coords="70,313,104,249,130,216,163,188,185,176,187,181,165,192,134,219,108,252,74,315"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ControllerConnectivityTask.html" title="ControllerConnectivityTask is responsible to maintain and observe connectivity to the controller." alt="" coords="164,203,404,228"/>
+<area shape="poly" id="edge766_Node000000_Node000005" title=" " alt="" coords="77,314,114,274,137,254,163,237,190,226,192,231,165,242,140,258,117,278,81,317"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1LinkMetricsCollectionTask.html" title=" " alt="" coords="166,252,402,277"/>
+<area shape="poly" id="edge767_Node000000_Node000006" title=" " alt="" coords="94,318,163,286,204,275,205,280,165,291,97,322"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ProxyAgentDppTask.html" title=" " alt="" coords="183,301,385,327"/>
+<area shape="poly" id="edge768_Node000000_Node000007" title=" " alt="" coords="130,329,182,323,183,328,130,334"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1ServicePrioritizationTask.html" title=" " alt="" coords="171,351,397,376"/>
+<area shape="poly" id="edge769_Node000000_Node000008" title=" " alt="" coords="130,344,171,348,170,354,130,349"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1SpectrumInquiryTask.html" title=" " alt="" coords="181,400,387,425"/>
+<area shape="poly" id="edge770_Node000000_Node000009" title=" " alt="" coords="98,356,165,385,210,397,209,402,163,390,96,361"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1TopologyTask.html" title=" " alt="" coords="203,449,365,475"/>
+<area shape="poly" id="edge771_Node000000_Node000010" title=" " alt="" coords="82,361,118,399,141,418,165,434,204,449,202,454,163,439,137,423,114,403,78,365"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1TrafficSeparationTask.html" title="Task responsible for applying EasyMesh Traffic Separation rules on the agent platform." alt="" coords="179,499,389,524"/>
+<area shape="poly" id="edge772_Node000000_Node000011" title=" " alt="" coords="75,363,109,425,135,457,165,484,190,496,188,501,163,488,131,461,105,428,70,366"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1VbssTask.html" title=" " alt="" coords="213,548,355,573"/>
+<area shape="poly" id="edge773_Node000000_Node000012" title=" " alt="" coords="71,365,82,403,101,449,129,495,146,516,166,533,188,546,214,554,212,559,186,551,162,538,142,519,124,498,96,451,77,405,65,366"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1coordinated__cac_1_1CoordinatedCacTask.html" title=" " alt="" coords="194,598,374,638"/>
+<area shape="poly" id="edge774_Node000000_Node000013" title=" " alt="" coords="68,365,77,412,95,471,124,531,143,559,166,583,195,601,192,605,162,587,139,562,119,534,90,473,72,414,63,366"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1switch__channel_1_1SwitchChannelTask.html" title=" " alt="" coords="197,662,371,702"/>
+<area shape="poly" id="edge775_Node000000_Node000014" title=" " alt="" coords="65,365,71,424,86,500,99,540,116,580,138,616,166,648,181,659,198,668,196,672,178,664,162,652,134,619,111,582,94,542,81,502,65,425,60,366"/>
+</map>

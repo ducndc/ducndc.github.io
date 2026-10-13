@@ -1,0 +1,21 @@
+<map id="beerocks::utils::get_iface_string_from_iface_vap_ids" name="beerocks::utils::get_iface_string_from_iface_vap_ids">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,126,169,181"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1utils.html#a8a7b156a1d975b5262c94d0dfa8927bb" title=" " alt="" coords="217,133,371,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,151,204,151,204,156,170,156"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1utils.html#ab79525da353f8d66afd69095bbf7f56e" title="This function will return the default prefix separator character for wireless VAP interface names." alt="" coords="419,5,593,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="315,131,361,93,417,55,430,49,432,53,420,60,364,97,319,135"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1utils.html#a865f0165212ff57d0c23421af76d582b" title="This function will return the prefix string in the argument interface name following one of these pat..." alt="" coords="422,69,590,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="360,131,425,111,427,116,362,136"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1utils.html#a60f589dbc54e6e64b04466f89239bbc7" title="This function will check if the interface name prefix is allowed. The check can de done by." alt="" coords="427,133,585,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="371,151,413,151,413,156,371,156"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1string__utils.html#adc10d3f8a693da93fc162414173fa6be" title=" " alt="" coords="433,197,579,237"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="362,171,427,191,425,196,360,176"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1string__utils.html#aea97ffe1489d4608c5035b257deaaadc" title=" " alt="" coords="433,261,579,301"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="319,172,364,209,420,247,432,253,430,258,417,252,361,213,315,176"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1string__utils.html#ad6a5e6fda086252e48c5122fd2552d9d" title="trim whitespace in place from the head and tail of a string." alt="" coords="641,197,788,237"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="579,215,628,215,628,220,579,220"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1string__utils.html#a03316c7e6197ba5b20b09ae807d36681" title="trim whitespace in place from the head of a string." alt="" coords="836,165,983,205"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="788,203,822,197,823,202,788,208"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1string__utils.html#aa8c0f4131490f9f0f50b0d643ca4eccc" title="trim whitespace in place from the tail of a string." alt="" coords="836,229,983,269"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="788,227,823,232,822,238,788,232"/>
+</map>

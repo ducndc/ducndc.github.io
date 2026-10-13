@@ -1,0 +1,16 @@
+<map id="wfa_map::tlvClientInfo::bssid" name="wfa_map::tlvClientInfo::bssid">
+<area shape="rect" id="Node000001" title=" " alt="" coords="768,68,921,108"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CapabilityReportingTask.html#a01ae8460d25cddc8a7259e315ef03caf" title=" " alt="" coords="485,8,720,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="754,68,684,51,685,46,755,63"/>
+<area shape="rect" id="Node000004" href="$classvbss__task.html#a5bfe061a1aec021344743e4a53d3db57" title="Handles a Move Cancel Response message." alt="" coords="255,69,422,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="755,91,422,92,422,86,755,86"/>
+<area shape="rect" id="Node000006" href="$classvbss_1_1vbss__actions.html#a99ec768c8cb7d564c55ee3f4a0c46331" title="Sends a trigger channel switch announcement request." alt="" coords="523,126,682,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="757,114,683,135,681,129,756,109"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1CapabilityReportingTask.html#a6a8c641f2791e991564843ee929042bc" title="Handle CMDU message." alt="" coords="240,5,437,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="472,29,437,29,437,24,472,24"/>
+<area shape="rect" id="Node000005" href="$classvbss__task.html#a4216939148df9db770e952402325e89d" title="Handle ieee1905 message." alt="" coords="5,101,192,141"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="242,105,193,112,192,106,241,100"/>
+<area shape="rect" id="Node000007" href="$classvbss__task.html#ac2fe81f4ebb0cac193419f29d1a256ab" title="Handles the VBSS Response which contains a single Virtual BSS Event TLV." alt="" coords="257,133,420,173"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="510,156,420,156,420,151,510,151"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="243,143,192,136,192,131,244,138"/>
+</map>

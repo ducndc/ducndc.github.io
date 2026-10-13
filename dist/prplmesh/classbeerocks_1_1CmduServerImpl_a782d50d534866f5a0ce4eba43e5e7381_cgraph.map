@@ -1,0 +1,13 @@
+<map id="beerocks::CmduServerImpl::handle_read" name="beerocks::CmduServerImpl::handle_read">
+<area shape="rect" id="Node000001" title="Handles the read event in a client socket connected to the server socket." alt="" coords="5,37,187,77"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CmduServer.html#a2e888c12406f8ad3d2678b84fb3ffcf7" title="Notifies a CMDU&#45;received event." alt="" coords="235,5,392,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,41,221,36,221,42,188,47"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1CmduPeer.html#aa5b680d017fca40378e6a4fa098083ca" title="Reads and handles received CMDU messages." alt="" coords="241,69,386,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,68,227,74,226,79,187,73"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1Buffer.html#a4c70d268fe092fc5318af68d1ecebb8f" title="Returns the length of the buffer (number of bytes)." alt="" coords="443,5,587,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="376,67,438,47,439,52,378,72"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1Socket_1_1Connection.html#a625069bb809bd93da8f145a776825334" title="Receives data through the socket connection." alt="" coords="440,69,591,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="386,87,426,87,426,92,386,92"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1Socket_1_1Connection.html#a6ab08378af58ec338acd0a3ee61bcbda" title="Returns the underlying socket used by this connection." alt="" coords="440,133,591,173"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="378,107,439,127,438,132,376,112"/>
+</map>

@@ -6,26 +6,13 @@ heroImage: '../../assets/bootloader.png'
 category: 'Embedded Linux'
 ---
 
-## Mục Lục
-
-1. [Tổng Quan](#1-tổng-quan)
-2. [Quá Trình Khởi Động (Boot Process)](#2-quá-trình-khởi-động-boot-process)
-3. [Các Loại Bootloader Phổ Biến](#3-các-loại-bootloader-phổ-biến)
-4. [U-Boot – Universal Bootloader](#4-u-boot--universal-bootloader)
-5. [Barebox](#5-barebox)
-6. [GRUB trong Embedded Linux](#6-grub-trong-embedded-linux)
-7. [Cấu Trúc Bộ Nhớ và Phân Vùng](#7-cấu-trúc-bộ-nhớ-và-phân-vùng)
-8. [Quá Trình Biên Dịch và Cấu Hình](#8-quá-trình-biên-dịch-và-cấu-hình)
-9. [Device Tree (DTB)](#9-device-tree-dtb)
-10. [Bảo Mật Bootloader](#10-bảo-mật-bootloader)
-11. [Debug và Troubleshooting](#11-debug-và-troubleshooting)
-12. [Tài Liệu Tham Khảo](#12-tài-liệu-tham-khảo)
+### Tổng Quan
 
 ---
 
-## Tổng Quan
+#### Bootloader là gì?
 
-### Bootloader là gì?
+---
 
 Bootloader (hay boot loader) là chương trình phần mềm đầu tiên được thực thi khi hệ thống nhúng được cấp nguồn hoặc reset. Nhiệm vụ chính của bootloader là **khởi tạo phần cứng cơ bản** và **nạp kernel Linux** vào RAM để thực thi.
 
@@ -36,7 +23,11 @@ Trong hệ thống nhúng, bootloader đóng vai trò đặc biệt quan trọng
 - Quản lý quá trình nạp kernel từ nhiều nguồn khác nhau (flash, SD card, mạng)
 - Hỗ trợ môi trường phát triển và debug
 
-### Vị Trí trong Hệ Thống
+---
+
+#### Vị Trí trong Hệ Thống
+
+---
 
 ```
 +------------------+
@@ -74,9 +65,13 @@ Trong hệ thống nhúng, bootloader đóng vai trò đặc biệt quan trọng
 
 ---
 
-## Quá Trình Khởi Động (Boot Process)
+### Quá Trình Khởi Động (Boot Process)
 
-### Giai Đoạn 0: BootROM
+---
+
+#### Giai Đoạn 0: BootROM
+
+---
 
 Khi SoC được cấp nguồn, CPU bắt đầu thực thi code từ địa chỉ cố định trong **ROM nội bộ** (không thể thay đổi bởi người dùng).
 
@@ -92,7 +87,11 @@ BootROM Address (ARM Cortex-A):
 - Exception Vector Table tại địa chỉ này
 ```
 
-### Giai Đoạn 1: SPL (Secondary Program Loader)
+---
+
+#### Giai Đoạn 1: SPL (Secondary Program Loader)
+
+---
 
 SPL (hay MLO trên TI AM335x) là bootloader giai đoạn đầu, có kích thước rất nhỏ (thường < 64KB để vừa SRAM).
 
@@ -126,7 +125,11 @@ void board_init_f(ulong dummy)
 | Rockchip RK3399 | 200 KB | ~100 KB |
 | Raspberry Pi | GPU SRAM | Không giới hạn |
 
-### Giai Đoạn 2: Bootloader Chính (U-Boot)
+---
+
+#### Giai Đoạn 2: Bootloader Chính (U-Boot)
+
+---
 
 Sau khi DDR được khởi tạo, U-Boot chính được nạp và thực thi với không gian bộ nhớ đầy đủ.
 
@@ -146,7 +149,11 @@ board_init_r()
     └── main_loop()                # Vòng lặp chính (CLI hoặc autoboot)
 ```
 
-### Giai Đoạn 3: Nạp Kernel
+---
+
+#### Giai Đoạn 3: Nạp Kernel
+
+---
 
 ```bash
 # Quy trình nạp kernel điển hình trong U-Boot
@@ -169,9 +176,13 @@ booti ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr_r}
 
 ---
 
-## Các Loại Bootloader Phổ Biến
+### Các Loại Bootloader Phổ Biến
 
-#### So Sánh Tổng Quan
+---
+
+##### So Sánh Tổng Quan
+
+---
 
 | Bootloader | Kiến Trúc Hỗ Trợ | Giao Thức | Use Case |
 |------------|------------------|-----------|----------|
@@ -184,7 +195,11 @@ booti ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr_r}
 | **RedBoot** | ARM, MIPS, x86 | CLI | Cisco router cũ |
 | **OpenWRT boot** | MIPS, ARM | Minimal | Router, IoT |
 
-#### Lựa Chọn Bootloader theo Use Case
+---
+
+##### Lựa Chọn Bootloader theo Use Case
+
+---
 
 ```
 Hệ thống nhúng ARM/RISC-V thông thường → U-Boot
@@ -196,9 +211,13 @@ IoT thiết bị nhỏ, flash ít → Stripped U-Boot hoặc SPL only
 
 ---
 
-## U-Boot – Universal Bootloader
+### U-Boot – Universal Bootloader
 
-#### Kiến Trúc U-Boot
+---
+
+##### Kiến Trúc U-Boot
+
+---
 
 ```
 u-boot/
@@ -226,7 +245,11 @@ u-boot/
 └── tools/                   # mkimage, dts compiler...
 ```
 
-#### Biến Môi Trường U-Boot
+---
+
+##### Biến Môi Trường U-Boot
+
+---
 
 Biến môi trường là cơ chế cấu hình linh hoạt của U-Boot, được lưu trong flash/eMMC.
 
@@ -273,7 +296,11 @@ setenv bootargs 'console=ttyS0,115200 \
     ip=dhcp'
 ```
 
-#### Scripting trong U-Boot
+---
+
+##### Scripting trong U-Boot
+
+---
 
 U-Boot hỗ trợ script đơn giản với điều kiện và vòng lặp:
 
@@ -298,7 +325,11 @@ mkimage -T script -C none -n 'Boot Script' \
     -d boot.txt boot.scr
 ```
 
-#### Lệnh U-Boot Thường Dùng
+---
+
+##### Lệnh U-Boot Thường Dùng
+
+---
 
 ```bash
 # ---- Thông tin hệ thống ----
@@ -344,7 +375,11 @@ bootz addr - fdtaddr  # Boot ARM32 zImage
 bootm addr            # Boot uImage
 ```
 
-#### Địa Chỉ Load Kernel Tiêu Chuẩn
+---
+
+##### Địa Chỉ Load Kernel Tiêu Chuẩn
+
+---
 
 ```
 ARM 32-bit (thường dùng):
@@ -364,13 +399,21 @@ RISC-V 64-bit:
 
 ---
 
-## Barebox
+### Barebox
 
-#### Giới Thiệu
+---
+
+##### Giới Thiệu
+
+---
 
 Barebox là bootloader hiện đại, được phát triển như một "U-Boot thế hệ tiếp theo". Barebox có giao diện shell giống Unix hơn và kiến trúc driver model tương tự Linux kernel.
 
-#### Tính Năng Nổi Bật
+---
+
+##### Tính Năng Nổi Bật
+
+---
 
 - **Shell mạnh mẽ**: hỗ trợ pipeline, biến, điều kiện đầy đủ
 - **Device model**: dùng lại model từ Linux kernel
@@ -378,7 +421,11 @@ Barebox là bootloader hiện đại, được phát triển như một "U-Boot 
 - **Scripting**: script shell linh hoạt hơn U-Boot
 - **Debugging**: hỗ trợ kprobes, ftrace (trên một số nền tảng)
 
-#### Ví Dụ Script Barebox
+---
+
+##### Ví Dụ Script Barebox
+
+---
 
 ```bash
 #!/bin/env bash
@@ -407,9 +454,13 @@ bootm -f $kernel -o $fdt
 
 ---
 
-## GRUB trong Embedded Linux
+### GRUB trong Embedded Linux
 
-#### Khi Nào Dùng GRUB cho Embedded
+---
+
+##### Khi Nào Dùng GRUB cho Embedded
+
+---
 
 GRUB phù hợp với embedded x86/x86_64 như:
 - Industrial PC (IPC)
@@ -417,7 +468,11 @@ GRUB phù hợp với embedded x86/x86_64 như:
 - Hệ thống có UEFI firmware
 - Chromebook, mini PC
 
-#### Cấu Hình GRUB cho Embedded
+---
+
+##### Cấu Hình GRUB cho Embedded
+
+---
 
 ```
 # /boot/grub/grub.cfg
@@ -438,9 +493,13 @@ menuentry "Recovery Mode" {
 
 ---
 
-## Cấu Trúc Bộ Nhớ và Phân Vùng
+### Cấu Trúc Bộ Nhớ và Phân Vùng
 
-#### Layout eMMC/SD Card Điển Hình
+---
+
+##### Layout eMMC/SD Card Điển Hình
+
+---
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -465,7 +524,11 @@ Offset 0x280000 : DTB
 Offset 0x300000 : Start of partition table
 ```
 
-#### Layout NAND Flash
+---
+
+##### Layout NAND Flash
+
+---
 
 ```
 ┌────────────────────────────────────────────────────────┐
@@ -481,7 +544,11 @@ bk = backup copy (NAND có thể có bad block)
 UBI = Unsorted Block Image - filesystem layer cho NAND
 ```
 
-#### Layout SPI NOR Flash
+---
+
+##### Layout SPI NOR Flash
+
+---
 
 ```
 Địa chỉ    Kích thước  Nội dung
@@ -491,7 +558,11 @@ UBI = Unsorted Block Image - filesystem layer cho NAND
 0x060000    còn lại     Kernel + rootfs (squashfs/jffs2)
 ```
 
-#### Thiết Lập Partition Table
+---
+
+##### Thiết Lập Partition Table
+
+---
 
 ```bash
 # Tạo partition table cho SD card trên host
@@ -517,9 +588,13 @@ sudo mkfs.ext4 -L data /dev/sdX3
 
 ---
 
-## Quá Trình Biên Dịch và Cấu Hình
+### Quá Trình Biên Dịch và Cấu Hình
 
-#### Thiết Lập Môi Trường Cross-Compile
+---
+
+##### Thiết Lập Môi Trường Cross-Compile
+
+---
 
 ```bash
 # Cài đặt cross-compiler (Ubuntu/Debian)
@@ -536,7 +611,11 @@ export CROSS_COMPILE=arm-linux-gnueabihf-
 export ARCH=arm
 ```
 
-#### Cấu Hình U-Boot
+---
+
+##### Cấu Hình U-Boot
+
+---
 
 ```bash
 # Clone source
@@ -565,7 +644,11 @@ make menuconfig
 # Security: Secure Boot, FIT signature
 ```
 
-#### Biên Dịch U-Boot
+---
+
+##### Biên Dịch U-Boot
+
+---
 
 ```bash
 # Biên dịch toàn bộ
@@ -586,7 +669,11 @@ make tools
 make dtbs
 ```
 
-#### Ghi U-Boot vào eMMC/SD
+---
+
+##### Ghi U-Boot vào eMMC/SD
+
+---
 
 ```bash
 # ---- SD Card (từ host Linux) ----
@@ -617,7 +704,11 @@ sf erase 0 0x50000
 sf write ${loadaddr} 0 ${filesize}
 ```
 
-#### Tạo Custom Board Support
+---
+
+##### Tạo Custom Board Support
+
+---
 
 ```c
 /* board/mycompany/myboard/myboard.c */
@@ -687,9 +778,13 @@ int board_late_init(void)
 
 ---
 
-## Device Tree (DTB)
+### Device Tree (DTB)
 
-#### Vai Trò của Device Tree trong Boot
+---
+
+##### Vai Trò của Device Tree trong Boot
+
+---
 
 Device Tree (DT) là cơ chế mô tả phần cứng để truyền từ bootloader sang kernel, giúp kernel nhận biết các thiết bị có mặt mà không cần hard-code vào kernel.
 
@@ -703,7 +798,11 @@ Bootloader truyền DTB address cho kernel
 Kernel parse DTB để cấu hình driver
 ```
 
-#### Ví Dụ Device Tree
+---
+
+##### Ví Dụ Device Tree
+
+---
 
 ```dts
 /* arch/arm64/boot/dts/vendor/my-board.dts */
@@ -760,7 +859,11 @@ Kernel parse DTB để cấu hình driver
 };
 ```
 
-#### U-Boot DTB Fixup
+---
+
+##### U-Boot DTB Fixup
+
+---
 
 ```c
 /* Bootloader có thể sửa DTB trước khi truyền cho kernel */
@@ -790,9 +893,13 @@ int ft_board_setup(void *blob, struct bd_info *bd)
 
 ---
 
-## Bảo Mật Bootloader
+### Bảo Mật Bootloader
 
-#### Secure Boot Chain
+---
+
+##### Secure Boot Chain
+
+---
 
 ```
 Secure Boot Chain (ARM TrustZone):
@@ -810,7 +917,11 @@ U-Boot (BL33)
 Linux Kernel (FIT image)
 ```
 
-#### FIT Image với Signature
+---
+
+##### FIT Image với Signature
+
+---
 
 ```dts
 /* boot.its - FIT Image Tree Source */
@@ -880,7 +991,11 @@ openssl req -batch -new -x509 -key dev.key -out dev.crt
 dumpimage -l boot.itb
 ```
 
-#### Rollback Protection
+---
+
+##### Rollback Protection
+
+---
 
 ```c
 /* Bảo vệ chống rollback bằng Anti-Rollback Counter (ARC)
@@ -910,7 +1025,11 @@ int board_late_init(void)
 }
 ```
 
-#### Lock Down U-Boot
+---
+
+##### Lock Down U-Boot
+
+---
 
 ```bash
 # Trong U-Boot menuconfig: tắt các tính năng nguy hiểm
@@ -924,9 +1043,13 @@ CONFIG_DISABLE_CONSOLE=y                  # Tắt console (production)
 
 ---
 
-## Debug và Troubleshooting
+### Debug và Troubleshooting
 
-#### Output Console Điển Hình
+---
+
+##### Output Console Điển Hình
+
+---
 
 Khi boot thành công, console sẽ hiển thị:
 
@@ -951,7 +1074,11 @@ Starting kernel ...
 [    0.000000] Linux version 6.6.0 ...
 ```
 
-#### Các Lỗi Thường Gặp
+---
+
+##### Các Lỗi Thường Gặp
+
+---
 
 **Lỗi 1: Không có output sau power-on**
 ```
@@ -1013,7 +1140,11 @@ U-Boot> setenv bootargs "... root=/dev/mmcblk0p2 rootwait debug"
 # Kiểm tra lại root= device node
 ```
 
-### Debug qua JTAG/OpenOCD
+---
+
+#### Debug qua JTAG/OpenOCD
+
+---
 
 ```bash
 # Kết nối OpenOCD với JTAG adapter
@@ -1039,7 +1170,11 @@ telnet localhost 4444
 > resume
 ```
 
-### Sử Dụng UART Debug Console
+---
+
+#### Sử Dụng UART Debug Console
+
+---
 
 ```bash
 # Kết nối UART từ host
@@ -1056,7 +1191,11 @@ picocom -b 115200 /dev/ttyUSB0 --logfile boot.log
 grep -E "^\[.*\]" boot.log | head -50  # Kernel timestamps
 ```
 
-### Checklist Debug Bootloader
+---
+
+#### Checklist Debug Bootloader
+
+---
 
 ```
 □ Power rails đúng điện áp chưa? (VDD_CORE, VDD_IO, VDD_DDR)
@@ -1073,9 +1212,13 @@ grep -E "^\[.*\]" boot.log | head -50  # Kernel timestamps
 
 ---
 
-## Tài Liệu Tham Khảo
+### Tài Liệu Tham Khảo
 
-#### Tài Liệu Chính Thức
+---
+
+##### Tài Liệu Chính Thức
+
+---
 
 | Tài Liệu | Đường Dẫn |
 |----------|-----------|
@@ -1085,7 +1228,11 @@ grep -E "^\[.*\]" boot.log | head -50  # Kernel timestamps
 | Linux Device Tree | https://devicetree.org |
 | ARM Trusted Firmware | https://trustedfirmware-a.readthedocs.io |
 
-#### Tài Liệu SoC Cụ Thể
+---
+
+##### Tài Liệu SoC Cụ Thể
+
+---
 
 | SoC | Tài Liệu |
 |-----|----------|
@@ -1095,14 +1242,22 @@ grep -E "^\[.*\]" boot.log | head -50  # Kernel timestamps
 | Allwinner | https://linux-sunxi.org |
 | Broadcom (RPi) | https://github.com/raspberrypi/firmware |
 
-#### Sách Tham Khảo
+---
+
+##### Sách Tham Khảo
+
+---
 
 - "Embedded Linux Development Using Yocto Project" - Otavio Salvador
 - "Mastering Embedded Linux Programming" - Chris Simmonds
 - "Building Embedded Linux Systems" - Karim Yaghmour
 - "Linux Kernel Development" - Robert Love
 
-#### Cộng Đồng và Hỗ Trợ
+---
+
+##### Cộng Đồng và Hỗ Trợ
+
+---
 
 - **U-Boot Mailing List**: u-boot@lists.denx.de
 - **Linux Kernel Mailing List**: linux-kernel@vger.kernel.org

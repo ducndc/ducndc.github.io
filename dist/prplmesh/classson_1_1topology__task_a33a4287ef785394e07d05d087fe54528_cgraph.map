@@ -1,0 +1,135 @@
+<map id="son::topology_task::handle_ieee1905_1_msg" name="son::topology_task::handle_ieee1905_1_msg">
+<area shape="rect" id="Node000001" title="Handle ieee1905 message." alt="" coords="5,874,179,914"/>
+<area shape="rect" id="Node000002" href="$classieee1905__1_1_1CmduMessage.html#a94ce761475d53857b8d5543fa9e4c0bd" title=" " alt="" coords="485,26,669,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,873,122,739,149,638,186,524,236,404,298,285,335,228,375,173,419,122,468,76,473,71,477,76,471,80,423,126,379,176,339,231,303,287,241,406,191,526,154,639,127,740,99,874"/>
+<area shape="rect" id="Node000008" href="$classson_1_1topology__task.html#ae8e33dbc575656ce92be5f924e535f48" title="Handles 1905 Topology Notification message." alt="" coords="227,874,421,914"/>
+<area shape="poly" id="edge5_Node000001_Node000008" title=" " alt="" coords="179,891,213,891,213,897,179,897"/>
+<area shape="rect" id="Node000093" href="$classson_1_1topology__task.html#a9b26422e119909ab5e38591de247795f" title="Handles 1905 Topology Response message." alt="" coords="232,1990,416,2030"/>
+<area shape="poly" id="edge57_Node000001_Node000093" title=" " alt="" coords="100,914,318,1976,313,1977,95,915"/>
+<area shape="rect" id="Node000003" href="$classieee1905__1_1_1CmduMessage.html#adc10ea7cfba25c0f58359cb954a5d69c" title=" " alt="" coords="741,55,925,95"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="669,54,727,61,727,66,668,59"/>
+<area shape="rect" id="Node000005" href="$classieee1905__1_1_1CmduMessage.html#af54c8bd541643a03b9567fc61eef25f9" title=" " alt="" coords="741,119,925,159"/>
+<area shape="poly" id="edge3_Node000002_Node000005" title=" " alt="" coords="654,64,685,76,709,90,733,105,750,112,748,117,731,110,707,95,683,80,652,69"/>
+<area shape="rect" id="Node000007" href="$framework_2tlvf_2src_2include_2tlvf_2swap_8h.html#a464d17a301d1772759781235c96db103" title=" " alt="" coords="795,5,870,31"/>
+<area shape="poly" id="edge4_Node000002_Node000007" title=" " alt="" coords="668,33,781,21,782,26,669,39"/>
+<area shape="rect" id="Node000009" href="$classson_1_1db.html#aeb28e9975522498b73d0fc32d35caf20" title="add client node and Station object." alt="" coords="507,1263,647,1288"/>
+<area shape="poly" id="edge6_Node000008_Node000009" title=" " alt="" coords="330,914,340,979,363,1070,382,1118,405,1166,435,1210,471,1248,495,1262,492,1267,468,1252,431,1213,401,1169,377,1120,358,1071,335,980,325,915"/>
+<area shape="rect" id="Node000012" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="767,1260,898,1285"/>
+<area shape="poly" id="edge39_Node000008_Node000012" title=" " alt="" coords="341,912,394,984,430,1026,471,1064,526,1104,574,1129,623,1152,685,1184,800,1251,797,1255,683,1188,621,1157,572,1134,524,1109,468,1068,426,1029,389,987,336,916"/>
+<area shape="rect" id="Node000018" href="$classClassList.html#a579dfd5e1fae7caef361a89af9983fe5" title="add class on buffer" alt="" coords="507,1593,647,1619"/>
+<area shape="poly" id="edge8_Node000008_Node000018" title=" " alt="" coords="329,914,341,1048,367,1248,386,1353,410,1448,438,1527,454,1557,471,1579,495,1594,492,1599,468,1583,450,1559,433,1529,405,1450,381,1354,362,1249,336,1048,324,915"/>
+<area shape="rect" id="Node000019" href="$classson_1_1db.html#a08d12e9f070c282dadebddc2aecddebd" title="Clear any existing node stats info." alt="" coords="513,753,640,793"/>
+<area shape="poly" id="edge9_Node000008_Node000019" title=" " alt="" coords="351,872,404,837,468,802,499,790,501,795,470,807,407,841,354,876"/>
+<area shape="rect" id="Node000022" href="$classson_1_1db.html#adfac96f91116686140d7feadab711972" title="Clears all stats for corresponding STA." alt="" coords="501,817,652,857"/>
+<area shape="poly" id="edge10_Node000008_Node000022" title=" " alt="" coords="412,871,487,854,489,859,413,877"/>
+<area shape="rect" id="Node000026" href="$classson_1_1db.html#a75a22adb90a9c58828edd4813d3f0810" title="Remove STA from datamodel with given Station object." alt="" coords="493,881,660,907"/>
+<area shape="poly" id="edge11_Node000008_Node000026" title=" " alt="" coords="422,891,480,891,480,897,422,897"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1WifiChannel.html#a7639a0183d51e7d83bf66f4743002592" title="Get the bandwidth object." alt="" coords="499,931,654,971"/>
+<area shape="poly" id="edge12_Node000008_Node000027" title=" " alt="" coords="413,911,487,928,486,933,412,917"/>
+<area shape="rect" id="Node000028" href="$classson_1_1db.html#ab346d88a36dc02786c99b952442c79a9" title=" " alt="" coords="489,996,664,1021"/>
+<area shape="poly" id="edge13_Node000008_Node000028" title=" " alt="" coords="354,912,406,947,470,981,495,990,493,995,468,986,403,952,351,916"/>
+<area shape="rect" id="Node000029" href="$classson_1_1db.html#a54fd44a0429dbb9a9b453d8eba57364e" title=" " alt="" coords="482,333,671,373"/>
+<area shape="poly" id="edge14_Node000008_Node000029" title=" " alt="" coords="326,873,343,771,374,624,394,548,416,479,441,422,467,383,471,379,475,383,471,386,446,424,421,481,399,550,380,625,349,772,331,874"/>
+<area shape="rect" id="Node000030" href="$classson_1_1db.html#a848cb5e1d274b6c17a31b9081e0c3a2f" title="Get radio containing a BSS with a specific BSSID Searches all Agent objects for sRadio object contain..." alt="" coords="513,397,640,437"/>
+<area shape="poly" id="edge15_Node000008_Node000030" title=" " alt="" coords="323,874,329,795,336,741,349,681,367,618,392,556,425,498,468,447,498,427,501,432,471,451,429,501,397,558,372,620,354,682,342,742,334,796,328,874"/>
+<area shape="rect" id="Node000031" href="$classson_1_1db.html#ad61cae97fc8b06eb61b3882c251cee4c" title=" " alt="" coords="513,461,640,501"/>
+<area shape="poly" id="edge16_Node000008_Node000031" title=" " alt="" coords="324,873,334,804,357,707,375,654,399,602,430,553,468,511,499,492,502,496,471,515,434,557,404,605,380,656,362,709,339,805,330,874"/>
+<area shape="rect" id="Node000021" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="764,653,901,679"/>
+<area shape="poly" id="edge17_Node000008_Node000021" title=" " alt="" coords="327,873,396,566,438,400,455,344,467,319,496,299,522,286,549,278,575,276,601,279,628,288,686,318,724,351,755,391,780,435,799,482,822,571,832,639,827,640,817,572,794,483,775,437,751,394,720,355,682,323,626,293,600,285,575,282,550,284,524,291,498,304,471,322,460,346,443,401,402,567,332,874"/>
+<area shape="rect" id="Node000033" href="$classson_1_1wireless__utils.html#af18845dd0decd4d4eb531095443b2d0c" title="get max supported bandwidth in station capabilities. in this order:" alt="" coords="469,525,684,565"/>
+<area shape="poly" id="edge18_Node000008_Node000033" title=" " alt="" coords="326,873,339,815,365,735,383,691,406,649,434,609,468,575,473,570,477,574,471,579,439,613,411,652,388,694,370,736,344,816,331,874"/>
+<area shape="rect" id="Node000034" href="$classieee1905__1_1_1CmduMessageRx.html#ad1db8fee42b3e3a1aaf8312a139b72f3" title=" " alt="" coords="732,1694,933,1734"/>
+<area shape="poly" id="edge19_Node000008_Node000034" title=" " alt="" coords="330,914,345,1029,374,1198,393,1285,416,1364,442,1428,456,1453,471,1471,497,1489,522,1498,546,1500,572,1498,626,1495,655,1500,685,1514,731,1552,768,1596,798,1642,819,1681,814,1683,793,1644,764,1599,727,1555,683,1519,653,1505,625,1500,572,1503,546,1505,520,1503,494,1494,468,1475,452,1456,437,1431,411,1366,388,1286,368,1199,340,1030,325,915"/>
+<area shape="rect" id="Node000035" href="$classieee1905__1_1_1CmduMessage.html#a358caf51a92d3596ae4377707b1f871d" title=" " alt="" coords="485,90,669,130"/>
+<area shape="poly" id="edge20_Node000008_Node000035" title=" " alt="" coords="328,873,368,704,419,460,425,389,430,295,441,204,452,167,467,140,472,136,476,139,471,144,457,169,447,205,435,295,430,389,424,461,373,705,333,874"/>
+<area shape="rect" id="Node000036" href="$classson_1_1son__actions.html#a19be1f068406a6156d40e0b4fbd646f8" title=" " alt="" coords="493,1198,660,1238"/>
+<area shape="poly" id="edge24_Node000008_Node000036" title=" " alt="" coords="333,913,348,966,375,1036,416,1112,441,1147,471,1177,488,1189,485,1194,468,1181,437,1150,411,1115,370,1039,343,967,327,915"/>
+<area shape="rect" id="Node000043" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="760,875,905,900"/>
+<area shape="poly" id="edge38_Node000008_Node000043" title=" " alt="" coords="340,913,362,942,391,975,428,1007,470,1032,528,1052,577,1058,625,1052,683,1032,725,1007,762,975,792,941,814,910,818,914,796,944,766,979,728,1012,685,1036,626,1057,577,1064,527,1057,468,1036,425,1012,388,979,358,945,336,916"/>
+<area shape="rect" id="Node000062" href="$classson_1_1task__pool.html#a2ed2c02ac7513e109abdbf5e178bdc5e" title=" " alt="" coords="761,1359,904,1399"/>
+<area shape="poly" id="edge45_Node000008_Node000062" title=" " alt="" coords="331,914,348,1011,378,1148,398,1218,420,1280,445,1331,471,1363,502,1382,536,1396,571,1404,608,1409,681,1408,747,1399,748,1404,682,1413,608,1414,570,1410,534,1401,499,1387,468,1367,440,1334,415,1283,393,1219,373,1149,343,1012,326,915"/>
+<area shape="rect" id="Node000064" href="$classson_1_1son__actions.html#ae5e5c1cad057cb4c673f4824c7045afe" title=" " alt="" coords="493,1313,660,1353"/>
+<area shape="poly" id="edge30_Node000008_Node000064" title=" " alt="" coords="329,914,337,986,359,1090,377,1146,401,1202,432,1253,471,1299,483,1308,480,1312,467,1303,428,1257,396,1204,372,1148,353,1091,332,987,324,915"/>
+<area shape="rect" id="Node000066" href="$classson_1_1task__pool.html#a7043f48b413457c5345519150a57f889" title=" " alt="" coords="770,1423,895,1463"/>
+<area shape="poly" id="edge37_Node000008_Node000066" title=" " alt="" coords="330,914,346,1020,375,1173,394,1251,417,1322,443,1378,457,1399,471,1415,503,1436,538,1451,575,1461,613,1466,689,1466,756,1458,757,1463,689,1472,613,1471,574,1466,536,1456,500,1440,468,1419,452,1403,438,1381,412,1323,389,1253,370,1174,341,1021,325,915"/>
+<area shape="rect" id="Node000069" href="$classson_1_1db.html#a8265f5d1dcd821c5c7d41ff8cb656c0f" title="Notify about client disconnection." alt="" coords="511,589,642,629"/>
+<area shape="poly" id="edge40_Node000008_Node000069" title=" " alt="" coords="329,873,345,825,373,762,414,696,439,665,468,639,497,622,500,627,471,643,443,669,418,699,378,764,350,827,334,875"/>
+<area shape="rect" id="Node000071" href="$classbeerocks_1_1message__com.html#ac2e9fed1a6dcd6b7befad0df2f1ff1f1" title=" " alt="" coords="489,1694,664,1734"/>
+<area shape="poly" id="edge43_Node000008_Node000071" title=" " alt="" coords="330,914,346,1053,376,1265,396,1376,418,1480,444,1568,472,1630,497,1660,527,1684,524,1688,493,1664,467,1633,439,1569,413,1481,391,1377,371,1265,341,1053,325,915"/>
+<area shape="rect" id="Node000075" href="$classson_1_1son__actions.html#a8f36e52908934c9ff5dcef32f0bb77ba" title=" " alt="" coords="498,1529,655,1569"/>
+<area shape="poly" id="edge46_Node000008_Node000075" title=" " alt="" coords="330,914,345,1034,374,1213,394,1305,417,1390,443,1461,457,1488,471,1508,488,1522,484,1526,467,1512,452,1490,438,1463,411,1392,389,1307,369,1214,340,1035,325,915"/>
+<area shape="rect" id="Node000079" href="$classson_1_1db.html#abc65ddf55f980ebf4b305890bf63245c" title=" " alt="" coords="489,154,664,194"/>
+<area shape="poly" id="edge47_Node000008_Node000079" title=" " alt="" coords="327,873,419,460,424,421,425,385,422,323,424,294,430,265,444,236,467,204,476,196,480,200,471,208,448,238,435,267,429,295,428,323,430,385,430,421,424,461,333,874"/>
+<area shape="rect" id="Node000080" href="$classson_1_1db.html#ac72d78891bae91e8e344679617fdfdc0" title=" " alt="" coords="483,653,671,679"/>
+<area shape="poly" id="edge49_Node000008_Node000080" title=" " alt="" coords="331,872,350,833,380,783,419,732,442,709,468,689,481,682,484,686,471,694,446,713,423,736,384,786,355,836,336,875"/>
+<area shape="rect" id="Node000088" href="$classson_1_1db.html#a04bf7164a465aaf19e4379efe4a9a73f" title=" " alt="" coords="496,703,657,728"/>
+<area shape="poly" id="edge52_Node000008_Node000088" title=" " alt="" coords="336,872,388,806,426,769,468,738,485,730,487,735,471,743,429,773,392,809,341,875"/>
+<area shape="rect" id="Node000089" href="$classson_1_1db.html#ab9ab5e3f4884bceaf9da255d9713a524" title=" " alt="" coords="505,218,648,258"/>
+<area shape="poly" id="edge55_Node000008_Node000089" title=" " alt="" coords="327,873,402,540,444,360,467,275,491,256,494,261,472,278,449,361,407,541,332,874"/>
+<area shape="poly" id="edge7_Node000009_Node000012" title=" " alt="" coords="647,1272,753,1271,754,1276,647,1277"/>
+<area shape="poly" id="edge21_Node000035_Node000003" title=" " alt="" coords="668,95,727,87,727,92,669,100"/>
+<area shape="poly" id="edge22_Node000035_Node000005" title=" " alt="" coords="669,118,727,125,727,130,668,123"/>
+<area shape="poly" id="edge23_Node000035_Node000007" title=" " alt="" coords="655,87,683,76,706,58,731,41,781,24,783,29,733,46,709,63,685,80,657,92"/>
+<area shape="poly" id="edge28_Node000036_Node000012" title=" " alt="" coords="661,1233,760,1254,758,1260,660,1238"/>
+<area shape="poly" id="edge26_Node000036_Node000021" title=" " alt="" coords="611,1196,649,1166,667,1148,682,1127,699,1091,709,1059,713,1029,714,1000,714,938,719,903,729,863,749,813,772,765,814,689,818,692,776,767,754,815,735,864,724,904,720,938,719,1000,718,1029,714,1060,704,1093,686,1130,671,1151,653,1170,614,1200"/>
+<area shape="rect" id="Node000058" href="$classson_1_1db.html#ad5cce2e7b28755f1d5f6b6df44a45818" title=" " alt="" coords="749,1309,917,1335"/>
+<area shape="poly" id="edge25_Node000036_Node000058" title=" " alt="" coords="658,1236,685,1249,701,1261,710,1273,719,1285,733,1296,747,1302,745,1307,731,1300,715,1289,706,1277,697,1265,683,1254,656,1241"/>
+<area shape="poly" id="edge27_Node000036_Node000043" title=" " alt="" coords="605,1196,643,1165,682,1127,725,1070,764,1010,817,912,822,914,768,1013,730,1073,686,1130,647,1169,608,1200"/>
+<area shape="poly" id="edge29_Node000036_Node000062" title=" " alt="" coords="662,1234,686,1249,704,1274,711,1299,717,1322,734,1345,750,1356,747,1361,730,1349,712,1325,705,1300,699,1276,682,1253,659,1239"/>
+<area shape="poly" id="edge35_Node000064_Node000012" title=" " alt="" coords="660,1311,764,1286,765,1291,661,1316"/>
+<area shape="poly" id="edge32_Node000064_Node000021" title=" " alt="" coords="659,1317,682,1299,700,1263,711,1213,717,1154,718,1089,719,961,722,906,729,863,748,812,770,764,813,689,818,692,775,767,753,815,735,864,727,906,724,961,724,1089,722,1154,717,1214,705,1265,686,1302,662,1321"/>
+<area shape="poly" id="edge31_Node000064_Node000058" title=" " alt="" coords="660,1327,735,1323,735,1329,660,1332"/>
+<area shape="poly" id="edge34_Node000064_Node000043" title=" " alt="" coords="659,1314,682,1299,721,1254,752,1203,777,1148,795,1093,818,989,827,913,833,914,824,990,801,1094,782,1150,757,1206,725,1257,686,1303,662,1319"/>
+<area shape="poly" id="edge36_Node000064_Node000062" title=" " alt="" coords="661,1345,748,1361,747,1367,660,1350"/>
+<area shape="poly" id="edge33_Node000064_Node000066" title=" " alt="" coords="615,1350,670,1380,733,1409,758,1418,756,1423,731,1414,667,1384,612,1355"/>
+<area shape="poly" id="edge41_Node000069_Node000021" title=" " alt="" coords="643,621,762,648,761,653,642,626"/>
+<area shape="poly" id="edge42_Node000069_Node000043" title=" " alt="" coords="643,617,665,626,686,639,720,679,758,740,821,861,817,863,754,743,716,682,682,643,663,631,641,622"/>
+<area shape="poly" id="edge44_Node000071_Node000034" title=" " alt="" coords="664,1711,718,1711,718,1717,664,1717"/>
+<area shape="poly" id="edge48_Node000079_Node000021" title=" " alt="" coords="666,190,686,204,729,256,762,314,788,376,806,440,819,501,827,556,834,640,828,640,822,557,814,502,801,441,783,378,757,316,724,259,682,208,663,194"/>
+<area shape="poly" id="edge50_Node000080_Node000021" title=" " alt="" coords="671,663,750,663,750,669,671,669"/>
+<area shape="poly" id="edge51_Node000080_Node000043" title=" " alt="" coords="659,676,685,689,732,729,771,776,801,823,822,861,817,864,797,825,767,779,729,732,683,694,657,681"/>
+<area shape="poly" id="edge53_Node000088_Node000021" title=" " alt="" coords="643,700,752,679,753,684,644,705"/>
+<area shape="poly" id="edge54_Node000088_Node000043" title=" " alt="" coords="655,726,685,738,726,766,763,800,816,862,812,865,759,803,723,771,683,743,653,731"/>
+<area shape="poly" id="edge56_Node000089_Node000021" title=" " alt="" coords="649,251,669,261,686,275,723,318,753,367,777,418,796,471,820,568,831,639,826,640,815,569,791,472,772,420,748,369,718,321,682,279,666,266,647,256"/>
+<area shape="poly" id="edge80_Node000093_Node000012" title=" " alt="" coords="325,1989,337,1928,362,1845,380,1800,404,1756,433,1715,468,1680,496,1662,525,1655,553,1655,580,1658,607,1660,633,1658,658,1649,682,1629,698,1609,708,1589,717,1548,715,1507,706,1466,697,1424,694,1381,703,1339,714,1317,730,1296,753,1280,756,1284,734,1300,718,1320,708,1341,699,1382,702,1423,711,1464,720,1506,723,1549,713,1591,702,1612,686,1633,660,1654,634,1664,607,1665,580,1663,553,1660,526,1660,499,1667,471,1684,437,1719,408,1759,385,1802,367,1846,342,1930,331,1990"/>
+<area shape="poly" id="edge61_Node000093_Node000018" title=" " alt="" coords="324,1989,334,1922,358,1827,376,1776,400,1725,430,1678,468,1636,493,1620,496,1624,471,1640,435,1681,405,1728,381,1778,363,1829,340,1923,330,1990"/>
+<area shape="poly" id="edge76_Node000093_Node000021" title=" " alt="" coords="324,1990,337,1836,365,1598,385,1472,408,1355,435,1256,451,1216,467,1185,492,1153,518,1132,546,1117,574,1106,602,1096,629,1082,656,1062,682,1032,704,990,712,952,716,911,729,862,774,766,814,690,819,692,778,768,735,864,721,912,717,952,709,991,686,1036,660,1066,632,1086,604,1100,576,1111,548,1122,521,1136,496,1157,472,1187,456,1218,441,1257,413,1356,390,1473,370,1599,343,1837,329,1990"/>
+<area shape="poly" id="edge77_Node000093_Node000034" title=" " alt="" coords="339,2029,360,2060,390,2096,427,2131,471,2157,530,2180,581,2192,605,2191,629,2186,655,2175,682,2157,727,2115,762,2064,788,2008,807,1948,819,1889,826,1834,830,1747,835,1748,831,1835,824,1890,812,1950,793,2010,767,2067,731,2119,686,2161,657,2179,631,2191,606,2196,580,2197,528,2185,468,2162,424,2135,386,2100,356,2063,335,2032"/>
+<area shape="poly" id="edge78_Node000093_Node000035" title=" " alt="" coords="325,1989,364,1578,419,926,425,527,429,397,437,281,449,191,457,160,467,141,472,135,476,138,472,143,462,162,455,192,443,281,435,397,430,527,424,926,369,1579,330,1990"/>
+<area shape="poly" id="edge70_Node000093_Node000058" title=" " alt="" coords="331,1988,350,1948,379,1896,418,1842,442,1818,468,1797,498,1781,528,1775,583,1777,609,1778,634,1775,658,1765,682,1744,700,1720,713,1695,720,1671,722,1646,717,1597,706,1547,694,1498,689,1447,691,1422,698,1397,711,1371,730,1346,735,1340,739,1344,734,1349,716,1374,703,1398,697,1423,694,1447,699,1497,711,1546,723,1596,727,1646,725,1672,718,1697,705,1722,686,1748,661,1769,635,1780,609,1783,582,1782,528,1780,500,1786,471,1802,445,1822,422,1846,383,1899,354,1950,336,1991"/>
+<area shape="poly" id="edge82_Node000093_Node000062" title=" " alt="" coords="335,1988,387,1918,425,1878,468,1845,499,1830,529,1824,584,1824,609,1824,634,1820,658,1809,682,1788,699,1765,711,1741,718,1718,721,1695,717,1649,707,1602,696,1555,692,1508,694,1483,701,1459,713,1434,730,1410,747,1395,751,1399,734,1413,717,1437,706,1461,700,1484,697,1508,701,1554,712,1601,722,1648,726,1695,723,1719,716,1743,704,1768,686,1792,661,1814,636,1826,610,1830,584,1830,529,1830,501,1836,471,1850,428,1882,391,1921,340,1991"/>
+<area shape="poly" id="edge79_Node000093_Node000064" title=" " alt="" coords="327,1989,344,1911,374,1793,415,1655,467,1516,510,1432,552,1363,556,1366,514,1434,472,1518,420,1656,379,1794,349,1912,332,1990"/>
+<area shape="poly" id="edge81_Node000093_Node000071" title=" " alt="" coords="329,1989,346,1941,374,1877,414,1810,439,1778,468,1751,485,1738,488,1743,471,1755,443,1782,419,1813,379,1880,351,1943,334,1991"/>
+<area shape="poly" id="edge83_Node000093_Node000075" title=" " alt="" coords="323,1989,330,1914,351,1804,369,1744,394,1685,427,1629,467,1580,484,1568,487,1572,471,1584,431,1632,399,1687,374,1746,356,1805,335,1914,329,1990"/>
+<area shape="rect" id="Node000094" href="$classson_1_1db.html#a51ffceccdddec5ba0aba3e1643bb15fa" title=" " alt="" coords="515,1973,638,1999"/>
+<area shape="poly" id="edge58_Node000093_Node000094" title=" " alt="" coords="416,1999,501,1990,502,1996,417,2004"/>
+<area shape="rect" id="Node000096" href="$classson_1_1db.html#ab7ef05c57a2a7d724c227bd54ad55e9f" title="Adds Interface Object and updates Interface Data Model Object." alt="" coords="501,2023,652,2048"/>
+<area shape="poly" id="edge59_Node000093_Node000096" title=" " alt="" coords="417,2017,488,2024,488,2029,416,2022"/>
+<area shape="rect" id="Node000099" href="$classson_1_1db.html#ae60a38715bcc35c9c59ba8ec40fc794d" title="Adds or updates instance of Neighbor inside Interface object." alt="" coords="501,2072,652,2097"/>
+<area shape="poly" id="edge60_Node000093_Node000099" title=" " alt="" coords="378,2027,470,2058,501,2066,500,2071,469,2063,377,2033"/>
+<area shape="rect" id="Node000101" href="$classson_1_1db.html#a6cf3bd9c3ed6dc12c4615c75416a3f8f" title=" " alt="" coords="505,2121,648,2147"/>
+<area shape="poly" id="edge62_Node000093_Node000101" title=" " alt="" coords="350,2028,403,2069,436,2090,470,2108,493,2116,491,2121,468,2112,433,2094,400,2073,346,2032"/>
+<area shape="rect" id="Node000103" href="$classson_1_1db.html#a743dba63675714a74058bf3c5391aac5" title="Remove instance of Neighbors inside Interface Data Model." alt="" coords="506,2222,647,2262"/>
+<area shape="poly" id="edge63_Node000093_Node000103" title=" " alt="" coords="338,2029,358,2066,388,2112,426,2160,471,2201,495,2215,492,2220,468,2205,422,2163,383,2115,353,2069,333,2032"/>
+<area shape="rect" id="Node000104" href="$classson_1_1db.html#aac4d59827cd0bdfa930ca12b135595fe" title="Sets multi ap backhaul datamodel of devices." alt="" coords="496,2286,657,2326"/>
+<area shape="poly" id="edge64_Node000093_Node000104" title=" " alt="" coords="333,2029,349,2079,377,2144,417,2213,442,2245,471,2272,485,2281,482,2286,468,2276,438,2248,413,2216,372,2147,344,2081,328,2031"/>
+<area shape="rect" id="Node000105" href="$classson_1_1db.html#a226f70f0eaba899ff85d10ff18cec393" title="Sets Multi&#45;AP profile for corresponding device." alt="" coords="496,2350,657,2390"/>
+<area shape="poly" id="edge65_Node000093_Node000105" title=" " alt="" coords="331,2030,343,2090,368,2172,387,2217,410,2260,438,2301,471,2336,485,2346,482,2350,468,2340,434,2304,405,2263,382,2219,363,2174,338,2091,326,2031"/>
+<area shape="rect" id="Node000106" href="$classson_1_1db.html#ac79943ca36143bf3e95295f8d6030bbf" title="Updates the node interface mac list. Removes unused intarfaces from Device&#39;s Data model." alt="" coords="507,2707,646,2747"/>
+<area shape="poly" id="edge66_Node000093_Node000106" title=" " alt="" coords="330,2030,343,2161,370,2358,390,2461,413,2556,440,2634,455,2664,471,2687,496,2706,493,2710,467,2691,451,2667,435,2636,408,2557,385,2462,365,2359,338,2162,324,2030"/>
+<area shape="rect" id="Node000053" href="$classson_1_1db.html#a12d3c2aabc63ee0fcdb1ca26f854f484" title="Get agent from its ALID." alt="" coords="767,2685,898,2711"/>
+<area shape="poly" id="edge68_Node000093_Node000053" title=" " alt="" coords="330,2030,342,2156,369,2342,388,2438,411,2525,439,2596,455,2623,471,2643,490,2655,518,2665,592,2681,676,2690,754,2694,754,2699,675,2695,591,2686,517,2671,488,2660,468,2647,450,2626,434,2599,406,2527,383,2439,363,2343,337,2156,324,2031"/>
+<area shape="rect" id="Node000109" href="$classson_1_1db.html#a5075d4d5065256507d8e7fcf231baa2b" title="Get agent containing a specific bssid." alt="" coords="511,1859,642,1899"/>
+<area shape="poly" id="edge69_Node000093_Node000109" title=" " alt="" coords="349,1987,402,1949,468,1910,497,1898,499,1903,471,1915,405,1953,352,1992"/>
+<area shape="rect" id="Node000110" href="$classson_1_1db.html#a39eb9edaceeb7716c086920349d9751c" title=" " alt="" coords="519,1924,634,1949"/>
+<area shape="poly" id="edge71_Node000093_Node000110" title=" " alt="" coords="381,1987,469,1959,505,1950,507,1955,470,1965,383,1992"/>
+<area shape="rect" id="Node000111" href="$classson_1_1db.html#ab6b949ff6d00c005f5de1a82b4c86fe4" title=" " alt="" coords="514,2414,639,2454"/>
+<area shape="poly" id="edge72_Node000093_Node000111" title=" " alt="" coords="329,2030,338,2100,360,2200,379,2254,403,2307,433,2357,471,2400,502,2419,500,2423,468,2404,429,2360,398,2309,374,2256,355,2201,333,2101,324,2030"/>
+<area shape="rect" id="Node000051" href="$classson_1_1db.html#af2ed84bacfd1b7408c3961a5bb694d88" title=" " alt="" coords="514,2478,639,2518"/>
+<area shape="poly" id="edge73_Node000093_Node000051" title=" " alt="" coords="328,2030,333,2110,341,2165,353,2227,371,2290,396,2353,429,2412,471,2464,486,2475,502,2483,500,2488,483,2480,467,2468,424,2415,391,2356,365,2292,347,2228,335,2166,328,2111,323,2030"/>
+<area shape="rect" id="Node000112" href="$classson_1_1db.html#a360f0bcbbea9b18df583f16aef077ae1" title="Get radio on a specific agent." alt="" coords="513,2543,640,2568"/>
+<area shape="poly" id="edge74_Node000093_Node000112" title=" " alt="" coords="331,2030,348,2134,378,2285,398,2362,420,2433,445,2490,471,2528,485,2538,501,2546,499,2550,482,2543,467,2532,440,2493,415,2434,392,2364,373,2286,342,2135,326,2031"/>
+<area shape="rect" id="Node000113" href="$classson_1_1db.html#a600335350fc9f3682deacd1a22d7ffa0" title="Get radio containing a BH STA with a specific MAC Searches all Agent objects for sRadio object contai..." alt="" coords="511,2593,642,2633"/>
+<area shape="poly" id="edge75_Node000093_Node000113" title=" " alt="" coords="330,2030,346,2143,376,2308,395,2393,418,2472,443,2536,471,2579,500,2598,497,2602,467,2583,439,2538,413,2473,390,2395,370,2309,341,2143,325,2030"/>
+<area shape="poly" id="edge67_Node000106_Node000053" title=" " alt="" coords="646,2717,753,2704,754,2710,647,2722"/>
+</map>

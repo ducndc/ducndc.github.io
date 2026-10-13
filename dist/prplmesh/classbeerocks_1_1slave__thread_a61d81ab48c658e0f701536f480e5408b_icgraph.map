@@ -1,0 +1,22 @@
+<map id="beerocks::slave_thread::add_eht_operations_tlv" name="beerocks::slave_thread::add_eht_operations_tlv">
+<area shape="rect" id="Node000001" title="Adds an EHT Operations TLV." alt="" coords="795,165,959,205"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1CapabilityReportingTask.html#a7b00b32fa754ce14fc09180c85ec881e" title=" " alt="" coords="540,101,737,156"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="781,165,737,154,738,149,782,160"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a982712b6a80276eb5cdcfdb620fe3f35" title=" " alt="" coords="531,196,747,251"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="781,203,747,208,746,203,780,198"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1CapabilityReportingTask.html#a9acb331eed8a595e767c64ee983f0200" title=" " alt="" coords="271,5,468,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="550,99,482,74,450,63,452,58,484,69,552,94"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1CapabilityReportingTask.html#a95ab455be4b0b197194827083763e214" title=" " alt="" coords="263,84,475,139"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="526,124,475,121,476,115,527,119"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1CapabilityReportingTask.html#ac964d82b2215485effda1e3b9d1625b2" title=" " alt="" coords="260,163,479,203"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="527,154,469,166,468,161,526,149"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1CapabilityReportingTask.html#a88f1851388eaee3fe4cdd87b10266a0a" title="Handle events, which are being send from containing thread." alt="" coords="8,53,205,93"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="257,52,206,60,205,55,256,47"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="249,96,205,90,206,85,250,91"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1CapabilityReportingTask.html#a6a8c641f2791e991564843ee929042bc" title="Handle CMDU message." alt="" coords="8,163,205,203"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="246,186,206,186,206,181,246,181"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a3483fc78bfe63224fb7ad4a5cf20d76a" title="Parse AP MLD Configuration Request message." alt="" coords="256,228,483,283"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="517,240,483,245,483,239,517,235"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="5,235,208,275"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="242,258,208,258,208,253,242,253"/>
+</map>

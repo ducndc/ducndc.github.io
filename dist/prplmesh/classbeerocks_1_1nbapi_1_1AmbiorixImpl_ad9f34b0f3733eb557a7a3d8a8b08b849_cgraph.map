@@ -1,0 +1,14 @@
+<map id="beerocks::nbapi::AmbiorixImpl::set_time" name="beerocks::nbapi::AmbiorixImpl::set_time">
+<area shape="rect" id="Node000001" title="Set field &#39;TimeStamp&#39; in RFC 3339 format." alt="" coords="5,39,179,79"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#aaa2139069dbd8f03062f780ea26ec4a7" title="Set the value to the object variable." alt="" coords="227,39,400,79"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,56,213,56,213,61,179,61"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a138056a1f6a2227a59f43cef266ff4e5" title="Apply transaction." alt="" coords="669,5,843,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,50,655,30,656,35,400,55"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a018e61ad3adf4598a848667c20692ac7" title="Prepare transaction to the ubus." alt="" coords="448,67,621,107"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="401,67,435,71,434,77,400,72"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1nbapi_1_1Amxrt.html#a34fa51e8a7fb9f1d214db48abcef512c" title="Gets the runtime data model storage." alt="" coords="891,37,1048,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="843,36,878,41,877,46,843,41"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a39340932b8e240fceaa8b760d80e3461" title="Find object by relative path." alt="" coords="669,69,843,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="622,85,656,85,655,91,622,90"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="843,74,877,68,878,74,843,79"/>
+</map>

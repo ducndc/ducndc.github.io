@@ -1,0 +1,62 @@
+<map id="beerocks::TrafficSeparationTask::handle_event" name="beerocks::TrafficSeparationTask::handle_event">
+<area shape="rect" id="Node000001" title="Handle task events (like other prplMesh tasks)." alt="" coords="5,249,188,289"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1TrafficSeparationTask.html#a6a5daba60d9e0342b6e8516b58b1c47b" title="Clear TS state and restore transport defaults used outside TS mode." alt="" coords="236,57,443,97"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,247,158,179,193,140,234,107,245,101,248,106,238,112,197,144,162,182,112,251"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1TrafficSeparationTask.html#af75815cd1c5179668c447ee7762da8ae" title="Reset pending debounced apply state." alt="" coords="248,121,431,161"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="120,247,171,209,235,171,251,164,253,169,237,176,174,213,124,251"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1TrafficSeparationTask.html#aaefd8392e97fe347f27284d95c1343ce" title="Incrementally clear a fronthaul access port carried by a task event." alt="" coords="247,185,431,225"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="173,247,249,226,251,231,174,252"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1TrafficSeparationTask.html#ad8810756ba86ca81d17bd3b2096b0753" title="Clear one WDS iface (e.g. wlan1.2.sta1)." alt="" coords="241,249,438,289"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="188,267,227,267,227,272,188,272"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1TrafficSeparationTask.html#a7963784e1645f4bc07d081a45d044599" title="Incrementally add a fronthaul access port carried by a task event." alt="" coords="248,313,431,353"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="174,287,251,307,249,312,173,292"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1TrafficSeparationTask.html#a9bf1ca12f5a30d57b90ddb7c75d276ee" title="Add one WDS iface (e.g. wlan1.2.sta1)." alt="" coords="243,377,436,417"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="124,287,174,325,237,363,253,370,251,375,235,368,171,330,120,292"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1TrafficSeparationTask.html#af1cc71cb6ec3cb1596497f11ab4e7385" title="Request a debounced full TS reapply." alt="" coords="248,475,431,515"/>
+<area shape="poly" id="edge32_Node000001_Node000027" title=" " alt="" coords="115,288,166,353,200,392,238,427,291,465,288,470,234,431,197,395,162,357,110,291"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1TrafficSeparationTask.html#a59f206125f126659fbf0d8a80ba38b7e" title="Configure primary VLAN in transport/broker when it changed." alt="" coords="491,5,727,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="442,55,491,45,492,51,444,60"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1TrafficSeparationTask.html#a4de974af2db8f85c04f2385748c978a8" title="Reset broker interface monitoring to bridge defaults after TS cleanup." alt="" coords="503,70,715,125"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="443,82,489,86,489,91,443,88"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1AgentDB.html#a38d7f2d64140f76a7417b5e20c8d0b7c" title=" " alt="" coords="803,85,965,110"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="715,95,789,95,789,100,715,100"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1TrafficSeparationTask.html#af833251fa51815f95b282e39a74a6999" title="Reset any scheduled task work." alt="" coords="515,152,702,192"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="431,149,502,157,501,163,431,154"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="411,247,441,235,465,220,489,206,518,194,520,199,492,210,468,225,444,240,413,252"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1TrafficSeparationTask.html#a8146b1b7a10195e5ca3a3087808ddab7" title="Resolve one exact WDS trunk from current DB state." alt="" coords="513,220,705,260"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="423,375,441,363,458,341,464,318,471,294,489,270,499,263,502,267,493,274,475,296,469,319,463,343,444,367,426,379"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1net_1_1network__utils.html#a6f0bbcf8aca0d40c8b1acc7d2d474cf7" title=" " alt="" coords="526,284,691,324"/>
+<area shape="poly" id="edge27_Node000011_Node000023" title=" " alt="" coords="411,375,442,363,465,349,490,335,513,326,514,331,492,340,468,354,444,368,413,380"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1net_1_1network__utils.html#a4bc2b94ae5b95dd2bf2c2ad06471f7b3" title=" " alt="" coords="531,349,686,403"/>
+<area shape="poly" id="edge28_Node000011_Node000024" title=" " alt="" coords="436,387,518,381,518,386,436,392"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1TrafficSeparationTask.html#a12b3835f830c522df83ff249051e6801" title="Register one WDS iface for deferred retry processing." alt="" coords="517,428,700,468"/>
+<area shape="poly" id="edge29_Node000011_Node000025" title=" " alt="" coords="437,413,504,426,503,431,436,418"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1TrafficSeparationTask.html#a4899def12bdf1f3f43181322f60db999" title="Schedule the next task wakeup for the earliest requested due time." alt="" coords="793,485,975,525"/>
+<area shape="poly" id="edge31_Node000011_Node000026" title=" " alt="" coords="370,415,424,449,457,465,491,477,565,494,640,504,713,508,779,508,779,513,713,513,640,509,564,499,490,483,455,470,422,453,367,420"/>
+<area shape="poly" id="edge13_Node000012_Node000005" title=" " alt="" coords="699,218,725,202,741,183,748,162,755,141,773,121,788,111,791,116,776,125,760,144,753,164,746,185,728,206,701,222"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1net_1_1network__utils.html#a57666a2cd1ba948bc17259e97d62b9c4" title="Get list of BSS interfaces." alt="" coords="807,135,961,175"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="675,217,726,201,806,176,808,181,727,207,676,222"/>
+<area shape="rect" id="Node000016" href="$namespacebeerocks_1_1net.html#a2a3ca7264c20333847455b3d008f30f3" title="Derive trunk mode (tagged/untagged) from profile&#45;disallow flags and policy." alt="" coords="775,230,993,255"/>
+<area shape="poly" id="edge17_Node000012_Node000016" title=" " alt="" coords="705,238,761,239,761,244,705,244"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1net_1_1network__utils.html#a33df92609d8353b9455e87d82b833232" title="Gets the interface name of the network interface with given MAC address." alt="" coords="791,291,977,331"/>
+<area shape="poly" id="edge21_Node000012_Node000018" title=" " alt="" coords="688,257,793,285,791,290,687,263"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1net_1_1network__utils.html#afb3f2a54bf1096ca51513e1f370bd2c5" title="Get list of linux interfaces." alt="" coords="1045,59,1217,99"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="950,132,993,119,1052,100,1054,105,994,124,951,137"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1net_1_1network__utils.html#ac33179916a7a42897fe851c1090f0bf9" title=" " alt="" coords="1054,123,1209,178"/>
+<area shape="poly" id="edge16_Node000013_Node000015" title=" " alt="" coords="961,151,1041,149,1041,155,961,156"/>
+<area shape="poly" id="edge18_Node000016_Node000016" title=" " alt="" coords="844,232,836,222,840,212,857,206,884,203,919,207,929,212,932,218,928,221,925,216,917,212,884,209,858,211,844,216,841,221,848,228"/>
+<area shape="rect" id="Node000017" href="$namespacebeerocks_1_1net.html#a5ae7541552c0d365b8b17682be8b33f3" title="Resolve unsupported disallow flags using certification policy." alt="" coords="1055,227,1208,267"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="993,242,1041,243,1041,248,993,247"/>
+<area shape="poly" id="edge20_Node000017_Node000017" title=" " alt="" coords="1092,227,1089,217,1096,208,1110,202,1131,200,1156,203,1169,210,1167,215,1154,208,1131,205,1111,207,1099,212,1095,218,1097,226"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1net_1_1network__utils.html#a9ed67fbcfac8592ae689144f0f2b8186" title=" " alt="" coords="1041,291,1221,331"/>
+<area shape="poly" id="edge22_Node000018_Node000019" title=" " alt="" coords="977,308,1027,308,1027,313,977,313"/>
+<area shape="rect" id="Node000021" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="1277,355,1408,381"/>
+<area shape="poly" id="edge26_Node000018_Node000021" title=" " alt="" coords="974,328,1042,340,1158,353,1264,361,1264,367,1158,359,1041,345,973,333"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1string__utils.html#ac5ba735c54be1ae2bf849bf9c60257f6" title=" " alt="" coords="1269,291,1416,331"/>
+<area shape="poly" id="edge23_Node000019_Node000020" title=" " alt="" coords="1222,308,1256,308,1256,313,1222,313"/>
+<area shape="poly" id="edge24_Node000019_Node000021" title=" " alt="" coords="1206,328,1282,349,1281,354,1205,333"/>
+<area shape="rect" id="Node000022" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="1464,355,1611,381"/>
+<area shape="poly" id="edge25_Node000021_Node000022" title=" " alt="" coords="1408,365,1450,365,1450,371,1408,371"/>
+<area shape="poly" id="edge30_Node000025_Node000026" title=" " alt="" coords="701,464,779,481,778,486,699,470"/>
+<area shape="poly" id="edge33_Node000027_Node000026" title=" " alt="" coords="428,512,491,521,609,527,726,521,779,517,779,522,727,527,609,533,490,527,428,517"/>
+</map>

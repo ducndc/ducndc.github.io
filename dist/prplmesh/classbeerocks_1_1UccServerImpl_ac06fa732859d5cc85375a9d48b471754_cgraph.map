@@ -1,0 +1,31 @@
+<map id="beerocks::UccServerImpl::UccServerImpl" name="beerocks::UccServerImpl::UccServerImpl">
+<area shape="rect" id="Node000001" title="Class constructor." alt="" coords="5,165,176,205"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1UccServerImpl.html#a12991e309581131254dd6b185a166b95" title="Handles the read event in the server socket, which corresponds to an incoming connection request from..." alt="" coords="224,165,395,205"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,183,210,183,210,188,176,188"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1UccServerImpl.html#aea56a6ad4ed04422c76b64da6d5b942d" title="Adds a new connection." alt="" coords="458,5,629,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="324,163,373,110,405,80,441,55,453,49,456,53,444,60,409,85,377,114,328,167"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1InternetAddress.html#aa1020ae4707b9b5a61ec92f7d0779856" title=" " alt="" coords="443,69,644,109"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="348,163,442,119,461,111,463,116,444,124,350,168"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1UccServerImpl.html#ae9066d688f0960908425a7a1dd356a2c" title="Handles the disconnect and error events in a client socket connected to the server socket." alt="" coords="458,133,629,173"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="394,171,444,164,445,169,395,176"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1UccServerImpl.html#a1a85a1b7976ecce59987f1022bc14453" title="Handles the read event in a client socket connected to the server socket." alt="" coords="458,197,629,237"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="395,194,445,201,444,206,394,200"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1net_1_1network__utils.html#a1ae11c13554b52cf21bf707bc2f7bc15" title=" " alt="" coords="466,285,621,325"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="351,203,492,277,490,281,348,208"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1net_1_1InternetAddress.html#a800c1ab6991c093c791eb1b0d0e9cfe4" title=" " alt="" coords="443,349,644,389"/>
+<area shape="poly" id="edge15_Node000002_Node000014" title=" " alt="" coords="325,204,372,269,406,304,444,335,454,341,451,346,441,340,402,308,368,272,321,207"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1UccServerImpl.html#a9f624407de8bbf005bf28849f1f9c6d5" title="Removes connection." alt="" coords="698,37,869,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="629,34,685,42,684,47,628,39"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1BufferImpl.html#a35d759bb0cbbe4d8e31f2f48287ae7ba" title="Clears buffer contents." alt="" coords="923,37,1092,77"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="869,55,909,55,909,60,869,60"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1net_1_1BufferImpl.html#a74f7b5483150d01c04e4c8d4198d510c" title="Returns the size of the buffer." alt="" coords="1140,37,1309,77"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1092,55,1127,55,1127,60,1092,60"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="610,131,643,119,729,81,731,86,645,124,612,136"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1net_1_1BufferImpl.html#ae4839d38274aa425666378a955bb3ffe" title="Returns pointer to the raw data." alt="" coords="699,133,868,173"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="618,195,694,174,695,179,620,200"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1net_1_1BufferImpl.html#af52f653c59abfd05a66b23770fb15098" title="Returns the length of the buffer (number of bytes)." alt="" coords="699,197,868,237"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="629,215,685,215,685,220,629,220"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1UccServer.html#a9d97e34a38bb85d9b5f6abe7f9031d8e" title="Notifies a command&#45;received event." alt="" coords="692,261,875,301"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="620,235,695,255,694,260,618,240"/>
+<area shape="poly" id="edge14_Node000013_Node000013" title=" " alt="" coords="500,286,497,276,504,266,520,261,543,259,570,262,585,269,583,274,569,267,543,264,521,266,508,271,503,277,505,284"/>
+</map>

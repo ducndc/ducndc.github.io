@@ -1,0 +1,11 @@
+<map id="beerocks::net::NetlinkEventListenerImpl::NetlinkEventListenerImpl" name="beerocks::net::NetlinkEventListenerImpl::NetlinkEventListenerImpl">
+<area shape="rect" id="Node000001" title="Class constructor." alt="" coords="5,69,252,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1NetlinkEventListenerImpl.html#a98fa789b0bbba5f637f8b598037af659" title="Parses data received through the Netlink socket connection." alt="" coords="300,69,484,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,87,286,87,286,92,252,92"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1Buffer.html#a582583a6549f3ecc11fc58bf5a5d7aaa" title="Returns pointer to the raw data." alt="" coords="556,5,700,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,67,542,46,543,51,467,72"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1Buffer.html#a4c70d268fe092fc5318af68d1ecebb8f" title="Returns the length of the buffer (number of bytes)." alt="" coords="556,69,700,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="484,87,542,87,542,92,484,92"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1NetlinkEventListener.html#a17990c5a4b29cebd2dadbbe39319a3a3" title="Notifies a Netlink event by invoking all registered handlers." alt="" coords="532,133,724,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="467,107,542,127,540,132,466,112"/>
+</map>

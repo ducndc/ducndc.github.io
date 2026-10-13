@@ -1,0 +1,21 @@
+<map id="son::db::set_channel_scan_in_progress" name="son::db::set_channel_scan_in_progress">
+<area shape="rect" id="Node000001" title="Set the channel scan in progress object." alt="" coords="939,143,1081,183"/>
+<area shape="rect" id="Node000002" href="$classson_1_1dynamic__channel__selection__r2__task.html#a71564051a0caca6a08555f294c873cd1" title="Abort all the requests for current agent. Used if something went wrong in one of the TLVF creation st..." alt="" coords="718,5,886,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="970,137,889,82,856,63,859,58,892,77,973,133"/>
+<area shape="rect" id="Node000003" href="$classson_1_1dynamic__channel__selection__r2__task.html#a862c2ebfea88b34b4fd122ad34f7f469" title="Trigger pending scan request for the agent if it is idle." alt="" coords="445,68,665,123"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="942,141,890,127,775,110,665,101,666,96,775,105,891,122,943,136"/>
+<area shape="rect" id="Node000006" href="$classson_1_1dynamic__channel__selection__r2__task.html#adb82d4e94aec3ddbbf66b76ba7944854" title="Handle scan report events." alt="" coords="713,136,891,191"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="925,166,891,166,891,161,925,161"/>
+<area shape="rect" id="Node000008" href="$classson_1_1dynamic__channel__selection__r2__task.html#ad41d6493eeda68bcaaed2ea9e2db349c" title="Scan all agent for timeout and abort scans in progress." alt="" coords="220,176,397,231"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="949,191,891,206,757,221,622,225,499,221,398,215,398,209,499,216,622,219,757,215,890,201,947,186"/>
+<area shape="rect" id="Node000009" href="$classson_1_1dynamic__channel__selection__task.html#ad5b0589c10fd76b87a9b09fa00a71c89" title=" " alt="" coords="726,266,878,306"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="974,194,892,250,855,268,852,263,889,245,971,190"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="705,60,664,71,662,65,704,55"/>
+<area shape="rect" id="Node000004" href="$classson_1_1dynamic__channel__selection__r2__task.html#a66becdad7668203e8450b30a8ac5f0be" title="Trigger pending scan requests for any idle agent." alt="" coords="221,84,396,139"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="432,106,396,108,396,103,432,101"/>
+<area shape="rect" id="Node000005" href="$classson_1_1dynamic__channel__selection__r2__task.html#a5ef741fa94eb56870d69d8eee97e49bc" title=" " alt="" coords="5,145,172,185"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="208,138,172,147,171,142,207,133"/>
+<area shape="rect" id="Node000007" href="$classson_1_1dynamic__channel__selection__r2__task.html#a90458658bc2339468c9c3c6e0c80de01" title=" " alt="" coords="447,147,663,187"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="700,168,664,168,663,163,700,162"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="206,188,172,182,173,177,207,183"/>
+</map>

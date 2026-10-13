@@ -1,0 +1,22 @@
+<map id="beerocks::beerocks_fsm_config::states" name="beerocks::beerocks_fsm_config::states">
+<area shape="rect" id="Node000001" title=" " alt="" coords="696,295,833,335"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1beerocks__fsm.html#a60da4c4b641d5ec184aef9112ef9dfb1" title=" " alt="" coords="512,199,648,239"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="712,291,618,241,621,237,714,286"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1beerocks__fsm.html#a5e1daebea7c7a4162636f46a938c72cc" title=" " alt="" coords="512,327,648,367"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="683,332,649,338,648,332,682,326"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1coordinated__cac_1_1CoordinatedCacTask.html#ae3ca9e453bbfd64ce333518e5180339d" title="Handle CMDU message." alt="" coords="5,88,185,142"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="567,187,552,149,530,107,501,68,483,51,463,37,431,22,403,13,378,9,352,9,299,19,234,37,179,60,133,90,130,85,177,56,232,32,298,14,352,4,378,3,405,8,433,17,465,33,486,47,505,64,535,104,557,147,572,185"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1coordinated__cac_1_1CoordinatedCacTask.html#a79a91309147b4687a2abddce90794984" title="Handle events, which are careless about the containing thread. Implementation may take ownership of t..." alt="" coords="259,48,439,102"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="550,191,511,153,463,117,438,104,440,100,465,113,514,149,554,187"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1switch__channel_1_1SwitchChannelTask.html#aed4c3302973e50b76798af066d89547e" title="Handle events, which are careless about the containing thread. Implementation may take ownership of t..." alt="" coords="233,127,464,167"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="510,197,463,181,424,170,425,164,465,176,512,192"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1coordinated__cac_1_1CoordinatedCacTask.html#a60728a06cbe9270d0d50d43c6a0c609c" title=" " alt="" coords="259,192,439,246"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="498,222,439,222,439,216,498,216"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1coordinated__cac_1_1CoordinatedCacTask.html#ae2808aed459f9b339ef5e9a4ca9bdfde" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="241,271,457,311"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="512,246,465,261,425,273,424,268,463,256,510,241"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1switch__channel_1_1SwitchChannelTask.html#a79c11906f9aa09f7da775d43a0ad4cea" title="Work function. Shall do the task routine. Called by TaskPool run_task() function." alt="" coords="257,335,440,375"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="554,251,515,290,465,325,439,337,436,332,463,321,511,286,551,247"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="252,189,232,181,151,145,153,140,234,176,254,184"/>
+<area shape="rect" id="Node000010" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="270,400,427,425"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="513,374,465,389,414,402,413,397,463,384,512,369"/>
+</map>

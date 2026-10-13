@@ -1,0 +1,13 @@
+<map id="beerocks::BackhaulManager::handle_backhaul_disconnect" name="beerocks::BackhaulManager::handle_backhaul_disconnect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,69,203,109"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1message__com.html#aca33ce73fa0075ee0b7f0c78984aa519" title=" " alt="" coords="276,5,444,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,67,266,46,267,51,185,72"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1BackhaulManager.html#a1429298b96ad16663983ba4b95111705" title="Sends given CMDU message through the specified socket connection." alt="" coords="267,69,453,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="203,87,253,87,253,92,203,92"/>
+<area shape="rect" id="Node000006" href="$classbeerocks__message_1_1cACTION__BACKHAUL__DISCONNECTED__NOTIFICATION.html#aae375590c2f7aa95a014a0f0e175b8bb" title=" " alt="" coords="251,134,469,189"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="177,107,250,128,249,133,175,112"/>
+<area shape="rect" id="Node000003" href="$classieee1905__1_1_1CmduMessageTx.html#aa20e4e6735958dfe2929144400deaf68" title=" " alt="" coords="517,5,716,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,23,503,23,503,28,444,28"/>
+<area shape="rect" id="Node000004" href="$classClassList.html#afef7ca3a553da05300514bdb0ec19d78" title=" " alt="" coords="764,13,879,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="716,23,750,23,750,28,716,28"/>
+</map>

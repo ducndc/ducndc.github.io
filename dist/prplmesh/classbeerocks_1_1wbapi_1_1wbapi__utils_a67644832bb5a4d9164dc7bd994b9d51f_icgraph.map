@@ -1,0 +1,38 @@
+<map id="beerocks::wbapi::wbapi_utils::search_path_ssid" name="beerocks::wbapi::wbapi_utils::search_path_ssid">
+<area shape="rect" id="Node000001" title="return path of SSID template object." alt="" coords="1192,275,1355,315"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a48335b2846dec6d0b5d50796d02f5867" title="return search path of AccessPoint object interface Name." alt="" coords="951,5,1139,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1260,262,1244,217,1220,162,1186,107,1165,82,1142,59,1124,48,1127,43,1146,55,1169,78,1190,104,1225,160,1249,215,1265,261"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a4060a5c580ff70779e0847ce97b98413" title="return search path of SSID object instance by Alias" alt="" coords="963,70,1126,125"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="1251,264,1206,201,1176,167,1142,138,1125,127,1127,122,1146,134,1180,164,1210,198,1256,261"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aca6df1960aef11e6d5d157427aeb626f" title="return search path of SSID object instance by BSSID mac address." alt="" coords="963,149,1126,203"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1230,269,1143,217,1119,206,1121,201,1145,212,1233,265"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#ab1bb969c27d5c3d80bad9f48c3f3079e" title="return search path of SSID object instance by CustomAlias" alt="" coords="963,227,1126,282"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1178,281,1126,271,1127,266,1179,275"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a1868579fef0719a36256f5248275e475" title="return search path of SSID object instance by interface name." alt="" coords="963,306,1126,361"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1179,313,1127,322,1126,317,1178,308"/>
+<area shape="rect" id="Node000014" href="$classprplmesh_1_1controller_1_1whm_1_1WifiManager.html#ad61000b255c708a3ca161a651d13c166" title=" " alt="" coords="5,354,208,409"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="1236,325,1194,352,1145,374,1050,402,974,414,896,417,797,416,558,416,372,409,208,395,209,390,372,404,558,411,797,411,896,411,974,409,1049,397,1143,370,1191,347,1234,321"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a411b55e626ef6fca8dc7c97aff181fe2" title="return search path of SSID object instance by SSID." alt="" coords="963,451,1126,506"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="1251,328,1205,381,1146,434,1114,454,1111,449,1142,430,1201,377,1247,324"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a09a66e9f421294c5e008fe91f1c15614" title="return search path of SSID object instance&#39;s Name." alt="" coords="945,531,1144,571"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="1264,329,1247,373,1222,424,1188,476,1146,521,1127,533,1124,528,1142,517,1184,473,1218,422,1242,371,1259,328"/>
+<area shape="rect" id="Node000004" href="$classbwl_1_1whm_1_1ap__wlan__hal__whm.html#a172e53763e4e4b7900a00fa0098300d2" title="Update wifi credentials." alt="" coords="695,64,897,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="950,95,898,92,898,87,950,90"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#ad50ecf4b037aff908b41f5ae52086049" title="return search path of SSID object instance Name by BSSID mac address." alt="" coords="715,129,877,183"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="949,171,877,165,878,160,950,166"/>
+<area shape="rect" id="Node000009" href="$namespacebeerocks_1_1bpl.html#a8b1a3b72f1adad291614970620dd2859" title="Reads wireless network configuration for the given interface." alt="" coords="711,208,881,248"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="957,303,944,296,920,279,896,262,868,251,870,246,899,258,923,274,947,291,960,298"/>
+<area shape="rect" id="Node000010" href="$namespacebeerocks_1_1bpl.html#ad8e5ea8c306cb5aeee5c7743953c6837" title="Reads wireless settings (SSIDs and WiFi credentials) for all fronthaul interfaces." alt="" coords="706,272,886,312"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="949,320,886,310,887,304,950,315"/>
+<area shape="rect" id="Node000015" href="$classbwl_1_1whm_1_1mon__wlan__hal__whm.html#a880f0fc166b66041a650be7c3ba85f75" title=" " alt="" coords="700,336,892,376"/>
+<area shape="poly" id="edge14_Node000008_Node000015" title=" " alt="" coords="950,345,893,350,892,345,949,339"/>
+<area shape="rect" id="Node000011" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="534,271,585,297"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="692,291,585,287,585,282,693,286"/>
+<area shape="rect" id="Node000012" href="$classprplmesh_1_1controller_1_1whm_1_1WifiManager.html#aab5ce4359dbd0903adc9aa16f70cecfd" title=" " alt="" coords="472,321,647,375"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="698,318,648,330,646,325,697,313"/>
+<area shape="rect" id="Node000013" href="$classprplmesh_1_1controller_1_1whm_1_1WifiManager.html#ab69cf69339860f6fd6e56385226f911b" title=" " alt="" coords="256,321,424,375"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="458,351,424,351,424,345,458,345"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="242,365,208,370,208,364,242,359"/>
+<area shape="rect" id="Node000018" href="$classbwl_1_1nl80211__client__whm.html#a9a2d94fb4c528db446de1079c9dad70c" title="Gets a list with the names of existing wireless VAP interfaces." alt="" coords="723,531,869,571"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="931,553,870,553,870,548,931,548"/>
+</map>

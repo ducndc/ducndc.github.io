@@ -1,0 +1,21 @@
+<map id="son::son_actions::validate_beacon_measurement_report" name="son::son_actions::validate_beacon_measurement_report">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1079,91,1276,131"/>
+<area shape="rect" id="Node000002" href="$classson_1_1Controller.html#a66178f9ff1eb5ce0dec0521e60a548ba" title=" " alt="" coords="861,27,1028,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1090,90,1017,70,1019,65,1091,85"/>
+<area shape="rect" id="Node000009" href="$classson_1_1association__handling__task.html#af31a910d049893dd2773768a25e324c8" title=" " alt="" coords="859,91,1031,131"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1065,114,1031,114,1031,109,1065,109"/>
+<area shape="rect" id="Node000010" href="$classson_1_1optimal__path__task.html#a697700cdb21a53b0e5e293ba7d5bc905" title=" " alt="" coords="866,155,1023,195"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="1091,138,1019,158,1017,153,1090,132"/>
+<area shape="rect" id="Node000003" href="$classson_1_1Controller.html#a43f251115ccb56652900b044076861df" title="Handles received CMDU message." alt="" coords="619,35,811,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="848,50,811,50,811,45,848,45"/>
+<area shape="rect" id="Node000004" href="$classson_1_1Controller.html#a149e0e749b649986e297fcab253e194c" title=" " alt="" coords="400,5,571,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="605,36,571,32,571,26,605,31"/>
+<area shape="rect" id="Node000005" href="$classson_1_1Controller.html#a85bc11ac962e8c744142e1676442020b" title="Handles CMDU message received from broker." alt="" coords="409,55,562,95"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="606,63,562,69,562,63,605,58"/>
+<area shape="rect" id="Node000006" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,63,352,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="395,78,353,78,353,73,395,73"/>
+<area shape="rect" id="Node000007" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,37,109,63"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="197,67,109,56,110,51,197,62"/>
+<area shape="rect" id="Node000008" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,87,163,112"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="197,88,163,92,163,87,196,83"/>
+</map>

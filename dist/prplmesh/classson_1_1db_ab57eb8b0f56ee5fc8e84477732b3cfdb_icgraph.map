@@ -1,0 +1,15 @@
+<map id="son::db::dm_add_steer_event" name="son::db::dm_add_steer_event">
+<area shape="rect" id="Node000001" title="Adds NBAPI SteerEvent object. Data model path example: &quot;Device.WiFi.DataElements.SteerEvent...." alt="" coords="603,87,757,127"/>
+<area shape="rect" id="Node000002" href="$classson_1_1db.html#ac15d4debe9369bb69092b5c1845bfa52" title="Get from persistent db all steer history event and register them on a system bus." alt="" coords="403,23,552,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="602,86,540,66,542,61,604,81"/>
+<area shape="rect" id="Node000006" href="$classson_1_1btm__request__task.html#a7142a159671a74703864a3f34124ec53" title=" " alt="" coords="400,87,555,127"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="589,110,555,110,555,105,589,105"/>
+<area shape="rect" id="Node000007" href="$classson_1_1client__steering__task.html#af2447481b375e5c3167a78b738fb7bb1" title=" " alt="" coords="410,151,545,191"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="604,134,542,154,540,149,602,129"/>
+<area shape="rect" id="Node000003" href="$classson_1_1Controller.html#aafa0d23375fcb417edfbb8b5b1d4d987" title="Starts controller." alt="" coords="211,31,352,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,46,352,46,352,41,389,41"/>
+<area shape="rect" id="Node000004" href="$beerocks__master__main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="59,5,109,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="197,35,109,24,110,19,197,30"/>
+<area shape="rect" id="Node000005" href="$classsim_1_1Algorithm.html#a28b7fb12a26cf7b0f3e3a69383f64cea" title=" " alt="" coords="5,55,163,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="197,56,163,60,163,55,196,51"/>
+</map>

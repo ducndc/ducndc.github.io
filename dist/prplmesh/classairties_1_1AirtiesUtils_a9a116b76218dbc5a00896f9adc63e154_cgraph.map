@@ -1,0 +1,11 @@
+<map id="airties::AirtiesUtils::AirtiesUtils" name="airties::AirtiesUtils::AirtiesUtils">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,53,135,93"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ad6b66a1b6aac6fc32498d5b208101c35" title="connect to an ambiorix backend: load backend, connect to the bus" alt="" coords="183,53,359,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,70,169,70,169,75,135,75"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#a1fa5bc085a004b323809c35377202e85" title=": get a connection to the uri" alt="" coords="407,5,583,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="358,54,393,48,394,53,359,60"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#afc17bdf3d36234281315b46abe6f4abd" title=": get single instance" alt="" coords="407,84,583,139"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="359,85,394,91,393,96,358,90"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixConnectionManager.html#a9954842820cc20ee23eed131a5aa7cab" title=": create a new connection to the uri bus_uri" alt="" coords="631,13,813,53"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="583,30,617,30,617,35,583,35"/>
+</map>

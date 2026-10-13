@@ -1,0 +1,40 @@
+<map id="beerocks::net::TrunkPortPlumbing8021q::apply" name="beerocks::net::TrunkPortPlumbing8021q::apply">
+<area shape="rect" id="Node000001" title="Apply plumbing for the associated trunk." alt="" coords="5,257,172,297"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1TrunkPortPlumbing8021q.html#a628194e4f5471675625f188fa969a270" title="Rollback of the last applied configuration." alt="" coords="229,285,396,325"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,285,216,291,215,296,172,290"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1network__utils.html#a97d71a421f95d9ff6399a962b8c1161c" title="Deletes network interface." alt="" coords="483,216,638,256"/>
+<area shape="poly" id="edge15_Node000001_Node000003" title=" " alt="" coords="172,267,469,241,470,247,173,273"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1network__utils.html#a729e1751e39459cdfb2fbb2d1067eb69" title=" " alt="" coords="483,462,638,517"/>
+<area shape="poly" id="edge16_Node000001_Node000005" title=" " alt="" coords="102,296,120,329,146,369,180,409,221,440,282,467,347,483,411,490,470,492,469,497,411,496,346,488,280,472,219,445,176,412,142,372,115,332,97,299"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1net_1_1network__utils.html#aaa4168b91575aa414e205c38deec6b27" title="Gets the bridge name hosting the provided interface." alt="" coords="732,401,887,455"/>
+<area shape="poly" id="edge18_Node000001_Node000008" title=" " alt="" coords="130,295,221,335,335,374,454,400,592,417,718,424,718,429,592,422,453,405,334,380,219,340,128,300"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1net_1_1network__utils.html#a6f0bbcf8aca0d40c8b1acc7d2d474cf7" title=" " alt="" coords="478,152,643,192"/>
+<area shape="poly" id="edge17_Node000001_Node000009" title=" " alt="" coords="155,255,219,237,347,209,464,186,465,191,348,214,221,243,157,260"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1net_1_1network__utils.html#a1049d206f7a75db7710d1a20b3f403c6" title="Create a VLAN interface." alt="" coords="220,97,405,137"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="107,255,156,209,219,159,249,141,252,146,221,164,159,213,111,259"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1net_1_1network__utils.html#a3aa05ee183876d5158efa8c8df2c3160" title=" " alt="" coords="474,541,647,595"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="98,296,113,339,138,394,174,450,196,475,222,496,278,528,340,548,402,560,460,566,460,571,401,566,338,553,276,533,218,501,193,479,170,453,133,396,108,341,93,298"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1net_1_1network__utils.html#a81800b6022f47a706f1af320cc9e768b" title="sets interface state (up/down)" alt="" coords="227,5,399,45"/>
+<area shape="poly" id="edge23_Node000001_Node000014" title=" " alt="" coords="98,256,145,176,179,128,218,83,261,50,264,55,222,87,183,131,149,179,103,258"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,283,475,257,476,262,386,288"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="342,323,513,451,510,456,339,328"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="379,323,454,344,719,407,718,412,453,349,378,328"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="335,283,387,242,452,202,468,195,470,199,455,206,390,247,338,287"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1net_1_1network__utils.html#a4bc2b94ae5b95dd2bf2c2ad06471f7b3" title=" " alt="" coords="483,281,638,335"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="396,304,470,304,470,310,396,309"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1os__utils.html#a6d92a32fc5eb6697d4ff6d6f93060e21" title="Operates system call." alt="" coords="745,95,873,135"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="637,213,667,202,721,172,769,140,772,145,724,177,669,206,639,218"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1string__utils.html#ac5ba735c54be1ae2bf849bf9c60257f6" title=" " alt="" coords="736,547,883,587"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="639,511,732,540,731,545,637,516"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1net_1_1network__utils.html#a7e48e261c845c8fa55dde2c6dcb903a6" title="Gets the interface index corresponding to a particular name." alt="" coords="716,481,903,521"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="638,490,703,494,702,499,638,496"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="638,468,718,448,719,453,639,473"/>
+<area shape="poly" id="edge14_Node000011_Node000004" title=" " alt="" coords="406,114,732,112,732,118,406,120"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="405,135,465,148,464,153,403,140"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1net_1_1network__utils.html#a27a021218b7f4507bd5d06a7adc43c9e" title="Build a normalized VLAN interface name." alt="" coords="453,37,668,77"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="395,95,464,78,465,83,397,100"/>
+<area shape="poly" id="edge20_Node000013_Node000006" title=" " alt="" coords="647,565,722,564,722,570,647,570"/>
+<area shape="poly" id="edge21_Node000013_Node000007" title=" " alt="" coords="647,542,720,522,722,528,648,547"/>
+<area shape="poly" id="edge22_Node000013_Node000008" title=" " alt="" coords="646,538,666,526,681,512,690,498,699,483,714,467,725,460,728,464,718,471,703,486,695,500,685,515,670,530,649,543"/>
+<area shape="poly" id="edge24_Node000014_Node000004" title=" " alt="" coords="399,10,459,4,527,3,599,9,669,23,699,34,728,50,776,83,773,88,725,54,697,39,667,28,598,14,527,9,459,10,399,15"/>
+</map>

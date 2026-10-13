@@ -1,0 +1,19 @@
+<map id="son::client_steering_task::dm_set_steer_event_params" name="son::client_steering_task::dm_set_steer_event_params">
+<area shape="rect" id="Node000001" title="Set values for parameters of NBAPI SteerEvent object." alt="" coords="5,143,185,198"/>
+<area shape="rect" id="Node000002" href="$classson_1_1client__steering__task.html#a198f558c5ebce1e064e6304cfa17356c" title="Save data about client steer event to persistent db." alt="" coords="236,30,401,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,141,232,94,243,88,246,93,235,98,146,146"/>
+<area shape="rect" id="Node000006" href="$classson_1_1db.html#ab7382ff8b8a6c621b40561322af06c5a" title="Set &#39;Status&#39; parameter of NBAPI &#39;SteerEvent&#39; object." alt="" coords="239,109,398,134"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="185,148,247,134,248,140,186,153"/>
+<area shape="rect" id="Node000007" href="$classson_1_1db.html#a080b5ff0a4f667bd91f808de477d53c6" title="Returns ambiorix object." alt="" coords="233,158,404,183"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="186,168,220,168,220,173,186,173"/>
+<area shape="rect" id="Node000008" href="$classson_1_1db.html#ad8b2caf225fb3a32ec6aaba16ccb8064" title="Get station with a specific MAC address." alt="" coords="250,207,387,233"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="186,188,248,202,247,207,185,193"/>
+<area shape="rect" id="Node000009" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="246,257,391,282"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="144,196,234,242,257,250,255,255,232,246,141,201"/>
+<area shape="rect" id="Node000003" href="$classson_1_1db.html#a717682ba48df9dfd29512447a90d3779" title="Adds a client to the persistent db, if already exists, remove old entry and add a new one." alt="" coords="452,37,616,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="402,55,438,55,438,60,402,60"/>
+<area shape="rect" id="Node000004" href="$namespacebeerocks_1_1bpl.html#a1827c43b3401e8f22a41fad87098e83a" title="Add new entry with initial value." alt="" coords="675,5,825,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="616,43,661,36,662,41,617,48"/>
+<area shape="rect" id="Node000005" href="$namespacebeerocks_1_1bpl.html#a940044f9e67e50e0d32d632d7e1f5a2d" title="Remove entry by name." alt="" coords="664,69,836,109"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="617,67,651,72,650,77,616,72"/>
+</map>

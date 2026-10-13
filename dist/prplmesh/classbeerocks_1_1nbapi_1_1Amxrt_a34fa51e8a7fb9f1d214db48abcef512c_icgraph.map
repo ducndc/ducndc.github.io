@@ -1,0 +1,94 @@
+<map id="beerocks::nbapi::Amxrt::getDatamodel" name="beerocks::nbapi::Amxrt::getDatamodel">
+<area shape="rect" id="Node000001" title="Gets the runtime data model storage." alt="" coords="944,933,1101,973"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a138056a1f6a2227a59f43cef266ff4e5" title="Apply transaction." alt="" coords="476,197,649,237"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1012,920,979,795,951,709,915,614,869,516,812,419,746,329,708,289,668,251,648,239,651,234,671,247,712,285,750,326,817,416,873,513,919,612,956,707,984,793,1017,919"/>
+<area shape="rect" id="Node000020" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ab5410e0c67efb4726d27227bd8e21df7" title="Connect to the bus and register datamodel." alt="" coords="717,997,896,1037"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="942,980,875,1000,874,995,940,975"/>
+<area shape="rect" id="Node000022" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a39340932b8e240fceaa8b760d80e3461" title="Find object by relative path." alt="" coords="720,709,893,749"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="991,925,825,751,829,748,995,921"/>
+<area shape="rect" id="Node000038" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ab128703fbec329995fa54453e2c27b00" title="Get instance index by ID." alt="" coords="720,1061,893,1101"/>
+<area shape="poly" id="edge51_Node000001_Node000038" title=" " alt="" coords="991,985,948,1019,897,1052,872,1064,869,1059,895,1047,945,1015,987,981"/>
+<area shape="rect" id="Node000039" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a93b7119c72ed73a25f3302fb6d4a847e" title="Reads and return from Data Model value of uint64 parameter for given object." alt="" coords="720,933,893,973"/>
+<area shape="poly" id="edge52_Node000001_Node000039" title=" " alt="" coords="930,956,893,956,893,951,930,951"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a20fd1a729e3892c1c6f347da576ac7ed" title=" " alt="" coords="231,581,404,621"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="466,243,458,251,443,271,433,291,424,330,426,369,434,408,441,448,443,488,435,529,425,550,410,571,397,583,393,579,406,568,420,547,430,527,438,488,436,448,428,409,421,369,419,329,428,289,439,268,454,248,463,239"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a821041e77fdfa2c497897dfbf0d6a16b" title="Remove all instances from the data model object which name starts with given relative path." alt="" coords="227,645,408,685"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="466,243,458,251,441,275,429,299,422,323,420,346,423,393,433,440,444,487,448,535,445,560,439,585,427,610,410,635,397,647,393,643,406,632,423,607,434,583,440,559,443,535,439,488,428,441,418,394,414,346,417,322,424,297,436,272,454,248,463,239"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#aaae9622c83a7529ea86baf80997f08a4" title="Remove instance from the data model object with type list." alt="" coords="231,709,404,749"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="466,243,458,251,438,279,425,307,417,335,415,362,420,417,433,472,447,527,452,583,450,611,443,640,430,669,410,699,397,711,394,707,406,696,425,667,438,638,445,610,447,583,441,528,428,473,415,418,409,362,412,334,420,306,433,277,454,248,463,239"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ab5ecf71d691cc0efc6f03851beddc07a" title=" " alt="" coords="231,773,404,813"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="466,243,458,251,447,270,439,294,431,354,430,426,434,505,438,583,438,656,430,718,422,743,410,763,397,775,394,771,406,760,417,741,425,716,432,656,432,583,429,505,425,426,425,354,433,292,442,268,454,248,463,239"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a2632f84c0ef23ffab1e8261b8838f165" title=" " alt="" coords="231,837,404,877"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="466,243,458,251,445,272,437,299,428,367,429,449,434,536,439,625,440,707,432,776,423,804,410,827,397,839,394,835,406,824,418,802,427,775,434,706,434,625,428,537,423,449,423,367,431,298,441,270,454,248,463,239"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#aa9d503f52809b5ce265c43eb67a3ab98" title=" " alt="" coords="231,5,404,45"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="537,188,482,124,446,89,407,60,384,48,387,43,409,55,449,85,486,120,541,185"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a933482a43e4919fc66b990552c58a29d" title=" " alt="" coords="231,69,404,109"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="520,191,467,157,407,124,379,112,381,107,409,119,470,153,523,187"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ad8ca0efe1f5bc33ac70d1273846e3512" title=" " alt="" coords="231,133,404,173"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="471,196,394,176,395,171,473,191"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a255490ecb449878a5c5d0a7d1fae9cfb" title=" " alt="" coords="231,197,404,237"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="462,220,404,220,404,215,462,215"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#aaa2139069dbd8f03062f780ea26ec4a7" title="Set the value to the object variable." alt="" coords="231,261,404,301"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="473,243,395,264,394,259,471,238"/>
+<area shape="rect" id="Node000016" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a6843a6cae9d6109fc3594a2816a5c347" title=" " alt="" coords="231,325,404,365"/>
+<area shape="poly" id="edge15_Node000002_Node000016" title=" " alt="" coords="466,246,458,251,442,267,434,282,426,299,410,315,389,327,387,323,406,311,421,296,429,280,438,263,454,247,464,241"/>
+<area shape="rect" id="Node000017" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#aac05e2a6984230427325f8066bfda134" title=" " alt="" coords="231,389,404,429"/>
+<area shape="poly" id="edge16_Node000002_Node000017" title=" " alt="" coords="466,245,458,251,445,266,438,282,434,313,430,346,423,363,410,379,394,391,391,387,406,375,418,360,425,344,429,313,433,280,441,264,454,247,462,241"/>
+<area shape="rect" id="Node000018" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a8104f40deb1c3f107e9585fdb6e75f44" title=" " alt="" coords="231,453,404,493"/>
+<area shape="poly" id="edge17_Node000002_Node000018" title=" " alt="" coords="466,244,458,251,441,274,434,298,432,321,434,345,436,369,435,393,427,418,410,443,396,455,392,451,406,440,422,416,429,392,430,369,429,345,427,321,429,297,437,272,454,248,462,240"/>
+<area shape="rect" id="Node000019" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a828036d451cc8272d0cf384c48a2fb0d" title=" " alt="" coords="231,517,404,557"/>
+<area shape="poly" id="edge18_Node000002_Node000019" title=" " alt="" coords="466,243,458,251,437,283,429,314,429,345,434,376,438,408,439,441,431,474,410,507,396,519,393,515,406,504,426,472,434,440,433,409,429,377,424,345,424,313,432,280,454,248,463,239"/>
+<area shape="rect" id="Node000013" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a48a941f25929052a5e7418b3ee6ee723" title=" " alt="" coords="5,197,179,237"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="232,260,162,240,164,235,234,255"/>
+<area shape="rect" id="Node000014" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a506c72746e7393b9d80279eae7ba2d14" title="Set current data and time in RFC 3339 format." alt="" coords="5,261,179,301"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="217,284,179,284,179,279,217,279"/>
+<area shape="rect" id="Node000015" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ad9f34b0f3733eb557a7a3d8a8b08b849" title="Set field &#39;TimeStamp&#39; in RFC 3339 format." alt="" coords="5,325,179,365"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="234,308,164,328,162,323,232,303"/>
+<area shape="rect" id="Node000021" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#abf9bb794c11ea06faa0351cf90bab84f" title="Initialize the ambiorix library: load all available backends, connect to all available bus,..." alt="" coords="476,1157,649,1197"/>
+<area shape="poly" id="edge20_Node000020_Node000021" title=" " alt="" coords="725,1047,719,1051,702,1075,696,1098,690,1123,671,1147,651,1160,648,1156,668,1143,685,1121,691,1097,698,1072,715,1048,721,1043"/>
+<area shape="rect" id="Node000023" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#af12c007937396b10b619585c83899209" title="Instantiate optional sub&#45;object." alt="" coords="467,709,658,749"/>
+<area shape="poly" id="edge22_Node000022_Node000023" title=" " alt="" coords="706,732,658,732,658,727,706,727"/>
+<area shape="rect" id="Node000024" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a018e61ad3adf4598a848667c20692ac7" title="Prepare transaction to the ubus." alt="" coords="476,645,649,685"/>
+<area shape="poly" id="edge23_Node000022_Node000024" title=" " alt="" coords="716,708,639,688,640,683,717,703"/>
+<area shape="rect" id="Node000025" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ad2f9a8efa928fdff23b2378026ad46d9" title=" " alt="" coords="476,773,649,813"/>
+<area shape="poly" id="edge38_Node000022_Node000025" title=" " alt="" coords="717,755,640,776,639,771,716,750"/>
+<area shape="rect" id="Node000026" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a1af6838fe1af5306fd583788a02f3fa2" title=" " alt="" coords="476,837,649,877"/>
+<area shape="poly" id="edge39_Node000022_Node000026" title=" " alt="" coords="773,760,726,795,671,828,642,840,639,835,668,823,723,791,770,756"/>
+<area shape="rect" id="Node000027" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a4e1ae3c4aff1e5c97633a324f8d7417a" title=" " alt="" coords="476,901,649,941"/>
+<area shape="poly" id="edge40_Node000022_Node000027" title=" " alt="" coords="788,763,740,828,708,862,671,892,648,903,646,899,668,887,704,858,736,824,784,760"/>
+<area shape="rect" id="Node000028" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a7fbab6a63edaacb2a65e1327b1cf4832" title=" " alt="" coords="476,965,649,1005"/>
+<area shape="poly" id="edge41_Node000022_Node000028" title=" " alt="" coords="797,763,779,807,752,858,716,911,671,955,651,968,648,963,668,951,712,907,747,856,774,804,792,761"/>
+<area shape="rect" id="Node000029" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a23e45989f1c06dec2af5dabf83be4eef" title=" " alt="" coords="476,1029,649,1069"/>
+<area shape="poly" id="edge42_Node000022_Node000029" title=" " alt="" coords="793,763,721,917,671,1019,651,1033,648,1028,667,1016,717,915,788,761"/>
+<area shape="rect" id="Node000030" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ad2c134b6527539b1a7382410ef1de000" title="Reads and returns the value of the paramater from the given object." alt="" coords="476,1093,649,1133"/>
+<area shape="poly" id="edge43_Node000022_Node000030" title=" " alt="" coords="791,763,757,835,720,922,709,969,706,1008,698,1045,688,1064,671,1083,651,1098,648,1094,668,1079,683,1061,693,1043,701,1007,704,968,715,921,752,833,786,761"/>
+<area shape="rect" id="Node000032" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a985cf7ddd0e1af56c14559647c52d940" title=" " alt="" coords="476,261,649,301"/>
+<area shape="poly" id="edge45_Node000022_Node000032" title=" " alt="" coords="792,697,715,465,705,420,701,383,692,349,683,333,668,315,648,301,651,297,671,311,687,330,697,347,707,382,710,419,720,463,797,695"/>
+<area shape="rect" id="Node000033" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a9a26f3fa5f02bbf2a5d4c470dc3ddcf0" title=" " alt="" coords="476,325,649,365"/>
+<area shape="poly" id="edge46_Node000022_Node000033" title=" " alt="" coords="792,697,728,515,693,426,678,395,667,379,648,366,651,361,671,375,683,393,698,424,733,513,797,695"/>
+<area shape="rect" id="Node000034" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ad1101c765ca3bb1fed64e23d7a2e7252" title=" " alt="" coords="476,389,649,429"/>
+<area shape="poly" id="edge47_Node000022_Node000034" title=" " alt="" coords="796,697,782,642,757,573,719,503,695,471,668,443,648,431,651,426,671,439,699,468,724,500,761,571,787,640,801,695"/>
+<area shape="rect" id="Node000035" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a6937ff10745e6488f15db07e9ceda6dd" title=" " alt="" coords="476,453,649,493"/>
+<area shape="poly" id="edge48_Node000022_Node000035" title=" " alt="" coords="792,698,774,654,747,603,712,551,668,507,648,495,651,491,671,503,716,548,752,600,779,652,797,696"/>
+<area shape="rect" id="Node000036" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a066e2bddb0796caa9b52c11bac116921" title=" " alt="" coords="476,517,649,557"/>
+<area shape="poly" id="edge49_Node000022_Node000036" title=" " alt="" coords="784,699,736,634,704,600,668,572,646,560,648,555,671,567,708,596,740,631,788,696"/>
+<area shape="rect" id="Node000037" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#a426f9dccf646b2af535084f79eaa6d61" title="Remove optional sub&#45;object." alt="" coords="456,581,669,621"/>
+<area shape="poly" id="edge50_Node000022_Node000037" title=" " alt="" coords="770,703,723,668,668,636,639,624,642,619,671,631,726,664,773,698"/>
+<area shape="poly" id="edge24_Node000024_Node000003" title=" " alt="" coords="471,644,394,624,395,619,473,639"/>
+<area shape="poly" id="edge25_Node000024_Node000004" title=" " alt="" coords="462,668,408,668,408,663,462,663"/>
+<area shape="poly" id="edge26_Node000024_Node000005" title=" " alt="" coords="473,691,395,712,394,707,471,686"/>
+<area shape="poly" id="edge27_Node000024_Node000006" title=" " alt="" coords="466,694,458,699,442,715,434,730,426,747,410,763,389,775,387,771,406,759,421,744,429,728,438,711,454,695,464,689"/>
+<area shape="poly" id="edge28_Node000024_Node000007" title=" " alt="" coords="466,693,458,699,445,714,438,730,434,761,430,794,423,811,410,827,394,839,391,835,406,823,418,808,425,792,429,761,433,728,441,712,454,695,462,689"/>
+<area shape="poly" id="edge29_Node000024_Node000008" title=" " alt="" coords="463,644,454,635,441,613,431,585,423,516,423,434,428,346,434,258,434,176,427,108,418,81,406,59,394,47,397,44,410,56,423,78,432,107,440,176,439,258,434,346,429,434,428,515,437,583,445,610,458,632,466,640"/>
+<area shape="poly" id="edge30_Node000024_Node000009" title=" " alt="" coords="463,644,454,635,442,615,433,590,425,529,425,456,429,378,432,300,432,227,425,166,417,142,406,123,394,111,397,108,410,120,422,140,430,165,438,227,438,300,434,378,430,456,431,528,439,589,447,613,458,632,466,640"/>
+<area shape="poly" id="edge31_Node000024_Node000010" title=" " alt="" coords="463,644,454,635,433,606,420,577,412,549,409,520,415,465,428,410,441,355,447,300,445,272,438,244,425,216,406,187,394,176,397,172,410,184,430,213,443,243,450,271,452,300,447,356,433,411,420,466,415,520,417,548,425,575,438,603,458,632,466,640"/>
+<area shape="poly" id="edge32_Node000024_Node000011" title=" " alt="" coords="463,644,454,635,436,610,424,586,417,561,414,537,418,489,428,442,439,395,443,347,440,324,434,300,423,276,406,251,393,239,397,235,410,248,427,273,439,298,445,323,448,347,444,396,433,443,423,490,420,537,422,560,429,584,441,607,458,632,466,640"/>
+<area shape="poly" id="edge33_Node000024_Node000012" title=" " alt="" coords="463,643,454,635,439,614,428,594,419,553,421,513,428,474,436,434,438,395,430,355,420,335,406,315,393,303,397,299,410,312,425,333,435,354,443,395,441,435,434,475,426,514,424,553,433,592,443,612,458,632,466,640"/>
+<area shape="poly" id="edge34_Node000024_Node000016" title=" " alt="" coords="463,643,454,635,432,602,424,570,424,537,429,506,433,474,434,443,426,411,406,379,393,367,396,363,410,376,431,409,439,442,438,475,434,506,429,538,429,569,437,600,458,632,466,639"/>
+<area shape="poly" id="edge35_Node000024_Node000017" title=" " alt="" coords="462,643,454,635,437,611,429,586,427,562,429,538,430,514,429,490,422,467,406,443,392,432,396,428,410,440,427,465,435,489,436,514,434,538,432,562,434,585,441,608,458,632,466,639"/>
+<area shape="poly" id="edge36_Node000024_Node000018" title=" " alt="" coords="462,642,454,635,441,619,433,603,429,570,425,538,418,523,406,507,391,495,394,491,410,503,423,520,430,537,434,569,438,601,445,616,458,631,466,638"/>
+<area shape="poly" id="edge37_Node000024_Node000019" title=" " alt="" coords="464,641,454,635,438,619,429,603,421,587,406,571,387,560,389,555,410,567,426,584,434,600,442,616,458,631,466,637"/>
+<area shape="rect" id="Node000031" href="$classbeerocks_1_1nbapi_1_1AmbiorixImpl.html#ab196eff0e8d56dda33c1a92ffdde55e4" title=" " alt="" coords="231,1093,404,1133"/>
+<area shape="poly" id="edge44_Node000030_Node000031" title=" " alt="" coords="462,1116,404,1116,404,1111,462,1111"/>
+<area shape="poly" id="edge53_Node000039_Node000021" title=" " alt="" coords="723,984,719,987,705,1007,698,1026,697,1066,694,1106,687,1127,671,1147,651,1162,648,1158,667,1143,682,1124,689,1105,691,1066,693,1025,700,1004,715,984,719,980"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="bwl::nl80211_client_whm::get_interfaces" name="bwl::nl80211_client_whm::get_interfaces">
+<area shape="rect" id="Node000001" title="Gets a list with the names of existing wireless VAP interfaces." alt="" coords="5,37,152,77"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a31bf9caa3dabc49e1a9a2b2701e71e38" title="get interface name of SSID object data" alt="" coords="220,5,379,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,44,206,36,207,41,153,49"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a09a66e9f421294c5e008fe91f1c15614" title="return search path of SSID object instance&#39;s Name." alt="" coords="200,69,399,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="153,65,187,70,186,76,152,71"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a714ae6775bbeddf3d784987cf0fc4424" title="Template method reads child typed value (with possible conversion)" alt="" coords="447,5,623,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,23,433,23,433,28,379,28"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a1a5545dffedd09421ede59773e0a9c29" title="Finds a variant child, matching a provided key name into a composite variant." alt="" coords="671,5,847,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="623,23,657,23,657,28,623,28"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a6ac03e859bbafcb4e6e464aa2d5cbb70" title="Factory method: creating smart pointer for AmbiorixVariant object referencing an external amx variant..." alt="" coords="895,5,1071,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="847,23,881,23,881,28,847,28"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a67644832bb5a4d9164dc7bd994b9d51f" title="return path of SSID template object." alt="" coords="453,69,616,109"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="399,87,440,87,440,92,399,92"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="679,69,838,109"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="617,87,666,87,666,92,617,92"/>
+</map>

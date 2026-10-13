@@ -1,0 +1,23 @@
+<map id="bwl::whm::mon_wlan_hal_whm::update_vap_stations_stats" name="bwl::whm::mon_wlan_hal_whm::update_vap_stations_stats">
+<area shape="rect" id="Node000001" title="Update station statistics for multiple stations on one VAP." alt="" coords="5,113,161,167"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ae8c51f247ecc3e69f0660a46ae9981de" title="invokes a data model function." alt="" coords="209,5,385,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,110,161,82,208,55,223,48,225,53,211,60,164,86,123,115"/>
+<area shape="rect" id="Node000003" href="$namespacetlvf.html#a25b588c63488e7c0902ee8303bd94420" title="Converts a string to a binary MAC address (6 bytes buffer)" alt="" coords="225,70,370,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,117,235,96,237,102,162,122"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a714ae6775bbeddf3d784987cf0fc4424" title="Template method reads child typed value (with possible conversion)" alt="" coords="209,120,385,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="162,137,196,137,196,143,162,143"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a9704f3d3418137deacd61a21b8c1843a" title="resolve a search path, and retrieve first matching result." alt="" coords="209,184,385,224"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="162,161,217,177,216,183,161,166"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a0c9413724e2f45a0a6768cbe487d5deb" title="return search path of AccessPoint object instance by interface name." alt="" coords="218,249,377,303"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="118,165,161,200,211,234,222,240,219,245,208,238,158,204,114,169"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a1a5545dffedd09421ede59773e0a9c29" title="Finds a variant child, matching a provided key name into a composite variant." alt="" coords="433,120,609,160"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="386,137,419,137,419,143,386,143"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1AmbiorixVariant.html#a6ac03e859bbafcb4e6e464aa2d5cbb70" title="Factory method: creating smart pointer for AmbiorixVariant object referencing an external amx variant..." alt="" coords="657,120,833,160"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="610,137,643,137,643,143,610,143"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#a4e1a50159b84bf6084a38a466197358b" title="resolve a search path, and retrieve all matching results." alt="" coords="433,184,609,224"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="386,201,419,201,419,207,386,207"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aa0db55a4edda99dfff997c429d96d039" title="return path of AccessPoint template object." alt="" coords="442,256,601,296"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="377,273,428,273,428,279,377,279"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="666,256,825,296"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="601,273,652,273,652,279,601,279"/>
+</map>

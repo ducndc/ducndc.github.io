@@ -1,0 +1,17 @@
+<map id="bwl::whm::ap_wlan_hal_whm::sta_bss_steer" name="bwl::whm::ap_wlan_hal_whm::sta_bss_steer">
+<area shape="rect" id="Node000001" title="Send a 802.11v steer request (BSS Transition) to a connected station." alt="" coords="5,99,164,139"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1wbapi_1_1AmbiorixClient.html#ae8c51f247ecc3e69f0660a46ae9981de" title="invokes a data model function." alt="" coords="212,5,388,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,96,211,55,228,48,230,53,213,60,126,101"/>
+<area shape="rect" id="Node000003" href="$classbwl_1_1base__wlan__hal.html#aece312da1a6de2a350f2c5087110cc3d" title=" " alt="" coords="232,69,368,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,105,218,98,219,103,165,110"/>
+<area shape="rect" id="Node000004" href="$namespacetlvf.html#a54daacb3547d5ae7fe08d3c7748b0813" title="Converts a mac address to a human&#45;readable formatted string." alt="" coords="235,134,365,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,126,221,134,221,139,164,132"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#a0c9413724e2f45a0a6768cbe487d5deb" title="return search path of AccessPoint object instance by interface name." alt="" coords="221,183,379,238"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="134,136,224,175,221,180,132,141"/>
+<area shape="rect" id="Node000005" href="$namespacetlvf.html#a0727c2d3233021c35a431eda61155fb6" title="convert integer to hexadecimal string" alt="" coords="442,134,589,159"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="366,144,428,144,428,149,366,149"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#aa0db55a4edda99dfff997c429d96d039" title="return path of AccessPoint template object." alt="" coords="436,191,595,231"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="380,208,422,208,422,213,380,213"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1wbapi_1_1wbapi__utils.html#af83962d71c1d8942cd4ce3fa8e783d0a" title="return path of WiFi root object." alt="" coords="643,191,801,231"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="595,208,629,208,629,213,595,213"/>
+</map>

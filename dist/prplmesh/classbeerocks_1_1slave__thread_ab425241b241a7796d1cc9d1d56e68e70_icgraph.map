@@ -1,0 +1,30 @@
+<map id="beerocks::slave_thread::forward_cmdu_to_uds" name="beerocks::slave_thread::forward_cmdu_to_uds">
+<area shape="rect" id="Node000001" title="Forwards given received CMDU message through the specified socket connection." alt="" coords="507,289,665,329"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1VbssTask.html#a2bb66fbd1a225fcafb019296421b1f11" title="Handle the channel switch announcement request sent by the controller." alt="" coords="275,5,440,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="573,276,557,231,533,177,499,122,457,73,439,60,442,56,460,69,504,118,537,174,562,229,578,275"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1ProxyAgentDppTask.html#af19d8b6a3e2eddf632b42a973c66c42f" title="Parse DPP CCE Indication message." alt="" coords="256,399,459,439"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="546,339,505,364,460,388,427,402,425,397,458,384,503,360,544,334"/>
+<area shape="rect" id="Node000006" href="$classbeerocks_1_1VbssTask.html#a5cc93f0e1b147805a5bd59e92f12b09c" title="Handle the Move Cancel request sent by the controller." alt="" coords="281,84,433,139"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="564,278,520,215,490,181,457,152,432,137,435,133,460,148,494,178,524,211,569,275"/>
+<area shape="rect" id="Node000007" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a5e28c715b45c8268101af80597430819" title="Parse Multi&#45;AP Policy Configuration message." alt="" coords="256,528,459,583"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="575,343,557,383,532,429,500,476,460,517,442,530,439,526,457,513,496,473,528,426,552,380,570,341"/>
+<area shape="rect" id="Node000009" href="$classbeerocks_1_1ProxyAgentDppTask.html#a847ec9847cce908db0084453ffc377e3" title="Parse Proxied Encap DPP Message." alt="" coords="256,463,459,503"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="567,342,522,399,493,428,460,454,437,466,435,461,457,449,489,424,518,395,562,339"/>
+<area shape="rect" id="Node000010" href="$classbeerocks_1_1VbssTask.html#acd7e34aaacaa641619ebf8e356ee4dd1" title="Handle the security context request sent by the controller." alt="" coords="272,163,443,217"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="544,283,457,231,433,220,435,215,460,226,547,279"/>
+<area shape="rect" id="Node000011" href="$classbeerocks_1_1VbssTask.html#a9ca3338dce64a70e35691235fb716d03" title="Handle the Virtual BSS Move Preparation Request message." alt="" coords="266,241,449,296"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="493,295,448,287,449,282,494,290"/>
+<area shape="rect" id="Node000012" href="$classbeerocks_1_1VbssTask.html#aae1b07176606887ead877a94508f3740" title="Forward Virtual BSS Request messages to the AP manager." alt="" coords="287,320,428,375"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="493,327,429,338,428,333,493,322"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1VbssTask.html#abf90c688856de83408d998bb224a693d" title="Handle CMDU message." alt="" coords="36,170,177,210"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="267,68,257,74,186,124,131,172,127,168,183,119,255,69,264,64"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1ProxyAgentDppTask.html#a01ad3c1d7443055094379608690a13ce" title="Handle CMDU message." alt="" coords="5,431,208,471"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="243,437,208,441,208,436,242,431"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="269,142,172,172,170,167,267,137"/>
+<area shape="rect" id="Node000008" href="$classbeerocks_1_1ApAutoConfigurationTask.html#a7c481784effe198ad41e04450af4c2ad" title="Handle CMDU message." alt="" coords="5,535,208,575"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="242,558,208,558,208,553,242,553"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="242,471,208,467,208,462,243,466"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="258,193,178,193,178,187,258,187"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="256,240,171,213,172,208,257,235"/>
+<area shape="poly" id="edge16_Node000012_Node000003" title=" " alt="" coords="273,319,255,310,183,260,127,212,131,208,186,255,257,305,275,315"/>
+</map>

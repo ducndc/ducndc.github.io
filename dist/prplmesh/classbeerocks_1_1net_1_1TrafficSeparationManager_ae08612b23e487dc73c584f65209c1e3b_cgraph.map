@@ -1,0 +1,11 @@
+<map id="beerocks::net::TrafficSeparationManager::apply_policies" name="beerocks::net::TrafficSeparationManager::apply_policies">
+<area shape="rect" id="Node000001" title="Apply the current configuration to all configured trunk and access ports." alt="" coords="5,101,213,141"/>
+<area shape="rect" id="Node000002" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#af4b34f605d88124d10e9a6ad0fcfa80f" title="Rollback of the current configuration on all trunk and access ports." alt="" coords="261,5,469,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,99,260,55,283,47,284,52,262,60,156,104"/>
+<area shape="rect" id="Node000003" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a93745c3e9dab90d357c7dce840c2743e" title=" " alt="" coords="261,69,469,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,106,247,101,248,107,214,111"/>
+<area shape="rect" id="Node000004" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#acd605b19762f0934d7c42f201b934636" title="Return true when a TS configuration is loaded into the manager." alt="" coords="261,133,469,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="214,132,248,136,247,141,213,137"/>
+<area shape="rect" id="Node000005" href="$classbeerocks_1_1net_1_1TrafficSeparationManager.html#a7101215c85faf21e64d391373d473a2f" title="Return true when TS policies are currently applied on managed ports." alt="" coords="261,197,469,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="156,139,262,183,284,191,283,196,260,188,154,144"/>
+</map>
