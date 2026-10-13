@@ -8,9 +8,9 @@ category: 'Wi-Fi'
 
 ### Overview
 
-<div style="text-align: justify; text-indent: 2em;">
+---
+
 On a WLAN, when a STA moves between different APs, the service continuity and data transmission stability must be ensured. In traditional roaming technologies, when a STA roams from one AP to another, the STA needs to re-perform identity authentication and key negotiation. As a result, services are interrupted for a long time during roaming, degrading user experience. To solve this problem, the 802.11r standard is introduced. 802.11r, or Fast Basic Service Set Transition (FT), allows a STA to complete authentication and key negotiation with the target AP in advance. This process skips 802.1X authentication and key negotiation during roaming, reducing the number of information exchanges and achieving low latency and service data flow continuity during roaming.
-</div>
 
 ![Alt text](../../assets/technology/802_11r/beacon.png)
 
@@ -19,6 +19,8 @@ On a WLAN, when a STA moves between different APs, the service continuity and da
 --- 
 
 ### 802.1x Implementation
+
+---
 
 ![Alt text](../../assets/technology/802_11r/802.1x.png)
 
@@ -29,6 +31,8 @@ On a WLAN, when a STA moves between different APs, the service continuity and da
 --- 
 
 ### Fast BSS Transition
+
+---
 
 ![Alt text](../../assets/technology/802_11r/ftbss.png)
 
@@ -41,23 +45,25 @@ On a WLAN, when a STA moves between different APs, the service continuity and da
 
 #### Key Hierarchy
 
+---
+
 <div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/key.png)
 
-</div>
+
 
 <div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/key1.png)
 
-</div>
+
 
 <div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/key2.png)
 
-</div>
+
 
 1. The R0KH interacts with the IEEE 802.1X Authenticator to receive the MSK resulting from an EAP authentication.
 2. The R1KH interacts with the IEEE 802.1X Authenticator to open the Controlled Port.
@@ -65,6 +71,8 @@ On a WLAN, when a STA moves between different APs, the service continuity and da
 ---
 
 #### Is Fast BSS Transition available?
+
+---
 
 1. mobility domain: A set of basic service sets (BSSs), within the
 same extended service set (ESS), that support fast BSS transitions
@@ -83,6 +91,8 @@ a mobility domain.
 
 ### Over-the-Air
 
+---
+
 <div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/OverAir.png)
@@ -95,6 +105,8 @@ a mobility domain.
 
 ### Over-the-DS
 
+---
+
 <div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/OverDS.png)
@@ -106,6 +118,8 @@ a mobility domain.
 ---
 
 ### FT Protocols
+
+---
 
 1. FT protocol
 2. FT resource request protocol
@@ -138,6 +152,8 @@ This protocol is executed when an FTO requires a resource request prior to its t
 
 #### Overview and Purpose
 
+---
+
 In IEEE 802.11r (Fast BSS Transition / FT), roaming between Access Points (APs) within a Mobility Domain (MD) is designed to occur with minimal latency (< 50 ms) to support real-time applications such as Voice over IP (VoIP) and video streaming without requiring full 802.1X/EAP re-authentication against a RADIUS server.
 
 The RRB (Remote Request Broker) mechanism is the inter-AP backbone protocol that enables APs to communicate over the Distribution System (DS / wired backbone LAN) to:
@@ -147,6 +163,8 @@ The RRB (Remote Request Broker) mechanism is the inter-AP backbone protocol that
 ---
 
 #### 802.11r Key Hierarchy and Architectural Roles
+
+---
 
 To understand RRB, it is essential to understand the 802.11r key hierarchy:
 
@@ -173,6 +191,8 @@ To understand RRB, it is essential to understand the 802.11r key hierarchy:
 
 #### Key Entities:
 
+---
+
 * R0KH (R0 Key Holder): The initial AP or central controller that holds the first-tier key `PMK-R0` derived after the initial mobility domain association.
 * R1KH (R1 Key Holder): The AP serving a specific BSSID that holds `PMK-R1` (derived from `PMK-R0` specific to the Target AP's identifier/BSSID) and derives the final encryption key (`PTK`) with the station.
 * S1KH (Supplicant 1 Key Holder): The roaming Station (STA / Client).
@@ -195,6 +215,8 @@ IEEE 802.11r defines two modes for roaming:
 ---
 
 ##### Over-the-Air
+
+---
 
 ```
 kernel mac80211/cfg80211
@@ -244,6 +266,8 @@ kernel cfg80211 / mac80211 → over the air
 
 ##### Over-the-DS Flow:
 
+---
+
 ```
        [ Client (STA) ]
           |          ^
@@ -268,6 +292,8 @@ kernel cfg80211 / mac80211 → over the air
 
 ##### Function B: R0KH $\leftrightarrow$ R1KH Key Management Protocol
 
+---
+
 When a station roams to a Target AP (operating as an R1KH), that Target AP needs the corresponding `PMK-R1` to derive the `PTK`. The RRB mechanism provides a secure protocol for inter-AP key retrieval.
 
 ![Alt text](../../assets/technology/802_11r/RRB.png)
@@ -275,6 +301,8 @@ When a station roams to a Target AP (operating as an R1KH), that Target AP needs
 ---
 
 ##### Key Distribution Packet Types:
+
+---
 
 | Subtype Code | Packet Subtype Constant | Description |
 | :--- | :--- | :--- |
@@ -288,6 +316,8 @@ When a station roams to a Target AP (operating as an R1KH), that Target AP needs
 
 ##### RX / TX — over the DS (AP ↔ AP, RRB)
 
+---
+
 Two transports, both opened in `wpa_auth_glue.c:1916–1937` when `CONFIG_IEEE80211R_AP` is set and `wpa_key_mgmt_ft` is configured:
 
 | Transport | Socket | Where used |
@@ -298,6 +328,8 @@ Two transports, both opened in `wpa_auth_glue.c:1916–1937` when `CONFIG_IEEE80
 ---
 
 ##### RX path on the Target AP / R0KH
+
+---
 
 ```
 AF_PACKET socket (ETH_P_RRB  or  ETH_P_OUI 88-B7)
@@ -327,6 +359,8 @@ l2_packet_linux.c:148  l2_packet_receive  (via eloop)
 
 #### TX path on the Current AP / R0KH / R1KH
 
+---
+
 ```
 For RRB (action relay):   wpa_ft_rrb_send (wpa_auth_ft.c:631)
                             builds RRB frame header:
@@ -352,6 +386,8 @@ For OUI 88-B7 frames, encryption is **AES-SIV** (`wpa_ft_rrb_build` at `wpa_auth
 
 #### State / database
 
+---
+
 | State | Lives in |
 |---|---|
 | `struct wpa_state_machine` (per-STA; FT-specific fields: `ft_pending_*`, `wpa_ft_seq`, `ft_current_ap_addr`, RRB nonce, RRB seq, R0/R1 key holders, `ft_pending_req_ies`) | `wpa_auth_ft.c`, allocated by `wpa_ft_add_sta` (called from `wpa_auth->cb->add_sta` → `hostapd_wpa_auth_add_sta` in `wpa_auth_glue.c:1261`) |
@@ -361,6 +397,8 @@ For OUI 88-B7 frames, encryption is **AES-SIV** (`wpa_ft_rrb_build` at `wpa_auth
 ---
 
 #### Upstream vs vendor — verdict
+
+---
 
 For the **FT over DS** path specifically:
 
@@ -375,6 +413,8 @@ For the **FT over DS** path specifically:
 ---
 
 ####  RRB Packet Format and Cryptographic Protection
+
+---
 
 RRB key distribution frames are encapsulated in IEEE 802 Extended OUI EtherType frames and secured using **AES-SIV (Synthetic Initialization Vector, RFC 5297)** for Authenticated Encryption with Associated Data (AEAD).
 
@@ -409,6 +449,8 @@ RRB key distribution frames are encapsulated in IEEE 802 Extended OUI EtherType 
 
 #### Security Details
 
+---
+
 * **AES-SIV AEAD:** Associated Authenticated Data (AAD) binds the Source MAC address, authenticated TLVs, and message subtype to prevent tampering, injection, and address spoofing.
 * **Anti-Replay Mechanism:** Each AP pair tracks monotonically increasing sequence numbers (`ft_rrb_seq`) and timestamps to prevent replay attacks.
 * **Pairwise Inter-AP Secret Keys:** APs share 256-bit symmetric encryption keys configured in their respective R0KH/R1KH lists.
@@ -416,6 +458,8 @@ RRB key distribution frames are encapsulated in IEEE 802 Extended OUI EtherType 
 ---
 
 #### Where the action lives
+
+---
 
 | File (relative to `hostapd-2.12/`) | Role |
 |---|---|
@@ -431,6 +475,8 @@ RRB key distribution frames are encapsulated in IEEE 802 Extended OUI EtherType 
 ---
 
 #### Hostapd Configuration Example
+
+---
 
 Below is a typical configuration in `hostapd.conf` configuring RRB and FT:
 
@@ -477,6 +523,8 @@ rkh_pull_retries=4
 
 #### Key Benefits of the RRB Mechanism
 
+---
+
 1. **Sub-50ms Seamless Handoff:** Enables real-time communications without dropouts by eliminating round-trips to the central RADIUS authentication server.
 2. **Channel Optimization:** Over-the-DS roaming allows the station to negotiate its handover via the wired backbone without having to switch radio channels prematurely.
 3. **Session Continuity & Policy Preservation:** Transports VLAN assignments, session timeouts, and RADIUS accounting attributes across APs seamlessly.
@@ -485,6 +533,8 @@ rkh_pull_retries=4
 ---
 
 ### Frame by Frame
+
+---
 
 ![Alt text](../../assets/technology/802_11r/fbf.png)
 
@@ -506,11 +556,15 @@ rkh_pull_retries=4
 
 #### MSK -> PMK-R0
 
+---
+
 ![Alt text](../../assets/technology/802_11r/mpsk.png)
 
 ---
 
 #### PMK-R0 -> PMK-R1
+
+---
 
 ![Alt text](../../assets/technology/802_11r/pmkr0.png)
 
@@ -522,6 +576,8 @@ results in the computations, shall be restricted to the R0KH.
 ---
 
 #### PMK-R1 -> PTK
+
+---
 
 ![Alt text](../../assets/technology/802_11r/pmkri.png)
 
@@ -542,12 +598,11 @@ in its computation, shall be restricted to the R1KH.
 
 ![Alt text](../../assets/technology/802_11r/fbf15.png)
 
-<div style="text-align: justify; text-indent: 2em;">
+
 The R0KH and the R1KH are assumed to have a secure channel between them that can be used to
 exchange cryptographic keys without exposure to any intermediate parties. The cryptographic strength
 of the secure channel between the R0KH and R1KH is assumed to be greater than or equal to the
 cryptographic strength of the channels for which the keys are used.
-</div>
 
 ![Alt text](../../assets/technology/802_11r/fbf16.png)
 
@@ -565,6 +620,8 @@ cryptographic strength of the channels for which the keys are used.
 
 ### Relationship between state and services between a given pair of nonmesh STAs
 
+---
+
 ![Alt text](../../assets/technology/802_11r/fbf22.png)
 
 ![Alt text](../../assets/technology/802_11r/fbf23.png)
@@ -574,5 +631,7 @@ cryptographic strength of the channels for which the keys are used.
 ---
 
 ### Source 
+
+---
 
 [1] www.thewlpc.com/presentations/analysis-of-a-fast-roam-prg-25
