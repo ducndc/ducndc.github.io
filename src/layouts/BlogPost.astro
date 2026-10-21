@@ -122,6 +122,15 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 			max-width: 70ch;
 		}
 
+		/* Justified body text; hyphenation keeps word spacing even */
+		.prose :global(p),
+		.prose :global(li),
+		.prose :global(blockquote) {
+			text-align: justify;
+			text-justify: inter-word;
+			hyphens: auto;
+		}
+
 		.prose img {
 			width: 100%;
 			border-radius: 8px;

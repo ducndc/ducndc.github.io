@@ -7,14 +7,8 @@ import HeaderLink from './HeaderLink.astro';
 	<nav>
 		<a href="/" class="brand">
 			<span class="mark" aria-hidden="true">
-				<svg viewBox="0 0 40 40" width="40" height="40">
-					<circle cx="20" cy="20" r="19" fill="#0b3d91" />
-					<ellipse cx="20" cy="20" rx="17" ry="6" fill="none" stroke="#fff" stroke-width="1.2" transform="rotate(-25 20 20)" />
-					<path d="M6 27 C 16 20, 24 16, 35 9" stroke="#fc3d21" stroke-width="2.6" fill="none" stroke-linecap="round" />
-					<circle cx="11" cy="12" r="0.9" fill="#fff" />
-					<circle cx="29" cy="28" r="0.9" fill="#fff" />
-					<circle cx="25" cy="10" r="0.6" fill="#fff" />
-				</svg>
+				<img src="/favicon.ico" alt="" width="32" height="32" />
+
 			</span>
 			<span class="brand-name">{SITE_TITLE}</span>
 		</a>
@@ -52,6 +46,11 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	.mark {
 		display: flex;
+	}
+	.mark img {
+		margin: 0;
+		/* favicon.ico is a black star; invert it to white for the black header */
+		filter: invert(1);
 	}
 	.brand-name {
 		font-size: 0.95rem;
