@@ -51,19 +51,20 @@ On a WLAN, when a STA moves between different APs, the service continuity and da
 
 ![Alt text](../../assets/technology/802_11r/key.png)
 
+</div>
 
 
 <div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/key1.png)
 
-
+</div>
 
 <div style="text-align: center;">
 
 ![Alt text](../../assets/technology/802_11r/key2.png)
 
-
+</div>
 
 1. The R0KH interacts with the IEEE 802.1X Authenticator to receive the MSK resulting from an EAP authentication.
 2. The R1KH interacts with the IEEE 802.1X Authenticator to open the Controlled Port.
