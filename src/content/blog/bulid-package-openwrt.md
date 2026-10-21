@@ -2,7 +2,7 @@
 title: 'Build Package in OpenWrt'
 description: 'Build Package in OpenWrt'
 pubDate: 'Jun 30 2026'
-heroImage: '../../assets/AP_Sys.png'
+heroImage: '../../assets/router.jpg'
 category: 'OpenWrt'
 ---
 
