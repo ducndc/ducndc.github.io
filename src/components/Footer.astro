@@ -1,28 +1,91 @@
 ---
+import { SITE_TITLE } from '../consts';
+
 const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Chung Duc Nguyen Dang. All rights reserved.
+	<div class="footer-inner">
+		<div class="footer-brand">
+			<p class="eyebrow">Embedded Software Engineer · Hanoi</p>
+			<h2>{SITE_TITLE}</h2>
+			<p class="tagline">Wi-Fi drivers, firmware, and the invisible networks that keep the world connected.</p>
+		</div>
+		<div class="footer-col">
+			<h3>Explore</h3>
+			<a href="/">Home</a>
+			<a href="/blog">Blog</a>
+			<a href="/about">About</a>
+		</div>
+		<div class="footer-col">
+			<h3>Follow</h3>
+			<a href="https://github.com/ducndc">GitHub</a>
+			<a href="/rss.xml">RSS Feed</a>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		&copy; {today.getFullYear()} Chung Duc Nguyen Dang. All rights reserved.
+	</div>
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
+		background: var(--space);
+		color: #b9b9b9;
+		padding: 4rem 1.5rem 2rem;
 	}
-	.social-links {
+	.footer-inner {
+		max-width: 1440px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+		gap: 3rem;
+	}
+	h2 {
+		color: #fff;
+		font-size: 2rem;
+		margin: 0.5rem 0 1rem;
+	}
+	.tagline {
+		max-width: 36ch;
+		font-size: 1rem;
+	}
+	h3 {
+		color: #fff;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin-bottom: 1rem;
+	}
+	.footer-col {
 		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
+		flex-direction: column;
+		gap: 0.6rem;
 	}
-	.social-links a {
+	.footer-col a {
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 600;
 		text-decoration: none;
-		color: rgb(var(--gray));
 	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
+	.footer-col a:hover {
+		color: var(--accent);
+	}
+	.footer-bottom {
+		max-width: 1440px;
+		margin: 3rem auto 0;
+		padding-top: 1.5rem;
+		border-top: 1px solid #333;
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+	@media (max-width: 720px) {
+		.footer-inner {
+			grid-template-columns: 1fr 1fr;
+		}
+		.footer-brand {
+			grid-column: 1 / -1;
+		}
 	}
 </style>

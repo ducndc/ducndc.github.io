@@ -5,7 +5,19 @@ import HeaderLink from './HeaderLink.astro';
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<a href="/" class="brand">
+			<span class="mark" aria-hidden="true">
+				<svg viewBox="0 0 40 40" width="40" height="40">
+					<circle cx="20" cy="20" r="19" fill="#0b3d91" />
+					<ellipse cx="20" cy="20" rx="17" ry="6" fill="none" stroke="#fff" stroke-width="1.2" transform="rotate(-25 20 20)" />
+					<path d="M6 27 C 16 20, 24 16, 35 9" stroke="#fc3d21" stroke-width="2.6" fill="none" stroke-linecap="round" />
+					<circle cx="11" cy="12" r="0.9" fill="#fff" />
+					<circle cx="29" cy="28" r="0.9" fill="#fff" />
+					<circle cx="25" cy="10" r="0.6" fill="#fff" />
+				</svg>
+			</span>
+			<span class="brand-name">{SITE_TITLE}</span>
+		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -15,42 +27,72 @@ import HeaderLink from './HeaderLink.astro';
 </header>
 <style>
 	header {
+		position: sticky;
+		top: 0;
+		z-index: 100;
 		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
+		padding: 0 1.5rem;
+		background: var(--space);
+		border-bottom: 1px solid #2a2a2a;
 	}
 	nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		max-width: 1440px;
+		margin: 0 auto;
+		height: 64px;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
+	.brand {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		color: #fff;
 		text-decoration: none;
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
+	.mark {
 		display: flex;
 	}
-	@media (max-width: 720px) {
-		.social-links {
+	.brand-name {
+		font-size: 0.95rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+	.internal-links {
+		display: flex;
+		gap: 0.25rem;
+		height: 100%;
+	}
+	.internal-links :global(a) {
+		display: flex;
+		align-items: center;
+		box-sizing: border-box;
+		height: 100%;
+		padding: 3px 1rem 0;
+		color: #fff;
+		font-size: 0.9rem;
+		font-weight: 700;
+		text-decoration: none;
+		border-bottom: 3px solid transparent;
+		transition: border-color 0.15s ease, color 0.15s ease;
+	}
+	.internal-links :global(a:hover) {
+		color: #fff;
+		border-bottom-color: #555;
+	}
+	.internal-links :global(a.active) {
+		border-bottom-color: var(--accent);
+	}
+	@media (max-width: 640px) {
+		header {
+			padding: 0 0.75rem;
+		}
+		.brand-name {
 			display: none;
+		}
+		.internal-links :global(a) {
+			padding: 0 0.7rem;
 		}
 	}
 </style>
