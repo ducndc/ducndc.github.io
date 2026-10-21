@@ -15,4 +15,11 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
   },
+	vite: {
+		server: {
+			// public/prplmesh holds ~62k generated Doxygen files; watching them
+			// exhausts the inotify limit (ENOSPC) in `astro dev`.
+			watch: { ignored: ['**/public/prplmesh/**'] },
+		},
+	},
 });
