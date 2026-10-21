@@ -7,29 +7,14 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import "katex/dist/katex.min.css";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = Omit<CollectionEntry<'blog'>['data'], 'category'> & { category?: string };
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category } = Astro.props;
 ---
 
 <html lang="en">
 <head>
 	<BaseHead title={title} description={description} />
-		<style is:global>
-			header {
-				position: fixed !important;
-				top: 0;
-				left: 0;
-				right: 0;
-				z-index: 100;
-				background: rgba(255, 255, 255, 0.92);
-				backdrop-filter: blur(8px);
-				-webkit-backdrop-filter: blur(8px);
-			}
-			body {
-				padding-top: 60px;
-			}
-		</style>
 	<style>
 		.prose :global(table) {
 			width: 100%;
@@ -51,9 +36,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		.layout {
 			display: grid;
 			grid-template-columns: 260px 1fr;
-			gap: 2rem;
-			width: 100%;
-			padding: 1rem 2rem;
+			gap: 3rem;
+			width: auto;
+			max-width: 1440px;
+			margin: 0 auto;
+			padding: 2.5rem 1.5rem;
 		}
 
 		/* ===== TOC ===== */
@@ -63,18 +50,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			height: fit-content;
 			font-size: 14px;
 			color: rgb(var(--gray));
-			background: rgba(0,0,0,0.02);
-			padding: 1rem;
-			border-radius: 12px;
-			backdrop-filter: blur(6px);
+			padding: 0 0 0 1rem;
+			border-left: 1px solid #ddd;
 		}
 
 		.toc-title {
 			font-weight: bold;
 			margin-bottom: 0.5rem;
-			font-size: 13px;
+			font-family: var(--font-mono);
+			font-size: 12px;
 			text-transform: uppercase;
-			letter-spacing: 0.05em;
+			letter-spacing: 0.12em;
+			color: var(--accent);
 		}
 
 		.toc nav {
@@ -83,28 +70,27 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			gap: 4px;
 		}
 
-		.toc a {
+		.toc :global(.toc a) {
 			display: block;
 			padding: 0.35rem 0.5rem;
 			text-decoration: none;
 			color: inherit;
-			border-radius: 6px;
-			border-left: 2px solid transparent;
+			border-left: 3px solid transparent;
 			transition: all 0.2s ease;
 		}
 
-		.toc a:hover {
+		.toc :global(.toc a:hover) {
 			background: rgba(0,0,0,0.05);
 		}
 
-		.toc a.active {
+		.toc :global(.toc a.active) {
 			color: black;
-			font-weight: 600;
-			border-left: 2px solid black;
-			background: rgba(0,0,0,0.06);
+			font-weight: 700;
+			border-left: 3px solid var(--accent);
+			background: rgba(0,0,0,0.04);
 		}
 
-		.toc a.h3 {
+		.toc :global(.toc a.h3) {
 			padding-left: 1.5rem;
 			font-size: 13px;
 			opacity: 0.85;
@@ -118,8 +104,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		.hero-image img {
 			display: block;
 			margin: 0 auto;
-			border-radius: 12px;
-			box-shadow: var(--box-shadow);
 			width: 100%;
 			max-width: 1200px;
 		}
@@ -152,18 +136,38 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		}
 
 		.title {
-			text-align: center;
 			margin-bottom: 2rem;
 		}
 
 		.title h1 {
-			font-size: 2.5rem;
-			margin-bottom: 0.5rem;
+			font-size: clamp(2.2rem, 5vw, 3.75rem);
+			font-weight: 900;
+			margin: 0.75rem 0 1rem;
+		}
+
+		.title .description {
+			font-size: 1.25rem;
+			color: #444;
+			max-width: 60ch;
 		}
 
 		.date {
-			color: rgb(var(--gray));
-			margin-bottom: 0.5rem;
+			font-family: var(--font-mono);
+			font-size: 0.85rem;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			color: #666;
+		}
+
+		.title hr {
+			border-top: 4px solid var(--accent);
+			width: 80px;
+			margin: 1.5rem 0 0;
+		}
+
+		.prose :global(h2),
+		.prose :global(h3) {
+			margin-top: 2.5rem;
 		}
 
 		/* ===== Mobile ===== */
@@ -196,6 +200,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 			<div class="prose">
 				<div class="title">
+					{category && <p class="eyebrow">{category}</p>}
+					<h1>{title}</h1>
+					{description && description !== title && <p class="description">{description}</p>}
 					<div class="date">
 						<FormattedDate date={pubDate} />
 						{
@@ -206,7 +213,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							)
 						}
 					</div>
-					<h1>{title}</h1>
 					<hr />
 				</div>
 

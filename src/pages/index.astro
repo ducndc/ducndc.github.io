@@ -1,98 +1,428 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import HeroImage from '../assets/about.jpg';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+const [featured, ...rest] = posts.filter((post) => post.data.heroImage);
+const latest = rest.slice(0, 6);
+
+const topics = Object.entries(
+	posts.reduce<Record<string, number>>((acc, post) => {
+		acc[post.data.category] = (acc[post.data.category] ?? 0) + 1;
+		return acc;
+	}, {}),
+).sort((a, b) => b[1] - a[1]);
+
+const missions = [
+	{ title: 'Engineering', text: 'Specializing in Wi-Fi drivers, firmware, and next-gen transport networking.' },
+	{ title: 'Electronics', text: 'Building the physical world through IoT systems, UAV development, and embedded hardware.' },
+	{ title: 'Photography', text: 'Capturing the world through the glass of my Canon 60D and the streets of Hanoi.' },
+	{ title: 'Poetry', text: 'Finding the rhythm in the code and the melody in the quiet moments of the everyday.' },
+];
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style is:global>
-			header {
-				position: fixed !important;
-				top: 0;
-				left: 0;
-				right: 0;
-				z-index: 100;
-				background: rgba(255, 255, 255, 0.92);
-				backdrop-filter: blur(8px);
-				-webkit-backdrop-filter: blur(8px);
-			}
-			body {
-				padding-top: 60px;
-			}
-		</style>
 	</head>
 	<body>
 		<Header />
-		<main>
-			<div class="cta-buttons">
-			<a href="/about" class="btn primary">About Me</a>
-			<a href="/blog" class="btn secondary">Read My Blog</a>
+
+		<section class="hero">
+			<Image src={HeroImage} alt="" class="hero-bg" widths={[800, 1600, 2400]} sizes="100vw" loading="eager" />
+			<div class="hero-shade"></div>
+			<div class="hero-content">
+				<p class="eyebrow">Embedded Software Engineer · Viettel High Tech</p>
+				<h1>Engineering the invisible backbone of a connected world</h1>
+				<p class="subtitle">
+					Wi-Fi drivers, EasyMesh, and network firmware, plus photography and poetry from Hanoi.
+				</p>
+				<div class="cta-buttons">
+					<a href="/blog" class="btn primary">Read the Blog <span aria-hidden="true">→</span></a>
+					<a href="/about" class="btn secondary">About Me</a>
+				</div>
 			</div>
 		</section>
 
-		<section class="grid-sections">
-		<div class="card">
-		<h3>💻 Engineering</h3>
-		<p>Specializing in Wi-Fi drivers, firmware, and next-gen transport networking.</p>
-		</div>
+		{
+			featured && (
+				<section class="featured">
+					<a href={`/blog/${featured.id}/`} class="featured-card">
+						<div class="featured-img">
+							<Image src={featured.data.heroImage!} alt="" width={1200} height={675} />
+						</div>
+						<div class="featured-text">
+							<p class="eyebrow">Featured · {featured.data.category}</p>
+							<h2>{featured.data.title}</h2>
+							<p>{featured.data.description}</p>
+							<span class="read-more">
+								Read article <span aria-hidden="true">→</span>
+							</span>
+						</div>
+					</a>
+				</section>
+			)
+		}
 
-		<div class="card">
-		<h3>🔌 Electronics</h3>
-		<p>Building the physical world through IoT systems, UAV development, and embedded hardware.</p>
-		</div>
-		
-		<div class="card">
-		<h3>📷 Photography</h3>
-		<p>Capturing the world through the glass of my Canon 60D and the streets of Hanoi.</p>
-		</div>
+		<section class="section dark">
+			<div class="section-head">
+				<h2>Latest Articles</h2>
+				<a href="/blog" class="see-all">See all articles <span aria-hidden="true">→</span></a>
+			</div>
+			<div class="news-grid">
+				{
+					latest.map((post) => (
+						<a href={`/blog/${post.id}/`} class="news-card">
+							<div class="news-img">
+								<Image src={post.data.heroImage!} alt="" width={640} height={360} />
+							</div>
+							<p class="eyebrow">{post.data.category}</p>
+							<h3>{post.data.title}</h3>
+							<p class="news-date">
+								<FormattedDate date={post.data.pubDate} />
+							</p>
+						</a>
+					))
+				}
+			</div>
+		</section>
 
-		<div class="card">
-		<h3>✍️ Poetry</h3>
-		<p>Finding the rhythm in the code and the melody in the quiet moments of the everyday.</p>
-		</div>
+		<section class="section light">
+			<div class="section-head">
+				<h2>Explore Topics</h2>
+			</div>
+			<div class="topic-grid">
+				{
+					topics.map(([name, count]) => (
+						<a href={`/blog#${name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="topic">
+							<span class="topic-name">{name}</span>
+							<span class="topic-count">
+								{count} {count === 1 ? 'article' : 'articles'}
+							</span>
+						</a>
+					))
+				}
+			</div>
+		</section>
 
-		</main>
+		<section class="section dark">
+			<div class="section-head">
+				<h2>Missions</h2>
+			</div>
+			<div class="mission-grid">
+				{
+					missions.map((m, i) => (
+						<div class="mission">
+							<span class="mission-num">{String(i + 1).padStart(2, '0')}</span>
+							<h3>{m.title}</h3>
+							<p>{m.text}</p>
+						</div>
+					))
+				}
+			</div>
+		</section>
+
 		<Footer />
 	</body>
 </html>
 
 <style>
-  .hero {
-    padding: 4rem 0;
-    text-align: center;
-    background: linear-gradient(to right, #f8f9fa, #e9ecef);
-    border-radius: 12px;
-    margin-bottom: 3rem;
-  }
-  h1 { font-size: 2.5rem; color: #333; }
-  .subtitle { font-size: 1.25rem; color: #666; max-width: 600px; margin: 1rem auto; }
-  
-  .grid-sections {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .card {
-    padding: 1.5rem;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    transition: transform 0.2s;
-  }
-  .card:hover { transform: translateY(-5px); border-color: #007acc; }
-  
-  .btn {
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0.5rem;
-    display: inline-block;
-  }
-  .primary { background: #007acc; color: white; }
-  .secondary { border: 1px solid #007acc; color: #007acc; }
+	/* ===== Hero ===== */
+	.hero {
+		position: relative;
+		min-height: calc(100vh - 64px);
+		min-height: calc(100svh - 64px);
+		display: flex;
+		align-items: flex-end;
+		color: #fff;
+		background: var(--space);
+		overflow: hidden;
+	}
+	.hero :global(.hero-bg) {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		margin: 0;
+		object-fit: cover;
+	}
+	.hero-shade {
+		position: absolute;
+		inset: 0;
+		background:
+			linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.15) 100%),
+			linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent 70%);
+	}
+	.hero-content {
+		position: relative;
+		width: 100%;
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 0 1.5rem 5rem;
+	}
+	.hero h1 {
+		color: #fff;
+		font-size: clamp(2.5rem, 6vw, 5rem);
+		font-weight: 900;
+		max-width: 16ch;
+		margin: 1rem 0 1.25rem;
+	}
+	.subtitle {
+		font-size: 1.2rem;
+		max-width: 52ch;
+		color: #ddd;
+		margin-bottom: 2rem;
+	}
+
+	/* ===== Buttons ===== */
+	.cta-buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+		padding: 0.9rem 1.6rem;
+		border-radius: 999px;
+		font-size: 1rem;
+		font-weight: 700;
+		text-decoration: none;
+		transition: background 0.15s ease, color 0.15s ease;
+	}
+	.primary {
+		background: var(--accent);
+		color: #fff;
+	}
+	.primary:hover {
+		background: var(--accent-dark);
+		color: #fff;
+	}
+	.secondary {
+		border: 2px solid #fff;
+		color: #fff;
+	}
+	.secondary:hover {
+		background: #fff;
+		color: #000;
+	}
+
+	/* ===== Featured ===== */
+	.featured {
+		background: var(--space);
+		padding: 0 1.5rem 4rem;
+	}
+	.featured-card {
+		display: grid;
+		grid-template-columns: 1.4fr 1fr;
+		max-width: 1440px;
+		margin: 0 auto;
+		background: var(--space-3);
+		color: #fff;
+		text-decoration: none;
+	}
+	.featured-img {
+		overflow: hidden;
+	}
+	.featured-img :global(img) {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+	.featured-card:hover .featured-img :global(img) {
+		transform: scale(1.04);
+	}
+	.featured-text {
+		padding: 3rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.featured-text h2 {
+		color: #fff;
+		font-size: clamp(1.8rem, 3vw, 2.6rem);
+		margin: 0.75rem 0 1rem;
+	}
+	.featured-text p:not(.eyebrow) {
+		color: #ccc;
+		font-size: 1.05rem;
+	}
+	.read-more {
+		margin-top: 1rem;
+		font-weight: 700;
+	}
+	.featured-card:hover .read-more {
+		color: var(--accent);
+	}
+
+	/* ===== Sections ===== */
+	.section {
+		padding: 4.5rem 1.5rem;
+	}
+	.section > * {
+		max-width: 1440px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.section.dark {
+		background: var(--space-2);
+		color: #fff;
+	}
+	.section.light {
+		background: #f6f6f6;
+	}
+	.section-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-bottom: 2.5rem;
+	}
+	.section-head h2 {
+		font-size: clamp(2rem, 4vw, 3rem);
+		margin: 0;
+	}
+	.dark .section-head h2,
+	.dark h3 {
+		color: #fff;
+	}
+	.see-all {
+		color: #fff;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.see-all:hover {
+		color: var(--accent);
+	}
+
+	/* ===== News grid ===== */
+	.news-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 2.5rem 2rem;
+	}
+	.news-card {
+		color: #fff;
+		text-decoration: none;
+	}
+	.news-img {
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		margin-bottom: 1rem;
+		background: #222;
+	}
+	.news-img :global(img) {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+	.news-card:hover .news-img :global(img) {
+		transform: scale(1.05);
+	}
+	.news-card h3 {
+		font-size: 1.35rem;
+		margin: 0.5rem 0;
+	}
+	.news-card:hover h3 {
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+	.news-date {
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		color: #999;
+		text-transform: uppercase;
+	}
+
+	/* ===== Topics ===== */
+	.topic-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		gap: 1px;
+		background: #ddd;
+		border: 1px solid #ddd;
+	}
+	.topic {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+		padding: 1.75rem 1.5rem;
+		background: #fff;
+		color: #000;
+		text-decoration: none;
+		border-left: 4px solid transparent;
+		transition: border-color 0.15s ease, background 0.15s ease;
+	}
+	.topic:hover {
+		border-left-color: var(--accent);
+		background: #fafafa;
+		color: #000;
+	}
+	.topic-name {
+		font-size: 1.25rem;
+		font-weight: 800;
+	}
+	.topic-count {
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		color: #666;
+	}
+
+	/* ===== Missions ===== */
+	.mission-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 2rem;
+	}
+	.mission {
+		border-top: 2px solid #333;
+		padding-top: 1.5rem;
+		transition: border-color 0.2s ease;
+	}
+	.mission:hover {
+		border-top-color: var(--accent);
+	}
+	.mission-num {
+		font-family: var(--font-mono);
+		color: var(--accent);
+		font-size: 0.9rem;
+	}
+	.mission h3 {
+		font-size: 1.6rem;
+		margin: 0.5rem 0 0.75rem;
+	}
+	.mission p {
+		color: #bbb;
+		font-size: 1rem;
+	}
+
+	@media (max-width: 860px) {
+		.featured-card {
+			grid-template-columns: 1fr;
+		}
+		.featured-text {
+			padding: 2rem 1.5rem;
+		}
+		.hero-content {
+			padding-bottom: 3rem;
+		}
+	}
 </style>

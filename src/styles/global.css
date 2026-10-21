@@ -5,8 +5,15 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	/* NASA-inspired palette */
+	--accent: #fc3d21;
+	--accent-dark: #c62b14;
+	--nasa-blue: #0b3d91;
+	--space: #000000;
+	--space-2: #111111;
+	--space-3: #1e1e1e;
+	--font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--font-mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -43,15 +50,11 @@
    ========================= */
 
 body {
-	font-family: "Times New Roman", Times, serif;
+	font-family: var(--font-sans);
 	margin: 0;
 	padding: 0;
 
-	text-align: justify;
-	text-justify: inter-word;
-
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background: #fff;
 
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -85,7 +88,9 @@ h5,
 h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
-	line-height: 1.2;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	line-height: 1.1;
 }
 
 h1 {
@@ -138,10 +143,22 @@ p {
    ========================= */
 
 a {
-	color: var(--accent);
+	color: var(--nasa-blue);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
 }
 
 a:hover {
+	color: var(--accent);
+}
+
+/* NASA-style uppercase mono label */
+.eyebrow {
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
 	color: var(--accent);
 }
 
@@ -231,7 +248,8 @@ code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
 	border-radius: 2px;
-	font-family: monospace;
+	font-family: var(--font-mono);
+	font-size: 0.9em;
 }
 
 /* =========================
@@ -240,7 +258,8 @@ code {
 
 pre {
 	padding: 1.5em;
-	border-radius: 8px;
+	border-radius: 0;
+	border-left: 4px solid var(--accent);
 	overflow-x: auto;
 }
 
@@ -256,7 +275,8 @@ blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;
 	margin: 1.5em 0;
-	font-size: 1.1em;
+	font-size: 1.15em;
+	font-weight: 600;
 }
 
 /* =========================

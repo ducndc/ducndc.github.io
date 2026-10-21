@@ -26,29 +26,39 @@ const categories = Object.keys(postsByCategory).sort((a, b) =>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style is:global>
-			header {
-				position: fixed !important;
-				top: 0;
-				left: 0;
-				right: 0;
-				z-index: 100;
-				background: rgba(255, 255, 255, 0.92);
-				backdrop-filter: blur(8px);
-				-webkit-backdrop-filter: blur(8px);
-			}
-			body {
-				padding-top: 60px;
-			}
-		</style>
 
 		<style>
-			.blog-layout {
-				width: 80%;
+			.page-banner {
+				background: var(--space);
+				color: #fff;
+				padding: 5rem 1.5rem 3.5rem;
+				border-bottom: 4px solid var(--accent);
+			}
+
+			.page-banner > div {
 				max-width: 1200px;
-				min-width: 320px;
 				margin: 0 auto;
-				padding: 2rem 0;
+			}
+
+			.page-banner h1 {
+				color: #fff;
+				font-size: clamp(3rem, 8vw, 6rem);
+				font-weight: 900;
+				margin: 0.75rem 0 1rem;
+			}
+
+			.page-banner p:not(.eyebrow) {
+				color: #ccc;
+				font-size: 1.15rem;
+				max-width: 55ch;
+				margin: 0;
+			}
+
+			.blog-layout {
+				width: auto;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 3.5rem 1.5rem;
 			}
 
 			.year-section {
@@ -56,14 +66,16 @@ const categories = Object.keys(postsByCategory).sort((a, b) =>
 			}
 
 			.year-heading {
-				font-size: 1rem;
-				font-weight: 700;
+				font-family: var(--font-mono);
+				font-size: 0.9rem;
+				font-weight: 500;
 				text-transform: uppercase;
-				letter-spacing: 0.1em;
-				color: rgb(var(--gray));
-				margin-bottom: 0.75rem;
-				padding-bottom: 0.4rem;
-				border-bottom: 1px solid rgba(0,0,0,0.08);
+				letter-spacing: 0.12em;
+				color: var(--accent);
+				margin-bottom: 0.5rem;
+				padding-bottom: 0.6rem;
+				border-bottom: 2px solid #000;
+				scroll-margin-top: 90px;
 			}
 
 			.count {
@@ -82,31 +94,36 @@ const categories = Object.keys(postsByCategory).sort((a, b) =>
 				justify-content: space-between;
 				align-items: baseline;
 				gap: 1rem;
-				padding: 0.65rem 0.5rem;
+				padding: 0.9rem 0.75rem;
 				text-decoration: none;
-				border-radius: 6px;
-				transition: background 0.15s ease;
+				border-bottom: 1px solid #e5e5e5;
+				border-left: 4px solid transparent;
+				transition: background 0.15s ease, border-color 0.15s ease;
 			}
 
 			.post-item a:hover {
-				background: rgba(0,0,0,0.03);
+				background: #f6f6f6;
+				border-left-color: var(--accent);
 			}
 
 			.post-item a:hover .post-title {
-				color: rgb(var(--accent));
+				text-decoration: underline;
+				text-underline-offset: 4px;
 			}
 
 			.post-title {
 				font-size: 1.25rem;
-				font-weight: 500;
+				font-weight: 700;
 				color: rgb(var(--black));
 				transition: color 0.15s ease;
 				line-height: 1.4;
 			}
 
 			.post-date {
-				font-size: 0.95rem;
-				color: rgb(var(--gray));
+				font-family: var(--font-mono);
+				font-size: 0.8rem;
+				text-transform: uppercase;
+				color: #666;
 				white-space: nowrap;
 				flex-shrink: 0;
 			}
@@ -121,10 +138,17 @@ const categories = Object.keys(postsByCategory).sort((a, b) =>
 	</head>
 	<body>
 		<Header />
+		<section class="page-banner">
+			<div>
+				<p class="eyebrow">{posts.length} articles · {categories.length} topics</p>
+				<h1>Blog</h1>
+				<p>Notes from the field on Wi-Fi, embedded Linux, networking, and the occasional poem.</p>
+			</div>
+		</section>
 		<main class="blog-layout">
 			{categories.map((category) => (
 				<div class="year-section">
-					<h2 class="year-heading">
+					<h2 class="year-heading" id={category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>
 						{category} <span class="count">({postsByCategory[category].length})</span>
 					</h2>
 					<ul class="posts-list">
