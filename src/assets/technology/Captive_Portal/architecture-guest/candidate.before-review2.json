@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Guest Wi-Fi Captive Portal Topology",
+    "output": ".archify/architecture-guest-portal-20261023-154157/guest-portal.html",
+    "quality_profile": "showcase",
+    "legend": {
+      "entries": {
+        "database": { "label": "Local network service (DHCP/DNS/RA)" },
+        "security": { "label": "Firewall enforcement (nftables)" },
+        "cloud": { "label": "Control plane" },
+        "external": { "label": "Outside the guest network" }
+      }
+    }
+  },
+  "components": [
+    { "id": "sta1", "type": "frontend", "label": "Guest STA", "pos": [40, 70], "size": [150, 60] },
+    { "id": "ap1", "type": "backend", "label": "AP 1", "sublabel": "hostapd — SSID Guest → VLAN 30", "tag": "ap_isolate=1", "pos": [240, 70], "size": [190, 70] },
+    { "id": "sta2", "type": "frontend", "label": "Guest STA", "pos": [40, 230], "size": [150, 60] },
+    { "id": "ap2", "type": "backend", "label": "AP 2", "sublabel": "hostapd — SSID Guest → VLAN 30", "pos": [240, 230], "size": [190, 70] },
+
+    { "id": "sw", "type": "backend", "label": "Switch", "pos": [490, 150], "size": [130, 60] },
+
+    { "id": "br", "type": "backend", "label": "br-guest", "sublabel": "VLAN 30 · 192.168.30.1/24 + /64", "pos": [660, 40], "size": [170, 70] },
+    { "id": "nft", "type": "security", "label": "nftables", "sublabel": "table inet portal", "tag": "auth4/auth6/authmac", "pos": [900, 40], "size": [190, 70] },
+    { "id": "dnsm", "type": "database", "label": "dnsmasq", "sublabel": "DHCPv4 + opt 114, truthful DNS", "pos": [660, 170], "size": [170, 70] },
+    { "id": "ctl", "type": "cloud", "label": "Portal controller", "sublabel": "session DB, timers, ubus API", "pos": [900, 170], "size": [190, 70] },
+    { "id": "odh", "type": "database", "label": "odhcpd", "sublabel": "RA (+opt 37), DHCPv6", "pos": [660, 300], "size": [170, 70] },
+    { "id": "web", "type": "backend", "label": "Web server", "sublabel": "TLS — splash/login, RFC 8908", "pos": [900, 300], "size": [190, 70] },
+
+    { "id": "wan", "type": "external", "label": "Internet", "pos": [1180, 20], "size": [150, 60] },
+    { "id": "lan", "type": "external", "label": "Corporate LAN", "sublabel": "router UI", "pos": [1180, 100], "size": [150, 60] },
+    { "id": "aaa", "type": "external", "label": "RADIUS", "sublabel": "auth backend", "pos": [1180, 220], "size": [150, 70] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "Radio layer", "wraps": ["sta1", "ap1", "sta2", "ap2"] },
+    { "kind": "region", "label": "Gateway — OpenWrt / firewall4 / nftables", "wraps": ["br", "nft", "dnsm", "ctl", "odh", "web"] }
+  ],
+  "connections": [
+    { "id": "sta1-ap1", "from": "sta1", "to": "ap1", "label": "802.11 / OWE or SAE", "variant": "dashed" },
+    { "id": "sta2-ap2", "from": "sta2", "to": "ap2", "label": "802.11", "variant": "dashed" },
+    { "id": "ap1-sw", "from": "ap1", "to": "sw", "label": "802.1Q trunk VLAN 30" },
+    { "id": "ap2-sw", "from": "ap2", "to": "sw", "label": "802.1Q trunk VLAN 30" },
+    { "id": "sw-br", "from": "sw", "to": "br", "label": "uplink" },
+    { "id": "br-nft", "from": "br", "to": "nft", "label": "bridged traffic" },
+    { "id": "dnsm-ctl", "from": "dnsm", "to": "ctl", "label": "lease events" },
+    { "id": "ctl-nft", "from": "ctl", "to": "nft", "label": "netlink: add/del set elements" },
+    { "id": "web-ctl", "from": "web", "to": "ctl", "label": "local IPC (bidirectional)" },
+    { "id": "nft-wan", "from": "nft", "to": "wan", "label": "SNAT" },
+    { "id": "ctl-aaa", "from": "ctl", "to": "aaa", "label": "RADIUS Access/Accounting, CoA :3799" },
+    { "id": "ap1-ctl", "from": "ap1", "to": "ctl", "label": "STA events (ubus/ctrl iface)", "variant": "dashed" },
+    { "id": "nft-lan", "from": "nft", "to": "lan", "label": "guest → LAN/mgmt: DROPPED", "variant": "dashed" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Fronthaul isolation", "items": ["Both APs map the Guest SSID to the same VLAN 30 trunk; AP 1 additionally sets ap_isolate=1 so guest-to-guest traffic never leaves the radio."] },
+    { "dot": "rose", "title": "Guest never reaches the LAN", "items": ["nftables explicitly drops guest → corporate-LAN/management traffic — that's a denied path on the topology, not a working data flow."] },
+    { "dot": "amber", "title": "Control plane sits beside the firewall, not inside it", "items": ["The portal controller only talks to nftables over netlink to add/remove allow-list set elements; it never forwards packets itself."] }
+  ]
+}

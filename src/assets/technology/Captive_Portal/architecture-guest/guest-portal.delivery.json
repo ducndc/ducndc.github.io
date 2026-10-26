@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "c44d9ebb-8195-4b10-b83c-29cd40e8a3b8",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/home/ont/Workspaces/wlan-ap/.archify/architecture-guest-portal-20261023-154157/candidate.json",
+  "output": "/home/ont/Workspaces/wlan-ap/.archify/architecture-guest-portal-20261023-154157/guest-portal.html",
+  "specification": {
+    "sha256": "5aeb6d707189cf877d1926dcdd55d13d064740d8bb6a986a8dd8a889939dda55",
+    "bytes": 6561
+  },
+  "artifact": {
+    "sha256": "f29cfd82c22200a4b7a728510d91d4eb3ff4feeb34aa86c59546aa091f7f8cec",
+    "bytes": 837319
+  }
+}

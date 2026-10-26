@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/home/ont/Workspaces/wlan-ap/.archify/architecture-guest-portal-20261023-154157/candidate.json",
+    "sha256": "ad4d0b6a5151f6e6189bd13c603a451feadf39b01db725ce338d8fbdf30b96ac",
+    "bytes": 4552
+  },
+  "artifact": {
+    "path": "/home/ont/Workspaces/wlan-ap/.archify/architecture-guest-portal-20261023-154157/guest-portal.html",
+    "sha256": "c3ac5df1e2bf9d256c2d6e18cc5092a083a75e4cdc4aa7322723d49f8869f0cf",
+    "bytes": 837415
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/home/ont/Workspaces/wlan-ap/.archify/architecture-guest-portal-20261023-154157/guest-portal.finalize.json",
+    "summaryReceipt": "/home/ont/Workspaces/wlan-ap/.archify/architecture-guest-portal-20261023-154157/guest-portal.finalize-summary.json",
+    "browserCheckReceipt": "/home/ont/Workspaces/wlan-ap/.archify/architecture-guest-portal-20261023-154157/guest-portal.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.2.0",
+    "availableVersion": "3.2.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-23T03:25:02.596Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 23812,
+  "browserCheck": {
+    "requested": true,
+    "ran": true
+  },
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "resolvedCrossovers": 3,
+      "routesOverSuggestedBends": 3
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [
+        {
+          "left": {
+            "id": "sw-br",
+            "from": "sw",
+            "to": "br",
+            "label": "uplink",
+            "collectionIndex": 4,
+            "artifactIndex": 5
+          },
+          "right": {
+            "id": "ap1-ctl",
+            "from": "ap1",
+            "to": "ctl",
+            "label": "STA events (ubus/ctrl iface)",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "point": [
+            555,
+            112
+          ]
+        },
+        {
+          "left": {
+            "id": "web-ctl",
+            "from": "web",
+            "to": "ctl",
+            "label": "local IPC (bidirectional)",
+            "collectionIndex": 8,
+            "artifactIndex": 9
+          },
+          "right": {
+            "id": "ap1-ctl",
+            "from": "ap1",
+            "to": "ctl",
+            "label": "STA events (ubus/ctrl iface)",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "point": [
+            995,
+            282
+          ],
+          "sharedNode": "ctl"
+        },
+        {
+          "left": {
+            "id": "ctl-aaa",
+            "from": "ctl",
+            "to": "aaa",
+            "label": "RADIUS Access/Accounting, CoA :3799",
+            "collectionIndex": 10,
+            "artifactIndex": 11
+          },
+          "right": {
+            "id": "ap1-ctl",
+            "from": "ap1",
+            "to": "ctl",
+            "label": "STA events (ubus/ctrl iface)",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "point": [
+            1114,
+            205
+          ],
+          "sharedNode": "ctl"
+        }
+      ],
+      "detours": [
+        {
+          "relationship": {
+            "id": "sta1-ap1",
+            "from": "sta1",
+            "to": "ap1",
+            "label": "802.11 / OWE or SAE",
+            "collectionIndex": 0,
+            "artifactIndex": 1
+          },
+          "bends": 3,
+          "stretch": 1.32
+        },
+        {
+          "relationship": {
+            "id": "br-nft",
+            "from": "br",
+            "to": "nft",
+            "label": "bridged traffic",
+            "collectionIndex": 5,
+            "artifactIndex": 6
+          },
+          "bends": 3,
+          "stretch": 1.258
+        },
+        {
+          "relationship": {
+            "id": "ap1-ctl",
+            "from": "ap1",
+            "to": "ctl",
+            "label": "STA events (ubus/ctrl iface)",
+            "collectionIndex": 11,
+            "artifactIndex": 12
+          },
+          "bends": 4,
+          "stretch": 1.311
+        }
+      ],
+      "truncated": false
+    },
+    "hints": [
+      "sw → br crosses ap1 → ctl: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor.",
+      "web → ctl and ap1 → ctl cross next to ctl: move node web or ap1 so the two reach ctl from different sides (for example one level with it, one directly above or below it).",
+      "ctl → aaa and ap1 → ctl cross next to ctl: move node aaa or ap1 so the two reach ctl from different sides (for example one level with it, one directly above or below it).",
+      "sta1 → ap1 needs 3 bends: move node sta1 or ap1 so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "br → nft needs 3 bends: move node br or nft so they share a row or column with matching centers, or sit diagonally with a clear corner.",
+      "ap1 → ctl needs 4 bends: move node ap1 or ctl so they share a row or column with matching centers, or sit diagonally with a clear corner."
+    ],
+    "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+  }
+}
