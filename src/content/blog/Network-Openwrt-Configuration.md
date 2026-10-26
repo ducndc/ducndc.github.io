@@ -107,16 +107,39 @@ Runtime can **differ from config** because: a reload hasn't happened, the link i
 
 ---
 
-```text
-Configuration        /etc/config/{network,wireless,firewall,dhcp}
-      ↓
-UCI                  libuci, ubus "uci", LuCI (rpcd)
-      ↓
-OpenWrt services     procd → netifd, fw4, dnsmasq, odhcpd, hostapd
-      ↓
-Linux networking     netlink: link / addr / route / bridge vlan / nftables
-      ↓
-Runtime state        netdev, FDB, FIB, conntrack, station table
+```mermaid
+flowchart LR
+    subgraph P1["Configuration plane"]
+        direction TB
+        L1["<b>Configuration</b><br/><i>/etc/config/{network, wireless,<br/>firewall, dhcp}</i>"]
+        L2["<b>UCI</b><br/><i>libuci, ubus uci, LuCI (rpcd)</i>"]
+        L1 -- "parse" --> L2
+    end
+
+    subgraph P2["Control plane"]
+        direction TB
+        L3["<b>OpenWrt services</b><br/><i>procd → netifd, fw4, dnsmasq,<br/>odhcpd, hostapd</i>"]
+    end
+
+    subgraph P3["Kernel plane"]
+        direction TB
+        L4["<b>Linux networking</b><br/><i>netlink: link, addr, route,<br/>bridge vlan, nftables</i>"]
+        L5["<b>Runtime state</b><br/><i>netdev, FDB, FIB, conntrack,<br/>station table</i>"]
+        L4 -- "materialize" --> L5
+    end
+
+    P1 -- "dispatch" --> P2
+    P2 -- "syscall / netlink" --> P3
+
+    classDef cfg   fill:#eef2f7,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef state fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class L1 cfg
+    class L2,L3,L4 mid
+    class L5 state
+    class P1,P2,P3 plane
 ```
 
 When something breaks, ask in this order: *Is the config right → does the service understand it correctly (ubus) → is the kernel right (ip/bridge/nft) → do packets actually flow correctly (tcpdump)*. Section 20 turns this methodology into a checklist.
@@ -131,23 +154,40 @@ When something breaks, ask in this order: *Is the config right → does the serv
 
 ---
 
-```text
-Applications / Services    (ssh, uhttpd, ntpd, VPN daemons)
-          ↓
-DNS / DHCP / VPN / QoS     (dnsmasq, odhcpd, wireguard, sqm)
-          ↓
-Firewall / nftables        (fw4 → table inet fw4)
-          ↓
-L3 / IP interfaces         (address, prefix, neighbor)
-          ↓
-Routing                    (FIB, ip rule, multiple tables)
-          ↓
-L2 / Bridge / VLAN         (br-lan, 802.1Q, bridge vlan filtering)
-          ↓
-Ethernet / Wi-Fi           (MAC: DSA/switch, mac80211/cfg80211)
-          ↓
-Hardware / Driver          (SoC MAC, switch chip, radio)
+```mermaid
+flowchart LR
+    subgraph S1["Service plane"]
+        direction TB
+        A["<b>Applications / Services</b><br/><i>ssh, uhttpd, ntpd, VPN daemons</i>"]
+        B["<b>DNS / DHCP / VPN / QoS</b><br/><i>dnsmasq, odhcpd, wireguard, sqm</i>"]
+        C["<b>Firewall / nftables</b><br/><i>fw4 → table inet fw4</i>"]
+        A --> B --> C
+    end
+
+    subgraph S2["Network plane"]
+        direction TB
+        D["<b>L3 / IP interfaces</b><br/><i>address, prefix, neighbor</i>"]
+        E["<b>Routing</b><br/><i>FIB, ip rule, multiple tables</i>"]
+        F["<b>L2 / Bridge / VLAN</b><br/><i>br-lan, 802.1Q, bridge vlan filtering</i>"]
+        D --> E --> F
+    end
+
+    subgraph S3["Link plane"]
+        direction TB
+        G["<b>Ethernet / Wi-Fi</b><br/><i>MAC: DSA/switch, mac80211/cfg80211</i>"]
+        H["<b>Hardware / Driver</b><br/><i>SoC MAC, switch chip, radio</i>"]
+        G --> H
+    end
+
+    S1 --> S2 --> S3
+
+    classDef node fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef group fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A,B,C,D,E,F,G,H node
+    class S1,S2,S3 group
 ```
+
 ---
 #### Who does what
 ---
@@ -223,20 +263,43 @@ ubus call network reload       # equivalent to reload
 
 ---
 
-```text
-SSID "Guest"
-   ↓
-wifi-iface            (wireless:  option network 'guest')
-   ↓
-network interface     (network:   config interface 'guest', option device 'br-lan.30')
-   ↓
-device                (br-lan.30 = VLAN 30 on bridge br-lan)
-   ↓
-VLAN 30 / 192.168.30.0/24
-   ↓
-dhcp pool             (dhcp:      config dhcp 'guest', option interface 'guest')
-   ↓
-firewall zone         (firewall:  config zone / list network 'guest')
+```mermaid
+flowchart LR
+    subgraph P1["Wireless"]
+        direction TB
+        A["<b>SSID</b><br/><i>Guest</i>"]
+        B["<b>wifi-iface</b><br/><i>wireless: option network 'guest'</i>"]
+        A -- "defines" --> B
+    end
+
+    subgraph P2["Network"]
+        direction TB
+        C["<b>network interface</b><br/><i>config interface 'guest'<br/>option device 'br-lan.30'</i>"]
+        D["<b>device</b><br/><i>br-lan.30 = VLAN 30 on bridge br-lan</i>"]
+        E["<b>VLAN 30</b><br/><i>192.168.30.0/24</i>"]
+        C -- "uses" --> D
+        D -- "carries" --> E
+    end
+
+    subgraph P3["Services"]
+        direction TB
+        F["<b>dhcp pool</b><br/><i>config dhcp 'guest'<br/>option interface 'guest'</i>"]
+        G["<b>firewall zone</b><br/><i>config zone<br/>list network 'guest'</i>"]
+        F -- "then" --> G
+    end
+
+    P1 -- "attach to" --> P2
+    P2 -- "serve / filter" --> P3
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef base  fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,C,D,E,F mid
+    class G base
+    class P1,P2,P3 plane
 ```
 
 This chain runs on the **logical interface name** (`guest`), not the device name (`br-lan.30`):
@@ -443,10 +506,34 @@ config device
         list ports 'lan2'
 ```
 
-```text
-LAN1 ----\
-LAN2 -----+---- br-lan ---- (IP 192.168.1.1/24, router)
-Wi-Fi ----/
+```mermaid
+flowchart LR
+    subgraph P1["Bridge ports"]
+        direction TB
+        A["<b>LAN1</b><br/><i>Ethernet port</i>"]
+        B["<b>LAN2</b><br/><i>Ethernet port</i>"]
+        C["<b>Wi-Fi</b><br/><i>wireless interface</i>"]
+    end
+
+    D["<b>br-lan</b><br/><i>L2 bridge</i>"]
+    E["<b>Router</b><br/><i>IP 192.168.1.1/24</i>"]
+
+    A -- "member" --> D
+    B -- "member" --> D
+    C -- "member" --> D
+    D -- "L3 interface" --> E
+
+    classDef port  fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef br    fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef rt    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A,B,C port
+    class D br
+    class E rt
+    class P1 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 Wi-Fi does not appear in `list ports`: netifd **automatically adds** the wlan interface to whichever bridge the logical interface referenced by `option network` lives on (see section 9). Don't manually put `wlan0` in `ports`.
@@ -632,12 +719,36 @@ config bridge-vlan
 
 **Topology:**
 
-```text
-                      trunk (VLAN 10,20 tagged)
-OpenWrt lan4 ---------------------------- Managed Switch
-   |                                        /         \
- lan1 (VLAN10 untagged)                 VLAN10        VLAN20
-                                       access port   access port
+```mermaid
+flowchart LR
+    subgraph P1["OpenWrt router"]
+        direction TB
+        L4["<b>lan4</b><br/><i>trunk port</i>"]
+        L1["<b>lan1</b><br/><i>VLAN 10 untagged</i>"]
+    end
+
+    subgraph P2["Managed switch"]
+        direction TB
+        SW["<b>Managed Switch</b><br/><i>802.1Q</i>"]
+        V10["<b>Access port</b><br/><i>VLAN 10</i>"]
+        V20["<b>Access port</b><br/><i>VLAN 20</i>"]
+        SW -- "untagged" --> V10
+        SW -- "untagged" --> V20
+    end
+
+    L4 == "trunk: VLAN 10, 20 tagged" ==> SW
+
+    classDef port  fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef trunk fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef sw    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class L1,V10,V20 port
+    class L4 trunk
+    class SW sw
+    class P1,P2 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 ---
@@ -848,14 +959,35 @@ Technical points:
 
 Many carriers (especially FTTH) require PPPoE to run inside a specific VLAN ID.
 
-```text
-Ethernet (wan)
-   ↓
-VLAN (wan.<vid>, 802.1Q)
-   ↓
-PPPoE (pppoe-wan)
-   ↓
-WAN (interface 'wan')
+```mermaid
+flowchart LR
+    subgraph P1["Link layer"]
+        direction TB
+        A["<b>Ethernet</b><br/><i>wan</i>"]
+        B["<b>VLAN</b><br/><i>wan.&lt;vid&gt;, 802.1Q</i>"]
+        A -- "tag" --> B
+    end
+
+    subgraph P2["Logical interface"]
+        direction TB
+        C["<b>PPPoE</b><br/><i>pppoe-wan</i>"]
+        D["<b>WAN</b><br/><i>interface 'wan'</i>"]
+        C -- "bind" --> D
+    end
+
+    P1 -- "encapsulate" --> P2
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef base  fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,C mid
+    class D base
+    class P1,P2 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 Two ways to declare it, **with device names being platform-dependent**:
@@ -979,12 +1111,42 @@ Other important AP options: `isolate '1'` (client isolation, blocks L2 between c
 
 ---
 
-```text
-wifi-device + wifi-iface
-        ↓  (netifd wireless handler, e.g. mac80211.sh)
- /var/run/hostapd-phy0.conf  (and wpa_supplicant-*.conf)
-        ↓
- hostapd / wpa_supplicant  ──nl80211──►  mac80211/cfg80211 ──► driver ──► radio
+```mermaid
+flowchart LR
+    subgraph P1["Configuration"]
+        direction TB
+        A["<b>wifi-device + wifi-iface</b><br/><i>/etc/config/wireless</i>"]
+        B["<b>Generated config</b><br/><i>/var/run/hostapd-phy0.conf<br/>wpa_supplicant-*.conf</i>"]
+        A -- "netifd wireless handler<br/>(e.g. mac80211.sh)" --> B
+    end
+
+    subgraph P2["Userspace daemons"]
+        direction TB
+        C["<b>hostapd / wpa_supplicant</b><br/><i>AP and station control</i>"]
+    end
+
+    subgraph P3["Kernel and hardware"]
+        direction TB
+        D["<b>mac80211 / cfg80211</b><br/><i>wireless stack</i>"]
+        E["<b>Driver</b><br/><i>e.g. ath10k, mt76</i>"]
+        F["<b>Radio</b><br/><i>RF hardware</i>"]
+        D --> E --> F
+    end
+
+    P1 -- "read by" --> P2
+    P2 -- "nl80211" --> P3
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef base  fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,C,D,E mid
+    class F base
+    class P1,P2,P3 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 See the config actually in use with `cat /var/run/hostapd-phy0.conf`. This is the quickest way to see which options really reach hostapd.
@@ -995,13 +1157,30 @@ See the config actually in use with `cat /var/run/hostapd-phy0.conf`. This is th
 
 ---
 
-```text
-          OpenWrt
-             |
-   +---------+---------+
-   |         |         |
- Main       IoT      Guest
- VLAN10    VLAN20    VLAN30
+```mermaid
+flowchart TD
+    R["<b>OpenWrt</b><br/><i>router</i>"]
+
+    subgraph P1["VLAN segments"]
+        direction LR
+        A["<b>Main</b><br/><i>VLAN 10</i>"]
+        B["<b>IoT</b><br/><i>VLAN 20</i>"]
+        C["<b>Guest</b><br/><i>VLAN 30</i>"]
+    end
+
+    R --> A
+    R --> B
+    R --> C
+
+    classDef root  fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef vlan  fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class R root
+    class A,B,C vlan
+    class P1 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 ---
@@ -1010,18 +1189,43 @@ See the config actually in use with `cat /var/run/hostapd-phy0.conf`. This is th
 
 ---
 
-```text
-SSID
- ↓
-wifi-iface        (wireless: option network '<name>')
- ↓
-network           (network: config interface '<name>')
- ↓
-L3 interface      (IP, DHCP pool, routes)
- ↓
-VLAN              (device br-lan.<vid> with bridge-vlan <vid>)
- ↓
-firewall zone     (zone: list network '<name>')
+```mermaid
+flowchart LR
+    subgraph P1["Wireless"]
+        direction TB
+        A["<b>SSID</b><br/><i>wireless network name</i>"]
+        B["<b>wifi-iface</b><br/><i>wireless: option network '&lt;name&gt;'</i>"]
+        A -- "defines" --> B
+    end
+
+    subgraph P2["Network"]
+        direction TB
+        C["<b>network</b><br/><i>network: config interface '&lt;name&gt;'</i>"]
+        D["<b>L3 interface</b><br/><i>IP, DHCP pool, routes</i>"]
+        C -- "provides" --> D
+    end
+
+    subgraph P3["Segmentation and policy"]
+        direction TB
+        E["<b>VLAN</b><br/><i>device br-lan.&lt;vid&gt;<br/>with bridge-vlan &lt;vid&gt;</i>"]
+        F["<b>firewall zone</b><br/><i>zone: list network '&lt;name&gt;'</i>"]
+        E -- "zone binding" --> F
+    end
+
+    P1 -- "attach to" --> P2
+    P2 -- "mapped to" --> P3
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef base  fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,C,D,E mid
+    class F base
+    class P1,P2,P3 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 Each arrow is **a place where things can go wrong**:
@@ -1136,18 +1340,38 @@ config wifi-iface 'guest_2g'
 
 ---
 
-```text
-Guest Wi-Fi
-     |
- VLAN 30 (or a local bridge)
-     |
-192.168.30.0/24
-     |
- Firewall
-   /     \
- ALLOW   DROP
-   |       |
- Internet  LAN
+```mermaid
+flowchart LR
+    subgraph P1["Guest network"]
+        direction TB
+        A["<b>Guest Wi-Fi</b><br/><i>SSID</i>"]
+        B["<b>VLAN 30</b><br/><i>or a local bridge</i>"]
+        C["<b>Subnet</b><br/><i>192.168.30.0/24</i>"]
+        A --> B --> C
+    end
+
+    subgraph P2["Policy"]
+        direction TB
+        F["<b>Firewall</b><br/><i>zone guest</i>"]
+        I["<b>Internet</b><br/><i>wan zone</i>"]
+        L["<b>LAN</b><br/><i>private network</i>"]
+    end
+
+    P1 -- "traffic" --> P2
+    F -- "ALLOW" --> I
+    F -- "DROP" --> L
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef fw    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,C,I,L mid
+    class F fw
+    class P1,P2 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 ---
@@ -1255,14 +1479,37 @@ Explanation:
 
 ---
 
-```text
-Main Router (NAT, DHCP, DNS, firewall)
-     |
- Ethernet
-     |
- OpenWrt  (Dumb AP: bridge + Wi-Fi only)
-  /     \
-LAN     Wi-Fi
+```mermaid
+flowchart LR
+    subgraph P1["Upstream"]
+        direction TB
+        A["<b>Main Router</b><br/><i>NAT, DHCP, DNS, firewall</i>"]
+        B["<b>Ethernet</b><br/><i>uplink cable</i>"]
+        A --> B
+    end
+
+    subgraph P2["Dumb AP"]
+        direction TB
+        C["<b>OpenWrt</b><br/><i>bridge + Wi-Fi only</i>"]
+        D["<b>LAN</b><br/><i>wired ports</i>"]
+        E["<b>Wi-Fi</b><br/><i>wireless clients</i>"]
+        C --> D
+        C --> E
+    end
+
+    P1 -- "bridged" --> P2
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef ap    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,D,E mid
+    class C ap
+    class P1,P2 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 ---
@@ -1344,16 +1591,41 @@ Disable unused services:
 
 ---
 
-```text
-Internet
-   |
- WAN (device 'wan', DHCP/PPPoE/static)
-   |
-OpenWrt  (firewall + NAT)
-   |
- NAT
-   |
- LAN (br-lan, 192.168.1.0/24, DHCP server)
+```mermaid
+flowchart LR
+    subgraph P1["Upstream"]
+        direction TB
+        A["<b>Internet</b><br/><i>external network</i>"]
+        B["<b>WAN</b><br/><i>device 'wan'<br/>DHCP / PPPoE / static</i>"]
+        A --> B
+    end
+
+    subgraph P2["Router"]
+        direction TB
+        C["<b>OpenWrt</b><br/><i>firewall + NAT</i>"]
+        D["<b>NAT</b><br/><i>address translation</i>"]
+        C --> D
+    end
+
+    subgraph P3["Local network"]
+        direction TB
+        E["<b>LAN</b><br/><i>br-lan, 192.168.1.0/24<br/>DHCP server</i>"]
+    end
+
+    P1 -- "uplink" --> P2
+    P2 -- "translated" --> P3
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef rt    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,D mid
+    class C,E rt
+    class P1,P2,P3 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 ---
@@ -1427,17 +1699,42 @@ config dhcp 'wan'
 
 ---
 
-```text
-Client (192.168.1.50)
- ↓  dst 8.8.8.8 via gateway 192.168.1.1
-LAN (br-lan)
- ↓  netfilter prerouting → routing decision: not local → FORWARD
-Firewall forwarding   (forward_lan: zone lan → wan permitted by `config forwarding`)
- ↓  postrouting: srcnat_wan (masquerade: 192.168.1.50 → wan's IP)
-NAT                   (conntrack remembers the mapping to handle return packets)
- ↓
-WAN → Internet
- ↑  return packet: conntrack match → reverse NAT → forwarded to the client
+```mermaid
+flowchart LR
+    subgraph P1["Ingress"]
+        direction TB
+        A["<b>Client</b><br/><i>192.168.1.50<br/>dst 8.8.8.8 via gateway 192.168.1.1</i>"]
+        B["<b>LAN</b><br/><i>br-lan<br/>prerouting → routing decision:<br/>not local → FORWARD</i>"]
+        A --> B
+    end
+
+    subgraph P2["Router processing"]
+        direction TB
+        C["<b>Firewall forwarding</b><br/><i>forward_lan: zone lan → wan<br/>permitted by config forwarding</i>"]
+        D["<b>NAT</b><br/><i>postrouting: srcnat_wan<br/>masquerade 192.168.1.50 → wan IP<br/>conntrack remembers the mapping</i>"]
+        C --> D
+    end
+
+    subgraph P3["Egress"]
+        direction TB
+        E["<b>WAN → Internet</b><br/><i>packet leaves with wan IP</i>"]
+    end
+
+    P1 -- "FORWARD" --> P2
+    P2 -- "translated" --> P3
+    P3 -. "return packet: conntrack match<br/>→ reverse NAT → forwarded to client" .-> P1
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef base  fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,C,D mid
+    class E base
+    class P1,P2,P3 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 Key point: **return traffic needs no separate rule**, thanks to conntrack (`ct state established,related accept`). Only *initiating* (NEW) packets go through policy checks.
@@ -1461,14 +1758,42 @@ logread -e dnsmasq             # DHCP request/offer
 
 ---
 
-```text
-Upstream AP (192.168.0.0/24)
-     |
-   Wi-Fi (STA link)
-     |
- OpenWrt   (WAN side = wlan STA, LAN side = Ethernet + own AP)
-     |
- Ethernet LAN (192.168.50.0/24)
+```mermaid
+flowchart LR
+    subgraph P1["Upstream"]
+        direction TB
+        A["<b>Upstream AP</b><br/><i>192.168.0.0/24</i>"]
+        B["<b>Wi-Fi</b><br/><i>STA link</i>"]
+        A --> B
+    end
+
+    subgraph P2["OpenWrt router"]
+        direction TB
+        W["<b>WAN side</b><br/><i>wlan STA</i>"]
+        C["<b>OpenWrt</b><br/><i>routing between WAN and LAN</i>"]
+        L["<b>LAN side</b><br/><i>Ethernet + own AP</i>"]
+        W --> C --> L
+    end
+
+    subgraph P3["Local network"]
+        direction TB
+        E["<b>Ethernet LAN</b><br/><i>192.168.50.0/24</i>"]
+    end
+
+    P1 -- "associate" --> P2
+    P2 -- "routed" --> P3
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef rt    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,W,L mid
+    class C,E rt
+    class P1,P2,P3 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 ---
@@ -1525,14 +1850,42 @@ Why the distinction matters: **an ordinary 802.11 STA (3-address mode) cannot br
 
 This section covers **architecture** only. `[version-dependent]` / `[package-dependent]` Not every OpenWrt release has the same UCI syntax or the same packages.
 
-```text
-           Controller (gateway / main router)
-               |
-        +------+------+
-        |             |
-       AP1           AP2
-        |             |
-       STA <--- Wi-Fi --> Backhaul
+```mermaid
+flowchart LR
+    subgraph P1["Core"]
+        direction TB
+        C["<b>Controller</b><br/><i>gateway / main router</i>"]
+    end
+
+    subgraph P2["Access points"]
+        direction TB
+        A1["<b>AP1</b><br/><i>access point</i>"]
+        A2["<b>AP2</b><br/><i>access point</i>"]
+    end
+
+    subgraph P3["Wireless link"]
+        direction TB
+        S["<b>STA</b><br/><i>client station</i>"]
+        B["<b>Backhaul</b><br/><i>Wi-Fi link between APs</i>"]
+        S <-- "Wi-Fi" --> B
+    end
+
+    C --> A1
+    C --> A2
+    A1 --> S
+    A2 --> B
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef base  fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class C top
+    class A1,A2,S mid
+    class B base
+    class P1,P2,P3 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 ---
@@ -1615,16 +1968,44 @@ Don't confuse:
 | **DHCPv6-PD (IA_PD)** | The ISP **delegates a prefix** (e.g. `/56`, `/60`, `/64`) to the router |
 | **Stateless DHCPv6** | Provides information only (DNS); addresses come from SLAAC |
 
-```text
-ISP
- |  DHCPv6-PD (e.g. 2001:db8:1234:5600::/56)
- |
-OpenWrt (odhcp6c on WAN, odhcpd on LAN)
- |  splits the prefix: ip6assign '60' → each LAN gets a child /64
- |
-LAN (RA + SLAAC / DHCPv6)
- |
-IPv6 clients
+```mermaid
+flowchart LR
+    subgraph P1["Upstream"]
+        direction TB
+        A["<b>ISP</b><br/><i>2001:db8:1234:5600::/56</i>"]
+        B["<b>DHCPv6-PD</b><br/><i>prefix delegation</i>"]
+        A --> B
+    end
+
+    subgraph P2["OpenWrt router"]
+        direction TB
+        W["<b>WAN side</b><br/><i>odhcp6c</i>"]
+        C["<b>OpenWrt</b><br/><i>splits the prefix: ip6assign '60'</i>"]
+        L["<b>LAN side</b><br/><i>odhcpd</i>"]
+        W --> C --> L
+    end
+
+    subgraph P3["Local network"]
+        direction TB
+        E["<b>LAN</b><br/><i>RA + SLAAC / DHCPv6</i>"]
+        F["<b>IPv6 clients</b><br/><i>child /64 per LAN</i>"]
+        E --> F
+    end
+
+    P1 -- "delegate" --> P2
+    P2 -- "advertised" --> P3
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef rt    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A top
+    class B,W,L,F mid
+    class C,E rt
+    class P1,P2,P3 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 ---
@@ -1701,16 +2082,37 @@ Common sign: wan6 has an `ipv6-prefix` but the LAN has no global address → che
 
 ---
 
-```text
-          ISP1
-            |
-          wan1  (metric 10)
-            \
-             OpenWrt
-            /
-          wan2  (metric 20)
-            |
-          ISP2
+```mermaid
+flowchart LR
+    subgraph P1["Upstream"]
+        direction TB
+        A1["<b>ISP1</b><br/><i>primary uplink</i>"]
+        A2["<b>ISP2</b><br/><i>backup uplink</i>"]
+    end
+
+    subgraph P2["OpenWrt router"]
+        direction TB
+        W1["<b>wan1</b><br/><i>metric 10</i>"]
+        W2["<b>wan2</b><br/><i>metric 20</i>"]
+        C["<b>OpenWrt</b><br/><i>lower metric wins the default route</i>"]
+        W1 --> C
+        W2 --> C
+    end
+
+    A1 -- "uplink" --> W1
+    A2 -- "uplink" --> W2
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef rt    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A1,A2 top
+    class W1,W2 mid
+    class C rt
+    class P1,P2 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 ---
@@ -1803,18 +2205,54 @@ config rule 'default_rule'
 
 fw4 generates the table `inet fw4` (IPv4 + IPv6 together):
 
-```text
-                     ┌──────────────── prerouting ────────────────┐
- packet in ──► raw/mangle ──► dstnat (DNAT / port forward) ────────┤
-                                                                   │
-                                           routing decision        │
-                                      ┌───────────┴────────────┐
-                                      ▼                        ▼
-                                    input                   forward ───► postrouting
-                                      │                        │       (srcnat: masq)
-                              local process                    │             │
-                                      │                        │             ▼
-                                      └────────► output ───────┴──────── packet out
+```mermaid
+flowchart LR
+    IN(["<b>packet in</b>"])
+    OUT(["<b>packet out</b>"])
+
+    subgraph P1["prerouting"]
+        direction TB
+        A["<b>raw / mangle</b><br/><i>conntrack, marking</i>"]
+        B["<b>dstnat</b><br/><i>DNAT / port forward</i>"]
+        A --> B
+    end
+
+    R{"<b>routing decision</b>"}
+
+    subgraph P2["Local host"]
+        direction TB
+        I["<b>input</b><br/><i>to this router</i>"]
+        LP["<b>local process</b><br/><i>dnsmasq, uhttpd, …</i>"]
+        O["<b>output</b><br/><i>from this router</i>"]
+        I --> LP --> O
+    end
+
+    F["<b>forward</b><br/><i>LAN ↔ WAN traffic</i>"]
+
+    subgraph P3["postrouting"]
+        direction TB
+        S["<b>srcnat</b><br/><i>masquerade</i>"]
+    end
+
+    IN --> A
+    B --> R
+    R -- "for me" --> I
+    R -- "pass through" --> F
+    F --> S
+    O --> S
+    S --> OUT
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef rt    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class IN,OUT top
+    class A,I,LP,O mid
+    class B,R,F,S rt
+    class P1,P2,P3 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 Dispatch: each main chain jumps into per-zone chains based on the **ingress/egress device name** (`iifname "br-lan" jump input_lan`…). A zone's `network` is a *logical interface name*; fw4 resolves it to real devices through netifd at load time. Therefore **changing a device/VLAN without reloading the firewall** can leave the ruleset pointing at the wrong place.
@@ -1899,13 +2337,43 @@ config redirect
 
 **Packet flow:**
 
-```text
-Internet client ──► WAN_IP:8080
-  1. prerouting → dstnat_wan : DNAT  WAN_IP:8080 → 192.168.1.100:80 (conntrack stores the mapping)
-  2. routing decision: destination 192.168.1.100 is not local → FORWARD
-  3. forward chain : fw4 accepts DNATed packets (ct status dnat accept)
-                     (no separate `forwarding wan→lan` needed)
-  4. LAN host receives and replies → conntrack reverse-NAT → leaves via WAN with src WAN_IP:8080
+```mermaid
+flowchart LR
+    subgraph P1["Internet"]
+        direction TB
+        A["<b>Internet client</b><br/><i>connects to WAN_IP:8080</i>"]
+    end
+
+    subgraph P2["OpenWrt router"]
+        direction TB
+        D["<b>1. prerouting → dstnat_wan</b><br/><i>DNAT WAN_IP:8080 → 192.168.1.100:80</i><br/><i>conntrack stores the mapping</i>"]
+        R{"<b>2. routing decision</b><br/><i>192.168.1.100 is not local</i>"}
+        F["<b>3. forward chain</b><br/><i>fw4: ct status dnat accept</i><br/><i>no forwarding wan→lan needed</i>"]
+        N["<b>4. conntrack reverse-NAT</b><br/><i>src rewritten to WAN_IP:8080</i>"]
+        D --> R -- "FORWARD" --> F
+    end
+
+    subgraph P3["LAN"]
+        direction TB
+        H["<b>LAN host</b><br/><i>192.168.1.100:80</i>"]
+    end
+
+    A -- "request" --> D
+    F -- "delivered" --> H
+    H -- "reply" --> N
+    N -- "leaves via WAN" --> A
+
+    classDef top   fill:#e8eef5,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef mid   fill:#ffffff,stroke:#2c3e50,stroke-width:1.2px,color:#1a1a1a;
+    classDef rt    fill:#eef2f7,stroke:#2c3e50,stroke-width:2px,color:#1a1a1a;
+    classDef plane fill:#f5f7fa,stroke:#2c3e50,stroke-width:1.5px,color:#1a1a1a;
+
+    class A,H top
+    class D,N mid
+    class R,F rt
+    class P1,P2,P3 plane
+
+    linkStyle default stroke:#2c3e50,stroke-width:1.5px;
 ```
 
 Notes:
