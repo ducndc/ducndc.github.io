@@ -323,25 +323,22 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 	</script>
 
 	<script>
-	import mermaid from "mermaid";
-
-	document.addEventListener("DOMContentLoaded", () => {
+	document.addEventListener("DOMContentLoaded", async () => {
 		const blocks = document.querySelectorAll('pre[data-language="mermaid"]');
 		if (blocks.length === 0) return;
 
 		blocks.forEach((pre) => {
 			const code = pre.querySelector("code");
-			const source = (code ?? pre).textContent ?? "";
-
 			const div = document.createElement("div");
 			div.className = "mermaid";
-			div.textContent = source;
-
+			div.textContent = (code ?? pre).textContent ?? "";
 			pre.replaceWith(div);
 		});
 
+		// Mermaid is large; only fetch it on posts that actually have diagrams.
+		const { default: mermaid } = await import("mermaid");
 		mermaid.initialize({ startOnLoad: false, theme: "default" });
-		mermaid.run({ querySelector: ".mermaid" });
+		await mermaid.run({ querySelector: ".mermaid" });
 	});
 	</script>
 </body>
