@@ -2,7 +2,7 @@
 title: 'Wi-Fi Captive Portal'
 description: 'Wi-Fi Captive Portal: Deep Technical Analysis'
 pubDate: 'Oct 23 2026'
-heroImage: '../../assets/Wds.png'
+heroImage: '../../assets/captive_portal.jpg'
 category: 'Wi-Fi'
 ---
 
