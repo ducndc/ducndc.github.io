@@ -1,0 +1,1 @@
+import{_ as a,j as o}from"./BlogPost.astro_astro_type_script_index_0_lang.Dgx919M_.js";var g=a((t,e)=>{let n;return e==="sandbox"&&(n=o("#i"+t)),(e==="sandbox"?o(n.nodes()[0].contentDocument.body):o("body")).select(`[id="${t}"]`)},"getDiagramElement");export{g};

@@ -144,6 +144,14 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 			border-radius: 8px;
 		}
 
+		.prose :global(.mermaid) {
+			display: flex;
+			justify-content: center;
+			max-width: 100%;
+			overflow-x: auto;
+			margin: 1.5rem 0;
+		}
+
 		.title {
 			margin-bottom: 2rem;
 		}
@@ -311,6 +319,29 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 		);
 
 		headings.forEach(h => observer.observe(h));
+	});
+	</script>
+
+	<script>
+	import mermaid from "mermaid";
+
+	document.addEventListener("DOMContentLoaded", () => {
+		const blocks = document.querySelectorAll('pre[data-language="mermaid"]');
+		if (blocks.length === 0) return;
+
+		blocks.forEach((pre) => {
+			const code = pre.querySelector("code");
+			const source = (code ?? pre).textContent ?? "";
+
+			const div = document.createElement("div");
+			div.className = "mermaid";
+			div.textContent = source;
+
+			pre.replaceWith(div);
+		});
+
+		mermaid.initialize({ startOnLoad: false, theme: "default" });
+		mermaid.run({ querySelector: ".mermaid" });
 	});
 	</script>
 </body>

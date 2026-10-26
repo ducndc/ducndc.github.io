@@ -200,6 +200,136 @@ Gateway-based enforcement with an optionally external or cloud-hosted portal UI 
 
 ---
 
+### Captive Portal on OpenWrt with uspot + spotfilter
+
+---
+
+| | |
+|---|---|
+| **Scope** | Design, porting and hardening of a production captive portal for OpenWrt-based access points, built on **uspot** (control plane) and **spotfilter** (eBPF data plane) |
+| **Audience** | Firmware / platform engineers, portal & RADIUS backend engineers, QA |
+| **Baseline code** | `uspot` (OpenWiFi, J. Crispin) and `spotfilter` (F. Fietkau) as provided in `uspot.zip` and `spotfilter.zip` |
+| **Target platform** | Qualcomm-based OpenWrt AP (fw4/nftables, NSS ECM present) |
+| **Status** | Draft for development — sections marked **[VERIFY]** must be confirmed on target hardware |
+
+---
+
+#### Why is the uspot
+
+---
+
+| Concern | CoovaChilli (current) | uspot + spotfilter (target) |
+|---|---|---|
+| Client data path | Every client packet passes through the `chilli` process (raw socket → `tun0`) | Kernel forwarding; packets never enter userspace |
+| Throughput | Bounded by one userspace process on the AP CPU | Bounded by kernel / hardware forwarding |
+| DHCP for clients | Chilli's own DHCP server | Standard OpenWrt `dnsmasq` |
+| Access decision | Per packet in userspace | eBPF classifier sets a firewall mark; fw4 enforces |
+| fw4 / nftables integration | Indirect (`iptables-nft` shims, duplicate-packet RST issue required an extra prerouting rule) | Native: one mark, a handful of fw4 rules |
+| Accounting counters | Chilli | eBPF per-client counters |
+| Code base | C, largely unmaintained (v1.6 on target) | ucode + small C/eBPF components, part of the OpenWrt/OpenWiFi ecosystem |
+
+
+---
+
+####  System Architecture
+
+---
+
+```mermaid
+flowchart TB
+    C["STA"]
+    P["External portal<br/>UAM web server"]
+    subgraph AP["OpenWrt access point"]
+        direction LR
+        SF["spotfilter<br/>eBPF data plane"]
+        UP["uspot<br/>control plane"]
+        SF -. "client state via ubus" .- UP
+    end
+    I(("Internet"))
+    R["RADIUS server<br/>auth + accounting + CoA"]
+ 
+    C -- "1 - WiFi, DHCP, DNS, user traffic" --> SF
+    C -- "2 - HTTP redirects, /logon, /logoff" --> UP
+    C -- "3 - HTTPS login page" --> P
+    SF -- "4 - authenticated traffic, NAT" --> I
+    UP -- "5 - Access-Request, Accounting-Request" --> R
+    R -- "6 - Disconnect / CoA via hostapd DAS" --> UP
+```
+
+| # | Interaction |
+|---|---|
+| 1 | Client associates and sends all its packets through the spotfilter classifier on the WiFi netdev |
+| 2 | uspot (uhttpd handlers) redirects garden clients and receives the `/logon` request built by the portal |
+| 3 | Client loads the login page from the external portal (whitelisted host); the portal answers with a 302 to the AP's `/logon` |
+| 4 | After login, packets carry mark 1 and are forwarded and NATed to the Internet |
+| 5 | uspot authenticates the user and reports accounting to RADIUS; Access-Accept carries the policy attributes |
+| 6 | The backend disconnects a client through hostapd's Dynamic Authorization Server |
+
+---
+
+#### Control plane (uspot)
+
+---
+
+```mermaid
+flowchart TB
+    UH["uhttpd + ucode handlers<br/>handler-cpd.uc :80<br/>handler.uc /hotspot<br/>handler-uam.uc :3990"]
+    PO["portal.uc<br/>shared library"]
+    UAM["uam.so<br/>MD5, CHAP"]
+    RC["radius-client<br/>C, libradcli"]
+    UD["uspot.uc daemon<br/>accounting, timeouts, quota"]
+    HP["hostapd<br/>RADIUS DAS"]
+    RL["ratelimit<br/>per-client shaping"]
+    SFD["spotfilter daemon<br/>see 3.2.2"]
+    CT["conntrack"]
+    R["RADIUS server"]
+ 
+    UH --> PO
+    PO --> UAM
+    PO --> RC
+    PO -- "client_set / client_get" --> SFD
+    PO -- "uspot client_add / remove" --> UD
+    UD --> RC
+    RC -- "RADIUS" --> R
+    UD -- "client_list / client_set" --> SFD
+    UD -- "client_set / delete" --> RL
+    HP -- "notify coa" --> UD
+    UD -- "conntrack -D on kick" --> CT
+```
+
+---
+
+#### Data plane (spotfilter)
+
+---
+
+```mermaid
+flowchart TB
+    CLI["captive generate<br/>uspot UCI to JSON"]
+    SFD["spotfilter daemon<br/>station tracking<br/>DHCP / ARP / NA / DNS snooping"]
+    DM["dnsmasq<br/>DHCP + DNS"]
+    subgraph KS["Kernel"]
+        direction TB
+        MAPS[("BPF maps<br/>client, class, whitelist")]
+        BPFI["spotfilter_in<br/>tc ingress on wlanX"]
+        BPFE["spotfilter_out<br/>tc egress on wlanX"]
+        IFB["spotfilter-ifb<br/>snoop device"]
+        FW["fw4 / nftables<br/>mark 1/127"]
+    end
+ 
+    CLI -- "ubus interface_add" --> SFD
+    SFD -- "map updates" --> MAPS
+    MAPS --- BPFI
+    MAPS --- BPFE
+    BPFI -- "clone control packets" --> IFB
+    BPFE -- "clone DHCP and DNS replies" --> IFB
+    IFB -- "AF_PACKET raw socket" --> SFD
+    BPFI -- "skb mark" --> FW
+    DM -. "DHCP ACK, DNS replies" .-> BPFE
+```
+
+---
+
 ### References
 
 ---
