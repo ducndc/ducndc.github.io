@@ -331,7 +331,7 @@ flowchart TB
 
 ---
 
-## Internal/Local Captive Portal
+### Internal/Local Captive Portal
 
 ---
 
@@ -375,7 +375,7 @@ The captive SSID has its **own bridge, IP subnet, DHCP scope and firewall zone**
 
 ---
 
-### Processing Flows
+#### Processing Flows
 
 ---
 
@@ -670,7 +670,7 @@ Rules for customisation:
 - Page bodies are in `/usr/share/uspot/templates/*.ut` (package files; keep a copy of any change, upgrades overwrite them).
 
 ---
-### uspot configuration (local credentials)
+#### uspot configuration (local credentials)
 ---
 
 ```bash
@@ -712,7 +712,7 @@ For a terms-only portal use `auth_mode 'click-to-continue'` and no `credentials`
 Accounts are read by the uspot daemon: after editing them run `/etc/init.d/uspot restart`.
 
 ---
-### Start-up and verification
+#### Start-up and verification
 ---
 
 #### Enable services
@@ -755,10 +755,198 @@ logread -e uspot | tail                              # no errors, no "no client 
 6. After `session_timeout` the MAC disappears from the set and the login page is shown again.
 
 ---
-### Other Authentication Modes
+### External RADIUS authentication
 ---
 
-#### Local Form, RADIUS Check
+Validated in the lab: login page served by the AP (auth_mode 'radius'), user accounts checked by an existing RADIUS server, authentication only (no accounting). Network, firewall, uhttpd, header/footer and uspotfilter are exactly as in sections 4–6 and 8; only the uspot configuration changes and the radcli dictionary is added.
+
+---
+#### Processing Flows
+---
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Client
+    participant H as uhttpd /hotspot
+    participant U as uspot
+    participant RC as radius-client
+    participant R as RADIUS RADIUS_SERVER_IP
+    participant UF as uspotfilter
+ 
+    C->>H: POST username, password
+    H->>U: client_auth
+    U->>RC: request (PAP)
+    RC->>R: Access-Request, UDP 1812
+    R-->>RC: Access-Accept or Reject
+    RC-->>U: result
+    U->>UF: client_set (on Accept)
+    UF-->>C: MAC added to set - Internet
+```
+
+The same `credentials.ut` form is used for `credentials` and `radius` modes; its hidden `action` field is set from `auth_mode`, so no template change is needed.
+
+---
+#### Information for the RADIUS administrator
+---
+
+The AP must be declared as a RADIUS client (NAS) on the server:
+ 
+| Item | Value |
+|---|---|
+| NAS IP (source of RADIUS packets) | IP (AP WAN address) |
+| Shared secret | Agreed with the RADIUS team; letters and digits only, ≥ 16 characters |
+| Port | UDP 1812 (authentication). No accounting |
+| NAS-Identifier | `AP-240B2A000002` |
+| Authentication method | **PAP** (User-Password) must be allowed. On Windows NPS: enable *Unencrypted authentication (PAP, SPAP)* in the network policy |
+| Attributes sent by the AP | User-Name, User-Password, NAS-Identifier, NAS-IP-Address, Called-Station-Id, Calling-Station-Id (client MAC), Framed-IP-Address, NAS-Port-Type = 19 |
+| Optional reply attributes | `Session-Timeout`, `Idle-Timeout`, `WISPr-Bandwidth-Max-Down/Up` (bit/s), `Reply-Message` |
+| Test account | Requested from the RADIUS team |
+
+---
+#### radcli dictionary (mandatory)
+---
+
+`radius-client` reads `/etc/radcli/dictionary` on every request. The OpenWrt `libradcli` package does not ship it. Without it every login fails with `invalid credentials` (see 10.8).
+ 
+**Step 1 — standard dictionary.** The files are plain text and architecture-independent; copy them from any Linux host with radcli installed (e.g. Ubuntu `libradcli4`):
+ 
+```bash
+# on the Ubuntu PC
+sudo apt install libradcli4
+ssh root@<AP> 'mkdir -p /etc/radcli'
+scp -O /etc/radcli/dictionary* root@<AP>:/etc/radcli/
+```
+ 
+On the AP, every file named in an `$INCLUDE` line must exist:
+ 
+```bash
+grep '^\$INCLUDE' /etc/radcli/dictionary
+ls /etc/radcli/
+```
+ 
+**Step 2 — hotspot vendor dictionary.** The radcli set has no WISPr (14122) or ChilliSpot (14559) attributes, which uspot uses. Without them `radius-client` fails with `Failed to lookup attribute key N`.
+ 
+```bash
+cat > /etc/radcli/dictionary.hotspot <<'EOF'
+# WISPr vendor-specific attributes
+VENDOR          WISPr           14122
+ATTRIBUTE       WISPr-Location-ID                       1       string  WISPr
+ATTRIBUTE       WISPr-Location-Name                     2       string  WISPr
+ATTRIBUTE       WISPr-Logoff-URL                        3       string  WISPr
+ATTRIBUTE       WISPr-Redirection-URL                   4       string  WISPr
+ATTRIBUTE       WISPr-Bandwidth-Min-Up                  5       integer WISPr
+ATTRIBUTE       WISPr-Bandwidth-Min-Down                6       integer WISPr
+ATTRIBUTE       WISPr-Bandwidth-Max-Up                  7       integer WISPr
+ATTRIBUTE       WISPr-Bandwidth-Max-Down                8       integer WISPr
+ATTRIBUTE       WISPr-Session-Terminate-Time            9       string  WISPr
+ATTRIBUTE       WISPr-Billing-Class-Of-Service          11      string  WISPr
+ 
+# ChilliSpot vendor-specific attributes
+VENDOR          ChilliSpot      14559
+ATTRIBUTE       ChilliSpot-Max-Input-Octets             1       integer ChilliSpot
+ATTRIBUTE       ChilliSpot-Max-Output-Octets            2       integer ChilliSpot
+ATTRIBUTE       ChilliSpot-Max-Total-Octets             3       integer ChilliSpot
+ATTRIBUTE       ChilliSpot-Bandwidth-Max-Up             4       integer ChilliSpot
+ATTRIBUTE       ChilliSpot-Bandwidth-Max-Down           5       integer ChilliSpot
+ATTRIBUTE       ChilliSpot-Config                       6       string  ChilliSpot
+ATTRIBUTE       ChilliSpot-Lang                         7       string  ChilliSpot
+ATTRIBUTE       ChilliSpot-Version                      8       string  ChilliSpot
+ATTRIBUTE       ChilliSpot-OriginalURL                  9       string  ChilliSpot
+EOF
+ 
+grep -q dictionary.hotspot /etc/radcli/dictionary || \
+  echo '$INCLUDE /etc/radcli/dictionary.hotspot' >> /etc/radcli/dictionary
+grep -c "$(printf '\t')" /etc/radcli/dictionary.hotspot     # must be 0
+```
+ 
+radcli dictionary rules learnt in the lab:
+ 
+| Rule | Consequence if broken |
+|---|---|
+| Vendor attributes use the format `ATTRIBUTE <name> <id> <type> <vendor>` after a `VENDOR <name> <id>` line; `BEGIN-VENDOR` / `END-VENDOR` blocks are not used | `invalid Vendor-Id` |
+| Separate fields with **spaces**. Pasting tab characters into the BusyBox shell triggers tab completion and corrupts the line | `invalid Vendor-Id on line N` |
+| Attribute names must be **shorter than about 32 characters** (`WISPr-Session-Terminate-End-Of-Day`, 34 characters, is rejected and therefore omitted above) | `invalid name length on line N` |
+| Every `$INCLUDE` target must exist | `couldn't open dictionary` |
+ 
+`radius-client` reads the dictionary on each login, so no restart is needed after editing it.
+
+---
+#### uspot Configuration
+---
+
+```bash
+uci set uspot.captive.auth_mode='radius'
+uci set uspot.captive.auth_server='RADIUS_SERVER_IP'
+uci set uspot.captive.auth_port='1812'
+uci set uspot.captive.auth_secret='<SHARED_SECRET>'
+uci set uspot.captive.nasid='AP-240B2A000002'
+uci set uspot.captive.nasmac='24-0B-2A-00-00-02'
+uci set uspot.captive.nas_ip='AP_WAN_IP'
+uci set uspot.captive.mac_format='AA-BB-CC-DD-EE-FF'
+uci -q delete uspot.user1          # local accounts are not used in radius mode
+uci -q delete uspot.user2
+uci commit uspot
+```
+
+Resulting section:
+ 
+```
+config uspot 'captive'
+	option auth_mode 'radius'
+	option interface 'captive'
+	option setname 'uspot'
+	option idle_timeout '900'
+	option session_timeout '3600'
+	option auth_server 'RADIUS_SERVER_IP'
+	option auth_port '1812'
+	option auth_secret '<SHARED_SECRET>'
+	option nasid 'AP-240B2A000002'
+	option nasmac '24-0B-2A-00-00-02'
+	option nas_ip 'AP_WAN_IP'
+	option mac_format 'AA-BB-CC-DD-EE-FF'
+	option debug '0'
+```
+ 
+| Option | Note |
+|---|---|
+| `auth_server`, `auth_secret` | Required in `radius` and `uam` modes |
+| `nasid`, `nasmac` | **Required** in `radius` and `uam` modes; uspot refuses to start without them |
+| `nas_ip` | Makes NAS-IP-Address equal to the address the server sees (WAN `AP_WAN_IP`) instead of the captive address `10.0.0.1`; some servers reject a mismatch |
+| `acct_server`, `acct_secret` | Not set: accounting disabled |
+ 
+No firewall change is needed: RADIUS traffic is generated by the AP itself (zone output ACCEPT) and replies return through conntrack. Check the route first:
+ 
+```bash
+ping -c 3 RADIUS_SERVER_IP
+ip route get RADIUS_SERVER_IP           # dev eth0.35 src AP_WAN_IP
+```
+
+---
+#### Switching mode and Testing
+---
+
+Sessions from the previous mode (for example a phone logged in with a local account) stay valid until they expire. Clear them when switching mode:
+ 
+```bash
+/etc/init.d/uspot stop
+/etc/init.d/uspotfilter restart
+nft flush set inet fw4 uspot
+/etc/init.d/uspot start
+nft list set inet fw4 uspot          # empty
+```
+ 
+Then on the phone: *Forget this network* and rejoin `Free-WiFi`. Test with two SSH sessions:
+ 
+```bash
+tcpdump -ni eth0.35 udp port 1812          # Access-Request / Access-Accept
+logread -f | grep -E "uspot|radcli"         # "allowing client"
+```
+ 
+Expected result: `Access-Request` to RADIUS_SERVER_IP, `Access-Accept` back, `allowing client` in the log, phone MAC in `nft list set inet fw4 uspot`, Internet working.
+
+---
+### External portal (UAM)
 ---
 
 ```
@@ -766,31 +954,14 @@ config uspot 'captive'
 	option auth_mode 'radius'
 	option interface 'captive'
 	option setname 'uspot'
-	option auth_server '35.20.20.134'
+	option auth_server 'EXTERNAL_SERVER_IP'
 	option auth_secret 'RadiusSecret123'
-	option acct_server '35.20.20.134'
-	option acct_secret 'RadiusSecret123'
-	option nasid 'AP-240B2A000002'          # required
-	option nasmac '24-0B-2A-00-00-02'       # required
-```
-
----
-#### External portal (UAM)
----
-
-```
-config uspot 'captive'
-	option auth_mode 'radius'
-	option interface 'captive'
-	option setname 'uspot'
-	option auth_server '35.20.20.134'
-	option auth_secret 'RadiusSecret123'
-	option acct_server '35.20.20.134'
+	option acct_server 'EXTERNAL_SERVER_IP'
 	option acct_secret 'RadiusSecret123'
 	option nasid 'AP-240B2A000002'          # required
 	option nasmac '24-0B-2A-00-00-02'       # required
     option auth_mode 'uam'
-	option uam_server 'http://35.20.20.134/hotspot/login.php'
+	option uam_server 'http://EXTERNAL_SERVER_IP/hotspot/login.php'
 	option uam_secret 'UamSecret456'
 	option uam_port '3990'
 ```
@@ -812,6 +983,149 @@ Also needed: a uhttpd listener on `10.0.0.1:3990` for `/logon` and `/logoff` (ha
  
 Bandwidth per user comes from RADIUS (`WISPr-Bandwidth-Max-Down/Up`, bit/s).
 
+---
+### Troubleshooting
+---
+
+Issues met during the lab deployment, in the order they appeared.
+ 
+```mermaid
+flowchart LR
+    A{"Gets IP?"} -- "yes" --> B{"Login page?"}
+    B -- "yes" --> C{"Login OK?"}
+    C -- "yes" --> D{"Internet?"}
+    A -- "no" --> FA["102"]
+    B -- "no" --> FB["103, 104"]
+    C -- "no" --> FC["105, 108-1011"]
+    D -- "no" --> FD["106"]
+```
+ 
+Follow the checks left to right; the first "no" points to the section to read.
+
+---
+#### 101 uspot crash loop: `missing auth_mode, interface or setname!`
+---
+
+Config written for the old OpenWiFi uspot. Use the section 7 format: add `setname`, remove `list ifname` and `configure_spotfilter`.
+
+---
+#### 102 `dnsmasq-dhcp: no address range available for DHCP request via br-captive`
+---
+
+- `ip addr show br-captive` must show `10.0.0.1/22` (else `/etc/init.d/network reload`).
+- `uci show dhcp.captive` must exist with `interface 'captive'`.
+- Restart dnsmasq after adding the section: `/etc/init.d/dnsmasq restart`.
+- Check `dhcp.@dnsmasq[0].interface` / `notinterface` do not exclude `captive`.
+
+---
+#### 103 Portal not reachable
+---
+
+- `netstat -ltn | grep 10.0.0.1:80` — listener present.
+- `uhttpd.main` must not listen on `0.0.0.0:80`.
+- Firewall redirect `captive_cpd` and rule `captive_in` present.
+
+---
+#### 104 `500 ... Include file not found ... include(header)`
+---
+
+Create `/www-uspot/header.html` and `/www-uspot/footer.html` (section 6.2).
+
+---
+#### 105 `invalid credentials` with correct password
+---
+
+- Each `credentials` section needs **`option uspot '<uspot section name>'`**. `option interface` is ignored.
+- Restart uspot after editing accounts.
+- Username and password are case-sensitive; iOS may capitalise the first letter in the Captive Wi-Fi sheet.
+- Enable `option debug '1'` and watch `logread | grep uspot`.
+
+---
+#### 106 "Connected" page but no Internet / `no client list from uspotfilter!`
+---
+
+Symptoms:
+ 
+- Login succeeded (`allowing client` in log) but the MAC is not in `nft list set inet fw4 uspot`.
+- `ubus list` shows `uspot` but not `uspotfilter`.
+- Warning `no client list from uspotfilter!` every 10 s.
+- Later, the phone always gets the *connected* page without login: uspot cannot expire sessions without the uspotfilter client list, so the stale session stays forever.
+Cause: the **uspotfilter service is not running**.
+ 
+Fix:
+ 
+```bash
+/etc/init.d/uspotfilter enable
+/etc/init.d/uspotfilter start
+/etc/init.d/uspot restart            # clears stale sessions held in memory
+ubus list | grep -i uspot            # uspot and uspotfilter
+```
+ 
+Isolation test (firewall vs uspotfilter): add the MAC manually; if Internet then works, the firewall is correct.
+ 
+```bash
+nft add element inet fw4 uspot '{ aa:bb:cc:dd:ee:ff }'
+nft delete element inet fw4 uspot '{ aa:bb:cc:dd:ee:ff }'
+```
+--- 
+#### 107 Vendor firewall messages
+---
+
+`[firewall] section name not matched` and `No WAN default route found, skipping WAN zone sync` come from the vendor firewall scripts during network reloads. They are harmless if `ip route | grep default` still shows the WAN gateway.
+
+---
+#### 108 RADIUS: `couldn't open dictionary /etc/radcli/dictionary`
+---
+
+```
+uspot-radius: radcli: rc_read_dictionary couldn't open dictionary /etc/radcli/dictionary: No such file or directory
+uspot-radius: Failed to read dictionary!
+uspot: ... - invalid credentials
+```
+ 
+No RADIUS packet is sent; uspot reports every login as invalid. Install the radcli dictionary files.
+
+--- 
+#### 109 RADIUS: `Failed to lookup attribute key N`
+---
+
+```
+uspot-radius: Failed to lookup attribute key 23
+uspot: ... - invalid credentials
+```
+ 
+The dictionary loads but lacks an attribute that `radius-client` uses — in the lab, the WISPr / ChilliSpot vendor attributes. Add `dictionary.hotspot`. To list the attribute names the binary expects:
+ 
+```bash
+grep -ao '[A-Z][A-Za-z]*-[A-Za-z-]*' /usr/bin/radius-client | sort -u
+```
+---
+#### 1010 RADIUS: dictionary syntax errors
+---
+
+| Log | Cause | Fix |
+|---|---|---|
+| `invalid Vendor-Id on line N of dictionary ...` | Tab characters mangled by the shell during paste, or `BEGIN-VENDOR` syntax | Rewrite the file with spaces only, vendor name as last column; check with `grep -c "$(printf '\t')" file` and `head -2 file \| hexdump -C` |
+| `invalid name length on line N` | Attribute name too long (≈ 32 characters) | Remove or shorten that attribute |
+
+--- 
+#### 1011 RADIUS: no reply or Access-Reject
+---
+
+Watch `tcpdump -ni eth0.35 udp port 1812` during a login:
+ 
+| tcpdump | Cause |
+|---|---|
+| No packet at all | Dictionary problem (108–1010) or uspot not restarted after configuration change |
+| Access-Request, no reply | AP not declared as NAS `AP_WAN_IP`, wrong shared secret (servers drop silently), or UDP 1812 blocked on the server side |
+| Access-Reject | Wrong account, or PAP not allowed by the server policy; ask the RADIUS team for the server log |
+
+--- 
+#### 1012 Phone gets Internet without logging in after a mode change
+---
+
+The previous session (e.g. from `credentials` mode) is still valid. Clear sessions and rejoin the SSID.
+ 
 ---
 
 ### References
