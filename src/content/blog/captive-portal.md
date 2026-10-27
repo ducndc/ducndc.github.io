@@ -6,7 +6,7 @@ heroImage: '../../assets/captive_portal.jpg'
 category: 'Wi-Fi'
 ---
 
-### Overview
+## Overview
 
 ---
 
@@ -14,7 +14,7 @@ A captive portal is a Layer-3 gateway policy, not a Wi-Fi feature. The client as
 
 ---
 
-##### Typical Deployments
+### Typical Deployments
 
 ---
 
@@ -120,7 +120,8 @@ Any deviation a redirect, a different body, an empty 200 is read as "captive", a
 
 ---
 
-### System Architecture
+## System Architecture
+
 ---
 
 <div style="text-align: center;">
@@ -133,7 +134,7 @@ The gateway is the only place that sees all guest traffic, has the DHCP bindings
 
 ---
 
-#### Responsibilities
+### Responsibilities
 
 ---
 
@@ -200,7 +201,7 @@ Gateway-based enforcement with an optionally external or cloud-hosted portal UI 
 
 ---
 
-### Captive Portal on OpenWrt with uspot + spotfilter
+## Captive Portal on OpenWrt with uspot + spotfilter
 
 ---
 
@@ -214,7 +215,7 @@ Gateway-based enforcement with an optionally external or cloud-hosted portal UI 
 
 ---
 
-#### Why is the uspot
+### Why is the uspot?
 
 ---
 
@@ -231,7 +232,7 @@ Gateway-based enforcement with an optionally external or cloud-hosted portal UI 
 
 ---
 
-####  System Architecture
+###  System Architecture
 
 ---
 
@@ -267,7 +268,7 @@ flowchart TB
 
 ---
 
-#### Control plane (uspot)
+### Control plane (uspot)
 
 ---
 
@@ -299,7 +300,7 @@ flowchart TB
 
 ---
 
-#### Data plane (spotfilter)
+### Data plane (spotfilter)
 
 ---
 
@@ -327,6 +328,489 @@ flowchart TB
     BPFI -- "skb mark" --> FW
     DM -. "DHCP ACK, DNS replies" .-> BPFE
 ```
+
+---
+
+## Internal/Local Captive Portal
+
+---
+
+```mermaid
+flowchart LR
+    C["WiFi client"]
+    subgraph AP["OpenWrt AP"]
+        direction LR
+        UH["uhttpd<br/>portal"] --> US["uspot"] --> UF["uspotfilter"] --> FW["fw4<br/>set uspot"]
+    end
+    I(("Internet"))
+ 
+    C -- "login page" --> UH
+    C -- "traffic" --> FW
+    FW -- "MAC in set" --> I
+```
+
+---
+
+| Component | Package / file | Role |
+|---|---|---|
+| uhttpd + ucode handlers | `uhttpd-mod-ucode`, `/usr/share/uspot/handler*.uc` | Serves the portal: `/cpd` redirects any garden request, `/hotspot` shows and processes the login form |
+| Templates | `/usr/share/uspot/templates/*.ut` | Login, click, connected, error pages; they include `/www-uspot/header.html` and `footer.html` |
+| uspot daemon | `/usr/share/uspot/uspot.uc` (procd service `uspot`) | Validates credentials (or calls RADIUS), keeps the session table, timeouts, accounting, rate limits |
+| uspotfilter | package `uspotfilter` (separate procd service) | Tracks clients and puts authorised MACs into the nftables set; supplies the client list to uspot |
+| fw4 set | `config ipset` named like `setname` | MACs of authorised clients; the firewall forwards only these |
+| uspot-das | `/usr/bin/uspot-das` | RADIUS Dynamic Authorization (CoA/Disconnect); started only when `das_secret` is set |
+| dnsmasq | standard OpenWrt | DHCP and DNS for captive clients |
+
+---
+
+```mermaid
+flowchart LR
+    W1["wlan5<br/>Free-WiFi, open, isolated"] --> BC["br-captive<br/>10.0.0.1/22<br/>zone captive"]
+    W2["wlan1 / wlan9<br/>private SSIDs"] --> BL["br-lan<br/>192.168.2.1/24<br/>zone lan"]
+    BC -- "only MACs in set uspot" --> WAN["wan0 / eth0.35<br/>masquerade"]
+    BL --> WAN
+```
+
+The captive SSID has its **own bridge, IP subnet, DHCP scope and firewall zone**. Private SSIDs are not affected.
+
+---
+
+### Processing Flows
+
+---
+
+#### Client joins the captive network
+
+---
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Client
+    participant D as dnsmasq
+    participant F as fw4
+    participant H as uhttpd /cpd
+ 
+    C->>D: DHCP Discover / Request on br-captive
+    D-->>C: DHCP ACK 10.0.0.x, gateway and DNS 10.0.0.1
+    C->>D: DNS query (allowed before login)
+    D-->>C: DNS answer
+    C->>F: HTTP GET captive-detection URL
+    F->>H: MAC not in set uspot - DNAT to 10.0.0.1:80
+    H-->>C: 302 to http://10.0.0.1/hotspot
+    Note over C: OS opens the Captive Wi-Fi sheet
+```
+
+---
+
+#### Login with local credentials
+
+---
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as Client
+    participant H as uhttpd /hotspot
+    participant U as uspot daemon
+    participant UF as uspotfilter
+    participant F as fw4 set uspot
+ 
+    C->>H: GET /hotspot
+    H->>U: client state for this MAC
+    U-->>H: not authenticated
+    H-->>C: credentials page (header.html + form + footer.html)
+    C->>H: POST action=credentials, username, password
+    H->>U: ubus uspot client_auth
+    U->>U: match credentials sections with option uspot = captive
+    alt match
+        U->>U: create client (session, timeouts)
+        U->>UF: ubus uspotfilter client_set
+        UF->>F: add client MAC
+        H-->>C: allowed - redirect / connected page
+        C->>F: traffic to Internet - forwarded
+    else no match
+        H-->>C: credentials page again (error flag)
+    end
+```
+
+---
+
+#### Firewall Decision
+
+---
+
+```mermaid
+flowchart LR
+    P["Client packet"] --> A{"To AP?"}
+    A -- "yes" --> B{"DHCP, DNS<br/>or HTTP?"}
+    B -- "yes" --> OK["ACCEPT"]
+    B -- "no" --> R["REJECT"]
+    A -- "no" --> C{"MAC in<br/>set uspot?"}
+    C -- "yes" --> FWD["FORWARD + NAT"]
+    C -- "no" --> D{"HTTP?"}
+    D -- "yes" --> DNAT["DNAT to portal"]
+    D -- "no" --> R
+```
+
+Ports: DHCP = UDP 67, DNS = UDP/TCP 53, HTTP = TCP 80. The DNAT target is `10.0.0.1:80`, where `/cpd` answers with a 302 to `/hotspot`.
+
+---
+
+#### Session End
+
+---
+
+```mermaid
+flowchart LR
+    T["Every 10 s"] --> L["Client list<br/>from uspotfilter"]
+    L --> X{"Timeout<br/>or gone?"}
+    X -- "yes" --> K["Remove client"]
+    X -- "no" --> T
+```
+
+"Timeout" means `session_timeout` or `idle_timeout` exceeded; "gone" means the client left the WiFi. When a client is removed, uspotfilter takes its MAC out of the set and the client sees the login page again.
+ 
+**Important:** this loop depends on the client list from uspotfilter. If uspotfilter is not running, uspot logs `no client list from uspotfilter!` every 10 s and **never expires sessions**
+
+---
+#### Prerequisites Packages
+---
+
+```
+uspot uspotfilter uhttpd uhttpd-mod-ucode dnsmasq
+ucode-mod-bpf ucode-mod-fs ucode-mod-math ucode-mod-nl80211 ucode-mod-rtnl
+ucode-mod-struct ucode-mod-ubus ucode-mod-uci ucode-mod-uloop ucode-mod-log
+kmod-sched-bpf libbpf1
+```
+
+---
+#### Captive network and WiFi
+---
+
+```bash
+# Bridge with IP address (uspot uses OpenWrt DHCP, unlike CoovaChilli)
+uci set network.captive_dev=device
+uci set network.captive_dev.name='br-captive'
+uci set network.captive_dev.type='bridge'
+uci set network.captive_dev.bridge_empty='1'
+ 
+uci set network.captive=interface
+uci set network.captive.device='br-captive'
+uci set network.captive.proto='static'
+uci set network.captive.ipaddr='10.0.0.1'
+uci set network.captive.netmask='255.255.252.0'
+ 
+# DHCP scope
+uci set dhcp.captive=dhcp
+uci set dhcp.captive.interface='captive'
+uci set dhcp.captive.start='10'
+uci set dhcp.captive.limit='1000'
+uci set dhcp.captive.leasetime='1h'
+ 
+# Captive SSID
+uci set wireless.wlan5.network='captive'
+uci set wireless.wlan5.ssid='Free-WiFi'        # must differ from every private SSID
+uci set wireless.wlan5.encryption='none'
+uci set wireless.wlan5.isolate='1'             # clients cannot reach each other
+uci -q delete wireless.wlan5.key
+uci -q delete wireless.wlan5.sae_pwe
+uci set wireless.wlan5.ieee80211w='0'
+ 
+uci commit network; uci commit dhcp; uci commit wireless
+/etc/init.d/network reload
+/etc/init.d/dnsmasq restart
+wifi reload
+```
+ 
+Verify:
+ 
+```bash
+ip addr show br-captive                       # inet 10.0.0.1/22
+ifstatus captive | grep -E '"up"|"address"'
+```
+ 
+If dnsmasq is restricted to some interfaces (`uci show dhcp | grep "@dnsmasq\[0\].interface"`), add `captive`:
+ 
+```bash
+uci add_list dhcp.@dnsmasq[0].interface='captive'
+uci commit dhcp; /etc/init.d/dnsmasq restart
+```
+
+---
+#### Firewall
+---
+
+```bash
+# Set of authorised client MACs - name must equal uspot "setname"
+uci set firewall.uspot_set=ipset
+uci set firewall.uspot_set.name='uspot'
+uci add_list firewall.uspot_set.match='src_mac'
+ 
+# Captive zone - no "forwarding captive -> wan" section!
+uci set firewall.captive_zone=zone
+uci set firewall.captive_zone.name='captive'
+uci add_list firewall.captive_zone.network='captive'
+uci set firewall.captive_zone.input='REJECT'
+uci set firewall.captive_zone.output='ACCEPT'
+uci set firewall.captive_zone.forward='REJECT'
+ 
+# Unauthorised HTTP -> portal on the AP
+uci set firewall.captive_cpd=redirect
+uci set firewall.captive_cpd.name='Redirect-unauth-captive-CPD'
+uci set firewall.captive_cpd.src='captive'
+uci set firewall.captive_cpd.proto='tcp'
+uci set firewall.captive_cpd.src_dport='80'
+uci set firewall.captive_cpd.dest_port='80'
+uci set firewall.captive_cpd.target='DNAT'
+uci set firewall.captive_cpd.reflection='0'
+uci set firewall.captive_cpd.ipset='!uspot'
+ 
+# Services on the AP for captive clients
+uci set firewall.captive_in=rule
+uci set firewall.captive_in.name='Allow-captive-portal'
+uci set firewall.captive_in.src='captive'
+uci set firewall.captive_in.proto='tcp'
+uci set firewall.captive_in.dest_port='80'
+uci set firewall.captive_in.target='ACCEPT'
+ 
+uci set firewall.captive_dhcp=rule
+uci set firewall.captive_dhcp.name='Allow-captive-DHCP'
+uci set firewall.captive_dhcp.src='captive'
+uci set firewall.captive_dhcp.proto='udp'
+uci set firewall.captive_dhcp.dest_port='67'
+uci set firewall.captive_dhcp.target='ACCEPT'
+ 
+uci set firewall.captive_dns=rule
+uci set firewall.captive_dns.name='Allow-captive-DNS'
+uci set firewall.captive_dns.src='captive'
+uci add_list firewall.captive_dns.proto='udp'
+uci add_list firewall.captive_dns.proto='tcp'
+uci set firewall.captive_dns.dest_port='53'
+uci set firewall.captive_dns.target='ACCEPT'
+ 
+# Authorised clients -> Internet
+uci set firewall.captive_fwd=rule
+uci set firewall.captive_fwd.name='Forward-auth-captive'
+uci set firewall.captive_fwd.src='captive'
+uci set firewall.captive_fwd.dest='wan'
+uci set firewall.captive_fwd.proto='all'
+uci set firewall.captive_fwd.ipset='uspot'
+uci set firewall.captive_fwd.target='ACCEPT'
+ 
+uci commit firewall
+/etc/init.d/firewall restart
+nft list set inet fw4 uspot          # exists, type ether_addr, empty
+```
+ 
+The `wan` zone must keep `masq '1'`. For UAM/RADIUS modes, also allow TCP 3990
+
+---
+#### uhttpd and portal pages
+---
+
+---
+#### Listener
+---
+
+```bash
+uci -q delete uhttpd.uspot
+uci set uhttpd.uspot=uhttpd
+uci add_list uhttpd.uspot.listen_http='10.0.0.1:80'
+uci set uhttpd.uspot.redirect_https='0'
+uci set uhttpd.uspot.no_dirlists='1'
+uci set uhttpd.uspot.max_requests='5'
+uci set uhttpd.uspot.home='/www-uspot'
+uci add_list uhttpd.uspot.ucode_prefix='/hotspot=/usr/share/uspot/handler.uc'
+uci add_list uhttpd.uspot.ucode_prefix='/cpd=/usr/share/uspot/handler-cpd.uc'
+uci set uhttpd.uspot.error_page='/cpd'          # every unknown path -> CPD redirect
+ 
+# LuCI must not grab port 80 on all addresses
+uci -q delete uhttpd.main.listen_http
+uci add_list uhttpd.main.listen_http='192.168.2.1:80'
+ 
+uci commit uhttpd
+mkdir -p /www-uspot
+```
+---
+#### Header and footer (mandatory)
+---
+
+The templates include **`/www-uspot/header.html`** and **`/www-uspot/footer.html`** (path hard-coded in `portal.uc`). They are not shipped; without them the portal returns *500 Include file not found*.
+ 
+```bash
+cat > /www-uspot/header.html <<'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free WiFi</title>
+<style>
+ body{font-family:system-ui,-apple-system,sans-serif;background:#f4f6f8;margin:0;color:#1d1f21}
+ .box{max-width:380px;margin:40px auto;background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.08)}
+ h1{font-size:22px;margin:0 0 16px;text-align:center}
+ input[type=text],input[type=password]{width:100%;padding:12px;margin:6px 0;border:1px solid #ccd;border-radius:8px;font-size:16px;box-sizing:border-box}
+ input[type=submit],button{width:100%;padding:12px;margin-top:12px;border:0;border-radius:8px;background:#0b6e8a;color:#fff;font-size:16px}
+</style>
+</head>
+<body><div class="box"><h1>Free WiFi</h1>
+EOF
+ 
+cat > /www-uspot/footer.html <<'EOF'
+</div></body></html>
+EOF
+```
+ 
+Rules for customisation:
+ 
+- Both files are processed as **ucode templates**: never use `{{`, `{%` or `{#` in them.
+- Images and CSS placed in `/www-uspot/` are served directly (e.g. `<img src="/logo.png">`).
+- Changes take effect on the next page load; no restart needed.
+- Page bodies are in `/usr/share/uspot/templates/*.ut` (package files; keep a copy of any change, upgrades overwrite them).
+
+---
+### uspot configuration (local credentials)
+---
+
+```bash
+cat > /etc/config/uspot <<'EOF'
+config uspot 'captive'
+	option auth_mode 'credentials'
+	option interface 'captive'
+	option setname 'uspot'
+	option idle_timeout '900'
+	option session_timeout '3600'
+	option debug '0'
+ 
+config credentials 'user1'
+	option uspot 'captive'
+	option username 'demo'
+	option password 'demo123'
+ 
+config credentials 'user2'
+	option uspot 'captive'
+	option username 'guest'
+	option password 'guest2026'
+EOF
+```
+ 
+| Option | Required | Meaning |
+|---|---|---|
+| section name (`captive`) | yes | uspot instance name; referenced by `credentials ... option uspot` and in ubus calls |
+| `auth_mode` | yes | `credentials`, `click-to-continue`, `radius`, `uam` |
+| `interface` | yes | **Network** section of the captive bridge (`network.captive`), not a WiFi device |
+| `setname` | yes | nftables set name; must match the fw4 `ipset` name |
+| `idle_timeout` | no | Seconds, default 600 |
+| `session_timeout` | no | Seconds, default 0 = unlimited |
+| `debug` | no | `1` logs each portal step |
+| `credentials.uspot` | yes | Name of the uspot section this account belongs to |
+| `credentials.username/password` | yes | Plain text, case-sensitive |
+ 
+For a terms-only portal use `auth_mode 'click-to-continue'` and no `credentials` sections.
+ 
+Accounts are read by the uspot daemon: after editing them run `/etc/init.d/uspot restart`.
+
+---
+### Start-up and verification
+---
+
+#### Enable services
+ 
+---
+
+```bash
+/etc/init.d/uspotfilter enable
+/etc/init.d/uspotfilter start
+/etc/init.d/uspot enable
+/etc/init.d/uspot restart
+/etc/init.d/uhttpd restart
+```
+ 
+**uspotfilter is a separate service.** The `uspot` init script does not start it.
+
+---
+#### Checks on the AP
+--- 
+```bash
+ps w | grep -E "uspot|uspotfilter" | grep -v grep   # both processes present
+ubus list | grep -i uspot                           # uspot AND uspotfilter
+netstat -ltn | grep "10.0.0.1:80"                    # portal listener
+nft list set inet fw4 uspot                          # empty before any login
+logread -e uspot | tail                              # no errors, no "no client list"
+```
+
+---
+#### End-to-end test
+---
+1. Phone (mobile data off) joins `Free-WiFi` and receives `10.0.0.x`.
+2. The Captive Wi-Fi sheet opens (or browse to `http://1.1.1.1`) and shows the login form.
+3. Log in with `demo` / `demo123`.
+4. On the AP:
+```bash
+   nft list set inet fw4 uspot        # phone MAC listed
+   logread -e uspot | tail -5         # "creating client", "allowing client"
+```
+5. The phone browses the Internet.
+6. After `session_timeout` the MAC disappears from the set and the login page is shown again.
+
+---
+### Other Authentication Modes
+---
+
+#### Local Form, RADIUS Check
+---
+
+```
+config uspot 'captive'
+	option auth_mode 'radius'
+	option interface 'captive'
+	option setname 'uspot'
+	option auth_server '35.20.20.134'
+	option auth_secret 'RadiusSecret123'
+	option acct_server '35.20.20.134'
+	option acct_secret 'RadiusSecret123'
+	option nasid 'AP-240B2A000002'          # required
+	option nasmac '24-0B-2A-00-00-02'       # required
+```
+
+---
+#### External portal (UAM)
+---
+
+```
+config uspot 'captive'
+	option auth_mode 'radius'
+	option interface 'captive'
+	option setname 'uspot'
+	option auth_server '35.20.20.134'
+	option auth_secret 'RadiusSecret123'
+	option acct_server '35.20.20.134'
+	option acct_secret 'RadiusSecret123'
+	option nasid 'AP-240B2A000002'          # required
+	option nasmac '24-0B-2A-00-00-02'       # required
+    option auth_mode 'uam'
+	option uam_server 'http://35.20.20.134/hotspot/login.php'
+	option uam_secret 'UamSecret456'
+	option uam_port '3990'
+```
+
+Also needed: a uhttpd listener on `10.0.0.1:3990` for `/logon` and `/logoff` (handler `handler-uam.uc`), firewall rule allowing TCP 3990, and the portal host or IP reachable before login. The portal must treat `res=reject` as a failed login.
+
+| Option | Purpose |
+|---|---|
+| `auth_server2`, `auth_secret2`, `auth_port2` | Backup RADIUS server |
+| `auth_port`, `acct_port` | Defaults 1812 / 1813 (2083 with RadSec) |
+| `rad_serv_type` | `tls` or `dtls` for RadSec |
+| `acct_interval` | Interim accounting interval (overrides RADIUS) |
+| `das_secret` | Enables `uspot-das` for CoA / Disconnect |
+| `mac_auth`, `mac_passwd`, `mac_suffix`, `mac_format` | MAC authentication |
+| `ratelimit_def` | Default rate limit |
+| `counters` | Enable traffic counters |
+| `disconnect_delay` | Grace period before treating a client as gone |
+| `location_name`, `nas_ip`, `swapio` | RADIUS attributes |
+ 
+Bandwidth per user comes from RADIUS (`WISPr-Bandwidth-Max-Down/Up`, bit/s).
 
 ---
 
