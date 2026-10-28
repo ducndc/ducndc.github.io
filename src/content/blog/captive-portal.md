@@ -946,7 +946,28 @@ Then on the phone: *Forget this network* and rejoin `Free-WiFi`. Test with two S
 tcpdump -ni eth0.35 udp port 1812          # Access-Request / Access-Accept
 logread -f | grep -E "uspot|radcli"         # "allowing client"
 ```
- 
+
+```bash
+root@OpenWrt:~# ubus -v list uspot
+'uspot' @07b303b3
+        "client_auth":{"uspot":"String","address":"String","client_ip":"String","username":"String","password":"String","challenge":"String","sessionid":"String","reqdata":"Table"}
+        "client_enable":{"uspot":"String","address":"String"}
+        "client_remove":{"uspot":"String","address":"String"}
+        "client_get":{"uspot":"String","address":"String"}
+        "client_list":{"uspot":"String"}
+        "das_disconnect":{"uspot":"String","request":"Table"}
+        "das_coa":{"uspot":"String","request":"Table"}
+        "state_get":{"uspot":"String"}
+        "state_set":{"uspot":"String","state":"Boolean"}
+root@OpenWrt:~# ubus -v list uspotfilter
+'uspotfilter' @0234bd26
+        "client_get":{"interface":"String","address":"String"}
+        "client_set":{"interface":"String","address":"String","state":"Integer","data":"Table"}
+        "client_remove":{"interface":"String","address":"String"}
+        "client_list":{"interface":"String"}
+        "peer_lookup":{"ip":"String"}
+```
+
 Expected result: `Access-Request` to RADIUS_SERVER_IP, `Access-Accept` back, `allowing client` in the log, phone MAC in `nft list set inet fw4 uspot`, Internet working.
 
 ---
