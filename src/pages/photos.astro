@@ -1,0 +1,369 @@
+---
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
+import { ALBUMS } from '../albums';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+
+// Every image under src/assets/traveling/<album>/ becomes part of that album.
+const files = import.meta.glob<{ default: ImageMetadata }>(
+	'../assets/traveling/*/*.{jpg,jpeg,JPG,JPEG,png,PNG,webp}',
+	{ eager: true },
+);
+
+const byFolder: Record<string, { name: string; src: ImageMetadata }[]> = {};
+for (const [path, mod] of Object.entries(files)) {
+	const [folder, name] = path.split('/').slice(-2);
+	(byFolder[folder] ??= []).push({ name, src: mod.default });
+}
+
+const albums = await Promise.all(
+	Object.entries(byFolder).map(async ([folder, images]) => {
+		const meta = ALBUMS[folder] ?? { title: folder.replace(/[-_]+/g, ' ') };
+		images.sort((a, b) => a.name.localeCompare(b.name));
+		const coverIndex = Math.max(0, images.findIndex((img) => img.name === meta.cover));
+		const photos = await Promise.all(
+			images.map(async ({ src }) => {
+				const thumb = await getImage({ src, width: 900, format: 'webp' });
+				const full = await getImage({ src, width: 2400, format: 'webp' });
+				return { thumb: thumb.src, full: full.src, width: src.width, height: src.height };
+			}),
+		);
+		return { id: folder, ...meta, photos, cover: photos[coverIndex] };
+	}),
+);
+
+albums.sort((a, b) => (Date.parse(b.date ?? '') || 0) - (Date.parse(a.date ?? '') || 0));
+const photoCount = albums.reduce((n, album) => n + album.photos.length, 0);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Photos | ${SITE_TITLE}`}
+			description="Photographs from my travels, shot on a Canon 60D."
+		/>
+	</head>
+	<body>
+		<Header />
+		<section class="page-banner">
+			<div>
+				<p class="eyebrow">{photoCount} photos · {albums.length} journeys</p>
+				<h1>Photos</h1>
+				<p>Places I have walked to, seen through the viewfinder of my Canon 60D.</p>
+				{
+					albums.length > 1 && (
+						<nav class="album-index" aria-label="Albums">
+							{albums.map((album) => (
+								<a href={`#${album.id}`}>{album.title}</a>
+							))}
+						</nav>
+					)
+				}
+			</div>
+		</section>
+
+		<main class="gallery-layout">
+			{
+				albums.map((album) => (
+					<section class="album" id={album.id}>
+						<figure class="album-cover">
+							<img
+								src={album.cover.full}
+								width={album.cover.width}
+								height={album.cover.height}
+								alt={album.title}
+								loading="lazy"
+								decoding="async"
+							/>
+						</figure>
+						<header class="album-head">
+							<p class="eyebrow">
+								{[album.location, album.date].filter(Boolean).join(' · ')}
+							</p>
+							<h2>{album.title}</h2>
+							{album.description && <p class="album-desc">{album.description}</p>}
+							{album.post && (
+								<a class="album-story" href={`/blog/${album.post}/`}>
+									Read the story →
+								</a>
+							)}
+						</header>
+						<ul class="photo-grid">
+							{album.photos.map((photo, i) => (
+								<li class="photo">
+									<a
+										href={photo.full}
+										data-lightbox={album.id}
+										aria-label={`${album.title}, photo ${i + 1} of ${album.photos.length}`}
+									>
+										<img
+											src={photo.thumb}
+											width={photo.width}
+											height={photo.height}
+											alt=""
+											loading="lazy"
+											decoding="async"
+										/>
+									</a>
+								</li>
+							))}
+						</ul>
+					</section>
+				))
+			}
+			{albums.length === 0 && <p>No photos yet.</p>}
+		</main>
+
+		<dialog class="lightbox" aria-label="Photo viewer">
+			<img alt="" />
+			<p class="lightbox-count"></p>
+			<button class="lb-close" type="button" aria-label="Close">×</button>
+			<button class="lb-prev" type="button" aria-label="Previous photo">‹</button>
+			<button class="lb-next" type="button" aria-label="Next photo">›</button>
+		</dialog>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.page-banner {
+		background: var(--space);
+		color: #fff;
+		padding: 5rem 1.5rem 3.5rem;
+		border-bottom: 4px solid var(--accent);
+	}
+	.page-banner > div {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	.page-banner h1 {
+		color: #fff;
+		font-size: clamp(3rem, 8vw, 6rem);
+		font-weight: 900;
+		margin: 0.75rem 0 1rem;
+	}
+	.page-banner p:not(.eyebrow) {
+		color: #ccc;
+		font-size: 1.15rem;
+		max-width: 55ch;
+		margin: 0;
+	}
+	.album-index {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: 2rem;
+	}
+	.album-index a {
+		padding: 0.3rem 0.8rem;
+		border: 1px solid #444;
+		color: #fff;
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+	.album-index a:hover {
+		border-color: var(--accent);
+	}
+
+	.gallery-layout {
+		width: auto;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 3.5rem 1.5rem;
+	}
+	.album {
+		margin-bottom: 5rem;
+		scroll-margin-top: 80px;
+	}
+	.album-cover {
+		margin: 0 0 2rem;
+		aspect-ratio: 21 / 9;
+		overflow: hidden;
+		background: var(--space-3);
+	}
+	.album-cover img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+	.album-head {
+		max-width: 60ch;
+		margin-bottom: 2rem;
+	}
+	.album-head h2 {
+		font-size: clamp(1.8rem, 4vw, 2.6rem);
+	}
+	.album-desc {
+		color: #444;
+	}
+	.album-story {
+		font-weight: 700;
+		color: var(--accent-dark);
+		text-decoration: none;
+		border-bottom: 2px solid currentColor;
+	}
+
+	/* Masonry via CSS columns keeps each photo's natural aspect ratio. */
+	.photo-grid {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		columns: 3 280px;
+		column-gap: 0.75rem;
+	}
+	.photo {
+		break-inside: avoid;
+		margin-bottom: 0.75rem;
+	}
+	.photo a {
+		display: block;
+		overflow: hidden;
+		background: var(--space-3);
+		cursor: zoom-in;
+	}
+	.photo img {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0;
+		transition: transform 0.4s ease, opacity 0.2s ease;
+	}
+	.photo a:hover img {
+		transform: scale(1.03);
+	}
+	.photo a:focus-visible {
+		outline: 3px solid var(--accent);
+		outline-offset: 2px;
+	}
+
+	.lightbox {
+		width: 100vw;
+		height: 100vh;
+		max-width: none;
+		max-height: none;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: rgba(0, 0, 0, 0.94);
+	}
+	.lightbox[open] {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.lightbox::backdrop {
+		background: transparent;
+	}
+	.lightbox img {
+		max-width: calc(100vw - 7rem);
+		max-height: calc(100vh - 5rem);
+		object-fit: contain;
+		margin: 0;
+	}
+	.lightbox-count {
+		position: absolute;
+		bottom: 1rem;
+		left: 0;
+		right: 0;
+		margin: 0;
+		text-align: center;
+		color: #aaa;
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+	}
+	.lightbox button {
+		position: absolute;
+		background: none;
+		border: 0;
+		color: #fff;
+		font-size: 2.5rem;
+		line-height: 1;
+		padding: 0.5rem 1rem;
+		cursor: pointer;
+		opacity: 0.7;
+	}
+	.lightbox button:hover,
+	.lightbox button:focus-visible {
+		opacity: 1;
+	}
+	.lb-close {
+		top: 0.5rem;
+		right: 0.5rem;
+	}
+	.lb-prev {
+		left: 0.25rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.lb-next {
+		right: 0.25rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	@media (max-width: 640px) {
+		.album-cover {
+			aspect-ratio: 4 / 3;
+		}
+		.lightbox img {
+			max-width: 100vw;
+		}
+		.lb-prev,
+		.lb-next {
+			top: auto;
+			bottom: 0.25rem;
+			transform: none;
+		}
+	}
+</style>
+
+<script>
+	const dialog = document.querySelector<HTMLDialogElement>('.lightbox')!;
+	const img = dialog.querySelector('img')!;
+	const count = dialog.querySelector('.lightbox-count')!;
+	let group: HTMLAnchorElement[] = [];
+	let index = 0;
+
+	const show = (i: number) => {
+		index = (i + group.length) % group.length;
+		img.src = group[index].href;
+		count.textContent = `${index + 1} / ${group.length}`;
+	};
+
+	document.querySelectorAll<HTMLAnchorElement>('a[data-lightbox]').forEach((link) => {
+		link.addEventListener('click', (event) => {
+			event.preventDefault();
+			group = [...document.querySelectorAll<HTMLAnchorElement>(
+				`a[data-lightbox="${link.dataset.lightbox}"]`,
+			)];
+			show(group.indexOf(link));
+			dialog.showModal();
+		});
+	});
+
+	dialog.querySelector('.lb-close')!.addEventListener('click', () => dialog.close());
+	dialog.querySelector('.lb-prev')!.addEventListener('click', () => show(index - 1));
+	dialog.querySelector('.lb-next')!.addEventListener('click', () => show(index + 1));
+	// Clicking the dark area around the photo closes the viewer.
+	dialog.addEventListener('click', (event) => {
+		if (event.target === dialog) dialog.close();
+	});
+	dialog.addEventListener('keydown', (event) => {
+		if (event.key === 'ArrowLeft') show(index - 1);
+		if (event.key === 'ArrowRight') show(index + 1);
+	});
+
+	let touchX = 0;
+	dialog.addEventListener('touchstart', (event) => (touchX = event.touches[0].clientX), { passive: true });
+	dialog.addEventListener('touchend', (event) => {
+		const dx = event.changedTouches[0].clientX - touchX;
+		if (Math.abs(dx) > 50) show(dx < 0 ? index + 1 : index - 1);
+	});
+</script>
