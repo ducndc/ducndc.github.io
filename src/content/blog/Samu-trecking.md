@@ -15,18 +15,18 @@ On the evening of our departure at 7 PM, I took a five-hour bus ride from Hanoi 
 
 Our group traveled by car for another hour and a half to reach the foot of the mountain. Along the way, we passed winding, foggy mountain passes, which filled me with excitement as it signaled that I could admire the sea of ​​clouds from the summit. We started climbing at 9 am. Everyone gathered together, received supplies such as food, hiking poles, gloves, and were briefed on the rules for traveling up the mountain with the group. We were accompanied by members of the Hmong ethnic group, who provided support and ensured the safety of the trip. The first steps towards conquering Samu peak were taken in a joyful atmosphere. I moved in the middle of the group, and embarked on the climb with anticipation of admiring the beautiful scenery along the way. I climbed the mountain slopes on trails covered by the canopy of the Ta Xua Special Forest. As we climbed higher, the members gradually separated due to differences in physical fitness and travel time among the groups. The weather today was very favorable for us; cool and rain-free, the path became easier than ever. With each step, I focused my attention on the surrounding nature, listening to the birds singing and the wind rustling through the leaves. My mind was so peaceful and relaxed; all the stress and worries of the city were left behind with each step.
 
-![H1](../../assets/traveling/samu/IMG_1237.jpg)
+![H1](../../assets/img/photography/samu/IMG_1237.jpg)
 
 I went deeper and deeper into the forest. The trees here were taller, covered in moss, and looked so beautiful. The air was much fresher than the air I breathe every day in Hanoi. Walking under the canopy, I felt so small, and nature was so majestic. Suddenly, I felt a mist enveloping me, a truly magical feeling, as if I were gradually stepping into a fairytale world from my country's folklore. The surrounding trees were draped in a translucent white veil, moss covered the tall trunks, and the ground was darker, making each step slow down. It was the first time in my life I had directly experienced such a space; I will remember this fascinating feeling.
 
-![H1](../../assets/traveling/samu/IMG_1198.jpg)
+![H1](../../assets/traveling/Samu-SonLa/IMG_1198.jpg)
 
 Around noon, our group arrived at a rest stop to eat and relax before continuing our journey in the afternoon. We were all drenched in sweat, but no one seemed tired; everyone was happy about the experiences we had just had. We chatted, sharing what we had encountered and experienced on the journey. Our lunch consisted of sticky rice, spring rolls, local black chicken, and cucumber. A nutritious lunch that restored energy to the whole group, and everyone was eager for the journey ahead.
 
-![H1](../../assets/traveling/samu/IMG_1200.jpg)
+![H1](../../assets/traveling/Samu-SonLa/IMG_1200.jpg)
 
 We started moving at 1:30 PM, and the whole group continued to ascend to the summit. The weather was no longer foggy but gradually turned sunny and hot; the higher we went, the more dazzling the sunlight seemed. Continuing through ancient forests, we crossed streams, the sound of the flowing water clear and refreshing even from afar. When crossing the shallow streams, a cool sensation each time the wind blew made me feel very comfortable, dispelling the heat of the afternoon. After another 3 hours of travel, we gradually reached the campsite for the night. The groups ahead had already reached the campsite and were preparing to move to the summit to watch the sunset. Perhaps by this time, I was tired from the long journey, but a strange feeling urged me to continue moving to the summit, making me keep going.
 
 Continuing for another 30 minutes from the campsite, I reached the summit of Samu. I must say, I was overjoyed to have successfully conquered this mountain peak. My first impression was of a vast, boundless sky filled with clouds, mountain ranges stretching from west to east, and strong, howling winds. Standing here, gazing down at the natural beauty of my country, I felt even more love for my homeland. My country is so beautiful; I long to walk on my own two feet to truly admire such magnificent and majestic scenery.
 
-![H1](../../assets/traveling/samu/about.jpg)
+![H1](../../assets/traveling/Samu-SonLa/about.jpg)
