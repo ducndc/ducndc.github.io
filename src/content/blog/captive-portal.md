@@ -124,7 +124,7 @@ sequenceDiagram
 
 ---
 
-### Stage-by-stage
+### Stage-by-Stage
 
 ---
 
@@ -283,7 +283,7 @@ Gateway-based enforcement with an optionally external or cloud-hosted portal UI 
 
 ---
 
-## Captive Portal on OpenWrt with uspot + spotfilter
+## Captive Portal on OpenWrt with Uspot + Spotfilter
 
 ---
 
@@ -350,7 +350,7 @@ flowchart TB
 
 ---
 
-### Control plane (uspot)
+### Control Plane (uspot)
 
 ---
 
@@ -382,7 +382,7 @@ flowchart TB
 
 ---
 
-### Data plane (spotfilter)
+### Data Plane (spotfilter)
 
 ---
 
@@ -466,7 +466,7 @@ The captive SSID has its **own bridge, IP subnet, DHCP scope and firewall zone**
 
 ---
 
-#### Client joins the captive network
+#### Client Joins The Captive Network
 
 ---
 
@@ -490,7 +490,7 @@ sequenceDiagram
 
 ---
 
-#### Login with local credentials
+#### Login With Local Credentials
 
 ---
 
@@ -572,7 +572,7 @@ opkg install uspot
 That alone is enough: `uspot`'s Makefile declares `DEPENDS:=+spotfilter +uhttpd-mod-ucode +libradcli +iptables-mod-conntrack-extra +conntrack +ucode-mod-math +ucode-mod-nl80211 +ucode-mod-rtnl +ucode-mod-uloop +ratelimit`, and `spotfilter` in turn pulls in `+libbpf +libubox +libubus +libnl-tiny +kmod-sched-bpf +kmod-ifb`. `dnsmasq` is part of the base OpenWrt image already. There is no `uspotfilter` or `ucode-mod-bpf` package — the eBPF program ships precompiled inside `spotfilter` itself (`/lib/bpf/spotfilter-bpf.o`), loaded by the `spotfilter` C daemon via `libbpf`, not by ucode.
 
 ---
-#### Captive network and WiFi
+#### Captive Network and Wi-Fi
 ---
 
 ```bash
@@ -689,7 +689,7 @@ uci commit firewall
 The `wan` zone must keep `masq '1'`. Port 3990 (UAM/RADIUS CHAP endpoint, `handler-uam.uc`) only needs to be open if `auth_mode` is `uam`; for plain `credentials`/`radius` modes the CPD/login traffic all stays on port 80. Since there is no set to inspect, verifying enforcement means watching the mark itself, e.g. `nft list table inet fw4` and look for the `mark and 0x7f == 0x1` match on the forward rule, or just check a client's class over ubus (`ubus call spotfilter client_get '{"interface":"captive","address":"<mac>"}'`).
 
 ---
-#### uhttpd and portal pages
+#### Uhttpd and Portal Pages
 ---
 
 ---
@@ -716,7 +716,7 @@ uci commit uhttpd
 mkdir -p /www-uspot
 ```
 ---
-#### Portal pages (no header/footer templates)
+#### Portal Pages (no header/footer templates)
 ---
 
 There is no `templates/*.ut` layer and no mandatory `header.html`/`footer.html` include in this codebase — each page under `/www-uspot/` (`click.html`, `credentials.html`, `radius.html`, `allow.html`, `connected.html`) is a **complete, self-contained HTML document** (Bootstrap + an `OpenWiFi - Captive Portal` card baked into each one). `serve.uc` is what returns them:
@@ -733,7 +733,7 @@ Two things to get right because of that one line:
 One shipped inconsistency worth knowing about: `error.uc` references `{{ header }}` / `{{ footer }}` variables that no caller ever passes in (`include('error.uc', ctx)` from `portal.uc`/`handler.uc` never sets `ctx.header`/`ctx.footer`). In ucode this just renders as nothing rather than failing, so the generic error page silently loses its intended header/footer — it is not a sign that you need to create those files.
 
 ---
-#### uspot configuration (local credentials)
+#### Uspot Configuration (local credentials)
 ---
 
 ```bash
@@ -778,10 +778,10 @@ For a terms-only portal use `auth_mode 'click-to-continue'` and no `credentials`
 Accounts are matched directly inside the uhttpd worker (`handler.uc`'s `request_credentials()` iterates `uci.get_all('uspot')` looking for `.type == 'credentials'`), not by the long-running `uspot` daemon. After editing `/etc/config/uspot`, restart with `/usr/bin/captive restart` (runs `/etc/init.d/spotfilter restart`, `/etc/init.d/uspot restart` and `/etc/init.d/uhttpd restart` in one shot) so the `spotfilter` interface config is regenerated too — a plain `/etc/init.d/uspot restart` is not enough if you changed `ifname`, `interface`, `wl_hosts` or `wl_addrs`.
 
 ---
-#### Start-up and verification
+#### Start-up and Verification
 ---
 
-#### Enable services
+#### Enable Services
  
 ---
 
@@ -796,7 +796,7 @@ Accounts are matched directly inside the uhttpd worker (`handler.uc`'s `request_
 **spotfilter is a separate service.** The `uspot` init script does not start it. Equivalently, `/usr/bin/captive restart` does all three restarts (`spotfilter`, `uspot`, `uhttpd`) in the right order. Note that `spotfilter`'s own init script only (re)generates its per-instance config from `/etc/config/uspot` in `service_started()` (i.e. on start/restart, via `ubus wait_for spotfilter` then `captive generate "$cfg" | ubus call spotfilter interface_add`) — editing `/etc/config/uspot` and restarting only `uspot` will not push the change into `spotfilter`.
 
 ---
-#### Checks on the AP
+#### Checks on The AP
 --- 
 ```bash
 ps w | grep -E "uspot|spotfilter" | grep -v grep              # both daemons present
@@ -807,7 +807,7 @@ logread -e uspot | tail                                        # no "spotfilter 
 ```
 
 ---
-#### End-to-end test
+#### End-to-End Test
 ---
 1. Phone (mobile data off) joins `Free-WiFi` and receives `10.0.0.x`.
 2. The Captive Wi-Fi sheet opens (or browse to `http://1.1.1.1`) and shows the login form.
@@ -821,7 +821,7 @@ logread -e uspot | tail                                        # no "spotfilter 
 6. After `session_timeout` the uspot daemon's 10 s accounting loop resets the client's `spotfilter` state to 0 (unauthenticated class) and the login page is shown again.
 
 ---
-### External RADIUS authentication
+### External RADIUS Authentication
 ---
 
 Validated in the lab: login page served by the AP (auth_mode 'radius'), user accounts checked by an existing RADIUS server, authentication only (no accounting). Network, firewall, uhttpd and `spotfilter` are exactly as in the sections above; only the uspot configuration changes and the radcli dictionary is added.
@@ -851,7 +851,7 @@ sequenceDiagram
 `radius.html` is the form used for `radius` mode (`credentials.html` is the separate, local-accounts page) — both post `username`/`password` plus a hidden `action` field (`radius` vs `credentials`) that `handler.uc`'s `handle_request()` dispatches on.
 
 ---
-#### Information for the RADIUS administrator
+#### Information for The RADIUS Administrator
 ---
 
 The AP must be declared as a RADIUS client (NAS) on the server:
@@ -868,7 +868,7 @@ The AP must be declared as a RADIUS client (NAS) on the server:
 | Test account | Requested from the RADIUS team |
 
 ---
-#### radcli dictionary (mandatory)
+#### Radcli Dictionary (mandatory)
 ---
 
 `radius-client` reads `/etc/radcli/dictionary` on every request. The OpenWrt `libradcli` package does not ship it. Without it every login fails with `invalid credentials` (see 10.8).
@@ -936,7 +936,7 @@ radcli dictionary rules learnt in the lab:
 `radius-client` reads the dictionary on each login, so no restart is needed after editing it.
 
 ---
-#### uspot Configuration
+#### Uspot Configuration
 ---
 
 ```bash
@@ -990,7 +990,7 @@ ip route get RADIUS_SERVER_IP           # dev eth0.35 src AP_WAN_IP
 ```
 
 ---
-#### Switching mode and Testing
+#### Switching Mode and Testing
 ---
 
 Sessions from the previous mode (for example a phone logged in with a local account) stay valid until they expire. Clear them when switching mode — restarting `spotfilter` re-adds the interface from scratch, which drops its whole client table for that instance:
@@ -1031,7 +1031,7 @@ root@OpenWrt:~# ubus -v list spotfilter
 There is no `client_auth`, `das_coa`/`das_disconnect`, or `state_get`/`state_set` method anywhere in this codebase, and `uspot` never calls a `peer_lookup` method either — those were from an unrelated/older design and don't apply here. Expected result for this test: `Access-Request` to RADIUS_SERVER_IP, `Access-Accept` back, `allow client to pass traffic` in the log, phone MAC listed with `"state":1` in `ubus call spotfilter client_list '{"interface":"captive"}'`, Internet working.
 
 ---
-### External portal (UAM)
+### External Portal (UAM)
 ---
 
 ```
