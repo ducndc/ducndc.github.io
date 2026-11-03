@@ -169,23 +169,20 @@ The RRB (Remote Request Broker) mechanism is the inter-AP backbone protocol that
 
 To understand RRB, it is essential to understand the 802.11r key hierarchy:
 
-```
-                  [ Master Session Key (MSK) / PMK ]
-                    (from 802.1X/EAP or FT-PSK)
-                                |
-                                v
-                   [ First-Tier Key: PMK-R0 ]
-                      Held by R0KH (R0 Key Holder)
-                                |
-             +------------------+------------------+
-             |                                     |
-             v                                     v
-   [ Second-Tier: PMK-R1 ]               [ Second-Tier: PMK-R1 ]
-   Held by AP1 (R1KH-1)                  Held by AP2 (R1KH-2)
-             |                                     |
-             v                                     v
-    [ Pairwise Transient Key ]            [ Pairwise Transient Key ]
-            (PTK)                                 (PTK)
+```mermaid
+flowchart TD
+    MSK["Master Session Key (MSK) / PMK<br/><i>from 802.1X/EAP or FT-PSK</i>"]
+    R0["First-Tier Key: PMK-R0<br/><i>Held by R0KH (R0 Key Holder)</i>"]
+    R1A["Second-Tier: PMK-R1<br/><i>Held by AP1 (R1KH-1)</i>"]
+    R1B["Second-Tier: PMK-R1<br/><i>Held by AP2 (R1KH-2)</i>"]
+    PTK1["Pairwise Transient Key<br/>(PTK)"]
+    PTK2["Pairwise Transient Key<br/>(PTK)"]
+
+    MSK --> R0
+    R0 --> R1A
+    R0 --> R1B
+    R1A --> PTK1
+    R1B --> PTK2
 ```
 
 ---
@@ -219,7 +216,7 @@ IEEE 802.11r defines two modes for roaming:
 
 ---
 
-```
+```mermaid
 kernel mac80211/cfg80211
    │  NL80211_CMD_FRAME netlink
    ▼
