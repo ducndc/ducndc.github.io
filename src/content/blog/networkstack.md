@@ -30,17 +30,7 @@ The Linux network stack is the most complex subsystem within the Linux kernel, r
 
 ---
 
-```
-Hardware NICs 
-  → Interrupt / NAPI poll 
-  → sk_buff allocation 
-  → Ethernet frame processing 
-  → IP routing lookup 
-  → Netfilter hooks (PREROUTING, INPUT) 
-  → Transport layer (TCP/UDP) 
-  → Socket receive buffer 
-  → Application read()
-```
+![Layered Model](../../assets/img/linux/rx_path.png)
 
 ---
 
@@ -48,17 +38,7 @@ Hardware NICs
 
 ---
 
-```
-Application write() / send() 
-  → Socket send buffer 
-  → Transport layer (TCP segmentation, UDP encap) 
-  → IP header attached 
-  → Netfilter hooks (OUTPUT, POSTROUTING) 
-  → Routing decisions 
-  → Traffic Control (qdisc) 
-  → NIC driver TX queue 
-  → DMA → Hardware NIC → Wire
-```
+![Layered Model](../../assets/img/linux/tx_path.png)
 
 ---
 
@@ -161,30 +141,7 @@ struct socket {
 
 ---
 
-```
-CLOSED
-│  socket()
-▼
-LISTEN ──────────── bind() + listen()
-│  accept()
-▼
-SYN_RCVD ◄──────── SYN received (server)
-│  SYN+ACK sent
-▼
-ESTABLISHED ◄────── ACK received
-│  send() / recv() data exchange
-▼
-FIN_WAIT_1 ──────── close() (active close)
-│  FIN sent
-▼
-FIN_WAIT_2 ──────── ACK received
-│  FIN received from peer
-▼
-TIME_WAIT ──────────── 2*MSL wait
-│
-▼
-CLOSED
-```
+![Layered Model](../../assets/img/linux/tcp_states.png)
 
 ---
 
@@ -192,23 +149,7 @@ CLOSED
 
 ---
 
-```
-Receive Buffer (sk_rcvbuf):
-┌────────────────────────────────────┐
-│  sk_receive_queue (skb queue)      │
-│  [skb1][skb2][skb3]…               │
-│                                    │
-│  sk_rmem_alloc ≤ sk_rcvbuf         │
-└────────────────────────────────────┘
-
-Send Buffer (sk_sndbuf):
-┌────────────────────────────────────┐
-│  sk_write_queue (skb queue)        │
-│  [skb1][skb2][skb3]…               │
-│                                    │
-│  sk_wmem_queued ≤ sk_sndbuf        │
-└────────────────────────────────────┘
-```
+![Layered Model](../../assets/img/linux/socket_buffers.png)
 
 ---
 
@@ -283,25 +224,7 @@ sysctl -w net.ipv4.tcp_congestion_control=bbr
 
 ---
 
-```
-Incoming TCP packet
-│
-▼
-tcp_v4_rcv()
-│
-├─► [SYN] → tcp_conn_request()          (connection setup)
-│
-├─► [Fast Path] tcp_rcv_established()
-│       Conditions:
-│       - Connection is ESTABLISHED
-│       - No out-of-order packets
-│       - No window probe
-│       - Valid sequence number
-│       └─► Fast processing: update rcv_nxt, send ACK
-│
-└─► [Slow Path] tcp_data_queue()
-Processing: reordering, SACK, urgent data…
-```
+![Layered Model](../../assets/img/linux/tcp_rx_paths.png)
 
 ---
 
@@ -331,23 +254,7 @@ udp_rcv()
 
 ---
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐
-│ Version │  IHL  │   DSCP    │ECN│           Total Length      │
-├─────────────────┼───────────────────────┼─┬─┬─────────────────┤
-│         Identification                  │R│D│F│Fragment Offset│
-├─────────────────┴───────────────────────┴─┴─┴─────────────────┤
-│      TTL        │    Protocol           │ Header Checksum     │
-├───────────────────────────────────────────────────────────────┤
-│                        Source IP Address                      │
-├───────────────────────────────────────────────────────────────┤
-│                     Destination IP Address                    │
-├───────────────────────────────────────────────────────────────┤
-│                      Options ( if IHL > 5)                    │
-└───────────────────────────────────────────────────────────────┘
-```
+![Layered Model](../../assets/img/linux/ipv4_header.png)
 
 ---
 
@@ -378,24 +285,7 @@ ip_rcv()                    /* Entry point from L2 */
 
 ---
 
-```
-Fragmentation (If packet > MTU):
-┌─────────────────────────┐
-│   Original IP Packet    │  > MTU (e.g. 1500 bytes)
-│   [IP Header][Payload]  │
-└─────────────────────────┘
-         │ ip_fragment()
-         ▼
-┌────────────┐ ┌────────────┐ ┌────────────┐
-│ [IPH][Frag1│ │ [IPH][Frag2│ │ [IPH][Frag3│
-│  MF=1 O=0  │ │  MF=1 O=185│ │  MF=0 O=370│
-└────────────┘ └────────────┘ └────────────┘
-  (More Frag)   (More Frag)   (Last Frag)
-
-Reassembly:
-ip_defrag() use ipq (ip_defrag_queue) to clone
-Timeout: net.ipv4.ipfrag_time (mặc định: 30 giây)
-```
+![Layered Model](../../assets/img/linux/ip_fragmentation.png)
 
 ---
 
@@ -409,25 +299,7 @@ Timeout: net.ipv4.ipfrag_time (mặc định: 30 giây)
 
 NAPI is a mechanism that combines interrupt-driven processing and polling to handle packets efficiently at high speeds:
 
-```
-Packet arrives at the NIC
-    │
-    ├─► [Low speed] Hard IRQ → netif_rx() → Immediate processing
-    │
-    └─► [High speed] Hard IRQ → disable interrupts → schedule NAPI poll
-                                    │
-                                    ▼
-                            NET_RX_SOFTIRQ
-                                    │
-                                    ▼
-                            napi_poll() / driver->poll()
-                            (batch processing — budget)
-                                    │
-                            Budget exhausted or queue empty
-                                    │
-                                    ▼
-                            Re-enable the interrupt.
-```
+![Layered Model](../../assets/img/linux/napi_flow.png)
 
 ---
 
@@ -452,31 +324,7 @@ struct napi_struct {
 
 ---
 
-```
-TX Ring Buffer:
-   Head (driver write)
-    │
-    ▼
-┌──────┬──────┬──────┬──────┬──────┐
-│ Desc │ Desc │ Desc │ Desc │ Desc │  ← Ring (circular)
-│  0   │  1   │  2   │  3   │  4   │
-└──────┴──────┴──────┴──────┴──────┘
-                              ▲
-                              │
-                           Tail (NIC read)
-
-RX Ring Buffer:
-   Head (NIC write)
-    │
-    ▼
-┌──────┬──────┬──────┬──────┬──────┐
-│ Desc │ Desc │ Desc │ Desc │ Desc │
-│  0   │  1   │  2   │  3   │  4   │
-└──────┴──────┴──────┴──────┴──────┘
-                              ▲
-                              │
-                           Tail (driver read)
-```
+![Layered Model](../../assets/img/linux/nic_rings.png)
 
 ---
 
@@ -508,19 +356,7 @@ RX Ring Buffer:
 
 Netfilter defines 5 hook points in the packet path:
 
-```
-                         ROUTING
-                        DECISION
-                            │
-Packet IN                   │                    Packet OUT
-──────────►  PREROUTING ────┤──── FORWARD ────►  POSTROUTING ──────►
-                            │
-                            │
-                          INPUT                    OUTPUT
-                            │                       ▲
-                            ▼                       │
-                      LOCAL PROCESS ────────────────┘
-```
+![Layered Model](../../assets/img/linux/netfilter_hooks.png)
 
 | Hook | Position | Application |
 |------|--------|----------|
@@ -678,25 +514,7 @@ ip rule list
 
 ---
 
-```
-IP destination found in routing table
-    │
-    ▼
-Cần MAC address of next-hop
-    │
-    ├─► [Cache hit] neigh_lookup() → MAC exist → send packet
-    │
-    └─► [Cache miss] ARP request broadcast
-             │
-             ▼
-         Chờ ARP reply (neigh state: INCOMPLETE)
-             │
-             ▼
-         neigh state: REACHABLE (timeout: 30s default)
-             │
-             ▼
-         Timeout → STALE → DELAY → PROBE → FAILED
-```
+![Layered Model](../../assets/img/linux/arp_neighbour.png)
 
 ```bash
 # view ARP cache
@@ -720,22 +538,7 @@ ip neigh flush dev eth0
 
 ---
 
-```
-Egress (Outbound):
-                   ┌──────────────────┐
-skb from network   │   Root qdisc     │
-layer ─────────►   │  (e.g. HTB/HFSC) │
-                   │                  │
-                   │  ┌───┐  ┌───┐    │
-                   │  │cls│  │cls│    │  ← Classifiers
-                   │  └───┘  └───┘    │
-                   │    │       │     │
-                   │  ┌───┐  ┌───┐    │
-                   │  │cls│  │cls│    │  ← Leaf qdiscs (pfifo, tbf…)
-                   └──────────────────┘
-                           │
-                           ▼ → NIC TX queue
-```
+![Layered Model](../../assets/img/linux/qdisc_egress.png)
 
 ---
 
