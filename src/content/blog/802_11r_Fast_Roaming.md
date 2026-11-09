@@ -169,21 +169,11 @@ The RRB (Remote Request Broker) mechanism is the inter-AP backbone protocol that
 
 To understand RRB, it is essential to understand the 802.11r key hierarchy:
 
-```mermaid
-flowchart TD
-    MSK["Master Session Key (MSK) / PMK<br/><i>from 802.1X/EAP or FT-PSK</i>"]
-    R0["First-Tier Key: PMK-R0<br/><i>Held by R0KH (R0 Key Holder)</i>"]
-    R1A["Second-Tier: PMK-R1<br/><i>Held by AP1 (R1KH-1)</i>"]
-    R1B["Second-Tier: PMK-R1<br/><i>Held by AP2 (R1KH-2)</i>"]
-    PTK1["Pairwise Transient Key<br/>(PTK)"]
-    PTK2["Pairwise Transient Key<br/>(PTK)"]
+<div style="text-align: center;">
 
-    MSK --> R0
-    R0 --> R1A
-    R0 --> R1B
-    R1A --> PTK1
-    R1B --> PTK2
-```
+![Alt text](../../assets/technology/802_11r/key_hierarchy.png)
+
+</div>
 
 ---
 
@@ -216,49 +206,12 @@ IEEE 802.11r defines two modes for roaming:
 
 ---
 
-```mermaid
-kernel mac80211/cfg80211
-   │  NL80211_CMD_FRAME netlink
-   ▼
-driver_nl80211_event.c:1428  mlme_event_mgmt
-   │  builds union wpa_event_data { .rx_mgmt = { frame, frame_len, freq, … } }
-   ▼
-wpa_supplicant_event(drv->ctx, EVENT_RX_MGMT, &event)
-   │
-   ▼
-drv_callbacks.c:2711  hostapd_mgmt_rx
-   │  selects hapd by BSSID, runs through HAPD_BROADCAST fan-out
-   ▼
-ieee802_11.c:8156  ieee802_11_mgmt
-   │  switch (stype) { AUTH → handle_auth; ACTION → handle_action; … }
-   ▼
-For FT Auth:        ieee802_11.c:4670  case WLAN_AUTH_FT:
-                       wpa_ft_process_auth(sm, transaction, ies, …, handle_auth_ft_finish, hapd)
-For FT Action:      ieee802_11.c:7985  case WLAN_ACTION_FT:
-                       wpa_ft_action_rx(sta->wpa_sm, body, len)
-   │
-   ▼
-wpa_auth_ft.c — wpa_ft_process_auth_req / wpa_ft_rx_action
-   │  build FTIE / MDIE / RSNE response
-   │  if R0KH-PMK-R1 needed: ft_send_pull_request (over the DS to R0KH)
-   ▼
-wpa_auth_ft.c:4815  wpa_ft_action_send   (or 4670 → handle_auth_ft_finish)
-   │
-   ▼
-wpa_auth_glue.c:1231  hostapd_wpa_auth_send_ft_action
-   │  builds ieee80211_mgmt header (DA/SA/BSSID + ACTION body)
-   │  hostapd_drv_send_mlme(hapd, …, 0, NULL, 0, 0)
-   ▼
-ap_drv_ops.c:872  hostapd_drv_send_mlme
-   ▼
-driver_nl80211.c:4923  wpa_driver_nl80211_send_mlme
-   ▼
-driver_nl80211.c:9957  nl80211_send_frame_cmd
-   │  builds NL80211_CMD_FRAME netlink (NL80211_ATTR_WIPHY_FREQ, NL80211_ATTR_FRAME, …)
-   │  send_and_recv_resp (libnl nl_send_auto_complete + nl_recvmsgs)
-   ▼
-kernel cfg80211 / mac80211 → over the air
-```
+<div style="text-align: center;">
+
+![Alt text](../../assets/technology/802_11r/ft_call_flow.png)
+
+</div>
+
 
 ---
 
@@ -266,15 +219,11 @@ kernel cfg80211 / mac80211 → over the air
 
 ---
 
-```
-       [ Client (STA) ]
-          |          ^
-(1) FT Action      (4) FT Action
-    Request            Response
-          v          |
-     [ Current AP ]  ====== (2) RRB Request (EtherType 0x890D) =====>  [ Target AP ]
-                     <===== (3) RRB Response (EtherType 0x890D) =====
-```
+<div style="text-align: center;">
+
+![Alt text](../../assets/technology/802_11r/ft_over_ds_rrb.png)
+
+</div>
 
 ---
 
@@ -329,29 +278,7 @@ Two transports, both opened in `wpa_auth_glue.c:1916–1937` when `CONFIG_IEEE80
 
 ---
 
-```
-AF_PACKET socket (ETH_P_RRB  or  ETH_P_OUI 88-B7)
-   │
-   ▼
-l2_packet_linux.c:148  l2_packet_receive  (via eloop)
-   │
-   ├── For ETH_P_RRB:    hostapd_rrb_receive        (wpa_auth_glue.c:1584)
-   │                       wpa_ft_rrb_rx            (wpa_auth_ft.c)
-   │                         REQUEST  → wpa_ft_rrb_rx_request
-   │                                    → wpa_ft_process_auth_req
-   │                                    → R0KH pull
-   │                                    → wpa_ft_send_rrb_auth_resp
-   │                         RESPONSE → wpa_ft_action_send → back to STA over the air
-   │
-   └── For OUI 88-B7:    hostapd_rrb_oui_receive    (wpa_auth_glue.c:1602)
-                          wpa_ft_rrb_oui_rx         (wpa_auth_ft.c:4827)
-                            switch (oui_suffix):
-                              PULL     → wpa_ft_rrb_rx_pull  → wpa_ft_rrb_rx_r0 (R0KH) → build PMK-R1 → resp
-                              RESP     → wpa_ft_rrb_rx_resp  → wpa_ft_rrb_rx_r1 (R1KH) → ft_finish_pull → 4-way handshake
-                              PUSH     → wpa_ft_rrb_rx_push  → wpa_ft_rrb_rx_r1 (R1KH) → cache PMK-R1
-                              SEQ_REQ  → wpa_ft_rrb_rx_seq_req  → anti-replay sync
-                              SEQ_RESP → wpa_ft_rrb_rx_seq_resp
-```
+![Alt text](../../assets/technology/802_11r/ft_rrb_rx.png)
 
 ---
 
@@ -359,24 +286,7 @@ l2_packet_linux.c:148  l2_packet_receive  (via eloop)
 
 ---
 
-```
-For RRB (action relay):   wpa_ft_rrb_send (wpa_auth_ft.c:631)
-                            builds RRB frame header:
-                              frame_type     = RSN_REMOTE_FRAME_TYPE_FT_RRB
-                              packet_type    = FT_PACKET_REQUEST / FT_PACKET_RESPONSE
-                              action_length  = host_to_le16(len)
-                              ap_address     = <AP MAC>
-                              payload        = <FT Action body>
-                          → hostapd_wpa_auth_send_rrb  (callback in wpa_auth_glue.c)
-                          → for_each_interface() local-delivery check
-                          → l2_packet_send  (l2_packet_linux.c:115)
-                              sendto() on AF_PACKET with proto=ETH_P_RRB
-
-For OUI 88-B7:            wpa_ft_rrb_oui_send (wpa_auth_ft.c:642)
-                          → hostapd_wpa_auth_send_oui  (wpa_auth_glue.c:1092)
-                          → eth_p_oui_send  (eth_p_oui.c)
-                              AF_PACKET sendto() with global_oui 00:13:74 00:01 prefix
-```
+![Alt text](../../assets/technology/802_11r/ft_rrb_tx.png)
 
 For OUI 88-B7 frames, encryption is **AES-SIV** (`wpa_ft_rrb_build` at `wpa_auth_ft.c:523` → `wpa_ft_rrb_encrypt` / `wpa_ft_rrb_decrypt` at `wpa_auth_ft.c:58/478`) with the per-R0KH/R1KH shared key. Authenticated TLVs (SEQ, NONCE, R0KH-ID, R1KH-ID) are AAD; encrypted TLVs (S1KH-ID, PMK-R0 name, PMK-R1, pairwise, expires-in, VLAN, identity, RADIUS CUI, session-timeout) are the ciphertext.
 
@@ -418,30 +328,7 @@ RRB key distribution frames are encapsulated in IEEE 802 Extended OUI EtherType 
 
 ---
 
-```
-+-------------------------------------------------------------------------+
-| IEEE 802 Extended OUI EtherType Frame Header                            |
-+-------------------------------------------------------------------------+
-| Auth Length (16-bit little endian)                                      |
-+-------------------------------------------------------------------------+
-| Authenticated TLVs (Plaintext, protected by AES-SIV AAD):               |
-|   - FT_RRB_SEQ (Domain ID, Sequence Number, Timestamp)                  |
-|   - FT_RRB_NONCE (16-byte random challenge nonce)                       |
-|   - FT_RRB_R0KH_ID (NAS Identifier / FQDN of R0KH)                      |
-|   - FT_RRB_R1KH_ID (6-byte BSSID / Identifier of R1KH)                  |
-+-------------------------------------------------------------------------+
-| Encrypted TLVs (AES-SIV Ciphertext + SIV tag):                          |
-|   - FT_RRB_S1KH_ID (Client STA MAC address)                             |
-|   - FT_RRB_PMK_R0_NAME (16-byte PMK-R0 Name)                            |
-|   - FT_RRB_PMK_R1 (256/384-bit PMK-R1 Key)                              |
-|   - FT_RRB_PAIRWISE (Pairwise Cipher Suite)                             |
-|   - FT_RRB_EXPIRES_IN (Key lifetime in seconds)                         |
-|   - FT_RRB_VLAN_UNTAGGED / FT_RRB_VLAN_TAGGED (VLAN Configuration)     |
-|   - FT_RRB_IDENTITY (User identity from 802.1X)                         |
-|   - FT_RRB_RADIUS_CUI (Chargeable-User-Identity)                        |
-|   - FT_RRB_SESSION_TIMEOUT (Session timeout)                            |
-+-------------------------------------------------------------------------+
-```
+![Alt text](../../assets/technology/802_11r/ft_rrb_frame.png)
 
 ---
 
