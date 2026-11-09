@@ -460,22 +460,11 @@ $$\text{Current Radio Score} = \text{Metric} \times \left(1 + \frac{\text{Roamin
 
 prplMesh supports two steering mechanisms depending on the client's 802.11 standards compliance:
 
-```
-                                  Client Steering
-                                         │
-                    ┌────────────────────┴────────────────────┐
-                    ▼                                         ▼
-         802.11v BSS Transition                     Legacy Steering
-            (BTM Supported)                       (Non-11v Supported)
-                    │                                         │
-        ┌───────────┴───────────┐                 ┌───────────┴───────────┐
-        │ 1. Unblock Target BSS │                 │ 1. Unblock Target BSS │
-        │ 2. Send 1905.1 BTM    │                 │ 2. Set Timed Block on │
-        │    Steering Request   │                 │    Source BSS (ACL)   │
-        │ 3. Client roams       │                 │ 3. Disassoc / Deauth  │
-        │    seamlessly         │                 │ 4. Client reconnects  │
-        └───────────────────────┘                 └───────────────────────┘
-```
+<div style="text-align: center;">
+
+![Alt text](../../assets/technology/easymesh/client_steering_modes.png)
+
+</div>
 
 ---
 
@@ -555,13 +544,16 @@ When multiple client stations (STAs) congregate on a single AP or radio (e.g., t
 Load balancing operates on an event-driven model between the Agent and the Controller:
 
   1. Agent-Side Monitoring (monitor_stats.cpp:390-440):
+
       • The Agent periodically tracks channel utilization (channel_load_percent), active STA counts, and per-STA TX/RX airtime consumption.
+
       • When active clients exceed monitor_min_active_clients or the load delta crosses conf_client_load_notification_delta_th_percent, the Agent transmits an ACTION_CONTROL_HOSTAP_LOAD_MEASUREMENT_NOTIFICATION CMDU to the Controller.
+
   2. Controller-Side Evaluation (controller.cpp:4378-4435):
-      • High Load Trigger: If client_load_percent > monitor_total_ch_load_notification_hi_th_percent and active_client_count > monitor_min_active_clients, the Controller spawns a
-      load_balancer_task.cpp.
-      • Low Load Recovery: If load drops below monitor_total_ch_load_notification_lo_th_percent, the Controller clears confinement flags on previously offloaded STAs, allowing them
-      to roam back.
+
+      • High Load Trigger: If client_load_percent > monitor_total_ch_load_notification_hi_th_percent and active_client_count > monitor_min_active_clients, the Controller spawns a load_balancer_task.cpp.
+
+      • Low Load Recovery: If load drops below monitor_total_ch_load_notification_lo_th_percent, the Controller clears confinement flags on previously offloaded STAs, allowing them to roam back.
 
 ---
 
@@ -587,9 +579,11 @@ Load balancing operates on an event-driven model between the Agent and the Contr
 
   Rather than picking a random client, prplMesh calculates a Client Efficiency Ratio on the congested radio:
 
-                              ⎛   PHY Rate   ⎞
-    Efficiency Ratio ≈   ∑    ⎜──────────────⎟ × Traffic Share
-                       TX, RX ⎝Actual Bitrate⎠
+$$
+\text{Efficiency Ratio} \approx \sum_{\text{TX},\,\text{RX}} \left( \frac{\text{PHY Rate}}{\text{Actual Bitrate}} \right) \times \text{Traffic Share}
+$$
+
+The sum runs over the transmit (TX) and receive (RX) directions of the client.
 
   - On a 5 GHz Radio: The task targets the least efficient client (typically a client with high airtime consumption but degraded MCS/PHY rate due to distance). Offloading this
   client frees up disproportionately large airtime for the remaining high-rate STAs.
