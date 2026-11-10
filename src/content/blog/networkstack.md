@@ -648,24 +648,7 @@ ip netns del ns1
 
 ---
 
-```
-Host Network Namespace
-┌─────────────────────────────────────────────────────┐
-│                                                     │
-│  eth0 (physical)   docker0 (bridge, 172.17.0.1)     │
-│  192.168.1.100      │                               │
-│       │             │──────────────────────┐        │
-│       │             │                      │        │
-│    [NAT/MASQ]    veth_A                 veth_B      │
-│                    │                      │         │
-└────────────────────┼──────────────────────┼─────────┘
-                     │                      │
-Container A NS       │              Container B NS
-┌────────────────┐   │         ┌────────────────┐
-│  eth0          │◄──┘         │  eth0          │◄──┘
-│ 172.17.0.2/16  │             │ 172.17.0.3/16  │
-└────────────────┘             └────────────────┘
-```
+![Layered Model](../../assets/img/linux/host_network_namespace.png)
 
 ---
 
@@ -762,20 +745,7 @@ send(fd, buf, len, MSG_ZEROCOPY);
 
 XDP allows for packet processing right at the driver level—before the `sk_buff` is allocated:
 
-```
-NIC received packet
-    │
-    ▼ (Before sk_buff allocation)
-┌──────────────────────┐
-│   XDP Program (BPF)  │  ← Running here is extremely fast.
-└──────────────────────┘
-    │
-    ├─► XDP_DROP    → Drop packets immediately (DDoS mitigation)
-    ├─► XDP_PASS    → Proceed to the standard network stack.
-    ├─► XDP_TX      → Send it back via the same interface.
-    ├─► XDP_REDIRECT → Redirect to a different interface/CPU/socket
-    └─► XDP_ABORTED → Error, packet loss
-```
+![XDP Packet Verdicts](../../assets/img/linux/xdp.png)
 
 ```bash
 # Attach XDP program (with ip link)
