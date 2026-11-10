@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 390" width="800" height="390" font-family="'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" role="img" aria-label="Co-channel reuse: unplanned same-channel deployment versus a planned 1/6/11 reuse pattern">
+<rect width="800" height="390" fill="#ffffff"/>
+<rect x="10" y="14" width="380" height="362" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="200" y="44" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2937">Unplanned</text>
+<text x="200" y="64" text-anchor="middle" font-size="12" fill="#6b7280">every AP on the same channel</text>
+<circle cx="200.0" cy="190.0" r="46" fill="#dc2626" fill-opacity="0.16" stroke="#dc2626" stroke-width="1.5"/>
+<circle cx="266.0" cy="190.0" r="46" fill="#dc2626" fill-opacity="0.16" stroke="#dc2626" stroke-width="1.5"/>
+<circle cx="233.0" cy="247.2" r="46" fill="#dc2626" fill-opacity="0.16" stroke="#dc2626" stroke-width="1.5"/>
+<circle cx="167.0" cy="247.2" r="46" fill="#dc2626" fill-opacity="0.16" stroke="#dc2626" stroke-width="1.5"/>
+<circle cx="134.0" cy="190.0" r="46" fill="#dc2626" fill-opacity="0.16" stroke="#dc2626" stroke-width="1.5"/>
+<circle cx="167.0" cy="132.8" r="46" fill="#dc2626" fill-opacity="0.16" stroke="#dc2626" stroke-width="1.5"/>
+<circle cx="233.0" cy="132.8" r="46" fill="#dc2626" fill-opacity="0.16" stroke="#dc2626" stroke-width="1.5"/>
+<circle cx="200.0" cy="190.0" r="14" fill="#dc2626"/>
+<text x="200.0" y="194.0" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<circle cx="266.0" cy="190.0" r="14" fill="#dc2626"/>
+<text x="266.0" y="194.0" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<circle cx="233.0" cy="247.2" r="14" fill="#dc2626"/>
+<text x="233.0" y="251.2" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<circle cx="167.0" cy="247.2" r="14" fill="#dc2626"/>
+<text x="167.0" y="251.2" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<circle cx="134.0" cy="190.0" r="14" fill="#dc2626"/>
+<text x="134.0" y="194.0" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<circle cx="167.0" cy="132.8" r="14" fill="#dc2626"/>
+<text x="167.0" y="136.8" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<circle cx="233.0" cy="132.8" r="14" fill="#dc2626"/>
+<text x="233.0" y="136.8" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<text x="200" y="324" text-anchor="middle" font-size="12.5" font-weight="700" fill="#b91c1c">Neighbouring cells overlap on one channel</text>
+<text x="200" y="344" text-anchor="middle" font-size="12" fill="#334155">They contend for the same airtime (CCI)</text>
+<rect x="410" y="14" width="380" height="362" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="600" y="44" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2937">Planned 1 / 6 / 11 reuse</text>
+<text x="600" y="64" text-anchor="middle" font-size="12" fill="#6b7280">neighbours never share a channel</text>
+<circle cx="600.0" cy="190.0" r="46" fill="#2563eb" fill-opacity="0.16" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="666.0" cy="190.0" r="46" fill="#16a34a" fill-opacity="0.16" stroke="#16a34a" stroke-width="1.5"/>
+<circle cx="633.0" cy="247.2" r="46" fill="#ea580c" fill-opacity="0.16" stroke="#ea580c" stroke-width="1.5"/>
+<circle cx="567.0" cy="247.2" r="46" fill="#16a34a" fill-opacity="0.16" stroke="#16a34a" stroke-width="1.5"/>
+<circle cx="534.0" cy="190.0" r="46" fill="#ea580c" fill-opacity="0.16" stroke="#ea580c" stroke-width="1.5"/>
+<circle cx="567.0" cy="132.8" r="46" fill="#16a34a" fill-opacity="0.16" stroke="#16a34a" stroke-width="1.5"/>
+<circle cx="633.0" cy="132.8" r="46" fill="#ea580c" fill-opacity="0.16" stroke="#ea580c" stroke-width="1.5"/>
+<circle cx="600.0" cy="190.0" r="14" fill="#2563eb"/>
+<text x="600.0" y="194.0" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">1</text>
+<circle cx="666.0" cy="190.0" r="14" fill="#16a34a"/>
+<text x="666.0" y="194.0" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<circle cx="633.0" cy="247.2" r="14" fill="#ea580c"/>
+<text x="633.0" y="251.2" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">11</text>
+<circle cx="567.0" cy="247.2" r="14" fill="#16a34a"/>
+<text x="567.0" y="251.2" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<circle cx="534.0" cy="190.0" r="14" fill="#ea580c"/>
+<text x="534.0" y="194.0" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">11</text>
+<circle cx="567.0" cy="132.8" r="14" fill="#16a34a"/>
+<text x="567.0" y="136.8" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">6</text>
+<circle cx="633.0" cy="132.8" r="14" fill="#ea580c"/>
+<text x="633.0" y="136.8" text-anchor="middle" font-size="11" font-weight="700" fill="#ffffff">11</text>
+<text x="600" y="324" text-anchor="middle" font-size="12.5" font-weight="700" fill="#166534">The same channel is reused only two cells away</text>
+<text x="600" y="344" text-anchor="middle" font-size="12" fill="#334155">Overlap is kept between different channels</text>
+<text x="400.0" y="368" text-anchor="middle" font-size="11" fill="#6b7280">Circles show each AP's coverage. The number in the dot is the 2.4 GHz channel.</text>
+</svg>
