@@ -1,6 +1,6 @@
 ---
 title: 'Link Layer Discovery Protocol (LLDP)'
-description: 'Link Layer Discovery Protocol (LLDP)'
+description: 'How LLDP (IEEE 802.1AB) lets neighbouring devices advertise who they are and which port they are on: frame and TLV formats, timers, the transmit and receive state machines, and how to use it on Linux, switches and access points.'
 pubDate: 'July 14 2025'
 heroImage: '../../assets/lldp.jpg'
 category: 'Network Protocols'
@@ -10,544 +10,464 @@ category: 'Network Protocols'
 
 ---
 
-There is a need for a standardized way of representing the physical network
-connections pertaining to a given management domain. A standardized discovery
-mechanism is also required to increase the likelihood of multi-vendor
-interoperability of such physical topology management information.
+When you manage a network, one of the first questions is simple: *what is plugged into this port?* Without help, the answer lives in a spreadsheet, or in someone's memory. **LLDP (Link Layer Discovery Protocol)**, defined in **IEEE 802.1AB**, answers it automatically. Every device announces its identity and the port it is sending from, and every neighbour listens and remembers.
 
----
-
-### Link Layer Discovery Protocol 
-
----
-
-The Link Layer Discovery Protocol (LLDP) is a media independent protocol
-intended to be run on all IEEE 802 devices, allowing a LLDP agent to learn
-higher layer management reachability and connection endpoint information from
-adjacent devices.
-</br>
-LLDP runs on all 802 media. Additionally the protocol runs over the data-link
-layer only, allowing two systems running different network layer protocols to
-learn about each other.
-</br>
-Each device configured with an active LLDP Agent sends periodic messages to the
-Slow Protocols multicast MAC address as specificed by Std 802.3, 2000 Edition
-Annex 43B. The device sends the periodic messages on all physical interfaces
-enabled for LLDP transmission, and listens for LLDP messages on the same set on
-interfaces. Each LLDP message contains information identifying the source port
-as a connection endpoint identifier. It also contains at least one network
-address which can be used by an NMS to reach a management agent on the device
-(via the indicated source port). Each LLDP message contains a configurable
-time-to-live value, which tells the recipient LLDP agent when to discard each
-element of learned topology information.
+LLDP has three properties that explain most of its design:
 
----
+* **It is a Layer 2 protocol.** It runs directly on Ethernet, with no IP address needed, so two devices with different network-layer protocols (or none yet) can still learn about each other.
+* **It is one-hop only.** A frame is sent to a multicast address that bridges do not forward, so it only ever reaches the device at the other end of the cable.
+* **It is vendor neutral.** It replaces vendor protocols such as Cisco CDP, Extreme EDP and Foundry FDP, and it has a defined extension mechanism for vendor and standards-body information.
 
-#### Frame Encapsulation 
+LLDP only **advertises**. It does not configure anything by itself and it has no authentication. The data it collects is used by a network management system (NMS), by the operator on the command line, and by features that need to know the neighbour, such as PoE negotiation and voice VLAN assignment.
 
 ---
-
-An LLDP PDU is encapsulated within an 802 frame that cooresponds to frame
-formatted to meet the requirements of an 802 Slow Protocol as defined by Std
-802.3, 2000 Edition, Annex 43B. The format is shown in the following figure:
 
+### What LLDP Is Used For
 
-![H1](../../assets/img/networking/FrameEncapsulation.png)
-
 ---
 
-##### Slow Protocols Multicast DA
+| Use | What LLDP provides |
+|-----|--------------------|
+| Topology discovery | Which device and port is on the other end of each link |
+| Inventory and troubleshooting | System name, description, software version, management address |
+| PoE negotiation | Power requested and allocated, through the 802.3 *Power via MDI* TLV and LLDP-MED |
+| VLAN and QoS provisioning | Port VLAN ID and VLAN names (802.1 TLVs), network policy for IP phones (LLDP-MED) |
+| Link validation | Mismatch of speed, duplex or maximum frame size between the two ends |
+| Wi-Fi deployments | An access point learns the switch port, VLAN and PoE class on its Ethernet uplink |
 
 ---
 
-The Slow Protocols Multicast destination address is 01-80-C2-00-00-02.
-This address is within the range reserved by ISO/IEC 15802-3 (MAC Bridges)
-for link-constrained protocols and will not be forwarded by conformant MAC
-bridges.
+### The Frame
 
 ---
 
-##### Station SA
-
----
+An LLDP frame is an ordinary Ethernet frame with a dedicated EtherType, **0x88CC**.
 
-The source MAC address of the sending station
+<div style="text-align: center;">
 
----
+![LLDP Ethernet frame: destination MAC 01-80-C2-00-00-0E, source MAC, EtherType 0x88CC, one LLDPDU, FCS](../../assets/img/networking/FrameEncapsulation.png)
 
-##### Slow Protocols Type
+</div>
 
 ---
 
-The Slow Protocols Type field encoding of the Length/Type field is 88-09
+##### Destination address
 
 ---
 
-##### Subtype
+The destination is a **link-local multicast address** from the range 01-80-C2-00-00-00 to 01-80-C2-00-00-0F that IEEE reserves for protocols that must not be forwarded. LLDP may use three of them, which differ in how far the frame can travel:
 
----
+| Destination MAC | Name | Which bridges stop it |
+|-----------------|------|-----------------------|
+| `01-80-C2-00-00-0E` | Nearest Bridge (the default) | Every bridge, including simple two-port relays (TPMR) |
+| `01-80-C2-00-00-03` | Nearest non-TPMR Bridge | Normal bridges, but not TPMRs |
+| `01-80-C2-00-00-00` | Nearest Customer Bridge | Customer bridges, but not provider bridges |
 
-The Slow Protocols Subtype field is TBD. All reserved fields shall be set to zero.
+In almost every network you will only see `01-80-C2-00-00-0E`.
 
 ---
 
-#### LLDP Message Format 
+##### Source address and EtherType
 
 ---
 
-The basic LLDP protocol data unit consists of a header, followed by a variable
-number of Type-Length-Value (TLV) attributes. A single LLDP PDU is transmitted
-in a single 802 media frame.
+The source is the MAC address of the **sending port**. The EtherType is `0x88CC`. Older drafts of the protocol used the 802.3 *Slow Protocols* EtherType (0x8809) with a subtype, but the published standard does not, so a capture filter of `ether proto 0x88cc` is what you want.
 
 ---
 
-##### LLDP Header Format
+##### Payload
 
 ---
 
-The LLDP header is a 4 byte header, in network byte order, containing 3 fields,
-as shown in figure.
+The payload is exactly **one LLDPDU**. An LLDPDU must fit in a single frame, and the sender must not fragment it. The number of TLVs you can send is therefore limited by the MTU of the link.
 
-
-![H1](../../assets/img/networking/LLDPFormat.png)
-
 ---
 
-##### Version
+### The LLDPDU
 
 ---
 
-The LLDP protocol version number, set to 0x01 for this version of the
-protocol.
+An LLDPDU is nothing but a list of **TLVs** (Type, Length, Value). There is no separate header.
 
----
+<div style="text-align: center;">
 
-##### Flags
+![Structure of an LLDPDU: Chassis ID, Port ID and Time To Live TLVs in this order, then optional TLVs, then End of LLDPDU](../../assets/img/networking/LLDPFormat.png)
 
----
+</div>
 
-The LLDP flags field provide for future header extensions and keep the
-header word-aligned for easier processing. No flag definition bits are
-defined at this time. This field must be set to zero in all version 1 LLDP
-messages.
+* The first three TLVs are **mandatory and must come in this order**: Chassis ID, Port ID, Time To Live.
+* Optional TLVs follow, in any order.
+* The last TLV is **End of LLDPDU** (type 0, length 0). Anything after it is ignored.
 
 ---
 
-##### Time to Live
+### TLV Format
 
 ---
 
-The number of seconds the information in this LLDP message should be
-regarded as valid by the recipient. Agents of the PTOPO MIB must not
-return MIB information based on expired LLDP messages. The valid range is
-0 to 65535 for this field.
-
----
+Every TLV starts with a 2-octet header that packs the type and the length together:
 
-#### TLV Format
+<div style="text-align: center;">
 
----
+![TLV format: 7-bit type, 9-bit length, then 0 to 511 octets of information](../../assets/img/networking/tlv_lldp.png)
 
-Following the LLDP header are a variable number of TLVs, depending on
-implementation and maximum message size.
-</br>
-A 2 byte type field identifies the specific TLV, and a 2 byte length, in octets,
-indicates the length of the value field contained in the TLV. A TLV shall
-always start on a 4 octet boundary. Pad octets are placed at the end of the
-previous TLV in order to align the next TLV. These pad octets are not counted
-in the length field of the TLV.
+</div>
 
+* **Type** (7 bits): which TLV this is, from 0 to 127.
+* **Length** (9 bits): the number of octets of the information string, from 0 to 511.
+* **Information string**: the content. Its format depends on the type.
 
-![H1](../../assets/img/networking/tlv_lldp.png)
+Unlike many protocols, a TLV is **not padded to a 4-byte boundary**. The next TLV starts right after the last octet of the previous one.
 
 ---
 
-##### Type
+##### The standard TLVs
 
 ---
 
-The integer value identifying the type of information contained in
-the value field.
-
----
+<div style="text-align: center;">
 
-##### Length
+![LLDP TLV types: End of LLDPDU, Chassis ID, Port ID, Time To Live, Port Description, System Name, System Description, System Capabilities, Management Address, Organizationally Specific](../../assets/img/networking/tlv_sum.png)
 
----
+</div>
 
-The length, in octets, of the value field to follow.
+Types 9 to 126 are reserved. A receiver must **skip any TLV type it does not know** and keep processing the rest of the LLDPDU.
 
 ---
 
-##### Value
+#### Chassis ID TLV
 
 ---
-
-A variable-length octet-string containing the instance-specific
-information for this TLV.
 
----
+The Chassis ID identifies the device as a whole. Together with the Port ID it forms the identifier of the connection endpoint.
 
-#### Standard TLV Definitions 
+<div style="text-align: center;">
 
----
+![Chassis ID TLV: type 1, length, a 1-octet subtype and a 1 to 255 octet identifier](../../assets/img/networking/chassid.png)
 
-The mandatory LLDP TLVs allow for a LLDP agent to support the PTOPO MIB
-for connections terminating on the local chassis. Optional TLVs allow for
-vendor specific extensions.
-The following table summarizes the TLVs defined in this document.
+</div>
 
+The subtype says how to read the identifier:
 
-![H1](../../assets/img/networking/tlv_sum.png)
+| Subtype | Meaning | Typical content |
+|:-------:|---------|-----------------|
+| 1 | Chassis component | Entity MIB `entPhysicalAlias` |
+| 2 | Interface alias | `ifAlias` |
+| 3 | Port component | Entity MIB `entPhysicalAlias` of a port |
+| **4** | **MAC address** | A MAC of the device, the most common choice |
+| 5 | Network address | An IP address, with an address family prefix |
+| 6 | Interface name | `ifName`, for example `eth0` |
+| 7 | Locally assigned | Any string the administrator chose |
 
 ---
 
-##### Chassis ID
+#### Port ID TLV
 
 ---
 
-The Chassis ID is a mandatory TLV which identifies the chassis component
-of the endpoint identifier associated with the transmitting LLDP agent.
+The Port ID identifies the port that sent the frame. It has the same layout as the Chassis ID TLV, with type 2.
 
+<div style="text-align: center;">
 
-![H1](../../assets/img/networking/chassid.png)
+![Port ID TLV: type 2, length, a 1-octet subtype and a 1 to 255 octet identifier](../../assets/img/networking/port_id.png)
 
+</div>
 
-The Chassis ID fields are defined as follows:
-</br>
-Chassis ID Type: This field identifies the format and source of the chassis
-identifier string. It is an enumerator defined by the
-PtopoChassisIdType object from RFC2922
-</br>
-Chassis ID String: The binary string containing the actual chassis identifier for this
-device. The source of this field is defined by PtopoChassisId from
-RFC2922.
+| Subtype | Meaning |
+|:-------:|---------|
+| 1 | Interface alias |
+| 2 | Port component |
+| 3 | MAC address |
+| 4 | Network address |
+| **5** | **Interface name** (for example `Gi1/0/12`, the most common) |
+| 6 | Agent circuit ID |
+| 7 | Locally assigned |
 
 ---
 
-##### Port ID
+#### Time To Live TLV
 
 ---
 
-The Port ID is a mandatory TLV which identifies the port component of the
-endpoint identifier associated with the transmitting LLDP agent. If the
-specified port is an IEEE 802.3 Repeater port, then this TLV is optional.
+This 2-octet TLV (type 3) tells the receiver **how many seconds** the information is valid. The receiver keeps the neighbour in its table until the timer runs out, unless a newer frame refreshes it.
 
+A TTL of **0** has a special meaning: the sender is shutting down, and the receiver must delete everything it learned from that neighbour at once.
 
-![H1](../../assets/img/networking/port_id.png)
+#### Optional descriptive TLVs
 
+---
 
-The Port ID fields are defined as follows:
-</br>
-Port ID Type: This field identifies the format and source of the port identifier
-string. It is an enumerator defined by the PtopoPortIdType object
-from RFC2922
-</br>
-Port ID String: The binary string containing the actual port identifier for the port
-which this LLDP PDU was transmitted. The source and format of this
-field is defined by PtopoPortId from RFC2922.
+* **Port Description** (4): free text for the port, for example the `ifDescr` or a label.
+* **System Name** (5): the administratively assigned name, for example the hostname.
+* **System Description** (6): hardware model, operating system and software version.
+* **System Capabilities** (7): two bit fields of 2 octets each, *capabilities* and *enabled capabilities*. Bits include Other, Repeater, Bridge, WLAN access point, Router, Telephone, DOCSIS cable device and Station only. An AP typically reports "WLAN access point" in both fields.
 
 ---
 
-#### Management Address
+#### Management Address TLV
 
 ---
 
-The Management Address is a mandatory TLV which identifies a network
-address associated with the local LLDP agent, which can be used to reach
-the agent on the port identified in the Port ID TLV. The value field of
-this TLV has the following record format:
+The Management Address (type 8) tells the neighbour how to reach the device for management, for example over SNMP or SSH.
 
+<div style="text-align: center;">
 
-![H1](../../assets/img/networking/ManagementAddressTLVFormat.png)
+![Management Address TLV: type 8, length, address string length, address subtype, address, interface numbering subtype, interface number, OID string length, OID](../../assets/img/networking/ManagementAddressTLVFormat.png)
 
+</div>
 
-The Management Address fields are defined as follows:
-</br>
-IANA Address Family: The enumerated value for the network address type identified in this
-TLV. This enumeration is defined in the “Assigned Numbers” RFC
-[RFC3232] and the ianaAddressFamilyNumbers object.
-</br>
-Address Length: The number of octets contained in the address string to follow.
-</br>
-Address: The binary string containing the network management address for this
-TLV.
+* **Address subtype**: an IANA address family number, for example 1 for IPv4 and 2 for IPv6.
+* **Interface number**: the interface the address belongs to, numbered as an `ifIndex`, a system port number, or unknown.
+* **OID**: an optional object identifier of the hardware that has this address. It is usually empty.
 
+A device can send more than one Management Address TLV, for example one IPv4 and one IPv6.
+
 ---
 
-#### Vendor-Specific
+#### Organizationally Specific TLV
 
 ---
-
-This TLV is available to allow vendors to support their own extended
-attributes not suitable for general usage. The information conveyed in
-the TLV MUST not affect the operation of the LLDP protocol.
-</br>
-LLDP agents not equipped to interpret the vendor-specific information sent
-by other LLDP agents MUST ignore it (although it may be reported). LLPD agents which do not receive desired vendor-specific information SHOULD
-make an attempt to operate without it, although they may do so (and report
-they are doing so) in a degraded mode.
-</br>
-A summary of the Vendor-Specific TLV format is shown below. The fields are
-transmitted from left to right.
 
+Type 127 is the extension point. The first 3 octets are an **OUI** that says who defined the TLV, followed by a 1-octet subtype that the owner of that OUI assigns, and then the content.
 
-![H1](../../assets/img/networking/VendorID.png)
+<div style="text-align: center;">
 
+![Organizationally Specific TLV: type 127, length, 3-octet OUI, 1-octet subtype and the information string](../../assets/img/networking/VendorID.png)
 
-Vendor-Id: The high-order octet is 0 and the low-order 3 octets are the SMI Network
-Management Private Enterprise Code of the Vendor in network byte order, as
-defined in the "Assigned Numbers" RFC [RFC3232].
-</br>
-String: The String field is one or more octets. The actual format of the
-information is site or application specific, and a robust implementation
-SHOULD support the field as undistinguished octets. Multiple
-subattributes MAY be encoded within a single Vendor-Specific TLV, although
-they do not have to be.
+</div>
 
----
+A receiver that does not recognise the OUI or the subtype must ignore the TLV. An organization-specific TLV is not allowed to change how the base protocol works. The best-known sets are:
 
-### Protocol Operation 
+| OUI | Owner | Examples |
+|-----|-------|----------|
+| `00-80-C2` | IEEE 802.1 | Port VLAN ID, port and protocol VLAN ID, VLAN name, protocol identity, VID usage digest, link aggregation |
+| `00-12-0F` | IEEE 802.3 | MAC/PHY configuration and status, Power via MDI, maximum frame size, EEE |
+| `00-12-BB` | TIA-1057 (LLDP-MED) | Capabilities, network policy (voice VLAN, DSCP), location (including E911 data), extended power, inventory |
+| Vendor OUIs | Individual vendors | Proprietary extensions, for example for stacking or fabric membership |
 
 ---
 
-An active LLDP Agent must perform the following tasks:
+### Protocol Operation
 
-- transmit LLDP messages
-- process received LLDP messages
-- maintain an instance of the LLDP MIB
-- maintain an instance of the PTOPO MIB
-- maintain appropriate ifEntry and/or entPhysicalEntry instances
-- implement ifAlias and/or entPhysicalAlias MIB objects
-
 ---
 
-#### Protocol Initialization 
+LLDP is implemented as an **agent** per port. Each port has an administrative mode that you can set:
 
----
+| Mode | Transmits | Receives |
+|------|:---------:|:--------:|
+| `txAndRx` (default on most systems) | yes | yes |
+| `txOnly` | yes | no |
+| `rxOnly` | no | yes |
+| `disabled` | no | no |
 
-Upon system reinitialization, the following tasks are performed by the LLDP
-agent:
-</br>
-Non-volatile configuration for the LLDP MIB is retrieved if applicable,
-otherwise appropriate default values are assigned to all LLDP
-configuration variables.
-</br>
-If LLDPAdminStatus is equal to 'disabled(2)', then LLDP initialization is
-terminated (until such time that the LLDPAdminStatus object is set to
-'enabled(1)'), otherwise continue.
-</br>
-Internal (implementation-specific) data structures are initialized such
-that appropriate local physical topology information and LLDP transmission
-parameters are set.
+A port normally acts as both sides: the transmit state machine sends your own information, and the receive state machine stores the neighbour's.
 
 ---
 
-#### Message Encoding
+#### Timers and defaults
 
 ---
 
-This section does not assume a particular buffering strategy, and such details
-are omitted.
+| Parameter | Default | Meaning |
+|-----------|:-------:|---------|
+| `msgTxInterval` | 30 s | Time between two regular frames |
+| `msgTxHold` (hold multiplier) | 4 | TTL = `msgTxInterval` x `msgTxHold` |
+| TTL sent | 120 s | The result of the two values above, capped at 65535 |
+| `txFastInit` | 4 | Number of frames sent quickly when a new neighbour appears |
+| `msgFastTx` | 1 s | Interval of those quick frames |
+| `reinitDelay` | 2 s | Minimum wait after a port is disabled before it is enabled again |
 
----
-
-##### Header Fields
+Because the TTL is four times the interval, a neighbour survives the loss of up to three frames in a row.
 
 ---
 
-The version field is set to one (0x01). The flags field is set to zero (0x00).
-The time-to-live field is set to the value obtained by the following
-formula: 
-</br>
-TTL = min(65535, (LLDPMessageTxInterval * LLDPMessageTxHoldMultiplier))
+#### Transmission
 
 ---
 
-##### TLVs
+An agent sends a frame:
 
----
+1. every `msgTxInterval` seconds, as a periodic refresh;
+2. immediately, when **any local information changes** (for example the port name, the management address, or the speed). The frame goes out after a short delay and is rate limited by a credit mechanism, so that a flapping value cannot flood the link;
+3. as a burst of `txFastInit` frames, one per second, when the agent sees a **new neighbour** (a new remote system appears). This lets a device that was just plugged in learn about its neighbour in a few seconds instead of waiting up to 30 s.
 
-Each message must contain one instance of each of the mandatory LLDP TLV
-elements. Additional TLV data elements may be added as maximum frame size
-permits.
-</br>
-The mandatory TLVs include: Chassis ID, Port ID (optional for repeaters)
-and Management Address.
+When a port goes down, or LLDP is turned off on it, the agent sends **one last frame with TTL 0** (the *shutdown LLDPDU*), so that the neighbour removes the entry at once instead of waiting for it to age out.
 
 ---
 
-#### Message Transmission 
+#### Reception
 
 ---
 
-LLDP agents must follow the rules for Slow Protocols transmission as defined by
-Std 802.3, 2000 Edition, Annex 43B. In addition to these rules, an active LLDP
-agent must transmit a LLDP message out each appropriate port, once each message
-interval, as determined by the LLDPMessageTxInterval MIB object, subject to the
-restriction of transmission rules for Slow Protocols. Messages transmitted on
-repeater devices may be sent for each repeater backplane, once per message
-interval. Actual transmission intervals should be jittered to prevent
-synchronization effects.
+When a frame arrives, the agent:
 
-Note that the agent must suppress the transmission of multiple LLDP messages
-during a single message interval, in the event message transmission cannot be
-restricted to a single port, but rather a group of ports (e.g., a repeater
-device).
+1. Checks the frame. Wrong destination, wrong EtherType, or an LLDPDU that cannot be parsed is dropped, and an error counter is incremented.
+2. Checks that the first three TLVs are Chassis ID, Port ID and TTL in that order, that each appears exactly once, and that none is repeated later. Otherwise the whole LLDPDU is discarded.
+3. Skips TLVs with an unknown type, an unknown OUI or an unknown subtype.
+4. Looks up the neighbour by the pair **(Chassis ID, Port ID)** on the receiving port.
+5. If the neighbour is new, creates an entry. If it exists, updates it and restarts its TTL timer.
+6. If the TTL is 0, **deletes** the entry.
+7. If anything changed, raises a change notification (for example an SNMP trap) at most once per notification interval (default 30 s).
 
-In this case, a single port in the port group should be selected (in an
-implementation-specific manner) to represent the port group. Note that an agent
-is encouraged to represent port groups as 'backplanes', in the entPhysicalTable
-of the Entity MIB, rather than individual ports in either the Entity MIB or
-Interfaces MIB.
+Entries that are not refreshed within their TTL are removed by the same aging timer.
+
+---
 
-Regarding the transmission of a single LLDP message, for the indicated physical
-interface contained in the local system:
+#### No forwarding
 
-The LLDP agent checks for the existence of a LLDPSuppressEntry for the
-port. If an entry exists then this port is skipped, otherwise continue.
+---
 
-The LLDP message is encapsulated as appropriate for the port.
+Bridges and routers **terminate** LLDP: they process the frame and never retransmit it. This is guaranteed for `01-80-C2-00-00-0E` by every conformant bridge. The only exceptions are devices that cannot inspect frames at all, such as simple repeaters or hubs. They will repeat the frame, and an NMS can then see the same neighbour on several ports.
 
-The MAC header is filled in with appropriate SA and DA and EtherType
-fields as defined above.
+The consequence for Linux bridges is worth remembering. A Linux `bridge` does not forward `01-80-C2-00-00-0E` by default, because the group forward mask is zero. If you need LLDP to cross a Linux bridge, for example between a VM and a physical switch, you must set it:
 
-The frame is transmitted or passed to a lower layer for transmission.
+```
+echo 0x4000 > /sys/class/net/br0/bridge/group_fwd_mask
+```
 
-The LLDPStatsOutPkts counter is incremented for the indicated local port.
+Bit 14 corresponds to the last octet `0E`. Only do this when you want a transparent bridge, because the VM then sees the physical switch as its direct neighbour.
 
 ---
 
-#### Message Forwarding 
+### The MIBs
 
 ---
 
-As indicated by the operation of Slow Protocols, LLDP agents should not forward
-LLDP messages received on any port. However, some devices, such as repeaters,
-cannot examine each frame received on an interface or port. Such a device will
-allow LLDP messages to be retransmitted on one or more local ports, and will
-transmit its own LLDP messages on those ports as well. These agents are termed
-'forwarding' LLDP agents.
+The agent exposes what it knows through SNMP:
 
-LLDP agents located on devices which examine each frame before retransmitting it
-(e.g., routers and bridges), are expected to process received LLDP messages and
-not retransmit them on any local port. These agents are termed 'non-forwarding'
-LLDP agents.
+* **LLDP-MIB** (IEEE 802.1AB): the local system information (`lldpLocalSystemData`), the remote neighbours (`lldpRemTable`, indexed by time mark, local port and remote index), configuration (`lldpPortConfigTable`) and statistics (`lldpStatsTxPortTable` and `lldpStatsRxPortTable`, with frames in, frames out, errors, discards, unknown and expired TLVs).
+* **LLDP-EXT-DOT1-MIB** and **LLDP-EXT-DOT3-MIB**: the 802.1 and 802.3 extension data.
+* **LLDP-MED-MIB**: the TIA extension data.
 
-An NMS may find physical topology information about the same physical port,
-represented by several LLDP agents. This may occur for one of several reasons,
-including a mixture of forwarding and non-forwarding LLDP agents within a
-network.
+Older documents describe LLDP together with the **PTOPO-MIB** (RFC 2922), the *physical topology* MIB. That was the data model of the original IETF draft. Current implementations use the LLDP-MIB above, and a NMS builds the topology from the remote tables of all devices.
 
 ---
 
-#### Received Message Processing 
+### LLDP on Linux
 
 ---
 
-An active LLDP agent must process LLDP messages received on each appropriate
-port, as such messages arrive. Before LLDP specific receive rules are executed,
-the frame is subject to the receive processing rules of Slow Protocols defined
-in Std 802.3, 2000 Edition, Annex 43B.
+The kernel has no LLDP stack. An LLDP daemon runs in user space and uses a raw `AF_PACKET` socket bound to EtherType `0x88CC`, usually with the multicast address added to the interface. The common choices are:
 
-The following sections refer to the reception of a single LLDP message, for the
-indicated physical interface contained in the local system:
+| Daemon | Notes |
+|--------|-------|
+| **lldpd** | The most widely used. Supports LLDP, CDP, EDP, FDP, SONMP, LLDP-MED, a CLI (`lldpcli`), SNMP sub-agent, and Linux bridge, bond and VLAN awareness. It is also the package available on OpenWrt |
+| **lldpad** | Intel's Open-LLDP. Used mainly for DCB/FCoE (the 802.1Qaz and 802.1Qbb TLVs) |
+| `systemd-networkd` | A built-in LLDP receiver and sender (`LLDP=` and `EmitLLDP=` in a `.network` file). Basic information only |
 
 ---
 
-##### Header Fields
+##### Common commands with lldpd
 
 ---
 
-The LLDP message and the chassis/port indices associated with the receiving port
-are retrieved.
+```
+# Show what the neighbours advertise
+lldpcli show neighbors
+lldpcli show neighbors details
 
-The LLDP version and flags field are checked. The version should equal one
-(0x01) and the flags should equal zero (0x00). If not, the LLDPStatsInErrors
-counter for the receiving port is incremented and processing is terminated;
-otherwise continue.	
+# What this device advertises
+lldpcli show chassis
+lldpcli show interfaces
 
----
+# Statistics, useful for finding drops and errors
+lldpcli show statistics
 
-##### TLVs
+# Configure
+lldpcli configure system description "Wi-Fi 7 AP"
+lldpcli configure system hostname ap-lab-01
+lldpcli configure lldp tx-interval 30
+lldpcli configure ports eth0 lldp status rx-and-tx
 
----
+# Do not listen on a port (for example an untrusted one)
+lldpcli configure ports eth1 lldp status disabled
+```
 
-The TLV portion of the message is decoded. If this portion of the LLDP message
-is not properly encoded, as defined above, then the LLDPStatsInErrors counter for the receiving port is incremented, and processing is terminated; otherwise
-continue.
+A typical neighbour listing looks like this:
 
-The list of TLV elements is examined. The agent must skip and ignore PDU data
-elements unknown to the agent. If any of the mandatory data elements are
-missing, then the LLDPStatsInErrors counter for the receiving port is
-incremented, and processing is terminated; otherwise continue.
+```
+-------------------------------------------------------------------------------
+LLDP neighbors:
+-------------------------------------------------------------------------------
+Interface:    eth0, via: LLDP, RID: 1, Time: 0 day, 02:11:35
+  Chassis:
+    ChassisID:    mac 00:11:22:aa:bb:cc
+    SysName:      sw-access-03
+    SysDescr:     Example Networks 24-port PoE switch, software 4.2.1
+    MgmtIP:       192.168.10.3
+    Capability:   Bridge, on
+    Capability:   Router, off
+  Port:
+    PortID:       ifname Gi1/0/12
+    PortDescr:    AP-lab-01
+    TTL:          120
+  VLAN:         10, pvid: yes VLAN-10-mgmt
+  LLDP-MED:
+    Device Type:  Network Connectivity Device
+```
 
-The LLDPStatsInGoodPkts counter is incremented for the receiving port.	
+(Illustrative output. The exact fields depend on the version and on what the neighbour sends.)
 
 ---
 
-#### PTOPO MIB Update
+##### Looking at the frames
 
 ---
 
-If the time-to-live field in the LLDP message header is zero then execute this
-interface shutdown procedure, described below. Processing of the LLDP message
-is now complete.
+```
+# tcpdump
+tcpdump -i eth0 -nn -vv ether proto 0x88cc
 
-If the time-to-live field is non-zero, then the appropriate ptopoConnEntry is
-found or created, based on the data elements included in the LLDP message. If
-the indicated entry is dynamic (i.e., ptopoConnIsStatic is true), then the
-current sysUpTime value is stored in the ptopoConnLastVerifyTime field for the
-entry.
+# Capture one LLDPDU to a file for Wireshark
+tcpdump -i eth0 -c 1 -w lldp.pcap ether proto 0x88cc
+```
 
-If a ptopoConnEntry of one type was replaced with an entry of a different type,
-then the ptopoConnTabReplaces counter is incremented.
+In Wireshark use the display filter `lldp`. The dissector shows each TLV with its type, length and decoded value, which is the fastest way to see why a neighbour is not being recognised.
 
-If any ptopoConnEntry was added or deleted, or if information other than the
-ptopoConnLastVerifyTime changed for any entry due to the processing of this LLDP
-message, then the ptopoLastChangeTime object is set with the current sysUpTime,
-and a ptopoConfigChange trap event is generated.
-
 ---
 
-#### Interface Shutdown Procedure
+### LLDP on Access Points and Embedded Systems
 
 ---
 
-A special procedure exists for the case in which a LLDP agent knows a particular
-port is about to become non-operational.
+On a Wi-Fi AP or an OpenWrt device, LLDP is useful on the **wired uplink**:
 
-Note that the LLDPSuppressTable has precedence over these procedures, and they
-are only executed if the indicated interface is not specified in the
-LLDPSuppressTable.
+* The AP learns the switch name and port, so you can tell exactly which port it is plugged into when you debug a roaming or backhaul problem.
+* The 802.3 *Power via MDI* TLV (and the LLDP-MED power extension) lets the AP and a PoE switch negotiate power beyond the coarse PoE class, which matters for Wi-Fi 6E and Wi-Fi 7 APs that need more than 802.3af.
+* The PVID and VLAN name TLVs help detect a management VLAN mismatch between the AP and the switch.
+* The AP can advertise itself with the capability **WLAN access point**, its system name and its management IP, so a controller or NMS can find it.
 
-If any entries are deleted as a result of these procedures, the
-ptopoConnTabDeletes counter is incremented for each deleted entry.
+In a Multi-AP (EasyMesh) network, LLDP is separate from the IEEE 1905.1 topology discovery. 1905.1 discovers the *mesh* topology between the Agents and the Controller, while LLDP shows the wired neighbour of each Ethernet port.
 
+Memory and CPU cost is small: an agent sends one frame every 30 s per port, and it stores a few hundred bytes for each neighbour. For a very small device, `lldpd` can be built without SNMP and without the extra protocol modules.
+
 ---
 
-#### LLDP Shutdown Transmission 
+### Security Considerations
 
 ---
+
+LLDP has **no authentication or encryption**, so treat everything in it as unauthenticated:
 
-In the event an interface, currently configured with LLDP message transmission
-enabled, either becomes disabled for LLDP activity, or the interface is
-administratively disabled, a final LLDP message is transmitted with a time to
-live value of zero (before the interface is disabled).
+* **Information leak.** The frame tells anyone on the cable the device model, software version, management address and VLANs. Do not send LLDP on ports that face untrusted users or the internet, and keep the System Description short.
+* **Spoofing and poisoning.** A host can send fake LLDP frames to confuse an NMS or to trigger a PoE or voice VLAN change through LLDP-MED. Limit LLDP-MED actions to ports that really have phones and APs.
+* **Table exhaustion.** A device that learns thousands of fake neighbours can fill its remote table. Implementations cap the number of neighbours per port.
+* **Not a trust anchor.** Never use the LLDP-reported chassis or port to make an access-control decision. Use 802.1X and MACsec for that.
 
-In the event the LLDPOperStatus is transitioning to the disabled state, then
-this shutdown procedure should be executed for all local interfaces.
+The usual practice is to enable LLDP on infrastructure links (switch-to-switch, switch-to-AP) and disable it, or run it `txOnly`, on access ports for end users.
 
 ---
 
-#### LLDP Shutdown Reception 
+### Summary
 
 ---
 
-After reception of a valid LLDP message with a time-to-live value equal to zero,
-the LLDP Agent must remove all information in the PTOPO MIB learned from the
-particular LLDP agent, which is associated with the indicated remote connection
-endpoint.
+1. LLDP (IEEE 802.1AB) lets a device advertise its identity to the single device at the other end of the cable. It uses EtherType `0x88CC` and a non-forwarded multicast address, by default `01-80-C2-00-00-0E`.
+2. An LLDPDU is a list of TLVs with a 7-bit type and a 9-bit length. **Chassis ID, Port ID and Time To Live are mandatory and come first**, then optional TLVs, then End of LLDPDU.
+3. The neighbour is identified by *(Chassis ID, Port ID)* and aged by the TTL, which is `msgTxInterval` x `msgTxHold`, 120 s by default. TTL 0 means "forget me".
+4. Frames are sent periodically, on every change, and in a fast burst when a new neighbour appears. A shutdown frame with TTL 0 is sent when a port goes down.
+5. Organizationally specific TLVs carry the 802.1 and 802.3 extensions and LLDP-MED, which handle VLANs, PoE and voice policy.
+6. On Linux, use `lldpd` (`lldpcli show neighbors`). LLDP is unauthenticated, so enable it on infrastructure links and disable it on untrusted ports.
 
 ---
 
@@ -555,4 +475,8 @@ endpoint.
 
 ---
 
-[1] https://www.ieee802.org/1/files/public/docs2002/lldp-protocol-00.pdf
+* IEEE Std 802.1AB-2016, *Station and Media Access Control Connectivity Discovery*.
+* ANSI/TIA-1057, *LLDP for Media Endpoint Devices* (LLDP-MED).
+* IEEE Std 802.3, *Power via MDI* and *MAC/PHY configuration* TLVs (clause 79).
+* RFC 2922, *Physical Topology MIB* (PTOPO-MIB).
+* `lldpd` documentation: https://lldpd.github.io
