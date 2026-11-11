@@ -198,6 +198,8 @@ DFS is a requirement for 5 GHz Wi-Fi to share spectrum with radar systems (weath
 | U-NII-2C | 100 to 144 (5470-5725 MHz) | Yes. Channels 120 to 128 (5600-5650 MHz) overlap weather radar and need a longer CAC |
 | U-NII-3  | 149 to 165            | No |
 
+---
+
 ![5 GHz channel map showing DFS and non-DFS channels](../../assets/img/wifi/channel-map-5ghz.svg)
 
 Wider channels make DFS hard to avoid: at 80 MHz only 36-48 and 149-161 are DFS-free, and every 160 MHz channel in this plan needs DFS.
