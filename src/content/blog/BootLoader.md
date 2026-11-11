@@ -1,295 +1,271 @@
 ---
 title: 'Bootloader In The Embedded Linux'
-description: 'Bootloader In The Embedded Linux'
+description: 'How an embedded Linux system boots: BootROM, SPL, U-Boot, device tree, storage layouts, secure boot, and how to debug a board that does not start.'
 pubDate: 'Jun 14 2026'
 heroImage: '../../assets/bootloader.png'
 category: 'Embedded Linux'
 ---
 
-### Tổng Quan
+### Overview
 
 ---
 
-#### Bootloader là gì?
+#### What is a bootloader?
 
 ---
 
-Bootloader (hay boot loader) là chương trình phần mềm đầu tiên được thực thi khi hệ thống nhúng được cấp nguồn hoặc reset. Nhiệm vụ chính của bootloader là **khởi tạo phần cứng cơ bản** và **nạp kernel Linux** vào RAM để thực thi.
+The bootloader is the first piece of software that runs when an embedded system is powered on or reset. Its main jobs are to **initialize the basic hardware** and to **load the Linux kernel** into RAM and start it.
 
-Trong hệ thống nhúng, bootloader đóng vai trò đặc biệt quan trọng vì:
+The bootloader matters more on an embedded board than on a PC, because:
 
-- Phần cứng nhúng đa dạng, không có BIOS/UEFI chuẩn như PC
-- Cần khởi tạo bộ nhớ DDR trước khi bất kỳ phần mềm nào có thể chạy
-- Quản lý quá trình nạp kernel từ nhiều nguồn khác nhau (flash, SD card, mạng)
-- Hỗ trợ môi trường phát triển và debug
+- Embedded hardware is very diverse. There is no standard BIOS or UEFI.
+- The DDR controller must be set up before any large piece of software can run.
+- The kernel can come from many places: SPI NOR, NAND, eMMC, an SD card, USB or the network.
+- It gives developers a console to test, flash and debug the board.
+
+---
+
+#### Where it sits in the system
 
 ---
 
-#### Vị Trí trong Hệ Thống
+<div style="text-align: center;">
+
+![Boot chain of an embedded Linux system: BootROM, SPL, U-Boot, Linux kernel and root filesystem, with the memory each stage runs from](../../assets/technology/bootloader/boot_chain.png)
+
+</div>
+
+Each stage prepares the resources that the next, larger stage needs:
+
+* The **BootROM** is code burned into the SoC. It can only use on-chip memory, and it is just smart enough to find and load the next stage.
+* The **SPL** (Secondary Program Loader, also called MLO on TI chips) is small enough to fit in on-chip SRAM. Its main job is to bring up DDR.
+* **U-Boot proper** runs from DDR and has room for drivers, a command line, scripting and network boot.
+* The **kernel** takes over, mounts the root filesystem and starts user space.
 
 ---
+
+### The Boot Process
+
+---
+
+#### Stage 0: BootROM
+
+---
+
+When the SoC comes out of reset, the CPU starts to execute code at a fixed address in the **internal ROM**. Users cannot change this code.
+
+The BootROM:
+- Puts the CPU in a known state
+- Sets up a basic clock
+- Reads the boot-mode pins or fuses and finds the boot device (SD, eMMC, SPI flash, USB, UART...)
+- Loads the SPL into internal SRAM, optionally checks its signature, and jumps to it
 
 ```
-+------------------+
-|   Power ON / Reset
-+--------+---------+
-         |
-         v
-+--------+---------+
-|   ROM Code (SoC) |  ← Chip nội bộ, không thể thay đổi
-|   (BootROM)      |
-+--------+---------+
-         |
-         v
-+--------+---------+
-|   SPL / MLO      |  ← Secondary Program Loader (First Stage)
-|   (First Stage)  |     Chạy từ SRAM nội bộ (~4-256 KB)
-+--------+---------+
-         |
-         v
-+--------+---------+
-|   U-Boot / Main  |  ← Second Stage Bootloader
-|   Bootloader     |     Chạy từ DDR RAM
-+--------+---------+
-         |
-         v
-+--------+---------+
-|   Linux Kernel   |  ← Hệ điều hành chính
-+--------+---------+
-         |
-         v
-+--------+---------+
-|   Root Filesystem|  ← User space
-+------------------+
-```
-
----
-
-### Quá Trình Khởi Động (Boot Process)
-
----
-
-#### Giai Đoạn 0: BootROM
-
----
-
-Khi SoC được cấp nguồn, CPU bắt đầu thực thi code từ địa chỉ cố định trong **ROM nội bộ** (không thể thay đổi bởi người dùng).
-
-BootROM thực hiện:
-- Reset CPU về trạng thái ban đầu
-- Thiết lập clock cơ bản
-- Phát hiện thiết bị boot (SD, eMMC, SPI Flash, USB,...)
-- Nạp SPL/MLO vào SRAM nội bộ và chuyển quyền điều khiển
-
-```
-BootROM Address (ARM Cortex-A):
-- Reset Vector: 0x00000000 hoặc 0xFFFF0000 (tùy chế độ)
-- Exception Vector Table tại địa chỉ này
+BootROM address (ARM Cortex-A):
+- Reset vector: 0x00000000, or 0xFFFF0000 when "high vectors" are selected
+  (many AArch64 SoCs use an implementation-defined reset address instead)
+- The exception vector table is at this address
 ```
 
 ---
 
-#### Giai Đoạn 1: SPL (Secondary Program Loader)
+#### Stage 1: SPL (Secondary Program Loader)
 
 ---
 
-SPL (hay MLO trên TI AM335x) là bootloader giai đoạn đầu, có kích thước rất nhỏ (thường < 64KB để vừa SRAM).
+The SPL is the first-stage bootloader. It is very small, usually below 64 KB, so that it fits in on-chip SRAM.
 
-**Nhiệm vụ của SPL:**
+**What the SPL does:**
 
 ```c
-/* Luồng thực thi điển hình của SPL */
+/* Typical SPL flow (simplified) */
 void board_init_f(ulong dummy)
 {
-    /* 1. Khởi tạo UART để debug */
+    /* 1. Bring up the UART for debug output */
     preloader_console_init();
-    
-    /* 2. Cấu hình Power Management IC (PMIC) */
+
+    /* 2. Configure the power management IC (PMIC) */
     pmic_init();
-    
-    /* 3. Khởi tạo DDR/SDRAM - quan trọng nhất */
+
+    /* 3. Initialize DDR / SDRAM: the most important step */
     sdram_init();
-    
-    /* 4. Nạp U-Boot từ thiết bị lưu trữ vào DDR */
+
+    /* 4. Load U-Boot from storage into DDR */
     spl_load_image();
 }
 ```
 
-**Kích thước SRAM điển hình theo SoC:**
+**Typical on-chip SRAM sizes (approximate; check the reference manual):**
 
-| SoC | SRAM Size | SPL Max Size |
-|-----|-----------|--------------|
-| TI AM335x | 128 KB | 64 KB (MLO) |
-| NXP i.MX6 | 256 KB | 68 KB (IVT Header) |
-| Allwinner H3 | 32 KB | 32 KB |
-| Rockchip RK3399 | 200 KB | ~100 KB |
-| Raspberry Pi | GPU SRAM | Không giới hạn |
-
----
-
-#### Giai Đoạn 2: Bootloader Chính (U-Boot)
+| SoC | SRAM size | First-stage limit |
+|-----|-----------|-------------------|
+| TI AM335x | 128 KB | about 100 KB (MLO) |
+| NXP i.MX6 | 256 KB | depends on the variant, shared with the boot ROM |
+| Allwinner H3 | 32 KB | about 32 KB |
+| Rockchip RK3399 | 200 KB | about 100 KB |
+| Raspberry Pi | none used | The VideoCore firmware loads the kernel or U-Boot, so there is no SPL |
 
 ---
 
-Sau khi DDR được khởi tạo, U-Boot chính được nạp và thực thi với không gian bộ nhớ đầy đủ.
-
-**Luồng thực thi U-Boot:**
-
-```
-board_init_r()
-    ├── board_early_init_r()      # Khởi tạo phần cứng sớm
-    ├── env_init()                 # Đọc biến môi trường
-    ├── serial_init()              # Khởi tạo UART
-    ├── console_init_r()           # Console đầy đủ
-    ├── interrupt_init()           # Bộ xử lý ngắt
-    ├── timer_init()               # Timer
-    ├── board_init()               # Board-specific init
-    ├── mmc_initialize()           # Khởi tạo MMC/SD
-    ├── net_init()                 # Khởi tạo mạng
-    └── main_loop()                # Vòng lặp chính (CLI hoặc autoboot)
-```
+#### Stage 2: The main bootloader (U-Boot)
 
 ---
 
-#### Giai Đoạn 3: Nạp Kernel
+After DDR is ready, U-Boot proper is loaded and runs with the full address space available.
+
+<div style="text-align: center;">
+
+![The bootloader step by step: SPL initializes the UART, PMIC and DDR and loads U-Boot, then U-Boot relocates itself, initializes drivers, reads the environment, waits for a key and runs bootcmd](../../assets/technology/bootloader/uboot_flow.png)
+
+</div>
+
+The exact sequence depends on the architecture and the configuration, but the shape is always the same: SPL gets DDR working, U-Boot relocates itself to the top of RAM (`relocate_code()`), initializes the drivers (`board_init_r()`), loads the environment and enters `main_loop()`, where the autoboot countdown runs `bootcmd`.
 
 ---
+
+#### Stage 3: Loading the kernel
+
+---
+
+<div style="text-align: center;">
+
+![Loading the kernel: the kernel image, device tree blob and initramfs are loaded from storage into DDR at the addresses in kernel_addr_r, fdt_addr_r and ramdisk_addr_r, then booti starts the kernel with bootargs](../../assets/technology/bootloader/kernel_load.png)
+
+</div>
 
 ```bash
-# Quy trình nạp kernel điển hình trong U-Boot
+# Typical kernel boot sequence in U-Boot
 
-# 1. Đọc kernel image từ MMC
+# 1. Read the kernel image from MMC
 load mmc 0:1 ${kernel_addr_r} /boot/Image
 
-# 2. Đọc Device Tree Blob
+# 2. Read the Device Tree Blob
 load mmc 0:1 ${fdt_addr_r} /boot/my-board.dtb
 
-# 3. Đọc initramfs (nếu có)
+# 3. Read the initramfs (optional)
 load mmc 0:1 ${ramdisk_addr_r} /boot/initramfs.cpio.gz
 
-# 4. Thiết lập bootargs
+# 4. Set the kernel command line
 setenv bootargs "console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait rw"
 
-# 5. Boot kernel
+# 5. Boot the kernel
 booti ${kernel_addr_r} ${ramdisk_addr_r}:${filesize} ${fdt_addr_r}
 ```
 
 ---
 
-### Các Loại Bootloader Phổ Biến
+### Common Bootloaders
 
 ---
 
-##### So Sánh Tổng Quan
+##### Overview
 
 ---
 
-| Bootloader | Kiến Trúc Hỗ Trợ | Giao Thức | Use Case |
-|------------|------------------|-----------|----------|
-| **U-Boot** | ARM, x86, MIPS, RISC-V, PowerPC | CLI, Script | Phổ biến nhất, đa nền tảng |
-| **Barebox** | ARM, x86, MIPS | Shell-like | Thay thế U-Boot hiện đại |
-| **GRUB2** | x86, ARM64, RISC-V | Scripting | x86 embedded, UEFI |
-| **Coreboot** | x86, ARM | Payload-based | PC nhúng, Chromebook |
-| **Das U-Boot** | Hầu hết kiến trúc | CLI | = U-Boot |
-| **LILO** | x86 | Đơn giản | Cũ, ít dùng |
-| **RedBoot** | ARM, MIPS, x86 | CLI | Cisco router cũ |
-| **OpenWRT boot** | MIPS, ARM | Minimal | Router, IoT |
+| Bootloader | Architectures | Interface | Use case |
+|------------|---------------|-----------|----------|
+| **U-Boot** | ARM, x86, MIPS, RISC-V, PowerPC and more | CLI, scripts | The most common choice, runs on almost everything |
+| **Barebox** | ARM, x86, MIPS, RISC-V | Unix-like shell | A modern alternative to U-Boot |
+| **GRUB2** | x86, ARM64, RISC-V | Scripting, menu | x86 embedded systems and UEFI |
+| **Coreboot** | x86, ARM | Payload based | Embedded PCs, Chromebooks |
+| **RedBoot** | ARM, MIPS, x86 | CLI | Older devices such as legacy routers (no longer developed) |
+| **LILO** | x86 | Simple | Obsolete |
 
 ---
 
-##### Lựa Chọn Bootloader theo Use Case
+##### Choosing a bootloader
 
 ---
 
 ```
-Hệ thống nhúng ARM/RISC-V thông thường → U-Boot
-Hệ thống cần bảo mật cao (Secure Boot) → U-Boot + TF-A
-Phát triển hiện đại, cần shell linh hoạt → Barebox
-x86 Embedded (industrial PC) → GRUB2 hoặc Coreboot
-IoT thiết bị nhỏ, flash ít → Stripped U-Boot hoặc SPL only
+Typical ARM / RISC-V embedded system          → U-Boot
+System that needs secure boot                  → U-Boot + TF-A (ARM Trusted Firmware)
+Modern development, flexible shell             → Barebox
+x86 embedded (industrial PC)                   → GRUB2 or Coreboot
+Small IoT device with little flash             → Stripped-down U-Boot or SPL only
 ```
 
 ---
 
-### U-Boot – Universal Bootloader
+### U-Boot: The Universal Bootloader
 
 ---
 
-##### Kiến Trúc U-Boot
+##### U-Boot source tree
 
 ---
 
 ```
 u-boot/
-├── arch/                    # Kiến trúc CPU (arm, x86, mips, riscv...)
+├── arch/                    # CPU architectures (arm, x86, mips, riscv...)
 │   └── arm/
 │       ├── cpu/             # CPU-specific code
-│       ├── dts/             # Device Tree Sources
-│       └── mach-*/          # Machine/SoC specific
+│       ├── dts/             # Device Tree sources
+│       └── mach-*/          # SoC / machine specific code
 ├── board/                   # Board-specific code
 │   ├── raspberrypi/
 │   ├── ti/
 │   └── freescale/
-├── common/                  # Code dùng chung
-│   ├── cmd/                 # Lệnh CLI (cmd_mmc.c, cmd_net.c...)
+├── cmd/                     # CLI commands (mmc.c, net.c...)
+├── common/                  # Shared code
 │   └── spl/                 # SPL framework
 ├── drivers/                 # Device drivers
 │   ├── mmc/
 │   ├── net/
 │   ├── serial/
 │   └── usb/
-├── fs/                      # Filesystem (ext4, fat, ubifs...)
+├── fs/                      # Filesystems (ext4, fat, ubifs...)
 ├── include/                 # Header files
-├── lib/                     # Thư viện (crypto, lzma, zlib...)
+├── lib/                     # Libraries (crypto, lzma, zlib...)
 ├── net/                     # Network stack (TFTP, DHCP, NFS...)
-└── tools/                   # mkimage, dts compiler...
+└── tools/                   # mkimage and other host tools
 ```
 
 ---
 
-##### Biến Môi Trường U-Boot
+##### U-Boot environment variables
 
 ---
 
-Biến môi trường là cơ chế cấu hình linh hoạt của U-Boot, được lưu trong flash/eMMC.
+Environment variables are how U-Boot is configured at run time. They can be stored in flash, eMMC or a file.
 
 ```bash
-# Xem tất cả biến môi trường
+# Show all variables
 printenv
 
-# Thiết lập biến
+# Set variables
 setenv ipaddr 192.168.1.100
 setenv serverip 192.168.1.1
 setenv netmask 255.255.255.0
 
-# Lưu vào bộ nhớ không bay hơi
+# Save them to non-volatile storage
 saveenv
 
-# Biến môi trường quan trọng:
-# bootdelay    - Thời gian chờ autoboot (giây), -1 = không autoboot
-# bootcmd      - Lệnh boot mặc định
-# bootargs     - Tham số truyền cho kernel
-# ethaddr      - Địa chỉ MAC
-# ipaddr       - IP tĩnh của board
-# serverip     - IP của TFTP server
+# Important variables:
+# bootdelay    - autoboot delay in seconds, -1 = never autoboot
+# bootcmd      - default boot command
+# bootargs     - kernel command line
+# ethaddr      - MAC address
+# ipaddr       - static IP of the board
+# serverip     - IP of the TFTP server
 ```
 
-**Ví dụ cấu hình bootcmd:**
+**bootcmd examples:**
 
 ```bash
-# Boot từ eMMC
+# Boot from eMMC
 setenv bootcmd 'mmc dev 0; \
     load mmc 0:1 ${kernel_addr_r} Image; \
     load mmc 0:1 ${fdt_addr_r} board.dtb; \
     booti ${kernel_addr_r} - ${fdt_addr_r}'
 
-# Boot từ network (TFTP)
+# Boot from the network (TFTP)
 setenv bootcmd 'dhcp; \
     tftp ${kernel_addr_r} Image; \
     tftp ${fdt_addr_r} board.dtb; \
     booti ${kernel_addr_r} - ${fdt_addr_r}'
 
-# Boot từ NFS
+# Boot with the root filesystem on NFS (set bootargs, then boot as above)
 setenv bootargs 'console=ttyS0,115200 \
     root=/dev/nfs \
     nfsroot=192.168.1.1:/srv/nfs/rootfs,v3,tcp \
@@ -298,14 +274,14 @@ setenv bootargs 'console=ttyS0,115200 \
 
 ---
 
-##### Scripting trong U-Boot
+##### Scripting in U-Boot
 
 ---
 
-U-Boot hỗ trợ script đơn giản với điều kiện và vòng lặp:
+U-Boot has a simple shell with conditions and loops:
 
 ```bash
-# Script phức tạp hơn với điều kiện
+# A script with conditions
 setenv boot_script '
     echo "Detecting boot media...";
     if mmc dev 0; then
@@ -315,74 +291,76 @@ setenv boot_script '
         echo "Booting from SD card";
         run boot_sd;
     else
-        echo "Fallback: Network boot";
+        echo "Fallback: network boot";
         run boot_net;
     fi
 '
 
-# Lưu script thành binary
+# Convert a text script to a binary script image
 mkimage -T script -C none -n 'Boot Script' \
     -d boot.txt boot.scr
 ```
 
 ---
 
-##### Lệnh U-Boot Thường Dùng
+##### Commonly used U-Boot commands
 
 ---
 
 ```bash
-# ---- Thông tin hệ thống ----
+# ---- System information ----
 bdinfo              # Board information
 version             # U-Boot version
-coninfo             # Console devices info
+coninfo             # Console devices
 
-# ---- Bộ nhớ ----
-md.b 0x80000000 64  # Đọc memory (bytes), 64 bytes từ 0x80000000
-mw.l 0x80000000 0 16 # Ghi memory (long), 16 words = 0
+# ---- Memory ----
+md.b 0x80000000 64  # Display memory (bytes), 64 bytes from 0x80000000
+mw.l 0x80000000 0 16 # Write memory (long), 16 words = 0
 cp.b src dst len    # Copy memory
 
-# ---- MMC/SD ----
-mmc list            # Liệt kê tất cả MMC devices
-mmc dev 0           # Chọn MMC device 0
-mmc info            # Thông tin MMC
-mmc read addr blk cnt # Đọc raw blocks
-fatls mmc 0:1       # Liệt kê file trên FAT partition
-ls ext4 mmc 0:2 /   # Liệt kê file trên ext4 partition
-load mmc 0:1 addr filename  # Load file từ partition
+# ---- MMC / SD ----
+mmc list            # List MMC devices
+mmc dev 0           # Select MMC device 0
+mmc info            # MMC information
+mmc read addr blk cnt # Read raw blocks
+fatls mmc 0:1       # List files on a FAT partition
+ls ext4 mmc 0:2 /   # List files on an ext4 partition
+load mmc 0:1 addr filename  # Load a file from a partition
 
-# ---- Mạng ----
+# ---- Network ----
 ping 192.168.1.1    # Ping
-dhcp                # DHCP
-tftp addr filename  # Download qua TFTP
+dhcp                # Get an address with DHCP
+tftp addr filename  # Download with TFTP
 
-# ---- Flash (SPI/NAND/NOR) ----
-sf probe            # Khởi tạo SPI flash
-sf read addr offset len   # Đọc từ SPI flash
-sf write addr offset len  # Ghi vào SPI flash
-sf erase offset len       # Xóa SPI flash
-nand info           # Thông tin NAND flash
-nand read addr offset len # Đọc từ NAND
+# ---- Flash (SPI / NAND / NOR) ----
+sf probe            # Probe the SPI flash
+sf read addr offset len   # Read from SPI flash
+sf write addr offset len  # Write to SPI flash
+sf erase offset len       # Erase SPI flash
+nand info           # NAND information
+nand read addr offset len # Read from NAND
 
 # ---- USB ----
-usb start           # Khởi tạo USB
-usb info            # Thông tin USB devices
-usb storage         # Liệt kê USB storage
+usb start           # Start USB
+usb info            # USB devices
+usb storage         # List USB storage
 
 # ---- Boot ----
-booti addr - fdtaddr  # Boot ARM64 Linux Image
-bootz addr - fdtaddr  # Boot ARM32 zImage
-bootm addr            # Boot uImage
+booti addr - fdtaddr  # Boot an ARM64 Linux Image
+bootz addr - fdtaddr  # Boot an ARM32 zImage
+bootm addr            # Boot a uImage or FIT image
 ```
 
 ---
 
-##### Địa Chỉ Load Kernel Tiêu Chuẩn
+##### Typical kernel load addresses
 
 ---
 
+These are examples. The real values come from the board's default environment, so always check `printenv` on your board.
+
 ```
-ARM 32-bit (thường dùng):
+ARM 32-bit (common):
   kernel_addr_r  = 0x82000000
   fdt_addr_r     = 0x88000000
   ramdisk_addr_r = 0x88080000
@@ -403,74 +381,76 @@ RISC-V 64-bit:
 
 ---
 
-##### Giới Thiệu
+##### Introduction
 
 ---
 
-Barebox là bootloader hiện đại, được phát triển như một "U-Boot thế hệ tiếp theo". Barebox có giao diện shell giống Unix hơn và kiến trúc driver model tương tự Linux kernel.
+Barebox is a modern bootloader that started as a "next generation U-Boot". It has a more Unix-like shell and a driver model that is close to the one in the Linux kernel.
 
 ---
 
-##### Tính Năng Nổi Bật
+##### Main features
 
 ---
 
-- **Shell mạnh mẽ**: hỗ trợ pipeline, biến, điều kiện đầy đủ
-- **Device model**: dùng lại model từ Linux kernel
-- **DTS/DTB**: hỗ trợ tốt Device Tree
-- **Scripting**: script shell linh hoạt hơn U-Boot
-- **Debugging**: hỗ trợ kprobes, ftrace (trên một số nền tảng)
+- **A capable shell**: variables, conditions and loops, in a POSIX-like shell
+- **Device model**: closely follows the Linux kernel device and driver model
+- **Device Tree**: good support for DTS and DTB
+- **Scripting**: more flexible than the U-Boot shell
+- **Filesystem view**: devices and files are mounted under `/dev` and `/mnt`, like on Linux
 
 ---
 
-##### Ví Dụ Script Barebox
+##### Barebox script example
 
 ---
 
 ```bash
-#!/bin/env bash
-# /env/boot/default - Barebox boot script
+#!/bin/sh
+# /env/boot/mmc - Barebox boot script
 
-# Phát hiện và mount thiết bị
-if [ -e /dev/mmc0 ]; then
+# Detect and mount the device
+if [ -e /dev/mmc0.0 ]; then
     mkdir -p /mnt/mmc
-    mount /dev/mmc0.1 /mnt/mmc
-    
+    mount /dev/mmc0.0 /mnt/mmc
+
     kernel=/mnt/mmc/zImage
     fdt=/mnt/mmc/board.dtb
-    
+
     if [ -f $kernel ] && [ -f $fdt ]; then
-        bootm -f $kernel -o $fdt \
-              -a "console=ttyS0,115200 root=/dev/mmcblk0p2 rootwait"
+        global.linux.bootargs.dyn.root="root=/dev/mmcblk0p2 rootwait"
+        bootm -o $fdt $kernel
     fi
 fi
 
 # Fallback: network boot
 dhcp
-tftp $kernel /zImage
-tftp $fdt /board.dtb
-bootm -f $kernel -o $fdt
+tftp /zImage $kernel
+tftp /board.dtb $fdt
+bootm -o $fdt $kernel
 ```
 
----
-
-### GRUB trong Embedded Linux
+The device names and the way `bootargs` is built vary between Barebox versions, so treat this as a sketch.
 
 ---
 
-##### Khi Nào Dùng GRUB cho Embedded
+### GRUB in Embedded Linux
 
 ---
 
-GRUB phù hợp với embedded x86/x86_64 như:
-- Industrial PC (IPC)
-- Thiết bị dùng Intel Atom, AMD Embedded
-- Hệ thống có UEFI firmware
-- Chromebook, mini PC
+##### When to use GRUB on embedded systems
 
 ---
 
-##### Cấu Hình GRUB cho Embedded
+GRUB is a good fit for x86 and x86_64 embedded systems such as:
+- Industrial PCs (IPC)
+- Devices with Intel Atom or AMD Embedded processors
+- Systems with UEFI firmware
+- Chromebooks and mini PCs
+
+---
+
+##### GRUB configuration
 
 ---
 
@@ -493,91 +473,87 @@ menuentry "Recovery Mode" {
 
 ---
 
-### Cấu Trúc Bộ Nhớ và Phân Vùng
+### Memory Layout and Partitioning
 
 ---
 
-##### Layout eMMC/SD Card Điển Hình
+##### Typical eMMC / SD card layout
 
 ---
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                     eMMC/SD Card                        │
-├──────────┬──────────┬──────────┬───────────┬────────────┤
-│  Sector 0│  Sector 1│ Partition│ Partition │ Partition  │
-│  (MBR)   │ (U-Boot  │    1     │     2     │     3      │
-│          │  SPL)    │ /boot    │ rootfs    │  data      │
-│          │          │ FAT32    │  ext4     │  ext4      │
-│  512B    │ 512B-4MB │  64MB    │  512MB    │  Còn lại   │
-└──────────┴──────────┴──────────┴───────────┴────────────┘
-```
+<div style="text-align: center;">
 
-**Vị trí SPL/U-Boot trên eMMC (TI AM335x làm ví dụ):**
+![Typical eMMC or SD card layout: MBR, raw area for SPL and U-Boot, /boot FAT32 partition, rootfs ext4 partition and data partition](../../assets/technology/bootloader/emmc_layout.png)
+
+</div>
+
+The BootROM looks for the first stage at an offset that is fixed by the chip, so the raw area has to be written at exactly that place.
+
+**Example: SPL and U-Boot positions on an eMMC (TI AM335x):**
 
 ```
 Offset 0x000000 : MBR
-Offset 0x020000 : MLO (SPL) - 128KB, sector 256
-Offset 0x060000 : U-Boot binary
+Offset 0x020000 : MLO (SPL), sector 256
+Offset 0x060000 : U-Boot binary, sector 768
 Offset 0x260000 : U-Boot environment
 Offset 0x280000 : DTB
-Offset 0x300000 : Start of partition table
+Offset 0x300000 : Start of the first partition
 ```
 
 ---
 
-##### Layout NAND Flash
+##### NAND flash layout
 
 ---
 
-```
-┌────────────────────────────────────────────────────────┐
-│                      NAND Flash                        │
-├────────┬─────────┬──────────┬────────────┬─────────────┤
-│ Block 0│ Block 1 │ Block 2-N│ Block N+1  │ Remaining   │
-│  SPL   │  SPL    │  U-Boot  │  Kernel    │ UBI volume  │
-│  (bk)  │  (bk)   │  (uImage)│  (uImage)  │ (rootfs)    │
-│ 128KB  │ 128KB   │  512KB   │   4MB      │             │
-└────────┴─────────┴──────────┴────────────┴─────────────┘
+<div style="text-align: center;">
 
-bk = backup copy (NAND có thể có bad block)
-UBI = Unsorted Block Image - filesystem layer cho NAND
-```
+![Typical NAND flash layout: two copies of the SPL, U-Boot, kernel with DTB, and a UBI volume for the root filesystem](../../assets/technology/bootloader/nand_layout.png)
+
+</div>
+
+NAND can contain bad blocks, which is why the first stage is written more than once. UBI sits on top of the raw NAND and does the wear leveling and bad-block handling for the root filesystem (UBIFS).
 
 ---
 
-##### Layout SPI NOR Flash
+##### SPI NOR flash layout
 
 ---
 
+<div style="text-align: center;">
+
+![Typical SPI NOR flash layout: U-Boot, environment, DTB, then kernel and rootfs](../../assets/technology/bootloader/spi_nor_layout.png)
+
+</div>
+
 ```
-Địa chỉ    Kích thước  Nội dung
+Address     Size        Content
 0x000000    256 KB      U-Boot (SPL + main)
 0x040000    64  KB      U-Boot environment
 0x050000    64  KB      DTB
-0x060000    còn lại     Kernel + rootfs (squashfs/jffs2)
+0x060000    the rest    Kernel + rootfs (squashfs / jffs2)
 ```
 
 ---
 
-##### Thiết Lập Partition Table
+##### Creating the partition table
 
 ---
 
 ```bash
-# Tạo partition table cho SD card trên host
+# Create the partition table of an SD card on the host
 sudo fdisk /dev/sdX << EOF
-o        # Tạo MBR partition table mới
-n p 1    # Partition 1 primary
+o        # New MBR partition table
+n p 1    # Partition 1, primary
          # First sector (default)
-+64M     # Size 64MB
++64M     # Size 64 MB
 t 0b     # Type FAT32
-n p 2    # Partition 2 primary
+n p 2    # Partition 2, primary
          # First sector (default)
-+2G      # Size 2GB
-n p 3    # Partition 3 primary
++2G      # Size 2 GB
+n p 3    # Partition 3, primary
          # (remaining space)
-w        # Ghi và thoát
+w        # Write and exit
 EOF
 
 # Format
@@ -586,119 +562,122 @@ sudo mkfs.ext4 -L rootfs /dev/sdX2
 sudo mkfs.ext4 -L data /dev/sdX3
 ```
 
----
-
-### Quá Trình Biên Dịch và Cấu Hình
+Double-check the device name. A wrong `/dev/sdX` destroys the disk of your host.
 
 ---
 
-##### Thiết Lập Môi Trường Cross-Compile
+### Building and Configuring
+
+---
+
+##### Setting up the cross-compile environment
 
 ---
 
 ```bash
-# Cài đặt cross-compiler (Ubuntu/Debian)
+# Install a cross compiler (Ubuntu / Debian)
 sudo apt-get install gcc-aarch64-linux-gnu    # ARM64
 sudo apt-get install gcc-arm-linux-gnueabihf  # ARM32 hard-float
 sudo apt-get install gcc-riscv64-linux-gnu    # RISC-V 64
 
-# Thiết lập biến môi trường
+# Set the environment
 export CROSS_COMPILE=aarch64-linux-gnu-       # ARM64
 export ARCH=arm64
 
-# Hoặc ARM32
+# Or for ARM32
 export CROSS_COMPILE=arm-linux-gnueabihf-
 export ARCH=arm
 ```
 
 ---
 
-##### Cấu Hình U-Boot
+##### Configuring U-Boot
 
 ---
 
 ```bash
-# Clone source
+# Get the source
 git clone https://github.com/u-boot/u-boot.git
 cd u-boot
 
-# Xem danh sách defconfig cho board
+# List the defconfigs for your board family
 ls configs/ | grep -i raspberrypi
 ls configs/ | grep -i imx6
 
-# Chọn defconfig cho board của bạn
+# Pick the defconfig of your board
 make rpi_4_defconfig            # Raspberry Pi 4
 make mx6ull_14x14_evk_defconfig # NXP i.MX6ULL EVK
 make am335x_evm_defconfig       # TI AM335x EVM
 make rock64-rk3328_defconfig    # Rock64 (RK3328)
 
-# Tùy chỉnh cấu hình (menuconfig)
+# Customize (menuconfig)
 make menuconfig
 
-# Quan trọng trong menuconfig:
+# What to look at in menuconfig:
 # Boot media: MMC, SPI Flash, NAND, USB, Network
-# SPL: Enable SPL, SPL size limits
-# Environment: Storage location, size, offset
-# Filesystem: FAT, ext2/4, UBIFS
+# SPL: enable SPL, SPL size limits
+# Environment: storage location, size, offset
+# Filesystems: FAT, ext2/4, UBIFS
 # Network: DHCP, TFTP, NFS
 # Security: Secure Boot, FIT signature
 ```
 
 ---
 
-##### Biên Dịch U-Boot
+##### Building U-Boot
 
 ---
 
 ```bash
-# Biên dịch toàn bộ
+# Build everything
 make -j$(nproc)
 
 # Output files:
-# u-boot.bin        - U-Boot binary thuần
-# u-boot.img        - U-Boot với header mkimage
-# u-boot-dtb.bin    - U-Boot + DTB
+# u-boot.bin         - raw U-Boot binary
+# u-boot.img         - U-Boot with a mkimage header
+# u-boot-dtb.bin     - U-Boot + DTB
 # spl/u-boot-spl.bin - SPL binary
-# MLO               - SPL cho TI (với header đặc biệt)
-# u-boot.itb        - FIT image (SPL + U-Boot + DTB)
+# MLO                - SPL for TI (with a special header)
+# u-boot.itb         - FIT image (U-Boot + DTB, loaded by the SPL)
 
-# Chỉ biên dịch tools
+# Build only the host tools
 make tools
 
-# Chỉ biên dịch dtbs
+# Build only the device trees
 make dtbs
 ```
 
 ---
 
-##### Ghi U-Boot vào eMMC/SD
+##### Writing U-Boot to eMMC / SD
 
 ---
 
+The offsets below are examples. Take the real values from the SoC reference manual or from the U-Boot board documentation.
+
 ```bash
-# ---- SD Card (từ host Linux) ----
+# ---- SD card (from a Linux host) ----
 
-# Ghi SPL vào sector 1 (offset 512 bytes = 1 sector)
-# (TI AM335x dùng sector 256)
-sudo dd if=MLO of=/dev/sdX bs=512 seek=1 conv=notrunc,sync
-sudo dd if=u-boot.img of=/dev/sdX bs=512 seek=96 conv=notrunc,sync
+# TI AM335x, raw mode: MLO at sector 256, U-Boot at sector 768
+sudo dd if=MLO of=/dev/sdX bs=512 seek=256 conv=notrunc,sync
+sudo dd if=u-boot.img of=/dev/sdX bs=512 seek=768 conv=notrunc,sync
 
-# Hoặc ghi trực tiếp (NXP i.MX6, offset 1KB)
+# NXP i.MX6: one image written at an offset of 1 KB
 sudo dd if=u-boot-dtb.imx of=/dev/sdX bs=1K seek=1 conv=notrunc,sync
 
-# ---- Từ U-Boot CLI (đang chạy) ----
+# ---- From the running U-Boot CLI ----
 
-# Load từ TFTP
+# Download over TFTP
 tftp ${loadaddr} u-boot.bin
 
-# Ghi vào eMMC
+# Write to eMMC
 mmc dev 0
-# Ghi từ sector 2 (offset 1024 bytes), kích thước tính theo sectors
+# Write from sector 2 (offset 1024 bytes); the size is counted in sectors
 setexpr sz ${filesize} / 0x200
 setexpr sz ${sz} + 1
 mmc write ${loadaddr} 2 ${sz}
 
-# Ghi vào SPI flash
+# Write to SPI flash
 sf probe 0
 sf erase 0 0x50000
 sf write ${loadaddr} 0 ${filesize}
@@ -706,7 +685,7 @@ sf write ${loadaddr} 0 ${filesize}
 
 ---
 
-##### Tạo Custom Board Support
+##### Adding support for a custom board
 
 ---
 
@@ -716,7 +695,7 @@ sf write ${loadaddr} 0 ${filesize}
 #include <init.h>
 #include <asm/io.h>
 
-/* Cấu hình DDR */
+/* DDR configuration (i.MX6 style, values depend on your DDR chip) */
 static const struct mx6_ddr_sysinfo ddr_info = {
     .dsize      = 1,  /* 32-bit data bus */
     .cs_density = 32,
@@ -732,49 +711,51 @@ static const struct mx6_ddr_sysinfo ddr_info = {
     .rst_to_cke = 0x23,
 };
 
-/* Hàm bắt buộc: Thông tin board */
+/* Board information */
 int checkboard(void)
 {
     puts("Board: MyBoard v1.0\n");
     return 0;
 }
 
-/* Hàm bắt buộc: Khởi tạo sớm */
+/* Early init: before the console is ready */
 int board_early_init_f(void)
 {
-    /* Setup UART pads */
+    /* Set up the UART pads */
     setup_uart();
     return 0;
 }
 
-/* Hàm bắt buộc: Khởi tạo chính */
+/* Main board init */
 int board_init(void)
 {
-    /* Address of boot parameters */
+    /* Address of the boot parameters */
     gd->bd->bi_boot_params = PHYS_SDRAM + 0x100;
-    
+
     setup_i2c();
     setup_usb();
     setup_spi();
-    
+
     return 0;
 }
 
-/* Thiết lập biến môi trường động */
+/* Late init: set dynamic environment variables */
 int board_late_init(void)
 {
-    /* Đọc serial number từ fuse / EEPROM */
+    /* Read the serial number from fuses or an EEPROM */
     char serial[32];
     read_serial_number(serial);
     env_set("serial#", serial);
-    
-    /* Tự động phát hiện boot media */
+
+    /* Choose the boot media at run time */
     if (is_recovery_button_pressed())
         env_set("bootcmd", "run recovery_boot");
-    
+
     return 0;
 }
 ```
+
+The `setup_*()` and `read_serial_number()` calls are placeholders for your own board code.
 
 ---
 
@@ -782,25 +763,21 @@ int board_late_init(void)
 
 ---
 
-##### Vai Trò của Device Tree trong Boot
+##### The role of the device tree at boot
 
 ---
 
-Device Tree (DT) là cơ chế mô tả phần cứng để truyền từ bootloader sang kernel, giúp kernel nhận biết các thiết bị có mặt mà không cần hard-code vào kernel.
+The device tree (DT) describes the hardware so that the bootloader can pass it to the kernel. The kernel then finds out which devices exist without having them hard-coded.
 
-```
-Bootloader đọc DTB file
-        ↓
-Bootloader có thể chỉnh sửa DTB (fixup) trong runtime
-        ↓
-Bootloader truyền DTB address cho kernel
-        ↓
-Kernel parse DTB để cấu hình driver
-```
+<div style="text-align: center;">
+
+![How the device tree travels from the bootloader to the kernel: read the DTB, optionally fix it up, pass its address in a register, the kernel parses it](../../assets/technology/bootloader/device_tree_flow.png)
+
+</div>
 
 ---
 
-##### Ví Dụ Device Tree
+##### Device tree example
 
 ---
 
@@ -813,25 +790,25 @@ Kernel parse DTB để cấu hình driver
     model = "MyCompany MyBoard v1.0";
     compatible = "mycompany,myboard", "vendor,my-soc";
 
-    /* Mô tả RAM */
+    /* RAM */
     memory@40000000 {
         device_type = "memory";
-        reg = <0x0 0x40000000 0x0 0x40000000>; /* 1GB từ 0x40000000 */
+        reg = <0x0 0x40000000 0x0 0x40000000>; /* 1 GB at 0x40000000 */
     };
 
-    /* Cấu hình console mặc định */
+    /* Default console */
     chosen {
         stdout-path = "serial0:115200n8";
-        /* bootargs có thể được set ở đây hoặc từ bootloader */
+        /* bootargs can be set here or by the bootloader */
     };
 };
 
-/* Override UART0 từ dtsi */
+/* Enable UART0 from the dtsi */
 &uart0 {
     status = "okay";
 };
 
-/* Override I2C với PMIC */
+/* I2C bus with a PMIC */
 &i2c0 {
     status = "okay";
     clock-frequency = <400000>;
@@ -849,7 +826,7 @@ Kernel parse DTB để cấu hình driver
     status = "okay";
     phy-mode = "rgmii-id";
     phy-handle = <&phy0>;
-    
+
     mdio {
         phy0: ethernet-phy@0 {
             reg = <0>;
@@ -861,65 +838,52 @@ Kernel parse DTB để cấu hình driver
 
 ---
 
-##### U-Boot DTB Fixup
+##### U-Boot DTB fixup
 
 ---
 
 ```c
-/* Bootloader có thể sửa DTB trước khi truyền cho kernel */
+/* The bootloader can change the DTB before it hands it to the kernel */
 
 int ft_board_setup(void *blob, struct bd_info *bd)
 {
-    /* Cập nhật địa chỉ RAM */
+    /* Update the memory node with the real RAM size */
     fdt_fixup_memory(blob, (u64)PHYS_SDRAM, (u64)PHYS_SDRAM_SIZE);
-    
-    /* Thêm serial number vào chosen node */
+
+    /* Add the serial number to the /chosen node */
     char serial[32];
     read_serial_from_fuse(serial);
     fdt_setprop_string(blob, fdt_path_offset(blob, "/chosen"),
                        "serial-number", serial);
-    
-    /* Set MAC address từ environment */
-    char *mac = env_get("ethaddr");
-    if (mac) {
-        u8 mac_bytes[6];
-        string_to_enetaddr(mac, mac_bytes);
-        fdt_fixup_ethernet(blob);
-    }
-    
+
+    /* Copy the MAC addresses from the environment (ethaddr, eth1addr...) */
+    fdt_fixup_ethernet(blob);
+
     return 0;
 }
 ```
 
 ---
 
-### Bảo Mật Bootloader
+### Bootloader Security
 
 ---
 
-##### Secure Boot Chain
+##### Secure boot chain
 
 ---
 
-```
-Secure Boot Chain (ARM TrustZone):
+<div style="text-align: center;">
 
-OTP/eFuse (Public Key Hash) ← Được lập trình 1 lần tại nhà máy
-        ↓ Verify
-BootROM (Immutable)
-        ↓ Verify signature
-ARM Trusted Firmware (ATF/TF-A)  ← BL1, BL2
-        ↓ Verify signature
-Secure Bootloader (OP-TEE / BL31)
-        ↓ Verify signature
-U-Boot (BL33)
-        ↓ Verify signature
-Linux Kernel (FIT image)
-```
+![Secure boot chain of trust: eFuse key hash, BootROM, TF-A BL2, BL31, BL32 OP-TEE, U-Boot BL33, signed FIT image with kernel and DTB](../../assets/technology/bootloader/secure_boot_chain.png)
+
+</div>
+
+The hash of the root public key is programmed once into OTP or eFuse. The immutable BootROM trusts that hash, and each stage verifies the signature of the next one before it runs it. On ARM, the usual stages are the Trusted Firmware-A images: BL2 (loads and verifies the rest), BL31 (the EL3 runtime), BL32 (the secure OS, for example OP-TEE) and BL33 (the normal-world bootloader, usually U-Boot). The exact stages and who loads whom depend on the SoC vendor.
 
 ---
 
-##### FIT Image với Signature
+##### FIT image with signature
 
 ---
 
@@ -941,7 +905,7 @@ Linux Kernel (FIT image)
             compression = "none";
             load = <0x40200000>;
             entry = <0x40200000>;
-            
+
             hash@1 {
                 algo = "sha256";
             };
@@ -953,7 +917,7 @@ Linux Kernel (FIT image)
             type = "flat_dt";
             arch = "arm64";
             compression = "none";
-            
+
             hash@1 {
                 algo = "sha256";
             };
@@ -962,12 +926,12 @@ Linux Kernel (FIT image)
 
     configurations {
         default = "conf@1";
-        
+
         conf@1 {
             description = "Default Config";
             kernel = "kernel@1";
             fdt = "fdt@1";
-            
+
             signature@1 {
                 algo = "sha256,rsa2048";
                 key-name-hint = "dev";
@@ -979,79 +943,81 @@ Linux Kernel (FIT image)
 ```
 
 ```bash
-# Tạo và ký FIT image
+# Create and sign the FIT image
 mkimage -f boot.its -k /path/to/keys -K u-boot.dtb \
         -r -o boot.itb
 
-# Keys được tạo bằng:
+# Create the keys
 openssl genrsa -F4 -out dev.key 2048
 openssl req -batch -new -x509 -key dev.key -out dev.crt
 
-# Kiểm tra FIT image
+# Inspect the FIT image
 dumpimage -l boot.itb
 ```
 
+The `-K u-boot.dtb` option stores the public key in the U-Boot device tree, so U-Boot can verify the signature at run time.
+
 ---
 
-##### Rollback Protection
+##### Rollback protection
 
 ---
 
 ```c
-/* Bảo vệ chống rollback bằng Anti-Rollback Counter (ARC)
-   lưu trong eFuse / RPMB */
+/* Anti-rollback protection with a counter (ARC)
+   stored in eFuse or RPMB */
 
-#define MIN_UBOOT_VERSION  3   /* Phiên bản tối thiểu cho phép */
-
-int board_late_init(void)
+int board_check_rollback(void)
 {
-    /* Đọc phiên bản hiện tại từ eFuse */
+    /* Read the current counter value from eFuse */
     uint32_t arc = read_anti_rollback_counter();
-    
-    /* Kiểm tra phiên bản image mới */
+
+    /* Read the version of the new image */
     uint32_t new_version = get_image_version();
-    
+
     if (new_version < arc) {
         printf("ERROR: Anti-rollback check failed! "
                "Image v%d < ARC v%d\n", new_version, arc);
         return -EPERM;
     }
-    
-    /* Cập nhật ARC nếu phiên bản mới hơn */
+
+    /* Raise the counter if the image is newer */
     if (new_version > arc)
         update_anti_rollback_counter(new_version);
-    
+
     return 0;
 }
 ```
 
+eFuse counters can only go up, so an attacker cannot install an older, vulnerable image once a newer one has been booted.
+
 ---
 
-##### Lock Down U-Boot
+##### Locking down U-Boot
 
 ---
 
 ```bash
-# Trong U-Boot menuconfig: tắt các tính năng nguy hiểm
-CONFIG_BOOTCOMMAND="run distro_bootcmd"  # Không cho phép thay đổi
-CONFIG_BOOTDELAY=-2                       # Không có thời gian chờ
-CONFIG_CMD_BOOTD=n                        # Tắt lệnh bootd
-CONFIG_CMD_LOADS=n                        # Tắt nạp qua serial
-CONFIG_ENV_IS_NOWHERE=y                   # Không lưu environment
-CONFIG_DISABLE_CONSOLE=y                  # Tắt console (production)
+# In U-Boot menuconfig: remove the dangerous features
+CONFIG_BOOTCOMMAND="run distro_bootcmd"  # Fixed boot command
+CONFIG_BOOTDELAY=-2                       # Boot at once, no way to stop
+CONFIG_CMD_BOOTD=n                        # Remove the bootd command
+CONFIG_CMD_LOADS=n                        # No loading over serial
+CONFIG_ENV_IS_NOWHERE=y                   # Do not store the environment
+CONFIG_SILENT_CONSOLE=y                   # Silence the console in production
 ```
 
 ---
 
-### Debug và Troubleshooting
+### Debug and Troubleshooting
 
 ---
 
-##### Output Console Điển Hình
+##### Typical console output
 
 ---
 
-Khi boot thành công, console sẽ hiển thị:
+A normal boot prints something like this:
 
 ```
 U-Boot SPL 2024.01 (Jan 15 2024 - 10:30:00 +0700)
@@ -1076,95 +1042,95 @@ Starting kernel ...
 
 ---
 
-##### Các Lỗi Thường Gặp
+##### Common problems
 
 ---
 
-**Lỗi 1: Không có output sau power-on**
+**Problem 1: No output after power-on**
 ```
-Nguyên nhân có thể:
-- SPL không được ghi đúng offset
-- Clock/power chưa đúng
-- UART chưa được cấu hình
+Possible causes:
+- The SPL was written at the wrong offset
+- Clock or power is not correct
+- The UART is not configured
 
 Debug:
-- Kiểm tra JTAG/SWDIO output
-- Đo tín hiệu UART với oscilloscope
-- Kiểm tra PMIC power rails
-- Xác nhận SPL offset với datasheet SoC
+- Check the JTAG / SWD output
+- Measure the UART signal with an oscilloscope
+- Check the PMIC power rails
+- Confirm the SPL offset in the SoC datasheet
 ```
 
-**Lỗi 2: SPL chạy nhưng U-Boot không load được**
+**Problem 2: The SPL runs but U-Boot is not loaded**
 ```
 SPL: Trying to boot from MMC
 SPL: mmc init failed with error: -5
 ### ERROR ### Please RESET the board ###
 
-Nguyên nhân:
-- DDR initialization thất bại
-- SPL tìm U-Boot sai offset
-- eMMC/SD card bị lỗi
+Possible causes:
+- DDR initialization failed
+- The SPL looks for U-Boot at the wrong offset
+- The eMMC / SD card is faulty
 
 Debug:
-U-Boot> md.l 0x80000000 4  # Kiểm tra DDR có accessible không
-U-Boot> mmc info            # Kiểm tra MMC
-U-Boot> mmc read 0x80000000 0x60 0x100  # Đọc sector 96 (offset U-Boot)
+U-Boot> md.l 0x80000000 4  # Is DDR accessible?
+U-Boot> mmc info            # Check the MMC
+U-Boot> mmc read 0x80000000 0x60 0x100  # Read sector 96 (U-Boot offset)
 ```
 
-**Lỗi 3: U-Boot chạy nhưng không boot kernel**
+**Problem 3: U-Boot runs but does not boot the kernel**
 ```
 Wrong Image Format for bootm command
 ERROR: can't get kernel image!
 
-Nguyên nhân:
-- Sai địa chỉ load kernel
-- Image format không khớp (Image vs zImage vs uImage)
-- DTB không tìm thấy
+Possible causes:
+- Wrong kernel load address
+- The image format does not match the command (Image vs zImage vs uImage)
+- The DTB was not found
 
 Debug:
-U-Boot> ls mmc 0:1          # Kiểm tra file có tồn tại
+U-Boot> ls mmc 0:1          # Does the file exist?
 U-Boot> load mmc 0:1 ${kernel_addr_r} Image
-U-Boot> iminfo ${kernel_addr_r}  # Xem thông tin image
+U-Boot> iminfo ${kernel_addr_r}  # Show image information
 ```
 
-**Lỗi 4: Kernel panic ngay sau boot**
+**Problem 4: Kernel panic right after boot**
 ```
-[    0.000000] Kernel panic - not syncing: VFS: 
+[    0.000000] Kernel panic - not syncing: VFS:
                Unable to mount root fs on unknown-block(0,0)
 
-Nguyên nhân: Root filesystem không tìm thấy
+Cause: the root filesystem was not found
 
 Debug:
 U-Boot> setenv bootargs "... root=/dev/mmcblk0p2 rootwait debug"
-# Thêm "debug" và "rootwait" vào bootargs
-# Kiểm tra lại root= device node
+# Add "debug" and "rootwait" to bootargs
+# Check the root= device node again
 ```
 
 ---
 
-#### Debug qua JTAG/OpenOCD
+#### Debugging with JTAG / OpenOCD
 
 ---
 
 ```bash
-# Kết nối OpenOCD với JTAG adapter
+# Start OpenOCD with a JTAG adapter
 openocd -f interface/jlink.cfg \
         -f target/imx6.cfg
 
-# Từ telnet (port 4444)
+# Connect with telnet (port 4444)
 telnet localhost 4444
 
-# Các lệnh debug
-> halt                    # Dừng CPU
-> targets                 # Liệt kê targets
-> cortex_a.cpu reg        # Đọc registers
-> mdw 0x80000000          # Đọc memory word
+# Debug commands
+> halt                    # Stop the CPU
+> targets                 # List targets
+> reg                     # Show registers
+> mdw 0x80000000          # Read a memory word
 > arm disassemble 0x80000000 20  # Disassemble
 > bp 0x80200000 4 hw      # Hardware breakpoint
-> resume                  # Tiếp tục chạy
+> resume                  # Continue
 > step                    # Single step
 
-# Load và debug U-Boot
+# Load and debug U-Boot
 > load_image u-boot 0x80800000 bin
 > reg pc 0x80800000
 > resume
@@ -1172,69 +1138,69 @@ telnet localhost 4444
 
 ---
 
-#### Sử Dụng UART Debug Console
+#### Using the UART debug console
 
 ---
 
 ```bash
-# Kết nối UART từ host
-# Cài minicom hoặc picocom
+# Connect to the UART from the host
+# Install minicom or picocom
 sudo apt install picocom
 
-# Kết nối (thường 115200 baud)
+# Connect (usually 115200 baud)
 picocom -b 115200 /dev/ttyUSB0
 
-# Ghi log để phân tích
+# Save a log for analysis
 picocom -b 115200 /dev/ttyUSB0 --logfile boot.log
 
-# Phân tích timing trong log
+# Look at the timing in the log
 grep -E "^\[.*\]" boot.log | head -50  # Kernel timestamps
 ```
 
 ---
 
-#### Checklist Debug Bootloader
+#### Bootloader debug checklist
 
 ---
 
 ```
-□ Power rails đúng điện áp chưa? (VDD_CORE, VDD_IO, VDD_DDR)
-□ Clock source có oscillating không? (đo bằng oscilloscope)
-□ BOOT_MODE pins đúng chưa? (BOOT từ eMMC/SD/SPI?)
-□ SPL được ghi đúng offset chưa? (xem datasheet SoC)
-□ DDR training logs có lỗi không?
-□ Environment variables có đúng không? (printenv)
-□ Kernel image tại đúng địa chỉ? (iminfo)
-□ DTB compatible string có khớp với kernel driver?
-□ bootargs có đúng root device không?
-□ Filesystem có corrupted không? (fsck.ext4)
+□ Are the power rails at the right voltage? (VDD_CORE, VDD_IO, VDD_DDR)
+□ Is the clock source oscillating? (measure with an oscilloscope)
+□ Are the BOOT_MODE pins correct? (boot from eMMC / SD / SPI?)
+□ Is the SPL written at the right offset? (see the SoC datasheet)
+□ Do the DDR training logs show errors?
+□ Are the environment variables correct? (printenv)
+□ Is the kernel image at the expected address? (iminfo)
+□ Does the DTB compatible string match the kernel drivers?
+□ Does bootargs name the right root device?
+□ Is the filesystem corrupted? (fsck.ext4)
 ```
 
 ---
 
-### Tài Liệu Tham Khảo
+### References
 
 ---
 
-##### Tài Liệu Chính Thức
+##### Official documentation
 
 ---
 
-| Tài Liệu | Đường Dẫn |
-|----------|-----------|
+| Document | Link |
+|----------|------|
 | U-Boot Documentation | https://docs.u-boot.org |
 | U-Boot Source | https://github.com/u-boot/u-boot |
 | Barebox Documentation | https://www.barebox.org/doc |
 | Linux Device Tree | https://devicetree.org |
-| ARM Trusted Firmware | https://trustedfirmware-a.readthedocs.io |
+| Trusted Firmware-A | https://trustedfirmware-a.readthedocs.io |
 
 ---
 
-##### Tài Liệu SoC Cụ Thể
+##### SoC-specific resources
 
 ---
 
-| SoC | Tài Liệu |
+| SoC | Resource |
 |-----|----------|
 | NXP i.MX | https://www.nxp.com/design/software/embedded-software/i-mx-software |
 | TI AM335x | https://www.ti.com/product/AM3358 |
@@ -1244,7 +1210,7 @@ grep -E "^\[.*\]" boot.log | head -50  # Kernel timestamps
 
 ---
 
-##### Sách Tham Khảo
+##### Books
 
 ---
 
@@ -1255,17 +1221,17 @@ grep -E "^\[.*\]" boot.log | head -50  # Kernel timestamps
 
 ---
 
-##### Cộng Đồng và Hỗ Trợ
+##### Community and support
 
 ---
 
-- **U-Boot Mailing List**: u-boot@lists.denx.de
-- **Linux Kernel Mailing List**: linux-kernel@vger.kernel.org
-- **Embedded Linux Wiki**: https://elinux.org
-- **bootlin (Free Training)**: https://bootlin.com/docs
+- **U-Boot mailing list**: u-boot@lists.denx.de
+- **Linux kernel mailing list**: linux-kernel@vger.kernel.org
+- **Embedded Linux wiki**: https://elinux.org
+- **Bootlin (free training material)**: https://bootlin.com/docs
 
 ---
 
-> **Lưu ý**: Tài liệu này mang tính tổng quan. Chi tiết cụ thể có thể khác nhau tùy theo SoC, board và phiên bản U-Boot. Luôn tham khảo datasheet của SoC và release notes của U-Boot phiên bản đang dùng.
+> **Note**: This document is an overview. Details differ between SoCs, boards and U-Boot versions. Always check the SoC datasheet and the release notes of the U-Boot version you use.
 
 ---
