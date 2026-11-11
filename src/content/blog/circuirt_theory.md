@@ -158,11 +158,11 @@ $$
 
 KCL follows from **conservation of charge**: a node cannot store charge.
 
-```
-          I1 ──►──┐
-                  │
-          I2 ──►──●──►── I3        I1 + I2 = I3
-```
+<div style="text-align: center;">
+
+![Kirchhoff's current law at a node: I1 and I2 flow in, I3 flows out, so I1 + I2 = I3](../../assets/img/circuit/kcl_node.png)
+
+</div>
 
 ---
 
@@ -232,17 +232,11 @@ The larger share of the current goes through the **smaller** resistor.
 
 The rest of this post solves the same circuit with each technique, so you can compare them.
 
-```
-         R1 = 2Ω     a      R2 = 2Ω
-     ┌────/\/\/\─────●─────/\/\/\────┐
-     │               │               │
-    (+)              /               (+)
- V1 = 10V            \ R3 = 2Ω     V2 = 2V
-    (−)              /               (−)
-     │               │               │
-     └───────────────●───────────────┘
-                   ground
-```
+<div style="text-align: center;">
+
+![Example circuit: V1 = 10 V and V2 = 2 V sources, R1, R2 and R3 = 2 ohm, node a, ground, and the clockwise mesh currents I1 and I2](../../assets/img/circuit/example_circuit.png)
+
+</div>
 
 We want the current through every resistor.
 
