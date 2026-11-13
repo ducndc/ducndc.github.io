@@ -2,7 +2,7 @@
 title: 'My Poetry'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Mar 28 2026'
-heroImage: '../../assets/poetry.jpg'
+heroImage: '../../assets/hero/poetry.jpg'
 category: 'Personal'
 ---
 

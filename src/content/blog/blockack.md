@@ -3,7 +3,7 @@ title: 'Block Ack'
 description: 'How Block Ack works in 802.11: agreement setup with ADDBA, the Block Ack bitmap, immediate and delayed modes, A-MPDU, teardown and troubleshooting.'
 pubDate: 'August 12 2024'
 updatedDate: 'Oct 10 2026'
-heroImage: '../../assets/blockack.png'
+heroImage: '../../assets/hero/blockack.jpg'
 category: 'Wi-Fi'
 ---
 

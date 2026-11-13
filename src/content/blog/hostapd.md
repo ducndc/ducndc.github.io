@@ -2,7 +2,7 @@
 title: 'Hostapd Architecture'
 description: 'How hostapd really works inside an AP: design, code paths, and lessons from 15 years of shipping Wi-Fi'
 pubDate: 'Aug 21 2026'
-heroImage: '../../assets/hostapd.jpeg'
+heroImage: '../../assets/hero/hostapd.jpg'
 category: 'Wi-Fi'
 ---
 

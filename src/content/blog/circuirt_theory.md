@@ -2,7 +2,7 @@
 title: 'Circuit Theory'
 description: 'Ohm’s law, Kirchhoff’s laws, mesh and node analysis, and the network theorems used to work out the current and voltage anywhere in a circuit.'
 pubDate: 'Nov 03 2026'
-heroImage: '../../assets/electronic-circuit.jpeg'
+heroImage: '../../assets/hero/circuit.jpg'
 category: 'Circuit'
 ---
 

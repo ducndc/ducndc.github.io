@@ -2,7 +2,7 @@
 title: 'Access Point System'
 description: 'What it takes to design a production Wi-Fi access point: SoC and RF hardware, embedded Linux, the Wi-Fi software stack, management, security, testing, certification and manufacturing, and how the pieces constrain each other.'
 pubDate: 'May 08 2025'
-heroImage: '../../assets/AP_Sys.png'
+heroImage: '../../assets/hero/ap_system.jpg'
 category: 'System Design'
 ---
 

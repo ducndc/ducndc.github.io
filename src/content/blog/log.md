@@ -2,7 +2,7 @@
 title: 'Logging and Log Management'
 description: 'What a good log message looks like, how to choose log levels, how syslog, journald and logread move logs on Linux and embedded devices, and how to decide what to collect, keep and alert on.'
 pubDate: 'July 24 2025'
-heroImage: '../../assets/logging.jpg'
+heroImage: '../../assets/hero/logging.jpg'
 category: 'Programming & Tools'
 ---
 

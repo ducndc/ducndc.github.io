@@ -2,7 +2,7 @@
 title: '802.11k and 802.11v'
 description: 'How 802.11k (Radio Resource Measurement) and 802.11v (BSS Transition Management) help clients find and choose the next AP: Neighbor Reports, Beacon Reports, BTM Request and Response, the frame formats, the status codes, how to capture and debug them, and how they combine with 802.11r.'
 pubDate: 'Nov 12 2026'
-heroImage: '../../assets/Roaming.jpg'
+heroImage: '../../assets/hero/roaming.jpg'
 category: 'Wi-Fi'
 ---
 

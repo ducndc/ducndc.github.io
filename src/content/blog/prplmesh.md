@@ -2,7 +2,7 @@
 title: 'PrplMesh Architecture'
 description: 'A deep-dive into the prplMesh architecture: WFA EasyMesh fundamentals, the BeeRocks component stack, deployment modes, IPC mechanisms, and a practical usage guide.'
 pubDate: 'Jul 25 2026'
-heroImage: '../../assets/prplmesh.png'
+heroImage: '../../assets/hero/prplmesh.jpg'
 category: 'Wi-Fi Mesh'
 ---
 

@@ -2,7 +2,7 @@
 title: 'Multiple Input Multiple Output (MIMO)'
 description: 'Multiple Input Multiple Output (MIMO)'
 pubDate: 'February 12 2024'
-heroImage: '../../assets/mimo.jpg'
+heroImage: '../../assets/hero/mimo.jpg'
 category: 'Wi-Fi'
 ---
 

@@ -3,7 +3,7 @@ title: 'Wi-Fi Overview'
 description: 'A practical overview of 802.11 frame types, WPA2/WPA3 security, the connection flow, 4-way handshake troubleshooting, DFS, MCS and CCA.'
 pubDate: 'May 14 2023'
 updatedDate: 'Oct 10 2026'
-heroImage: '../../assets/wifi.jpg'
+heroImage: '../../assets/hero/wifi.jpg'
 category: 'Wi-Fi'
 ---
 

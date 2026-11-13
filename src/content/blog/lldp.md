@@ -2,7 +2,7 @@
 title: 'Link Layer Discovery Protocol (LLDP)'
 description: 'How LLDP (IEEE 802.1AB) lets neighbouring devices advertise who they are and which port they are on: frame and TLV formats, timers, the transmit and receive state machines, and how to use it on Linux, switches and access points.'
 pubDate: 'July 14 2025'
-heroImage: '../../assets/lldp.jpg'
+heroImage: '../../assets/hero/lldp.jpg'
 category: 'Network Protocols'
 ---
 

@@ -2,7 +2,7 @@
 title: 'Co-Channel Interference'
 description: 'Co-Channel Interference'
 pubDate: 'May 08 2025'
-heroImage: '../../assets/AP_Sys.png'
+heroImage: '../../assets/hero/cci.jpg'
 category: 'Wi-Fi'
 ---
 

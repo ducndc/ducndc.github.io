@@ -2,7 +2,7 @@
 title: 'Spanning Tree Protocol'
 description: 'A protocol-level guide to the Spanning Tree Protocol family: why Layer 2 loops are fatal, how bridges elect a root and assign port roles, the BPDU format, STP timers and states, RSTP rapid transitions, MSTP instances, protection features and the Linux bridge.'
 pubDate: 'Nov 12 2026'
-heroImage: '../../assets/network_configuration.jpg'
+heroImage: '../../assets/hero/stp.jpg'
 category: 'Network Protocols'
 ---
 

@@ -2,7 +2,7 @@
 title: 'Vi & Vim: A Practical Guide'
 description: 'A comprehensive reference for editing text efficiently with vi and Vim'
 pubDate: 'July 07 2022'
-heroImage: '../../assets/vim_image.jpeg'
+heroImage: '../../assets/hero/vim.jpg'
 category: 'Programming & Tools'
 ---
 

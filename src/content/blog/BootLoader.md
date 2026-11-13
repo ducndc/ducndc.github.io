@@ -2,7 +2,7 @@
 title: 'Bootloader In The Embedded Linux'
 description: 'How an embedded Linux system boots: BootROM, SPL, U-Boot, device tree, storage layouts, secure boot, and how to debug a board that does not start.'
 pubDate: 'Jun 14 2026'
-heroImage: '../../assets/bootloader.png'
+heroImage: '../../assets/hero/bootloader.jpg'
 category: 'Embedded Linux'
 ---
 

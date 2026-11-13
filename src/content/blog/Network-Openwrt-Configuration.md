@@ -2,7 +2,7 @@
 title: 'Network Configuration in OpenWrt'
 description: 'Network Configuration in OpenWrt'
 pubDate: 'Jun 30 2026'
-heroImage: '../../assets/network_configuration.jpg'
+heroImage: '../../assets/hero/netconfig.jpg'
 category: 'OpenWrt'
 ---
 

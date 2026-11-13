@@ -2,7 +2,7 @@
 title: 'GNU Debugger'
 description: 'GNU Debugger'
 pubDate: 'August 17 2023'
-heroImage: '../../assets/gdb.jpg'
+heroImage: '../../assets/hero/gdb.jpg'
 category: 'Programming & Tools'
 ---
 

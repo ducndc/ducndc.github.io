@@ -2,7 +2,7 @@
 title: 'Virtual Private Network'
 description: 'Virtual Private Network'
 pubDate: 'July 17 2025'
-heroImage: '../../assets/vpn.jpg'
+heroImage: '../../assets/hero/vpn.jpg'
 category: 'Network Protocols'
 ---
 

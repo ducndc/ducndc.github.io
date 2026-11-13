@@ -2,7 +2,7 @@
 title: 'Software Architecture and Technology of Large Scale Systems'
 description: 'A software leader''s guide to large scale systems: how to move from developer to architect, how to evaluate an architecture, the core techniques for scalability, reliability, performance, data and security, and a layered router platform as a worked example.'
 pubDate: 'July 18 2026'
-heroImage: '../../assets/SysDesign.png'
+heroImage: '../../assets/hero/sysdesign.jpg'
 category: 'Software Architecture'
 ---
 

@@ -2,7 +2,7 @@
 title: 'Linux Network Stack'
 description: 'Linux Network Stack'
 pubDate: 'Jun 14 2026'
-heroImage: '../../assets/networkstack.png'
+heroImage: '../../assets/hero/netstack.jpg'
 category: 'Linux Networking'
 ---
 

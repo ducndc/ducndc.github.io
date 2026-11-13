@@ -2,7 +2,7 @@
 title: 'EasyMesh System'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'September 12 2023'
-heroImage: '../../assets/EasyMesh.png'
+heroImage: '../../assets/hero/easymesh.jpg'
 category: 'Wi-Fi Mesh'
 ---
 

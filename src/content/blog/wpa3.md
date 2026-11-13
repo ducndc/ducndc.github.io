@@ -2,7 +2,7 @@
 title: 'Wi-Fi Protected Access 3 (WPA3)'
 description: 'WPA3'
 pubDate: 'August 30 2024'
-heroImage: '../../assets/wpa3.jpg'
+heroImage: '../../assets/hero/wpa3.jpg'
 category: 'Wi-Fi'
 ---
 

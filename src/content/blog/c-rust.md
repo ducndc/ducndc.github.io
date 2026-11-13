@@ -2,7 +2,7 @@
 title: 'C and Rust'
 description: 'C and Rust'
 pubDate: 'August 8 2025'
-heroImage: '../../assets/Rust-vs-C-.png'
+heroImage: '../../assets/hero/c_rust.jpg'
 category: 'Programming & Tools'
 ---
 

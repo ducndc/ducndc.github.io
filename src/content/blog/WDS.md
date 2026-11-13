@@ -2,7 +2,7 @@
 title: 'Wireless Distributed System (WDS)'
 description: 'How WDS links two access points over the air: the 4-address frame format, static and dynamic WDS, the connection flow, and the Linux hostapd / nl80211 implementation down to the firmware.'
 pubDate: 'Aug 20 2026'
-heroImage: '../../assets/Wds.png'
+heroImage: '../../assets/hero/wds.jpg'
 category: 'Wi-Fi'
 ---
 
