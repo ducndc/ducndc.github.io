@@ -313,16 +313,6 @@ Even with a well-chosen channel plan and healthy backhaul links, a mesh network 
 
 ---
 
-### Documents
-
----
-
-<a href="https://drive.google.com/file/d/1SzujbgECt6dTly01quXK-KZKYT5CKy5f/view?usp=drive_link" target="_blank">IEEE 1905.1</a><br>
-<a href="https://drive.google.com/file/d/1UXO2X4WSJrsJYC_kCy4bWiUoYXrfzvBA/view?usp=drive_link" target="_blank">Wi-Fi EasyMesh Specification v6.0</a><br>
-<a href="https://drive.google.com/file/d/1ZpApjcITXl4s2GjMRIrW2VB2OAmpy3Iz/view?usp=drive_link" target="_blank">IEEE 1905.1 Presentation</a>
-
----
-
 ### References
 
 ---
