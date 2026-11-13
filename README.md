@@ -12,7 +12,7 @@ Personal blog of Chung Duc Nguyen Dang (Wi-Fi, EasyMesh, embedded Linux, photogr
 ## Layout
 
 ```text
-public/            static files (favicon, prplMesh Doxygen docs, diagrams)
+public/            static files (favicon, diagrams)
 src/assets/        images referenced by posts (optimized by astro:assets)
 src/components/    Header, Footer, BaseHead, ...
 src/content/blog/  posts; frontmatter schema in src/content.config.ts
@@ -52,6 +52,5 @@ Pushing to `main` triggers `.github/workflows/astro.yml`, which builds and deplo
 ## Licensing and third-party material
 
 - Code in this repository is under GPL-3.0 (see `LICENSE`).
-- `public/prplmesh/` is Doxygen output of prplMesh (BSD-2-Clause-Patent, some files MIT). See `public/prplmesh/NOTICE.txt`.
 - Do not commit third-party specifications or standards documents (for example Wi-Fi Alliance or IEEE PDFs). Draw figures yourself, and cite the source.
 - Record the source and license of any image you did not create when you add it.

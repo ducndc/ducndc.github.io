@@ -644,9 +644,7 @@ The sum runs over the transmit (TX) and receive (RX) directions of the client.
 
 ---
 
-<a href="/prplmesh/index.html">prplMesh API Documentation</a>
-
-This documentation is generated from the prplMesh source code. prplMesh is copyright the prplMesh contributors and licensed under BSD-2-Clause-Patent (a few files under MIT); see the [notice](/prplmesh/NOTICE.txt). This site is not affiliated with the prplMesh project.
+The prplMesh source code is on GitHub: [prplMesh](https://github.com/prplfoundation/prplMesh). prplMesh is copyright the prplMesh contributors and licensed under BSD-2-Clause-Patent (a few files under MIT). This site is not affiliated with the prplMesh project.
 
 ---
 
