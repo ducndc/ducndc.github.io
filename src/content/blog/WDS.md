@@ -50,6 +50,8 @@ A normal 802.11 data frame has three addresses. The **To DS** and **From DS** bi
 | 0 | 1 | AP to station | DA (RA) | BSSID (TA) | SA | - |
 | **1** | **1** | **AP to AP (WDS)** | **RA** | **TA** | **DA** | **SA** |
 
+---
+
 When both bits are set, the frame needs four addresses because the **transmitter and receiver of the wireless hop** (the two APs) are different from the **original source and final destination** (the devices behind them):
 
 * **RA** (receiver address): the AP that receives the frame on this wireless hop.
@@ -91,6 +93,8 @@ There are two ways to bring a WDS link up.
 | Peers | Fixed, listed by MAC address | Any station that asks for 4-address mode and is allowed by the root |
 | Interoperability | Poor. Pre-standard and vendor specific | Better, because it reuses the normal association procedure |
 | Typical use today | Legacy equipment | Repeaters, mesh backhaul links, OpenWrt WDS |
+
+---
 
 **Dynamic WDS** is the form used by current stacks. The IEEE standard defines the 4-address frame format, but it does not define the procedure that sets a WDS link up. Each stack therefore decides how the downstream AP asks for 4-address mode and how the root AP accepts it. This is why static WDS between products from different vendors rarely works.
 
