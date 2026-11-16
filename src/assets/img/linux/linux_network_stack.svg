@@ -3,27 +3,27 @@
   <desc id="desc">Layered diagram showing user space, system call interface, kernel network stack, and network hardware and driver.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0b1220"/>
-      <stop offset="1" stop-color="#101b2d"/>
+      <stop offset="0" stop-color="#121212"/>
+      <stop offset="1" stop-color="#1a1a1a"/>
     </linearGradient>
     <linearGradient id="head" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#173a5e"/>
-      <stop offset="1" stop-color="#14506a"/>
+      <stop offset="0" stop-color="#353535"/>
+      <stop offset="1" stop-color="#454545"/>
     </linearGradient>
     <style>
-      text { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #e7eef8; }
-      .outer { fill: #111c2e; stroke: #4c6481; stroke-width: 2; }
+      text { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #ededed; }
+      .outer { fill: #1b1b1b; stroke: #616161; stroke-width: 2; }
       .section-title { font-size: 24px; font-weight: 700; letter-spacing: .5px; }
-      .subtitle { font-size: 16px; fill: #b9c9dc; }
-      .layer { fill: #17283e; stroke: #54708f; stroke-width: 1.5; }
+      .subtitle { font-size: 16px; fill: #c7c7c7; }
+      .layer { fill: #262626; stroke: #6c6c6c; stroke-width: 1.5; }
       .layer-text { font-size: 19px; font-weight: 600; }
-      .detail { font-size: 17px; fill: #b9c9dc; }
+      .detail { font-size: 17px; fill: #c7c7c7; }
       .mono { font-family: "JetBrains Mono", "DejaVu Sans Mono", monospace; }
     </style>
   </defs>
 
   <rect width="1200" height="1060" rx="22" fill="url(#bg)"/>
-  <g opacity=".18" stroke="#5b7da2" stroke-width="1">
+  <g opacity=".18" stroke="#787878" stroke-width="1">
     <path d="M40 40H1160 M40 80H1160 M40 120H1160 M40 160H1160 M40 200H1160 M40 240H1160 M40 280H1160 M40 320H1160 M40 360H1160 M40 400H1160 M40 440H1160 M40 480H1160 M40 520H1160 M40 560H1160 M40 600H1160 M40 640H1160 M40 680H1160 M40 720H1160 M40 760H1160 M40 800H1160 M40 840H1160 M40 880H1160 M40 920H1160 M40 960H1160 M40 1000H1160"/>
     <path d="M40 40V1020 M80 40V1020 M120 40V1020 M160 40V1020 M200 40V1020 M240 40V1020 M280 40V1020 M320 40V1020 M360 40V1020 M400 40V1020 M440 40V1020 M480 40V1020 M520 40V1020 M560 40V1020 M600 40V1020 M640 40V1020 M680 40V1020 M720 40V1020 M760 40V1020 M800 40V1020 M840 40V1020 M880 40V1020 M920 40V1020 M960 40V1020 M1000 40V1020 M1040 40V1020 M1080 40V1020 M1120 40V1020 M1160 40V1020"/>
   </g>
@@ -80,7 +80,7 @@
   <text x="600" y="1007" text-anchor="middle" class="detail">Physical Network Interface Card</text>
 
   <!-- directional flow -->
-  <g fill="none" stroke="#55c2df" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <g fill="none" stroke="#adadad" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
     <path d="M600 171V184 M592 177L600 185L608 177"/>
     <path d="M600 296V309 M592 302L600 310L608 302"/>
     <path d="M600 887V899 M592 893L600 901L608 893"/>

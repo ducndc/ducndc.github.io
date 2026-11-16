@@ -39,11 +39,11 @@
       <stop
          id="stop4096"
          offset="0"
-         style="stop-color:#fffe99;stop-opacity:1;" />
+         style="stop-color:#f7f7f7;stop-opacity:1;" />
       <stop
          id="stop4098"
          offset="1"
-         style="stop-color:#ffffe1;stop-opacity:1;" />
+         style="stop-color:#fdfdfd;stop-opacity:1;" />
     </linearGradient>
     <inkscape:perspective
        sodipodi:type="inkscape:persp3d"
@@ -55,33 +55,33 @@
     <linearGradient
        id="linearGradient4843">
       <stop
-         style="stop-color:#ff99bd;stop-opacity:1;"
+         style="stop-color:#b1b1b1;stop-opacity:1;"
          offset="0"
          id="stop4845" />
       <stop
-         style="stop-color:#ffe1ec;stop-opacity:1;"
+         style="stop-color:#e8e8e8;stop-opacity:1;"
          offset="1"
          id="stop4847" />
     </linearGradient>
     <linearGradient
        id="linearGradient4827">
       <stop
-         style="stop-color:#81b9ff;stop-opacity:1;"
+         style="stop-color:#b2b2b2;stop-opacity:1;"
          offset="0"
          id="stop4829" />
       <stop
-         style="stop-color:#e1efff;stop-opacity:1;"
+         style="stop-color:#ededed;stop-opacity:1;"
          offset="1"
          id="stop4831" />
     </linearGradient>
     <linearGradient
        id="linearGradient4819">
       <stop
-         style="stop-color:#c1ffa6;stop-opacity:1;"
+         style="stop-color:#ebebeb;stop-opacity:1;"
          offset="0"
          id="stop4821" />
       <stop
-         style="stop-color:#ebffe1;stop-opacity:1;"
+         style="stop-color:#f9f9f9;stop-opacity:1;"
          offset="1"
          id="stop4823" />
     </linearGradient>
@@ -99,22 +99,22 @@
     <linearGradient
        id="linearGradient3414">
       <stop
-         style="stop-color:#8080ff;stop-opacity:1;"
+         style="stop-color:#898989;stop-opacity:1;"
          offset="0"
          id="stop3416" />
       <stop
-         style="stop-color:#0000a0;stop-opacity:1;"
+         style="stop-color:#0c0c0c;stop-opacity:1;"
          offset="1"
          id="stop3418" />
     </linearGradient>
     <linearGradient
        id="linearGradient3406">
       <stop
-         style="stop-color:#bdff99;stop-opacity:1;"
+         style="stop-color:#eaeaea;stop-opacity:1;"
          offset="0"
          id="stop3408" />
       <stop
-         style="stop-color:#00e000;stop-opacity:1;"
+         style="stop-color:#a0a0a0;stop-opacity:1;"
          offset="1"
          id="stop3410" />
     </linearGradient>
@@ -300,7 +300,7 @@
        enabled="true"
        color="#000000"
        opacity="0.1254902"
-       empcolor="#0000ff"
+       empcolor="#121212"
        empopacity="0.1254902"
        spacingx="5px"
        spacingy="5px"
@@ -2399,7 +2399,7 @@
        sodipodi:nodetypes="cccc" />
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0048;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#3b3b3b;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
        id="text3353"
        sodipodi:linespacing="100%"
        x="42.841797"
@@ -2413,7 +2413,7 @@
     <text
        sodipodi:linespacing="100%"
        id="text4154"
-       style="font-size:7.25026369px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0048;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:7.25026369px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#3b3b3b;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
        xml:space="preserve"
        x="2736.0198"
        y="336.78403">clone packet</text>
@@ -2425,7 +2425,7 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#363636;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
        id="text4252"
        sodipodi:linespacing="100%"
        y="705"
@@ -2436,7 +2436,7 @@
          y="705">clone packet</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#363636;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
        x="980"
        y="695"
        id="text4259"
@@ -2454,7 +2454,7 @@
        y="45"
        sodipodi:linespacing="100%"
        id="text3355"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#363636;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
        xml:space="preserve"
        transform="matrix(0,-1,1,0,0,0)"><tspan
          y="45"
@@ -2464,7 +2464,7 @@
     <text
        transform="matrix(0,-1,1,0,0,0)"
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#363636;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
        id="text3359"
        sodipodi:linespacing="100%"
        y="1360"
