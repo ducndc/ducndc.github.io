@@ -28,6 +28,8 @@ The protocol family has gone through three generations:
 | **RSTP** | IEEE 802.1w, merged into 802.1D-2004 | Explicit handshakes between neighbors, fewer states | Typically well under 1 s on point-to-point links |
 | **MSTP** | IEEE 802.1s, merged into 802.1Q-2005 and later | Several trees (instances), VLANs mapped to instances | Same as RSTP, per instance |
 
+---
+
 Vendors added their own per-VLAN variants (PVST+, Rapid PVST+), described later.
 
 ---
@@ -57,6 +59,8 @@ STP is a **distributed spanning-tree algorithm**. Every bridge runs the same sta
 | 1 Gb/s | 4 | 20,000 |
 | 10 Gb/s | 2 | 2,000 |
 | 100 Gb/s | 1 | 200 |
+
+---
 
 The 16-bit "short" costs could not tell fast links apart, so 802.1D-2004 defines 32-bit costs calculated as roughly 20 Tb/s divided by the link speed. **All bridges in a network must use the same cost method**, or the paths they compute will not match.
 
@@ -120,6 +124,8 @@ A Configuration BPDU is 35 bytes:
 | Hello Time | 2 | Interval between BPDUs, set by the root |
 | Forward Delay | 2 | Time spent in each of the listening and learning states, set by the root |
 
+---
+
 An **RST BPDU** adds one byte, *Version 1 Length*, which makes 36 bytes in total, and uses the extra flags bits:
 
 | Bit | Flag |
@@ -131,6 +137,8 @@ An **RST BPDU** adds one byte, *Version 1 Length*, which makes 36 bytes in total
 | 5 | Forwarding |
 | 6 | **Agreement** |
 | 7 | Topology Change Acknowledgment |
+
+---
 
 The timers (Hello, Max Age, Forward Delay) are always **set by the root** and copied by all other bridges. This is why timer values do not need to be configured on every switch, and why changing them on a non-root bridge has no effect.
 
@@ -180,6 +188,8 @@ Classic STP uses **timers** to be sure that the topology has settled before a po
 | Listening | yes | yes | no | no |
 | Learning | yes | yes | yes | no |
 | Forwarding | yes | yes | yes | yes |
+
+---
 
 With the default timers (**Hello 2 s, Max Age 20 s, Forward Delay 15 s**):
 
@@ -304,6 +314,8 @@ Key MSTP concepts:
 | **MSTI** | One of the additional instances, with its own priority vector |
 | **CIST** | The Common and Internal Spanning Tree: the IST inside a region, joined to the other regions and to non-MST bridges, and seen from outside as a single bridge |
 
+---
+
 Two bridges are in the same region only if the name, the revision **and the digest** are identical. A single VLAN mapped to the wrong instance on one switch silently puts that switch in a **different region**. This is the most common MSTP misconfiguration, and the symptoms (blocked ports, some VLANs not forwarding) can be confusing. MSTP also uses a hop count (**remaining hops**, default 20) in place of Message Age.
 
 ---
@@ -317,6 +329,8 @@ Two bridges are in the same region only if the name, the revision **and the dige
 | **PVST+** | One 802.1D instance per VLAN. BPDUs sent on each VLAN | Proprietary. Interoperates with 802.1D through the native VLAN |
 | **Rapid PVST+** | One 802.1w instance per VLAN | Proprietary. Fast, but CPU and BPDU load grows with the number of VLANs |
 | **Standard MSTP** | 802.1s | Interoperable between vendors |
+
+---
 
 Mixing a per-VLAN variant with standard MSTP is possible but delicate. The boundary uses the CIST, and the per-VLAN trees follow the CIST at the boundary, so the design needs care.
 
@@ -336,6 +350,8 @@ STP trusts every BPDU it receives, so a misconfigured or malicious device can in
 | **BPDU Filter** | Do not send or process BPDUs on the port | Rarely. It removes loop protection, so use it with great care |
 | **Unidirectional Link Detection** (vendor) | Detects a link that works in only one direction | Fiber links |
 
+---
+
 **Why Loop Guard and UDLD matter.** On a *unidirectional* link, a port can stop receiving BPDUs while still transmitting. The bridge on the blocked side then thinks that the neighbor has gone, moves its port to designated and forwarding, and creates a loop that STP cannot see, because the BPDUs that would reveal it never arrive. This is one of the most damaging failure modes in practice.
 
 ---
@@ -353,6 +369,8 @@ STP trusts every BPDU it receives, so a misconfigured or malicious device can in
 | Edge port suddenly blocks | A rogue switch or a loop behind the port, BPDU Guard has triggered | Remove the device, then re-enable the port |
 | MSTP VLANs not forwarding | Region mismatch: name, revision or VLAN-to-instance table differs | Compare the configuration digest on all bridges |
 | Long outages on an old network | Classic STP with 30–50 s timers | Move to RSTP or MSTP |
+
+---
 
 Design rules that follow from the protocol:
 
