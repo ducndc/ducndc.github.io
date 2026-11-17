@@ -1,10 +1,15 @@
 ---
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import exifr from 'exifr';
+import sharp from 'sharp';
 import type { ImageMetadata } from 'astro';
 import { getImage } from 'astro:assets';
 import { ALBUMS } from '../albums';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import PhotoGlobe3D from '../components/PhotoGlobe3D.astro';
 import { SITE_TITLE } from '../consts';
 
 // Every image under src/assets/traveling/<album>/ becomes part of that album.
@@ -14,29 +19,97 @@ const files = import.meta.glob<{ default: ImageMetadata }>(
 );
 
 const byFolder: Record<string, { name: string; src: ImageMetadata }[]> = {};
-for (const [path, mod] of Object.entries(files)) {
-	const [folder, name] = path.split('/').slice(-2);
+for (const [file, mod] of Object.entries(files)) {
+	const [folder, name] = file.split('/').slice(-2);
 	(byFolder[folder] ??= []).push({ name, src: mod.default });
+}
+
+const fmtMonth = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+const fmtDay = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const humanize = (s: string) => s.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/[-_]+/g, ' ');
+
+/** Camera settings + average colour, read from the original file at build time. */
+async function readPhoto(folder: string, name: string) {
+	const buf = await readFile(path.join(process.cwd(), 'src/assets/traveling', folder, name));
+	const [exif, avg] = await Promise.all([
+		exifr
+			.parse(buf, ['Model', 'LensModel', 'FocalLength', 'FNumber', 'ExposureTime', 'ISO', 'DateTimeOriginal'])
+			.catch(() => null),
+		sharp(buf).resize(1, 1).removeAlpha().raw().toBuffer(),
+	]);
+	const shutter = exif?.ExposureTime
+		? exif.ExposureTime >= 1 ? `${exif.ExposureTime}s` : `1/${Math.round(1 / exif.ExposureTime)}s`
+		: '';
+	const settings = [
+		exif?.FocalLength && `${Math.round(exif.FocalLength)} mm`,
+		exif?.FNumber && `f/${exif.FNumber}`,
+		shutter,
+		exif?.ISO && `ISO ${exif.ISO}`,
+	].filter(Boolean).join(' · ');
+	return {
+		camera: (exif?.Model as string | undefined) ?? '',
+		lens: (exif?.LensModel as string | undefined) ?? '',
+		settings,
+		taken: exif?.DateTimeOriginal instanceof Date ? (exif.DateTimeOriginal as Date) : undefined,
+		avg: `rgb(${avg[0]},${avg[1]},${avg[2]})`,
+	};
 }
 
 const albums = await Promise.all(
 	Object.entries(byFolder).map(async ([folder, images]) => {
-		const meta = ALBUMS[folder] ?? { title: folder.replace(/[-_]+/g, ' ') };
+		const [place, province] = folder.split('-').map(humanize);
+		const meta = {
+			title: place,
+			location: province ? `${province} · Vietnam` : undefined,
+			...ALBUMS[folder],
+		};
 		images.sort((a, b) => a.name.localeCompare(b.name));
 		const coverIndex = Math.max(0, images.findIndex((img) => img.name === meta.cover));
 		const photos = await Promise.all(
-			images.map(async ({ src }) => {
-				const thumb = await getImage({ src, width: 900, format: 'webp' });
-				const full = await getImage({ src, width: 2400, format: 'webp' });
-				return { thumb: thumb.src, full: full.src, width: src.width, height: src.height };
+			images.map(async ({ name, src }) => {
+				const [thumb, full, info] = await Promise.all([
+					getImage({ src, width: 900, format: 'webp' }),
+					getImage({ src, width: 2400, format: 'webp' }),
+					readPhoto(folder, name),
+				]);
+				const caption = ALBUMS[folder]?.captions?.[name] ?? '';
+				return {
+					name, caption, ...info,
+					thumb: thumb.src, full: full.src, width: src.width, height: src.height,
+				};
 			}),
 		);
-		return { id: folder, ...meta, photos, cover: photos[coverIndex] };
+		const dates = photos.map((p) => p.taken).filter((d): d is Date => !!d).sort((a, b) => +a - +b);
+		const newest = dates.at(-1);
+		const cameras = [...new Set(photos.map((p) => p.camera).filter(Boolean))];
+		const date = meta.date ?? (newest ? fmtMonth(newest) : '');
+		const stats = [
+			`${photos.length} photos`,
+			dates.length && fmtMonth(dates[0]) !== fmtMonth(dates.at(-1)!)
+				? `${fmtMonth(dates[0])} – ${fmtMonth(dates.at(-1)!)}`
+				: dates.length ? fmtMonth(dates[0]) : '',
+			cameras.join(' / '),
+		].filter(Boolean).join(' · ');
+		return {
+			id: folder, ...meta, date, stats, photos, cover: photos[coverIndex],
+			sortKey: Date.parse(meta.date ?? '') || (newest ? +newest : 0),
+		};
 	}),
 );
 
-albums.sort((a, b) => (Date.parse(b.date ?? '') || 0) - (Date.parse(a.date ?? '') || 0));
+albums.sort((a, b) => b.sortKey - a.sortKey);
 const photoCount = albums.reduce((n, album) => n + album.photos.length, 0);
+
+const globeAlbums = albums.flatMap((a) => {
+	const c = ALBUMS[a.id]?.coords;
+	return c
+		? [{
+				id: a.id, title: a.title, location: a.location ?? '', date: a.date, stats: a.stats,
+				count: a.photos.length, cover: a.cover.thumb, post: a.post, lat: c[0], lon: c[1],
+			}]
+		: [];
+});
+const first = albums[0];
 ---
 
 <!doctype html>
@@ -44,27 +117,42 @@ const photoCount = albums.reduce((n, album) => n + album.photos.length, 0);
 	<head>
 		<BaseHead
 			title={`Photos | ${SITE_TITLE}`}
-			description="Photographs from my travels, shot on a Canon 60D."
+			description="Photographs from my travels around northern Vietnam."
 		/>
 	</head>
 	<body>
 		<Header />
-		<section class="page-banner">
-			<div>
+		<PhotoGlobe3D albums={globeAlbums} />
+		<section class="page-banner" id="photo-hero">
+			<div class="banner-inner">
 				<p class="eyebrow">{photoCount} photos · {albums.length} journeys</p>
 				<h1>Photos</h1>
-				<p>Places I have walked to, seen through the viewfinder of my Canon 60D.</p>
-				{
-					albums.length > 1 && (
-						<nav class="album-index" aria-label="Albums">
-							{albums.map((album) => (
-								<a href={`#${album.id}`}>{album.title}</a>
-							))}
-						</nav>
-					)
-				}
+				<p>Places I have walked to, one frame at a time.</p>
+				<p class="hint" aria-hidden="true">Pick a pin · Drag the map</p>
 			</div>
+			{
+				first && (
+					<aside class="album-card" id="album-card" aria-live="polite">
+						<img class="card-cover" src={first.cover.thumb} alt="" />
+						<div class="card-body">
+							<p class="card-meta">{[first.location, first.date].filter(Boolean).join(' · ')}</p>
+							<h2 class="card-title">{first.title}</h2>
+							<p class="card-stats">{first.stats}</p>
+							<div class="card-links">
+								<a class="card-open" href={`#${first.id}`}>Open album ↓</a>
+								<a class="card-story" href={first.post ? `/blog/${first.post}/` : '#'} hidden={!first.post}>
+									Read the story →
+								</a>
+							</div>
+						</div>
+					</aside>
+				)
+			}
 		</section>
+
+		<nav class="album-bar" aria-label="Albums">
+			{albums.map((album) => <a href={`#${album.id}`} data-album={album.id}>{album.title}</a>)}
+		</nav>
 
 		<main class="gallery-layout">
 			{
@@ -86,6 +174,7 @@ const photoCount = albums.reduce((n, album) => n + album.photos.length, 0);
 							</p>
 							<h2>{album.title}</h2>
 							{album.description && <p class="album-desc">{album.description}</p>}
+							<p class="album-stats">{album.stats}</p>
 							{album.post && (
 								<a class="album-story" href={`/blog/${album.post}/`}>
 									Read the story →
@@ -94,17 +183,24 @@ const photoCount = albums.reduce((n, album) => n + album.photos.length, 0);
 						</header>
 						<ul class="photo-grid">
 							{album.photos.map((photo, i) => (
-								<li class="photo">
+								<li class="photo" style={`--ar:${(photo.width / photo.height).toFixed(4)};--avg:${photo.avg}`}>
+									<i aria-hidden="true" />
 									<a
 										href={photo.full}
 										data-lightbox={album.id}
+										data-photo={`${album.id}:${i}`}
+										data-thumb={photo.thumb}
+										data-title={album.title}
+										data-caption={photo.caption || [album.location, photo.taken && fmtDay(photo.taken)].filter(Boolean).join(' · ')}
+										data-exif={[photo.camera, photo.lens].filter(Boolean).join(' · ')}
+										data-settings={photo.settings}
 										aria-label={`${album.title}, photo ${i + 1} of ${album.photos.length}`}
 									>
 										<img
 											src={photo.thumb}
 											width={photo.width}
 											height={photo.height}
-											alt=""
+											alt={photo.caption}
 											loading="lazy"
 											decoding="async"
 										/>
@@ -119,27 +215,65 @@ const photoCount = albums.reduce((n, album) => n + album.photos.length, 0);
 		</main>
 
 		<dialog class="lightbox" aria-label="Photo viewer">
-			<img alt="" />
-			<p class="lightbox-count"></p>
-			<button class="lb-close" type="button" aria-label="Close">×</button>
+			<div class="lb-stage">
+				<div class="lb-zoom"><img class="lb-img" alt="" draggable="false" /></div>
+			</div>
+			<div class="lb-info" aria-live="polite">
+				<p class="lb-title"></p>
+				<p class="lb-caption"></p>
+				<p class="lb-exif"></p>
+			</div>
+			<div class="lb-tools">
+				<button class="lb-play" type="button" aria-label="Start slideshow" title="Slideshow (space)">▶</button>
+				<button class="lb-share" type="button" aria-label="Copy link to this photo" title="Copy link">⧉</button>
+				<button class="lb-fs" type="button" aria-label="Fullscreen" title="Fullscreen (f)">⛶</button>
+				<button class="lb-close" type="button" aria-label="Close" title="Close (esc)">×</button>
+			</div>
 			<button class="lb-prev" type="button" aria-label="Previous photo">‹</button>
 			<button class="lb-next" type="button" aria-label="Next photo">›</button>
+			<div class="lb-strip" role="tablist" aria-label="Photos in this album"></div>
+			<p class="lb-count"></p>
 		</dialog>
 
+		<noscript><style>.photo img { opacity: 1 !important; }</style></noscript>
 		<Footer />
 	</body>
 </html>
 
 <style>
-	.page-banner {
-		background: var(--space);
-		color: #fff;
-		padding: 5rem 1.5rem 3.5rem;
-		border-bottom: 4px solid var(--accent);
+	:global(html) {
+		background: #000;
+		scroll-behavior: smooth;
 	}
-	.page-banner > div {
-		max-width: 1200px;
-		margin: 0 auto;
+	:global(body) {
+		background: transparent;
+	}
+
+	/* ===== Hero: the map shows through; the banner catches drags ===== */
+	.page-banner {
+		box-sizing: border-box;
+		position: relative;
+		min-height: calc(100vh - 64px);
+		min-height: calc(100svh - 64px);
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 2rem;
+		color: #fff;
+		padding: 0 max(1.5rem, calc((100% - 1200px) / 2)) 3.5rem;
+		background:
+			linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 45%),
+			linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent 55%);
+		border-bottom: 4px solid var(--accent);
+		cursor: grab;
+		touch-action: pan-y;
+		user-select: none;
+	}
+	.page-banner.grabbing {
+		cursor: grabbing;
+	}
+	.banner-inner {
+		pointer-events: none;
 	}
 	.page-banner h1 {
 		color: #fff;
@@ -147,40 +281,148 @@ const photoCount = albums.reduce((n, album) => n + album.photos.length, 0);
 		font-weight: 900;
 		margin: 0.75rem 0 1rem;
 	}
-	.page-banner p:not(.eyebrow) {
+	.banner-inner p:not(.eyebrow) {
 		color: #ccc;
 		font-size: 1.15rem;
-		max-width: 55ch;
+		max-width: 40ch;
 		margin: 0;
 	}
-	.album-index {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-		margin-top: 2rem;
-	}
-	.album-index a {
-		padding: 0.3rem 0.8rem;
-		border: 1px solid #444;
-		color: #fff;
+	.banner-inner .hint {
+		margin-top: 1.5rem;
 		font-family: var(--font-mono);
-		font-size: 0.8rem;
+		font-size: 0.75rem;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		text-decoration: none;
-	}
-	.album-index a:hover {
-		border-color: var(--accent);
+		color: #999;
 	}
 
+	.album-card {
+		display: flex;
+		align-items: stretch;
+		flex: 0 0 auto;
+		width: min(360px, 100%);
+		background: rgba(10, 10, 10, 0.82);
+		backdrop-filter: blur(8px);
+		border: 1px solid #2a2a2a;
+		border-left: 4px solid var(--accent);
+		cursor: default;
+	}
+	.album-card.swap {
+		animation: card-in 0.35s ease;
+	}
+	@keyframes card-in {
+		from {
+			opacity: 0;
+			transform: translateY(8px);
+		}
+	}
+	.card-cover {
+		width: 112px;
+		height: 158px;
+		margin: 0;
+		border-radius: 0;
+		object-fit: cover;
+		flex: 0 0 112px;
+	}
+	.card-body {
+		padding: 0.9rem 1rem;
+		min-width: 0;
+	}
+	.card-meta,
+	.card-stats {
+		margin: 0;
+		font-family: var(--font-mono);
+		font-size: 0.68rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #aaa;
+	}
+	.card-meta {
+		color: var(--accent);
+	}
+	.card-title {
+		color: #fff;
+		font-size: 1.2rem;
+		line-height: 1.2;
+		margin: 0.35rem 0;
+	}
+	.card-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 1rem;
+		margin-top: 0.6rem;
+	}
+	.card-links a {
+		color: #fff;
+		font-weight: 700;
+		font-size: 0.85rem;
+		text-decoration: none;
+		border-bottom: 2px solid var(--accent);
+	}
+	.card-links a:hover {
+		color: var(--accent);
+	}
+	@media (max-width: 860px) {
+		.page-banner {
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-end;
+		}
+		.album-card {
+			width: 100%;
+		}
+	}
+
+	/* ===== Sticky album bar ===== */
+	.album-bar {
+		position: sticky;
+		top: 64px;
+		z-index: 50;
+		display: flex;
+		gap: 0.5rem;
+		padding: 0.7rem max(1.5rem, calc((100% - 1200px) / 2));
+		overflow-x: auto;
+		scrollbar-width: none;
+		background: rgba(255, 255, 255, 0.94);
+		backdrop-filter: blur(8px);
+		border-bottom: 1px solid #e3e3e3;
+	}
+	.album-bar::-webkit-scrollbar {
+		display: none;
+	}
+	.album-bar a {
+		flex: 0 0 auto;
+		padding: 0.3rem 0.85rem;
+		border: 1px solid #d5d5d5;
+		color: #222;
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+	.album-bar a:hover {
+		border-color: var(--accent);
+	}
+	.album-bar a[aria-current='true'] {
+		background: #111;
+		border-color: #111;
+		color: #fff;
+	}
+
+	/* ===== Gallery ===== */
 	.gallery-layout {
+		background: #fff;
+		position: relative;
 		width: auto;
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 3.5rem 1.5rem;
+		max-width: none;
+		margin: 0;
+		padding: 3.5rem max(1.5rem, calc((100% - 1200px) / 2));
 	}
 	.album {
 		margin-bottom: 5rem;
-		scroll-margin-top: 80px;
+		scroll-margin-top: 140px;
 	}
 	.album-cover {
 		margin: 0 0 2rem;
@@ -190,9 +432,12 @@ const photoCount = albums.reduce((n, album) => n + album.photos.length, 0);
 	}
 	.album-cover img {
 		width: 100%;
-		height: 100%;
+		height: 118%;
+		transform: translateY(var(--py, 0px));
+		will-change: transform;
 		object-fit: cover;
 		display: block;
+		margin: 0;
 	}
 	.album-head {
 		max-width: 60ch;
@@ -204,166 +449,552 @@ const photoCount = albums.reduce((n, album) => n + album.photos.length, 0);
 	.album-desc {
 		color: #444;
 	}
+	.album-stats {
+		margin: 0.5rem 0 0;
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: #777;
+	}
 	.album-story {
+		display: inline-block;
+		margin-top: 1rem;
 		font-weight: 700;
 		color: var(--accent-dark);
 		text-decoration: none;
 		border-bottom: 2px solid currentColor;
 	}
 
-	/* Masonry via CSS columns keeps each photo's natural aspect ratio. */
+	/* Justified rows: every photo keeps its aspect ratio and each row fills the width. */
 	.photo-grid {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-		columns: 3 280px;
-		column-gap: 0.75rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		perspective: 1200px;
+	}
+	.photo-grid::after {
+		content: '';
+		flex-grow: 1000000;
 	}
 	.photo {
-		break-inside: avoid;
-		margin-bottom: 0.75rem;
+		position: relative;
+		flex: calc(var(--ar) * 100) 1 calc(var(--ar) * 240px);
+		background: var(--avg, #222);
+		margin: 0;
+	}
+	.photo i {
+		display: block;
+		padding-bottom: calc(100% / var(--ar));
 	}
 	.photo a {
+		position: absolute;
+		inset: 0;
 		display: block;
 		overflow: hidden;
-		background: var(--space-3);
 		cursor: zoom-in;
+		transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+		transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+		will-change: transform;
+	}
+	.photo a:hover {
+		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+		z-index: 2;
 	}
 	.photo img {
 		display: block;
 		width: 100%;
-		height: auto;
+		height: 100%;
 		margin: 0;
-		transition: transform 0.4s ease, opacity 0.2s ease;
+		border-radius: 0;
+		object-fit: cover;
+		opacity: 0;
+		transition: transform 0.4s ease, opacity 0.5s ease;
+	}
+	.photo img.ready {
+		opacity: 1;
 	}
 	.photo a:hover img {
-		transform: scale(1.03);
+		transform: scale(1.06);
 	}
 	.photo a:focus-visible {
 		outline: 3px solid var(--accent);
 		outline-offset: 2px;
 	}
 
+	/* ===== Lightbox ===== */
 	.lightbox {
 		width: 100vw;
 		height: 100vh;
+		height: 100dvh;
 		max-width: none;
 		max-height: none;
 		margin: 0;
 		padding: 0;
 		border: 0;
-		background: rgba(0, 0, 0, 0.94);
-	}
-	.lightbox[open] {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		background: #000;
+		color: #fff;
+		overflow: hidden;
 	}
 	.lightbox::backdrop {
 		background: transparent;
 	}
-	.lightbox img {
-		max-width: calc(100vw - 7rem);
-		max-height: calc(100vh - 5rem);
+	.lb-stage {
+		position: absolute;
+		inset: 84px 0 92px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		touch-action: none;
+		cursor: zoom-in;
+	}
+	.lb-stage.zoomed {
+		cursor: grab;
+	}
+	.lb-stage.panning {
+		cursor: grabbing;
+	}
+	.lb-zoom {
+		transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(var(--s, 1));
+		transition: transform 0.2s ease-out;
+	}
+	.lb-stage.panning .lb-zoom,
+	.lb-stage.pinching .lb-zoom {
+		transition: none;
+	}
+	.lb-img {
+		display: block;
+		max-width: calc(100vw - 6rem);
+		max-height: calc(100vh - 176px - 1rem);
+		max-height: calc(100dvh - 176px - 1rem);
+		margin: 0;
+		border-radius: 0;
 		object-fit: contain;
+		user-select: none;
+	}
+	.lb-img.kb {
+		animation: kenburns 6s ease-out both;
+	}
+	@keyframes kenburns {
+		from {
+			transform: scale(1);
+		}
+		to {
+			transform: scale(1.08) translate(-0.8%, -0.6%);
+		}
+	}
+	.lb-info {
+		position: absolute;
+		top: 0;
+		height: 84px;
+		box-sizing: border-box;
+		left: 0;
+		right: 9rem;
+		padding: 1rem 1.25rem;
+		pointer-events: none;
+		text-shadow: 0 1px 8px #000;
+	}
+	.lb-info p {
 		margin: 0;
 	}
-	.lightbox-count {
-		position: absolute;
-		bottom: 1rem;
-		left: 0;
-		right: 0;
-		margin: 0;
-		text-align: center;
-		color: #aaa;
+	.lb-title {
 		font-family: var(--font-mono);
-		font-size: 0.8rem;
+		font-size: 0.7rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+	.lb-caption {
+		font-size: 1.05rem;
+		font-weight: 600;
+		margin-top: 0.2rem !important;
+	}
+	.lb-exif {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		color: #bbb;
+		margin-top: 0.25rem !important;
+	}
+	.lb-tools {
+		position: absolute;
+		top: 0.4rem;
+		right: 0.5rem;
+		display: flex;
 	}
 	.lightbox button {
-		position: absolute;
 		background: none;
 		border: 0;
 		color: #fff;
-		font-size: 2.5rem;
+		font-size: 1.4rem;
 		line-height: 1;
-		padding: 0.5rem 1rem;
+		padding: 0.55rem 0.7rem;
 		cursor: pointer;
-		opacity: 0.7;
+		opacity: 0.75;
 	}
 	.lightbox button:hover,
 	.lightbox button:focus-visible {
 		opacity: 1;
 	}
 	.lb-close {
-		top: 0.5rem;
-		right: 0.5rem;
+		font-size: 2.2rem !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+	.lb-prev,
+	.lb-next {
+		position: absolute;
+		top: calc(50% - 46px);
+		font-size: 2.8rem !important;
 	}
 	.lb-prev {
 		left: 0.25rem;
-		top: 50%;
-		transform: translateY(-50%);
 	}
 	.lb-next {
 		right: 0.25rem;
-		top: 50%;
-		transform: translateY(-50%);
+	}
+	.lb-strip {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 22px;
+		height: 64px;
+		display: flex;
+		gap: 6px;
+		padding: 0 1rem;
+		overflow-x: auto;
+		scrollbar-width: none;
+		justify-content: safe center;
+	}
+	.lb-strip::-webkit-scrollbar {
+		display: none;
+	}
+	.lb-strip :global(button) {
+		flex: 0 0 auto;
+		background: none;
+		padding: 0;
+		height: 64px;
+		opacity: 0.45;
+		border: 2px solid transparent;
+		transition: opacity 0.15s ease;
+	}
+	.lb-strip :global(button img) {
+		display: block;
+		height: 100%;
+		width: auto;
+		margin: 0;
+		border-radius: 0;
+	}
+	.lb-strip :global(button[aria-selected='true']) {
+		opacity: 1;
+		border-color: var(--accent);
+	}
+	.lb-count {
+		position: absolute;
+		bottom: 3px;
+		left: 0;
+		right: 0;
+		margin: 0;
+		text-align: center;
+		color: #888;
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
 	}
 	@media (max-width: 640px) {
-		.album-cover {
-			aspect-ratio: 4 / 3;
-		}
-		.lightbox img {
+		.lb-img {
 			max-width: 100vw;
 		}
 		.lb-prev,
 		.lb-next {
-			top: auto;
-			bottom: 0.25rem;
-			transform: none;
+			display: none;
+		}
+		.lb-info {
+			right: 0;
+			padding-top: 3rem;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.lb-img.kb {
+			animation: none;
 		}
 	}
 </style>
 
 <script>
+	/* ---------- Gallery effects: fade-in, 3D tilt, cover parallax, album bar scroll-spy ---------- */
+	document.querySelectorAll<HTMLImageElement>('.photo img').forEach((img) => {
+		if (img.complete) img.classList.add('ready');
+		else img.addEventListener('load', () => img.classList.add('ready'), { once: true });
+	});
+
+	const bar = document.querySelector<HTMLElement>('.album-bar')!;
+	const barLinks = [...bar.querySelectorAll<HTMLAnchorElement>('a')];
+	const spy = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((e) => {
+				if (!e.isIntersecting) return;
+				barLinks.forEach((a) => {
+					const on = a.dataset.album === e.target.id;
+					a.toggleAttribute('aria-current', on);
+					if (on) {
+						a.setAttribute('aria-current', 'true');
+						bar.scrollTo({ left: a.offsetLeft - bar.clientWidth / 2 + a.clientWidth / 2, behavior: 'smooth' });
+					} else a.removeAttribute('aria-current');
+				});
+			});
+		},
+		{ rootMargin: '-35% 0px -60% 0px' },
+	);
+	document.querySelectorAll('.album').forEach((s) => spy.observe(s));
+
+	if (!matchMedia('(prefers-reduced-motion: reduce)').matches && matchMedia('(hover: hover)').matches) {
+		document.querySelectorAll<HTMLElement>('.photo a').forEach((el) => {
+			el.addEventListener('pointermove', (e) => {
+				const r = el.getBoundingClientRect();
+				el.style.setProperty('--ry', `${((e.clientX - r.left) / r.width - 0.5) * 12}deg`);
+				el.style.setProperty('--rx', `${-((e.clientY - r.top) / r.height - 0.5) * 12}deg`);
+			});
+			el.addEventListener('pointerleave', () => {
+				el.style.setProperty('--rx', '0deg');
+				el.style.setProperty('--ry', '0deg');
+			});
+		});
+		const covers = [...document.querySelectorAll<HTMLElement>('.album-cover')];
+		const parallax = () => {
+			covers.forEach((c) => {
+				const r = c.getBoundingClientRect();
+				const k = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
+				c.style.setProperty('--py', `${Math.max(-1, Math.min(1, k)) * -r.height * 0.07}px`);
+			});
+		};
+		addEventListener('scroll', parallax, { passive: true });
+		parallax();
+	}
+
+	/* ---------- Lightbox ---------- */
 	const dialog = document.querySelector<HTMLDialogElement>('.lightbox')!;
-	const img = dialog.querySelector('img')!;
-	const count = dialog.querySelector('.lightbox-count')!;
+	const stage = dialog.querySelector<HTMLElement>('.lb-stage')!;
+	const zoomEl = dialog.querySelector<HTMLElement>('.lb-zoom')!;
+	const img = dialog.querySelector<HTMLImageElement>('.lb-img')!;
+	const strip = dialog.querySelector<HTMLElement>('.lb-strip')!;
+	const q = (s: string) => dialog.querySelector<HTMLElement>(s)!;
+	const playBtn = q('.lb-play');
+
 	let group: HTMLAnchorElement[] = [];
 	let index = 0;
+	let scale = 1, tx = 0, ty = 0;
+	let timer = 0;
+
+	const applyZoom = () => {
+		zoomEl.style.setProperty('--s', String(scale));
+		zoomEl.style.setProperty('--tx', `${tx}px`);
+		zoomEl.style.setProperty('--ty', `${ty}px`);
+		stage.classList.toggle('zoomed', scale > 1);
+		if (scale > 1) img.classList.remove('kb');
+	};
+	const clampPan = () => {
+		const mx = Math.max(0, (img.clientWidth * scale - stage.clientWidth) / 2);
+		const my = Math.max(0, (img.clientHeight * scale - stage.clientHeight) / 2);
+		tx = Math.max(-mx, Math.min(mx, tx));
+		ty = Math.max(-my, Math.min(my, ty));
+	};
+	const resetZoom = () => { scale = 1; tx = ty = 0; applyZoom(); };
+	/** Zoom to `next`, keeping the point under (px, py) (relative to the stage centre) fixed. */
+	const zoomAt = (next: number, px: number, py: number) => {
+		next = Math.max(1, Math.min(5, next));
+		const k = next / scale;
+		tx = px - (px - tx) * k;
+		ty = py - (py - ty) * k;
+		scale = next;
+		if (scale === 1) tx = ty = 0;
+		clampPan();
+		applyZoom();
+	};
+	const centerOf = (e: { clientX: number; clientY: number }) => {
+		const r = stage.getBoundingClientRect();
+		return [e.clientX - r.left - r.width / 2, e.clientY - r.top - r.height / 2];
+	};
+
+	const setHash = (link: HTMLAnchorElement | null) => {
+		const hash = link ? `#${link.dataset.lightbox}/${group.indexOf(link) + 1}` : location.pathname + location.search;
+		history.replaceState(null, '', hash);
+	};
+	const preload = (i: number) => {
+		const l = group[(i + group.length) % group.length];
+		if (l) new Image().src = l.href;
+	};
 
 	const show = (i: number) => {
 		index = (i + group.length) % group.length;
-		img.src = group[index].href;
-		count.textContent = `${index + 1} / ${group.length}`;
+		const link = group[index];
+		resetZoom();
+		img.classList.remove('kb');
+		img.src = link.href;
+		if (timer) { void img.offsetWidth; img.classList.add('kb'); }
+		q('.lb-title').textContent = link.dataset.title ?? '';
+		q('.lb-caption').textContent = link.dataset.caption ?? '';
+		q('.lb-exif').textContent = [link.dataset.exif, link.dataset.settings].filter(Boolean).join('  |  ');
+		q('.lb-count').textContent = `${index + 1} / ${group.length}`;
+		strip.querySelectorAll('button').forEach((b, n) => {
+			b.setAttribute('aria-selected', String(n === index));
+			if (n === index) b.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+		});
+		setHash(link);
+		preload(index + 1);
+		preload(index - 1);
+	};
+
+	const stopSlideshow = () => {
+		clearInterval(timer);
+		timer = 0;
+		img.classList.remove('kb');
+		playBtn.textContent = '▶';
+		playBtn.setAttribute('aria-label', 'Start slideshow');
+	};
+	const toggleSlideshow = () => {
+		if (timer) return stopSlideshow();
+		timer = window.setInterval(() => show(index + 1), 5500);
+		playBtn.textContent = '❚❚';
+		playBtn.setAttribute('aria-label', 'Pause slideshow');
+		img.classList.add('kb');
+	};
+
+	const open = (link: HTMLAnchorElement) => {
+		group = [...document.querySelectorAll<HTMLAnchorElement>(`a[data-lightbox="${link.dataset.lightbox}"]`)];
+		strip.replaceChildren(
+			...group.map((l, n) => {
+				const b = document.createElement('button');
+				b.type = 'button';
+				b.setAttribute('role', 'tab');
+				b.setAttribute('aria-label', `Photo ${n + 1}`);
+				const t = document.createElement('img');
+				t.src = l.dataset.thumb ?? '';
+				t.alt = '';
+				b.append(t);
+				b.addEventListener('click', () => show(n));
+				return b;
+			}),
+		);
+		if (!dialog.open) dialog.showModal();
+		show(group.indexOf(link));
 	};
 
 	document.querySelectorAll<HTMLAnchorElement>('a[data-lightbox]').forEach((link) => {
 		link.addEventListener('click', (event) => {
 			event.preventDefault();
-			group = [...document.querySelectorAll<HTMLAnchorElement>(
-				`a[data-lightbox="${link.dataset.lightbox}"]`,
-			)];
-			show(group.indexOf(link));
-			dialog.showModal();
+			open(link);
 		});
 	});
 
-	dialog.querySelector('.lb-close')!.addEventListener('click', () => dialog.close());
-	dialog.querySelector('.lb-prev')!.addEventListener('click', () => show(index - 1));
-	dialog.querySelector('.lb-next')!.addEventListener('click', () => show(index + 1));
-	// Clicking the dark area around the photo closes the viewer.
-	dialog.addEventListener('click', (event) => {
-		if (event.target === dialog) dialog.close();
-	});
-	dialog.addEventListener('keydown', (event) => {
-		if (event.key === 'ArrowLeft') show(index - 1);
-		if (event.key === 'ArrowRight') show(index + 1);
+	// Shareable links: #album/3 opens that photo.
+	const openFromHash = () => {
+		const m = location.hash.match(/^#([^/]+)\/(\d+)$/);
+		if (!m) return;
+		const link = document.querySelectorAll<HTMLAnchorElement>(`a[data-lightbox="${decodeURIComponent(m[1])}"]`)[Number(m[2]) - 1];
+		if (link) open(link);
+	};
+	openFromHash();
+	addEventListener('hashchange', () => {
+		if (!dialog.open) openFromHash();
 	});
 
-	let touchX = 0;
-	dialog.addEventListener('touchstart', (event) => (touchX = event.touches[0].clientX), { passive: true });
-	dialog.addEventListener('touchend', (event) => {
-		const dx = event.changedTouches[0].clientX - touchX;
-		if (Math.abs(dx) > 50) show(dx < 0 ? index + 1 : index - 1);
+	dialog.addEventListener('close', () => {
+		stopSlideshow();
+		resetZoom();
+		setHash(null);
+		if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+	});
+
+	q('.lb-close').addEventListener('click', () => dialog.close());
+	q('.lb-prev').addEventListener('click', () => show(index - 1));
+	q('.lb-next').addEventListener('click', () => show(index + 1));
+	playBtn.addEventListener('click', toggleSlideshow);
+	q('.lb-fs').addEventListener('click', () => {
+		if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+		else dialog.requestFullscreen?.().catch(() => {});
+	});
+	q('.lb-share').addEventListener('click', async () => {
+		try {
+			await navigator.clipboard.writeText(location.href);
+			const c = q('.lb-caption');
+			const old = c.textContent;
+			c.textContent = 'Link copied to clipboard';
+			setTimeout(() => (c.textContent = old), 1400);
+		} catch {
+			/* clipboard unavailable: the URL bar already has the link */
+		}
+	});
+
+	dialog.addEventListener('keydown', (e) => {
+		if (e.key === 'ArrowLeft') show(index - 1);
+		else if (e.key === 'ArrowRight') show(index + 1);
+		else if (e.key === ' ' && !(e.target as HTMLElement).closest('button')) { e.preventDefault(); toggleSlideshow(); }
+		else if (e.key === '+' || e.key === '=') zoomAt(scale * 1.4, 0, 0);
+		else if (e.key === '-') zoomAt(scale / 1.4, 0, 0);
+		else if (e.key === '0') resetZoom();
+		else if (e.key === 'f') q('.lb-fs').click();
+	});
+
+	/* Zoom + pan + swipe (mouse and touch) */
+	stage.addEventListener('wheel', (e) => {
+		e.preventDefault();
+		const [px, py] = centerOf(e);
+		zoomAt(scale * Math.exp(-e.deltaY * 0.0018), px, py);
+	}, { passive: false });
+	stage.addEventListener('dblclick', (e) => {
+		const [px, py] = centerOf(e);
+		scale > 1 ? zoomAt(1, 0, 0) : zoomAt(2.6, px, py);
+	});
+
+	const pointers = new Map<number, { x: number; y: number }>();
+	let startX = 0, startY = 0, startTx = 0, startTy = 0, pinchDist = 0, moved = false;
+	stage.addEventListener('pointerdown', (e) => {
+		stage.setPointerCapture(e.pointerId);
+		pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+		startX = e.clientX; startY = e.clientY; startTx = tx; startTy = ty; moved = false;
+		if (pointers.size === 2) {
+			const [a, b] = [...pointers.values()];
+			pinchDist = Math.hypot(a.x - b.x, a.y - b.y);
+			stage.classList.add('pinching');
+		} else if (scale > 1) stage.classList.add('panning');
+	});
+	stage.addEventListener('pointermove', (e) => {
+		if (!pointers.has(e.pointerId)) return;
+		pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+		if (Math.abs(e.clientX - startX) + Math.abs(e.clientY - startY) > 5) moved = true;
+		if (pointers.size === 2) {
+			const [a, b] = [...pointers.values()];
+			const d = Math.hypot(a.x - b.x, a.y - b.y);
+			const [px, py] = centerOf({ clientX: (a.x + b.x) / 2, clientY: (a.y + b.y) / 2 });
+			if (pinchDist) zoomAt(scale * (d / pinchDist), px, py);
+			pinchDist = d;
+		} else if (scale > 1) {
+			tx = startTx + (e.clientX - startX);
+			ty = startTy + (e.clientY - startY);
+			clampPan();
+			applyZoom();
+		}
+	});
+	const endPointer = (e: PointerEvent) => {
+		if (!pointers.has(e.pointerId)) return;
+		pointers.delete(e.pointerId);
+		stage.classList.remove('pinching', 'panning');
+		// A quick horizontal swipe at 1x changes photo.
+		if (pointers.size === 0 && scale === 1 && moved) {
+			const dx = e.clientX - startX;
+			if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(e.clientY - startY)) show(dx < 0 ? index + 1 : index - 1);
+		}
+		// Click on the dark area outside the photo closes the viewer.
+		else if (!moved && e.target === stage && scale === 1) dialog.close();
+	};
+	stage.addEventListener('pointerup', endPointer);
+	stage.addEventListener('pointercancel', endPointer);
+
+	/* ---------- Pin pins on the globe <-> album bar ---------- */
+	barLinks.forEach((a) => {
+		a.addEventListener('click', () => dispatchEvent(new CustomEvent('globe:select', { detail: a.dataset.album })));
 	});
 </script>

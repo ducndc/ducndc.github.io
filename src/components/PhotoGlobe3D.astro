@@ -1,0 +1,365 @@
+---
+export interface GlobeAlbum {
+	id: string;
+	title: string;
+	location: string;
+	date: string;
+	stats: string;
+	count: number;
+	cover: string;
+	post?: string;
+	lat: number;
+	lon: number;
+}
+interface Props {
+	albums: GlobeAlbum[];
+}
+const { albums } = Astro.props;
+---
+
+<canvas id="photo-globe" aria-hidden="true" data-albums={JSON.stringify(albums)}></canvas>
+
+<style>
+	#photo-globe {
+		position: fixed;
+		inset: 0;
+		width: 100vw;
+		height: 100vh;
+		height: 100lvh;
+		z-index: -1;
+		display: block;
+	}
+	/* Pins are real buttons (keyboard + screen reader friendly) positioned over the canvas. */
+	:global(.pin-layer) {
+		position: absolute;
+		inset: 0;
+		overflow: hidden;
+		pointer-events: none;
+	}
+	:global(.pin) {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0;
+		padding: 0.35rem;
+		background: none;
+		border: 0;
+		color: #fff;
+		cursor: pointer;
+		pointer-events: auto;
+		will-change: transform;
+		transition: opacity 0.2s ease;
+	}
+	:global(.pin .dot) {
+		width: 14px;
+		height: 14px;
+		margin: -7px 0 -7px -7px;
+		border-radius: 50%;
+		background: var(--accent);
+		border: 2px solid #fff;
+		box-shadow: 0 0 0 0 rgba(252, 61, 33, 0.7);
+		transition: transform 0.2s ease;
+	}
+	:global(.pin.on .dot) {
+		transform: scale(1.5);
+		animation: pin-pulse 1.8s ease-out infinite;
+	}
+	:global(.pin:hover .dot),
+	:global(.pin:focus-visible .dot) {
+		transform: scale(1.4);
+	}
+	:global(.pin .name) {
+		padding: 0.2rem 0.55rem;
+		background: rgba(0, 0, 0, 0.82);
+		border-left: 3px solid var(--accent);
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		white-space: nowrap;
+		opacity: 0;
+		transform: translateX(-4px);
+		transition: opacity 0.15s ease, transform 0.15s ease;
+	}
+	:global(.pin.on .name),
+	:global(.pin:hover .name),
+	:global(.pin:focus-visible .name) {
+		opacity: 1;
+		transform: none;
+	}
+	:global(.pin:focus-visible) {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+	}
+	@keyframes pin-pulse {
+		to {
+			box-shadow: 0 0 0 16px rgba(252, 61, 33, 0);
+		}
+	}
+</style>
+
+<script>
+	import * as THREE from "three";
+
+	type A = {
+		id: string; title: string; location: string; date: string; stats: string;
+		count: number; cover: string; post?: string; lat: number; lon: number;
+	};
+
+	const canvas = document.getElementById("photo-globe") as HTMLCanvasElement | null;
+	const hero = document.getElementById("photo-hero");
+	const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+	function webglOK() {
+		try {
+			const c = document.createElement("canvas");
+			return !!(c.getContext("webgl2") || c.getContext("webgl"));
+		} catch {
+			return false;
+		}
+	}
+
+	if (canvas && hero && webglOK()) start(canvas, hero);
+
+	function start(canvas: HTMLCanvasElement, hero: HTMLElement) {
+		const albums: A[] = JSON.parse(canvas.dataset.albums || "[]");
+		const withPins = albums.filter((a) => Number.isFinite(a.lat));
+		if (withPins.length === 0) return;
+
+		const ACCENT = 0xfc3d21;
+		const R = 2;
+		const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+		renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+		renderer.setClearColor(0x000000, 0);
+		const scene = new THREE.Scene();
+		const camera = new THREE.PerspectiveCamera(40, 1, 0.05, 100);
+
+		const globe = new THREE.Group();
+		scene.add(globe);
+
+		const latLon = (lat: number, lon: number, r = R) => {
+			const la = (lat * Math.PI) / 180;
+			const a = ((lon + 180) / 360) * Math.PI * 2;
+			return new THREE.Vector3(-Math.cos(a) * Math.cos(la), Math.sin(la), Math.sin(a) * Math.cos(la)).multiplyScalar(r);
+		};
+
+		// Dark ocean sphere hides the dots on the far side.
+		globe.add(new THREE.Mesh(new THREE.SphereGeometry(R * 0.992, 96, 96), new THREE.MeshBasicMaterial({ color: 0x07090d })));
+
+		// Graticule every 15 degrees.
+		const g: number[] = [];
+		for (let lat = -75; lat <= 75; lat += 15) {
+			for (let lon = -180; lon < 180; lon += 3) g.push(...latLon(lat, lon, R * 1.001).toArray(), ...latLon(lat, lon + 3, R * 1.001).toArray());
+		}
+		for (let lon = -180; lon < 180; lon += 15) {
+			for (let lat = -87; lat < 87; lat += 3) g.push(...latLon(lat, lon, R * 1.001).toArray(), ...latLon(lat + 3, lon, R * 1.001).toArray());
+		}
+		const gg = new THREE.BufferGeometry();
+		gg.setAttribute("position", new THREE.Float32BufferAttribute(g, 3));
+		globe.add(new THREE.LineSegments(gg, new THREE.LineBasicMaterial({ color: 0x1c2330, transparent: true, opacity: 0.8 })));
+
+		// Atmosphere rim.
+		scene.add(
+			new THREE.Mesh(
+				new THREE.SphereGeometry(R * 1.08, 64, 64),
+				new THREE.ShaderMaterial({
+					transparent: true, side: THREE.BackSide, depthWrite: false, blending: THREE.AdditiveBlending,
+					vertexShader: `varying vec3 vN; varying vec3 vV;
+						void main(){ vec4 mv = modelViewMatrix*vec4(position,1.); vN = normalize(normalMatrix*normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix*mv; }`,
+					fragmentShader: `varying vec3 vN; varying vec3 vV;
+						void main(){ float f = clamp(pow(0.62 - dot(vN, vV), 3.0), 0.0, 1.0); gl_FragColor = vec4(0.55, 0.63, 0.78, 1.0) * f * 0.7; }`,
+				})
+			)
+		);
+
+		// Land as a dot matrix, sampled from the specular map (oceans are bright, land is dark).
+		const dotTex = (() => {
+			const c = document.createElement("canvas");
+			c.width = c.height = 32;
+			const x = c.getContext("2d")!;
+			x.beginPath(); x.arc(16, 16, 14, 0, Math.PI * 2); x.fillStyle = "#fff"; x.fill();
+			return new THREE.CanvasTexture(c);
+		})();
+		const img = new Image();
+		img.onload = () => {
+			const W = 1024, H = 512;
+			const c = document.createElement("canvas");
+			c.width = W; c.height = H;
+			const cx = c.getContext("2d", { willReadFrequently: true })!;
+			cx.drawImage(img, 0, 0, W, H);
+			const data = cx.getImageData(0, 0, W, H).data;
+			const pts: number[] = [];
+			const step = 0.32;
+			for (let lat = -84; lat <= 84; lat += step) {
+				const n = Math.max(1, Math.round((360 * Math.cos((lat * Math.PI) / 180)) / step));
+				for (let i = 0; i < n; i++) {
+					const lon = -180 + (i + 0.5) * (360 / n);
+					const px = Math.min(W - 1, Math.floor(((lon + 180) / 360) * W));
+					const py = Math.min(H - 1, Math.floor(((90 - lat) / 180) * H));
+					if (data[(py * W + px) * 4] < 110) pts.push(...latLon(lat, lon, R * 1.002).toArray());
+				}
+			}
+			const pg = new THREE.BufferGeometry();
+			pg.setAttribute("position", new THREE.Float32BufferAttribute(pts, 3));
+			globe.add(new THREE.Points(pg, new THREE.PointsMaterial({
+				color: 0x9aa3b2, size: 0.0105, map: dotTex, alphaTest: 0.4, transparent: true, sizeAttenuation: true, depthWrite: false,
+			})));
+		};
+		img.src = "/textures/earth_specular_2048.jpg";
+
+		/* ---------- Pins ---------- */
+		const layer = document.createElement("div");
+		layer.className = "pin-layer";
+		hero.appendChild(layer);
+
+		type Pin = { a: A; pos: THREE.Vector3; el: HTMLButtonElement; ring: THREE.Mesh; phi: number; psi: number };
+		const pins: Pin[] = withPins.map((a) => {
+			const pos = latLon(a.lat, a.lon, R * 1.004);
+			const ring = new THREE.Mesh(
+				new THREE.RingGeometry(0.97, 1, 48),
+				new THREE.MeshBasicMaterial({ color: ACCENT, transparent: true, side: THREE.DoubleSide, depthWrite: false })
+			);
+			ring.position.copy(pos);
+			ring.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), pos.clone().normalize());
+			globe.add(ring);
+
+			const el = document.createElement("button");
+			el.type = "button";
+			el.className = "pin";
+			el.setAttribute("aria-label", `${a.title}, ${a.count} photos`);
+			el.innerHTML = `<span class="dot"></span><span class="name"></span>`;
+			(el.querySelector(".name") as HTMLElement).textContent = a.title;
+			el.addEventListener("click", () => select(a.id));
+			layer.appendChild(el);
+
+			const d = pos.clone().normalize();
+			return { a, pos, el, ring, phi: (a.lat * Math.PI) / 180, psi: Math.atan2(d.x, d.z) };
+		});
+
+		/* ---------- Selection + card ---------- */
+		const card = document.getElementById("album-card");
+		let active = pins[0];
+		const fill = (a: A) => {
+			if (!card) return;
+			const set = (sel: string, fn: (el: HTMLElement) => void) => {
+				const el = card.querySelector<HTMLElement>(sel);
+				if (el) fn(el);
+			};
+			set(".card-cover", (el) => ((el as HTMLImageElement).src = a.cover));
+			set(".card-title", (el) => (el.textContent = a.title));
+			set(".card-meta", (el) => (el.textContent = [a.location, a.date].filter(Boolean).join(" · ")));
+			set(".card-stats", (el) => (el.textContent = a.stats));
+			set(".card-open", (el) => ((el as HTMLAnchorElement).href = `#${a.id}`));
+			set(".card-story", (el) => {
+				el.hidden = !a.post;
+				if (a.post) (el as HTMLAnchorElement).href = `/blog/${a.post}/`;
+			});
+			card.classList.remove("swap");
+			void card.offsetWidth;
+			card.classList.add("swap");
+		};
+		const select = (id: string) => {
+			const p = pins.find((x) => x.a.id === id);
+			if (!p) return;
+			active = p;
+			pins.forEach((x) => x.el.classList.toggle("on", x === p));
+			fill(p.a);
+			zoomPulse = 1;
+		};
+		pins[0].el.classList.add("on");
+		fill(pins[0].a);
+		addEventListener("globe:select", ((e: CustomEvent<string>) => select(e.detail)) as EventListener);
+
+		/* ---------- Camera / rotation state ---------- */
+		const mobile = () => innerWidth < 860;
+		const FOCUS_D = () => (mobile() ? 4.2 : 3.5);
+		let rx = 0.2, ry = active.psi * -1 + 2.4; // start turned away, spins in
+		let intro = reduced ? 1 : 0;
+		let zoomPulse = 0;
+		let dragX = 0, dragY = 0, dragging = false, lastX = 0, lastY = 0;
+
+		hero.addEventListener("pointerdown", (e) => {
+			if ((e.target as HTMLElement).closest(".pin, a, button")) return;
+			dragging = true;
+			lastX = e.clientX; lastY = e.clientY;
+			hero.setPointerCapture(e.pointerId);
+			hero.classList.add("grabbing");
+		});
+		hero.addEventListener("pointermove", (e) => {
+			if (!dragging) return;
+			const k = 0.0035;
+			dragX = Math.max(-0.7, Math.min(0.7, dragX + (e.clientX - lastX) * k));
+			dragY = Math.max(-0.5, Math.min(0.5, dragY + (e.clientY - lastY) * k));
+			lastX = e.clientX; lastY = e.clientY;
+		});
+		const up = () => { dragging = false; hero.classList.remove("grabbing"); };
+		hero.addEventListener("pointerup", up);
+		hero.addEventListener("pointercancel", up);
+
+		const resize = () => {
+			renderer.setSize(innerWidth, innerHeight, false);
+			camera.aspect = innerWidth / innerHeight;
+			camera.updateProjectionMatrix();
+		};
+		addEventListener("resize", resize);
+		resize();
+
+		const wrap = (a: number) => Math.atan2(Math.sin(a), Math.cos(a));
+		const ease = (t: number) => 1 - Math.pow(1 - t, 3);
+		const clock = new THREE.Clock();
+		const v = new THREE.Vector3();
+		document.body.classList.add("has-3d");
+
+		renderer.setAnimationLoop(() => {
+			const dt = Math.min(clock.getDelta(), 0.05);
+			const t = clock.elapsedTime;
+			if (scrollY > innerHeight * 1.1) return; // hero is off-screen
+
+			intro = Math.min(1, intro + dt / 2.6);
+			zoomPulse = Math.max(0, zoomPulse - dt * 1.4);
+			const e = ease(intro);
+
+			if (!dragging) {
+				const back = 1 - Math.exp(-dt * 1.6);
+				dragX -= dragX * back;
+				dragY -= dragY * back;
+			}
+			const tx = -active.psi + dragX;
+			const ty = active.phi + dragY;
+			const k = reduced ? 1 : 1 - Math.exp(-dt * 3.2);
+			ry += wrap(tx - ry) * k;
+			rx += (ty - rx) * k;
+			globe.rotation.set(rx, ry, 0);
+
+			const dist = 15 - (15 - FOCUS_D()) * e - Math.sin(zoomPulse * Math.PI) * 0.18;
+			camera.position.set(0, 0.1, dist);
+			const shift = (mobile() ? 0 : 0.5) * e;
+			camera.lookAt(-shift, mobile() ? -0.12 * e : -0.1 * e, 0);
+			camera.updateMatrixWorld();
+
+			globe.updateMatrixWorld();
+			const w = innerWidth, h = innerHeight;
+			pins.forEach((p, i) => {
+				const ph = ((t * 0.45 + i * 0.3) % 1);
+				p.ring.scale.setScalar(0.01 + ph * 0.04);
+				(p.ring.material as THREE.MeshBasicMaterial).opacity = (1 - ph) * 0.9;
+
+				v.copy(p.pos).applyMatrix4(globe.matrixWorld);
+				const n = v.clone().normalize();
+				const facing = n.dot(camera.position.clone().sub(v).normalize());
+				v.project(camera);
+				const sx = (v.x * 0.5 + 0.5) * w;
+				const heroTop = hero.getBoundingClientRect().top;
+				const y = (-v.y * 0.5 + 0.5) * h - heroTop;
+				p.el.style.transform = `translate(${sx}px, ${y}px)`;
+				p.el.style.opacity = facing > 0.12 ? "1" : "0";
+				p.el.style.pointerEvents = facing > 0.12 ? "auto" : "none";
+			});
+
+			renderer.render(scene, camera);
+		});
+	}
+</script>
