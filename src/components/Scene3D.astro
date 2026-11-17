@@ -1,0 +1,331 @@
+---
+// Full-page interactive 3D scene: an Earth hero that the camera leaves on scroll
+// to fly through an EasyMesh network. Everything is procedural (no model files).
+---
+
+<canvas id="scene3d" aria-hidden="true"></canvas>
+
+<style>
+	#scene3d {
+		position: fixed;
+		inset: 0;
+		width: 100vw;
+		height: 100vh;
+		height: 100lvh;
+		z-index: -1;
+		display: block;
+	}
+</style>
+
+<script>
+	import * as THREE from "three";
+
+	const canvas = document.getElementById("scene3d") as HTMLCanvasElement | null;
+	const hero = document.getElementById("hero");
+	const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+	function webglOK() {
+		try {
+			const c = document.createElement("canvas");
+			return !!(c.getContext("webgl2") || c.getContext("webgl"));
+		} catch {
+			return false;
+		}
+	}
+
+	if (canvas && webglOK()) start(canvas);
+
+	function start(canvas: HTMLCanvasElement) {
+		const ACCENT = 0xfc3d21;
+		const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+		renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+		renderer.setClearColor(0x000000, 0);
+
+		const scene = new THREE.Scene();
+		scene.fog = new THREE.FogExp2(0x000000, 0.028);
+		const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 200);
+
+		scene.add(new THREE.HemisphereLight(0xffffff, 0x1a1a1a, 1.3));
+		const key = new THREE.DirectionalLight(0xffffff, 2.4);
+		key.position.set(5, 8, 6);
+		scene.add(key);
+		const rim = new THREE.PointLight(ACCENT, 60, 30);
+		rim.position.set(-4, 2, -4);
+		scene.add(rim);
+
+		const matDark = new THREE.MeshStandardMaterial({ color: 0x242424, roughness: 0.42, metalness: 0.55 });
+		const matGrey = new THREE.MeshStandardMaterial({ color: 0x8c8c8c, roughness: 0.38, metalness: 0.65 });
+		const matGlow = new THREE.MeshStandardMaterial({ color: ACCENT, emissive: ACCENT, emissiveIntensity: 1.3 });
+
+		/* ---------- Hero Earth ---------- */
+		const R = 1.6;
+		const earth = new THREE.Group(); // user pitch + scale
+		scene.add(earth);
+		const tilt = new THREE.Group(); // axial tilt
+		tilt.rotation.z = 0.41;
+		earth.add(tilt);
+		const spin = new THREE.Group(); // daily rotation
+		tilt.add(spin);
+
+		const loader = new THREE.TextureLoader();
+		const dayMap = loader.load("/textures/earth_atmos_2048.jpg");
+		dayMap.colorSpace = THREE.SRGBColorSpace;
+		dayMap.anisotropy = renderer.capabilities.getMaxAnisotropy();
+		const specMap = loader.load("/textures/earth_specular_2048.jpg");
+		const globe = new THREE.Mesh(
+			new THREE.SphereGeometry(R, 96, 96),
+			new THREE.MeshPhongMaterial({ map: dayMap, specularMap: specMap, specular: new THREE.Color(0x333333), shininess: 14 })
+		);
+		spin.add(globe);
+
+		// Fresnel atmosphere glow (kept outside the spin so it never rotates).
+		const atmos = new THREE.Mesh(
+			new THREE.SphereGeometry(R * 1.09, 64, 64),
+			new THREE.ShaderMaterial({
+				transparent: true,
+				side: THREE.BackSide,
+				depthWrite: false,
+				blending: THREE.AdditiveBlending,
+				vertexShader: `varying vec3 vN; varying vec3 vV;
+					void main(){ vec4 mv = modelViewMatrix*vec4(position,1.); vN = normalize(normalMatrix*normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix*mv; }`,
+				fragmentShader: `varying vec3 vN; varying vec3 vV;
+					void main(){ float f = clamp(pow(0.62 - dot(vN, vV), 3.0), 0.0, 1.0); gl_FragColor = vec4(0.35, 0.62, 1.0, 1.0) * f * 0.9; }`,
+			})
+		);
+		earth.add(atmos);
+
+		const latLon = (lat: number, lon: number, r = R) => {
+			const la = (lat * Math.PI) / 180;
+			const a = ((lon + 180) / 360) * Math.PI * 2;
+			return new THREE.Vector3(-Math.cos(a) * Math.cos(la), Math.sin(la), Math.sin(a) * Math.cos(la)).multiplyScalar(r);
+		};
+
+		// Hanoi marker with pulsing signal rings.
+		const hanoi = latLon(21.03, 105.85);
+		const hanoiN = hanoi.clone().normalize();
+		const pin = new THREE.Mesh(new THREE.SphereGeometry(0.05, 16, 16), matGlow);
+		pin.position.copy(hanoi);
+		spin.add(pin);
+		const rings: THREE.Mesh[] = [];
+		const RING_N = 3;
+		for (let i = 0; i < RING_N; i++) {
+			const r = new THREE.Mesh(
+				new THREE.RingGeometry(0.97, 1, 64),
+				new THREE.MeshBasicMaterial({ color: ACCENT, transparent: true, side: THREE.DoubleSide, depthWrite: false })
+			);
+			r.position.copy(hanoi.clone().multiplyScalar(1.004));
+			r.quaternion.setFromUnitVectors(new THREE.Vector3(0, 0, 1), hanoiN);
+			spin.add(r);
+			rings.push(r);
+		}
+
+		// Network arcs from Hanoi to other cities, with packets travelling along them.
+		const cities: [number, number][] = [[35.68, 139.69], [1.35, 103.82], [51.5, -0.12], [37.77, -122.42], [-33.87, 151.21], [25.2, 55.27]];
+		const arcs = cities.map(([la, lo]) => {
+			const b = latLon(la, lo);
+			const dist = hanoi.distanceTo(b);
+			const mid = hanoi.clone().add(b).multiplyScalar(0.5).normalize().multiplyScalar(R + dist * 0.28);
+			const curve = new THREE.QuadraticBezierCurve3(hanoi, mid, b);
+			spin.add(
+				new THREE.Line(
+					new THREE.BufferGeometry().setFromPoints(curve.getPoints(64)),
+					new THREE.LineBasicMaterial({ color: ACCENT, transparent: true, opacity: 0.55 })
+				)
+			);
+			const city = new THREE.Mesh(new THREE.SphereGeometry(0.03, 12, 12), matGrey);
+			city.position.copy(b);
+			spin.add(city);
+			const dot = new THREE.Mesh(new THREE.SphereGeometry(0.035, 12, 12), matGlow);
+			spin.add(dot);
+			return { curve, dot, off: Math.random(), speed: 0.12 + Math.random() * 0.1 };
+		});
+
+		/* ---------- EasyMesh network ---------- */
+		const MESH_Y = -16;
+		const mesh = new THREE.Group();
+		mesh.position.y = MESH_Y;
+		scene.add(mesh);
+
+		// Deterministic pseudo-random so the layout is stable between loads.
+		let seed = 7;
+		const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+
+		const nodes: THREE.Mesh[] = [];
+		const NODE_N = 11;
+		for (let i = 0; i < NODE_N; i++) {
+			const isRoot = i === 0;
+			const m = new THREE.Mesh(
+				isRoot ? new THREE.IcosahedronGeometry(0.55, 1) : new THREE.OctahedronGeometry(0.28, 0),
+				isRoot ? matGlow : matGrey
+			);
+			if (isRoot) m.position.set(0, 0, 0);
+			else {
+				const a = rnd() * Math.PI * 2;
+				const rad = 3 + rnd() * 4.5;
+				m.position.set(Math.cos(a) * rad, (rnd() - 0.5) * 5, Math.sin(a) * rad);
+			}
+			m.add(new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry), new THREE.LineBasicMaterial({ color: isRoot ? 0xffb3a6 : 0x333333 })));
+			mesh.add(m);
+			nodes.push(m);
+		}
+
+		// Backhaul links: each node connects to its two nearest lower-index nodes.
+		type Edge = { a: THREE.Vector3; b: THREE.Vector3 };
+		const edges: Edge[] = [];
+		const pos: number[] = [];
+		for (let i = 1; i < NODE_N; i++) {
+			const near = nodes
+				.slice(0, i)
+				.map((n, j) => ({ j, d: n.position.distanceTo(nodes[i].position) }))
+				.sort((x, y) => x.d - y.d)
+				.slice(0, i === 1 ? 1 : 2);
+			near.forEach(({ j }) => {
+				edges.push({ a: nodes[i].position, b: nodes[j].position });
+				pos.push(...nodes[i].position.toArray(), ...nodes[j].position.toArray());
+			});
+		}
+		const lineGeo = new THREE.BufferGeometry();
+		lineGeo.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+		mesh.add(new THREE.LineSegments(lineGeo, new THREE.LineBasicMaterial({ color: 0x555555, transparent: true, opacity: 0.8 })));
+
+		// Data packets travelling along the links.
+		const pulses = edges.map((e, i) => ({
+			e,
+			t: rnd(),
+			speed: 0.15 + rnd() * 0.25,
+			dir: i % 2 ? 1 : -1,
+			m: new THREE.Mesh(new THREE.SphereGeometry(0.075, 12, 12), matGlow),
+		}));
+		pulses.forEach((p) => mesh.add(p.m));
+
+		/* ---------- Particle field ---------- */
+		const N = 700;
+		const pp = new Float32Array(N * 3);
+		for (let i = 0; i < N; i++) {
+			pp[i * 3] = (rnd() - 0.5) * 60;
+			pp[i * 3 + 1] = -rnd() * 40 + 6;
+			pp[i * 3 + 2] = (rnd() - 0.5) * 40 - 5;
+		}
+		const pg = new THREE.BufferGeometry();
+		pg.setAttribute("position", new THREE.BufferAttribute(pp, 3));
+		scene.add(new THREE.Points(pg, new THREE.PointsMaterial({ color: 0x888888, size: 0.06, transparent: true, opacity: 0.7, sizeAttenuation: true })));
+
+		/* ---------- Scroll-driven camera path ---------- */
+		const mobile = () => innerWidth < 860;
+		const camPath = () =>
+			new THREE.CatmullRomCurve3([
+				new THREE.Vector3(3.2, 2.6, 8.2),
+				new THREE.Vector3(0.5, -6, 15),
+				new THREE.Vector3(9, MESH_Y + 2, 11),
+				new THREE.Vector3(-8, MESH_Y + 4, 10),
+				new THREE.Vector3(0, MESH_Y - 3, 16),
+			]);
+		const lookPath = () =>
+			new THREE.CatmullRomCurve3([
+				new THREE.Vector3(mobile() ? 0 : -3.3, 0.1, 0),
+				new THREE.Vector3(0, -9, 0),
+				new THREE.Vector3(0, MESH_Y, 0),
+				new THREE.Vector3(0, MESH_Y, 0),
+				new THREE.Vector3(0, MESH_Y, 0),
+			]);
+		let cam = camPath();
+		let look = lookPath();
+
+		let progress = 0; // smoothed
+		let target = 0;
+		const readScroll = () => {
+			const max = document.documentElement.scrollHeight - innerHeight;
+			target = max > 0 ? Math.min(Math.max(scrollY / max, 0), 1) : 0;
+		};
+		addEventListener("scroll", readScroll, { passive: true });
+
+		/* ---------- Pointer: parallax everywhere, drag-to-rotate on the hero ---------- */
+		const mouse = new THREE.Vector2();
+		addEventListener("pointermove", (e) => {
+			mouse.set((e.clientX / innerWidth) * 2 - 1, (e.clientY / innerHeight) * 2 - 1);
+		});
+		let yaw = 3.17, pitch = 0.2, vYaw = 0, dragging = false, lastX = 0, lastY = 0;
+		if (hero) {
+			hero.addEventListener("pointerdown", (e) => {
+				dragging = true;
+				lastX = e.clientX;
+				lastY = e.clientY;
+				hero.setPointerCapture(e.pointerId);
+				hero.classList.add("grabbing");
+			});
+			hero.addEventListener("pointermove", (e) => {
+				if (!dragging) return;
+				vYaw = (e.clientX - lastX) * 0.01;
+				yaw += vYaw;
+				pitch = Math.max(-0.5, Math.min(0.5, pitch + (e.clientY - lastY) * 0.005));
+				lastX = e.clientX;
+				lastY = e.clientY;
+			});
+			const up = () => {
+				dragging = false;
+				hero.classList.remove("grabbing");
+			};
+			hero.addEventListener("pointerup", up);
+			hero.addEventListener("pointercancel", up);
+		}
+
+		const resize = () => {
+			const w = innerWidth, h = innerHeight;
+			renderer.setSize(w, h, false);
+			camera.aspect = w / h;
+			camera.updateProjectionMatrix();
+			cam = camPath();
+			look = lookPath();
+			earth.scale.setScalar(mobile() ? 0.8 : 1);
+			readScroll();
+		};
+		addEventListener("resize", resize);
+		resize();
+
+		const tmpP = new THREE.Vector3();
+		const tmpL = new THREE.Vector3();
+		const clock = new THREE.Clock();
+		document.body.classList.add("has-3d");
+
+		renderer.setAnimationLoop(() => {
+			const dt = Math.min(clock.getDelta(), 0.05);
+			const t = reduced ? 0 : clock.elapsedTime;
+
+			progress += (target - progress) * Math.min(1, dt * 4);
+			cam.getPoint(progress, tmpP);
+			look.getPoint(progress, tmpL);
+			camera.position.copy(tmpP).add(new THREE.Vector3(mouse.x * 0.6, -mouse.y * 0.4, 0));
+			camera.lookAt(tmpL);
+
+			// Earth: idle spin + user drag with inertia.
+			if (!dragging) {
+				vYaw *= 0.94;
+				yaw += vYaw + (reduced ? 0 : dt * 0.08);
+			}
+			spin.rotation.y = yaw;
+			earth.rotation.x = pitch;
+			earth.position.y = Math.sin(t) * 0.04;
+			rings.forEach((r, i) => {
+				const p = (t * 0.35 + i / RING_N) % 1;
+				r.scale.setScalar(0.04 + p * 0.45);
+				(r.material as THREE.MeshBasicMaterial).opacity = (1 - p) * 0.9;
+			});
+			arcs.forEach((a) => {
+				a.dot.position.copy(a.curve.getPoint(reduced ? a.off : (a.off + t * a.speed) % 1));
+			});
+
+			// Mesh: slow rotation, spinning nodes, travelling packets.
+			mesh.rotation.y = t * 0.06;
+			nodes.forEach((n, i) => {
+				n.rotation.y = t * (0.4 + i * 0.05);
+				n.rotation.x = t * 0.2;
+			});
+			pulses.forEach((p) => {
+				const f = reduced ? p.t : (p.t + t * p.speed * p.dir + 10) % 1;
+				p.m.position.lerpVectors(p.e.a, p.e.b, f);
+			});
+
+			renderer.render(scene, camera);
+		});
+	}
+</script>
