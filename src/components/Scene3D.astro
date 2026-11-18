@@ -247,6 +247,7 @@
 		let yaw = 3.17, pitch = 0.2, vYaw = 0, dragging = false, lastX = 0, lastY = 0;
 		if (hero) {
 			hero.addEventListener("pointerdown", (e) => {
+				if ((e.target as Element).closest("a, button")) return;
 				dragging = true;
 				lastX = e.clientX;
 				lastY = e.clientY;

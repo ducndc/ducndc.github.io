@@ -26,7 +26,7 @@ import HeaderLink from './HeaderLink.astro';
 		top: 0;
 		z-index: 100;
 		margin: 0;
-		padding: 0 1.5rem;
+		padding: 0 max(1.5rem, env(safe-area-inset-right)) 0 max(1.5rem, env(safe-area-inset-left));
 		background: var(--space);
 		border-bottom: 1px solid #2a2a2a;
 	}
@@ -34,7 +34,7 @@ import HeaderLink from './HeaderLink.astro';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		max-width: 1440px;
+		max-width: 1920px;
 		margin: 0 auto;
 		height: 64px;
 	}

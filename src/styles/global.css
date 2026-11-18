@@ -29,6 +29,11 @@
    Base
    ========================= */
 
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
 body {
 	font-family: var(--font-sans);
 	margin: 0;
@@ -43,6 +48,8 @@ body {
 
 	font-size: 20px;
 	line-height: 1.7;
+	padding-left: env(safe-area-inset-left);
+	padding-right: env(safe-area-inset-right);
 }
 
 /* =========================
@@ -50,7 +57,7 @@ body {
    ========================= */
 
 main {
-	width: 720px;
+	width: 960px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
@@ -74,15 +81,15 @@ h6 {
 }
 
 h1 {
-	font-size: 3.052em;
+	font-size: clamp(2rem, 6vw, 3.052em);
 }
 
 h2 {
-	font-size: 2.441em;
+	font-size: clamp(1.6rem, 4.5vw, 2.441em);
 }
 
 h3 {
-	font-size: 1.953em;
+	font-size: clamp(1.35rem, 3.5vw, 1.953em);
 }
 
 h4 {
@@ -199,6 +206,27 @@ table {
 	border-collapse: collapse;
 }
 
+/* wide tables, math and embeds scroll instead of breaking the layout */
+.prose table {
+	display: block;
+	max-width: 100%;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.katex-display {
+	overflow-x: auto;
+	overflow-y: hidden;
+	max-width: 100%;
+}
+
+video,
+iframe,
+svg {
+	max-width: 100%;
+}
+
+
 /* =========================
    Images
    ========================= */
@@ -279,6 +307,11 @@ hr {
 	}
 
 	main {
+		padding: 1em;
+		max-width: calc(100% - 1em);
+	}
+
+	pre {
 		padding: 1em;
 	}
 
@@ -391,5 +424,13 @@ hr {
 	}
 	html {
 		scroll-behavior: auto;
+	}
+}
+
+/* Touch devices: comfortable tap targets, no sticky hover */
+@media (pointer: coarse) {
+	a.btn,
+	button {
+		min-height: 44px;
 	}
 }
