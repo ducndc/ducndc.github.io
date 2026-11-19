@@ -1,6 +1,6 @@
 ---
 title: 'Spanning Tree Protocol'
-description: 'A protocol-level guide to the Spanning Tree Protocol family: why Layer 2 loops are fatal, how bridges elect a root and assign port roles, the BPDU format, STP timers and states, RSTP rapid transitions, MSTP instances, protection features and the Linux bridge.'
+description: 'A protocol-level guide to the Spanning Tree Protocol family: why Layer 2 loops are fatal, how bridges elect a root and assign port roles, the BPDU format, STP timers and states, RSTP rapid transitions, MSTP instances and region boundaries, root placement and tuning, protection features, Cisco IOS configuration and the Linux bridge.'
 pubDate: 'Nov 12 2026'
 heroImage: '../../assets/hero/stp.jpg'
 category: 'Network Protocols'
@@ -58,11 +58,16 @@ STP is a **distributed spanning-tree algorithm**. Every bridge runs the same sta
 | 100 Mb/s | 19 | 200,000 |
 | 1 Gb/s | 4 | 20,000 |
 | 10 Gb/s | 2 | 2,000 |
+| 20 Gb/s | 1 | 1,000 |
 | 100 Gb/s | 1 | 200 |
+| 1 Tb/s | 1 | 20 |
+| 10 Tb/s | 1 | 2 |
 
 ---
 
-The 16-bit "short" costs could not tell fast links apart, so 802.1D-2004 defines 32-bit costs calculated as roughly 20 Tb/s divided by the link speed. **All bridges in a network must use the same cost method**, or the paths they compute will not match.
+The 16-bit "short" costs could not tell fast links apart, so 802.1D-2004 defines 32-bit costs calculated as roughly 20 Tb/s divided by the link speed. **All bridges in a network must use the same cost method**, or the paths they compute will not match. Short mode is the default on Catalyst switches, and long mode is selected with `spanning-tree pathcost method long`. Note that every speed from 20 Gb/s upward has the same short cost of 1, which is why long mode matters on fast links.
+
+The **root path cost** is accumulated hop by hop. The root advertises a cost of 0. A bridge that receives the BPDU adds the cost of its *receiving* port, and advertises the new total on its designated ports. For example, if SW1 is the root and every link is Gigabit (cost 4), SW3 reaches the root with cost 4 and a bridge SW5 behind SW3 reaches it with cost 8. The advertised cost is always the value computed on the sender, and the root bridge has no root path cost of its own to display.
 
 ---
 
@@ -196,11 +201,30 @@ With the default timers (**Hello 2 s, Max Age 20 s, Forward Delay 15 s**):
 * A port that must start forwarding moves through Listening (15 s) and Learning (15 s): **30 seconds** of no traffic.
 * If the failure is *indirect* (for example the root link of a neighbor fails), the bridge only notices when it stops receiving BPDUs and **Max Age** (20 s) expires, then waits another 30 s. That is up to **50 seconds**.
 
+Cisco documentation also lists a **Broken** state, which a switch uses when it detects a problem on a port (for example a type or PVID inconsistency). The port discards all frames for as long as the problem persists.
+
 For a network that carries voice, video or DHCP clients, this is far too long, and it was the main motivation for RSTP.
 
 The default timers also set the **network diameter**. The Message Age grows with each hop, and a BPDU is discarded once it reaches Max Age. The standard's recommended limit is a diameter of **7 bridges**, and it is a reason to design a shallow, well-planned topology.
 
 ---
+
+#### Convergence after a failure
+
+---
+
+How long STP takes depends on **how the failure is detected**. Take a triangle where SW1 is the root, SW2 and SW3 have root ports to SW1, and SW3 blocks its port to SW2.
+
+| Failure | What happens | Time |
+|---------|--------------|------|
+| **Direct, on a blocked link** (SW2–SW3 fails) | Nothing is forwarding on the link. Both ends send TCNs toward the root and the MAC tables are flushed, but user traffic is not interrupted | None |
+| **Direct, on the root link of a bridge** (SW1–SW3 fails) | The bridge sees the link go down and drops the cached BPDU from the root at once, so it does **not** wait for Max Age. Its blocked port moves through Listening and Learning | About 30 s |
+| **Direct, but the neighbor was relying on a blocked path** (SW1–SW2 fails) | SW2 loses its root port and has no other BPDU source: SW3's port toward SW2 is still blocking. SW2 declares itself root and sends inferior BPDUs, which SW3 ignores. SW3 only unblocks after **Max Age** (20 s), then relays the root's BPDU, and SW2 moves its new root port through Listening and Learning | About 50 s (52 s in the worked example) |
+| **Indirect** (the link stays up but BPDUs stop, for example a faulty transceiver, a filter, or a unidirectional link) | The bridge keeps its cached BPDU until **Max Age** expires, and then the blocked port transitions | About 50 s (52 s in the worked example) |
+
+---
+
+The indirect case is the worst, because the physical layer gives STP no hint. It is also exactly the situation where a blocked port that stops hearing BPDUs can wrongly decide to forward, and it is why [Loop Guard](#protection-features) exists.
 
 #### Topology changes
 
@@ -267,7 +291,7 @@ The sync is what makes this safe: a bridge never forwards on a new port until ev
 
 ---
 
-* An **edge port** connects to an end host and cannot be part of a loop. It goes straight to Forwarding and never triggers a topology change. It stops being an edge port as soon as it receives a BPDU (the bridge then knows that another bridge is attached).
+* An **edge port** connects to an end host and cannot be part of a loop (Cisco calls this **PortFast**). It goes straight to Forwarding and never triggers a topology change. It stops being an edge port as soon as it receives a BPDU (the bridge then knows that another bridge is attached).
 * The **link type** decides whether the handshake is possible. A **full-duplex** link is treated as point-to-point. A **half-duplex** link is treated as shared, and falls back to the slower timer-based behavior because a proposal cannot be answered by one neighbor alone.
 
 ---
@@ -320,6 +344,46 @@ Two bridges are in the same region only if the name, the revision **and the dige
 
 ---
 
+#### Why not CST or PVST?
+
+---
+
+* With a **Common Spanning Tree** (one tree for all VLANs), every VLAN shares the same blocked links. If only SW2 and SW3 host VLAN 4, their traffic still has to go through SW1, and the topology cannot be tuned per VLAN.
+* With **PVST**, each VLAN has its own tree and can be tuned freely, but with thousands of VLANs the switch has to keep the STP state of each one, and the CPU becomes a limit.
+* With **MSTP**, VLANs are grouped into instances, so adding a VLAN that fits an existing instance adds **no new STP state**. Cisco switches support 16 instances by default.
+
+---
+
+#### The IST (instance 0)
+
+---
+
+Instance 0 always exists and runs on **every port** in the region, whatever VLANs the port carries. The information of the other instances (MSTIs) is nested **inside the IST BPDU**, so only one set of BPDUs is transmitted per port. By default **all VLANs belong to instance 0**. This has a practical consequence: the IST topology can block a port even when none of the VLANs you care about use it, as the next section shows.
+
+---
+
+#### Common MSTP mistakes
+
+---
+
+1. **VLANs left in the IST.** Suppose PC-A and PC-B are on VLAN 10, connected through an access port on SW2 and SW1 is the root. VLAN 10 is still in instance 0, and all inter-switch ports belong to the IST, so SW2 must block one of its two uplinks by comparing the port IDs advertised by SW1. If it blocks the one that the traffic should use, the path is cut, even though the VLAN looks correctly configured. The fixes are to **move VLAN 10 to its own MSTI**, so that the topology follows the links that this instance uses, or to **allow the IST VLANs on all inter-switch trunks**.
+2. **Pruning trunks without changing the instance topology.** Removing VLANs from a trunk (a common way to balance load) breaks connectivity when VLANs of the same instance are pruned on *different* links. The MSTI topology does not change, so it keeps blocking and forwarding as before, but the VLAN no longer exists on the link it forwards over. Prune **all VLANs of one instance together**, or change the instance mapping.
+
+---
+
+#### Region boundaries and interoperation with PVST+
+
+---
+
+A **region boundary** port connects to a bridge of another MST region, or to a bridge that sends 802.1D or 802.1w BPDUs. MSTIs never leave the region: outside, the whole region looks like **one virtual bridge** and only the CIST is visible. A PVST+ or Rapid PVST+ neighbor cannot parse an IST BPDU, so the boundary port uses the **PVST simulation mechanism** and sends PVST+/RSTP BPDUs for every VLAN, all derived from the IST.
+
+The design depends on where the root is:
+
+* **The MST region contains the root for every VLAN** (recommended). All boundary ports advertise the same IST information to every VLAN, the region is the best "bridge" in the PVST+ network, and the PVST+ side blocks its own redundant links.
+* **The root is in the PVST+ network.** The boundary ports can only forward or block **for all VLANs together**, because the CIST must stay consistent. There is no load balancing over the boundary. If a boundary port receives a BPDU for a VLAN that is better than what the IST provides (the *PVST simulation check*), the MST bridge **blocks the port** (as inconsistent), to keep the topology loop-free. A common symptom is a boundary port that is blocked "PVST Inc."
+
+---
+
 ### Vendor Variants
 
 ---
@@ -356,6 +420,112 @@ STP trusts every BPDU it receives, so a misconfigured or malicious device can in
 
 ---
 
+#### Details of each feature
+
+---
+
+* **PortFast (edge port).** The port goes straight to Forwarding and **does not generate topology change notifications** when it flaps. If it receives a BPDU, PortFast is removed from that port. Use it only on ports that connect to a single host.
+* **BPDU Guard.** Puts a PortFast port into **err-disabled** when a BPDU arrives. Such a port does not come back by itself. Either enable `errdisable recovery cause bpduguard` (the recovery timer runs every 300 s by default and can be changed with `errdisable recovery interval`), or shut and re-enable the port by hand.
+* **Root Guard.** Applied on designated ports toward switches that must never become root. A superior BPDU puts the port into a *root-inconsistent* state (no traffic), and the port recovers when the superior BPDUs stop.
+* **Loop Guard.** Stops a root or alternate port from turning into a designated port just because BPDUs stopped. The port enters a *loop-inconsistent* state, and recovers by itself when BPDUs return. It **conflicts with PortFast and must not be enabled on edge ports**. `show spanning-tree inconsistentports` lists affected ports.
+* **BPDU Filter.** In its **global** form (`spanning-tree portfast bpdufilter default`), a PortFast port sends 10 to 12 BPDUs when it comes up, and if it receives a BPDU it stops being a PortFast port and returns to normal STP. In the **per-interface** form (`spanning-tree bpdufilter enable`) the port **never sends BPDUs and ignores received ones**. Combined with a loop behind the port, this is dangerous, and a neighbor with BPDU Guard will shut the link down.
+* **UDLD.** A Layer 2 keepalive that checks that traffic flows in both directions on a fiber link. In **normal** mode, an unacknowledged link is marked *undetermined* and stays up. In **aggressive** mode, the switch sends 8 more probes at 1-second intervals and then puts the port in an **error state** if there is still no answer.
+
+Loops usually appear because STP is disabled on a switch, because a load balancer or a virtual switch bridges two physical ports with the same MAC address, or because a user plugs in an unmanaged switch or a hub.
+
+---
+
+### Root Placement and Tuning
+
+---
+
+A good design chooses the root and the blocked ports **on purpose**. The rule is to set the priority on:
+
+* the **root bridge** to the lowest value,
+* the **secondary (backup) root** to a value slightly higher,
+* every other switch to a value higher than the secondary root.
+
+The priority is a multiple of **4096** between 0 and 61440. Because the 12-bit system ID extension is added to it, `show spanning-tree` displays **32769** for VLAN 1 on a switch with the default priority (32768 + 1).
+
+After the root is fixed, you can steer *where the blocked ports end up*:
+
+| Tool | Effect |
+|------|--------|
+| **Port cost** | Changes the root path cost of a bridge, so it changes which port becomes the root port, and therefore where blocked ports appear downstream |
+| **Port priority** | Breaks the tie when **two links connect the same pair of switches** (priority 0–240 in steps of 16, default 128). The value that matters is the one set on the **upstream (sending) side**, because the downstream bridge compares the Port IDs it receives |
+
+---
+
+### Cisco IOS Configuration and Verification
+
+---
+
+On Catalyst switches STP runs in **PVST+, Rapid PVST+ or MST** mode, and all of them interoperate with 802.1D.
+
+```
+! choose the mode
+spanning-tree mode rapid-pvst           ! or: mst
+spanning-tree pathcost method long
+
+! root placement (per VLAN)
+spanning-tree vlan 1 root primary       ! priority 24576, or lower if needed
+spanning-tree vlan 1 root secondary     ! priority 28672
+spanning-tree vlan 1 priority 4096      ! explicit alternative
+
+! cost and port priority on an interface
+interface GigabitEthernet1/0/2
+ spanning-tree vlan 1 cost 10
+ spanning-tree vlan 1 port-priority 64
+
+! edge ports and protection
+spanning-tree portfast default
+spanning-tree portfast bpduguard default
+errdisable recovery cause bpduguard
+errdisable recovery interval 300
+interface GigabitEthernet1/0/24
+ spanning-tree guard root               ! uplink toward a foreign domain
+interface GigabitEthernet1/0/1
+ spanning-tree guard loop               ! inter-switch link
+udld enable
+```
+
+| Command | Shows |
+|---------|-------|
+| `show spanning-tree root` | Root ID, root path cost and the root port, per VLAN |
+| `show spanning-tree vlan 1` | Local and root bridge info, and the role, state, cost and type of each port (**P2p**, or **P2p Edge** with PortFast) |
+| `show spanning-tree vlan 1 detail` | Topology change counters, **which port caused the last change** and when |
+| `show spanning-tree inconsistentports` | Ports blocked by Root Guard, Loop Guard or the PVST simulation check |
+| `show interfaces trunk` | VLANs allowed on a trunk. A VLAN missing here never reaches the port |
+| `show udld neighbors` | UDLD neighbor state |
+
+---
+
+MSTP configuration follows five steps. The region name, revision and VLAN mapping **must be identical on every switch of the region**.
+
+```
+spanning-tree mode mst
+spanning-tree mst configuration
+ name REGION1
+ revision 1
+ instance 1 vlan 10-20
+ instance 2 vlan 30-40
+exit
+spanning-tree mst 1 root primary
+spanning-tree mst 2 root secondary
+
+interface GigabitEthernet1/0/3
+ spanning-tree mst 1 cost 100
+ spanning-tree mst 1 port-priority 64
+```
+
+```
+show spanning-tree mst configuration   ! name, revision, VLAN mapping, digest
+show spanning-tree mst 1               ! topology of one instance
+show spanning-tree mst interface Gi1/0/3
+```
+
+---
+
 ### Failure Modes and Design Guidance
 
 ---
@@ -380,7 +550,9 @@ Design rules that follow from the protocol:
 4. **Declare edge ports** and protect them with BPDU Guard.
 5. **Use Root Guard** at the border between the core and anything that you do not control.
 6. **Protect fiber and long links** with Loop Guard or UDLD.
-7. **Avoid relying on STP as the main path design.** Active-active designs (link aggregation, multi-chassis LAG, routed access) use all links, and leave STP as a safety net only.
+7. **Put VLANs in a dedicated MSTI** rather than leaving them in the IST, and prune trunks per instance, not per VLAN.
+8. **Keep the MST region as the root of the whole bridged network** when you connect it to a PVST+ domain.
+9. **Avoid relying on STP as the main path design.** Active-active designs (link aggregation, multi-chassis LAG, routed access) use all links, and leave STP as a safety net only.
 
 ---
 
@@ -447,5 +619,8 @@ In Wireshark use the `stp` display filter. When you read a BPDU, check these fir
 4. **Classic STP** relies on timers (Max Age 20 s, Forward Delay 15 s) and takes 30 to 50 seconds to converge.
 5. **RSTP** replaces timers with local keepalives and the **proposal/agreement** handshake, and converges in well under a second on point-to-point links.
 6. **MSTP** maps VLANs to a few instances, so that different VLANs use different trees and no link stays idle. The region configuration (name, revision and VLAN table digest) must match exactly.
-7. Choose the root deliberately, use edge ports with BPDU Guard, add Root Guard at administrative borders and Loop Guard or UDLD on long links.
-8. On Linux, the kernel runs only classic STP. RSTP and MSTP need a user-space daemon.
+7. Failure recovery depends on detection: a direct failure on a root link takes about 30 s, while an indirect one (the link stays up but BPDUs stop) needs Max Age as well, about 50 s.
+8. Choose the root and a backup root deliberately (priority in steps of 4096). Steer blocked ports with port cost, and with port priority when two links join the same switches.
+9. Use edge ports (PortFast) with BPDU Guard, add Root Guard at administrative borders and Loop Guard or UDLD on long links. Never combine Loop Guard with PortFast.
+10. In MSTP, instance 0 (the IST) covers every port. Put your VLANs in dedicated instances, do not prune trunks inconsistently, and let the MST region be the root when connecting to PVST+.
+11. On Linux, the kernel runs only classic STP. RSTP and MSTP need a user-space daemon.
