@@ -336,8 +336,12 @@ const { albums } = Astro.props;
 
 			const dist = 15 - (15 - FOCUS_D()) * e - Math.sin(zoomPulse * Math.PI) * 0.18;
 			camera.position.set(0, 0.1, dist);
-			const shift = (mobile() ? 0 : 0.5) * e;
-			camera.lookAt(-shift, mobile() ? -0.12 * e : -0.1 * e, 0);
+			// Phones in landscape: the album card sits bottom-right, so push the globe left.
+			const landscape = innerHeight <= 520 && innerWidth > innerHeight;
+			const shift = (landscape ? -1.8 : mobile() ? 0 : 0.5) * e;
+			// Phones in portrait: the title and card fill the lower half, so raise the globe.
+			const portrait = mobile() && innerHeight > innerWidth;
+			camera.lookAt(-shift, (portrait ? -1.0 : mobile() ? -0.12 : -0.1) * e, 0);
 			camera.updateMatrixWorld();
 
 			globe.updateMatrixWorld();

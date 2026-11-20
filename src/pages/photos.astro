@@ -7,7 +7,6 @@ import type { ImageMetadata } from 'astro';
 import { getImage } from 'astro:assets';
 import { ALBUMS } from '../albums';
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PhotoGlobe3D from '../components/PhotoGlobe3D.astro';
 import { SITE_TITLE } from '../consts';
@@ -194,35 +193,42 @@ const first = albums[0];
 			<p class="lb-count"></p>
 		</dialog>
 
-		<Footer />
 	</body>
 </html>
 
 <style>
+	/* The page is exactly one screen: header + globe hero, no scrolling. */
 	:global(html) {
 		background: #000;
-		scroll-behavior: smooth;
+		height: 100%;
+		overflow: hidden;
+		overscroll-behavior: none;
 	}
 	:global(body) {
 		background: transparent;
+		height: 100vh;
+		height: 100dvh;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
 	}
 
 	/* ===== Hero: the map shows through; the banner catches drags ===== */
 	.page-banner {
 		box-sizing: border-box;
 		position: relative;
-		min-height: calc(100vh - 64px);
-		min-height: calc(100svh - 64px);
+		flex: 1 1 auto;
+		min-height: 0;
+		overflow: hidden;
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
 		gap: 2rem;
 		color: #fff;
-		padding: 0 max(1.5rem, calc((100% - 1200px) / 2)) 3.5rem;
+		padding: 0 max(1.5rem, calc((100% - 1200px) / 2)) max(clamp(1rem, 6vh, 3.5rem), env(safe-area-inset-bottom));
 		background:
 			linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 45%),
 			linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent 55%);
-		border-bottom: 4px solid var(--accent);
 		cursor: grab;
 		touch-action: pan-y;
 		user-select: none;
@@ -337,6 +343,34 @@ const first = albums[0];
 		}
 		.album-card {
 			width: 100%;
+		}
+	}
+	/* Short screens (phones in landscape, small laptops): tighten the hero so it still fits. */
+	@media (max-height: 700px) {
+		.page-banner h1 {
+			font-size: clamp(2rem, 9vh, 4rem);
+			margin: 0.25rem 0 0.5rem;
+		}
+		.banner-inner p:not(.eyebrow) {
+			font-size: 1rem;
+		}
+		.banner-inner .hint {
+			margin-top: 0.75rem;
+		}
+	}
+	@media (max-height: 520px) {
+		.banner-inner p:not(.eyebrow, .hint) {
+			display: none;
+		}
+		.page-banner {
+			flex-direction: row;
+			align-items: flex-end;
+		}
+		.album-card {
+			width: min(360px, 55%);
+		}
+		.card-cover {
+			height: 120px;
 		}
 	}
 
