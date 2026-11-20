@@ -152,69 +152,26 @@ const first = albums[0];
 			}
 		</section>
 
-		<nav class="album-bar" aria-label="Albums">
-			{albums.map((album) => <a href={`#${album.id}`} data-album={album.id}>{album.title}</a>)}
-		</nav>
-
-		<main class="gallery-layout">
+		<div class="viewer-data" hidden>
 			{
-				albums.map((album) => (
-					<section class="album" id={album.id}>
-						<figure class="album-cover">
-							<img
-								src={album.cover.full}
-								width={album.cover.width}
-								height={album.cover.height}
-								alt={album.title}
-								loading="lazy"
-								decoding="async"
-							/>
-						</figure>
-						<header class="album-head">
-							<p class="eyebrow">
-								{[album.location, album.date].filter(Boolean).join(' · ')}
-							</p>
-							<h2>{album.title}</h2>
-							{album.description && <p class="album-desc">{album.description}</p>}
-							<p class="album-stats">{album.stats}</p>
-							{album.post && (
-								<a class="album-story" href={`/blog/${album.post}/`}>
-									Read the story →
-								</a>
-							)}
-						</header>
-						<ul class="photo-grid">
-							{album.photos.map((photo, i) => (
-								<li class="photo" style={`--ar:${(photo.width / photo.height).toFixed(4)};--avg:${photo.avg}`}>
-									<i aria-hidden="true" />
-									<a
-										href={photo.full}
-										data-lightbox={album.id}
-										data-photo={`${album.id}:${i}`}
-										data-thumb={photo.thumb}
-										data-title={album.title}
-										data-caption={photo.caption || [album.location, photo.taken && fmtDay(photo.taken)].filter(Boolean).join(' · ')}
-										data-exif={[photo.camera, photo.lens].filter(Boolean).join(' · ')}
-										data-settings={photo.settings}
-										aria-label={`${album.title}, photo ${i + 1} of ${album.photos.length}`}
-									>
-										<img
-											src={photo.thumb}
-											width={photo.width}
-											height={photo.height}
-											alt={photo.caption}
-											loading="lazy"
-											decoding="async"
-										/>
-									</a>
-								</li>
-							))}
-						</ul>
-					</section>
-				))
+				albums.map((album) =>
+					album.photos.map((photo, i) => (
+						<a
+							href={photo.full}
+							data-lightbox={album.id}
+							data-photo={`${album.id}:${i}`}
+							data-thumb={photo.thumb}
+							data-title={album.title}
+							data-caption={photo.caption || [album.location, photo.taken && fmtDay(photo.taken)].filter(Boolean).join(' · ')}
+							data-exif={[photo.camera, photo.lens].filter(Boolean).join(' · ')}
+							data-settings={photo.settings}
+						>
+							{album.title}, photo {i + 1}
+						</a>
+					)),
+				)
 			}
-			{albums.length === 0 && <p>No photos yet.</p>}
-		</main>
+		</div>
 
 		<dialog class="lightbox" aria-label="Photo viewer">
 			<div class="lb-stage">
@@ -237,7 +194,6 @@ const first = albums[0];
 			<p class="lb-count"></p>
 		</dialog>
 
-		<noscript><style>.photo img { opacity: 1 !important; }</style></noscript>
 		<Footer />
 	</body>
 </html>
@@ -382,158 +338,6 @@ const first = albums[0];
 		.album-card {
 			width: 100%;
 		}
-	}
-
-	/* ===== Sticky album bar ===== */
-	.album-bar {
-		position: sticky;
-		top: 64px;
-		z-index: 50;
-		display: flex;
-		gap: 0.5rem;
-		padding: 0.7rem max(1.5rem, calc((100% - 1200px) / 2));
-		overflow-x: auto;
-		scrollbar-width: none;
-		background: rgba(255, 255, 255, 0.94);
-		backdrop-filter: blur(8px);
-		border-bottom: 1px solid #e3e3e3;
-	}
-	.album-bar::-webkit-scrollbar {
-		display: none;
-	}
-	.album-bar a {
-		flex: 0 0 auto;
-		padding: 0.3rem 0.85rem;
-		border: 1px solid #d5d5d5;
-		color: #222;
-		font-family: var(--font-mono);
-		font-size: 0.75rem;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		text-decoration: none;
-		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-	}
-	.album-bar a:hover {
-		border-color: var(--accent);
-	}
-	.album-bar a[aria-current='true'] {
-		background: #111;
-		border-color: #111;
-		color: #fff;
-	}
-
-	/* ===== Gallery ===== */
-	.gallery-layout {
-		background: #fff;
-		position: relative;
-		width: auto;
-		max-width: none;
-		margin: 0;
-		padding: 3.5rem max(1.5rem, calc((100% - 1200px) / 2));
-	}
-	.album {
-		margin-bottom: 5rem;
-		scroll-margin-top: 140px;
-	}
-	.album-cover {
-		margin: 0 0 2rem;
-		aspect-ratio: 21 / 9;
-		overflow: hidden;
-		background: var(--space-3);
-	}
-	.album-cover img {
-		width: 100%;
-		height: 118%;
-		transform: translateY(var(--py, 0px));
-		will-change: transform;
-		object-fit: cover;
-		display: block;
-		margin: 0;
-	}
-	.album-head {
-		max-width: 60ch;
-		margin-bottom: 2rem;
-	}
-	.album-head h2 {
-		font-size: clamp(1.8rem, 4vw, 2.6rem);
-	}
-	.album-desc {
-		color: #444;
-	}
-	.album-stats {
-		margin: 0.5rem 0 0;
-		font-family: var(--font-mono);
-		font-size: 0.75rem;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: #777;
-	}
-	.album-story {
-		display: inline-block;
-		margin-top: 1rem;
-		font-weight: 700;
-		color: var(--accent-dark);
-		text-decoration: none;
-		border-bottom: 2px solid currentColor;
-	}
-
-	/* Justified rows: every photo keeps its aspect ratio and each row fills the width. */
-	.photo-grid {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5rem;
-		perspective: 1200px;
-	}
-	.photo-grid::after {
-		content: '';
-		flex-grow: 1000000;
-	}
-	.photo {
-		position: relative;
-		flex: calc(var(--ar) * 100) 1 calc(var(--ar) * 240px);
-		background: var(--avg, #222);
-		margin: 0;
-	}
-	.photo i {
-		display: block;
-		padding-bottom: calc(100% / var(--ar));
-	}
-	.photo a {
-		position: absolute;
-		inset: 0;
-		display: block;
-		overflow: hidden;
-		cursor: zoom-in;
-		transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-		transition: transform 0.15s ease-out, box-shadow 0.2s ease;
-		will-change: transform;
-	}
-	.photo a:hover {
-		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-		z-index: 2;
-	}
-	.photo img {
-		display: block;
-		width: 100%;
-		height: 100%;
-		margin: 0;
-		border-radius: 0;
-		object-fit: cover;
-		opacity: 0;
-		transition: transform 0.4s ease, opacity 0.5s ease;
-	}
-	.photo img.ready {
-		opacity: 1;
-	}
-	.photo a:hover img {
-		transform: scale(1.06);
-	}
-	.photo a:focus-visible {
-		outline: 3px solid var(--accent);
-		outline-offset: 2px;
 	}
 
 	/* ===== Lightbox ===== */
@@ -735,56 +539,6 @@ const first = albums[0];
 </style>
 
 <script>
-	/* ---------- Gallery effects: fade-in, 3D tilt, cover parallax, album bar scroll-spy ---------- */
-	document.querySelectorAll<HTMLImageElement>('.photo img').forEach((img) => {
-		if (img.complete) img.classList.add('ready');
-		else img.addEventListener('load', () => img.classList.add('ready'), { once: true });
-	});
-
-	const bar = document.querySelector<HTMLElement>('.album-bar')!;
-	const barLinks = [...bar.querySelectorAll<HTMLAnchorElement>('a')];
-	const spy = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((e) => {
-				if (!e.isIntersecting) return;
-				barLinks.forEach((a) => {
-					const on = a.dataset.album === e.target.id;
-					a.toggleAttribute('aria-current', on);
-					if (on) {
-						a.setAttribute('aria-current', 'true');
-						bar.scrollTo({ left: a.offsetLeft - bar.clientWidth / 2 + a.clientWidth / 2, behavior: 'smooth' });
-					} else a.removeAttribute('aria-current');
-				});
-			});
-		},
-		{ rootMargin: '-35% 0px -60% 0px' },
-	);
-	document.querySelectorAll('.album').forEach((s) => spy.observe(s));
-
-	if (!matchMedia('(prefers-reduced-motion: reduce)').matches && matchMedia('(hover: hover)').matches) {
-		document.querySelectorAll<HTMLElement>('.photo a').forEach((el) => {
-			el.addEventListener('pointermove', (e) => {
-				const r = el.getBoundingClientRect();
-				el.style.setProperty('--ry', `${((e.clientX - r.left) / r.width - 0.5) * 12}deg`);
-				el.style.setProperty('--rx', `${-((e.clientY - r.top) / r.height - 0.5) * 12}deg`);
-			});
-			el.addEventListener('pointerleave', () => {
-				el.style.setProperty('--rx', '0deg');
-				el.style.setProperty('--ry', '0deg');
-			});
-		});
-		const covers = [...document.querySelectorAll<HTMLElement>('.album-cover')];
-		const parallax = () => {
-			covers.forEach((c) => {
-				const r = c.getBoundingClientRect();
-				const k = (r.top + r.height / 2 - innerHeight / 2) / innerHeight;
-				c.style.setProperty('--py', `${Math.max(-1, Math.min(1, k)) * -r.height * 0.07}px`);
-			});
-		};
-		addEventListener('scroll', parallax, { passive: true });
-		parallax();
-	}
-
 	/* ---------- Lightbox ---------- */
 	const dialog = document.querySelector<HTMLDialogElement>('.lightbox')!;
 	const stage = dialog.querySelector<HTMLElement>('.lb-stage')!;
@@ -1015,8 +769,4 @@ const first = albums[0];
 	card?.querySelector('.card-open')?.addEventListener('click', openCardAlbum);
 	card?.querySelector('.card-cover-btn')?.addEventListener('click', openCardAlbum);
 
-	/* ---------- Pin pins on the globe <-> album bar ---------- */
-	barLinks.forEach((a) => {
-		a.addEventListener('click', () => dispatchEvent(new CustomEvent('globe:select', { detail: a.dataset.album })));
-	});
 </script>
