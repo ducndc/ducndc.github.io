@@ -1,7 +1,7 @@
 ---
 title: 'Enterprise Wireless: RF, Architecture, Roaming, Security and Troubleshooting'
 description: 'A practical guide to enterprise Wi-Fi from the CCNP core: RF basics, dB math, EIRP and link budgets, channels, SNR and modulation, 802.11 standards and MIMO; autonomous, centralized, embedded and cloud architectures, CAPWAP and AP join, antennas; intra- and intercontroller roaming and location; Open, PSK, 802.1X/EAP and WebAuth; and troubleshooting clients and APs from the WLC.'
-pubDate: 'Nov 21 2026'
+pubDate: 'Nov 20 2026'
 heroImage: '../../assets/hero/wireless.jpg'
 category: 'Wi-Fi'
 ---
