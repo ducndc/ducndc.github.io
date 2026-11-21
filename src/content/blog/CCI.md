@@ -42,6 +42,8 @@ See [Clear Channel Assessment](/blog/wifi-overview/#clear-channel-assessment-cca
 | Preamble detection (carrier sense) | about −82 dBm | any decodable 802.11 frame, including other BSSs on the same channel | the station defers for the frame; virtual carrier sense (NAV) extends the deferral from the Duration field |
 | Energy detection (ED) | about −62 dBm | any energy: ACI, non-Wi-Fi sources, very strong Wi-Fi | the station defers while the energy stays above the threshold |
 
+---
+
 - **Co-channel case.** Because the carrier-sense threshold is 20 dB lower than ED, a neighboring BSS on the same channel makes a station defer at a much greater distance than raw noise would. Every overlapping BSS adds its own transmissions, control frames and beacons to the time the channel is busy, so each station gets a smaller share of airtime. Collisions still happen when two stations finish their backoff in the same slot, and the larger the contention domain, the more often that happens.
 - **Energy-only case (ACI and non-Wi-Fi).** If the interferer is above the ED threshold, stations defer to it as if it were traffic, and airtime is lost. If it is below the threshold, stations transmit anyway, the receiver sees a worse SINR, frames fail their FCS check, no ACK comes back, and the MAC retransmits, usually at a lower MCS. Under a sustained interferer this retry cycle repeats, and useful throughput collapses even though the radio transmits constantly.
 
@@ -87,6 +89,8 @@ Throughput is proportional to the free airtime $(1 - \alpha)$: it falls **linear
 | 0.5 | 50% | throughput roughly halved compared with an idle channel |
 | 0.8 | 20% | severe; latency-sensitive applications start to suffer |
 | 0.95 | 5% | near collapse; collisions and retries take most of what is left |
+
+---
 
 This is also why Multi-Link Operation (802.11be, Wi-Fi 7) is a structural answer to CCI rather than only a channel-planning fix. A multi-link device can send each frame on whichever link becomes free first, or spread traffic across several links, so it is not limited by one busy channel's $\alpha$ the way an SLO station is. See [Wi-Fi 7](/blog/wifi7/) for how MLO distributes traffic across links.
 

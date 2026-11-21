@@ -44,6 +44,8 @@ Bonding gives slightly **more than twice** the throughput. A 20 MHz OFDM channel
 | 80 MHz | 234 | 980 |
 | 160 MHz | 468 | 1960 |
 
+---
+
 (802.11ax uses subcarriers spaced four times closer, which is why it has about four times as many in the same width.)
 
 ![The 5 GHz band with its 20, 40, 80, 160 and 80+80 MHz channel options, and the weather radar channels 120 to 128](../../assets/img/wifi/channelBoding.png)
@@ -51,6 +53,8 @@ Bonding gives slightly **more than twice** the throughput. A 20 MHz OFDM channel
 An 80 MHz channel bonds two adjacent 40 MHz channels, and a 160 MHz channel bonds two adjacent 80 MHz channels. Because contiguous 160 MHz blocks are scarce in 5 GHz, 802.11ac also allows **80+80 MHz**: two non-adjacent 80 MHz channels used as one. Few products implemented it, and 802.11be dropped 80+80 in favor of contiguous 160 and 320 MHz channels in 6 GHz.
 
 Wider is not always better. Each doubling of width halves the number of independent channels, spreads the same transmit power over twice the spectrum (about 3 dB less power per subcarrier, so slightly less range at a given MCS), and makes [co-channel interference](/blog/cci/) more likely. Dense enterprise networks usually run 20 or 40 MHz in 5 GHz.
+
+---
 
 #### Primary and secondary channels
 
@@ -61,6 +65,8 @@ A bonded channel always has one **primary 20 MHz channel**. Beacons and other ma
 In a 160 MHz channel, the **primary 80 MHz** channel is the half that contains the primary 20 MHz channel, and the other half is the **secondary 80 MHz**. Inside the primary 80, the **primary 40 MHz** contains the primary 20 and the other 40 MHz is the **secondary 40**. Inside the primary 40, the 20 MHz channel next to the primary is the **secondary 20**.
 
 ![Primary and secondary channels nested inside a 160 MHz channel on channels 36 to 64: primary and secondary 20, 40 and 80 MHz](../../assets/img/wifi/217.png)
+
+---
 
 #### Static and dynamic bandwidth
 
@@ -102,6 +108,8 @@ Adding antennas on one side gives **diversity**: several copies of the same sign
 
 Diversity makes a link more reliable and gives some SNR gain, but it does not multiply capacity. That needs multiple antennas on **both** sides.
 
+---
+
 #### MIMO
 
 ---
@@ -121,6 +129,8 @@ MIMO combines two techniques:
 ![Spatial multiplexing: the raw data is split into two parts sent on two antennas, and the receiver separates and merges them to restore the data at a higher rate](../../assets/img/wifi/space2.png)
 
 The two are not exclusive. A 4x4 AP talking to a 2x2 client can send two multiplexed streams and use its extra antennas for diversity and beamforming gain.
+
+---
 
 #### Spatial streams and antennas
 
