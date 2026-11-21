@@ -109,6 +109,7 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 		}
 
 		.prose {
+			box-sizing: border-box;
 			width: 100%;
 			max-width: 1600px;
 			margin: auto;
@@ -141,6 +142,18 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 			max-width: 100%;
 			overflow-x: auto;
 			padding: 1rem;
+			border-radius: 8px;
+		}
+
+		/* Embedded videos keep a 16:9 shape at any width */
+		.prose :global(iframe[src*="youtube"]) {
+			display: block;
+			width: 100%;
+			max-width: 800px;
+			height: auto;
+			aspect-ratio: 16 / 9;
+			margin: 1.5rem 0;
+			border: 0;
 			border-radius: 8px;
 		}
 
@@ -197,6 +210,18 @@ const { title, description, pubDate, updatedDate, heroImage, category } = Astro.
 		}
 
 		/* ===== Mobile ===== */
+		/* Justified text leaves big gaps between words on narrow screens */
+		@media (max-width: 640px) {
+			.prose :global(p),
+			.prose :global(li),
+			.prose :global(blockquote) {
+				text-align: left;
+			}
+			.prose {
+				padding: 1.25rem 0;
+				font-size: 17px;
+			}
+		}
 		@media (max-width: 1024px) {
 			.layout {
 				grid-template-columns: 1fr;

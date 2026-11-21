@@ -441,7 +441,10 @@ Band Steering is a wireless resource management feature designed to steer multi-
 + **Signal Strength (RSSI):** When `OptimalPathPreferSignalStrength` is enabled.
 
 + To prevent rapid oscillation (ping-pong effect) between bands:
-$$\text{Current Radio Score} = \text{Metric} \times \left(1 + \frac{\text{RoamingHysteresisPercentBonus}}{100}\right)$$
+
+$$
+\text{Current Radio Score} = \text{Metric} \times \left(1 + \frac{\text{RoamingHysteresisPercentBonus}}{100}\right)
+$$
 
 ---
 
