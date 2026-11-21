@@ -434,3 +434,132 @@ hr {
 		min-height: 44px;
 	}
 }
+
+/* =========================
+   Bookshelf (book-list post)
+   ========================= */
+
+.prose .books {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+	gap: 1rem;
+	margin: 1.5rem 0 0.5rem;
+}
+
+.prose a.book {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.45rem;
+	padding: 1.25rem 1.25rem 1.35rem 1.4rem;
+	border: 1px solid #e3e3e3;
+	border-left: 4px solid #111;
+	border-radius: 12px;
+	background: #fff;
+	color: inherit;
+	text-decoration: none;
+	transition: border-color 0.15s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.prose a.book:hover {
+	border-color: #cfcfcf;
+	border-left-color: var(--accent);
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+	transform: translateY(-2px);
+}
+
+.prose a.book strong {
+	font-size: 1.05rem;
+	line-height: 1.3;
+	color: rgb(var(--black));
+}
+
+.prose a.book:hover strong {
+	color: var(--accent-dark);
+}
+
+.prose a.book em {
+	font-style: normal;
+	font-size: 0.85rem;
+	line-height: 1.4;
+	color: #6b6b6b;
+}
+
+.prose a.book p {
+	margin: 0.2rem 0 0;
+	font-size: 0.92rem;
+	line-height: 1.55;
+	text-align: left;
+	color: #3d3d3d;
+}
+
+.prose a.book::after {
+	content: '↗';
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	font-size: 0.9rem;
+	color: #b5b5b5;
+}
+
+.prose a.book:hover::after {
+	color: var(--accent);
+}
+
+.prose .lvl {
+	align-self: flex-start;
+	padding: 0.15rem 0.55rem;
+	border-radius: 999px;
+	font-family: var(--font-mono);
+	font-size: 0.66rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	line-height: 1.6;
+}
+
+.prose .lvl-1 {
+	background: #ececec;
+	color: #333;
+}
+
+.prose .lvl-2 {
+	background: #333;
+	color: #fff;
+}
+
+.prose .lvl-3 {
+	background: var(--accent);
+	color: #fff;
+}
+
+.prose .free {
+	align-self: flex-start;
+	margin-top: 0.35rem;
+	font-family: var(--font-mono);
+	font-size: 0.7rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #1f7a3f;
+}
+
+.prose .shelf-legend {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.4rem 0.6rem;
+	margin: 1.5rem 0;
+	font-size: 0.85rem;
+	color: #666;
+}
+
+.prose .shelf-legend .lvl:not(:first-child) {
+	margin-left: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.prose a.book,
+	.prose a.book:hover {
+		transition: none;
+		transform: none;
+	}
+}
