@@ -1,76 +1,713 @@
 ---
-import AboutHeroImage from '../assets/hero/about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import portrait from '../assets/hero/about.jpg';
+import photoCover from '../assets/traveling/MuCangChai-YenBai/IMG_8664.JPG';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
 
-// You can define a constant for the date or use the current date
-const today = new Date('March 28, 2026');
+const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const latest = posts.filter((p) => p.data.heroImage && p.data.category !== 'Personal').slice(0, 3);
+
+const photos = Object.keys(import.meta.glob('../assets/traveling/*/*.{jpg,jpeg,JPG,JPEG,png,PNG,webp}'));
+const journeys = new Set(photos.map((f) => f.split('/').at(-2))).size;
+
+const yearsInIndustry = Math.floor((Date.now() - Date.UTC(2022, 8, 1)) / (365.25 * 24 * 3600 * 1000));
+
+const stats = [
+	{ value: `${yearsInIndustry}+`, label: 'years in the industry' },
+	{ value: '2017', label: 'started computer engineering at HUST' },
+	{ value: String(posts.length), label: 'technical and personal articles' },
+	{ value: String(journeys), label: 'photo journeys across Vietnam' },
+];
+
+const journey = [
+	{
+		when: 'Sep 2022 — now',
+		title: 'Engineer',
+		org: 'Viettel High Technology Industries Corporation (VHT)',
+		text: 'Building technology products in an engineering team, and learning something new every day.',
+	},
+	{
+		when: '2019 — 2022',
+		title: 'Researcher, EmNetLab',
+		org: 'Hanoi University of Science and Technology (HUST)',
+		text: 'Hands-on research projects where hardware meets software.',
+	},
+	{
+		when: 'Sep 2017',
+		title: 'Computer Engineering',
+		org: 'Hanoi University of Science and Technology (HUST)',
+		text: 'Where my engineering journey began.',
+	},
+];
+
 ---
 
-<Layout
-	title="About Me"
-	description="Embedded Software Engineer, Photographer, and Poet. Exploring the intersection of logic and art."
-	pubDate={today}
-	heroImage={AboutHeroImage}
->
-	<article class="about-content">
-		<p>
-			My journey in the world of technology began in September 2017 at the Hanoi University of Science and Technology (HUST), 
-			where I studied Computer Engineering. This academic foundation paved the way for my transition into specialized research 
-			at EmNetLab (Institute of Electronics and Telecommunications) in mid-2019. During my time in the lab at C9-411, 
-			I focused on the intersection of hardware and software—researching IoT systems, developing Unmanned Aerial Vehicles (UAVs), 
-			and implementing various embedded systems projects.
-		</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`About | ${SITE_TITLE}`}
+			description="Engineer in Hanoi, Vietnam. I write about technology and spend my free time on photography and poetry."
+			image={portrait}
+		/>
+	</head>
+	<body>
+		<Header />
+		<main class="about">
+			<!-- ===== Hero ===== -->
+			<section class="hero">
+				<div class="hero-text">
+					<p class="eyebrow">About · Hanoi, Vietnam</p>
+					<h1>Chung Duc<br />Nguyen Dang</h1>
+					<p class="role">Engineer</p>
+					<p class="lead">
+						I am an engineer based in Hanoi who enjoys building technology and sharing what I learn along the way.
+						Away from the screen, I photograph mountains and write poems.
+					</p>
+					<div class="cta">
+						<a class="btn primary" href="/blog">Read the blog <span aria-hidden="true">→</span></a>
+						<a class="btn ghost" href="https://github.com/ducndc">GitHub</a>
+						<a class="btn ghost" href="/photos">Photos</a>
+					</div>
+				</div>
+				<figure class="portrait">
+					<Image
+						src={portrait}
+						alt="Chung Duc Nguyen Dang on the summit of Sa Mu, above a sea of clouds"
+						widths={[480, 720, 1080]}
+						sizes="(max-width: 860px) 90vw, 440px"
+						loading="eager"
+					/>
+					<figcaption>Summit of Sa Mu, Son La</figcaption>
+				</figure>
+			</section>
 
-		<p>
-			Since September 2022, I have been applying this expertise as an Embedded Software Engineer at the Transport Network Technologies 
-			Center within Viettel High Technology Industries Corporation (VHT), a member of the Viettel Group.
-		</p>
+			<!-- ===== Stats ===== -->
+			<section class="stats" aria-label="At a glance">
+				{
+					stats.map((s) => (
+						<div class="stat">
+							<span class="stat-value">{s.value}</span>
+							<span class="stat-label">{s.label}</span>
+						</div>
+					))
+				}
+			</section>
 
-		<p>
-			Currently, my professional focus is on the "invisible" backbone of our modern connected world: network firmware. I specialize in Wi-Fi driver development and Wi-Fi EasyMesh technologies, working to improve the performance, interoperability, and reliability of next-generation wireless networking solutions. I am passionate about solving complex connectivity challenges and enabling seamless communication across diverse devices and environments. For me, there is a unique satisfaction in developing the technologies that keep people and systems connected.
-		</p>
+			<!-- ===== Journey ===== -->
+			<section class="block split">
+				<header class="block-head">
+					<p class="eyebrow">Journey</p>
+					<h2>From the classroom to the industry</h2>
+					<p class="block-sub">
+						A few milestones on the road so far.
+					</p>
+				</header>
+				<ol class="timeline">
+					{
+						journey.map((j) => (
+							<li>
+								<span class="when">{j.when}</span>
+								<h3>{j.title}</h3>
+								<p class="org">{j.org}</p>
+								<p>{j.text}</p>
+							</li>
+						))
+					}
+				</ol>
+			</section>
 
-		<h4>The Creative Lens: Photography & Poetry</h4>
+			<!-- ===== Creative ===== -->
+			<section class="block">
+				<header class="block-head">
+					<p class="eyebrow">Beyond the code</p>
+					<h2>The creative lens</h2>
+				</header>
+				<div class="creative">
+					<a class="creative-card photo" href="/photos">
+						<Image src={photoCover} alt="Golden rice terraces in Mu Cang Chai" widths={[640, 960]} sizes="(max-width: 860px) 90vw, 50vw" />
+						<div class="creative-body">
+							<span class="focus-tag">Photography · Canon 60D</span>
+							<h3>Places I have walked to</h3>
+							<p>
+								Engineering and photography share a lot: technical tools, an eye for detail, and the patience to wait
+								for the right moment.
+							</p>
+							<span class="more">Open the photo map <span aria-hidden="true">→</span></span>
+						</div>
+					</a>
+					<a class="creative-card poem" href="/blog/my-poetry/">
+						<div class="verse" lang="vi">
+							<span>Đông này có chuyến du lịch xa</span>
+							<span>Tới đỉnh Sa Mu buổi chiều tà</span>
+							<span>Ngắm nghía trời mây, thăm núi nọ</span>
+							<small>Thăm Đỉnh Samu · Bac Yen, 2025</small>
+						</div>
+						<div class="creative-body">
+							<span class="focus-tag">Poetry</span>
+							<h3>Finding the fewest words</h3>
+							<p>
+								Writing a poem is much like writing clean code or framing a photo: finding the most elegant way to
+								express a truth.
+							</p>
+							<span class="more">Read my poetry <span aria-hidden="true">→</span></span>
+						</div>
+					</a>
+				</div>
+			</section>
 
-		<p>
-			When I step away from the screen and the complexities of firmware, I seek balance through my two great creative passions: photography and poetry.
-		</p>
+			<!-- ===== Quote ===== -->
+			<section class="quote">
+				<blockquote>
+					<p>
+						Whether I am solving an engineering problem, looking through my viewfinder, or drafting a new verse, I am
+						driven by the same thing: a love for precision, a curiosity about how the world works, and a desire to create
+						something meaningful.
+					</p>
+				</blockquote>
+			</section>
 
-		<p>
-			Armed with my Canon 60D, I explore the world from a different perspective. Engineering and photography actually share a lot of common ground—both 
-			require a deep understanding of technical tools, a sharp eye for detail, and the patience to wait for the perfect result.
-		</p>
+			<!-- ===== Latest writing ===== -->
+			<section class="block">
+				<header class="block-head row">
+					<div>
+						<p class="eyebrow">Writing</p>
+						<h2>Recent articles</h2>
+					</div>
+					<a class="see-all" href="/blog">All articles <span aria-hidden="true">→</span></a>
+				</header>
+				<div class="posts">
+					{
+						latest.map((post) => (
+							<a class="post-card" href={`/blog/${post.id}/`}>
+								<div class="post-img">
+									<Image src={post.data.heroImage!} alt="" width={640} height={360} />
+								</div>
+								<span class="focus-tag">{post.data.category}</span>
+								<h3>{post.data.title}</h3>
+								<span class="post-date">
+									<FormattedDate date={post.data.pubDate} />
+								</span>
+							</a>
+						))
+					}
+				</div>
+			</section>
 
-		<p>
-			But where engineering is about logic and photography is about the visual, poetry is where I find my voice. I enjoy the challenge of distilling 
-			complex emotions and observations into a few carefully chosen words. For me, writing a poem is much like writing clean code or 
-			framing a photo: it’s about finding the most elegant way to express a truth.
-		</p>
-
-		<blockquote>
-			"Whether I am debugging a Wi-Fi driver, looking through my viewfinder, or drafting a new verse, I am driven by the same thing: a love for precision, 
-			a curiosity about how the world works, and a desire to create something meaningful."
-		</blockquote>
-	</article>
-</Layout>
+			<!-- ===== Contact ===== -->
+			<section class="contact">
+				<h2>Let's connect</h2>
+				<p>Questions about a post, or a photo spot I should visit? Find me here.</p>
+				<div class="cta">
+					<a class="btn primary" href="https://github.com/ducndc">GitHub <span aria-hidden="true">↗</span></a>
+					<a class="btn ghost" href="/rss.xml">RSS feed</a>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
 
 <style>
-	.about-content p {
-		text-align: justify;
-		line-height: 1.6;
-		margin-bottom: 1.5rem;
+	:global(html) {
+		background: #000;
+	}
+	:global(body) {
+		background: #000;
+		color: #d6d6d6;
 	}
 
-	.about-content h2 {
-		margin-top: 2rem;
-		color: #2c3e50; /* Adjust color to fit your theme */
+	.about {
+		width: auto;
+		max-width: 1240px;
+		margin: 0 auto;
+		padding: 0 max(1.5rem, env(safe-area-inset-left)) 0 max(1.5rem, env(safe-area-inset-right));
+	}
+	.about h1,
+	.about h2,
+	.about h3 {
+		color: #fff;
+	}
+	.eyebrow {
+		margin: 0 0 0.75rem;
 	}
 
-	.about-content blockquote {
+	/* ===== Hero ===== */
+	.hero {
+		display: grid;
+		grid-template-columns: 1.15fr 0.85fr;
+		gap: clamp(2rem, 5vw, 5rem);
+		align-items: center;
+		padding: clamp(3rem, 8vw, 6.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+	}
+	.hero h1 {
+		font-size: clamp(2.8rem, 7vw, 5.6rem);
+		font-weight: 900;
+		line-height: 0.98;
+		letter-spacing: -0.035em;
+		margin: 0 0 1.25rem;
+	}
+	.role {
+		font-family: var(--font-mono);
+		font-size: 0.95rem;
+		letter-spacing: 0.04em;
+		color: #fff;
+		margin: 0 0 1.5rem;
+		padding-left: 0.9rem;
+		border-left: 3px solid var(--accent);
+	}
+	.lead {
+		font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+		line-height: 1.65;
+		color: #bdbdbd;
+		max-width: 46ch;
+		margin: 0 0 2rem;
+	}
+	.cta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+	}
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.8rem 1.5rem;
+		border-radius: 999px;
+		font-size: 0.95rem;
+		font-weight: 700;
+		text-decoration: none;
+		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+	.btn.primary {
+		background: var(--accent);
+		color: #fff;
+	}
+	.btn.primary:hover {
+		background: var(--accent-dark);
+	}
+	.btn.ghost {
+		border: 1.5px solid #555;
+		color: #fff;
+	}
+	.btn.ghost:hover {
+		border-color: #fff;
+		background: #fff;
+		color: #000;
+	}
+
+	.portrait {
+		position: relative;
+		margin: 0;
+		justify-self: end;
+		width: min(100%, 440px);
+	}
+	.portrait::before {
+		content: '';
+		position: absolute;
+		inset: 18px -18px -18px 18px;
+		border: 2px solid var(--accent);
+		border-radius: 20px;
+		z-index: 0;
+	}
+	.portrait :global(img) {
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		aspect-ratio: 4 / 5;
+		height: auto;
+		margin: 0;
+		object-fit: cover;
+		object-position: 56% 35%;
+		border-radius: 20px;
+		box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+	}
+	.portrait figcaption {
+		position: absolute;
+		z-index: 2;
+		left: 1rem;
+		bottom: 1rem;
+		padding: 0.35rem 0.75rem;
+		border-radius: 999px;
+		background: rgba(0, 0, 0, 0.65);
+		backdrop-filter: blur(6px);
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: #eee;
+	}
+
+	/* ===== Stats ===== */
+	.stats {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		border-top: 1px solid #262626;
+		border-bottom: 1px solid #262626;
+		margin-bottom: clamp(3rem, 7vw, 5.5rem);
+	}
+	.stat {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		padding: 1.75rem 1.25rem;
+	}
+	.stat + .stat {
+		border-left: 1px solid #262626;
+	}
+	.stat-value {
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 900;
+		line-height: 1;
+		letter-spacing: -0.03em;
+		color: #fff;
+	}
+	.stat-label {
+		font-size: 0.85rem;
+		line-height: 1.4;
+		color: #8f8f8f;
+	}
+
+	/* ===== Blocks ===== */
+	.block {
+		margin-bottom: clamp(3.5rem, 8vw, 6.5rem);
+	}
+	.block-head {
+		margin-bottom: 2.25rem;
+		max-width: 48rem;
+	}
+	.block-head h2 {
+		font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+		line-height: 1.12;
+		margin: 0;
+	}
+	.block-head.row {
+		max-width: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+	.block-sub {
+		color: #9a9a9a;
+		font-size: 1.05rem;
+		margin: 1rem 0 0;
+	}
+	.focus-tag {
+		display: inline-block;
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+
+	/* Journey */
+	.split {
+		display: grid;
+		grid-template-columns: 0.9fr 1.1fr;
+		gap: clamp(2rem, 5vw, 5rem);
+		align-items: start;
+	}
+	.split .block-head {
+		position: sticky;
+		top: 96px;
+	}
+	.timeline {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		border-left: 2px solid #262626;
+	}
+	.timeline li {
+		position: relative;
+		padding: 0 0 2.5rem 2rem;
+		margin: 0;
+	}
+	.timeline li:last-child {
+		padding-bottom: 0;
+	}
+	.timeline li::before {
+		content: '';
+		position: absolute;
+		left: -8px;
+		top: 0.35rem;
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		background: #000;
+		border: 2px solid var(--accent);
+	}
+	.timeline li:first-child::before {
+		background: var(--accent);
+		box-shadow: 0 0 0 6px rgba(252, 61, 33, 0.18);
+	}
+	.when {
+		font-family: var(--font-mono);
+		font-size: 0.78rem;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+	.timeline h3 {
+		font-size: 1.3rem;
+		margin: 0.4rem 0 0.25rem;
+	}
+	.org {
+		font-size: 0.92rem;
+		color: #e0e0e0;
+		margin: 0 0 0.6rem;
+	}
+	.timeline p:not(.org) {
+		font-size: 0.95rem;
+		line-height: 1.65;
+		color: #9f9f9f;
+		margin: 0;
+	}
+
+	/* Creative */
+	.creative {
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		gap: 1rem;
+	}
+	.creative-card {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		border: 1px solid #222;
+		border-radius: 18px;
+		background: #0b0b0b;
+		color: inherit;
+		text-decoration: none;
+		transition: border-color 0.2s ease;
+	}
+	.creative-card:hover {
+		border-color: #555;
+	}
+	.creative-card.photo :global(img) {
+		display: block;
+		width: 100%;
+		height: 300px;
+		margin: 0;
+		object-fit: cover;
+		border-radius: 0;
+		transition: transform 0.5s ease;
+	}
+	.creative-card.photo:hover :global(img) {
+		transform: scale(1.04);
+	}
+	.verse {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 0.4rem;
+		height: 300px;
+		padding: 2rem;
+		background:
+			radial-gradient(circle at 80% 20%, rgba(252, 61, 33, 0.22), transparent 55%),
+			linear-gradient(160deg, #1a1a1a, #070707);
+		font-family: Georgia, 'Times New Roman', serif;
 		font-style: italic;
-		border-left: 4px solid #ccc;
+		font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+		line-height: 1.45;
+		color: #f1f1f1;
+	}
+	.verse span:nth-child(2) {
 		padding-left: 1rem;
-		margin: 2rem 0;
-		color: #555;
+	}
+	.verse span:nth-child(3) {
+		padding-left: 2rem;
+	}
+	.verse small {
+		margin-top: 0.9rem;
+		font-family: var(--font-mono);
+		font-style: normal;
+		font-size: 0.7rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+	.creative-body {
+		padding: 1.5rem 1.6rem 1.75rem;
+	}
+	.creative-body h3 {
+		font-size: 1.35rem;
+		margin: 0.6rem 0 0.5rem;
+	}
+	.creative-body p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: #a8a8a8;
+		margin: 0 0 1rem;
+	}
+	.more {
+		font-weight: 700;
+		font-size: 0.92rem;
+		color: #fff;
+	}
+	.creative-card:hover .more {
+		color: var(--accent);
+	}
+
+	/* Quote */
+	.quote {
+		margin: 0 auto clamp(3.5rem, 8vw, 6.5rem);
+		max-width: 56rem;
+		text-align: center;
+	}
+	.quote blockquote {
+		position: relative;
+		margin: 0;
+		padding: 2.5rem 0 0;
+		border: 0;
+		font-style: normal;
+	}
+	.quote blockquote::before {
+		content: '“';
+		position: absolute;
+		top: -1.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		font-family: Georgia, serif;
+		font-size: 6rem;
+		line-height: 1;
+		color: var(--accent);
+	}
+	.quote p {
+		font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+		font-weight: 600;
+		line-height: 1.45;
+		letter-spacing: -0.01em;
+		color: #fff;
+		margin: 0;
+	}
+
+	/* Posts */
+	.see-all {
+		color: #fff;
+		font-weight: 700;
+		text-decoration: none;
+	}
+	.see-all:hover {
+		color: var(--accent);
+	}
+	.posts {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+	}
+	.post-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.55rem;
+		color: inherit;
+		text-decoration: none;
+	}
+	.post-img {
+		overflow: hidden;
+		border-radius: 14px;
+		margin-bottom: 0.4rem;
+		background: #111;
+	}
+	.post-img :global(img) {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+		margin: 0;
+		border-radius: 0;
+		transition: transform 0.4s ease;
+	}
+	.post-card:hover .post-img :global(img) {
+		transform: scale(1.05);
+	}
+	.post-card h3 {
+		font-size: 1.15rem;
+		line-height: 1.3;
+		margin: 0;
+	}
+	.post-card:hover h3 {
+		color: var(--accent);
+	}
+	.post-date {
+		font-size: 0.82rem;
+		color: #8a8a8a;
+	}
+
+	/* Contact */
+	.contact {
+		margin-bottom: clamp(3.5rem, 8vw, 6rem);
+		padding: clamp(2.5rem, 6vw, 4rem);
+		border-radius: 24px;
+		background:
+			radial-gradient(circle at 100% 0%, rgba(252, 61, 33, 0.28), transparent 50%),
+			linear-gradient(135deg, #161616, #080808);
+		border: 1px solid #262626;
+	}
+	.contact h2 {
+		font-size: clamp(1.9rem, 4vw, 3rem);
+		margin: 0 0 0.75rem;
+	}
+	.contact p {
+		color: #b0b0b0;
+		max-width: 46ch;
+		margin: 0 0 1.75rem;
+	}
+
+	/* ===== Responsive ===== */
+	@media (max-width: 860px) {
+		.hero,
+		.split,
+		.creative {
+			grid-template-columns: 1fr;
+		}
+		.hero {
+			gap: 2.5rem;
+		}
+		.portrait {
+			justify-self: center;
+			order: -1;
+			width: min(78%, 360px);
+		}
+		.split .block-head {
+			position: static;
+		}
+		.stats {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		.stat:nth-child(3) {
+			border-left: 0;
+		}
+		.stat:nth-child(n + 3) {
+			border-top: 1px solid #262626;
+		}
+		.posts {
+			grid-template-columns: 1fr;
+		}
+	}
+	@media (max-width: 520px) {
+		.stat {
+			padding: 1.25rem 0.75rem;
+		}
+		.creative-card.photo :global(img),
+		.verse {
+			height: 220px;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.creative-card :global(img),
+		.post-img :global(img) {
+			transition: none;
+			transform: none;
+		}
 	}
 </style>
