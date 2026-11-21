@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import portrait from '../assets/hero/about.jpg';
+import portraitCrop from '../assets/about-portrait.jpg';
 import photoCover from '../assets/traveling/MuCangChai-YenBai/IMG_8664.JPG';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -77,11 +78,13 @@ const journey = [
 				</div>
 				<figure class="portrait">
 					<Image
-						src={portrait}
+						src={portraitCrop}
 						alt="Chung Duc Nguyen Dang on the summit of Sa Mu, above a sea of clouds"
-						widths={[480, 720, 1080]}
-						sizes="(max-width: 860px) 90vw, 440px"
+						widths={[360, 440, 720, 880, 1320, 1600]}
+						sizes="(max-width: 860px) min(78vw, 360px), 440px"
+						quality={88}
 						loading="eager"
+						fetchpriority="high"
 					/>
 					<figcaption>Summit of Sa Mu, Son La</figcaption>
 				</figure>
@@ -324,7 +327,7 @@ const journey = [
 		height: auto;
 		margin: 0;
 		object-fit: cover;
-		object-position: 56% 35%;
+		object-position: 50% 40%;
 		border-radius: 20px;
 		box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 	}
