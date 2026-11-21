@@ -2,7 +2,7 @@
 title: 'Block Ack'
 description: 'How Block Ack works in 802.11: agreement setup with ADDBA, the Block Ack bitmap, immediate and delayed modes, A-MPDU, teardown and troubleshooting.'
 pubDate: 'August 12 2024'
-updatedDate: 'Oct 10 2026'
+updatedDate: 'Nov 21 2026'
 heroImage: '../../assets/hero/blockack.jpg'
 category: 'Wi-Fi'
 ---
@@ -100,7 +100,15 @@ The fields that matter most:
 
 ---
 
-The originator sends QoS data frames with the Ack Policy field in the QoS Control field set to Block Ack. The frames are spaced a SIFS apart or packed into one A-MPDU. The block may not exceed the negotiated buffer size, and it must also fit the TXOP limit of the access category.
+The originator sends QoS data frames, and the **Ack Policy** subfield of the QoS Control field tells the recipient how to respond:
+
+| Ack Policy (bits 5–6) | Meaning under a Block Ack agreement |
+|---|---|
+| 00 Normal Ack or Implicit BAR | in a single MPDU: send a normal ACK. Inside an A-MPDU: the A-MPDU itself requests a BlockAck after SIFS (implicit BAR) |
+| 11 Block Ack | do not respond now; the acknowledgment is requested later with an explicit BlockAckReq |
+| 10 No Ack | never acknowledged (not used for Block Ack traffic) |
+
+Without aggregation (the original 802.11e scheme), the frames carry the Block Ack policy and are spaced a SIFS apart, followed by a BlockAckReq. With A-MPDU, the frames carry Normal Ack/Implicit BAR and travel in one PPDU. Either way, the block may not exceed the negotiated buffer size, and it must fit the TXOP limit of the access category.
 
 The recipient keeps a record of which sequence numbers it has received. When the originator asks for an acknowledgment, the recipient reports that record in a BlockAck frame.
 
@@ -134,7 +142,7 @@ BlockAckReq and BlockAck are control frames. In Wireshark they appear as subtype
 
 The recipient delivers frames to the upper layer in sequence order. If one MPDU is missing, the frames behind it wait in the reorder buffer. They are released when the missing MPDU arrives, or when the window moves past it. The window moves in two ways: the originator gives up on an MPDU after its retry limit and sends newer frames, or it sends a BlockAckReq with a new starting sequence number.
 
-This is why one stubborn lost frame can make traffic arrive in bursts. The throughput is still there, but the delivery stalls until the hole is resolved.
+This is why one stubborn lost frame can make traffic arrive in bursts. The throughput is still there, but the delivery stalls until the hole is resolved. Implementations also release held frames after a reorder timeout, so a hole cannot block the window forever; Linux mac80211, for example, flushes the reorder buffer after about 100 ms (`HT_RX_REORDER_BUF_TIMEOUT`).
 
 ---
 
@@ -142,7 +150,9 @@ This is why one stubborn lost frame can make traffic arrive in bursts. The throu
 
 ---
 
-Since 802.11n, the usual operation is an A-MPDU followed by a BlockAck, with no explicit BAR. Sending an A-MPDU under a Block Ack agreement implicitly requests the acknowledgment, so the recipient answers after SIFS by itself. The explicit BlockAckReq is kept for recovery, for example when a BlockAck is lost, and for moving the window forward.
+Since 802.11n, the usual operation is an A-MPDU followed by a BlockAck, with no explicit BAR. The MPDUs in the aggregate carry the Normal Ack/Implicit BAR policy, which inside an A-MPDU means "answer with a BlockAck", so the recipient responds after SIFS by itself. The explicit BlockAckReq is kept for recovery, for example when a BlockAck is lost, and for moving the window forward.
+
+How much fits in one A-MPDU is limited three ways: by the Block Ack window (no more MPDUs than the buffer size), by the maximum A-MPDU length the recipient advertises in its capabilities (up to 65,535 bytes for HT, 1,048,575 bytes for VHT and 6,500,631 bytes for HE), and by the maximum PPDU duration of about 5.484 ms.
 
 The window and the bitmap have grown with each generation:
 
@@ -150,10 +160,12 @@ The window and the bitmap have grown with each generation:
 |----------|------------------|----------------|-------------|
 | 802.11n  | Wi-Fi 4          | 64 MPDUs       | 64 bits (compressed) |
 | 802.11ac | Wi-Fi 5          | 64 MPDUs       | 64 bits |
-| 802.11ax | Wi-Fi 6          | 256 MPDUs      | 256 bits |
-| 802.11be | Wi-Fi 7          | 1024 MPDUs     | 1024 bits |
+| 802.11ax | Wi-Fi 6          | 256 MPDUs      | 32, 64, 128 or 256 bits |
+| 802.11be | Wi-Fi 7          | 1024 MPDUs     | up to 512 or 1024 bits |
 
-A larger window lets an AP keep very wide channels busy, as covered in [Wi-Fi 7](/blog/wifi7/). It also needs more buffer memory on every client. Wi-Fi 6 also adds the Multi-STA BlockAck, which lets the AP acknowledge frames from several stations in one response after a Trigger-based uplink transmission.
+A larger window lets an AP keep very wide channels busy, as covered in [Wi-Fi 7](/blog/wifi7/). It also needs more buffer memory on every client. Wi-Fi 6 also adds the Multi-STA BlockAck, which lets the AP acknowledge frames from several stations in one response after a Trigger-based uplink transmission. To make room for these variants, 802.11ax redefines bits 1 to 4 of the BA Control field as a 4-bit **BA Type** (Basic, Compressed, Extended Compressed, Multi-TID, GCR, GLK-GCR, Multi-STA), replacing the separate Multi-TID, Compressed Bitmap and GCR bits shown in the frame format figure above.
+
+With Wi-Fi 7 multi-link operation, the agreement is negotiated between the two **MLDs** rather than between individual radios. One ADDBA exchange covers a TID on every link it is mapped to, and the sequence number space is shared across links, so an MPDU sent on one link can be acknowledged or retransmitted on another.
 
 ---
 
@@ -194,7 +206,14 @@ Useful Wireshark filters:
 | ADDBA and DELBA action frames     | `wlan.fc.type_subtype == 0x0d && wlan.fixed.category_code == 3` |
 | BlockAckReq and BlockAck          | `wlan.fc.type_subtype in {0x18 0x19}` |
 | BlockAck only                     | `wlan.fc.type_subtype == 0x19` |
+| ADDBA Responses that were declined | `wlan.fixed.category_code == 3 && wlan.fixed.action_code == 1 && wlan.fixed.status_code != 0` |
 | Retransmissions                   | `wlan.fc.retry == 1` |
+
+On Linux, mac80211 shows the active agreements per station in debugfs, including the TID, window size and starting sequence number for each direction:
+
+```sh
+cat /sys/kernel/debug/ieee80211/phy0/netdev:wlan0/stations/<peer-mac>/agg_status
+```
 
 ---
 
@@ -202,8 +221,12 @@ Useful Wireshark filters:
 
 ---
 
-- IEEE Std 802.11-2020, Block Ack operation
-- IEEE 802.11e-2005, which introduced Block Ack
-- IEEE 802.11n-2009, which added A-MPDU, the compressed bitmap and implicit BAR
-- IEEE 802.11ax-2021, which added the 256 window and Multi-STA BlockAck
-- IEEE 802.11be, which added the 1024 window
+- IEEE Std 802.11-2020: block acknowledgment procedures, the ADDBA/DELBA action frames, the BlockAckReq and BlockAck control frames, and the QoS Control Ack Policy subfield
+- IEEE Std 802.11e-2005, which introduced Block Ack (immediate and delayed)
+- IEEE Std 802.11n-2009, which added A-MPDU, HT-immediate Block Ack with the compressed bitmap, and the implicit BAR
+- IEEE Std 802.11ax-2021, which added the 256-MPDU window, the BA Type field and Multi-STA BlockAck
+- IEEE Std 802.11be, which added the 1024-MPDU window and multi-link Block Ack agreements
+- E. Perahia and R. Stacey, *Next Generation Wireless LANs: 802.11n and 802.11ac*, 2nd ed., Cambridge University Press, 2013 (aggregation and Block Ack)
+- M. Gast, *802.11n: A Survival Guide*, O'Reilly, 2012
+- Linux kernel, `net/mac80211/agg-tx.c`, `agg-rx.c` and the reorder buffer in `rx.c`
+- Wireshark display filter reference for `wlan` fields
