@@ -1,172 +1,570 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { SITE_TITLE } from '../../consts';
 import { slugify } from '../../utils';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const postsByCategory = posts.reduce<Record<string, typeof posts>>((acc, post) => {
-	const category = post.data.category;
-	(acc[category] ??= []).push(post);
-	return acc;
-}, {});
+/** Plain-text first paragraph, used when a post's description is only its title or a placeholder. */
+function excerpt(body = '', max = 170) {
+	const text = body
+		.replace(/```[\s\S]*?```/g, ' ')
+		.replace(/\$\$[\s\S]*?\$\$/g, ' ')
+		.split(/\n\s*\n/)
+		.map((p) => p.trim())
+		.find((p) => p && !/^(#|>|!\[|\||-{3,}|<|\s*[-*] |\d+\. )/.test(p));
+	if (!text) return '';
+	const plain = text
+		.replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+		.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+		.replace(/[*_`]/g, '')
+		.replace(/\$([^$]+)\$/g, '$1')
+		.replace(/\s+/g, ' ')
+		.trim();
+	return plain.length > max ? plain.slice(0, plain.lastIndexOf(' ', max)) + '…' : plain;
+}
 
-// Sắp xếp chủ đề theo bảng chữ cái tiếng Việt
-const categories = Object.keys(postsByCategory).sort((a, b) =>
-	a.localeCompare(b, 'vi'),
-);
+const summary = (p: (typeof posts)[number]) => {
+	const d = p.data.description.trim();
+	const weak = d.length < 60 || /lorem ipsum/i.test(d) || d.toLowerCase() === p.data.title.toLowerCase();
+	return weak ? excerpt(p.body) || d : d;
+};
+const readingTime = (body = '') => Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 230));
+
+const cards = posts.map((p) => ({
+	id: p.id,
+	title: p.data.title,
+	category: p.data.category,
+	topic: slugify(p.data.category),
+	date: p.data.pubDate,
+	image: p.data.heroImage,
+	summary: summary(p),
+	minutes: readingTime(p.body),
+}));
+
+const featured = cards[0];
+
+const topics = Object.entries(
+	cards.reduce<Record<string, number>>((acc, c) => ((acc[c.category] = (acc[c.category] ?? 0) + 1), acc), {}),
+).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-
-		<style>
-			.page-banner {
-				background: var(--space);
-				color: #fff;
-				padding: 5rem 1.5rem 3.5rem;
-				border-bottom: 4px solid var(--accent);
-			}
-
-			.page-banner > div {
-				max-width: 1600px;
-				margin: 0 auto;
-			}
-
-			.page-banner h1 {
-				color: #fff;
-				font-size: clamp(3rem, 8vw, 6rem);
-				font-weight: 900;
-				margin: 0.75rem 0 1rem;
-			}
-
-			.page-banner p:not(.eyebrow) {
-				color: #ccc;
-				font-size: 1.15rem;
-				max-width: 55ch;
-				margin: 0;
-			}
-
-			.blog-layout {
-				width: auto;
-				max-width: 1600px;
-				margin: 0 auto;
-				padding: 3.5rem 1.5rem;
-			}
-
-			.year-section {
-				margin-bottom: 2.5rem;
-			}
-
-			.year-heading {
-				font-family: var(--font-mono);
-				font-size: 0.9rem;
-				font-weight: 500;
-				text-transform: uppercase;
-				letter-spacing: 0.12em;
-				color: var(--accent);
-				margin-bottom: 0.5rem;
-				padding-bottom: 0.6rem;
-				border-bottom: 2px solid #000;
-				scroll-margin-top: 90px;
-			}
-
-			.count {
-				font-weight: 400;
-				opacity: 0.6;
-			}
-
-			.posts-list {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-			}
-
-			.post-item a {
-				display: flex;
-				justify-content: space-between;
-				align-items: baseline;
-				gap: 1rem;
-				padding: 0.9rem 0.75rem;
-				text-decoration: none;
-				border-bottom: 1px solid #e5e5e5;
-				border-left: 4px solid transparent;
-				transition: background 0.15s ease, border-color 0.15s ease;
-			}
-
-			.post-item a:hover {
-				background: #f6f6f6;
-				border-left-color: var(--accent);
-			}
-
-			.post-item a:hover .post-title {
-				text-decoration: underline;
-				text-underline-offset: 4px;
-			}
-
-			.post-title {
-				font-size: 1.25rem;
-				font-weight: 700;
-				color: rgb(var(--black));
-				transition: color 0.15s ease;
-				line-height: 1.4;
-			}
-
-			.post-date {
-				font-family: var(--font-mono);
-				font-size: 0.8rem;
-				text-transform: uppercase;
-				color: #666;
-				white-space: nowrap;
-				flex-shrink: 0;
-			}
-
-			@media (max-width: 480px) {
-				.post-item a {
-					flex-direction: column;
-					gap: 0.1rem;
-				}
-			}
-		</style>
+		<BaseHead
+			title={`Blog | ${SITE_TITLE}`}
+			description="Articles on networking, Wi-Fi, embedded Linux and software, plus travel notes and poetry."
+		/>
 	</head>
 	<body>
 		<Header />
-		<section class="page-banner">
-			<div>
-				<p class="eyebrow">{posts.length} articles · {categories.length} topics</p>
-				<h1>Blog</h1>
-				<p>Notes from the field on Wi-Fi, embedded Linux, networking, and the occasional poem.</p>
-			</div>
-		</section>
-		<main class="blog-layout">
-			{categories.map((category) => (
-				<div class="year-section">
-					<h2 class="year-heading" id={slugify(category)}>
-						{category} <span class="count">({postsByCategory[category].length})</span>
-					</h2>
-					<ul class="posts-list">
-						{postsByCategory[category].map((post) => (
-							<li class="post-item">
-								<a href={`/blog/${post.id}/`}>
-									<span class="post-title">{post.data.title}</span>
-									<span class="post-date">
-										<FormattedDate date={post.data.pubDate} />
-									</span>
-								</a>
-							</li>
-						))}
-					</ul>
+		<main class="blog">
+			<!-- ===== Banner ===== -->
+			<section class="banner">
+				<div class="banner-text">
+					<p class="eyebrow">{cards.length} articles · {topics.length} topics</p>
+					<h1>Blog</h1>
+					<p class="intro">
+						Notes from the field on networking, Wi-Fi, embedded Linux and software engineering, plus the occasional
+						journey and poem.
+					</p>
 				</div>
-			))}
+				<label class="search">
+					<svg viewBox="0 0 24 24" aria-hidden="true"
+						><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"></circle><path
+							d="M20 20l-3.5-3.5"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"></path></svg
+					>
+					<span class="sr-only">Search articles</span>
+					<input id="q" type="search" placeholder="Search articles…" autocomplete="off" />
+					<kbd>/</kbd>
+				</label>
+			</section>
+
+			<!-- ===== Featured ===== -->
+			{
+				featured && (
+					<a class="featured" href={`/blog/${featured.id}/`}>
+						<div class="featured-img">
+							{featured.image && (
+								<Image
+									src={featured.image}
+									alt=""
+									widths={[640, 960, 1280]}
+									sizes="(max-width: 900px) 100vw, 60vw"
+									loading="eager"
+								/>
+							)}
+						</div>
+						<div class="featured-body">
+							<p class="meta">
+								<span class="tag">Latest · {featured.category}</span>
+							</p>
+							<h2>{featured.title}</h2>
+							<p class="summary">{featured.summary}</p>
+							<p class="meta muted">
+								<FormattedDate date={featured.date} /> · {featured.minutes} min read
+							</p>
+							<span class="read">
+								Read article <span aria-hidden="true">→</span>
+							</span>
+						</div>
+					</a>
+				)
+			}
+
+			<!-- ===== Topic filter ===== -->
+			<nav class="filters" aria-label="Filter by topic">
+				<div class="chips">
+					<button type="button" class="chip active" data-filter="all" aria-pressed="true">
+						All <span>{cards.length}</span>
+					</button>
+					{
+						topics.map(([name, count]) => (
+							<button type="button" class="chip" data-filter={slugify(name)} aria-pressed="false">
+								{name} <span>{count}</span>
+							</button>
+						))
+					}
+				</div>
+			</nav>
+
+			<!-- ===== Grid ===== -->
+			<section class="grid" aria-live="polite">
+				{
+					cards.map((c, i) => (
+						<a
+							class="card"
+							data-latest={i === 0 ? '' : undefined}
+							hidden={i === 0}
+							href={`/blog/${c.id}/`}
+							data-card
+							data-topic={c.topic}
+							data-text={`${c.title} ${c.category} ${c.summary}`.toLowerCase()}
+						>
+							<div class="card-img">
+								{c.image && <Image src={c.image} alt="" width={640} height={360} />}
+							</div>
+							<div class="card-body">
+								<span class="tag">{c.category}</span>
+								<h3>{c.title}</h3>
+								<p class="summary">{c.summary}</p>
+								<p class="meta muted">
+									<FormattedDate date={c.date} /> · {c.minutes} min read
+								</p>
+							</div>
+						</a>
+					))
+				}
+			</section>
+			<p class="empty" hidden>No articles match your search.</p>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	:global(html),
+	:global(body) {
+		background: #000;
+	}
+	:global(body) {
+		color: #d6d6d6;
+	}
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+
+	.blog {
+		width: auto;
+		max-width: 1320px;
+		margin: 0 auto;
+		padding: 0 max(1.5rem, env(safe-area-inset-left)) clamp(3rem, 7vw, 5rem) max(1.5rem, env(safe-area-inset-right));
+	}
+	.blog h1,
+	.blog h2,
+	.blog h3 {
+		color: #fff;
+	}
+
+	/* ===== Banner ===== */
+	.banner {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 2rem;
+		flex-wrap: wrap;
+		padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
+	}
+	.banner h1 {
+		font-size: clamp(3rem, 8vw, 6rem);
+		font-weight: 900;
+		line-height: 0.95;
+		letter-spacing: -0.04em;
+		margin: 0.5rem 0 1rem;
+	}
+	.intro {
+		max-width: 52ch;
+		margin: 0;
+		font-size: clamp(1rem, 1.5vw, 1.15rem);
+		line-height: 1.6;
+		color: #a8a8a8;
+	}
+	.search {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		width: min(100%, 360px);
+		padding: 0.7rem 0.9rem;
+		border: 1px solid #2c2c2c;
+		border-radius: 999px;
+		background: #0e0e0e;
+		color: #8a8a8a;
+		transition: border-color 0.15s ease;
+	}
+	.search:focus-within {
+		border-color: var(--accent);
+	}
+	.search svg {
+		width: 18px;
+		height: 18px;
+		flex: 0 0 18px;
+	}
+	.search input {
+		flex: 1;
+		min-width: 0;
+		border: 0;
+		outline: 0;
+		background: transparent;
+		color: #fff;
+		font: inherit;
+		font-size: 0.95rem;
+	}
+	.search kbd {
+		padding: 0.05rem 0.45rem;
+		border: 1px solid #333;
+		border-radius: 6px;
+		font-family: var(--font-mono);
+		font-size: 0.75rem;
+		color: #777;
+	}
+
+	/* ===== Shared bits ===== */
+	.tag {
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+	.meta {
+		margin: 0;
+	}
+	.muted {
+		font-size: 0.8rem;
+		color: #7d7d7d;
+	}
+	.summary {
+		color: #a3a3a3;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	/* ===== Featured ===== */
+	.featured {
+		display: grid;
+		grid-template-columns: 1.35fr 1fr;
+		overflow: hidden;
+		border: 1px solid #222;
+		border-radius: 22px;
+		background: #0b0b0b;
+		color: inherit;
+		text-decoration: none;
+		transition: border-color 0.2s ease;
+	}
+	.featured:hover {
+		border-color: #4a4a4a;
+	}
+	.featured[hidden] {
+		display: none;
+	}
+	.featured-img {
+		overflow: hidden;
+		background: #111;
+		min-height: 300px;
+	}
+	.featured-img :global(img) {
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		border-radius: 0;
+		object-fit: cover;
+		transition: transform 0.5s ease;
+	}
+	.featured:hover .featured-img :global(img) {
+		transform: scale(1.03);
+	}
+	.featured-body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1rem;
+		padding: clamp(1.75rem, 4vw, 3rem);
+	}
+	.featured-body h2 {
+		font-size: clamp(1.7rem, 3vw, 2.5rem);
+		line-height: 1.12;
+		margin: 0;
+	}
+	.featured-body .summary {
+		font-size: 1rem;
+	}
+	.read {
+		font-weight: 700;
+		color: #fff;
+	}
+	.featured:hover .read {
+		color: var(--accent);
+	}
+
+	/* ===== Filters ===== */
+	.filters {
+		position: sticky;
+		top: 64px;
+		z-index: 20;
+		margin: clamp(2.5rem, 5vw, 3.5rem) 0 1.75rem;
+		padding: 0.85rem 0;
+		background: rgba(0, 0, 0, 0.88);
+		backdrop-filter: blur(10px);
+		border-bottom: 1px solid #1d1d1d;
+	}
+	.chips {
+		display: flex;
+		gap: 0.5rem;
+		overflow-x: auto;
+		scrollbar-width: none;
+		-webkit-mask-image: linear-gradient(to right, #000 92%, transparent);
+		mask-image: linear-gradient(to right, #000 92%, transparent);
+		padding-right: 2rem;
+	}
+	.chips::-webkit-scrollbar {
+		display: none;
+	}
+	.chip {
+		flex: 0 0 auto;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		padding: 0.45rem 0.95rem;
+		border: 1px solid #2e2e2e;
+		border-radius: 999px;
+		background: #0e0e0e;
+		color: #d8d8d8;
+		font: inherit;
+		font-size: 0.85rem;
+		font-weight: 600;
+		cursor: pointer;
+		scroll-margin-top: 140px;
+		transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+	.chip span {
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		color: #7a7a7a;
+	}
+	.chip:hover {
+		border-color: #666;
+	}
+	.chip.active {
+		background: #fff;
+		border-color: #fff;
+		color: #000;
+	}
+	.chip.active span {
+		color: var(--accent-dark);
+	}
+
+	/* ===== Grid ===== */
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+	}
+	.card {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		border: 1px solid #1f1f1f;
+		border-radius: 18px;
+		background: #0b0b0b;
+		color: inherit;
+		text-decoration: none;
+		transition: border-color 0.2s ease, transform 0.2s ease;
+	}
+	.card:hover {
+		border-color: #474747;
+		transform: translateY(-3px);
+	}
+	.card[hidden] {
+		display: none;
+	}
+	.card-img {
+		overflow: hidden;
+		aspect-ratio: 16 / 9;
+		background: #111;
+	}
+	.card-img :global(img) {
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		border-radius: 0;
+		object-fit: cover;
+		transition: transform 0.45s ease;
+	}
+	.card:hover .card-img :global(img) {
+		transform: scale(1.05);
+	}
+	.card-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		flex: 1;
+		padding: 1.25rem 1.35rem 1.4rem;
+	}
+	.card-body h3 {
+		font-size: 1.15rem;
+		line-height: 1.3;
+		margin: 0;
+	}
+	.card:hover h3 {
+		color: var(--accent);
+	}
+	.card-body .summary {
+		font-size: 0.9rem;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.card-body .muted {
+		margin-top: auto;
+		padding-top: 0.4rem;
+	}
+
+	.empty {
+		padding: 3rem 0;
+		text-align: center;
+		color: #8a8a8a;
+	}
+
+	/* ===== Responsive ===== */
+	@media (max-width: 1024px) {
+		.grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@media (max-width: 900px) {
+		.featured {
+			grid-template-columns: 1fr;
+		}
+		.featured-img {
+			min-height: 0;
+			aspect-ratio: 16 / 9;
+		}
+	}
+	@media (max-width: 640px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+		.search {
+			width: 100%;
+		}
+		.search kbd {
+			display: none;
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.card,
+		.card:hover,
+		.card-img :global(img),
+		.featured-img :global(img) {
+			transition: none;
+			transform: none;
+		}
+	}
+</style>
+
+<script>
+	const input = document.querySelector<HTMLInputElement>('#q')!;
+	const chips = [...document.querySelectorAll<HTMLButtonElement>('.chip')];
+	const featured = document.querySelector<HTMLElement>('.featured');
+	const cards = [...document.querySelectorAll<HTMLElement>('.card')];
+	const empty = document.querySelector<HTMLElement>('.empty')!;
+	let topic = 'all';
+
+	const apply = () => {
+		const q = input.value.trim().toLowerCase();
+		// Without a filter the latest post is shown as the large featured card; with a filter it joins the grid.
+		const filtering = topic !== 'all' || q !== '';
+		if (featured) featured.hidden = filtering;
+		let shown = 0;
+		cards.forEach((c) => {
+			const ok =
+				(filtering || !('latest' in c.dataset)) &&
+				(topic === 'all' || c.dataset.topic === topic) &&
+				(!q || c.dataset.text!.includes(q));
+			c.hidden = !ok;
+			if (ok) shown++;
+		});
+		empty.hidden = shown > 0 || !filtering;
+	};
+
+	const select = (t: string, updateHash = true) => {
+		topic = chips.some((c) => c.dataset.filter === t) ? t : 'all';
+		chips.forEach((c) => {
+			const on = c.dataset.filter === topic;
+			c.classList.toggle('active', on);
+			c.setAttribute('aria-pressed', String(on));
+			if (on) c.parentElement!.scrollTo({ left: c.offsetLeft - c.parentElement!.clientWidth / 2 + c.clientWidth / 2 });
+		});
+		if (updateHash) history.replaceState(null, '', topic === 'all' ? location.pathname : `#${topic}`);
+		apply();
+	};
+
+	chips.forEach((c) => c.addEventListener('click', () => select(c.dataset.filter!)));
+	input.addEventListener('input', apply);
+	addEventListener('keydown', (e) => {
+		if (e.key === '/' && document.activeElement !== input) {
+			e.preventDefault();
+			input.focus();
+		} else if (e.key === 'Escape' && document.activeElement === input) {
+			input.value = '';
+			apply();
+		}
+	});
+
+	// Links such as /blog#wi-fi (from the home page topic list) open with that topic selected.
+	const fromHash = () => {
+		if (!location.hash) return;
+		select(decodeURIComponent(location.hash.slice(1)), false);
+		document.querySelector('.filters')?.scrollIntoView({ block: 'start' });
+	};
+	addEventListener('hashchange', fromHash);
+	fromHash();
+</script>
