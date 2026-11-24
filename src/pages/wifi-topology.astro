@@ -1,0 +1,1282 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+import katex from 'katex';
+import 'katex/dist/katex.min.css';
+
+// Formulas for the "How the model works" cards, rendered to HTML at build time.
+const tex = (src: string) => katex.renderToString(src, { displayMode: true, throwOnError: true, output: 'html' });
+const math = {
+	rx: tex(String.raw`P_{\text{rx}} = P_{\text{tx}} - PL(d)`),
+	pl: tex(String.raw`PL(d) = \mathrm{FSPL}_{1\,\text{m}} + 10\,n\log_{10} d + \sum_{k} L_{\text{wall},k}`),
+	fspl: tex(String.raw`\mathrm{FSPL}_{1\,\text{m}} = 20\log_{10} f_{\text{MHz}} - 27.55`),
+	noise: tex(String.raw`N = -174 + 10\log_{10} B + NF \quad [\text{dBm}]`),
+	snr: tex(String.raw`\mathrm{SNR} = P_{\text{rx}} - N`),
+	rate: tex(String.raw`T \approx 0.65 \cdot R_{20}(\mathrm{MCS}) \cdot \frac{\text{tones}(B)}{234} \cdot N_{ss}`),
+	hops: tex(String.raw`T_{\text{e2e}} = \left( \sum_{i=1}^{h} \frac{1}{T_i} \right)^{-1}`),
+	hopsEx: tex(String.raw`\left(\tfrac{1}{600} + \tfrac{1}{600}\right)^{-1} = 300\ \text{Mb/s}`),
+	client: tex(String.raw`T_{\text{client}} = \begin{cases} \left(\tfrac{1}{T_{\text{link}}} + \tfrac{1}{T_{\text{bh}}}\right)^{-1} & \text{same band} \\[4pt] \min\left(T_{\text{link}},\, T_{\text{bh}}\right) & \text{otherwise} \end{cases}`),
+	cca: tex(String.raw`P_{\text{rx}}(\text{AP}_a \to \text{AP}_b) \ge -82\ \text{dBm} \;\Rightarrow\; \text{neighbours}`),
+};
+
+// Lucide-style 24px stroke icons
+const icon = {
+	select: '<path d="M4 4l7 17 2.5-7.5L21 11z"/>',
+	ap: '<rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 17.5h.01M11 17.5h.01"/><path d="M8.5 10.5a5 5 0 0 1 7 0"/><path d="M5.5 7.5a9 9 0 0 1 13 0"/>',
+	sta: '<rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/>',
+	wall: '<rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9.3h18M3 14.7h18M9 4v5.3M15 9.3v5.4M9 14.7V20"/>',
+	trash: '<path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/>',
+	share: '<path d="M10 14a4 4 0 0 0 5.66 0l3-3a4 4 0 0 0-5.66-5.66l-1 1"/><path d="M14 10a4 4 0 0 0-5.66 0l-3 3a4 4 0 0 0 5.66 5.66l1-1"/>',
+	download: '<path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>',
+	upload: '<path d="M12 21V9M7 14l5-5 5 5M4 4h16"/>',
+	image: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/>',
+	reset: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>',
+	layers: '<path d="M12 2l10 6-10 6L2 8z"/><path d="M2 16l10 6 10-6"/>',
+};
+const I = (k: keyof typeof icon) => `<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon[k]}</svg>`;
+const tools = [
+	{ mode: 'select', label: 'Select', key: 'V', icon: 'select' },
+	{ mode: 'ap', label: 'Access point', key: 'A', icon: 'ap' },
+	{ mode: 'sta', label: 'Client', key: 'C', icon: 'sta' },
+	{ mode: 'wall', label: 'Wall', key: 'W', icon: 'wall' },
+	{ mode: 'delete', label: 'Delete', key: 'D', icon: 'trash' },
+] as const;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Wi-Fi Topology Visualizer | ${SITE_TITLE}`}
+			description="Interactive Wi-Fi topology visualizer: place a gateway, mesh nodes, clients and walls on a floor plan and see coverage heatmaps, mesh backhaul paths, client association, channel plans and estimated throughput for Wi-Fi 6, 6E and 7."
+		/>
+	</head>
+	<body class="wt-page">
+		<Header />
+		<main class="wt" id="wt-root">
+			<header class="wt-hero">
+				<nav class="wt-crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Tools</span><span>/</span><span aria-current="page">Wi-Fi Topology</span></nav>
+				<div class="wt-hero-row">
+					<div>
+						<h1>Wi-Fi Topology Visualizer</h1>
+						<p class="wt-lede">
+							Plan a home or office network on a floor plan. The tool models signal through walls, mesh backhaul, client steering,
+							channel reuse and end-to-end throughput, all running in your browser.
+						</p>
+					</div>
+					<ul class="wt-badges">
+						<li>Wi-Fi 6 · 6E · 7</li>
+						<li>Mesh backhaul</li>
+						<li>EasyMesh-style steering</li>
+						<li>No data leaves your browser</li>
+					</ul>
+				</div>
+			</header>
+
+			<section class="wt-app" aria-label="Topology editor">
+				<div class="wt-appbar" role="toolbar" aria-label="Editing tools">
+					<div class="wt-seg">
+						{tools.map((t) => (
+							<button type="button" data-mode={t.mode} title={`${t.label} (${t.key})`} aria-label={t.label}>
+								<Fragment set:html={I(t.icon)} />
+								<span class="wt-seg-label">{t.label}</span>
+								<kbd>{t.key}</kbd>
+							</button>
+						))}
+					</div>
+					<label id="wt-material-wrap" class="wt-material" hidden>
+						<span>Material</span>
+						<select id="wt-material">
+							<option value="drywall">Drywall</option>
+							<option value="glass">Glass (low-E)</option>
+							<option value="wood">Wood door</option>
+							<option value="brick" selected>Brick</option>
+							<option value="concrete">Concrete</option>
+							<option value="metal">Metal</option>
+						</select>
+					</label>
+					<div class="wt-actions">
+						<label class="wt-select-wrap">
+							<Fragment set:html={I('layers')} />
+							<select id="wt-preset" aria-label="Load a preset">
+								<option value="">Load preset</option>
+								<option value="apartment">Apartment, one router</option>
+								<option value="house">House, 3-node wireless mesh</option>
+								<option value="office">Office, wired backhaul</option>
+								<option value="chain">Daisy chain (why hops hurt)</option>
+							</select>
+						</label>
+						<span class="wt-divider"></span>
+						<button type="button" class="wt-icon-btn" id="wt-share" title="Copy a share link"><Fragment set:html={I('share')} /><span>Share</span></button>
+						<button type="button" class="wt-icon-btn" id="wt-export" title="Export JSON"><Fragment set:html={I('download')} /><span>Export</span></button>
+						<label class="wt-icon-btn" title="Import JSON"><Fragment set:html={I('upload')} /><span>Import</span><input type="file" id="wt-import" accept="application/json,.json" /></label>
+						<button type="button" class="wt-icon-btn" id="wt-png" title="Download the floor plan as PNG"><Fragment set:html={I('image')} /><span>PNG</span></button>
+						<button type="button" class="wt-icon-btn wt-danger" id="wt-clear" title="Remove all nodes and walls"><Fragment set:html={I('reset')} /><span>Clear</span></button>
+					</div>
+				</div>
+
+				<div id="wt-stats" class="wt-kpis" aria-live="polite"></div>
+
+				<div class="wt-body">
+					<div class="wt-stage">
+						<div class="wt-canvas-wrap">
+							<canvas id="wt-canvas" aria-label="Floor plan with access points, clients and walls"></canvas>
+							<div id="wt-tip" class="wt-tip" hidden></div>
+						</div>
+						<div class="wt-canvas-foot">
+							<div class="wt-legend">
+								<span><i class="sq"></i>Gateway</span>
+								<span><i class="dot"></i>Mesh node</span>
+								<span><i class="dot sm" style="--c:#f2a93b"></i>2.4 GHz</span>
+								<span><i class="dot sm" style="--c:#4c8dff"></i>5 GHz</span>
+								<span class="wt-6g"><i class="dot sm" style="--c:#3fb27f"></i>6 GHz</span>
+								<span><i class="ln"></i>Wireless backhaul</span>
+								<span><i class="ln dash"></i>Ethernet</span>
+							</div>
+							<div class="wt-scale" id="wt-scale">
+								<span id="wt-scale-title">RSSI</span>
+								<i></i>
+								<span class="wt-scale-ends"><b>−50</b><b>−70</b><b>−90 dBm</b></span>
+							</div>
+						</div>
+						<div class="wt-statusbar">
+							<span id="wt-hint"></span>
+							<span id="wt-status" class="wt-mono"></span>
+						</div>
+					</div>
+
+					<aside class="wt-side">
+						<section class="wt-panel wt-inspector">
+							<header class="wt-panel-head"><h2>Inspector</h2></header>
+							<div id="wt-details" class="wt-details"></div>
+						</section>
+
+						<section class="wt-panel">
+							<div class="wt-tabs" role="tablist">
+								<button type="button" role="tab" data-tab="net" class="active">Network</button>
+								<button type="button" role="tab" data-tab="radio">Radio</button>
+								<button type="button" role="tab" data-tab="view">View</button>
+							</div>
+							<div class="wt-tabpanel" data-panel="net">
+								<label class="wt-field"><span>Standard</span>
+									<select id="wt-std">
+										<option value="wifi6">Wi-Fi 6 (2.4 + 5 GHz)</option>
+										<option value="wifi6e">Wi-Fi 6E (+ 6 GHz)</option>
+										<option value="wifi7">Wi-Fi 7 (4096-QAM, 320 MHz)</option>
+									</select>
+								</label>
+								<label class="wt-field"><span>Mesh backhaul band</span>
+									<select id="wt-bh"><option value="5">5 GHz</option><option value="6">6 GHz</option></select>
+								</label>
+								<label class="wt-field"><span>Client steering</span>
+									<select id="wt-steer">
+										<option value="rssi">Client chooses (loudest AP)</option>
+										<option value="controller">Controller steers (best end-to-end)</option>
+									</select>
+								</label>
+								<label class="wt-field" id="wt-steerrssi-wrap"><span>Band-steer threshold <output id="wt-steerrssi-out"></output></span>
+									<input type="range" id="wt-steerrssi" min="-80" max="-55" step="1" />
+								</label>
+								<label class="wt-field"><span>Default spatial streams</span>
+									<select id="wt-nss"><option value="1">1×1</option><option value="2">2×2</option><option value="3">3×3</option><option value="4">4×4</option></select>
+								</label>
+							</div>
+							<div class="wt-tabpanel" data-panel="radio" hidden>
+								<div class="wt-grid3">
+									<span></span><b>2.4</b><b>5</b><b class="wt-6g">6 GHz</b>
+									<span>Tx dBm</span>
+									<input type="number" id="wt-tx24" min="0" max="30" />
+									<input type="number" id="wt-tx5" min="0" max="30" />
+									<input type="number" id="wt-tx6" min="0" max="30" class="wt-6g" />
+									<span>Width</span>
+									<select id="wt-bw24"><option>20</option><option>40</option></select>
+									<select id="wt-bw5"><option>20</option><option>40</option><option>80</option><option>160</option></select>
+									<select id="wt-bw6" class="wt-6g"><option>20</option><option>40</option><option>80</option><option>160</option><option>320</option></select>
+								</div>
+								<label class="wt-field"><span>Path-loss exponent <output id="wt-n-out"></output></span>
+									<input type="range" id="wt-n" min="2" max="4" step="0.1" />
+								</label>
+								<p class="wt-note">2.0 is free space. 3.0–3.5 fits a furnished home. Widths are MHz.</p>
+							</div>
+							<div class="wt-tabpanel" data-panel="view" hidden>
+								<label class="wt-field"><span>Heatmap</span>
+									<select id="wt-heat">
+										<option value="rssi">Signal strength (RSSI)</option>
+										<option value="rate">Best achievable rate</option>
+										<option value="ap">Serving AP (roaming cells)</option>
+										<option value="off">Off</option>
+									</select>
+								</label>
+								<label class="wt-field"><span>Heatmap band</span>
+									<select id="wt-heatband"><option value="2.4">2.4 GHz</option><option value="5">5 GHz</option><option value="6">6 GHz</option></select>
+								</label>
+								<label class="wt-switch"><input type="checkbox" id="wt-labels" /><i></i><span>Show labels</span></label>
+								<div class="wt-size">
+									<label class="wt-field"><span>Width (m)</span><input type="number" id="wt-w" min="5" max="100" /></label>
+									<label class="wt-field"><span>Depth (m)</span><input type="number" id="wt-h" min="5" max="100" /></label>
+								</div>
+							</div>
+						</section>
+					</aside>
+				</div>
+
+				<div class="wt-lower">
+					<section class="wt-panel">
+						<header class="wt-panel-head"><h2>Insights</h2></header>
+						<ul id="wt-warnings" class="wt-insights"></ul>
+					</section>
+					<section class="wt-panel wt-treecard">
+						<header class="wt-panel-head">
+							<h2>Logical topology</h2>
+							<p>Backhaul tree from the gateway, with clients under the AP they joined. Click a node to inspect it.</p>
+						</header>
+						<div class="wt-treewrap"><svg id="wt-tree" role="img" aria-label="Logical topology tree"></svg></div>
+					</section>
+				</div>
+			</section>
+
+			<section class="wt-docs">
+				<div class="wt-docs-head">
+					<h2>How the model works</h2>
+					<p>
+						A planning sketch rather than a site survey: simple, well-known models that show <em>why</em> a layout works. Real buildings,
+						furniture, antennas and client radios will differ by several dB.
+					</p>
+				</div>
+				<div class="wt-docs-grid">
+					<article>
+						<span class="wt-docs-num">01</span>
+						<h3>Signal strength</h3>
+						<p>Received power is transmit power minus path loss, using the log-distance model:</p>
+						<div class="wt-math" set:html={math.rx} />
+						<div class="wt-math" set:html={math.pl} />
+						<div class="wt-math" set:html={math.fspl} />
+						<p>That gives about 40, 47 and 49 dB at 1 m for 2.4, 5 and 6 GHz. <em>n</em> is the path-loss exponent. Each wall the ray crosses adds its material's loss, which rises with frequency: brick 6/10/12 dB, concrete 12/20/23 dB.</p>
+					</article>
+					<article>
+						<span class="wt-docs-num">02</span>
+						<h3>Rate and throughput</h3>
+						<p>Thermal noise over bandwidth <em>B</em> (Hz) with a 7 dB noise figure sets the SNR:</p>
+						<div class="wt-math" set:html={math.noise} />
+						<div class="wt-math" set:html={math.snr} />
+						<p>The highest MCS whose SNR is met (5 dB for MCS 0, up to 38 dB for 1024-QAM and 44 dB for Wi-Fi 7 4096-QAM) sets the rate:</p>
+						<div class="wt-math" set:html={math.rate} />
+						<p>Narrower channels are tried when a wide one lacks SNR. Only the downlink is modelled.</p>
+					</article>
+					<article>
+						<span class="wt-docs-num">03</span>
+						<h3>Mesh backhaul</h3>
+						<p>Each node takes the path to the gateway with the best end-to-end throughput. Wireless hops on one channel share airtime:</p>
+						<div class="wt-math" set:html={math.hops} />
+						<p>So two 600 Mb/s hops give half, not 600:</p>
+						<div class="wt-math" set:html={math.hopsEx} />
+						<p>Wired nodes get 940 Mb/s Ethernet. Load the <em>Daisy chain</em> preset to watch it fall.</p>
+					</article>
+					<article>
+						<span class="wt-docs-num">04</span>
+						<h3>Steering and channels</h3>
+						<p><strong>Client chooses</strong> joins the loudest AP and band-steers above a threshold. <strong>Controller steers</strong> picks the best end-to-end AP and band, like an EasyMesh controller.</p>
+						<p>A client behind a mesh node gets this, where "same band" means the same band as the backhaul:</p>
+						<div class="wt-math" set:html={math.client} />
+						<p>Channels are assigned greedily against neighbours, and wireless-backhaul nodes keep their parent's channel:</p>
+						<div class="wt-math" set:html={math.cca} />
+					</article>
+				</div>
+				<p class="wt-docs-links">
+					Related reading: <a href="/blog/wifi_antenna/">Wi-Fi Antenna Circuits</a> · <a href="/blog/wifi-overview/">Wi-Fi Overview</a> ·
+					<a href="/blog/easymesh-system/">EasyMesh</a>
+				</p>
+			</section>
+		</main>
+		<Footer />
+		<script>
+			import { initTopology } from '../scripts/wifi-topology.js';
+			const root = document.getElementById('wt-root');
+			if (root) initTopology(root);
+		</script>
+	</body>
+</html>
+
+<style>
+	main.wt {
+		--bg: #0b0e14;
+		--panel: #11161f;
+		--panel-2: #161c27;
+		--line: #232b38;
+		--line-2: #2e3848;
+		--text: #e6ebf2;
+		--muted: #8a95a8;
+		--faint: #5d687a;
+		--brand: #fc3d21;
+		--blue: #4c8dff;
+		--ok: #3fb27f;
+		--warn: #f2a93b;
+		--bad: #ff6b5b;
+		width: 1480px;
+		max-width: calc(100% - 2rem);
+		padding: 2rem 0 3rem;
+		font-size: 15px;
+		line-height: 1.5;
+		font-variant-numeric: tabular-nums;
+	}
+
+	/* ---------- hero ---------- */
+	.wt-crumbs {
+		display: flex;
+		gap: 0.5rem;
+		margin-bottom: 0.9rem;
+		color: rgb(var(--gray));
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+	}
+	.wt-crumbs a {
+		color: inherit;
+		text-decoration: none;
+	}
+	.wt-crumbs a:hover {
+		color: var(--brand);
+	}
+	.wt-crumbs [aria-current] {
+		color: rgb(var(--black));
+	}
+	.wt-hero-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 1.25rem 2.5rem;
+		margin-bottom: 1.5rem;
+	}
+	.wt-hero h1 {
+		margin-bottom: 0.6rem;
+		font-size: clamp(2rem, 3.6vw, 2.9rem);
+		letter-spacing: -0.035em;
+	}
+	.wt-lede {
+		max-width: 46rem;
+		margin: 0;
+		color: #4a5568;
+		font-size: 1.06rem;
+		line-height: 1.6;
+	}
+	.wt-badges {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		max-width: 30rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.wt-badges li {
+		padding: 0.3rem 0.7rem;
+		border: 1px solid #e2e6ee;
+		border-radius: 999px;
+		background: #f6f8fb;
+		color: #3b4556;
+		font-size: 0.78rem;
+		font-weight: 600;
+	}
+
+	/* ---------- app shell ---------- */
+	.wt-app {
+		overflow: hidden;
+		border: 1px solid #1b2230;
+		border-radius: 16px;
+		background:
+			radial-gradient(1200px 400px at 85% -10%, rgba(76, 141, 255, 0.09), transparent 60%),
+			radial-gradient(900px 300px at 0% 0%, rgba(252, 61, 33, 0.06), transparent 60%),
+			var(--bg);
+		color: var(--text);
+		box-shadow: 0 30px 60px -30px rgba(10, 14, 22, 0.55), 0 2px 6px rgba(10, 14, 22, 0.2);
+	}
+	.wt-app :global(h2) {
+		margin: 0;
+		color: var(--text);
+		font-size: 0.82rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+	.wt-app button,
+	.wt-app select,
+	.wt-app input {
+		font: inherit;
+		color: inherit;
+	}
+
+	/* ---------- toolbar ---------- */
+	.wt-appbar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.75rem 1rem;
+		padding: 0.85rem 1rem;
+		border-bottom: 1px solid var(--line);
+		background: rgba(17, 22, 31, 0.7);
+		backdrop-filter: blur(8px);
+	}
+	.wt-seg {
+		display: inline-flex;
+		padding: 3px;
+		border: 1px solid var(--line);
+		border-radius: 10px;
+		background: #0d1118;
+	}
+	.wt-seg button {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		padding: 0.42rem 0.7rem;
+		border: 0;
+		border-radius: 7px;
+		background: transparent;
+		color: var(--muted);
+		font-size: 0.84rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: background 0.15s, color 0.15s;
+	}
+	.wt-seg button:hover {
+		color: var(--text);
+		background: rgba(255, 255, 255, 0.04);
+	}
+	.wt-seg button.active {
+		background: var(--panel-2);
+		color: #fff;
+		box-shadow: inset 0 0 0 1px var(--line-2), 0 1px 2px rgba(0, 0, 0, 0.4);
+	}
+	.wt-seg button.active :global(svg) {
+		color: var(--brand);
+	}
+	.wt-seg kbd {
+		padding: 0 0.3rem;
+		border: 1px solid var(--line-2);
+		border-radius: 4px;
+		color: var(--faint);
+		font: 600 0.68rem var(--font-mono);
+	}
+	.wt-material {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--muted);
+		font-size: 0.82rem;
+		font-weight: 600;
+	}
+	.wt-material[hidden] {
+		display: none;
+	}
+	.wt-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.35rem;
+		margin-left: auto;
+	}
+	.wt-divider {
+		width: 1px;
+		height: 22px;
+		margin: 0 0.3rem;
+		background: var(--line-2);
+	}
+	.wt-icon-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.42rem 0.65rem;
+		border: 1px solid transparent;
+		border-radius: 8px;
+		background: transparent;
+		color: var(--muted);
+		font-size: 0.82rem;
+		font-weight: 600;
+		cursor: pointer;
+		transition: background 0.15s, color 0.15s, border-color 0.15s;
+	}
+	.wt-icon-btn:hover {
+		border-color: var(--line-2);
+		background: var(--panel-2);
+		color: var(--text);
+	}
+	.wt-icon-btn input {
+		display: none;
+	}
+	.wt-icon-btn.wt-danger:hover {
+		color: var(--bad);
+	}
+	.wt-app select,
+	.wt-app input[type='number'],
+	.wt-app :global(input.wt-input) {
+		box-sizing: border-box;
+		padding: 0.42rem 0.55rem;
+		border: 1px solid var(--line-2);
+		border-radius: 8px;
+		background: #0d1118;
+		color: var(--text);
+		font-size: 0.85rem;
+		outline: none;
+		transition: border-color 0.15s, box-shadow 0.15s;
+	}
+	.wt-app select:focus,
+	.wt-app input[type='number']:focus,
+	.wt-app :global(input.wt-input:focus) {
+		border-color: var(--blue);
+		box-shadow: 0 0 0 3px rgba(76, 141, 255, 0.18);
+	}
+	.wt-app select option:disabled {
+		color: var(--faint);
+	}
+	.wt-select-wrap {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		color: var(--muted);
+	}
+	.wt-select-wrap :global(svg) {
+		position: absolute;
+		left: 0.6rem;
+		pointer-events: none;
+	}
+	.wt-select-wrap select {
+		padding-left: 2rem;
+		font-weight: 600;
+	}
+
+	/* ---------- KPIs ---------- */
+	.wt-kpis {
+		display: grid;
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+		border-bottom: 1px solid var(--line);
+	}
+	.wt-kpis :global(.kpi) {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+		min-width: 0;
+		padding: 0.9rem 1.1rem;
+		border-right: 1px solid var(--line);
+	}
+	.wt-kpis :global(.kpi:last-child) {
+		border-right: 0;
+	}
+	.wt-kpis :global(.kpi-label) {
+		color: var(--muted);
+		font-size: 0.72rem;
+		font-weight: 700;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+	}
+	.wt-kpis :global(.kpi-value) {
+		color: #fff;
+		font-size: 1.45rem;
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+		white-space: nowrap;
+	}
+	.wt-kpis :global(.kpi-value small) {
+		margin-left: 0.2rem;
+		color: var(--muted);
+		font-size: 0.8rem;
+		font-weight: 600;
+	}
+	.wt-kpis :global(.kpi-sub) {
+		overflow: hidden;
+		color: var(--faint);
+		font-size: 0.76rem;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.wt-kpis :global(.kpi-bar) {
+		display: flex;
+		height: 7px;
+		margin: 0.55rem 0 0.25rem;
+		overflow: hidden;
+		border-radius: 4px;
+		background: var(--line);
+	}
+	.wt-kpis :global(.kpi-bar i) {
+		display: block;
+		height: 100%;
+	}
+	.wt-kpis :global(.tone-ok) {
+		color: var(--ok);
+	}
+	.wt-kpis :global(.tone-warn) {
+		color: var(--warn);
+	}
+	.wt-kpis :global(.tone-bad) {
+		color: var(--bad);
+	}
+
+	/* ---------- body ---------- */
+	.wt-body {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 330px;
+		gap: 1rem;
+		padding: 1rem;
+	}
+	.wt-stage {
+		min-width: 0;
+	}
+	.wt-canvas-wrap {
+		position: relative;
+		overflow: hidden;
+		border: 1px solid var(--line);
+		border-radius: 12px 12px 0 0;
+		background: #0e131b;
+	}
+	#wt-canvas {
+		display: block;
+		margin: 0 auto;
+		touch-action: none;
+	}
+	.wt-canvas-foot {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.6rem 1.5rem;
+		margin-top: -1px;
+		padding: 0.6rem 0.85rem;
+		border: 1px solid var(--line);
+		border-radius: 0 0 12px 12px;
+		background: #0c1017;
+	}
+	.wt-legend {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3rem 0.85rem;
+		color: #c5cdd9;
+		font-size: 0.72rem;
+		font-weight: 600;
+		pointer-events: none;
+	}
+	.wt-legend span {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
+	.wt-legend i {
+		display: inline-block;
+	}
+	.wt-legend .sq {
+		width: 11px;
+		height: 11px;
+		border-radius: 3px;
+		background: linear-gradient(135deg, #6ea4ff, #3a6fd8);
+	}
+	.wt-legend .dot {
+		width: 11px;
+		height: 11px;
+		border-radius: 50%;
+		background: var(--c, #9b7bff);
+		box-shadow: 0 0 0 2px rgba(155, 123, 255, 0.25);
+	}
+	.wt-legend .dot.sm {
+		width: 8px;
+		height: 8px;
+		box-shadow: none;
+	}
+	.wt-legend .ln {
+		width: 22px;
+		height: 3px;
+		border-radius: 2px;
+		background: linear-gradient(90deg, #ff6b5b, #f2c94c, #3fb27f);
+	}
+	.wt-legend .ln.dash {
+		background: repeating-linear-gradient(90deg, #aab4c3 0 6px, transparent 6px 10px);
+	}
+	.wt-scale {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		width: 13rem;
+		color: #c5cdd9;
+		font-size: 0.7rem;
+		font-weight: 700;
+		pointer-events: none;
+	}
+	.wt-scale[hidden],
+	.wt-scale [hidden] {
+		display: none;
+	}
+	.wt-scale i {
+		height: 6px;
+		border-radius: 3px;
+		background: var(--grad, linear-gradient(90deg, rgb(26, 152, 80), rgb(166, 217, 106), rgb(254, 224, 139), rgb(253, 174, 97), rgb(215, 48, 39)));
+	}
+	.wt-scale-ends {
+		display: flex;
+		justify-content: space-between;
+		color: var(--muted);
+		font-weight: 600;
+	}
+	.wt-scale-ends b {
+		font-weight: 600;
+	}
+	.wt-statusbar {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 0.3rem 1rem;
+		padding: 0.55rem 0.25rem 0;
+		color: var(--muted);
+		font-size: 0.78rem;
+	}
+	.wt-mono {
+		font-family: var(--font-mono);
+		color: #b6c0cf;
+	}
+	.wt-tip {
+		position: absolute;
+		z-index: 4;
+		max-width: 270px;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--line-2);
+		border-radius: 10px;
+		background: rgba(17, 22, 31, 0.96);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+		color: var(--text);
+		font-size: 0.78rem;
+		line-height: 1.5;
+		pointer-events: none;
+	}
+	.wt-app :global(.wt-bad) {
+		color: var(--bad);
+	}
+
+	/* ---------- side panels ---------- */
+	.wt-side {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		min-width: 0;
+	}
+	.wt-panel {
+		border: 1px solid var(--line);
+		border-radius: 12px;
+		background: rgba(17, 22, 31, 0.85);
+	}
+	.wt-panel-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.3rem 1rem;
+		padding: 0.85rem 1rem 0.2rem;
+	}
+	.wt-panel-head p {
+		margin: 0;
+		color: var(--faint);
+		font-size: 0.78rem;
+	}
+	.wt-tabs {
+		display: flex;
+		gap: 0.25rem;
+		padding: 0.5rem 0.5rem 0;
+		border-bottom: 1px solid var(--line);
+	}
+	.wt-tabs button {
+		flex: 1;
+		padding: 0.55rem 0.5rem 0.6rem;
+		border: 0;
+		border-bottom: 2px solid transparent;
+		background: none;
+		color: var(--muted);
+		font-size: 0.82rem;
+		font-weight: 700;
+		cursor: pointer;
+	}
+	.wt-tabs button:hover {
+		color: var(--text);
+	}
+	.wt-tabs button.active {
+		border-bottom-color: var(--brand);
+		color: #fff;
+	}
+	.wt-tabpanel {
+		padding: 0.9rem 1rem 1rem;
+	}
+	.wt-tabpanel[hidden] {
+		display: none;
+	}
+	.wt-field {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		margin-bottom: 0.85rem;
+	}
+	.wt-field > span,
+	.wt-app :global(.wt-field > span) {
+		display: flex;
+		justify-content: space-between;
+		color: var(--muted);
+		font-size: 0.76rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+	}
+	.wt-field output {
+		color: var(--text);
+		font-family: var(--font-mono);
+		font-weight: 500;
+	}
+	.wt-field select,
+	.wt-field input[type='number'] {
+		width: 100%;
+	}
+	.wt-app input[type='range'] {
+		width: 100%;
+		accent-color: var(--brand);
+	}
+	.wt-grid3 {
+		display: grid;
+		grid-template-columns: auto repeat(3, minmax(0, 1fr));
+		gap: 0.4rem;
+		align-items: center;
+		margin-bottom: 0.9rem;
+		color: var(--muted);
+		font-size: 0.76rem;
+		font-weight: 700;
+	}
+	.wt-grid3 b {
+		text-align: center;
+	}
+	.wt-grid3 input,
+	.wt-grid3 select {
+		width: 100%;
+		min-width: 0;
+	}
+	.wt-note {
+		margin: 0;
+		color: var(--faint);
+		font-size: 0.76rem;
+	}
+	.wt-switch {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		margin: 0.2rem 0 0.9rem;
+		color: var(--text);
+		font-size: 0.84rem;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.wt-switch input {
+		position: absolute;
+		opacity: 0;
+	}
+	.wt-switch i {
+		position: relative;
+		width: 34px;
+		height: 20px;
+		border-radius: 999px;
+		background: var(--line-2);
+		transition: background 0.15s;
+	}
+	.wt-switch i::after {
+		content: '';
+		position: absolute;
+		top: 3px;
+		left: 3px;
+		width: 14px;
+		height: 14px;
+		border-radius: 50%;
+		background: #fff;
+		transition: transform 0.15s;
+	}
+	.wt-switch input:checked + i {
+		background: var(--brand);
+	}
+	.wt-switch input:checked + i::after {
+		transform: translateX(14px);
+	}
+	.wt-switch input:focus-visible + i {
+		box-shadow: 0 0 0 3px rgba(252, 61, 33, 0.3);
+	}
+	.wt-size {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.6rem;
+	}
+	.wt-app :global(.wt-off) {
+		opacity: 0.3;
+		pointer-events: none;
+	}
+
+	/* ---------- inspector ---------- */
+	.wt-details {
+		padding: 0.5rem 1rem 1rem;
+		font-size: 0.84rem;
+	}
+	.wt-details :global(.empty) {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 1.1rem 0.5rem 0.6rem;
+		color: var(--faint);
+		text-align: center;
+	}
+	.wt-details :global(.empty b) {
+		color: var(--muted);
+	}
+	.wt-details :global(.insp-head) {
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
+		margin-bottom: 0.75rem;
+	}
+	.wt-details :global(.insp-avatar) {
+		display: grid;
+		place-items: center;
+		flex: none;
+		width: 34px;
+		height: 34px;
+		border-radius: 10px;
+		color: #fff;
+		font-size: 0.8rem;
+		font-weight: 800;
+	}
+	.wt-details :global(.insp-title) {
+		min-width: 0;
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 700;
+		line-height: 1.2;
+		overflow-wrap: anywhere;
+	}
+	.wt-details :global(.chip) {
+		display: inline-block;
+		margin-top: 0.2rem;
+		padding: 0.08rem 0.5rem;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.06);
+		color: var(--muted);
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+	}
+	.wt-details :global(.chip.ok) {
+		background: rgba(63, 178, 127, 0.14);
+		color: var(--ok);
+	}
+	.wt-details :global(.chip.bad) {
+		background: rgba(255, 107, 91, 0.14);
+		color: var(--bad);
+	}
+	.wt-details :global(dl) {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.35rem 0.9rem;
+		margin: 0 0 0.9rem;
+		padding: 0.7rem 0.8rem;
+		border: 1px solid var(--line);
+		border-radius: 10px;
+		background: #0d1118;
+	}
+	.wt-details :global(dt) {
+		color: var(--faint);
+		font-size: 0.76rem;
+		font-weight: 600;
+	}
+	.wt-details :global(dd) {
+		margin: 0;
+		color: var(--text);
+		font-size: 0.8rem;
+		font-weight: 600;
+		text-align: right;
+		overflow-wrap: anywhere;
+	}
+	.wt-details :global(dd.hl) {
+		color: #fff;
+		font-weight: 800;
+	}
+	.wt-details :global(.path) {
+		margin: -0.4rem 0 0.9rem;
+		color: var(--faint);
+		font-size: 0.76rem;
+	}
+	.wt-details :global(.wt-field) {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		margin-bottom: 0.85rem;
+	}
+	.wt-details :global(.wt-field > span) {
+		color: var(--muted);
+		font-size: 0.76rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+	}
+	.wt-details :global(select),
+	.wt-details :global(input.wt-input) {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 0.42rem 0.55rem;
+		border: 1px solid var(--line-2);
+		border-radius: 8px;
+		background: #0d1118;
+		color: var(--text);
+		font: inherit;
+		font-size: 0.85rem;
+		outline: none;
+	}
+	.wt-details :global(select:focus),
+	.wt-details :global(input.wt-input:focus) {
+		border-color: var(--blue);
+		box-shadow: 0 0 0 3px rgba(76, 141, 255, 0.18);
+	}
+	.wt-details :global(.wt-check) {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.85rem;
+		color: var(--text);
+		font-weight: 600;
+	}
+	.wt-details :global(.wt-check input) {
+		accent-color: var(--brand);
+		width: 15px;
+		height: 15px;
+	}
+	.wt-details :global(.danger) {
+		width: 100%;
+		padding: 0.5rem;
+		border: 1px solid rgba(255, 107, 91, 0.35);
+		border-radius: 8px;
+		background: rgba(255, 107, 91, 0.08);
+		color: var(--bad);
+		font-size: 0.82rem;
+		font-weight: 700;
+		cursor: pointer;
+	}
+	.wt-details :global(.danger:hover) {
+		background: rgba(255, 107, 91, 0.16);
+	}
+
+	/* ---------- lower ---------- */
+	.wt-lower {
+		display: grid;
+		grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+		gap: 1rem;
+		align-items: start;
+		padding: 0 1rem 1rem;
+	}
+	.wt-insights {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin: 0;
+		padding: 0.6rem 1rem 1rem;
+		list-style: none;
+	}
+	.wt-insights :global(li) {
+		display: flex;
+		gap: 0.65rem;
+		padding: 0.6rem 0.75rem;
+		border: 1px solid var(--line);
+		border-left-width: 3px;
+		border-radius: 8px;
+		background: #0d1118;
+		color: #c5cdd9;
+		font-size: 0.8rem;
+		line-height: 1.5;
+	}
+	.wt-insights :global(li b) {
+		color: #fff;
+	}
+	.wt-insights :global(li .tag) {
+		flex: none;
+		align-self: flex-start;
+		padding: 0.05rem 0.45rem;
+		border-radius: 5px;
+		font-size: 0.66rem;
+		font-weight: 800;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+	.wt-insights :global(li.sev-warn) {
+		border-left-color: var(--warn);
+	}
+	.wt-insights :global(li.sev-warn .tag) {
+		background: rgba(242, 169, 59, 0.14);
+		color: var(--warn);
+	}
+	.wt-insights :global(li.sev-bad) {
+		border-left-color: var(--bad);
+	}
+	.wt-insights :global(li.sev-bad .tag) {
+		background: rgba(255, 107, 91, 0.14);
+		color: var(--bad);
+	}
+	.wt-insights :global(li.sev-info) {
+		border-left-color: var(--blue);
+	}
+	.wt-insights :global(li.sev-info .tag) {
+		background: rgba(76, 141, 255, 0.14);
+		color: var(--blue);
+	}
+	.wt-insights :global(li.sev-ok) {
+		border-left-color: var(--ok);
+	}
+	.wt-insights :global(li.sev-ok .tag) {
+		background: rgba(63, 178, 127, 0.14);
+		color: var(--ok);
+	}
+	.wt-treewrap {
+		overflow-x: auto;
+		padding: 0.25rem 0.5rem 0.75rem;
+	}
+	#wt-tree {
+		display: block;
+		margin: 0 auto;
+	}
+	#wt-tree :global(.wt-t-node) {
+		cursor: pointer;
+	}
+	#wt-tree :global(.wt-t-node:hover circle),
+	#wt-tree :global(.wt-t-node:hover rect) {
+		filter: brightness(1.2);
+	}
+	#wt-tree :global(.wt-t-node.sel circle),
+	#wt-tree :global(.wt-t-node.sel rect) {
+		stroke: var(--brand);
+		stroke-width: 3.5;
+	}
+	#wt-tree :global(.wt-t-name) {
+		fill: #dfe5ee;
+		font: 600 12px var(--font-sans);
+	}
+	#wt-tree :global(.wt-t-link) {
+		font: 700 10.5px var(--font-mono);
+		paint-order: stroke;
+		stroke: #11161f;
+		stroke-width: 4px;
+	}
+	#wt-tree :global(.wt-t-muted) {
+		fill: #6b768a;
+		font: 700 11px var(--font-sans);
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	/* ---------- docs ---------- */
+	.wt-docs {
+		margin-top: 3.5rem;
+	}
+	.wt-docs-head {
+		max-width: 46rem;
+		margin-bottom: 1.5rem;
+	}
+	.wt-docs-head h2 {
+		font-size: clamp(1.5rem, 2.6vw, 2rem);
+		letter-spacing: -0.03em;
+	}
+	.wt-docs-head p {
+		color: #4a5568;
+		font-size: 1rem;
+	}
+	.wt-docs-grid {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 1rem;
+	}
+	.wt-docs-grid article {
+		padding: 1.25rem 1.25rem 0.75rem;
+		border: 1px solid #e6e9ef;
+		border-radius: 14px;
+		background: linear-gradient(180deg, #fff, #fafbfd);
+		font-size: 0.9rem;
+		line-height: 1.6;
+		color: #3b4556;
+	}
+	.wt-docs-num {
+		display: inline-block;
+		margin-bottom: 0.6rem;
+		color: var(--brand);
+		font: 700 0.8rem var(--font-mono);
+	}
+	.wt-docs-grid h3 {
+		margin-bottom: 0.6rem;
+		font-size: 1.08rem;
+	}
+	.wt-docs-grid p {
+		margin-bottom: 0.7rem;
+	}
+	.wt-math {
+		margin: 0 0 0.6rem;
+		padding: 0.15rem 0.6rem;
+		overflow-x: auto;
+		overflow-y: hidden;
+		border: 1px solid #e3e8f0;
+		border-radius: 10px;
+		background: #f5f7fb;
+		color: #111827;
+	}
+	.wt-math :global(.katex-display) {
+		margin: 0.55rem 0;
+	}
+	.wt-math :global(.katex) {
+		font-size: 1.02em;
+	}
+	.wt-docs-links {
+		margin-top: 1.25rem;
+		color: #4a5568;
+		font-size: 0.92rem;
+	}
+
+	@media (max-width: 1640px) {
+		.wt-icon-btn span {
+			display: none;
+		}
+		.wt-select-wrap select {
+			max-width: 13rem;
+		}
+	}
+	@media (max-width: 1200px) {
+		.wt-kpis {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+		.wt-kpis :global(.kpi:nth-child(3n)) {
+			border-right: 0;
+		}
+		.wt-kpis :global(.kpi:nth-child(-n + 3)) {
+			border-bottom: 1px solid var(--line);
+		}
+		.wt-docs-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+		.wt-seg-label {
+			display: none;
+		}
+	}
+	@media (max-width: 980px) {
+		.wt-body,
+		.wt-lower {
+			grid-template-columns: 1fr;
+		}
+		.wt-actions {
+			margin-left: 0;
+		}
+	}
+	@media (max-width: 640px) {
+		.wt-kpis {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+		.wt-kpis :global(.kpi) {
+			border-right: 0;
+			border-bottom: 1px solid var(--line);
+		}
+		.wt-docs-grid {
+			grid-template-columns: 1fr;
+		}
+		.wt-icon-btn span,
+		.wt-seg kbd {
+			display: none;
+		}
+	}
+</style>
