@@ -7,6 +7,7 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_TITLE } from '../../consts';
 import { slugify } from '../../utils';
+import topologyHero from '../../assets/hero/wifi_topology.jpg';
 
 const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -36,8 +37,35 @@ const summary = (p: (typeof posts)[number]) => {
 };
 const readingTime = (body = '') => Math.max(1, Math.round(body.split(/\s+/).filter(Boolean).length / 230));
 
-const cards = posts.map((p) => ({
-	id: p.id,
+type Card = {
+	href: string;
+	title: string;
+	category: string;
+	topic: string;
+	date: Date;
+	image?: (typeof posts)[number]['data']['heroImage'];
+	summary: string;
+	minutes?: number;
+	tool?: boolean;
+};
+
+/** Interactive pages that live outside the content collection but belong in the list. */
+const toolCards: Card[] = [
+	{
+		href: '/wifi-topology/',
+		title: 'Wi-Fi Topology Visualizer',
+		category: 'Wi-Fi',
+		topic: slugify('Wi-Fi'),
+		date: new Date('2026-11-24'),
+		image: topologyHero,
+		summary:
+			'Interactive tool: plan a home or office network on a floor plan and see signal through walls, mesh backhaul, client steering, channel reuse and end-to-end throughput.',
+		tool: true,
+	},
+];
+
+const cards: Card[] = posts.map((p) => ({
+	href: `/blog/${p.id}/`,
 	title: p.data.title,
 	category: p.data.category,
 	topic: slugify(p.data.category),
@@ -46,6 +74,8 @@ const cards = posts.map((p) => ({
 	summary: summary(p),
 	minutes: readingTime(p.body),
 }));
+cards.push(...toolCards);
+cards.sort((a, b) => b.date.valueOf() - a.date.valueOf());
 
 const featured = cards[0];
 
@@ -92,7 +122,7 @@ const topics = Object.entries(
 			<!-- ===== Featured ===== -->
 			{
 				featured && (
-					<a class="featured" href={`/blog/${featured.id}/`}>
+					<a class="featured" href={featured.href}>
 						<div class="featured-img">
 							{featured.image && (
 								<Image
@@ -111,10 +141,10 @@ const topics = Object.entries(
 							<h2>{featured.title}</h2>
 							<p class="summary">{featured.summary}</p>
 							<p class="meta muted">
-								<FormattedDate date={featured.date} /> · {featured.minutes} min read
+								<FormattedDate date={featured.date} /> · {featured.tool ? 'Interactive tool' : `${featured.minutes} min read`}
 							</p>
 							<span class="read">
-								Read article <span aria-hidden="true">→</span>
+								{featured.tool ? 'Open tool' : 'Read article'} <span aria-hidden="true">→</span>
 							</span>
 						</div>
 					</a>
@@ -145,7 +175,7 @@ const topics = Object.entries(
 							class="card"
 							data-latest={i === 0 ? '' : undefined}
 							hidden={i === 0}
-							href={`/blog/${c.id}/`}
+							href={c.href}
 							data-card
 							data-topic={c.topic}
 							data-text={`${c.title} ${c.category} ${c.summary}`.toLowerCase()}
@@ -154,11 +184,11 @@ const topics = Object.entries(
 								{c.image && <Image src={c.image} alt="" width={640} height={360} />}
 							</div>
 							<div class="card-body">
-								<span class="tag">{c.category}</span>
+								<span class="tag">{c.tool ? `Tool · ${c.category}` : c.category}</span>
 								<h3>{c.title}</h3>
 								<p class="summary">{c.summary}</p>
 								<p class="meta muted">
-									<FormattedDate date={c.date} /> · {c.minutes} min read
+									<FormattedDate date={c.date} /> · {c.tool ? 'Interactive tool' : `${c.minutes} min read`}
 								</p>
 							</div>
 						</a>

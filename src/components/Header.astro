@@ -14,8 +14,7 @@ import HeaderLink from './HeaderLink.astro';
 		</a>
 		<div class="internal-links">
 			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/wifi-topology">Topology</HeaderLink>
+			<HeaderLink href="/blog" match={['/wifi-topology']}>Blog</HeaderLink>
 			<HeaderLink href="/photos">Photos</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
