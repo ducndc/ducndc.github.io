@@ -30,7 +30,7 @@
 
   <rect x="34" y="414" width="328" height="90" rx="6" fill="#f4f4f4" stroke="#a1a1a1" stroke-width="1.3"/>
   <text x="46" y="434" font-size="12.5" font-weight="700" fill="#282828">RSNXOE &#8212; RSNXE Override</text>
-  <text x="46" y="452" font-size="11" fill="#282828">Extended RSN capabilities (H2E, PMF-related bits)</text>
+  <text x="46" y="452" font-size="11" fill="#282828">Extended RSN capabilities (SAE H2E, SAE-PK, ...)</text>
   <text x="46" y="470" font-size="10.5" font-style="italic" fill="#727272">Only ever sent alongside an RSNOE or RSNO2E</text>
 
   <text x="596" y="52" font-size="11" font-weight="600" fill="#727272" text-anchor="middle">WHICH STA USES WHICH ELEMENT</text>
@@ -58,6 +58,6 @@
   <line x1="362" y1="350" x2="500" y2="360" stroke="#282828" stroke-width="2.2" marker-end="url(#mArr3)"/>
 
   <rect x="20" y="536" width="780" height="50" rx="6" fill="#f4f4f4" stroke="#d4d4d4" stroke-width="1.2"/>
-  <text x="410" y="556" font-size="11.5" text-anchor="middle" fill="#282828">A STA that used RSN overriding signals its choice back with a new <tspan font-weight="700">RSN Selection element</tspan> in the</text>
-  <text x="410" y="573" font-size="11.5" text-anchor="middle" fill="#282828">(Re)Association Request and EAPOL-Key message 2 &#8212; it never re-sends the RSNOE/RSNO2E/RSNXOE itself.</text>
+  <text x="410" y="556" font-size="11.5" text-anchor="middle" fill="#282828">The STA sends a normal RSNE with its choice, plus an <tspan font-weight="700">RSN Selection element</tspan> naming the source,</text>
+  <text x="410" y="573" font-size="11.5" text-anchor="middle" fill="#282828">in the (Re)Association Request and EAPOL-Key message 2. It never echoes the RSNOE/RSNO2E/RSNXOE.</text>
 </svg>
