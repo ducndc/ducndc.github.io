@@ -2,8 +2,25 @@
 title: 'Software Architecture and Technology of Large Scale Systems'
 description: 'A software leader''s guide to large scale systems: how to move from developer to architect, how to evaluate an architecture, the core techniques for scalability, reliability, performance, data and security, and a layered router platform as a worked example.'
 pubDate: 'July 18 2026'
+updatedDate: 'November 27 2026'
 heroImage: '../../assets/hero/sysdesign.jpg'
 category: 'Software Architecture'
+---
+
+### Overview
+
+---
+
+This post is a field guide to designing systems that must keep working as they grow. It is organised the way an architecture review usually goes:
+
+1. **Mindset:** what changes when you move from developer to architect, and what "large scale" really means.
+2. **Evaluation:** the six criteria a design is judged on, and how to turn vague goals into testable scenarios.
+3. **Estimation:** back-of-the-envelope numbers that tell you which problem you actually have.
+4. **Techniques:** scalability, reliability, performance, data, communication, architecture styles, security and operability.
+5. **Practice:** choosing technology, recording decisions, a layered router platform as a worked example, anti-patterns and a review checklist.
+
+Each section ends in something you can use: a formula, a table of trade-offs or a question to ask in a design review.
+
 ---
 
 ### Developer To Architect
@@ -18,6 +35,8 @@ A developer is paid to make **one component correct**. An architect is paid to m
 | Which library is best? | What does it cost to replace this library in three years? |
 | How do I fix this bug? | What class of bugs does this design make impossible, and which does it make likely? |
 | How do I finish my task? | How do five teams finish theirs without blocking each other? |
+
+---
 
 Habits that I have seen separate the two:
 
@@ -44,6 +63,8 @@ Large scale does not only mean many users. A system is large in several independ
 | **Organisation** | Hundreds of engineers in dozens of teams | Shared ownership, release coordination, one big codebase |
 | **Time** | Ten years of accumulated decisions | Understanding, upgrade paths, data formats |
 
+---
+
 Two consequences follow, and they are the core of this post:
 
 1. **At scale, rare events become routine.** A disk that fails once in five years fails every day in a fleet of two thousand disks. Design for failure as the normal case.
@@ -68,6 +89,8 @@ There is no "good architecture" in the abstract, only an architecture that fits 
 | **Development** | How fast can we build and maintain it? | Lead time for a change, deploy frequency, onboarding time |
 | **Technology stack** | Are the frameworks and tools the right ones? | Team skills, ecosystem, licence and support, replacement cost |
 
+---
+
 These criteria **pull against each other**. More replicas raise reliability and cost. Stronger consistency hurts latency. Strict security slows development. A useful review ranks the criteria for *this* product first, for example "reliability and security first, development speed second", and only then judges the design.
 
 ---
@@ -90,6 +113,38 @@ A scenario like this can be load-tested, monitored and argued about.
 
 ---
 
+### Back-of-the-Envelope Estimation
+
+---
+
+Before choosing a design, estimate the numbers. Five minutes of arithmetic tells you whether you have a one-server problem or a thousand-server problem, and which resource runs out first.
+
+Useful constants:
+
+| Quantity | Value |
+|----------|-------|
+| Seconds in a day | about $86\,400 \approx 10^5$ |
+| Requests per second from $N$ requests per day | $N / 10^5$ |
+| Peak to average ratio | typically 2 to 10 |
+| 1 Gb/s link | about 100 MB/s of useful payload |
+
+---
+
+#### Worked example: telemetry from a router fleet
+
+---
+
+One million routers each send a 2 KB status report every 60 seconds, and the data is kept for 90 days.
+
+* **Write rate:** $10^6 / 60 \approx 17\,000$ reports per second on average. Devices reconnect together after a regional power cut, so plan for at least 5 times that: about **85,000 per second** at peak.
+* **Ingress bandwidth:** $17\,000 \times 2\ \text{KB} \approx 34$ MB/s average, around 170 MB/s at peak. That is more than one 1 Gb/s link carries, so the ingest tier is horizontal from day one.
+* **Storage:** $34\ \text{MB/s} \times 86\,400 \approx 2.9$ TB per day raw, about **260 TB** for 90 days before compression and replication. With 3 replicas and a 5:1 compression ratio (typical for repetitive telemetry) it is still about 160 TB.
+* **Conclusions:** the hard problems are the burst on reconnect and the storage volume, not the CPU. The design needs a queue in front of the writers, jittered reconnect timers on the devices, a time-series or columnar store partitioned by time, and downsampling of old data.
+
+None of these numbers needs to be exact. The point is to get the **order of magnitude** right and find the first bottleneck before writing code.
+
+---
+
 ### Scalability
 
 ---
@@ -105,6 +160,8 @@ A scenario like this can be load-tested, monitored and argued about.
 | Complexity | Low | High: partitioning, consistency, load balancing |
 | Use it | First. It is cheap in engineering time | When one machine is no longer enough |
 
+---
+
 Scale up as far as is sensible, then scale out. Scaling out is a one-way door that adds complexity to every later decision.
 
 ---
@@ -113,10 +170,30 @@ Scale up as far as is sensible, then scale out. Scaling out is a one-way door th
 
 ---
 
+![A typical scale-out request path: clients, CDN, load balancer, a stateless service tier, a cache, a sharded and replicated database, and a queue with workers](../../assets/technology/SysDesign/scale_out_reference.png)
+
 * **Stateless services.** Keep no per-user state in the process. State lives in a database, cache or token, so any instance can serve any request and instances can be added or killed freely.
 * **Partition the data (sharding).** Split data by a key so that each node owns a subset. Choose a key with an even spread and one that most queries can use. Moving a hot shard later is painful.
 * **Remove shared bottlenecks.** A global lock, a single sequence generator or one leader for every write caps the whole system at the speed of one machine.
 * **Prefer asynchronous work.** A queue turns a spike into a longer backlog instead of an outage.
+
+---
+
+#### Load balancing and consistent hashing
+
+---
+
+A load balancer spreads requests over the stateless tier. *Round robin* is fine when requests cost about the same. *Least connections* or *least outstanding requests* handles uneven requests better, and *power of two choices* (pick two instances at random and send the request to the less loaded one) gets most of that benefit with almost no shared state. The balancer also runs health checks, so a failed instance stops receiving traffic in seconds.
+
+When requests must reach the node that **owns** a key (a cache shard, a partition), plain `hash(key) mod N` is a trap: changing $N$ from 10 to 11 moves about 90% of the keys. **Consistent hashing** places nodes and keys on a ring, and each key belongs to the next node clockwise. Adding or removing one node moves only about $1/N$ of the keys. Virtual nodes (each server appears at many points on the ring) keep the spread even.
+
+---
+
+#### Rate limiting
+
+---
+
+Protect every shared service with limits per client: a **token bucket** allows short bursts up to the bucket size while holding the long-term rate to the refill rate. Return a clear "retry later" response (HTTP 429 with a `Retry-After` header) so well-behaved clients back off instead of hammering.
 
 ---
 
@@ -131,6 +208,10 @@ S(n) = \frac{1}{(1 - p) + \dfrac{p}{n}}
 $$
 
 With $p = 0.95$ the limit is 20 times, however many nodes you add. The serial part, such as a lock or a coordinator, sets the ceiling.
+
+![Amdahl's law: speed-up against number of workers for parallel fractions 0.5, 0.9, 0.95 and 0.99, each flattening at 1/(1-p)](../../assets/technology/SysDesign/amdahl_speedup.png)
+
+In real systems the curve can even turn down: coordination between workers grows with $n$ (every node talks to every other), so adding nodes past a point makes the system slower. Gunther's *Universal Scalability Law* models this extra term.
 
 **Little's law.** In a stable system the average number of requests in flight $L$ equals the arrival rate $\lambda$ times the average time each spends in the system $W$:
 
@@ -157,7 +238,9 @@ If a service takes 200 ms per request and must handle 5,000 requests per second,
 | 99.99% | 52.6 minutes | 4.4 minutes |
 | 99.999% | 5.26 minutes | 26 seconds |
 
-Each extra nine costs roughly ten times more. Pick the number from the business impact of downtime, not from pride. The **error budget** is the allowed unreliability (for example 0.1% for a 99.9% target). While budget remains, ship features. When it is spent, work on reliability.
+---
+
+As a rule of thumb, each extra nine costs several times more than the last one. Pick the number from the business impact of downtime, not from pride. The **error budget** is the allowed unreliability (for example 0.1% for a 99.9% target). While budget remains, ship features. When it is spent, work on reliability.
 
 ---
 
@@ -172,6 +255,8 @@ A_{\text{series}} = \prod_i A_i
 \qquad
 A_{\text{parallel}} = 1 - \prod_i (1 - A_i)
 $$
+
+![Availability composition: five required services at 99.9% give about 99.5%, while two independent replicas at 99.9% give 99.9999%](../../assets/technology/SysDesign/availability_composition.png)
 
 Five dependencies at 99.9% each, all required, give only $0.999^5 \approx 99.5\%$. Two independent replicas at 99.9% give $1 - 0.001^2 = 99.9999\%$, but only if their failures really are independent. Two replicas in the same rack, on the same power feed or running the same buggy release fail together.
 
@@ -195,15 +280,19 @@ Five dependencies at 99.9% each, all required, give only $0.999^5 \approx 99.5\%
 
 ---
 
-![Performance topics: understanding performance, latency, concurrency and caching](../../assets/technology/SysDesign/performance_topics_outline.png)
-
----
-
 #### Understand and measure first
 
 ---
 
-Optimise nothing until you can measure it. Track **percentiles, not averages**: the p99 of a service is what a user sees once they make a few dozen calls, and a fan-out that waits for 100 backends is dominated by the slowest of them. Profile in production-like conditions and fix the largest cost first.
+Optimise nothing until you can measure it. Track **percentiles, not averages**: an average hides the slow requests that users remember. Profile in production-like conditions and fix the largest cost first.
+
+**Tail latency grows with fan-out.** If one request waits for $k$ backends and each backend is slow (above its p99) 1% of the time, the chance that the request is slow is
+
+$$
+P(\text{slow}) = 1 - 0.99^{k}
+$$
+
+For $k = 1$ that is 1%, for $k = 10$ about 10%, and for $k = 100$ about **63%**. A page that fans out to 100 services sees each service's p99 on most loads. Useful defences: fewer sequential hops, *hedged requests* (send a second copy after the p95 time and use the first answer), and timeouts with a partial result.
 
 ---
 
@@ -213,14 +302,20 @@ Optimise nothing until you can measure it. Track **percentiles, not averages**: 
 
 Orders of magnitude, on typical current hardware:
 
+![Latency hierarchy on a log scale, from a 1 ns cache hit to a 150 ms intercontinental round trip](../../assets/technology/SysDesign/latency_hierarchy.png)
+
 | Operation | Rough time |
 |-----------|-----------|
-| CPU cache hit | about 1 ns |
+| L1 cache hit | about 1 ns |
 | Main memory access | about 100 ns |
-| SSD random read | about 100 microseconds |
+| Read 1 MB sequentially from memory | about 10 µs |
+| SSD random read (4 KB) | about 100 µs |
 | Round trip inside a data centre | about 0.5 ms |
-| Round trip between continents | about 100 to 150 ms |
+| Read 1 MB sequentially from SSD | about 0.5 ms |
 | Spinning disk seek | about 10 ms |
+| Round trip between continents | about 100 to 150 ms |
+
+---
 
 Each layer is roughly 10 to 1000 times slower than the one above it. Most performance work is about **avoiding a trip down the hierarchy**: keep hot data in memory, batch network calls, avoid chatty protocols, and move data closer to users.
 
@@ -247,7 +342,9 @@ A cache trades freshness for speed. Decide per data type:
 | **Static** (assets, reference data) | Long TTL, CDN, content-hashed names | Invalidation on deploy |
 | **Dynamic** (user data, query results) | Short TTL, write-through or explicit invalidation, per-key versions | Stale reads, thundering herd on expiry, cache stampede |
 
-"There are only two hard things in computer science: cache invalidation and naming things." Cache only what you can afford to see stale, and always have a plan for the cache being empty.
+---
+
+"There are only two hard things in computer science: cache invalidation and naming things" (Phil Karlton). Cache only what you can afford to see stale, and always have a plan for the cache being empty.
 
 ---
 
@@ -286,6 +383,8 @@ Replication gives availability and read scale, and it forces a choice about **co
 | Time series (metrics, telemetry) | Time-series database | Specialised queries |
 | Events as the source of truth | Append-only log | Rebuilding state means replaying |
 
+---
+
 Use one database that you understand well until it genuinely cannot cope. A polyglot system multiplies the operational burden.
 
 ---
@@ -312,6 +411,8 @@ Use one database that you understand well until it genuinely cannot cope. A poly
 | **Event streaming** | Log-based brokers | Many consumers, replay, audit | Operating the platform, schema discipline |
 | **Local IPC** | Unix sockets, message queues, shared memory | Processes on one machine | Limited to a single host (see [IPC](/blog/ipc/)) |
 
+---
+
 Rules that prevent most integration pain:
 
 * **Define contracts first** (an API schema or protocol definition) and version them.
@@ -331,6 +432,8 @@ Rules that prevent most integration pain:
 | **Microservices** | Independent deploy and scale per team | Distributed-system costs on every call | Many teams and clear domain boundaries |
 | **Event-driven** | Loose coupling, easy fan-out | Harder to follow and debug | Many independent reactions to a change |
 | **Plug-in / hexagonal** | The core is isolated from I/O and vendors | Extra indirection | Long-lived products with changing integrations |
+
+---
 
 Teams split into microservices too early more often than too late. Start with a **modular monolith**, draw boundaries along business domains (bounded contexts), and split a module out only when it needs its own scale, its own release cadence or its own team. **Conway's law** is real: the system's structure copies the organisation's communication structure, so design both together.
 
@@ -385,6 +488,8 @@ Technology choices outlive the people who made them. Ask:
 | How hard is it to replace? | Put the unstable choice behind an interface |
 | Does it fit the failure model? | Memory safety, concurrency model, deployment size |
 
+---
+
 A good rule is to **spend "innovation tokens" sparingly**: pick boring, proven technology for the parts that are not your differentiator, and take risks only where the new technology gives a real advantage.
 
 ---
@@ -415,7 +520,7 @@ The point is the **context and the consequences**. A year later nobody remembers
 
 Not every large scale system lives in a data centre. A home or carrier gateway is a **fleet** problem: millions of devices, several chip vendors, years of firmware versions, and a cloud that must manage all of them. The architecture below is the layered model I use for router software:
 
-![Layered router software architecture: BSP, vendor adaptation, HAL, service layer, management and application](../../assets/technology/SysDesign/router_software_architecture.png)
+![Layered router software platform: BSP, vendor adaptation, HAL, service layer, management and application, with dependencies pointing down through interfaces](../../assets/technology/SysDesign/router_layers.png)
 
 | Layer | Responsibility | Why it exists |
 |-------|----------------|---------------|
@@ -425,6 +530,8 @@ Not every large scale system lives in a data centre. A home or carrier gateway i
 | **Service layer (vendor-neutral)** | WAN/LAN and IPv6, Wi-Fi manager, Multi-AP (EasyMesh), QoS, firewall, VoIP, IPTV and multicast, LED, upgrade, diagnostics, telemetry | The product logic, written once and reused on every platform |
 | **Management** | Data model (TR-181 / USP), configuration manager, management agents (TR-069 CWMP, TR-369 USP, OMCI, NETCONF, ubus API) | One way to configure and observe the device, whatever the protocol |
 | **Application** | Cloud / ACS / controller, web UI, CLI | What operators and users touch |
+
+---
 
 The same principles from the rest of this post show up in a small form:
 
@@ -478,10 +585,24 @@ Before you approve a design, can you answer these?
 ---
 
 1. **Architecture is trade-offs under constraints.** Rank the criteria first: performance, scalability, reliability, security, development speed and technology stack. Then judge the design.
-2. **Scale changes what is normal.** Failures become routine and coordination becomes the cost, so design for failure and remove shared bottlenecks.
-3. **Make the system stateless and partitioned,** and use asynchronous work to absorb spikes.
-4. **Treat availability as a budget,** and use redundancy, failure domains, timeouts and graceful degradation to spend it wisely.
-5. **Measure before you optimise,** watch percentiles, and remember the latency hierarchy.
-6. **Be most careful with data decisions.** They are the hardest to reverse.
-7. **Start simple:** a modular monolith, boring technology, and written decisions. Split and specialise only for a measured reason.
-8. **The same ideas work at every size,** from a cloud service with millions of requests to a router platform with millions of devices.
+2. **Estimate before you design.** A few lines of arithmetic find the first bottleneck and the order of magnitude you are designing for.
+3. **Scale changes what is normal.** Failures become routine and coordination becomes the cost, so design for failure and remove shared bottlenecks.
+4. **Make the system stateless and partitioned,** and use asynchronous work to absorb spikes.
+5. **Treat availability as a budget,** and use redundancy, failure domains, timeouts and graceful degradation to spend it wisely.
+6. **Measure before you optimise,** watch percentiles, and remember the latency hierarchy.
+7. **Be most careful with data decisions.** They are the hardest to reverse.
+8. **Start simple:** a modular monolith, boring technology, and written decisions. Split and specialise only for a measured reason.
+9. **The same ideas work at every size,** from a cloud service with millions of requests to a router platform with millions of devices.
+
+---
+
+### Further Reading
+
+---
+
+* Martin Kleppmann, *Designing Data-Intensive Applications*: replication, partitioning, consistency and stream processing in depth.
+* Betsy Beyer et al., *Site Reliability Engineering* (Google): SLOs, error budgets, alerting and incident response. Free to read online.
+* Michael Nygard, *Release It!*: stability patterns such as timeouts, circuit breakers and bulkheads, learned from production failures.
+* Mark Richards and Neal Ford, *Fundamentals of Software Architecture*: architecture styles, characteristics and the role of the architect.
+* Jeffrey Dean and Luiz André Barroso, "The Tail at Scale" (Communications of the ACM, 2013): why fan-out makes tail latency dominate, and how hedged requests help.
+* Michael Nygard, "Documenting Architecture Decisions" (2011): the original short post on ADRs.
